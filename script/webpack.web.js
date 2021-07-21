@@ -21,6 +21,15 @@ var config = {
   module: {
     rules: [
       {
+        test: /\.(jsx?)$/,
+        loader: 'babel-loader',
+        options: {
+          plugins: [
+            "@vue/babel-plugin-jsx"
+          ]
+        }
+      },
+      {
         test: /\.vue$/,
         use: 'vue-loader',
       }
