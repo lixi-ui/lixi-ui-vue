@@ -1,9 +1,8 @@
 <template>
   <div>
-    {{ name }}
-    <Test/>
-    <TestX/>
-    <router-view></router-view>
+    <Layout>
+      <router-view></router-view>
+    </Layout>
   </div>
 </template>
 
@@ -11,10 +10,13 @@
 import test from './test.jsx';
 import TestX from './test.tsx';
 
+import Layout from './component/layout/index.vue'
+
 export default {
   components: {
     Test: test,
-    TestX
+    TestX,
+    Layout
   },
   data() {
     return {
