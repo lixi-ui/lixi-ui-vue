@@ -3,6 +3,7 @@
     {{ name }}
     <Test/>
     <TestX/>
+    <router-view></router-view>
   </div>
 </template>
 
