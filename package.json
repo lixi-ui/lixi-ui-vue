@@ -1,0 +1,33 @@
+{
+  "name": "lixi-ui-vue",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node-dev script/webpack.web.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lixi-ui/lixi-ui-vue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lixi-ui/lixi-ui-vue/issues"
+  },
+  "homepage": "https://github.com/lixi-ui/lixi-ui-vue#readme",
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.1.1",
+    "html-webpack-plugin": "^5.3.2",
+    "node-dev": "^7.0.0",
+    "vue-loader": "^16.1.2",
+    "webpack": "^5.45.1",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "vue": "^3.1.1"
+  }
+}
