@@ -2,14 +2,18 @@
   <div>
     {{ name }}
     <Test/>
+    <TestX/>
   </div>
 </template>
 
 <script>
-import test from './test.jsx'
+import test from './test.jsx';
+import TestX from './test.tsx';
+
 export default {
   components: {
-    Test: test
+    Test: test,
+    TestX
   },
   data() {
     return {
