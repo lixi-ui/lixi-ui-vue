@@ -57,6 +57,14 @@ var config = {
         "css-loader",
         'sass-loader']
       },
+      {
+        test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10,
+          esModule: false
+        }
+      },
     ]
   },
   plugins:[
