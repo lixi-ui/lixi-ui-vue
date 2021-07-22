@@ -3,7 +3,7 @@ var webpack = require("webpack");
 
 var WebpackDevServer = require("webpack-dev-server");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
-const { VueLoaderPlugin } = require('vue-loader');
+const { VueLoaderPlugin, default: loader } = require('vue-loader');
 
 
 var config = {
@@ -50,7 +50,13 @@ var config = {
       {
         test: /\.vue$/,
         use: 'vue-loader',
-      }
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: ["style-loader",
+        "css-loader",
+        'sass-loader']
+      },
     ]
   },
   plugins:[
