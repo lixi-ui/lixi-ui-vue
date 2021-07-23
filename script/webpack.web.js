@@ -52,6 +52,22 @@ var config = {
         use: 'vue-loader',
       },
       {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'vue-loader',
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false,
+              },
+            },
+          },
+          {
+            loader: path.resolve(__dirname, '../site/md-loader/index.js'),
+          },
+        ],
+      },
+      {
         test: /\.(scss|css)$/,
         use: ["style-loader",
         "css-loader",
