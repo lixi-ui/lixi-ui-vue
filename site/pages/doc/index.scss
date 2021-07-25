@@ -1,0 +1,16 @@
+.doc{
+  position: relative;
+  .side{
+    width: 150px;
+    height: 100px;
+    background: lightpink;
+    position: absolute;
+  }
+  .content{
+    padding: 10px;
+    margin-left: 150px;
+    width: calc(100% - 150px);
+    // height: 100px;
+    background: lightgreen;
+  }
+}
