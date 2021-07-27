@@ -65,7 +65,7 @@ export default {
     width: 100%;
     min-height: 495px;
     height: calc((100vh - 120px) * 0.87655);
-    background-image: url(../../assets/login_background.png) ;
+    background-image: url('/login_background.png') ;
     // background-size: cover;
 
     .main {

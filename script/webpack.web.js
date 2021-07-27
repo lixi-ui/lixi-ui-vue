@@ -70,14 +70,6 @@ var config = {
         ],
       },
       {
-        test: /\.(scss|css)$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          'sass-loader'
-        ]
-      },
-      {
         test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
         use: [
           {
@@ -98,6 +90,21 @@ var config = {
           // },
         ]
       },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          "style-loader",
+          {
+            loader:"css-loader",
+            options:{
+                //用于解决url()路径解析错误
+                url: false,
+                sourceMap: true
+            },
+          },
+          'sass-loader'
+        ]
+      },
     ]
   },
   plugins:[
@@ -110,7 +117,9 @@ var config = {
   ]
 }
 
-var server = new WebpackDevServer(webpack(config));
+var server = new WebpackDevServer(webpack(config),{
+  contentBase: path.resolve(process.cwd() , './public'),
+});
 
 server.listen("8014",'0.0.0.0',(err)=>{
   if(!err){
