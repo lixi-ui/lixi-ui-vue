@@ -12,8 +12,10 @@ var config = {
     './site/index.js'
   ],
   output: {
-    path: path.resolve(process.cwd() , './dist'),
+    // path: path.resolve(process.cwd() , './dist'),
+    path: path.join(__dirname, "dist"),
     filename: 'index.js',
+    publicPath: '/',
     environment: {
       arrowFunction: false
     }
@@ -69,17 +71,32 @@ var config = {
       },
       {
         test: /\.(scss|css)$/,
-        use: ["style-loader",
-        "css-loader",
-        'sass-loader']
+        use: [
+          "style-loader",
+          "css-loader",
+          'sass-loader'
+        ]
       },
       {
         test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10,
-          esModule: false
-        }
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 30,
+              name: path.posix.join("static", 'img/[name].[ext]'),
+              esModule: false
+            }
+          },
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     limit: 10,
+          //     name: path.posix.join("static", 'img/[name].[hash:7].[ext]'),
+          //     esModule: false
+          //   }
+          // },
+        ]
       },
     ]
   },
