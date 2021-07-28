@@ -73,7 +73,12 @@ var config = {
         test: /\.(scss|css)$/,
         use: [
           "style-loader",
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              url: false
+            }
+          },
           'sass-loader'
         ]
       },
@@ -110,7 +115,9 @@ var config = {
   ]
 }
 
-var server = new WebpackDevServer(webpack(config));
+var server = new WebpackDevServer(webpack(config),{
+  contentBase: path.resolve(process.cwd() , './public')
+});
 
 server.listen("8014",'0.0.0.0',(err)=>{
   if(!err){
