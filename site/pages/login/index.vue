@@ -65,7 +65,7 @@ export default {
     width: 100%;
     min-height: 495px;
     height: calc((100vh - 120px) * 0.87655);
-    background: #f0f2f5 url('/login_bg.jpg') no-repeat top center;
+    // background: #f0f2f5 url('/login_bg.jpg') no-repeat top center;
     background-size: cover;
 
     .main {

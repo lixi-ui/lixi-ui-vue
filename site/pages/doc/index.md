@@ -10,6 +10,7 @@
     <div class="block">
       <span class="demonstration">Custom</span>
     </div>
+    <button-button/>
   </div>
 ```
 :::
