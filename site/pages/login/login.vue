@@ -45,9 +45,9 @@
                 type="text"
                 placeholder="请输入手机号码"
               >
-                <div class="input-icon" slot="prefix">
+                <template #prefix>
                   <i class="iconfont iconshoujihao"></i>
-                </div>
+                </template>
               </a-input>
             </a-form-item>
             <a-row :gutter="16" v-if="!isMng">
@@ -74,9 +74,9 @@
                 type="text"
                 placeholder="请输入登录用户名"
               >
-                <div class="input-icon" slot="prefix">
-                  <i class="iconfont iconcredentials_icon"></i>
-                </div>
+                <template #prefix>
+                  <i class="iconfont iconcredentials_icon">1</i>
+                </template>
               </a-input>
             </a-form-item>
             <a-form-item v-if="isMng">

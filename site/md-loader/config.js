@@ -1,6 +1,7 @@
 const Config = require('markdown-it-chain');
 const anchorPlugin = require('markdown-it-anchor');
-
+const containers = require('./containers');
+const overWriteFenceRule = require('./fence');
 
 const config = new Config();
 
@@ -10,9 +11,9 @@ config
     permalink: true,
     permalinkBefore: true,
   }]).end()
+  .plugin('containers').use(containers).end()
 
-console.log("config.toMd", config.toMd);
 const md = config.toMd()
-// overWriteFenceRule(md)
+overWriteFenceRule(md);
 
 module.exports = md;
