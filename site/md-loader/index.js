@@ -62,7 +62,6 @@ module.exports = function(source) {
   output.push(content.slice(start))
   
   // console.log("content------------>", content);
-  console.log("output.join('') ----------------------> ", output.join(''));
 
   const result = `
     <template>

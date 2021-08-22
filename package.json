@@ -1,20 +1,22 @@
 {
   "name": "lixi-ui-vue",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "start": "node-dev script/webpack.web.js",
     "server": "node-dev server/bin/www",
-    "jest": "jest"
+    "jest": "jest",
+    "lib": "node-dev script/webpack.lib.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lixi-ui/lixi-ui-vue.git"
   },
+  "files": ["lib"],
   "author": "",
   "license": "ISC",
   "bugs": {
