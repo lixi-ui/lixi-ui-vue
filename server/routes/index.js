@@ -35,5 +35,40 @@ router.get('/api/v1/sys/dicts',function(req,res,next){
 })
 
 
+router.get('/es/esBusiDefine/query',function(req,res,next){
+  var data = {
+    records: [
+      {
+        busiDefId: 1,
+        busiDefName: '业务名称',
+        isSignMerge: '是否合并签署',
+        validPeriod: 2,
+        busiSignInfo: '签署场景描述',
+        remark: '备注',
+        useFlag: '启用状态'
+      }
+    ],
+    totalRows: 110,
+    totalPage: 11,
+    page: 1,
+    size: 10
+  }
+  res.json(data)
+})
+
+router.post('/api/es/esBusiDefine/save', function(req, res, next) {
+  data = {}
+  res.json(data);
+})
+
+router.put('/api/es/esBusiDefine/edit/:id', function(req, res, next) {
+  data = {}
+  res.json(data);
+})
+
+router.delete('/api/es/esBusiDefine/delete/:id', function(req, res, next) {
+  var data = {}
+  res.json(data)
+})
 
 module.exports = router;
