@@ -4,7 +4,7 @@
       
     </div>
     <div class="content">
-      <Md/>
+      <router-view></router-view>
     </div>
   </div>
 </template>

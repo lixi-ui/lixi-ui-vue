@@ -5,6 +5,8 @@ import Doc from "../pages/doc/index.vue";
 import Login from "../pages/login/index.vue";
 
 
+import Button from '../../src/components/button/doc/index.vue'
+
 var router = createRouter({
   history: createWebHashHistory(),
   routes: [
@@ -16,7 +18,14 @@ var router = createRouter({
     {
       path: "/doc",
       name: 'doc',
-      component: Doc
+      component: Doc,
+      children: [
+        {
+          path: '/doc/button',
+          name: 'button',
+          component: Button
+        }
+      ]
     },
     {
       path: "/login",
