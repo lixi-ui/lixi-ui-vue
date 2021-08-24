@@ -12,7 +12,7 @@
       </div> 
       <ul>
         <li class="doc-li" >
-            <router-link to="/doc/button" active-class='active-menu'>doc</router-link>
+            <router-link to="/doc/button" activeClass='active-menu'>doc</router-link>
             <!-- <NavLink to="/doc/introduce" activeClass='activeClass'> introduce 介绍 </NavLink>  -->
         </li> 
         <li class="doc-li" >

@@ -1,24 +1,24 @@
 <template>
-  <div className="lx-layout-header">
-      <div className="lx-logo">Lixi</div>
-      <div className="lx-layout-menu">
-        <ul className="lx-menu-ul">
-          <li className="lx-menu-li">
-            <router-link to="/home" className="menu-item" activeClassName='active-menu'>home</router-link>
+  <div class="lx-layout-header">
+      <div class="lx-logo">Lixi</div>
+      <div class="lx-layout-menu">
+        <ul class="lx-menu-ul">
+          <li class="lx-menu-li">
+            <router-link to="/home" class="menu-item" activeClass='active-menu'>home</router-link>
           </li>
-          <li className="lx-menu-li">
-            <router-link to="/doc" activeClassName='active-menu'>doc</router-link>
+          <li class="lx-menu-li">
+            <router-link to="/doc" activeClass='active-menu'>doc</router-link>
           </li>
-          <li className="lx-menu-li">
-            <router-link to="/material" activeClassName='active-menu'>material</router-link>
-          </li>
-          <li className="lx-menu-li">
+          <!-- <li class="lx-menu-li">
+            <router-link to="/material" activeClass='active-menu'>material</router-link>
+          </li> -->
+          <li class="lx-menu-li">
             <select id="item" value="zh">
               <option value="zh">zh</option>
               <option value="es">es</option>
             </select>
           </li>
-          <!-- {/* <li className="lx-menu-li">
+          <!-- {/* <li class="lx-menu-li">
             <select id="item" onChange={(e)=>sclick(e)}>
               <option value="v4">v4</option>
               <option value="v3">v3</option>
@@ -31,7 +31,7 @@
 
 <script>
   export default {
-    name: "header",
+    name: "Header",
   }
 </script>
 

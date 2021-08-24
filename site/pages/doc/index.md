@@ -16,6 +16,7 @@
   </div>
   <script>
     export default {
+      id: 'Md11',
       name: 'Md11',
       data() {
         return {

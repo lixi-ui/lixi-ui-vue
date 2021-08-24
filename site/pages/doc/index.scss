@@ -35,5 +35,8 @@
     padding: 10px;
     overflow-y: auto;
     // @include scroll();
+    template{
+      display: block;
+    }
   }
 }
