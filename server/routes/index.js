@@ -53,7 +53,7 @@ router.get('/es/esBusiDefine/query',function(req,res,next){
     page: 1,
     size: 10
   }
-  res.json(data)
+  res.json({code: 0,message: 'ok',data})
 })
 
 router.post('/api/es/esBusiDefine/save', function(req, res, next) {
@@ -69,6 +69,36 @@ router.put('/api/es/esBusiDefine/edit/:id', function(req, res, next) {
 router.delete('/api/es/esBusiDefine/delete/:id', function(req, res, next) {
   var data = {}
   res.json(data)
+})
+
+router.get('/es/esBusiFileDefine/query', function(req, res, next) { // 获取业务下的文件
+  var data = {
+    records: [
+      {
+        busiFileId: '123', // 关联id
+        busiDefId: '123', // 业务定义id
+        fileDefId: '123', // 文件定义id
+        fileDefName: '文件定义名称', // 文件定义名称
+        signOrder: '1', // 文件排序
+        busiSignInfo: '签署场景描述', // 签署场景描述
+        cityCode: '12344' // 城市码
+      },
+      {
+        busiFileId: '1234', // 关联id
+        busiDefId: '1234', // 业务定义id
+        fileDefId: '1234', // 文件定义id
+        fileDefName: '文件定义名称4', // 文件定义名称
+        signOrder: '14', // 文件排序
+        busiSignInfo: '签署场景描述4', // 签署场景描述
+        cityCode: '12344' // 城市码
+      }
+    ],
+    totalRows: 110,
+    totalPage: 11,
+    page: 1,
+    size: 10
+  }
+  res.json({code: 0,message: 'ok',data})
 })
 
 module.exports = router;
