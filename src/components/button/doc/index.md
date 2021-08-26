@@ -11,7 +11,9 @@
       <span class="demonstration">Custom</span>
       {{ name }}
     </div>
-    <lx-button/>
+    <lv-button>
+      btn
+    </lv-button>
     <lx-tree/>
   </div>
   <script>

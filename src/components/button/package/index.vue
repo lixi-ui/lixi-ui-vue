@@ -23,7 +23,81 @@
   </button>
 </template>
 <script>
-export default {
-  name: 'LvButton'
-}
+
+import { computed, inject, defineComponent } from 'vue'
+import { isValidComponentSize } from '../../../utils/validators'
+import { useGlobalConfig } from '../../../utils/util'
+// import { elFormKey, elFormItemKey } from '@element-plus/form'
+
+var elFormKey = 'elForm'
+var elFormItemKey = 'elFormItem'
+
+export default defineComponent ({
+  name: 'LvButton',
+  props: {
+    type: {
+      type: String,
+      default: 'default',
+      validator: (val) => {
+        return [
+          'default',
+          'primary',
+          'success',
+          'warning',
+          'info',
+          'danger',
+          'text',
+        ].includes(val)
+      },
+    },
+    size: {
+      type: String,
+      validator: isValidComponentSize,
+    },
+    icon: {
+      type: String,
+      default: '',
+    },
+    nativeType: {
+      type: String,
+      default: 'button',
+      validator: (val) => {
+        return ['button', 'submit', 'reset'].includes(val)
+      },
+    },
+    loading: Boolean,
+    disabled: Boolean,
+    plain: Boolean,
+    autofocus: Boolean,
+    round: Boolean,
+    circle: Boolean,
+  },
+
+  emits: ['click'],
+
+  setup(props, ctx) {
+    const $ELEMENT = useGlobalConfig()
+
+    const elForm = inject(elFormKey, {} )
+    const elFormItem = inject(elFormItemKey, {})
+
+    const buttonSize = computed(() => {
+      return props.size || elFormItem.size || $ELEMENT.size
+    })
+    const buttonDisabled = computed(() => {
+      return props.disabled || elForm.disabled
+    })
+
+    //methods
+    const handleClick = evt => {
+      ctx.emit('click', evt)
+    }
+
+    return {
+      buttonSize,
+      buttonDisabled,
+      handleClick,
+    }
+  },
+})
 </script>
