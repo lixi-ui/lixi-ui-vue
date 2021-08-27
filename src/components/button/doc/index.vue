@@ -19,3 +19,12 @@
     }
   }
 </script>
+
+<style>
+ .lv-button{
+   margin-right: 5px;
+ }
+ .block{
+   margin: 10px;
+ }
+</style>
