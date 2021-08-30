@@ -6,7 +6,7 @@
     <div class="content">
     </div>
   </div> -->
-  <div class = "doc div">
+  <div class = "doc div page-container">
     <div class = "doc-left" >
       <div class = "logo" >
       </div> 
@@ -26,7 +26,7 @@
         </li>
       </ul> 
     </div> 
-    <div class = "doc-right div" >
+    <div class = "doc-right div content">
       <router-view></router-view>
     <!-- <Switch>
         <Route path = "/doc/introduce">
