@@ -6,8 +6,11 @@ import App from "./app.vue";
 import 'ant-design-vue/dist/antd.css';
 // import Button from '../src/components/button/package/index.js';
 import LixiUiVue from '../src/index.js'
+import demoBlock from './components/demo-block/index.vue'
 
+var app = createApp(App);
+app.component('DemoBlock', demoBlock)
 
-var app = createApp(App).use(router).use(Antd).use(LixiUiVue);
+app.use(router).use(Antd).use(LixiUiVue);
 
 app.mount('#app');

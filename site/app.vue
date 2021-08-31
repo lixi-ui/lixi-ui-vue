@@ -10,7 +10,7 @@
 import test from './test.jsx';
 import TestX from './test.tsx';
 
-import Layout from './component/layout/index.vue'
+import Layout from './components/layout/index.vue'
 
 export default {
   components: {
