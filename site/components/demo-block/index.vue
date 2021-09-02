@@ -37,9 +37,9 @@ export default {
       position: relative;
       padding: 8px 10px;
       border: 1px solid #fafafa;
-      box-shadow: 0px 0px 8px #eee;
+      box-shadow: 0px 0px 8px #fafafa;
       &:hover{
-        box-shadow: 0px 0px 8px #ddd;
+        box-shadow: 0px 0px 8px #eee;
       }
       .expanded-bottom{
         width: 100%;
