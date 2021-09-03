@@ -13,7 +13,7 @@
             <router-link to="/material" activeClass='active-menu'>material</router-link>
           </li> -->
           <li class="lx-menu-li">
-            <select id="item" value="zh">
+            <select id="item" :value="lang" @change="changeLang">
               <option value="zh">zh</option>
               <option value="es">es</option>
             </select>
@@ -32,6 +32,27 @@
 <script>
   export default {
     name: "Header",
+    data () {
+      return {
+        lang: 'zh'
+      }
+    },
+    created () {
+      var lvLang = window.localStorage.getItem("lv_lang")
+      console.log('lvLang-------------------------', lvLang)
+      if (lvLang) {
+        this.lang = lvLang
+      } else {
+        this.lang = 'zh'
+      }
+    },
+    methods: {
+      changeLang (e) {
+        this.lang = e.target.value
+        window.localStorage.setItem("lv_lang", e.target.value)
+        window.location.reload()
+      }
+    }
   }
 </script>
 
