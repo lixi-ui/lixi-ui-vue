@@ -1,32 +1,42 @@
 var path = require("path");
 var webpack = require("webpack");
-
-const { VueLoaderPlugin, default: loader } = require('vue-loader');
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 var config = {
   mode:"production",
-  entry: path.resolve(process.cwd() , './src/style/index.js'),
+  entry: {
+    styles: path.resolve(process.cwd() , './src/style/index.scss')
+  },
   output: {
     path: path.resolve(process.cwd(), './lib/style/'),
+  },
+  optimization: {
+    minimize: false
   },
   module: {
     rules: [
       {
         test: /\.(scss|css)$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
-              url: false
+              url: false,
+              importLoaders: 1 
             }
           },
           'sass-loader'
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    })
+  ]
 }
 
 webpack(config, function (err) {
