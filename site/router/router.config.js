@@ -3,6 +3,7 @@ import Doc from "../pages/doc/index.vue";
 import Login from "../pages/login/index.vue";
 
 import Button from '../../src/components/button/doc/index.vue'
+import Tree from '../../src/components/tree/doc/index.vue'
 
 var routes = [
   {
@@ -19,6 +20,11 @@ var routes = [
         path: '/doc/button',
         name: 'button',
         component: Button
+      },
+      {
+        path: '/doc/tree',
+        name: 'tree',
+        component: Tree
       }
     ]
   },

@@ -1,9 +1,22 @@
 <template>
-  <div>tree--tree</div>
+  <div>
+    tree--tree
+    <span>
+      +++++{{ name }}+++++
+    </span>
+  </div>
 </template>
 
 <script>
+
+import { t } from '../../../i18n/index'
+
 export default {
-  name: 'LxTree'
+  name: 'LvTree',
+  data() {
+    return {
+      name: t('tree.name')
+    }
+  }
 }
 </script>

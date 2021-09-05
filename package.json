@@ -11,7 +11,8 @@
     "server": "node-dev server/bin/www",
     "jest": "jest",
     "lib": "node-dev script/webpack.lib.js",
-    "build": "node-dev script/webpack.build.js"
+    "build": "node-dev script/webpack.build.js",
+    "build:style": "node-dev src/style/webpack.style.js"
   },
   "repository": {
     "type": "git",

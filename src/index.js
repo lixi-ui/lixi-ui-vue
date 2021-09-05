@@ -14,6 +14,6 @@ var install = function (Vue) {
 
 export default {
   install,
-  version: '0.0.1'
+  version: '0.0.4'
 }
 

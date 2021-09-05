@@ -12,11 +12,11 @@
       </div> 
       <ul>
         <li class="doc-li" >
-            <router-link to="/doc/button" activeClass='active-menu'>doc</router-link>
+            <router-link to="/doc/button" activeClass='active-menu'>button</router-link>
             <!-- <NavLink to="/doc/introduce" activeClass='activeClass'> introduce 介绍 </NavLink>  -->
         </li> 
         <li class="doc-li" >
-            <!-- <NavLink to="/doc/button" activeClass='activeClass'> button 按钮 </NavLink>  -->
+            <router-link to="/doc/tree" activeClass='active-menu'>tree</router-link>
         </li> 
         <li class="doc-li" >
             <!-- <NavLink to="/doc/input" activeClass='activeClass'> input 输入框 </NavLink> -->
