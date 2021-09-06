@@ -1,6 +1,8 @@
 import Button from './components/button/package/index';
 import Tree from './components/tree/package/index';
 
+import './style/src/index.scss'
+
 var components = {
   Button,
   Tree
