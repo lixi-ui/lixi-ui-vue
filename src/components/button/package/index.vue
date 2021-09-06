@@ -22,12 +22,15 @@
     <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
-<script>
+<script lang="ts">
 
 import { computed, inject, defineComponent } from 'vue'
 import { isValidComponentSize } from '../../../utils/validators'
 import { useGlobalConfig } from '../../../utils/util'
 // import { elFormKey, elFormItemKey } from '@element-plus/form'
+
+import type { PropType } from 'vue'
+import type { ButtonType, ButtonNativeType } from './types'
 
 var elFormKey = 'elForm'
 var elFormItemKey = 'elFormItem'
@@ -36,9 +39,9 @@ export default defineComponent ({
   name: 'LvButton',
   props: {
     type: {
-      type: String,
+      type: String as PropType<ButtonType>,
       default: 'default',
-      validator: (val) => {
+      validator: (val: string) => {
         return [
           'default',
           'primary',
