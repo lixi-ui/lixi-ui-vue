@@ -8,6 +8,8 @@ import 'ant-design-vue/dist/antd.css';
 import LixiUiVue from '../src/index.js'
 import demoBlock from './components/demo-block/index.vue'
 
+import './style/index.scss'
+
 var app = createApp(App);
 app.component('DemoBlock', demoBlock)
 

@@ -1,9 +1,8 @@
-// @import '../../style/minix.scss';
-.doc.div {
+.material.div {
   width: calc(100vw - 0px);
   height: calc(100vh - 100px);
   position: relative;
-  .doc-left {
+  .material-left {
     position: absolute;
     background: lightgreen;
     width: 200px;
@@ -15,7 +14,7 @@
       background: url(./images/lixi-logo.png);
       background-size: 120px 120px;
     }
-    .doc-li {
+    .material-li {
       padding: 5px 15px;
       a {
         text-decoration: none;
@@ -29,7 +28,7 @@
       }
     }
   }
-  .doc-right.div {
+  .material-right.div {
     margin-left: 200px;
     height: 100%;
     padding: 10px;

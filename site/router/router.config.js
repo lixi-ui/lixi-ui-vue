@@ -1,9 +1,9 @@
 import Home from "../pages/home/index.vue";
 import Doc from "../pages/doc/index.vue";
+import Material from '../pages/material/index.vue';
+import materialConfig from '../../material/index';
 import Login from "../pages/login/index.vue";
-
-import Button from '../../src/components/button/doc/index.vue'
-import Tree from '../../src/components/tree/doc/index.vue'
+import docRouter from '../pages/doc/doc-router'
 
 var routes = [
   {
@@ -15,18 +15,13 @@ var routes = [
     path: "/doc",
     name: 'doc',
     component: Doc,
-    children: [
-      {
-        path: '/doc/button',
-        name: 'button',
-        component: Button
-      },
-      {
-        path: '/doc/tree',
-        name: 'tree',
-        component: Tree
-      }
-    ]
+    children: docRouter
+  },
+  {
+    path: '/material',
+    name: 'materila',
+    component: Material,
+    children: materialConfig
   },
   {
     path: "/login",
