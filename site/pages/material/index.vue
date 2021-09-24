@@ -4,9 +4,9 @@
       <div class="logo" >
       </div>
       <ul>
-        <li class="doc-li" v-for="(item,index) in materialList" :key="index">
+        <!-- <li class="doc-li" v-for="(item,index) in materialList" :key="index">
             <router-link :to="item.path" activeClass='active-menu'>{{ item.name }}</router-link>
-        </li>
+        </li> -->
       </ul>
     </div>
     <div class = "material-right div content">
@@ -17,13 +17,13 @@
 
 <script>
   import "./index.scss";
-  import MaterialConfig from "../../../material/index.js"
+  // import MaterialConfig from "../../../material/index.js"
 
   export default {
     name: 'Material',
     data () {
       return {
-        materialList: MaterialConfig
+        // materialList: MaterialConfig
       }
     }
   }

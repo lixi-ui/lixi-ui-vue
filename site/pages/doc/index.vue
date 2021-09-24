@@ -12,8 +12,10 @@
       </div> 
       <ul>
         <li class="doc-li" >
+            <router-link to="/doc/introduce" activeClass='active-menu'>introduce 介绍</router-link>
+        </li> 
+        <li class="doc-li" >
             <router-link to="/doc/button" activeClass='active-menu'>button</router-link>
-            <!-- <NavLink to="/doc/introduce" activeClass='activeClass'> introduce 介绍 </NavLink>  -->
         </li> 
         <li class="doc-li" >
             <router-link to="/doc/tree" activeClass='active-menu'>tree</router-link>

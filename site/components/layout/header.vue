@@ -39,7 +39,6 @@
     },
     created () {
       var lvLang = window.localStorage.getItem("lv_lang")
-      console.log('lvLang-------------------------', lvLang)
       if (lvLang) {
         this.lang = lvLang
       } else {
