@@ -41,6 +41,7 @@ function genInlineComponentText(template, script) {
     compilerOptions: {
       mode: 'function',
     },
+    id: 'id'
   }
   const compiled = compileTemplate(finalOptions)
   // tips

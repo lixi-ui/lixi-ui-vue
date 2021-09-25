@@ -19,7 +19,7 @@
     </div>
     <div className="home-gist">
       <div className="home-gist-title1">
-        项目模块
+        <a href="http://localhost:8014/#/home#aaa">项目模块</a>
       </div>
       <div className="home-gist-content">
         <div className="home-gist-item home-gist-web">

@@ -60,9 +60,6 @@ module.exports = function(source) {
   }
 
   output.push(content.slice(start))
-  
-  // console.log("content------------>", content);
-
   const result = `
     <template>
       <section >
