@@ -11,7 +11,8 @@ config
     level: 2,
     slugify: slugify,
     permalink: true,
-    permalinkBefore: true,
+    // permalinkBefore: true,
+    permalinkSymbol: ''
   }]).end()
   .plugin('containers').use(containers).end()
 
