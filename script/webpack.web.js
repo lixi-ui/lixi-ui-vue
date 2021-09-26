@@ -89,7 +89,7 @@ var config = {
             loader: 'url-loader',
             options: {
               limit: 30,
-              name: path.posix.join("static", 'img/[name].[ext]'),
+              // name: path.posix.join("static", 'img/[name].[ext]'),
               esModule: false
             }
           },
