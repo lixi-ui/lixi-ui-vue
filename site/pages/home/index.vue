@@ -18,8 +18,7 @@
       </div>
     </div>
     <div className="home-gist">
-      <div className="home-gist-title1">
-        <a href="http://localhost:8014/home#aaabbbb">项目模块</a>
+      <div className="home-gist-title1">项目模块
       </div>
       <div className="home-gist-content">
         <div className="home-gist-item home-gist-web">
@@ -60,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div className="home-design" id="aaabbbb">
+    <div className="home-design">
       <div className="home-design-title">
         设计理念
       </div>
