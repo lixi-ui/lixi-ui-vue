@@ -17,6 +17,6 @@ module.exports = {
   "transform": {
     // 用 `vue-jest` 处理 `*.vue` 文件
     ".*\\.(vue)$": "vue-jest",
-    '\\.(js|jsx|ts|tsx)$': 'babel-jest',
+    '\\.(js|jsx|ts|tsx)$': 'babel-jest'
   }
 };
