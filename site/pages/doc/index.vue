@@ -11,22 +11,22 @@
       <div class = "logo" >
       </div> 
       <ul>
-        <li class="doc-li" >
-            <router-link to="/doc/introduce" activeClass='active-menu'>introduce 介绍</router-link>
-        </li> 
-        <li class="doc-li" >
-            <router-link to="/doc/button" activeClass='active-menu'>button</router-link>
-        </li> 
-        <li class="doc-li" >
-            <router-link to="/doc/tree" activeClass='active-menu'>tree</router-link>
-        </li> 
+        <li class="doc-li">
+          <router-link to="/doc/introduce" activeClass='active-menu'>introduce 介绍</router-link>
+        </li>
+        <li class="doc-li">
+          <router-link to="/doc/button" activeClass='active-menu'>button</router-link>
+        </li>
+        <li class="doc-li">
+          <router-link to="/doc/tree" activeClass='active-menu'>tree</router-link>
+        </li>
         <li class="doc-li" >
             <!-- <NavLink to="/doc/input" activeClass='activeClass'> input 输入框 </NavLink> -->
         </li>
         <li class = "doc-li" >
             <!-- <NavLink to="/doc/tree" activeClass='activeClass'> tree 树型结构 </NavLink> -->
         </li>
-      </ul> 
+      </ul>
     </div> 
     <div class = "doc-right div content">
       <router-view></router-view>

@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var config = {
   mode:"production",
   entry: {
-    styles: path.resolve(process.cwd() , './src/style/index.scss')
+    styles: path.resolve(process.cwd() , './src/style/src/index.scss')
   },
   output: {
     path: path.resolve(process.cwd(), './lib/style/'),
