@@ -6,8 +6,8 @@ var router = createRouter({
   scrollBehavior (to, from, savedPosition) {
     if (to.hash) {
       return {
-          el: to.hash,
-          top: 0
+        el: to.hash,
+        top: 0
       }
     }
   },

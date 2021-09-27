@@ -44,12 +44,16 @@
       } else {
         this.lang = 'zh'
       }
+      this.getVersion()
     },
     methods: {
       changeLang (e) {
         this.lang = e.target.value
         window.localStorage.setItem("lv_lang", e.target.value)
         window.location.reload()
+      },
+      getVersion () {
+        console.log(window.version)
       }
     }
   }

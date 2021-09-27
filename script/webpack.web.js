@@ -117,9 +117,9 @@ var config = {
 
 var server = new WebpackDevServer(webpack(config),{
   contentBase: path.resolve(process.cwd() , './public'),
-  historyApiFallback: {
-    index: 'index.html'
-  }
+  // historyApiFallback: {
+  //   index: 'index.html'
+  // }
 });
 
 server.listen("8014",'0.0.0.0',(err)=>{
