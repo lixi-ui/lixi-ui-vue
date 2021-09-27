@@ -37,12 +37,12 @@
     </div>
 
     <div class="block">
-      <lv-button icon="el-icon-search" circle>圆</lv-button>
-      <lv-button type="primary" icon="el-icon-edit" circle>圆</lv-button>
-      <lv-button type="success" icon="el-icon-check" circle>圆</lv-button>
-      <lv-button type="info" icon="el-icon-message" circle>圆</lv-button>
-      <lv-button type="warning" icon="el-icon-star-off" circle>圆</lv-button>
-      <lv-button type="danger" icon="el-icon-delete" circle>圆</lv-button>
+      <lv-button icon="lv-icon-search" circle></lv-button>
+      <lv-button type="primary" icon="lv-icon-edit" circle></lv-button>
+      <lv-button type="success" icon="lv-icon-check" circle></lv-button>
+      <lv-button type="info" icon="lv-icon-message" circle></lv-button>
+      <lv-button type="warning" icon="lv-icon-star-off" circle></lv-button>
+      <lv-button type="danger" icon="lv-icon-delete" circle></lv-button>
     </div>
   </div>
   <script>
@@ -106,12 +106,12 @@
 :::demo 设置`icon`属性即可，icon 的列表可以参考 Element Plus 的 icon 组件，也可以设置在文字右边的 icon ，只要使用`i`标签即可，可以使用自定义图标。
 
 ```html
-<lv-button type="primary" icon="el-icon-edit">圆</lv-button>
-<lv-button type="primary" icon="el-icon-share">圆</lv-button>
-<lv-button type="primary" icon="el-icon-delete">圆</lv-button>
-<lv-button type="primary" icon="el-icon-search">搜索</lv-button>
+<lv-button type="primary" icon="lv-icon-edit"></lv-button>
+<lv-button type="primary" icon="lv-icon-share"></lv-button>
+<lv-button type="primary" icon="lv-icon-delete"></lv-button>
+<lv-button type="primary" icon="lv-icon-search">搜索</lv-button>
 <lv-button type="primary"
-  >上传<i class="el-icon-upload el-icon--right"></i
+  >上传<i class="lv-icon-upload lv-icon--right"></i
 ></lv-button>
 ```
 
@@ -149,10 +149,10 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
   <lv-button size="mini" round>超小按钮</lv-button>
 </div>
 <div class="block">
-  <lv-button icon="el-icon-search" circle>圆</lv-button>
-  <lv-button icon="el-icon-search" size="medium" circle>圆</lv-button>
-  <lv-button icon="el-icon-search" size="small" circle>圆</lv-button>
-  <lv-button icon="el-icon-search" size="mini" circle>圆</lv-button>
+  <lv-button icon="lv-icon-search" circle></lv-button>
+  <lv-button icon="lv-icon-search" size="medium" circle></lv-button>
+  <lv-button icon="lv-icon-search" size="small" circle></lv-button>
+  <lv-button icon="lv-icon-search" size="mini" circle></lv-button>
 </div>
 ```
 
