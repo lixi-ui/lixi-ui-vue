@@ -21,7 +21,7 @@ var materialConfig = [
     path: '/material/lixi-material-vue',
     name: 'lixi-material-vue',
     component: MaterialDoc,
-    children: douRouter
+    // children: douRouter
   }
 ]
 

@@ -5,12 +5,24 @@ var WebpackDevServer = require("webpack-dev-server");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
 
+const isProd = process.env.NODE_ENV === 'production'
+/*
+ * 是否使用生产环境的 vue
+ */
+const isVueProd = process.env.VUE_BUNDLE === 'production' || isProd
+const vueBundle = isVueProd ? 'vue.esm-browser.prod.js' : 'vue.esm-browser.js'
 
 var config = {
   mode:"development",
   entry: [
     './site/index.js'
   ],
+  resolve: {
+    // extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
+    alias: {
+      vue: `vue/dist/${vueBundle}`
+    },
+  },
   output: {
     // path: path.resolve(process.cwd() , './dist'),
     path: path.join(__dirname, "dist"),
