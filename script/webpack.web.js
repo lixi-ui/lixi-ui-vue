@@ -97,7 +97,7 @@ var config = {
             loader: 'url-loader',
             options: {
               limit: 30,
-              // name: path.posix.join("static", 'img/[name].[ext]'),
+              name: path.posix.join("static", 'img/[name].[ext]'),
               esModule: false
             }
           },
@@ -130,9 +130,9 @@ var server = new WebpackDevServer(webpack(config),{
   // }
 });
 
-server.listen("8014",'0.0.0.0',(err)=>{
+server.listen("8017",'0.0.0.0',(err)=>{
   if(!err){
-    console.log('http://localhost:8014')
+    console.log('http://localhost:8017')
   } else {
     console.log('err', err);
   }

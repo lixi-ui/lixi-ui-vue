@@ -10,7 +10,7 @@
             <router-link to="/doc" activeClass='active-menu'>doc</router-link>
           </li>
           <li class="lx-menu-li">
-            <router-link to="/material" activeClass='active-menu'>material</router-link>
+            <!-- <router-link to="/material" activeClass='active-menu'>material</router-link> -->
           </li>
           <li class="lx-menu-li">
             <select id="item" :value="lang" @change="changeLang">
