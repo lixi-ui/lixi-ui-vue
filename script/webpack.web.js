@@ -20,6 +20,11 @@ var config = {
       arrowFunction: false
     }
   },
+  resolve: {
+    alias: {
+      'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
+    }
+  },
   module: {
     rules: [
       {
@@ -51,7 +56,10 @@ var config = {
       },
       {
         test: /\.vue$/,
-        use: 'vue-loader',
+        use: [
+          // path.resolve(__dirname, '../site/md-loader/vueLoader.js'),
+          'vue-loader'
+        ],
       },
       {
         test: /\.md$/,
