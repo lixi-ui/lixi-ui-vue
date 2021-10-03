@@ -7,10 +7,12 @@ import 'ant-design-vue/dist/antd.css';
 // import Button from '../src/components/button/package/index.js';
 import LixiUiVue from '../src/index.js'
 import demoBlock from './components/demo-block/index.vue'
+import icon from './icon.json'
 
 import './style/index.scss'
 
 var app = createApp(App);
+app.config.globalProperties.$icon = icon
 app.component('DemoBlock', demoBlock)
 
 app.use(router).use(Antd).use(LixiUiVue);

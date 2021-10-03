@@ -18,6 +18,9 @@
           <router-link to="/doc/button" activeClass='active-menu'>button</router-link>
         </li>
         <li class="doc-li">
+          <router-link to="/doc/icon" activeClass='active-menu'>icon</router-link>
+        </li>
+        <li class="doc-li">
           <router-link to="/doc/tree" activeClass='active-menu'>tree</router-link>
         </li>
         <li class="doc-li" >
