@@ -80,6 +80,10 @@ var registerRoute =  (nav) => {
 
 var routes = [
   {
+    path: "/",
+    redirect: '/home'
+  },
+  {
     path: "/home",
     name: 'name',
     component: Home
@@ -87,6 +91,7 @@ var routes = [
   {
     path: "/doc",
     name: 'doc',
+    redirect: '/doc/introduce',
     component: Doc,
     children: docRouter
   },
