@@ -104,3 +104,5 @@
 - [] babel,es6,commont amd,umd
 
 - [] 交流论坛
+
+npx jest --testMatch **/tree/__tests__/**/*.js

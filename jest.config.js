@@ -4,8 +4,9 @@ module.exports = {
   ],
   testEnvironment: "jsdom",
   testMatch: [
-    "**/__tests__/**/*.[jt]s?(x)",
-    "**/?(*.)+(spec|test).[tj]s?(x)"
+    "**/tree/__tests__/**/*.[jt]s?(x)",
+    // "**/__tests__/**/*.[jt]s?(x)",
+    // "**/?(*.)+(spec|test).[tj]s?(x)"
   ],
   "moduleFileExtensions": [
     "js",

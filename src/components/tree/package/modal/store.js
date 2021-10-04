@@ -6,11 +6,14 @@ var VuexStore = new Vuex;
 
 function TreeStore(data) {
   var treeData = [ ...data ] // 深拷贝
-  console.log('treeData', treeData)
   var looseTree = looseEqual(treeData)
+  // console.log('looseTree', looseTree)
   VuexStore.createStore({
     state () {
-      return { treeData: looseTree }
+      return {
+        treeData: looseTree,
+        data: data
+      }
     },
     mutations: {
       increment (state) {
@@ -18,8 +21,23 @@ function TreeStore(data) {
       }
     },
     action: { // 使用的是 flux 流模式。也是最简单的模式
-      expand(state) {
+      expand(state, data) {
+        if (data.node._expand) {
+          state.treeData[1]._show = false
+          state.treeData[0]._expand = false
+        } else {
+          state.treeData[1]._show = true
+          state.treeData[0]._expand = true
+        }
         return state
+      },
+      update(state, data) {
+        var stateOld = { ...state }
+        var treeData = [ ...data.data ]
+        var looseTree = looseEqual(treeData)
+        // console.log('looseTree--', looseTree)
+        stateOld.treeData = looseTree
+        return stateOld
       }
     }
   })
@@ -66,25 +84,32 @@ function looseEqual(data){
   // }
   //]
   var arr = [];
-  function recursion(data, _pId, _level, _expand){
+  function recursion(data, _pId, _level, _expand, _show){
     for (var i = 0; i < data.length; i++) {
+      var _children = ''
+      if(data[i].children){
+        for (var j = 0; j < data[i].children.length; j++) {
+          _children += _pId + '_' + i + '_' + j
+        }
+      }
       var obj = {
         _id: _pId + '_' + i,
         _pId: _pId,
         _level: _level,
         _expand: _expand,
+        _show: _show,
+        _data: data[i],
+        _children: _children,
         key: data[i].key,
         value: data[i].value,
-        _data: data[i]
       }
       arr.push(obj)
       if(data[i].children){
-        recursion(data[i].children, obj._id, obj._level+1, false)
+        recursion(data[i].children, obj._id, obj._level+1, false, false)
       }
     }
   }
-  recursion(data,'r',1,true)
-  console.log('arr', arr)
+  recursion(data, 'r', 1, false, true)
   return arr;
 }
 

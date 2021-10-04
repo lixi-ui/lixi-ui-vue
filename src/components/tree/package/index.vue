@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-for="(item,index) in treeData" :key="index">
+  <div class='lv-tree'>
+    <div v-for="(item,index) in treeData.list" :key="index">
       <tree-item :node="item"/>
     </div>
   </div>
@@ -8,7 +8,7 @@
 
 <script>
 
-import { ref, provide, reactive } from 'vue';
+import { ref, provide, reactive, watch } from 'vue';
 import { t } from '../../../i18n/index';
 import { TreeStore } from "./modal/store.js"
 
@@ -23,20 +23,25 @@ export default {
     return {
     }
   },
+  props: {
+    data: {
+      type: Array,
+      default: function () {return []}
+    }
+  },
   setup (props, ctx) {
-    var treeData = reactive([])
-
-    var treeStore = TreeStore([{
-      key: 'k_1',
-      value: 'v_1',
-      children: [{
-        key: 'k_1_1',
-        value: 'v_1_1'
-      }]
-    }])
-    treeData = treeStore.state.treeData;
+    var treeStore = TreeStore(props.data);
+    var treeData = reactive({ list: treeStore.state.treeData });
     var store = reactive(treeStore);
     provide('treeStore', store);
+
+    watch(() => props.data, newVal => {
+      store.dispatch({
+        type: 'update',
+        data: newVal
+      })
+      treeData.list = treeStore.state.treeData
+    }, { deep: true })
 
     return {
       treeData

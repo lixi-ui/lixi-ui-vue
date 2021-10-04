@@ -6,8 +6,8 @@ function Vuex () {
 }
 
 Vuex.prototype.createStore = function (obj) {
-  console.log('this.state', this.state)
-  console.log('obj', obj.state)
+  // console.log('this.state', this.state)
+  // console.log('obj', obj.state)
   this.state = obj?.state()
   // this.mutation = obj?.mutation
   this.action = obj?.action
@@ -18,7 +18,7 @@ Vuex.prototype.emit = function (obj) {
 }
 
 Vuex.prototype.dispatch = function (obj) {
-  this.state = this.action[obj.type](this.state)
+  this.state = this.action[obj.type](this.state, obj)
 }
 
 
