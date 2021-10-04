@@ -28,6 +28,7 @@ const getTreeVm = (props = '', options = {}) => {
 }
 
 describe('Tree.vue', () => {
+  
   test('render', async () => {
     const { wrapper, vm }  = getTreeVm()
     expect(wrapper.find('.lv-tree').exists()).toBeTruthy()
@@ -36,6 +37,7 @@ describe('Tree.vue', () => {
     await nextTick()
     expect(wrapper.findAll('.lv-tree .lv-tree-item').length).toEqual(1)
   })
+
   test('expandOnNodeClick', async () => {
     const { wrapper } = getTreeVm()
 
