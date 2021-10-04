@@ -10,7 +10,7 @@ config
   .options.html(true).end().plugin("anchor").use(anchorPlugin,[{
     level: 2,
     slugify: slugify,
-    permalink: true,
+    // permalink: true,
     // permalinkBefore: true,
     permalinkSymbol: ''
   }]).end()
