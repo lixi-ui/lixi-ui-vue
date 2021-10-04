@@ -1,11 +1,11 @@
 var path = require("path");
 var webpack = require("webpack");
-
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
 
 var config = {
-  mode:"development",
+  mode:"production",
   entry: [
     './site/index.js'
   ],
@@ -13,10 +13,13 @@ var config = {
     path: path.resolve(process.cwd() , './dist'),
     // path: path.join(__dirname, "dist"),
     filename: 'index.js',
-    publicPath: '/',
+    publicPath: '/vue/',
     environment: {
       arrowFunction: false
     }
+  },
+  externals: {
+    vue: 'Vue'
   },
   module: {
     rules: [
@@ -109,7 +112,12 @@ var config = {
       filename: './index.html',
       favicon: './public/lixi-logo.png'
     }),
-    new VueLoaderPlugin()
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: JSON.stringify(true),
+      __VUE_PROD_DEVTOOLS__: JSON.stringify(false),
+    }),
+    new VueLoaderPlugin(),
+    new BundleAnalyzerPlugin()
   ]
 }
 
