@@ -1,4 +1,4 @@
-import Row from './index.vue'
+import Row from './row.ts'
 
 Row.install = (app) => {
   app.component(Row.name, Row)
