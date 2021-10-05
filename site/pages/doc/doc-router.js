@@ -2,6 +2,8 @@ import Button from '../../../src/components/button/doc/index.vue';
 import Tree from '../../../src/components/tree/doc/index.vue';
 import Icon from '../../../src/components/icon/doc/index.vue';
 import row from '../../../src/components/row/doc/index.vue';
+import Container from '../../../src/components/container/doc/index.vue';
+
 import Introduce from './introduce/index.vue';
 
 var douRouter = [
@@ -14,6 +16,11 @@ var douRouter = [
     path: '/doc/layout',
     name: 'layout',
     component: row
+  },
+  {
+    path: '/doc/container',
+    name: 'container',
+    component: Container
   },
   {
     path: '/doc/icon',

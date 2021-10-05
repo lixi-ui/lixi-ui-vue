@@ -15,14 +15,14 @@
     },
     data () {
       return {
-        pageName: 'tree - doc',
+        pageName: 'layout - doc',
         lang: 'zh'
       }
     }
   }
 </script>
 
-<style>
+<style lang="scss">
  .lx-button{
    margin-right: 5px;
  }
