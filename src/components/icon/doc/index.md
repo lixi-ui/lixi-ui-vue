@@ -3,8 +3,8 @@
 <ul class="icon-list">
   <li v-for="name in $icon" :key="name">
     <span>
-      <i :class="'lv-icon-' + name"></i>
-      <span class="icon-name">{{'lv-icon-' + name}}</span>
+      <i :class="'lx-icon-' + name"></i>
+      <span class="icon-name">{{'lx-icon-' + name}}</span>
     </span>
   </li>
 </ul>

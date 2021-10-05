@@ -1,6 +1,6 @@
 <template>
   <i
-    class="lv-icon"
+    class="lx-icon"
     :style="style"
     v-bind="$attrs"
   >
@@ -12,7 +12,7 @@
 import { defineComponent, computed } from 'vue'
 import type { CSSProperties } from 'vue'
 export default defineComponent({
-  name: 'LvIcon',
+  name: 'LxIcon',
   props: {
     size: {
       type: Number,

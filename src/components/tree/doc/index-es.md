@@ -4,7 +4,7 @@
 
 ```html
 <div class="block">
-  <lv-tree></lv-tree>
+  <lx-tree></lx-tree>
 </div>
 ```
 

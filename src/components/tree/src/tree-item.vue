@@ -1,8 +1,8 @@
 <template>
-  <div v-show='node._show' class="lv-tree-item">
-    <span class="lv-tree-icon-level" :style="{display: 'inline-block', width: node._level * 16 + 'px'}"></span>
-    <span class="lv-tree-icon-expand" @click="expand()">
-      <i v-if='node._children' :class="node._expand ?  'lv-icon-caret-bottom' : 'lv-icon-caret-right'"></i>
+  <div v-show='node._show' class="lx-tree-item">
+    <span class="lx-tree-icon-level" :style="{display: 'inline-block', width: node._level * 16 + 'px'}"></span>
+    <span class="lx-tree-icon-expand" @click="expand()">
+      <i v-if='node._children' :class="node._expand ?  'lx-icon-caret-bottom' : 'lx-icon-caret-right'"></i>
     </span>
     <span class="check">
       <!-- <button @click="plusOne()">+</button> -->
@@ -44,7 +44,7 @@
 </script>
 
 <style lang="scss">
-  .lv-tree-icon-expand{
+  .lx-tree-icon-expand{
     cursor: pointer;
   }
 </style>

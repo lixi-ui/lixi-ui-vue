@@ -1,5 +1,5 @@
 <template>
-  <div class='lv-tree'>
+  <div class='lx-tree'>
     <div v-for="(item,index) in treeData.list" :key="index">
       <tree-item :node="item"/>
     </div>
@@ -15,7 +15,7 @@ import { TreeStore } from "./modal/store.js"
 import treeItem from './tree-item.vue';
 
 export default {
-  name: 'LvTree',
+  name: 'LxTree',
   components: {
     treeItem
   },

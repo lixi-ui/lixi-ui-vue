@@ -4,7 +4,7 @@
 
 ```html
 <div class="block">
-  <lv-tree :data="data"></lv-tree>
+  <lx-tree :data="data"></lx-tree>
 </div>
 <script>
   export default {

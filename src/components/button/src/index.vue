@@ -1,9 +1,9 @@
 <template>
   <button
     :class="[
-      'lv-button',
-      type ? 'lv-button--' + type : '',
-      buttonSize ? 'lv-button--' + buttonSize : '',
+      'lx-button',
+      type ? 'lx-button--' + type : '',
+      buttonSize ? 'lx-button--' + buttonSize : '',
       {
         'is-disabled': buttonDisabled,
         'is-loading': loading,
@@ -17,7 +17,7 @@
     :type="nativeType"
     @click="handleClick"
   >
-    <i v-if="loading" class="lv-icon-loading"></i>
+    <i v-if="loading" class="lx-icon-loading"></i>
     <i v-if="icon && !loading" :class="icon"></i>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
@@ -36,7 +36,7 @@ var elFormKey = 'elForm'
 var elFormItemKey = 'elFormItem'
 
 export default defineComponent ({
-  name: 'LvButton',
+  name: 'LxButton',
   props: {
     type: {
       type: String as PropType<ButtonType>,

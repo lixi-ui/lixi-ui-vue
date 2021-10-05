@@ -10,4 +10,4 @@ Icon.install = (app: App): void => {
 const _Icon = Icon
 
 export default _Icon
-export const LvIcon = _Icon
+export const LxIcon = _Icon

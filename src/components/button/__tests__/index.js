@@ -9,14 +9,14 @@ describe('Button.vue', () => {
     const wrapper = mount(Button, {
       props: { type: 'primary' },
     })
-    expect(wrapper.classes()).toContain('lv-button--primary');
+    expect(wrapper.classes()).toContain('lx-button--primary');
   });
 
   it('icon', () => {
     const wrapper = mount(Button, {
-      props: { icon: 'lv-icon-search' },
+      props: { icon: 'lx-icon-search' },
     })
-    expect(wrapper.find('.lv-icon-search').exists()).toBeTruthy()
+    expect(wrapper.find('.lx-icon-search').exists()).toBeTruthy()
   });
 
   it('nativeType', () => {
@@ -31,14 +31,14 @@ describe('Button.vue', () => {
       props: { loading: true },
     })
     expect(wrapper.classes()).toContain('is-loading')
-    expect(wrapper.find('.lv-icon-loading').exists()).toBeTruthy()
+    expect(wrapper.find('.lx-icon-loading').exists()).toBeTruthy()
   });
 
   it('size', () => {
     const wrapper = mount(Button, {
       props: { size: 'medium' },
     })
-    expect(wrapper.classes()).toContain('lv-button--medium')
+    expect(wrapper.classes()).toContain('lx-button--medium')
   });
 
   it('plain', () => {

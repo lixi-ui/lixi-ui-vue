@@ -36,7 +36,7 @@
 </script>
 
 <style>
- .lv-button{
+ .lx-button{
    margin-right: 5px;
  }
  .block{

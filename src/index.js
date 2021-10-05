@@ -1,5 +1,5 @@
-import Button from './components/button/package/index';
-import Tree from './components/tree/package/index';
+import Button from './components/button/src/index';
+import Tree from './components/tree/src/index';
 
 import './style/src/index.scss'
 

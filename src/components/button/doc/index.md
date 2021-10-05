@@ -10,39 +10,39 @@
 ```html
   <div class="demo-image__error">
     <div class="block">
-      <lv-button>默认按钮</lv-button>
-      <lv-button type="primary">主要按钮</lv-button>
-      <lv-button type="success">成功按钮</lv-button>
-      <lv-button type="info">信息按钮</lv-button>
-      <lv-button type="warning">警告按钮</lv-button>
-      <lv-button type="danger">危险按钮</lv-button>
+      <lx-button>默认按钮</lx-button>
+      <lx-button type="primary">主要按钮</lx-button>
+      <lx-button type="success">成功按钮</lx-button>
+      <lx-button type="info">信息按钮</lx-button>
+      <lx-button type="warning">警告按钮</lx-button>
+      <lx-button type="danger">危险按钮</lx-button>
     </div>
 
     <div class="block">
-      <lv-button plain>朴素按钮</lv-button>
-      <lv-button type="primary" plain>主要按钮</lv-button>
-      <lv-button type="success" plain>成功按钮</lv-button>
-      <lv-button type="info" plain>信息按钮</lv-button>
-      <lv-button type="warning" plain>警告按钮</lv-button>
-      <lv-button type="danger" plain>危险按钮</lv-button>
+      <lx-button plain>朴素按钮</lx-button>
+      <lx-button type="primary" plain>主要按钮</lx-button>
+      <lx-button type="success" plain>成功按钮</lx-button>
+      <lx-button type="info" plain>信息按钮</lx-button>
+      <lx-button type="warning" plain>警告按钮</lx-button>
+      <lx-button type="danger" plain>危险按钮</lx-button>
     </div>
 
     <div class="block">
-      <lv-button round>角按钮</lv-button>
-      <lv-button type="primary" round>主要按钮</lv-button>
-      <lv-button type="success" round>成功按钮</lv-button>
-      <lv-button type="info" round>信息按钮</lv-button>
-      <lv-button type="warning" round>警告按钮</lv-button>
-      <lv-button type="danger" round>危险按钮</lv-button>
+      <lx-button round>角按钮</lx-button>
+      <lx-button type="primary" round>主要按钮</lx-button>
+      <lx-button type="success" round>成功按钮</lx-button>
+      <lx-button type="info" round>信息按钮</lx-button>
+      <lx-button type="warning" round>警告按钮</lx-button>
+      <lx-button type="danger" round>危险按钮</lx-button>
     </div>
 
     <div class="block">
-      <lv-button icon="lv-icon-search" circle></lv-button>
-      <lv-button type="primary" icon="lv-icon-edit" circle></lv-button>
-      <lv-button type="success" icon="lv-icon-check" circle></lv-button>
-      <lv-button type="info" icon="lv-icon-message" circle></lv-button>
-      <lv-button type="warning" icon="lv-icon-star-off" circle></lv-button>
-      <lv-button type="danger" icon="lv-icon-delete" circle></lv-button>
+      <lx-button icon="lx-icon-search" circle></lx-button>
+      <lx-button type="primary" icon="lx-icon-edit" circle></lx-button>
+      <lx-button type="success" icon="lx-icon-check" circle></lx-button>
+      <lx-button type="info" icon="lx-icon-message" circle></lx-button>
+      <lx-button type="warning" icon="lx-icon-star-off" circle></lx-button>
+      <lx-button type="danger" icon="lx-icon-delete" circle></lx-button>
     </div>
   </div>
   <script>
@@ -66,21 +66,21 @@
 
 ```html
 <div class="block">
-  <lv-button disabled>默认按钮</lv-button>
-  <lv-button type="primary" disabled>主要按钮</lv-button>
-  <lv-button type="success" disabled>成功按钮</lv-button>
-  <lv-button type="info" disabled>信息按钮</lv-button>
-  <lv-button type="warning" disabled>警告按钮</lv-button>
-  <lv-button type="danger" disabled>危险按钮</lv-button>
+  <lx-button disabled>默认按钮</lx-button>
+  <lx-button type="primary" disabled>主要按钮</lx-button>
+  <lx-button type="success" disabled>成功按钮</lx-button>
+  <lx-button type="info" disabled>信息按钮</lx-button>
+  <lx-button type="warning" disabled>警告按钮</lx-button>
+  <lx-button type="danger" disabled>危险按钮</lx-button>
 </div>
 
 <div class="block">
-  <lv-button plain disabled>朴素按钮</lv-button>
-  <lv-button type="primary" plain disabled>主要按钮</lv-button>
-  <lv-button type="success" plain disabled>成功按钮</lv-button>
-  <lv-button type="info" plain disabled>信息按钮</lv-button>
-  <lv-button type="warning" plain disabled>警告按钮</lv-button>
-  <lv-button type="danger" plain disabled>危险按钮</lv-button>
+  <lx-button plain disabled>朴素按钮</lx-button>
+  <lx-button type="primary" plain disabled>主要按钮</lx-button>
+  <lx-button type="success" plain disabled>成功按钮</lx-button>
+  <lx-button type="info" plain disabled>信息按钮</lx-button>
+  <lx-button type="warning" plain disabled>警告按钮</lx-button>
+  <lx-button type="danger" plain disabled>危险按钮</lx-button>
 </div>
 ```
 
@@ -93,8 +93,8 @@
 :::demo
 
 ```html
-<lv-button type="text">文字按钮</lv-button>
-<lv-button type="text" disabled>文字按钮</lv-button>
+<lx-button type="text">文字按钮</lx-button>
+<lx-button type="text" disabled>文字按钮</lx-button>
 ```
 
 :::
@@ -106,13 +106,13 @@
 :::demo 设置`icon`属性即可，icon 的列表可以参考 Element Plus 的 icon 组件，也可以设置在文字右边的 icon ，只要使用`i`标签即可，可以使用自定义图标。
 
 ```html
-<lv-button type="primary" icon="lv-icon-edit"></lv-button>
-<lv-button type="primary" icon="lv-icon-share"></lv-button>
-<lv-button type="primary" icon="lv-icon-delete"></lv-button>
-<lv-button type="primary" icon="lv-icon-search">搜索</lv-button>
-<lv-button type="primary"
-  >上传<i class="lv-icon-upload lv-icon--right"></i
-></lv-button>
+<lx-button type="primary" icon="lx-icon-edit"></lx-button>
+<lx-button type="primary" icon="lx-icon-share"></lx-button>
+<lx-button type="primary" icon="lx-icon-delete"></lx-button>
+<lx-button type="primary" icon="lx-icon-search">搜索</lx-button>
+<lx-button type="primary"
+  >上传<i class="lx-icon-upload lx-icon--right"></i
+></lx-button>
 ```
 
 :::
@@ -124,7 +124,7 @@
 :::demo 要设置为 loading 状态，只要设置`loading`属性为`true`即可。
 
 ```html
-<lv-button type="primary" :loading="true">加载中</lv-button>
+<lx-button type="primary" :loading="true">加载中</lx-button>
 ```
 
 :::
@@ -137,22 +137,22 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 
 ```html
 <div class="block">
-  <lv-button>默认按钮</lv-button>
-  <lv-button size="medium">中等按钮</lv-button>
-  <lv-button size="small">小型按钮</lv-button>
-  <lv-button size="mini">超小按钮</lv-button>
+  <lx-button>默认按钮</lx-button>
+  <lx-button size="medium">中等按钮</lx-button>
+  <lx-button size="small">小型按钮</lx-button>
+  <lx-button size="mini">超小按钮</lx-button>
 </div>
 <div class="block">
-  <lv-button round>默认按钮</lv-button>
-  <lv-button size="medium" round>中等按钮</lv-button>
-  <lv-button size="small" round>小型按钮</lv-button>
-  <lv-button size="mini" round>超小按钮</lv-button>
+  <lx-button round>默认按钮</lx-button>
+  <lx-button size="medium" round>中等按钮</lx-button>
+  <lx-button size="small" round>小型按钮</lx-button>
+  <lx-button size="mini" round>超小按钮</lx-button>
 </div>
 <div class="block">
-  <lv-button icon="lv-icon-search" circle></lv-button>
-  <lv-button icon="lv-icon-search" size="medium" circle></lv-button>
-  <lv-button icon="lv-icon-search" size="small" circle></lv-button>
-  <lv-button icon="lv-icon-search" size="mini" circle></lv-button>
+  <lx-button icon="lx-icon-search" circle></lx-button>
+  <lx-button icon="lx-icon-search" size="medium" circle></lx-button>
+  <lx-button icon="lx-icon-search" size="small" circle></lx-button>
+  <lx-button icon="lx-icon-search" size="mini" circle></lx-button>
 </div>
 ```
 
