@@ -478,6 +478,19 @@ $--button-padding-horizontal: map.merge(
   $--button-padding-horizontal
 );
 
+/* Tree
+-------------------------- */
+// css3 var in packages/theme-chalk/src/tree.scss
+$--tree: () !default;
+$--tree: map.merge(
+  (
+    'node-hover-background-color': var(--lx-background-color-base),
+    'font-color': var(--lx-text-color-regular),
+    'expand-icon-color': var(--lx-text-color-placeholder),
+  ),
+  $--tree
+);
+
 /* Checkbox
 -------------------------- */
 // css3 var in packages/theme-chalk/src/checkbox.scss

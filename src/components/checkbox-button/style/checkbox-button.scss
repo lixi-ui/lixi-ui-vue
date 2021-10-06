@@ -1,10 +1,9 @@
 @use "sass:map";
 
-@import 'common/var';
-@import 'mixins/mixins';
-@import 'mixins/utils';
-@import 'mixins/var';
-@import 'mixins/button';
+@import '@lixi/style/src/common/var';
+@import '@lixi/style/src/mixins/mixins';
+@import '@lixi/style/src/mixins/utils';
+@import '@lixi/style/src/mixins/var';
 
 @include b(checkbox-button) {
   @include set-component-css-var('checkbox-button', $--checkbox-button);
