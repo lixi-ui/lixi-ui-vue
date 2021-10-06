@@ -8,7 +8,7 @@ Voici la structure basique.
 
 :::demo
 ```html
-<el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+<lx-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></lx-tree>
 
 <script>
   export default {
@@ -71,13 +71,13 @@ Vous pouvez activer la sélection des noeuds.
 
 :::demo cet exemple montre également comment charger des données de manière asynchrone.
 ```html
-<el-tree
+<lx-tree
   :props="props"
   :load="loadNode"
   lazy
   show-checkbox
   @check-change="handleCheckChange">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -137,12 +137,12 @@ Vous pouvez activer la sélection des noeuds.
 
 :::demo Les données d'un noeud ne sont pas accessibles tant que la noeud n'est pas cliqué, l'arbre ne peut donc pas prédire si un noeud sera une feuille. C'est pourquoi un bouton de menu est ajouté à chaque noeud, et si c'est une feuille il disparaîtra après le clic. Vous pouvez également dire par avance à l'arbre si un noeud est une feuille, pour éviter l'apparition du bouton de menu.
 ```html
-<el-tree
+<lx-tree
   :props="props"
   :load="loadNode"
   lazy
   show-checkbox>
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -185,11 +185,11 @@ Les checkbox des noeuds peuvent être désactivées individuellement.
 
 :::demo Dans cet exemple, la propriété `disabled` est ajoutée à `defaultProps`, et certains noeuds ont `disabled:true`. Les checkbox correspondantes sont donc désactivées.
 ```html
-<el-tree
+<lx-tree
   :data="data"
   :props="defaultProps"
   show-checkbox>
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -241,14 +241,14 @@ Certains noeuds peuvent être ouverts et/ou sélectionnés par défaut.
 
 :::demo Utilisez `default-expanded-keys` et `default-checked-keys` pour réglez respectivement les noeuds ouverts et les noeuds sélectionnés par défaut. Notez que `node-key` est requis dans ce cas. Sa valeurs est le nom d'une clé dans l'objets data, et sa valeur devrait être unique dans tout l'arbre.
 ```html
-<el-tree
+<lx-tree
   :data="data"
   show-checkbox
   node-key="id"
   :default-expanded-keys="[2, 3]"
   :default-checked-keys="[5]"
   :props="defaultProps">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -304,7 +304,7 @@ Certains noeuds peuvent être ouverts et/ou sélectionnés par défaut.
 
 :::demo Cet exemple montre comment récupérer et sélectionner des noeuds. Vous pouvez utiliser deux approches: les noeuds ou les clés. Dans le cas des clés, `node-key` est requis.
 ```html
-<el-tree
+<lx-tree
   :data="data"
   show-checkbox
   default-expand-all
@@ -312,14 +312,14 @@ Certains noeuds peuvent être ouverts et/ou sélectionnés par défaut.
   ref="tree"
   highlight-current
   :props="defaultProps">
-</el-tree>
+</lx-tree>
 
 <div class="buttons">
-  <el-button @click="getCheckedNodes">Récupération par noeud</el-button>
-  <el-button @click="getCheckedKeys">Récupération par clé</el-button>
-  <el-button @click="setCheckedNodes">Sélection par noeud</el-button>
-  <el-button @click="setCheckedKeys">Sélection par clé</el-button>
-  <el-button @click="resetChecked">Reset</el-button>
+  <lx-button @click="getCheckedNodes">Récupération par noeud</lx-button>
+  <lx-button @click="getCheckedKeys">Récupération par clé</lx-button>
+  <lx-button @click="setCheckedNodes">Sélection par noeud</lx-button>
+  <lx-button @click="setCheckedKeys">Sélection par clé</lx-button>
+  <lx-button @click="resetChecked">Reset</lx-button>
 </div>
 
 <script>
@@ -405,18 +405,18 @@ Le contenu des noeuds peut être personnalisé, afin de pouvoir ajouter des icô
 <div class="custom-tree-container">
   <div class="block">
     <p>Avec render-content</p>
-    <el-tree
+    <lx-tree
       :data="data"
       show-checkbox
       node-key="id"
       default-expand-all
       :expand-on-click-node="false"
       :render-content="renderContent">
-    </el-tree>
+    </lx-tree>
   </div>
   <div class="block">
     <p>Avec un slot</p>
-    <el-tree
+    <lx-tree
       :data="data"
       show-checkbox
       node-key="id"
@@ -437,7 +437,7 @@ Le contenu des noeuds peut être personnalisé, afin de pouvoir ajouter des icô
           </span>
         </span>
       </template>
-    </el-tree>
+    </lx-tree>
   </div>
 </div>
 
@@ -536,19 +536,19 @@ Les noeuds peuvent être filtrés par mot-clé.
 
 :::demo Utilisez la méthode `filter` de l'instance de Tree pour pouvoir filtrer les noeuds, son paramètre étant le mot-clé. Notez que pour que cela fonctionne, `filter-node-method` est requis, sa valeur étant la méthode de filtrage.
 ```html
-<el-input
+<lx-input
   placeholder="Filter keyword"
   v-model="filterText">
-</el-input>
+</lx-input>
 
-<el-tree
+<lx-tree
   class="filter-tree"
   :data="data"
   :props="defaultProps"
   default-expand-all
   :filter-node-method="filterNode"
   ref="tree">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -620,12 +620,12 @@ Vous pouvez utiliser un mode accordéon afin que seul un noeud par niveau soit o
 
 :::demo
 ```html
-<el-tree
+<lx-tree
   :data="data"
   :props="defaultProps"
   accordion
   @node-click="handleNodeClick">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -688,7 +688,7 @@ Vous pouvez déplacer les noeuds par drag'n drop en ajoutant l'attribut `draggab
 
 :::demo
 ```html
-<el-tree
+<lx-tree
   :data="data"
   node-key="id"
   default-expand-all
@@ -701,7 +701,7 @@ Vous pouvez déplacer les noeuds par drag'n drop en ajoutant l'attribut `draggab
   draggable
   :allow-drop="allowDrop"
   :allow-drag="allowDrag">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {

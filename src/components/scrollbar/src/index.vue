@@ -46,7 +46,7 @@ import Bar from './bar.vue'
 import type { CSSProperties, PropType } from 'vue'
 
 export default defineComponent({
-  name: 'ElScrollbar',
+  name: 'LxScrollbar',
   components: { Bar },
   props: {
     height: {
@@ -103,7 +103,7 @@ export default defineComponent({
     const ratioY = ref(1)
     const ratioX = ref(1)
 
-    const SCOPE = 'ElScrollbar'
+    const SCOPE = 'LxScrollbar'
     const GAP = 4 // top 2 + bottom 2 of bar instance
 
     provide('scrollbar', scrollbar)

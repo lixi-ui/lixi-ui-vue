@@ -20,7 +20,7 @@ import type {
   RefElement,
 } from './defaults'
 
-export type ElementType = ComponentPublicInstance | HTMLElement
+export type LxementType = ComponentPublicInstance | HTMLElement
 export type EmitType = 'update:visible' | 'after-enter' | 'after-leave' | 'before-enter' | 'before-leave'
 
 export interface PopperEvents {

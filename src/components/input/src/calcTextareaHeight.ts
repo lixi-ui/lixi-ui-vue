@@ -40,7 +40,7 @@ type TextAreaHeight = {
   minHeight?: string
 }
 
-function calculateNodeStyling(targetElement: Element): NodeStyle {
+function calculateNodeStyling(targetElement: Lxement): NodeStyle {
   const style = window.getComputedStyle(targetElement)
 
   const boxSizing = style.getPropertyValue('box-sizing')

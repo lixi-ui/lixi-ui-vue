@@ -33,7 +33,7 @@
 
   @include e(wrap) {
     // Raise the priority
-    &.el-scrollbar__wrap {
+    &.lx-scrollbar__wrap {
       height: 204px;
     }
   }

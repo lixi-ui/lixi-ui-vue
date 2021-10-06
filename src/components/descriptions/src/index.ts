@@ -7,7 +7,7 @@ import type { SFCWithInstall } from '@element-plus/utils/types'
 
 Descriptions.install = (app: App): void => {
   app.component(Descriptions.name, Descriptions)
-  app.component(ElDescriptionsItem.name, ElDescriptionsItem)
+  app.component(ElDescriptionsItem.name, LxDescriptionsItem)
 }
 
 Descriptions.DescriptionsItem = DescriptionsItem
@@ -17,5 +17,5 @@ const _Descriptions = Descriptions as any as SFCWithInstall<typeof Descriptions>
 }
 
 export default _Descriptions
-export const ElDescriptions = _Descriptions
-export const ElDescriptionsItem = DescriptionsItem
+export const LxDescriptions = _Descriptions
+export const LxDescriptionsItem = DescriptionsItem

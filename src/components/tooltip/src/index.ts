@@ -10,4 +10,4 @@ Tooltip.install = (app: App): void => {
 const _Tooltip = Tooltip as SFCWithInstall<typeof Tooltip>
 
 export default _Tooltip
-export const ElTooltip = _Tooltip
+export const LxTooltip = _Tooltip

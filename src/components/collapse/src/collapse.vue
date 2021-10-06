@@ -21,7 +21,7 @@ export interface CollapseProvider {
   collapseMitt: Emitter
 }
 export default defineComponent({
-  name: 'ElCollapse',
+  name: 'LxCollapse',
   props: {
     accordion: Boolean,
     modelValue: {

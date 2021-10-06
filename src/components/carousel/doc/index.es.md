@@ -4,30 +4,30 @@ Presenta una serie de imágenes o textos en un espacio limitado
 
 ### Uso básico
 
-:::demo Combine `el-carousel`  con `el-carousel-item`, para conseguir el carrusel. El contenido de cada diapositiva es completamente personalizable, y sólo tiene que colocarla dentro de la etiqueta  `el-carousel-item` . Por defecto, el carrusel cambia cuando el ratón pasa por encima de un indicador. Fije  `trigger`  para  `click`, si lo que se desea es que el carrusel cambie sólo cuando se haga clic en un indicador.
+:::demo Combine `el-carousel`  con `el-carousel-item`, para conseguir el carrusel. Lx contenido de cada diapositiva es completamente personalizable, y sólo tiene que colocarla dentro de la etiqueta  `el-carousel-item` . Por defecto, el carrusel cambia cuando el ratón pasa por encima de un indicador. Fije  `trigger`  para  `click`, si lo que se desea es que el carrusel cambie sólo cuando se haga clic en un indicador.
 
 ```html
 <template>
   <div class="block">
     <span class="demonstration">Switch when indicator is hovered (default)</span>
-    <el-carousel height="150px">
-      <el-carousel-item v-for="item in 4" :key="item">
+    <lx-carousel height="150px">
+      <lx-carousel-item v-for="item in 4" :key="item">
         <h3 class="small">{{ item }}</h3>
-      </el-carousel-item>
-    </el-carousel>
+      </lx-carousel-item>
+    </lx-carousel>
   </div>
   <div class="block">
     <span class="demonstration">Switch when indicator is clicked</span>
-    <el-carousel trigger="click" height="150px">
-      <el-carousel-item v-for="item in 4" :key="item">
+    <lx-carousel trigger="click" height="150px">
+      <lx-carousel-item v-for="item in 4" :key="item">
         <h3 class="small">{{ item }}</h3>
-      </el-carousel-item>
-    </el-carousel>
+      </lx-carousel-item>
+    </lx-carousel>
   </div>
 </template>
 
 <style>
-  .el-carousel__item h3 {
+  .lx-carousel__item h3 {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
@@ -35,11 +35,11 @@ Presenta una serie de imágenes o textos en un espacio limitado
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .lx-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
+  .lx-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
@@ -50,19 +50,19 @@ Presenta una serie de imágenes o textos en un espacio limitado
 
 Los indicadores de paginación pueden mostrarse fuera del carrusel
 
-:::demo El atributo  `indicator-position`  determina dónde se encuentran los indicadores de paginación. Por defecto están dentro del carrusel, y el ajuste de `indicator-position`  a `outside`  los mueve hacia fuera; en cambio `indicator-position`  a `none`  los oculta.
+:::demo Lx atributo  `indicator-position`  determina dónde se encuentran los indicadores de paginación. Por defecto están dentro del carrusel, y el ajuste de `indicator-position`  a `outside`  los mueve hacia fuera; en cambio `indicator-position`  a `none`  los oculta.
 
 ```html
 <template>
-  <el-carousel indicator-position="outside">
-    <el-carousel-item v-for="item in 4" :key="item">
+  <lx-carousel indicator-position="outside">
+    <lx-carousel-item v-for="item in 4" :key="item">
       <h3>{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
+    </lx-carousel-item>
+  </lx-carousel>
 </template>
 
 <style>
-  .el-carousel__item h3 {
+  .lx-carousel__item h3 {
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
@@ -70,11 +70,11 @@ Los indicadores de paginación pueden mostrarse fuera del carrusel
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .lx-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
+  .lx-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
@@ -85,19 +85,19 @@ Los indicadores de paginación pueden mostrarse fuera del carrusel
 
 Puede definir cuando se visualizan las flechas
 
-:::demo El atributo `arrow` determina cuándo se visualizan las flechas. Por defecto aparecen cuando el ratón se desplaza sobre el carrusel. Ajuste `arrow` a `always` o `never` para mostrar u ocultar las flechas permanentemente.
+:::demo Lx atributo `arrow` determina cuándo se visualizan las flechas. Por defecto aparecen cuando el ratón se desplaza sobre el carrusel. Ajuste `arrow` a `always` o `never` para mostrar u ocultar las flechas permanentemente.
 
 ```html
 <template>
-  <el-carousel :interval="5000" arrow="always">
-    <el-carousel-item v-for="item in 4" :key="item">
+  <lx-carousel :interval="5000" arrow="always">
+    <lx-carousel-item v-for="item in 4" :key="item">
       <h3>{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
+    </lx-carousel-item>
+  </lx-carousel>
 </template>
 
 <style>
-  .el-carousel__item h3 {
+  .lx-carousel__item h3 {
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
@@ -105,11 +105,11 @@ Puede definir cuando se visualizan las flechas
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .lx-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
+  .lx-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
@@ -124,15 +124,15 @@ Cuando una página es suficientemente ancha pero tiene una altura limitada, pued
 
 ```html
 <template>
-  <el-carousel :interval="4000" type="card" height="200px">
-    <el-carousel-item v-for="item in 6" :key="item">
+  <lx-carousel :interval="4000" type="card" height="200px">
+    <lx-carousel-item v-for="item in 6" :key="item">
       <h3 class="medium">{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
+    </lx-carousel-item>
+  </lx-carousel>
 </template>
 
 <style>
-  .el-carousel__item h3 {
+  .lx-carousel__item h3 {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
@@ -140,31 +140,31 @@ Cuando una página es suficientemente ancha pero tiene una altura limitada, pued
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .lx-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
+  .lx-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
 ```
 :::
 
-Por defecto, `direction` es `horizontal`. El carousel puede ser mostrado de forma vertical cambiando `direction` a `vertical`.
+Por defecto, `direction` es `horizontal`. Lx carousel puede ser mostrado de forma vertical cambiando `direction` a `vertical`.
 
 :::demo
 ```html
 <template>
-  <el-carousel height="200px" direction="vertical" :autoplay="false">
-    <el-carousel-item v-for="item in 4" :key="item">
+  <lx-carousel height="200px" direction="vertical" :autoplay="false">
+    <lx-carousel-item v-for="item in 4" :key="item">
       <h3 class="medium">{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
+    </lx-carousel-item>
+  </lx-carousel>
 </template>
 
 <style>
-  .el-carousel__item h3 {
+  .lx-carousel__item h3 {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
@@ -172,11 +172,11 @@ Por defecto, `direction` es `horizontal`. El carousel puede ser mostrado de form
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .lx-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
+  .lx-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>

@@ -4,10 +4,10 @@
 :::demo データは `data` 属性を用いて転送に渡されます。データはオブジェクトの配列である必要があり、各オブジェクトは以下の属性を持つ必要があります。`key` はデータ項目の識別情報、`label` は表示されるテキスト、`disabled` はデータ項目が無効かどうかを示す。ターゲットリスト内の項目は `v-model` にバインドされた変数と同期しており、その変数の値はターゲット項目のキーの配列となる。したがって、ターゲットリストを初期状態で空にしたくない場合は、`v-model`を配列で初期化することができる。
 ```html
 <template>
-  <el-transfer
+  <lx-transfer
     v-model="value"
     :data="data">
-  </el-transfer>
+  </lx-transfer>
 </template>
 
 <script>
@@ -41,13 +41,13 @@
 :::demo フィルタモードを有効にするには、`filterable` 属性を `true` に設定する。デフォルトでは、`label` に検索キーワードが含まれている場合は検索結果に含まれる。また、`filter-method` 属性を用いて独自のフィルタメソッドを実装することもできる。これはメソッドを受け取り、キーワードが変更されるたびに検索キーワードと各データ項目をそれに渡す。あるデータ項目については、そのメソッドが真を返した場合、そのデータが検索結果リストに含まれる。
 ```html
 <template>
-  <el-transfer
+  <lx-transfer
     filterable
     :filter-method="filterMethod"
     filter-placeholder="State Abbreviations"
     v-model="value"
     :data="data">
-  </el-transfer>
+  </lx-transfer>
 </template>
 
 <script>
@@ -88,7 +88,7 @@
 <template>
   <p style="text-align: center; margin: 0 0 20px">Customize data items using render-content</p>
   <div style="text-align: center">
-    <el-transfer
+    <lx-transfer
       style="text-align: left; display: inline-block"
       v-model="leftValue"
       filterable
@@ -105,15 +105,15 @@
       :data="data"
     >
       <template #left-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <lx-button class="transfer-footer" size="small">Operation</lx-button>
       </template>
       <template #right-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <lx-button class="transfer-footer" size="small">Operation</lx-button>
       </template>
-    </el-transfer>
+    </lx-transfer>
     <p style="text-align: center; margin: 50px 0 20px">Customize data items using scoped slot</p>
     <div style="text-align: center">
-      <el-transfer
+      <lx-transfer
         style="text-align: left; display: inline-block"
         v-model="rightValue"
         filterable
@@ -132,12 +132,12 @@
           <span>{{ option.key }} - {{ option.label }}</span>
         </template>
         <template #left-footer>
-          <el-button class="transfer-footer" size="small">Operation</el-button>
+          <lx-button class="transfer-footer" size="small">Operation</lx-button>
         </template>
         <template #right-footer>
-          <el-button class="transfer-footer" size="small">Operation</el-button>
+          <lx-button class="transfer-footer" size="small">Operation</lx-button>
         </template>
-      </el-transfer>
+      </lx-transfer>
     </div>
   </div>
 </template>
@@ -189,14 +189,14 @@
 :::demo この例のデータ項目には `key` や `label` がなく、代わりに `value` と `desc` があります。そのため、`key`と`label`にエイリアスを設定する必要があります。
 ```html
 <template>
-  <el-transfer
+  <lx-transfer
     v-model="value"
     :props="{
       key: 'value',
       label: 'desc'
     }"
     :data="data">
-  </el-transfer>
+  </lx-transfer>
 </template>
 
 <script>

@@ -10,18 +10,18 @@ Il y a deux manières d'étendres les options enfants.
 ```html
 <div class="block">
   <span class="demonstration">Les options enfants se développent lorsque vous cliquez dessus (par défaut)</span>
-  <el-cascader
+  <lx-cascader
     v-model="value"
     :options="options"
-    @change="handleChange"></el-cascader>
+    @change="handleChange"></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">Les options enfants se développent lorsqu'elles sont survolées</span>
-  <el-cascader
+  <lx-cascader
     v-model="value"
     :options="options"
     :props="{ expandTrigger: 'hover' }"
-    @change="handleChange"></el-cascader>
+    @change="handleChange"></lx-cascader>
 </div>
 
 <script>
@@ -533,7 +533,7 @@ Désactivez une option en définissant un champ `disabled` dans l'objet d'option
 
 :::demo Dans cet exemple, le premier élément du tableau `options` a un champ` disabled: true`, il est donc désactivé. Par défaut, Cascader vérifie le champ `disabled` dans chaque objet option. Si vous utilisez un autre nom de champ pour indiquer si une option est désactivée, vous pouvez l'affecter dans l'attribut `props.disabled` (voir le tableau des API ci-dessous pour plus de détails). Et bien sûr, les noms de champs `value`,` label` et `children` peuvent également être personnalisés de la même manière.
 ```html
-<el-cascader :options="options"></el-cascader>
+<lx-cascader :options="options"></lx-cascader>
 
 <script>
   export default {
@@ -1034,7 +1034,7 @@ Définissez l'attribut `clearable` pour` el-cascader` et une icône claire appar
 
 :::demo
 ```html
-<el-cascader :options="options" clearable></el-cascader>
+<lx-cascader :options="options" clearable></lx-cascader>
 
 <script>
   export default {
@@ -1533,7 +1533,7 @@ L'entrée peut afficher uniquement le dernier niveau au lieu de tous les niveaux
 
 :::demo L'attribut `show-all-levels` définit si tous les niveaux sont affichés. S'il est `false`, seul le dernier niveau est affiché.
 ```html
-<el-cascader :options="options" :show-all-levels="false"></el-cascader>
+<lx-cascader :options="options" :show-all-levels="false"></lx-cascader>
 <script>
   export default {
     data() {
@@ -2033,18 +2033,18 @@ Définissez `props.multiple = true` pour utiliser la sélection multiple.
 ```html
 <div class="block">
   <span class="demonstration">Afficher toutes les balises (par défaut)</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="props"
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">Réduire les balises</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="props"
     collapse-tags
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 
 <script>
@@ -2238,17 +2238,17 @@ Dans la sélection simple, seuls les noeuds terminaux peuvent être coché, et d
 ```html
 <div class="block">
   <span class="demonstration">Sélectionnez n'importe quel niveau d'options (Sélection unique)</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="{ checkStrictly: true }"
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">Sélectionnez n'importe quel niveau d'options (sélection multiple)</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="{ multiple: true, checkStrictly: true }"
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 
 <script>
@@ -2748,7 +2748,7 @@ Charge dynamiquement ses noeuds enfants lorsque un noeud est sélectionné.
 
 :::demo Définissez `lazy = true` pour utiliser le chargement dynamique. Vous devez Spécifier comment charger la source de données avec` lazyload`. Il existe deux paramètres de `lazyload`, le premier paramètre` node` est le noeud sur lequel l'utilisateur a cliqué, et `resolution` est un callback indiquant que le chargement est terminé et qu'il doit être appelé. Pour afficher le statut du noeud plus précisément, vous pouvez ajouter un champ `leaf` (modifiable par` props.leaf`) pour indiquer s'il s'agit d'un noeud feuille. Sinon, il sera déduit par ses noeuds enfants.
 ```html
-<el-cascader :props="props"></el-cascader>
+<lx-cascader :props="props"></lx-cascader>
 
 <script>
   let id = 0;
@@ -2787,18 +2787,18 @@ Rechercher et sélectionner des options avec un mot clé.
 ```html
 <div class="block">
   <span class="demonstration">Filtrable (Sélection unique)</span>
-  <el-cascader
+  <lx-cascader
     placeholder="Try searchingL Guide"
     :options="options"
-    filterable></el-cascader>
+    filterable></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">Filtrable (Sélection multiple)</span>
-  <el-cascader
+  <lx-cascader
     placeholder="Try searchingL Guide"
     :options="options"
     :props="{ multiple: true }"
-    filterable></el-cascader>
+    filterable></lx-cascader>
 </div>
 
 <script>
@@ -3298,12 +3298,12 @@ Vous pouvez personnaliser le contenu du noeud cascader.
 
 :::demo Vous pouvez personnaliser le contenu du noeud cascader avec `scoped slot`. Vous aurez accès à `node` et` data` dans la portée, correspondant respectivement à l'objet Node et aux données de noeud du noeud actuel.
 ```html
-<el-cascader :options="options">
+<lx-cascader :options="options">
   <template #default="{ node, data }">
     <span>{{ data.label }}</span>
     <span v-if="!node.isLeaf"> ({{ data.children.length }}) </span>
   </template>
-</el-cascader>
+</lx-cascader>
 
 <script>
   export default {
@@ -3802,7 +3802,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 :::demo Tout comme `el-cascader`, vous pouvez définir des options alternatives par `options`, et activer d'autres fonctionnalités par `props`, voir le formulaire d'API ci-dessous pour plus de détails.
 ```html
-<el-cascader-panel :options="options"></el-cascader-panel>
+<lx-cascader-panel :options="options"></lx-cascader-panel>
 
 <script>
   export default {

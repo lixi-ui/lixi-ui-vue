@@ -8,11 +8,11 @@ ColorPicker is a color selector supporting multiple color formats.
 ```html
 <div class="block">
   <span class="demonstration">With default value</span>
-  <el-color-picker v-model="color1"></el-color-picker>
+  <lx-color-picker v-model="color1"></lx-color-picker>
 </div>
 <div class="block">
   <span class="demonstration">With no default value</span>
-  <el-color-picker v-model="color2"></el-color-picker>
+  <lx-color-picker v-model="color2"></lx-color-picker>
 </div>
 
 <script>
@@ -50,7 +50,7 @@ ColorPicker is a color selector supporting multiple color formats.
 
 :::demo ColorPicker supports alpha channel selecting. To activate alpha selecting, just add the `show-alpha` attribute.
 ```html
-<el-color-picker v-model="color" show-alpha></el-color-picker>
+<lx-color-picker v-model="color" show-alpha></lx-color-picker>
 
 <script>
   export default {
@@ -84,11 +84,11 @@ ColorPicker is a color selector supporting multiple color formats.
 
 :::demo ColorPicker supports predefined color options
 ```html
-<el-color-picker
+<lx-color-picker
   v-model="color"
   show-alpha
   :predefine="predefineColors">
-</el-color-picker>
+</lx-color-picker>
 
 <script>
   export default {
@@ -156,10 +156,10 @@ ColorPicker is a color selector supporting multiple color formats.
 
 :::demo
 ```html
-<el-color-picker v-model="color"></el-color-picker>
-<el-color-picker v-model="color" size="medium"></el-color-picker>
-<el-color-picker v-model="color" size="small"></el-color-picker>
-<el-color-picker v-model="color" size="mini"></el-color-picker>
+<lx-color-picker v-model="color"></lx-color-picker>
+<lx-color-picker v-model="color" size="medium"></lx-color-picker>
+<lx-color-picker v-model="color" size="small"></lx-color-picker>
+<lx-color-picker v-model="color" size="mini"></lx-color-picker>
 
 <script>
   export default {

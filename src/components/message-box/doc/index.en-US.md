@@ -13,7 +13,7 @@ Alert interrupts user operation until the user confirms.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open the Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open the Message Box</lx-button>
 </template>
 
 <script>
@@ -37,13 +37,13 @@ Alert interrupts user operation until the user confirms.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.alert('This is a message', 'Title', {
+        LxMessageBox.alert('This is a message', 'Title', {
           confirmButtonText: 'OK',
           callback: (action) => {
             this.$message({
@@ -73,7 +73,7 @@ Confirm is used to ask users' confirmation.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open the Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open the Message Box</lx-button>
 </template>
 
 <script>
@@ -103,25 +103,25 @@ Confirm is used to ask users' confirmation.
 <setup>
 
 import { defineComponent } from 'vue';
-import { ElMessageBox } from 'element-plus';
-import { ElMessage } from 'element-plus';
+import { LxMessageBox } from 'element-plus';
+import { LxMessage } from 'element-plus';
 
 export default defineComponent({
   setup() {
     
 
     const open = () => {
-      ElMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
+      LxMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
         confirmButtonText: 'OK',
         cancelButtonText: 'Cancel',
         type: 'warning',
       }).then(() => {
-        ElMessage({
+        LxMessage({
           type: 'success',
           message: 'Delete completed',
         });
       }).catch(() => {
-        ElMessage({
+        LxMessage({
           type: 'info',
           message: 'Delete canceled',
         });
@@ -148,7 +148,7 @@ Prompt is used when user input is required.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -179,26 +179,26 @@ Prompt is used when user input is required.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.prompt('Please input your e-mail', 'Tip', {
+        LxMessageBox.prompt('Please input your e-mail', 'Tip', {
           confirmButtonText: 'OK',
           cancelButtonText: 'Cancel',
           inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
           inputErrorMessage: 'Invalid Email',
         })
           .then(({ value }) => {
-            ElMessage({
+            LxMessage({
               type: 'success',
               message: `Your email is:${value}`,
             });
           })
           .catch(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: 'Input canceled',
             });
@@ -224,7 +224,7 @@ Can be customized to show various content.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -270,13 +270,13 @@ Can be customized to show various content.
 <setup>
 
 import { defineComponent, h } from 'vue';
-import { ElMessage } from 'element-plus';
+import { LxMessage } from 'element-plus';
 export default defineComponent({
   setup() {
     
 
     const open = () => {
-      ElMessageBox({
+      LxMessageBox({
         title: 'Message',
         message: h('p', null, [
           h('span', null, 'Message can be '),
@@ -300,7 +300,7 @@ export default defineComponent({
           }
         },
       }).then((action) => {
-        ElMessage({
+        LxMessage({
           type: 'info',
           message: `action: ${action}`,
         });
@@ -330,7 +330,7 @@ The content of MessageBox can be `VNode`, allowing us to pass custom components.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -348,13 +348,13 @@ The content of MessageBox can be `VNode`, allowing us to pass custom components.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.alert('<strong>proxy is <i>HTML</i> string</strong>', 'HTML String', {
+        LxMessageBox.alert('<strong>proxy is <i>HTML</i> string</strong>', 'HTML String', {
           dangerouslyUseHTMLString: true,
         });
       };
@@ -382,7 +382,7 @@ In some cases, clicking the cancel button and close button may have different me
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -416,25 +416,25 @@ In some cases, clicking the cancel button and close button may have different me
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.confirm('You have unsaved changes, save and proceed?', 'Confirm', {
+        LxMessageBox.confirm('You have unsaved changes, save and proceed?', 'Confirm', {
           distinguishCancelAndClose: true,
           confirmButtonText: 'Save',
           cancelButtonText: 'Discard Changes',
         })
           .then(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: 'Changes saved. Proceeding to a new route.',
             });
           })
           .catch((action) => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: action === 'cancel'
                 ? 'Changes discarded. Proceeding to a new route.'
@@ -461,7 +461,7 @@ Content of MessageBox can be centered.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -492,25 +492,25 @@ Content of MessageBox can be centered.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
+        LxMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
           confirmButtonText: 'OK',
           cancelButtonText: 'Cancel',
           type: 'warning',
           center: true,
         }).then(() => {
-          ElMessage({
+          LxMessage({
             type: 'success',
             message: 'Delete completed',
           });
         }).catch(() => {
-          ElMessage({
+          LxMessage({
             type: 'info',
             message: 'Delete canceled',
           });
@@ -530,7 +530,7 @@ Content of MessageBox can be centered.
 
 ### Global method
 
-If Element Plus is fully imported, it will add the following global methods for `app.config.globalProperties`: `$msgbox`, `$alert`, `$confirm` and `$prompt`. So in a Vue instance you can call `MessageBox` like what we did in this page. The parameters are:
+If Lxement Plus is fully imported, it will add the following global methods for `app.config.globalProperties`: `$msgbox`, `$alert`, `$confirm` and `$prompt`. So in a Vue instance you can call `MessageBox` like what we did in this page. The parameters are:
 - `$msgbox(options)`
 - `$alert(message, title, options)` or `$alert(message, options)`
 - `$confirm(message, title, options)` or `$confirm(message, options)`
@@ -541,7 +541,7 @@ If Element Plus is fully imported, it will add the following global methods for 
 If you prefer importing `MessageBox` on demand:
 
 ```javascript
-import { ElMessageBox } from 'element-plus';
+import { LxMessageBox } from 'element-plus';
 ```
 
 The corresponding methods are: `ElMessageBox`, `ElMessageBox.alert`, `ElMessageBox.confirm` and `ElMessageBox.prompt`. The parameters are the same as above.

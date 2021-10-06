@@ -19,7 +19,7 @@ import { elFormEvents, elFormKey } from '@element-plus/tokens'
 import type { PropType } from 'vue'
 import type { ComponentSize } from '@element-plus/utils/types'
 import type { FormRulesMap } from './form.type'
-import type { ElFormItemContext as FormItemCtx, ValidateFieldCallback } from '@element-plus/tokens'
+import type { LxFormItemContext as FormItemCtx, ValidateFieldCallback } from '@element-plus/tokens'
 
 function useFormLabelWidth() {
   const potentialLabelWidthArr = ref([])
@@ -63,7 +63,7 @@ export interface Callback {
 }
 
 export default defineComponent({
-  name: 'ElForm',
+  name: 'LxForm',
   props: {
     model: Object,
     rules: Object as PropType<FormRulesMap>,

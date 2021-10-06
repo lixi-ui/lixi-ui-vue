@@ -49,7 +49,7 @@
 import { inject, defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'ElTimelineItem',
+  name: 'LxTimelineItem',
   props: {
     timestamp: {
       type: String,

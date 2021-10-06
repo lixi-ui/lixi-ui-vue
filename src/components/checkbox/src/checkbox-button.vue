@@ -56,7 +56,7 @@ import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
 import { useCheckbox, useCheckboxGroup, useCheckboxProps } from './useCheckbox'
 
 export default defineComponent({
-  name: 'ElCheckboxButton',
+  name: 'LxCheckboxButton',
   props: useCheckboxProps,
   emits: [UPDATE_MODEL_EVENT, 'change'],
   setup(props) {

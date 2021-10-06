@@ -6,7 +6,7 @@ Permet d'uploader des fichiers en cliquant ou en les déplaçant sur le composan
 
 :::demo Personnalisez le bouton d'envoi avec `slot`. Utilisez `limit` et `on-exceed` pour limiter le nombre maximal de fichiers et déterminer le comportement quand ce nombre est dépassé. De plus, vous pouvez annuler la suppression d'un fichier avec `before-remove`.
 ```html
-<el-upload
+<lx-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-preview="handlePreview"
@@ -16,11 +16,11 @@ Permet d'uploader des fichiers en cliquant ou en les déplaçant sur le composan
   :limit="3"
   :on-exceed="handleExceed"
   :file-list="fileList">
-  <el-button size="small" type="primary">Cliquer pour envoyer</el-button>
+  <lx-button size="small" type="primary">Cliquer pour envoyer</lx-button>
   <template #tip>
     <div class="el-upload__tip">Fichiers jpg/png avec une taille inférieure à 500kb</div>
   </template>
-</el-upload>
+</lx-upload>
 <script>
   export default {
     data() {
@@ -53,7 +53,7 @@ Utilisez `before-upload` pour restreindre le format et la taille du fichier à e
 
 :::demo
 ```html
-<el-upload
+<lx-upload
   class="avatar-uploader"
   action="https://jsonplaceholder.typicode.com/posts/"
   :show-file-list="false"
@@ -61,17 +61,17 @@ Utilisez `before-upload` pour restreindre le format et la taille du fichier à e
   :before-upload="beforeAvatarUpload">
   <img v-if="imageUrl" :src="imageUrl" class="avatar">
   <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-</el-upload>
+</lx-upload>
 
 <style>
-  .avatar-uploader .el-upload {
+  .avatar-uploader .lx-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
   }
-  .avatar-uploader .el-upload:hover {
+  .avatar-uploader .lx-upload:hover {
     border-color: #409EFF;
   }
   .avatar-uploader-icon {
@@ -124,16 +124,16 @@ Utilisez `list-type` pour changer le style de la liste de fichiers.
 
 :::demo
 ```html
-<el-upload
+<lx-upload
   action="https://jsonplaceholder.typicode.com/posts/"
   list-type="picture-card"
   :on-preview="handlePictureCardPreview"
   :on-remove="handleRemove">
   <i class="el-icon-plus"></i>
-</el-upload>
-<el-dialog v-model="dialogVisible">
+</lx-upload>
+<lx-dialog v-model="dialogVisible">
   <img width="100%" :src="dialogImageUrl" alt="">
-</el-dialog>
+</lx-dialog>
 <script>
   export default {
     data() {
@@ -162,7 +162,7 @@ Use `scoped-slot` to change default thumbnail template.
 
 :::demo
 ```html
-<el-upload
+<lx-upload
   action="#"
   list-type="picture-card"
   :auto-upload="false">
@@ -196,10 +196,10 @@ Use `scoped-slot` to change default thumbnail template.
         </span>
       </div>
     </template>
-</el-upload>
-<el-dialog v-model="dialogVisible">
+</lx-upload>
+<lx-dialog v-model="dialogVisible">
   <img width="100%" :src="dialogImageUrl" alt="">
-</el-dialog>
+</lx-dialog>
 <script>
   export default {
     data() {
@@ -230,18 +230,18 @@ Use `scoped-slot` to change default thumbnail template.
 
 :::demo
 ```html
-<el-upload
+<lx-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-preview="handlePreview"
   :on-remove="handleRemove"
   :file-list="fileList"
   list-type="picture">
-  <el-button size="small" type="primary">Cliquer pour envoyer</el-button>
+  <lx-button size="small" type="primary">Cliquer pour envoyer</lx-button>
   <template #tip>
     <div class="el-upload__tip">Fichiers jpg/png avec une taille inférieure à 500kb</div>
   </template>
-</el-upload>
+</lx-upload>
 <script>
   export default {
     data() {
@@ -268,16 +268,16 @@ Utilisez `on-change` pour contrôler le comportement de la liste de fichiers.
 
 :::demo
 ```html
-<el-upload
+<lx-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-change="handleChange"
   :file-list="fileList">
-  <el-button size="small" type="primary">Cliquer pour envoyer</el-button>
+  <lx-button size="small" type="primary">Cliquer pour envoyer</lx-button>
   <template #tip>
     <div class="el-upload__tip">Fichiers jpg/png avec une taille inférieure à 500kb</div>
   </template>
-</el-upload>
+</lx-upload>
 <script>
   export default {
     data() {
@@ -307,7 +307,7 @@ Vous pouvez déposer les fichiers par drag'n drop sur l'espace dédié.
 
 :::demo
 ```html
-<el-upload
+<lx-upload
   class="upload-demo"
   drag
   action="https://jsonplaceholder.typicode.com/posts/"
@@ -320,7 +320,7 @@ Vous pouvez déposer les fichiers par drag'n drop sur l'espace dédié.
   <template #tip>
     <div class="el-upload__tip">Fichiers jpg/png avec une taille inférieure à 500kb</div>
   </template>
-</el-upload>
+</lx-upload>
 ```
 :::
 
@@ -328,19 +328,19 @@ Vous pouvez déposer les fichiers par drag'n drop sur l'espace dédié.
 
 :::demo
 ```html
-<el-upload
+<lx-upload
   class="upload-demo"
   ref="upload"
   action="https://jsonplaceholder.typicode.com/posts/"
   :auto-upload="false">
   <template #trigger>
-    <el-button size="small" type="primary">Choisir un fichier</el-button>
+    <lx-button size="small" type="primary">Choisir un fichier</lx-button>
   </template>
-  <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">Envoyer au serveur</el-button>
+  <lx-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">Envoyer au serveur</lx-button>
   <template #tip>
     <div class="el-upload__tip">Fichiers jpg/png avec une taille inférieure à 500kb</div>
   </template>
-</el-upload>
+</lx-upload>
 <script>
   export default {
     methods: {

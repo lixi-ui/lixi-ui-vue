@@ -40,7 +40,7 @@ const TYPE_CLASSES_MAP = {
 }
 
 export default defineComponent({
-  name: 'ElAlert',
+  name: 'LxAlert',
   props: {
     title: {
       type: String,

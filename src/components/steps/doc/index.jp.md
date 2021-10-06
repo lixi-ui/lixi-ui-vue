@@ -9,13 +9,13 @@
 :::demo ステップのインデックスを示す `Number` 型の `active` 属性を設定する。 ステップの幅を固定する必要がある場合に `space` 属性を設定すると、`Number` 型を受け付けることができる。`space` 属性の単位は `px` である。設定されていない場合はレスポンシブです。`finish-status` 属性を設定すると、完了したステップの状態を変更することができる。
 
 ```html
-<el-steps :active="active" finish-status="success">
-  <el-step title="Step 1"></el-step>
-  <el-step title="Step 2"></el-step>
-  <el-step title="Step 3"></el-step>
-</el-steps>
+<lx-steps :active="active" finish-status="success">
+  <lx-step title="Step 1"></lx-step>
+  <lx-step title="Step 2"></lx-step>
+  <lx-step title="Step 3"></lx-step>
+</lx-steps>
 
-<el-button style="margin-top: 12px;" @click="next">Next step</el-button>
+<lx-button style="margin-top: 12px;" @click="next">Next step</lx-button>
 
 <script>
   export default {
@@ -42,11 +42,11 @@
 :::demo ステップの名前を設定するには `title` 属性を使うか、`slot` という名前を使って属性をオーバーライドします。このページの最後に全てのスロット名をリストアップしました。
 
 ```html
-<el-steps :space="200" :active="1" finish-status="success">
-  <el-step title="Done"></el-step>
-  <el-step title="Processing"></el-step>
-  <el-step title="Step 3"></el-step>
-</el-steps>
+<lx-steps :space="200" :active="1" finish-status="success">
+  <lx-step title="Done"></lx-step>
+  <lx-step title="Processing"></lx-step>
+  <lx-step title="Step 3"></lx-step>
+</lx-steps>
 ```
 :::
 
@@ -56,12 +56,12 @@
 
 :::demo
 ```html
-<el-steps :active="2" align-center>
-  <el-step title="Step 1" description="Some description"></el-step>
-  <el-step title="Step 2" description="Some description"></el-step>
-  <el-step title="Step 3" description="Some description"></el-step>
-  <el-step title="Step 4" description="Some description"></el-step>
-</el-steps>
+<lx-steps :active="2" align-center>
+  <lx-step title="Step 1" description="Some description"></lx-step>
+  <lx-step title="Step 2" description="Some description"></lx-step>
+  <lx-step title="Step 3" description="Some description"></lx-step>
+  <lx-step title="Step 4" description="Some description"></lx-step>
+</lx-steps>
 ```
 :::
 
@@ -71,11 +71,11 @@
 
 :::demo
 ```html
-<el-steps :active="1">
-  <el-step title="Step 1" description="Some description"></el-step>
-  <el-step title="Step 2" description="Some description"></el-step>
-  <el-step title="Step 3" description="Some description"></el-step>
-</el-steps>
+<lx-steps :active="1">
+  <lx-step title="Step 1" description="Some description"></lx-step>
+  <lx-step title="Step 2" description="Some description"></lx-step>
+  <lx-step title="Step 3" description="Some description"></lx-step>
+</lx-steps>
 ```
 :::
 
@@ -86,11 +86,11 @@
 :::demo アイコンは `icon` プロパティで設定します。アイコンの種類については、Iconコンポーネントのドキュメントを参照してください。さらに、`slot` を通じてアイコンをカスタマイズすることもできる。
 
 ```html
-<el-steps :active="1">
-  <el-step title="Step 1" icon="el-icon-edit"></el-step>
-  <el-step title="Step 2" icon="el-icon-upload"></el-step>
-  <el-step title="Step 3" icon="el-icon-picture"></el-step>
-</el-steps>
+<lx-steps :active="1">
+  <lx-step title="Step 1" icon="el-icon-edit"></lx-step>
+  <lx-step title="Step 2" icon="el-icon-upload"></lx-step>
+  <lx-step title="Step 3" icon="el-icon-picture"></lx-step>
+</lx-steps>
 ```
 :::
 
@@ -102,11 +102,11 @@
 
 ```html
 <div style="height: 300px;">
-  <el-steps direction="vertical" :active="1">
-    <el-step title="Step 1"></el-step>
-    <el-step title="Step 2"></el-step>
-    <el-step title="Step 3"></el-step>
-  </el-steps>
+  <lx-steps direction="vertical" :active="1">
+    <lx-step title="Step 1"></lx-step>
+    <lx-step title="Step 2"></lx-step>
+    <lx-step title="Step 3"></lx-step>
+  </lx-steps>
 </div>
 ```
 :::
@@ -117,17 +117,17 @@
 :::demo
 ```html
 
-<el-steps :space="200" :active="1" simple>
-  <el-step title="Step 1" icon="el-icon-edit"></el-step>
-  <el-step title="Step 2" icon="el-icon-upload"></el-step>
-  <el-step title="Step 3" icon="el-icon-picture"></el-step>
-</el-steps>
+<lx-steps :space="200" :active="1" simple>
+  <lx-step title="Step 1" icon="el-icon-edit"></lx-step>
+  <lx-step title="Step 2" icon="el-icon-upload"></lx-step>
+  <lx-step title="Step 3" icon="el-icon-picture"></lx-step>
+</lx-steps>
 
-<el-steps :active="1" finish-status="success" simple style="margin-top: 20px">
-  <el-step title="Step 1" ></el-step>
-  <el-step title="Step 2" ></el-step>
-  <el-step title="Step 3" ></el-step>
-</el-steps>
+<lx-steps :active="1" finish-status="success" simple style="margin-top: 20px">
+  <lx-step title="Step 1" ></lx-step>
+  <lx-step title="Step 2" ></lx-step>
+  <lx-step title="Step 3" ></lx-step>
+</lx-steps>
 ```
 :::
 

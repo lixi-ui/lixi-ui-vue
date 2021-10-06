@@ -28,8 +28,8 @@ import { SelectOptionProxy } from './token'
 
 
 export default defineComponent({
-  name: 'ElOption',
-  componentName: 'ElOption',
+  name: 'LxOption',
+  componentName: 'LxOption',
 
   props: {
     value: {

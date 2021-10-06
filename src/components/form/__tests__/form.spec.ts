@@ -33,11 +33,11 @@ describe('Form', () => {
   test('label width', async () => {
     const wrapper = mountForm({
       template: `
-        <el-form ref="form" :model="form" label-width="80px">
-          <el-form-item label="Activity Name">
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-        </el-form>
+        <lx-form ref="form" :model="form" label-width="80px">
+          <lx-form-item label="Activity Name">
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -47,20 +47,20 @@ describe('Form', () => {
         }
       },
     })
-    expect(findStyle(wrapper, '.el-form-item__label').width).toBe('80px')
+    expect(findStyle(wrapper, '.lx-form-item__label').width).toBe('80px')
   })
 
   test('auto label width', async() => {
     const wrapper = mountForm({
       template: `
-        <el-form ref="form" :model="form" label-width="auto" :label-position="labelPosition">
-          <el-form-item label="Name">
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-          <el-form-item label="Intro">
-            <el-input v-model="form.intro"></el-input>
-          </el-form-item>
-        </el-form>
+        <lx-form ref="form" :model="form" label-width="auto" :label-position="labelPosition">
+          <lx-form-item label="Name">
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+          <lx-form-item label="Intro">
+            <lx-input v-model="form.intro"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -75,7 +75,7 @@ describe('Form', () => {
 
     await nextTick()
 
-    const formItems = wrapper.findAll<HTMLElement>('.el-form-item__content')
+    const formItems = wrapper.findAll<HTMLElement>('.lx-form-item__content')
     const marginLeft = parseInt(formItems[0].element.style.marginLeft, 10)
     const marginLeft1 = parseInt(formItems[1].element.style.marginLeft, 10)
     expect(marginLeft).toEqual(marginLeft1)
@@ -83,7 +83,7 @@ describe('Form', () => {
     wrapper.vm.labelPosition = 'left'
     await nextTick()
 
-    const formItems1 = wrapper.findAll<HTMLElement>('.el-form-item__content')
+    const formItems1 = wrapper.findAll<HTMLElement>('.lx-form-item__content')
     const marginRight = parseInt(formItems1[0].element.style.marginRight, 10)
     const marginRight1 = parseInt(formItems1[1].element.style.marginRight, 10)
     expect(marginRight).toEqual(marginRight1)
@@ -92,17 +92,17 @@ describe('Form', () => {
   test('form-item auto label width', async() => {
     const wrapper = mountForm({
       template: `
-        <el-form ref="form" label-position="right" label-width="150px" :model="form">
-          <el-form-item label="名称">
-            <el-input v-model="form.name" />
-          </el-form-item>
-          <el-form-item label="活动区域" label-width="auto">
-            <el-input v-model="form.region" />
-          </el-form-item>
-          <el-form-item label="活动形式(我是一个很长很长很长很长的label)" label-width="auto">
-            <el-input v-model="form.type" />
-          </el-form-item>
-        </el-form>
+        <lx-form ref="form" label-position="right" label-width="150px" :model="form">
+          <lx-form-item label="名称">
+            <lx-input v-model="form.name" />
+          </lx-form-item>
+          <lx-form-item label="活动区域" label-width="auto">
+            <lx-input v-model="form.region" />
+          </lx-form-item>
+          <lx-form-item label="活动形式(我是一个很长很长很长很长的label)" label-width="auto">
+            <lx-input v-model="form.type" />
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -117,8 +117,8 @@ describe('Form', () => {
 
     await nextTick()
 
-    const formItemLabels = wrapper.findAll<HTMLElement>('.el-form-item__label')
-    const formItemLabelWraps = wrapper.findAll<HTMLElement>('.el-form-item__label-wrap')
+    const formItemLabels = wrapper.findAll<HTMLElement>('.lx-form-item__label')
+    const formItemLabelWraps = wrapper.findAll<HTMLElement>('.lx-form-item__label-wrap')
 
     const labelWrapMarginLeft1 = formItemLabelWraps[0].element.style.marginLeft
     const labelWrapMarginLeft2 = formItemLabelWraps[1].element.style.marginLeft
@@ -136,14 +136,14 @@ describe('Form', () => {
   test('inline form', () => {
     const wrapper = mountForm({
       template: `
-        <el-form ref="form" :model="form" inline>
-          <el-form-item>
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-input v-model="form.address"></el-input>
-          </el-form-item>
-        </el-form>
+        <lx-form ref="form" :model="form" inline>
+          <lx-form-item>
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+          <lx-form-item>
+            <lx-input v-model="form.address"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -161,22 +161,22 @@ describe('Form', () => {
     const wrapper = mountForm({
       template: `
         <div>
-          <el-form :model="form" label-position="top" ref="labelTop">
-            <el-form-item>
-              <el-input v-model="form.name"></el-input>
-            </el-form-item>
-            <el-form-item>
-              <el-input v-model="form.address"></el-input>
-            </el-form-item>
-          </el-form>
-          <el-form :model="form" label-position="left" ref="labelLeft">
-            <el-form-item>
-              <el-input v-model="form.name"></el-input>
-            </el-form-item>
-            <el-form-item>
-              <el-input v-model="form.address"></el-input>
-            </el-form-item>
-          </el-form>
+          <lx-form :model="form" label-position="top" ref="labelTop">
+            <lx-form-item>
+              <lx-input v-model="form.name"></lx-input>
+            </lx-form-item>
+            <lx-form-item>
+              <lx-input v-model="form.address"></lx-input>
+            </lx-form-item>
+          </lx-form>
+          <lx-form :model="form" label-position="left" ref="labelLeft">
+            <lx-form-item>
+              <lx-input v-model="form.name"></lx-input>
+            </lx-form-item>
+            <lx-form-item>
+              <lx-input v-model="form.address"></lx-input>
+            </lx-form-item>
+          </lx-form>
         </div>
       `,
       data() {
@@ -196,11 +196,11 @@ describe('Form', () => {
     const wrapper = mountForm({
       template: `
         <div>
-          <el-form :model="form" size="mini" ref="labelMini">
-            <el-form-item>
-              <el-input v-model="form.name"></el-input>
-            </el-form-item>
-          </el-form>
+          <lx-form :model="form" size="mini" ref="labelMini">
+            <lx-form-item>
+              <lx-input v-model="form.name"></lx-input>
+            </lx-form-item>
+          </lx-form>
         </div>
       `,
       data() {
@@ -217,8 +217,8 @@ describe('Form', () => {
   test('show message', done => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" ref="form">
-          <el-form-item label="Name" prop="name" :show-message="false"
+        <lx-form :model="form" ref="form">
+          <lx-form-item label="Name" prop="name" :show-message="false"
             :rules="{
               required: true,
               message: 'Please input name',
@@ -227,9 +227,9 @@ describe('Form', () => {
               max: 6
             }"
           >
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-        </el-form>
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -243,7 +243,7 @@ describe('Form', () => {
     form.validate(async valid => {
       expect(valid).toBe(false)
       await nextTick()
-      expect(wrapper.find('.el-form-item__error').exists()).toBe(false)
+      expect(wrapper.find('.lx-form-item__error').exists()).toBe(false)
       done()
     })
   })
@@ -251,22 +251,22 @@ describe('Form', () => {
   test('reset field', async () => {
     const wrapper = mountForm({
       template: `
-        <el-form ref="form" :model="form" :rules="rules">
-          <el-form-item label="name" prop="name">
-            <el-input v-model="form.name" ref="fieldName"></el-input>
-          </el-form-item>
-          <el-form-item label="address" prop="address">
-            <el-input v-model="form.address" ref="fieldAddr"></el-input>
-          </el-form-item>
-          <el-form-item label="type" prop="type">
-            <el-checkbox-group v-model="form.type">
-              <el-checkbox label="type1" name="type"></el-checkbox>
-              <el-checkbox label="type2" name="type"></el-checkbox>
-              <el-checkbox label="type3" name="type"></el-checkbox>
-              <el-checkbox label="type4" name="type"></el-checkbox>
-            </el-checkbox-group>
-          </el-form-item>
-        </el-form>
+        <lx-form ref="form" :model="form" :rules="rules">
+          <lx-form-item label="name" prop="name">
+            <lx-input v-model="form.name" ref="fieldName"></lx-input>
+          </lx-form-item>
+          <lx-form-item label="address" prop="address">
+            <lx-input v-model="form.address" ref="fieldAddr"></lx-input>
+          </lx-form-item>
+          <lx-form-item label="type" prop="type">
+            <lx-checkbox-group v-model="form.type">
+              <lx-checkbox label="type1" name="type"></lx-checkbox>
+              <lx-checkbox label="type2" name="type"></lx-checkbox>
+              <lx-checkbox label="type3" name="type"></lx-checkbox>
+              <lx-checkbox label="type4" name="type"></lx-checkbox>
+            </lx-checkbox-group>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -309,22 +309,22 @@ describe('Form', () => {
   test('clear validate', async () => {
     const wrapper = mountForm({
       template: `
-        <el-form ref="form" :model="form" :rules="rules">
-          <el-form-item label="name" prop="name" ref="name">
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-          <el-form-item label="address" prop="address" ref="address">
-            <el-input v-model="form.address"></el-input>
-          </el-form-item>
-          <el-form-item label="type" prop="type">
-            <el-checkbox-group v-model="form.type">
-              <el-checkbox label="type1" name="type"></el-checkbox>
-              <el-checkbox label="type2" name="type"></el-checkbox>
-              <el-checkbox label="type3" name="type"></el-checkbox>
-              <el-checkbox label="type4" name="type"></el-checkbox>
-            </el-checkbox-group>
-          </el-form-item>
-        </el-form>
+        <lx-form ref="form" :model="form" :rules="rules">
+          <lx-form-item label="name" prop="name" ref="name">
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+          <lx-form-item label="address" prop="address" ref="address">
+            <lx-input v-model="form.address"></lx-input>
+          </lx-form-item>
+          <lx-form-item label="type" prop="type">
+            <lx-checkbox-group v-model="form.type">
+              <lx-checkbox label="type1" name="type"></lx-checkbox>
+              <lx-checkbox label="type2" name="type"></lx-checkbox>
+              <lx-checkbox label="type3" name="type"></lx-checkbox>
+              <lx-checkbox label="type4" name="type"></lx-checkbox>
+            </lx-checkbox-group>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -367,11 +367,11 @@ describe('Form', () => {
     const wrapper = mountForm({
       template: `
         <div>
-          <el-form ref="form">
-            <el-form-item prop="name" ref="formItem">
-              <el-input></el-input>
-            </el-form-item>
-          </el-form>
+          <lx-form ref="form">
+            <lx-form-item prop="name" ref="formItem">
+              <lx-input></lx-input>
+            </lx-form-item>
+          </lx-form>
         </div>
       `,
       data() {
@@ -399,21 +399,21 @@ describe('Form', () => {
   test('form item nest', done => {
     const wrapper = mountForm({
       template: `
-        <el-form ref="form" :model="form" :rules="rules">
-          <el-form-item label="活动时间" required>
-            <el-col :span="11">
-              <el-form-item prop="date1">
-                <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%"></el-date-picker>
-              </el-form-item>
-            </el-col>
-            <el-col class="line" :span="2">-</el-col>
-            <el-col :span="11">
-              <el-form-item prop="date2">
-                <el-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%"></el-time-picker>
-              </el-form-item>
-            </el-col>
-          </el-form-item>
-        </el-form>
+        <lx-form ref="form" :model="form" :rules="rules">
+          <lx-form-item label="活动时间" required>
+            <lx-col :span="11">
+              <lx-form-item prop="date1">
+                <lx-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%"></lx-date-picker>
+              </lx-form-item>
+            </lx-col>
+            <lx-col class="line" :span="2">-</lx-col>
+            <lx-col :span="11">
+              <lx-form-item prop="date2">
+                <lx-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%"></lx-time-picker>
+              </lx-form-item>
+            </lx-col>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -447,14 +447,14 @@ describe('Form', () => {
   test('validate event', async done => {
     const wrapper = mountForm({
       template: `
-          <el-form :model="form" :rules="rules" ref="form" @validate="onValidate">
-            <el-form-item label="name" prop="name" ref="name">
-              <el-input v-model="form.name"></el-input>
-            </el-form-item>
-            <el-form-item label="活动地点" prop="addr" ref="addr">
-              <el-input v-model="form.addr"></el-input>
-            </el-form-item>
-          </el-form>
+          <lx-form :model="form" :rules="rules" ref="form" @validate="onValidate">
+            <lx-form-item label="name" prop="name" ref="name">
+              <lx-input v-model="form.name"></lx-input>
+            </lx-form-item>
+            <lx-form-item label="活动地点" prop="addr" ref="addr">
+              <lx-input v-model="form.addr"></lx-input>
+            </lx-form-item>
+          </lx-form>
         `,
       data() {
         return {
@@ -514,11 +514,11 @@ describe('validate', () => {
   test('input', async () => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="name" prop="name" ref="field">
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="name" prop="name" ref="field">
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -557,11 +557,11 @@ describe('validate', () => {
   test('textarea', async () => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="name" prop="name" ref="field">
-            <el-input type="textarea" v-model="form.name"></el-input>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="name" prop="name" ref="field">
+            <lx-input type="textarea" v-model="form.name"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -601,14 +601,14 @@ describe('validate', () => {
   test('selector', done => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="记住密码" prop="region" ref="field">
-            <el-select v-model="form.region" placeholder="请选择活动区域">
-              <el-option label="区域一" value="shanghai"></el-option>
-              <el-option label="区域二" ref="opt" value="beijing"></el-option>
-            </el-select>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="记住密码" prop="region" ref="field">
+            <lx-select v-model="form.region" placeholder="请选择活动区域">
+              <lx-option label="区域一" value="shanghai"></lx-option>
+              <lx-option label="区域二" ref="opt" value="beijing"></lx-option>
+            </lx-select>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -649,11 +649,11 @@ describe('validate', () => {
   test('datepicker', done => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="记住密码" prop="date" ref="field">
-            <el-date-picker type="date" ref="picker" placeholder="选择日期" v-model="form.date" style="width: 100%"></el-date-picker>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="记住密码" prop="date" ref="field">
+            <lx-date-picker type="date" ref="picker" placeholder="选择日期" v-model="form.date" style="width: 100%"></lx-date-picker>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -705,11 +705,11 @@ describe('validate', () => {
   test('timepicker', done => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="记住密码" prop="date" ref="field">
-            <el-time-picker ref="picker" placeholder="选择时间" v-model="form.date" style="width: 100%"></el-time-picker>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="记住密码" prop="date" ref="field">
+            <lx-time-picker ref="picker" placeholder="选择时间" v-model="form.date" style="width: 100%"></lx-time-picker>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -752,13 +752,13 @@ describe('validate', () => {
   test('checkbox', async done => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="Accept Term" prop="accept" ref="field">
-            <el-checkbox v-model="form.accept">
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="Accept Term" prop="accept" ref="field">
+            <lx-checkbox v-model="form.accept">
               <span>Accept</span>
-            </el-checkbox>
-          </el-form-item>
-        </el-form>
+            </lx-checkbox>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -801,16 +801,16 @@ describe('validate', () => {
   test('checkbox group', done => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="name" prop="type" ref="field">
-            <el-checkbox-group v-model="form.type">
-              <el-checkbox label="type1" name="type"></el-checkbox>
-              <el-checkbox label="type2" name="type"></el-checkbox>
-              <el-checkbox label="type3" name="type"></el-checkbox>
-              <el-checkbox label="type4" name="type"></el-checkbox>
-            </el-checkbox-group>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="name" prop="type" ref="field">
+            <lx-checkbox-group v-model="form.type">
+              <lx-checkbox label="type1" name="type"></lx-checkbox>
+              <lx-checkbox label="type2" name="type"></lx-checkbox>
+              <lx-checkbox label="type3" name="type"></lx-checkbox>
+              <lx-checkbox label="type4" name="type"></lx-checkbox>
+            </lx-checkbox-group>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -847,14 +847,14 @@ describe('validate', () => {
   test('radio group', done => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="name" prop="type" ref="field">
-            <el-radio-group v-model="form.type">
-              <el-radio label="type1"></el-radio>
-              <el-radio label="type2"></el-radio>
-            </el-radio-group>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="name" prop="type" ref="field">
+            <lx-radio-group v-model="form.type">
+              <lx-radio label="type1"></lx-radio>
+              <lx-radio label="type2"></lx-radio>
+            </lx-radio-group>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -891,11 +891,11 @@ describe('validate', () => {
   test('validate field', done => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="name" prop="name" ref="field">
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="name" prop="name" ref="field">
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -932,11 +932,11 @@ describe('validate', () => {
     }
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="name" prop="name" ref="field">
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="name" prop="name" ref="field">
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -973,11 +973,11 @@ describe('validate', () => {
   test('error', done => {
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="name" prop="name" :error="error" ref="field">
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="name" prop="name" :error="error" ref="field">
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -1020,11 +1020,11 @@ describe('validate', () => {
     }
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="name" prop="name" ref="field">
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="name" prop="name" ref="field">
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {
@@ -1056,11 +1056,11 @@ describe('validate', () => {
     }
     const wrapper = mountForm({
       template: `
-        <el-form :model="form" :rules="rules" ref="form">
-          <el-form-item label="name" prop="name" ref="field">
-            <el-input v-model="form.name"></el-input>
-          </el-form-item>
-        </el-form>
+        <lx-form :model="form" :rules="rules" ref="form">
+          <lx-form-item label="name" prop="name" ref="field">
+            <lx-input v-model="form.name"></lx-input>
+          </lx-form-item>
+        </lx-form>
       `,
       data() {
         return {

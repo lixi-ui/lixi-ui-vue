@@ -11,4 +11,4 @@ Affix.install = (app: App): void => {
 const _Affix = Affix as SFCWithInstall<typeof Affix>
 
 export default _Affix
-export const ElAffix = _Affix
+export const LxAffix = _Affix

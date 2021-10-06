@@ -6,7 +6,7 @@
     :class="[selectSize ? 'el-select--' + selectSize : '']"
     @click.stop="toggleMenu"
   >
-    <el-popper
+    <lx-popper
       ref="popper"
       v-model:visible="dropMenuVisible"
       placement="bottom-start"
@@ -31,7 +31,7 @@
             :style="{ maxWidth: inputWidth - 32 + 'px', width: '100%' }"
           >
             <span v-if="collapseTags && selected.length">
-              <el-tag
+              <lx-tag
                 :closable="!selectDisabled && !selected[0].isDisabled"
                 :size="collapseTagSize"
                 :hit="selected[0].hitState"
@@ -40,8 +40,8 @@
                 @close="deleteTag($event, selected[0])"
               >
                 <span class="el-select__tags-text" :style="{ maxWidth: inputWidth - 123 + 'px' }">{{ selected[0].currentLabel }}</span>
-              </el-tag>
-              <el-tag
+              </lx-tag>
+              <lx-tag
                 v-if="selected.length > 1"
                 :closable="false"
                 :size="collapseTagSize"
@@ -49,12 +49,12 @@
                 disable-transitions
               >
                 <span class="el-select__tags-text">+ {{ selected.length - 1 }}</span>
-              </el-tag>
+              </lx-tag>
             </span>
             <!-- <div> -->
             <transition v-if="!collapseTags" @after-leave="resetInputHeight">
               <span :style="{marginLeft: prefixWidth && selected.length ? `${prefixWidth}px` : null}">
-                <el-tag
+                <lx-tag
                   v-for="item in selected"
                   :key="getValueKey(item)"
                   :closable="!selectDisabled && !item.isDisabled"
@@ -65,7 +65,7 @@
                   @close="deleteTag($event, item)"
                 >
                   <span class="el-select__tags-text" :style="{ maxWidth: inputWidth - 75 + 'px' }">{{ item.currentLabel }}</span>
-                </el-tag>
+                </lx-tag>
               </span>
             </transition>
             <!-- </div> -->
@@ -95,7 +95,7 @@
               @input="debouncedQueryChange"
             >
           </div>
-          <el-input
+          <lx-input
             :id="id"
             ref="reference"
             v-model="selectedLabel"
@@ -134,12 +134,12 @@
                 @click="handleClearClick"
               ></i>
             </template>
-          </el-input>
+          </lx-input>
         </div>
       </template>
       <template #default>
-        <el-select-menu>
-          <el-scrollbar
+        <lx-select-menu>
+          <lx-scrollbar
             v-show="options.size > 0 && !loading"
             ref="scrollbar"
             tag="ul"
@@ -147,22 +147,22 @@
             view-class="el-select-dropdown__list"
             :class="{ 'is-empty': !allowCreate && query && filteredOptionsCount === 0 }"
           >
-            <el-option
+            <lx-option
               v-if="showNewOption"
               :value="query"
               :created="true"
             />
             <slot></slot>
-          </el-scrollbar>
+          </lx-scrollbar>
           <template v-if="emptyText && (!allowCreate || loading || (allowCreate && options.size === 0 ))">
             <slot v-if="$slots.empty" name="empty"></slot>
             <p v-else class="el-select-dropdown__empty">
               {{ emptyText }}
             </p>
           </template>
-        </el-select-menu>
+        </lx-select-menu>
       </template>
-    </el-popper>
+    </lx-popper>
   </div>
 </template>
 
@@ -179,15 +179,15 @@ import {
 } from 'vue'
 import { ClickOutside } from '@element-plus/directives'
 import { useFocus, useLocaleInject } from '@element-plus/hooks'
-import ElInput from '@element-plus/components/input'
-import ElPopper, { Effect } from '@element-plus/components/popper'
-import ElScrollbar from '@element-plus/components/scrollbar'
-import ElTag from '@element-plus/components/tag'
+import LxInput from '@element-plus/components/input'
+import LxPopper, { Effect } from '@element-plus/components/popper'
+import LxScrollbar from '@element-plus/components/scrollbar'
+import LxTag from '@element-plus/components/tag'
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@element-plus/utils/constants'
 import { addResizeListener, removeResizeListener } from '@element-plus/utils/resize-event'
 import { isValidComponentSize } from '@element-plus/utils/validators'
-import ElOption from './option.vue'
-import ElSelectMenu from './select-dropdown.vue'
+import LxOption from './option.vue'
+import LxSelectMenu from './select-dropdown.vue'
 import { useSelect, useSelectStates } from './useSelect'
 import { selectKey } from './token'
 
@@ -196,15 +196,15 @@ import type { ComponentSize } from '@element-plus/utils/types'
 import type { SelectContext } from './token'
 
 export default defineComponent({
-  name: 'ElSelect',
-  componentName: 'ElSelect',
+  name: 'LxSelect',
+  componentName: 'LxSelect',
   components: {
-    ElInput,
-    ElSelectMenu,
-    ElOption,
-    ElTag,
-    ElScrollbar,
-    ElPopper,
+    LxInput,
+    LxSelectMenu,
+    LxOption,
+    LxTag,
+    LxScrollbar,
+    LxPopper,
   },
   directives: { ClickOutside },
   props: {
@@ -376,7 +376,7 @@ export default defineComponent({
         if (ctx.slots.prefix) {
           const inputChildNodes = reference.value.$el.childNodes
           const input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0]
-          const prefix = reference.value.$el.querySelector('.el-input__prefix')
+          const prefix = reference.value.$el.querySelector('.lx-input__prefix')
           prefixWidth.value = Math.max(prefix.getBoundingClientRect().width + 5, 30)
           if (states.prefixWidth) {
             input.style.paddingLeft = `${Math.max(states.prefixWidth, 30)}px`

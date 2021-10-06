@@ -1,5 +1,5 @@
 <template>
-  <el-popper
+  <lx-popper
     ref="tooltip"
     v-model:visible="tooltipVisible"
     :offset="0"
@@ -15,17 +15,17 @@
     <template #default>
       <div v-if="multiple">
         <div class="el-table-filter__content">
-          <el-scrollbar wrap-class="el-table-filter__wrap">
-            <el-checkbox-group v-model="filteredValue" class="el-table-filter__checkbox-group">
-              <el-checkbox
+          <lx-scrollbar wrap-class="el-table-filter__wrap">
+            <lx-checkbox-group v-model="filteredValue" class="el-table-filter__checkbox-group">
+              <lx-checkbox
                 v-for="filter in filters"
                 :key="filter.value"
                 :label="filter.value"
               >
                 {{ filter.text }}
-              </el-checkbox>
-            </el-checkbox-group>
-          </el-scrollbar>
+              </lx-checkbox>
+            </lx-checkbox-group>
+          </lx-scrollbar>
         </div>
         <div class="el-table-filter__bottom">
           <button
@@ -75,7 +75,7 @@
         ></i>
       </span>
     </template>
-  </el-popper>
+  </lx-popper>
 </template>
 
 <script lang="ts">
@@ -86,11 +86,11 @@ import {
   getCurrentInstance,
   watch,
 } from 'vue'
-import ElCheckbox from '@element-plus/components/checkbox'
+import LxCheckbox from '@element-plus/components/checkbox'
 import { ClickOutside } from '@element-plus/directives'
 import { useLocaleInject } from '@element-plus/hooks'
-import ElPopper, { Effect, Placement } from '@element-plus/components/popper'
-import ElScrollbar from '@element-plus/components/scrollbar'
+import LxPopper, { Effect, Placement } from '@element-plus/components/popper'
+import LxScrollbar from '@element-plus/components/scrollbar'
 
 import type {
   WritableComputedRef,
@@ -100,15 +100,15 @@ import type { TableColumnCtx } from './table-column/defaults'
 import type { TableHeader } from './table-header'
 import type { Store } from './store'
 
-const { CheckboxGroup: ElCheckboxGroup } = ElCheckbox
+const { CheckboxGroup: LxCheckboxGroup } = LxCheckbox
 
 export default defineComponent({
-  name: 'ElTableFilterPanel',
+  name: 'LxTableFilterPanel',
   components: {
-    ElCheckbox,
-    ElCheckboxGroup,
-    ElScrollbar,
-    ElPopper,
+    LxCheckbox,
+    LxCheckboxGroup,
+    LxScrollbar,
+    LxPopper,
   },
   directives: { ClickOutside },
   props: {

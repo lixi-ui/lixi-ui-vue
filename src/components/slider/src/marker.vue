@@ -4,7 +4,7 @@ import { computed, defineComponent, h } from 'vue'
 import type { PropType } from 'vue'
 
 export default defineComponent({
-  name: 'ElMarker',
+  name: 'LxMarker',
   props: {
     mark: {
       type: [String, Object] as PropType<string | Record<string, unknown>>,

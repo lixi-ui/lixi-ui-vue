@@ -48,7 +48,7 @@ import { isBool } from '@element-plus/utils/util'
 import throwError, { warn } from '@element-plus/utils/error'
 
 import type { PropType } from 'vue'
-import type { ElFormContext, ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
 
 
 type ValueType = boolean | string | number;
@@ -75,7 +75,7 @@ interface ISwitchProps {
 }
 
 export default defineComponent({
-  name: 'ElSwitch',
+  name: 'LxSwitch',
   props: {
     modelValue: {
       type: [Boolean, String, Number],
@@ -146,14 +146,14 @@ export default defineComponent({
   },
   emits: ['update:modelValue', 'change', 'input'],
   setup(props: ISwitchProps, ctx) {
-    const elForm = inject(elFormKey, {} as ElFormContext)
-    const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+    const elForm = inject(elFormKey, {} as LxFormContext)
+    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
 
     const isModelValue = ref(props.modelValue !== false)
     const input = ref(null)
     const core = ref(null)
 
-    const scope = 'ElSwitch'
+    const scope = 'LxSwitch'
 
     watch(() => props.modelValue, () => {
       isModelValue.value = true

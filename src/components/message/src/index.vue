@@ -42,7 +42,7 @@ const TypeMap: Indexable<string> = {
   error: 'error',
 }
 export default defineComponent({
-  name: 'ElMessage',
+  name: 'LxMessage',
   props: {
     customClass: { type: String, default: '' },
     center: { type: Boolean, default: false },

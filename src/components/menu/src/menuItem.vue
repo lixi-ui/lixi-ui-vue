@@ -14,9 +14,9 @@
     @blur="onMouseLeave"
     @mouseleave="onMouseLeave"
   >
-    <el-tooltip
+    <lx-tooltip
       v-if="
-        parentMenu.type.name === 'ElMenu' &&
+        parentMenu.type.name === 'LxMenu' &&
           rootMenu.props.collapse &&
           slots.title
       "
@@ -31,7 +31,7 @@
       >
         <slot></slot>
       </div>
-    </el-tooltip>
+    </lx-tooltip>
     <template v-else>
       <slot></slot>
       <slot name="title"></slot>
@@ -47,18 +47,18 @@ import {
   inject,
   getCurrentInstance,
 } from 'vue'
-import ElTooltip from '@element-plus/components/tooltip'
+import LxTooltip from '@element-plus/components/tooltip'
 import { Effect } from '@element-plus/components/popper'
 import useMenu from './useMenu'
 
 import type { RootMenuProvider, SubMenuProvider } from './menu.type'
 
 export default defineComponent({
-  name: 'ElMenuItem',
+  name: 'LxMenuItem',
 
-  // componentName: 'ElMenuItem',
+  // componentName: 'LxMenuItem',
 
-  components: { ElTooltip },
+  components: { LxTooltip },
 
   props: {
     index: {
@@ -99,7 +99,7 @@ export default defineComponent({
       return rootMenu.props.mode
     })
     const isNested = computed(() => {
-      return parentMenu.value.type.name !== 'ElMenu'
+      return parentMenu.value.type.name !== 'LxMenu'
     })
 
     const itemStyle = computed(() => {

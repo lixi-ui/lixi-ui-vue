@@ -23,7 +23,7 @@
         <div v-if="showTime" class="el-date-range-picker__time-header">
           <span class="el-date-range-picker__editors-wrap">
             <span class="el-date-range-picker__time-picker-wrap">
-              <el-input
+              <lx-input
                 size="small"
                 :disabled="rangeState.selecting"
                 :placeholder="t('el.datepicker.startDate')"
@@ -34,7 +34,7 @@
               />
             </span>
             <span v-clickoutside="handleMinTimeClose" class="el-date-range-picker__time-picker-wrap">
-              <el-input
+              <lx-input
                 size="small"
                 class="el-date-range-picker__editor"
                 :disabled="rangeState.selecting"
@@ -57,7 +57,7 @@
           <span class="el-icon-arrow-right"></span>
           <span class="el-date-range-picker__editors-wrap is-right">
             <span class="el-date-range-picker__time-picker-wrap">
-              <el-input
+              <lx-input
                 size="small"
                 class="el-date-range-picker__editor"
                 :disabled="rangeState.selecting"
@@ -69,7 +69,7 @@
               />
             </span>
             <span v-clickoutside="handleMaxTimeClose" class="el-date-range-picker__time-picker-wrap">
-              <el-input
+              <lx-input
                 size="small"
                 class="el-date-range-picker__editor"
                 :disabled="rangeState.selecting"
@@ -180,7 +180,7 @@
       </div>
     </div>
     <div v-if="showTime" class="el-picker-panel__footer">
-      <el-button
+      <lx-button
         v-if="clearable"
         size="mini"
         type="text"
@@ -188,8 +188,8 @@
         @click="handleClear"
       >
         {{ t('el.datepicker.clear') }}
-      </el-button>
-      <el-button
+      </lx-button>
+      <lx-button
         plain
         size="mini"
         class="el-picker-panel__link-btn"
@@ -197,7 +197,7 @@
         @click="handleConfirm(false)"
       >
         {{ t('el.datepicker.confirm') }}
-      </el-button>
+      </lx-button>
     </div>
   </div>
 </template>
@@ -205,10 +205,10 @@
 <script lang="ts">
 import { computed, defineComponent, inject, ref, watch } from 'vue'
 import dayjs from 'dayjs'
-import ElButton from '@element-plus/components/button'
+import LxButton from '@element-plus/components/button'
 import { ClickOutside } from '@element-plus/directives'
 import { useLocaleInject } from '@element-plus/hooks'
-import ElInput from '@element-plus/components/input'
+import LxInput from '@element-plus/components/input'
 import { extractDateFormat, extractTimeFormat, TimePickPanel } from '@element-plus/components/time-picker'
 import { isValidDatePickType } from '@element-plus/utils/validators'
 import DateTable from './basic-date-table.vue'
@@ -221,7 +221,7 @@ export default defineComponent({
 
   directives: { clickoutside: ClickOutside },
 
-  components: { TimePickPanel, DateTable, ElInput, ElButton },
+  components: { TimePickPanel, DateTable, LxInput, LxButton },
 
   props: {
     unlinkPanels: Boolean,

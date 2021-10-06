@@ -6,7 +6,7 @@
       @after-leave="afterLeave"
       @before-leave="beforeLeave"
     >
-      <el-overlay
+      <lx-overlay
         v-show="visible"
         :mask="modal"
         :overlay-class="modalClass"
@@ -50,7 +50,7 @@
             </section>
           </template>
         </div>
-      </el-overlay>
+      </lx-overlay>
     </transition>
   </teleport>
 </template>
@@ -70,7 +70,7 @@ import type { PropType, SetupContext } from 'vue'
 type DrawerDirection = 'ltr' | 'rtl' | 'ttb' | 'btt'
 
 export default defineComponent({
-  name: 'ElDrawer',
+  name: 'LxDrawer',
   components: {
     [Overlay.name]: Overlay,
   },

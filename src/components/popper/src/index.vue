@@ -20,7 +20,7 @@ import defaultProps from './use-popper/defaults'
 import { renderPopper, renderTrigger, renderArrow } from './renderers'
 
 
-const compName = 'ElPopper'
+const compName = 'LxPopper'
 const UPDATE_VISIBLE_EVENT = 'update:visible'
 
 export default defineComponent({

@@ -8,7 +8,7 @@ Similaire à Tooltip, Popover est aussi construit avec `Vue-popper`. Certains at
 
 ```html
 <template>
-  <el-popover
+  <lx-popover
     placement="top-start"
     title="Title"
     :width="200"
@@ -16,11 +16,11 @@ Similaire à Tooltip, Popover est aussi construit avec `Vue-popper`. Certains at
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button>S'active au passage du curseur</el-button>
+      <lx-button>S'active au passage du curseur</lx-button>
     </template>
-  </el-popover>
+  </lx-popover>
 
-  <el-popover
+  <lx-popover
     placement="bottom"
     title="Title"
     :width="200"
@@ -28,11 +28,11 @@ Similaire à Tooltip, Popover est aussi construit avec `Vue-popper`. Certains at
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button>S'active en cliquant</el-button>
+      <lx-button>S'active en cliquant</lx-button>
     </template>
-  </el-popover>
+  </lx-popover>
 
-  <el-popover
+  <lx-popover
     ref="popover"
     placement="right"
     title="Title"
@@ -41,11 +41,11 @@ Similaire à Tooltip, Popover est aussi construit avec `Vue-popper`. Certains at
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button>S'active au focus</el-button>
+      <lx-button>S'active au focus</lx-button>
     </template>
-  </el-popover>
+  </lx-popover>
 
-  <el-popover
+  <lx-popover
     placement="bottom"
     title="Title"
     :width="200"
@@ -54,9 +54,9 @@ Similaire à Tooltip, Popover est aussi construit avec `Vue-popper`. Certains at
     v-model:visible="visible"
   >
     <template #reference>
-      <el-button @click="visible = !visible">S'active manuellement</el-button>
+      <lx-button @click="visible = !visible">S'active manuellement</lx-button>
     </template>
-  </el-popover>
+  </lx-popover>
 </template>
 
 <script>
@@ -93,20 +93,20 @@ D'autres composants peuvent s'imbriquer dans un popover.
 :::demo Remplacez `content` par un `slot`.
 
 ```html
-<el-popover
+<lx-popover
   placement="right"
   :width="400"
   trigger="click"
 >
   <template #reference>
-    <el-button>Cliquez pour activer</el-button>
+    <lx-button>Cliquez pour activer</lx-button>
   </template>
-  <el-table :data="gridData">
-    <el-table-column width="150" property="date" label="date"></el-table-column>
-    <el-table-column width="100" property="name" label="name"></el-table-column>
-    <el-table-column width="300" property="address" label="address"></el-table-column>
-  </el-table>
-</el-popover>
+  <lx-table :data="gridData">
+    <lx-table-column width="150" property="date" label="date"></lx-table-column>
+    <lx-table-column width="100" property="name" label="name"></lx-table-column>
+    <lx-table-column width="300" property="address" label="address"></lx-table-column>
+  </lx-table>
+</lx-popover>
 
 <script>
   export default {
@@ -181,20 +181,20 @@ Vous pouvez aussi imbriquer des opérations. Procéder ainsi est plus léger que
 
 :::demo
 ```html
-<el-popover
+<lx-popover
   placement="top"
   :width="160"
   v-model:visible="visible"
 >
   <p>Voulez-vous vraiment supprimer ceci?</p>
   <div style="text-align: right; margin: 0">
-    <el-button size="mini" type="text" @click="visible = false">Annuler</el-button>
-    <el-button type="primary" size="mini" @click="visible = false">Confirmer</el-button>
+    <lx-button size="mini" type="text" @click="visible = false">Annuler</lx-button>
+    <lx-button type="primary" size="mini" @click="visible = false">Confirmer</lx-button>
   </div>
   <template #reference>
-    <el-button @click="visible = true">Supprimer</el-button>
+    <lx-button @click="visible = true">Supprimer</lx-button>
   </template>
-</el-popover>
+</lx-popover>
 
 <script>
   export default {
@@ -249,7 +249,7 @@ Vous pouvez aussi imbriquer des opérations. Procéder ainsi est plus léger que
 | Nom | Description |
 | --- | --- |
 | — | Contenu du popover. |
-| reference | Element Plus HTML qui déclenche le popover. |
+| reference | Lxement Plus HTML qui déclenche le popover. |
 
 ### Évènements
 

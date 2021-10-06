@@ -8,11 +8,11 @@
 ```html
 <div class="block">
   <span class="demonstration">有默认值</span>
-  <el-color-picker v-model="color1"></el-color-picker>
+  <lx-color-picker v-model="color1"></lx-color-picker>
 </div>
 <div class="block">
   <span class="demonstration">无默认值</span>
-  <el-color-picker v-model="color2"></el-color-picker>
+  <lx-color-picker v-model="color2"></lx-color-picker>
 </div>
 
 <script>
@@ -50,7 +50,7 @@
 
 :::demo ColorPicker 支持普通颜色，也支持带 Alpha 通道的颜色，通过`show-alpha`属性即可控制是否支持透明度的选择。
 ```html
-<el-color-picker v-model="color" show-alpha></el-color-picker>
+<lx-color-picker v-model="color" show-alpha></lx-color-picker>
 
 <script>
   export default {
@@ -84,11 +84,11 @@
 
 :::demo ColorPicker 支持预定义颜色
 ```html
-<el-color-picker
+<lx-color-picker
   v-model="color"
   show-alpha
   :predefine="predefineColors">
-</el-color-picker>
+</lx-color-picker>
 
 <script>
   export default {
@@ -155,10 +155,10 @@
 
 :::demo
 ```html
-<el-color-picker v-model="color"></el-color-picker>
-<el-color-picker v-model="color" size="medium"></el-color-picker>
-<el-color-picker v-model="color" size="small"></el-color-picker>
-<el-color-picker v-model="color" size="mini"></el-color-picker>
+<lx-color-picker v-model="color"></lx-color-picker>
+<lx-color-picker v-model="color" size="medium"></lx-color-picker>
+<lx-color-picker v-model="color" size="small"></lx-color-picker>
+<lx-color-picker v-model="color" size="mini"></lx-color-picker>
 
 <script>
   export default {

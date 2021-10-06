@@ -41,7 +41,7 @@ const getPanel = function (type: IDatePickerType) {
 }
 
 export default defineComponent({
-  name: 'ElDatePicker',
+  name: 'LxDatePicker',
   install: null,
   props: {
     ...timePickerDefaultProps,
@@ -52,7 +52,7 @@ export default defineComponent({
   },
   emits: ['update:modelValue'],
   setup(props, ctx) {
-    provide('ElPopperOptions', props.popperOptions)
+    provide('LxPopperOptions', props.popperOptions)
     const commonPicker = ref(null)
     const refProps = {
       ...props,

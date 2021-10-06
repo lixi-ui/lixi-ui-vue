@@ -1,5 +1,5 @@
 <template>
-  <el-popper
+  <lx-popper
     ref="popper"
     v-model:visible="showPicker"
     :effect="Effect.LIGHT"
@@ -33,7 +33,7 @@
         />
         <div class="el-color-dropdown__btns">
           <span class="el-color-dropdown__value">
-            <el-input
+            <lx-input
               v-model="customInput"
               :validate-event="false"
               size="mini"
@@ -41,22 +41,22 @@
               @blur="handleConfirm"
             />
           </span>
-          <el-button
+          <lx-button
             size="mini"
             type="text"
             class="el-color-dropdown__link-btn"
             @click="clear"
           >
             {{ t('el.colorpicker.clear') }}
-          </el-button>
-          <el-button
+          </lx-button>
+          <lx-button
             plain
             size="mini"
             class="el-color-dropdown__btn"
             @click="confirmValue"
           >
             {{ t('el.colorpicker.confirm') }}
-          </el-button>
+          </lx-button>
         </div>
       </div>
     </template>
@@ -83,18 +83,18 @@
         </div>
       </div>
     </template>
-  </el-popper>
+  </lx-popper>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, inject, nextTick, onMounted, provide, reactive, ref, watch } from 'vue'
 import debounce from 'lodash/debounce'
-import ElButton from '@element-plus/components/button'
+import LxButton from '@element-plus/components/button'
 import { ClickOutside } from '@element-plus/directives'
 import { elFormItemKey, elFormKey } from '@element-plus/tokens'
 import { useLocaleInject } from '@element-plus/hooks'
-import ElPopper, { Effect } from '@element-plus/components/popper'
-import ElInput from '@element-plus/components/input'
+import LxPopper, { Effect } from '@element-plus/components/popper'
+import LxInput from '@element-plus/components/input'
 import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
 import { useGlobalConfig } from '@element-plus/utils/util'
 import { isValidComponentSize } from '@element-plus/utils/validators'
@@ -106,16 +106,16 @@ import Color from './color'
 import { OPTIONS_KEY } from './useOption'
 
 import type { PropType } from 'vue'
-import type { ElFormContext, ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
 import type { ComponentSize } from '@element-plus/utils/types'
 import type { IUseOptions } from './useOption'
 
 export default defineComponent({
-  name: 'ElColorPicker',
+  name: 'LxColorPicker',
   components: {
-    ElButton,
-    ElPopper,
-    ElInput,
+    LxButton,
+    LxPopper,
+    LxInput,
     SvPanel,
     HueSlider,
     AlphaSlider,
@@ -140,8 +140,8 @@ export default defineComponent({
   setup(props, { emit }) {
     const ELEMENT = useGlobalConfig()
     const { t } = useLocaleInject()
-    const elForm = inject(elFormKey, {} as ElFormContext)
-    const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+    const elForm = inject(elFormKey, {} as LxFormContext)
+    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
 
     const hue = ref(null)
     const svPanel = ref(null)

@@ -3,25 +3,25 @@
     <div class="el-calendar__header">
       <div class="el-calendar__title">{{ i18nDate }}</div>
       <div v-if="validatedRange.length === 0" class="el-calendar__button-group">
-        <el-button-group>
-          <el-button
+        <lx-button-group>
+          <lx-button
             size="mini"
             @click="selectDate('prev-month')"
           >
             {{ t('el.datepicker.prevMonth') }}
-          </el-button>
-          <el-button size="mini" @click="selectDate('today')">
+          </lx-button>
+          <lx-button size="mini" @click="selectDate('today')">
             {{
               t('el.datepicker.today')
             }}
-          </el-button>
-          <el-button
+          </lx-button>
+          <lx-button
             size="mini"
             @click="selectDate('next-month')"
           >
             {{ t('el.datepicker.nextMonth') }}
-          </el-button>
-        </el-button-group>
+          </lx-button>
+        </lx-button-group>
       </div>
     </div>
     <div v-if="validatedRange.length === 0" class="el-calendar__body">
@@ -62,7 +62,7 @@ import {
 import type { PropType, ComputedRef } from 'vue'
 import dayjs from 'dayjs'
 
-import ElButton from '@element-plus/components/button'
+import LxButton from '@element-plus/components/button'
 import { useLocaleInject } from '@element-plus/hooks'
 import { warn } from '@element-plus/utils/error'
 import DateTable from './date-table.vue'
@@ -71,14 +71,14 @@ import type { Dayjs } from 'dayjs'
 
 type DateType = 'prev-month' | 'today' | 'next-month'
 
-const { ButtonGroup: ElButtonGroup } = ElButton
+const { ButtonGroup: LxButtonGroup } = LxButton
 export default defineComponent({
-  name: 'ElCalendar',
+  name: 'LxCalendar',
 
   components: {
     DateTable,
-    ElButton,
-    ElButtonGroup,
+    LxButton,
+    LxButtonGroup,
   },
 
   props: {
@@ -197,7 +197,7 @@ export default defineComponent({
       }
       // Other cases
       else {
-        warn('ElCalendar', 'start time and end time interval must not exceed two months')
+        warn('LxCalendar', 'start time and end time interval must not exceed two months')
         return []
       }
     }
@@ -208,7 +208,7 @@ export default defineComponent({
       const rangeArrDayjs = props.range.map(_ => dayjs(_).locale(lang.value))
       const [startDayjs, endDayjs] = rangeArrDayjs
       if (startDayjs.isAfter(endDayjs)) {
-        warn('ElCalendar', 'end time should be greater than start time')
+        warn('LxCalendar', 'end time should be greater than start time')
         return []
       }
       if (startDayjs.isSame(endDayjs, 'month')) {
@@ -217,7 +217,7 @@ export default defineComponent({
       } else {
         // two months
         if (startDayjs.add(1, 'month').month() !== endDayjs.month()) {
-          warn('ElCalendar', 'start time and end time interval must not exceed two months')
+          warn('LxCalendar', 'start time and end time interval must not exceed two months')
           return []
         }
         return calculateValidatedDateRange(startDayjs, endDayjs)

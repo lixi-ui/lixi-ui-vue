@@ -18,7 +18,7 @@ import type { VNode } from 'vue'
 import type { DefaultRow, Table } from '../table/defaults'
 
 export default defineComponent({
-  name: 'ElTableBody',
+  name: 'LxTableBody',
   props: defaultProps,
   setup(props) {
     const instance = getCurrentInstance()
@@ -36,7 +36,7 @@ export default defineComponent({
         raf = fn => window.setTimeout(fn, 16)
       }
       raf(() => {
-        const rows = instance.vnode.el.querySelectorAll('.el-table__row')
+        const rows = instance.vnode.el.querySelectorAll('.lx-table__row')
         const oldRow = rows[oldVal]
         const newRow = rows[newVal]
         if (oldRow) {

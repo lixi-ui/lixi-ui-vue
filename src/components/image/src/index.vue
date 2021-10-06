@@ -61,7 +61,7 @@ const ObjectFit = {
 let prevOverflow = ''
 
 export default defineComponent({
-  name: 'ElImage',
+  name: 'LxImage',
   components: {
     ImageViewer,
   },

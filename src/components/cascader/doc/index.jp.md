@@ -10,18 +10,18 @@
 ```html
 <div class="block">
   <span class="demonstration">クリックすると子オプションが展開される(デフォルト)</span>
-  <el-cascader
+  <lx-cascader
     v-model="value"
     :options="options"
-    @change="handleChange"></el-cascader>
+    @change="handleChange"></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">ホバーすると子のオプションが拡張される</span>
-  <el-cascader
+  <lx-cascader
     v-model="value"
     :options="options"
     :props="{ expandTrigger: 'hover' }"
-    @change="handleChange"></el-cascader>
+    @change="handleChange"></lx-cascader>
 </div>
 
 <script>
@@ -533,7 +533,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 :::demo この例では、`options` 配列の最初の項目に `disabled: true` フィールドがあるので、無効になっています。デフォルトでは、Cascader は各オプションオブジェクトの `disabled` フィールドをチェックします。オプションが無効かどうかを示すために別のフィールド名を使用している場合は、`props.disabled` 属性にそれを割り当てることができます (詳細は以下の API テーブルを参照してください)。もちろん、フィールド名 `value`、`label`、`children` も同様にカスタマイズすることができます。
 ```html
-<el-cascader :options="options"></el-cascader>
+<lx-cascader :options="options"></lx-cascader>
 
 <script>
   export default {
@@ -1034,7 +1034,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 :::demo
 ```html
-<el-cascader :options="options" clearable></el-cascader>
+<lx-cascader :options="options" clearable></lx-cascader>
 
 <script>
   export default {
@@ -1533,7 +1533,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 :::demo `show-all-levels` 属性は、すべてのレベルを表示するかどうかを定義する。`false` の場合、最後のレベルのみが表示される。
 ```html
-<el-cascader :options="options" :show-all-levels="false"></el-cascader>
+<lx-cascader :options="options" :show-all-levels="false"></lx-cascader>
 <script>
   export default {
     data() {
@@ -2033,18 +2033,18 @@ export default defineComponent({
 ```html
 <div class="block">
   <span class="demonstration">すべてのタグを表示する（デフォルト)</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="props"
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">タグの折りたたみ</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="props"
     collapse-tags
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 
 <script>
@@ -2238,17 +2238,17 @@ export default defineComponent({
 ```html
 <div class="block">
   <span class="demonstration">任意のレベルのオプションを選択（単一選択)</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="{ checkStrictly: true }"
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">任意のレベルのオプションを選択（複数選択)</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="{ multiple: true, checkStrictly: true }"
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 
 <script>
@@ -2748,7 +2748,7 @@ export default defineComponent({
 
 :::demo 動的ロードを利用するには `lazy = true` を設定し、`lazyload` でデータソースのロード方法を指定する必要があります。パラメータ `lazyload` には2つのパラメータがあり、最初のパラメータ `node` は現在クリックされているノード、`resolve` はロードが完了したことを示すコールバックで、これを呼び出す必要があります。ノードの状態をより正確に表示するには、それがリーフノードであるかどうかを示すために `leaf` フィールドを追加します ( `props.leaf` で変更可能)。そうでない場合は、子ノードがあるかどうかで推測されます。
 ```html
-<el-cascader :props="props"></el-cascader>
+<lx-cascader :props="props"></lx-cascader>
 
 <script>
   let id = 0;
@@ -2821,18 +2821,18 @@ export default defineComponent({
 ```html
 <div class="block">
   <span class="demonstration">Filterable (Single selection)</span>
-  <el-cascader
+  <lx-cascader
     placeholder="Try searchingL Guide"
     :options="options"
-    filterable></el-cascader>
+    filterable></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">Filterable (Multiple selection)</span>
-  <el-cascader
+  <lx-cascader
     placeholder="Try searchingL Guide"
     :options="options"
     :props="{ multiple: true }"
-    filterable></el-cascader>
+    filterable></lx-cascader>
 </div>
 
 <script>
@@ -3332,12 +3332,12 @@ cascaderノードの内容をカスタマイズすることができます。
 
 :::demo `scoped slot`によって、cascaderの内容をカスタマイズすることができます。スコープ内の `node` と `data` にアクセスすることができます。
 ```html
-<el-cascader :options="options">
+<lx-cascader :options="options">
   <template #default="{ node, data }">
     <span>{{ data.label }}</span>
     <span v-if="!node.isLeaf"> ({{ data.children.length }}) </span>
   </template>
-</el-cascader>
+</lx-cascader>
 
 <script>
   export default {
@@ -3836,7 +3836,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 :::demo `el-cascader` と同様に、`options` で代替オプションを設定したり、`props` で他の機能を有効にしたりすることができます。
 ```html
-<el-cascader-panel :options="options"></el-cascader-panel>
+<lx-cascader-panel :options="options"></lx-cascader-panel>
 
 <script>
   export default {

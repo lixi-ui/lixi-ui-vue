@@ -10,22 +10,22 @@ alertコンポーネントは、自動的には消えないページ内の非オ
 
 ```html
 <template>
-  <el-alert
+  <lx-alert
     title="success alert"
     type="success">
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="info alert"
     type="info">
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="warning alert"
     type="warning">
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="error alert"
     type="error">
-  </el-alert>
+  </lx-alert>
 </template>
 ```
 :::
@@ -37,26 +37,26 @@ alertは、`ライト`と`ダーク`の2つの異なるテーマを提供して�
 :::demo テーマを変更するために `effect` を設定します。
 ```html
 <template>
-  <el-alert
+  <lx-alert
     title="success alert"
     type="success"
     effect="dark">
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="info alert"
     type="info"
     effect="dark">
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="warning alert"
     type="warning"
     effect="dark">
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="error alert"
     type="error"
     effect="dark">
-  </el-alert>
+  </lx-alert>
 </template>
 ```
 :::
@@ -69,21 +69,21 @@ alertは、`ライト`と`ダーク`の2つの異なるテーマを提供して�
 
 ```html
 <template>
-  <el-alert
+  <lx-alert
     title="unclosable alert"
     type="success"
     :closable="false">
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="customized close-text"
     type="info"
     close-text="Gotcha">
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="alert with callback"
     type="warning"
     @close="hello">
-  </el-alert>
+  </lx-alert>
 </template>
 
 <script>
@@ -110,26 +110,26 @@ alertは、`ライト`と`ダーク`の2つの異なるテーマを提供して�
 
 ```html
 <template>
-  <el-alert
+  <lx-alert
     title="success alert"
     type="success"
     show-icon>
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="info alert"
     type="info"
     show-icon>
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="warning alert"
     type="warning"
     show-icon>
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="error alert"
     type="error"
     show-icon>
-  </el-alert>
+  </lx-alert>
 </template>
 ```
 :::
@@ -142,30 +142,30 @@ alertは、`ライト`と`ダーク`の2つの異なるテーマを提供して�
 
 ```html
 <template>
-  <el-alert
+  <lx-alert
     title="success alert"
     type="success"
     center
     show-icon>
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="info alert"
     type="info"
     center
     show-icon>
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="warning alert"
     type="warning"
     center
     show-icon>
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="error alert"
     type="error"
     center
     show-icon>
-  </el-alert>
+  </lx-alert>
 </template>
 ```
 :::
@@ -178,11 +178,11 @@ alertは、`ライト`と`ダーク`の2つの異なるテーマを提供して�
 
 ```html
 <template>
-  <el-alert
+  <lx-alert
     title="with description"
     type="success"
     description="This is a description.">
-  </el-alert>
+  </lx-alert>
 </template>
 ```
 :::
@@ -193,30 +193,30 @@ alertは、`ライト`と`ダーク`の2つの異なるテーマを提供して�
 
 ```html
 <template>
-  <el-alert
+  <lx-alert
     title="success alert"
     type="success"
     description="more text description"
     show-icon>
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="info alert"
     type="info"
     description="more text description"
     show-icon>
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="warning alert"
     type="warning"
     description="more text description"
     show-icon>
-  </el-alert>
-  <el-alert
+  </lx-alert>
+  <lx-alert
     title="error alert"
     type="error"
     description="more text description"
     show-icon>
-  </el-alert>
+  </lx-alert>
 </template>
 ```
 :::

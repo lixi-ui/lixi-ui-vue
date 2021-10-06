@@ -6,29 +6,29 @@ Se muestra la animación mientras se cargan los datos.
 
 Muestra una animación en un contenedor (como en una tabla) mientras se cargan los datos.
 
-:::demo Element Plus provee dos maneras para invocar el componente de Cargando: por directiva y por servicio. Para la directiva personalizada `v-loading`, solo necesitas enlazarlo a un valor `Boolean`. Por defecto, la máscara de carga se agregará al elemento donde se usa la directiva. Al agregar el modificador `body`, la máscara se agrega al elemento body.
+:::demo Lxement Plus provee dos maneras para invocar el componente de Cargando: por directiva y por servicio. Para la directiva personalizada `v-loading`, solo necesitas enlazarlo a un valor `Boolean`. Por defecto, la máscara de carga se agregará al elemento donde se usa la directiva. Al agregar el modificador `body`, la máscara se agrega al elemento body.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     v-loading="loading"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Fecha"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <style>
@@ -104,50 +104,50 @@ Puede personalizar el texto de carga, spinner de carga y color de fondo.
 :::demo Agregue el atributo `element-loading-text` al elemento en el que `v-loading` está vinculado, y su valor se mostrará debajo del spinner. De manera similar, los atributos `element-loading-spinner`,` element-loading-background` y `element-loading-svg` se utilizan para establecer el nombre de la clase del icono, el valor del color de fondo y el icono de carga, respectivamente.
 ```html
 <template>
-  <el-table
+  <lx-table
     v-loading="loading"
     element-loading-text="Loading..."
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Fecha"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección">
-    </el-table-column>
-  </el-table>
-  <el-table
+    </lx-table-column>
+  </lx-table>
+  <lx-table
     v-loading="loading"
     :element-loading-svg="svg"
     class="custom-loading-svg"
     element-loading-svg-view-box="-10, -10, 50, 50"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Fecha"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -242,17 +242,17 @@ Muestra una animación de pantalla completa mientras se cargan los datos
 
 ```html
 <template>
-  <el-button
+  <lx-button
     type="primary"
     @click="openFullScreen1"
     v-loading.fullscreen.lock="fullscreenLoading">
     Como directiva
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     type="primary"
     @click="openFullScreen2">
     Como servicio
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -287,7 +287,7 @@ Muestra una animación de pantalla completa mientras se cargan los datos
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { ElLoading } from 'element-plus';
+  import { LxLoading } from 'element-plus';
 
   export default defineComponent({
     setup() {
@@ -300,7 +300,7 @@ Muestra una animación de pantalla completa mientras se cargan los datos
       };
 
       const openFullScreen2 = () => {
-        const loading = ElLoading.service({
+        const loading = LxLoading.service({
           lock: true,
           text: 'Loading',
           spinner: 'el-icon-loading',
@@ -329,7 +329,7 @@ Muestra una animación de pantalla completa mientras se cargan los datos
 Puede invocar el componente con un servicio. Importe el servicio:
 
 ```javascript
-import { ElLoading } from 'element-plus';
+import { LxLoading } from 'element-plus';
 ```
 Invocar:
 ```javascript
@@ -337,18 +337,18 @@ ElLoading.service(options);
 ```
 El parámetro `options` es la configuración del componente, y estos detalles pueden ser encontrados en la siguiente table. `LoadingService` devuelve una instancia del componente, y puede cerrarlo invocando el método `close`:
 ```javascript
-let loadingInstance = ElLoading.service(options);
+let loadingInstance = LxLoading.service(options);
 loadingInstance.close();
 ```
 Tenga en cuenta que, en este caso, el componente a pantalla completa es una instancia única. Si un nuevo componente de pantalla completa es invocado antes de que se cierre la existente, se devolverá la instancia existente en lugar de crear la otra instancia:
 ```javascript
-let loadingInstance1 = ElLoading.service({ fullscreen: true });
-let loadingInstance2 = ElLoading.service({ fullscreen: true });
+let loadingInstance1 = LxLoading.service({ fullscreen: true });
+let loadingInstance2 = LxLoading.service({ fullscreen: true });
 console.log(loadingInstance1 === loadingInstance2); // true
 ```
 Llamar al método `close` en cualquiera de estas puede cerrarlo.
 
-Si Element Plus es importado completamente, un método global `$loading` puede ser registrado a `app.config.globalProperties`. Puede invocarlo como esto: `this.$loading(options)`, y también devuelve una instancia del componente.
+Si Lxement Plus es importado completamente, un método global `$loading` puede ser registrado a `app.config.globalProperties`. Puede invocarlo como esto: `this.$loading(options)`, y también devuelve una instancia del componente.
 
 ### Options
 | Atributo    | Descripción                              | Tipo          | Valores aceptados | Por defecto   |

@@ -9,7 +9,7 @@ import {
   onBeforeUnmount,
   Fragment,
 } from 'vue'
-import ElCheckbox from '@element-plus/components/checkbox'
+import LxCheckbox from '@element-plus/components/checkbox'
 import { cellStarts } from '../config'
 import { mergeOptions, compose } from '../util'
 import useWatcher from './watcher-helper'
@@ -21,9 +21,9 @@ import type { DefaultRow } from '../table/defaults'
 let columnIdSeed = 1
 
 export default defineComponent({
-  name: 'ElTableColumn',
+  name: 'LxTableColumn',
   components: {
-    ElCheckbox,
+    LxCheckbox,
   },
   props: defaultProps,
   setup(props, { slots }) {
@@ -81,7 +81,7 @@ export default defineComponent({
         sortable: sortable,
         // index 列
         index: props.index,
-        // <el-table-column key="xxx" />
+        // <lx-table-column key="xxx" />
         rawColumnKey: instance.vnode.key,
       }
 
@@ -162,7 +162,7 @@ export default defineComponent({
       })
       if (renderDefault instanceof Array) {
         for (const childNode of renderDefault) {
-          if (childNode.type?.name === 'ElTableColumn') {
+          if (childNode.type?.name === 'LxTableColumn') {
             children.push(childNode)
           } else if (
             childNode.type === Fragment &&

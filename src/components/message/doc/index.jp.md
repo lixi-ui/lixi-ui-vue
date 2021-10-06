@@ -10,8 +10,8 @@
 
 ```html
 <template>
-  <el-button :plain="true" @click="open">Show message</el-button>
-  <el-button :plain="true" @click="openVn">VNode</el-button>
+  <lx-button :plain="true" @click="open">Show message</lx-button>
+  <lx-button :plain="true" @click="openVn">VNode</lx-button>
 </template>
 
 <script>
@@ -38,17 +38,17 @@
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessage('this is a message.');
+        LxMessage('this is a message.');
       };
 
       const openVn = () => {
-        ElMessage({
+        LxMessage({
           message: h('p', null, [
             h('span', null, 'Message can be '),
             h('i', { style: 'color: teal' }, 'VNode'),
@@ -75,10 +75,10 @@
 :::demo さらにカスタマイズが必要な場合は、メッセージコンポーネントはオブジェクトをパラメータとして受け取ることもできます。例えば、`type`の値を設定することで異なるタイプを定義することができ、デフォルトは `info` です。このような場合、`message`の値として本体が渡されます。また、型ごとにメソッドを登録しているので、`open4`のように型を渡さずに直接呼び出すこともできる。
 ```html
 <template>
-  <el-button :plain="true" @click="open2">success</el-button>
-  <el-button :plain="true" @click="open3">warning</el-button>
-  <el-button :plain="true" @click="open1">message</el-button>
-  <el-button :plain="true" @click="open4">error</el-button>
+  <lx-button :plain="true" @click="open2">success</lx-button>
+  <lx-button :plain="true" @click="open3">warning</lx-button>
+  <lx-button :plain="true" @click="open1">message</lx-button>
+  <lx-button :plain="true" @click="open4">error</lx-button>
 </template>
 
 <script>
@@ -111,28 +111,28 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElMessage('this is a message.');
+        LxMessage('this is a message.');
       };
       const open2 = () => {
-        ElMessage({
+        LxMessage({
           message: 'Congrats, this is a success message.',
           type: 'success',
         });
       };
       const open3 = () => {
-        ElMessage({
+        LxMessage({
           message: 'Warning, this is a warning message.',
           type: 'warning',
         });
       };
       const open4 = () => {
-        ElMessage.error('Oops, this is a error message.');
+        LxMessage.error('Oops, this is a error message.');
       };
       return {
         open1,
@@ -155,10 +155,10 @@
 :::demo デフォルトのメッセージは手動で閉じることができません。メッセージを閉じたい場合は `showClose` フィールドを設定することができます。通知と同様に、メッセージにも制御可能な `duration` があります。デフォルトの持続時間は3000msで、`0`に設定してもメッセージは消えません。
 ```html
 <template>
-  <el-button :plain="true" @click="open1">message</el-button>
-  <el-button :plain="true" @click="open2">success</el-button>
-  <el-button :plain="true" @click="open3">warning</el-button>
-  <el-button :plain="true" @click="open4">error</el-button>
+  <lx-button :plain="true" @click="open1">message</lx-button>
+  <lx-button :plain="true" @click="open2">success</lx-button>
+  <lx-button :plain="true" @click="open3">warning</lx-button>
+  <lx-button :plain="true" @click="open4">error</lx-button>
 </template>
 
 <script>
@@ -201,33 +201,33 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElMessage({
+        LxMessage({
           showClose: true,
           message: 'This is a message.',
         });
       };
       const open2 = () => {
-        ElMessage({
+        LxMessage({
           showClose: true,
           message: 'Congrats, this is a success message.',
           type: 'success',
         });
       };
       const open3 = () => {
-        ElMessage({
+        LxMessage({
           showClose: true,
           message: 'Warning, this is a warning message.',
           type: 'warning',
         });
       };
       const open4 = () => {
-        ElMessage({
+        LxMessage({
           showClose: true,
           message: 'Oops, this is a error message.',
           type: 'error',
@@ -254,7 +254,7 @@
 
 ```html
 <template>
-  <el-button :plain="true" @click="openCenter">Centered text</el-button>
+  <lx-button :plain="true" @click="openCenter">Centered text</lx-button>
 </template>
 
 <script>
@@ -273,13 +273,13 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const openCenter = () => {
-        ElMessage({
+        LxMessage({
           showClose: true,
           message: 'Centered text',
         });
@@ -302,7 +302,7 @@
 
 ```html
 <template>
-  <el-button :plain="true" @click="openHTML">Use HTML String</el-button>
+  <lx-button :plain="true" @click="openHTML">Use HTML String</lx-button>
 </template>
 
 <script>
@@ -321,13 +321,13 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const openCenter = () => {
-        ElMessage({
+        LxMessage({
           dangerouslyUseHTMLString: true,
           message: '<strong>This is <i>HTML</i> string</strong>',
         });
@@ -355,7 +355,7 @@
 ### ローカルインポート
 
 ```javascript
-import { ElMessage } from 'element-plus';
+import { LxMessage } from 'element-plus';
 ```
 
 この場合は `ElMessage(options)` を呼び出す必要があります。また、`ElMessage.success(options)`のように、異なるタイプのメソッドも登録しています。すべてのインスタンスを手動で閉じるには、`ElMessage.closeAll()`を呼び出すことができます。

@@ -8,7 +8,7 @@ describe('Rate.vue', () => {
         max: 10,
       },
     })
-    const stars = wrapper.findAll('.el-rate__item')
+    const stars = wrapper.findAll('.lx-rate__item')
     expect(stars.length).toEqual(10)
   })
 
@@ -16,7 +16,7 @@ describe('Rate.vue', () => {
     const wrapper = mount({
       template: `
         <div>
-          <el-rate v-model="value" allow-half ref='rate' />
+          <lx-rate v-model="value" allow-half ref='rate' />
         </div>
       `,
       props: {},
@@ -30,7 +30,7 @@ describe('Rate.vue', () => {
       },
     })
     const vm = wrapper.vm
-    const secondStar = wrapper.findAll('.el-rate__item')[1].element as HTMLElement
+    const secondStar = wrapper.findAll('.lx-rate__item')[1].element as HTMLElement
     vm.$refs.rate.setCurrentValue(1, { target: secondStar, offsetX: 0 })
     // expect(vm.$refs.rate.currentValue).toEqual(0.5)
     secondStar.click()
@@ -46,7 +46,7 @@ describe('Rate.vue', () => {
         texts: ['1', '2', '3', '4', '5'],
       },
     })
-    const text = wrapper.find('.el-rate__text').element
+    const text = wrapper.find('.lx-rate__text').element
     expect(text.textContent).toEqual('4')
   })
 
@@ -65,7 +65,7 @@ describe('Rate.vue', () => {
     const wrapper = mount({
       template: `
         <div>
-          <el-rate v-model="value1" />
+          <lx-rate v-model="value1" />
         </div>
       `,
       props: {},
@@ -79,7 +79,7 @@ describe('Rate.vue', () => {
       },
     })
     const vm = wrapper.vm
-    const thirdStar = wrapper.findAll('.el-rate__item')[2].element as HTMLElement
+    const thirdStar = wrapper.findAll('.lx-rate__item')[2].element as HTMLElement
 
     thirdStar.click()
     expect(vm.value1).toEqual(3)
@@ -89,7 +89,7 @@ describe('Rate.vue', () => {
     const wrapper = mount({
       template: `
         <div>
-          <el-rate v-model="value" :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></el-rate>
+          <lx-rate v-model="value" :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></lx-rate>
         </div>
       `,
       props:{},
@@ -103,7 +103,7 @@ describe('Rate.vue', () => {
       },
     })
     // const vm = wrapper.vm
-    const thirdStar = (wrapper.findAll('.el-rate__item')[2].element as HTMLElement).querySelector('.el-rate__icon') as any
+    const thirdStar = (wrapper.findAll('.lx-rate__item')[2].element as HTMLElement).querySelector('.lx-rate__icon') as any
 
     expect(thirdStar.style.color).toEqual('rgb(255, 153, 0)')
   })
@@ -112,7 +112,7 @@ describe('Rate.vue', () => {
     const wrapper = mount({
       template: `
         <div>
-          <el-rate v-model="value" @change="handleChange"></el-rate>
+          <lx-rate v-model="value" @change="handleChange"></lx-rate>
         </div>
       `,
       data() {
@@ -131,11 +131,11 @@ describe('Rate.vue', () => {
       },
     })
     const vm = wrapper.vm
-    const fourthStar = wrapper.findAll('.el-rate__item')[3].element as HTMLElement
+    const fourthStar = wrapper.findAll('.lx-rate__item')[3].element as HTMLElement
     fourthStar.click()
     expect(vm.value).toEqual(4)
     expect(vm.changeCount).toEqual(0)
-    const fifthStar = wrapper.findAll('.el-rate__item')[4].element as HTMLElement
+    const fifthStar = wrapper.findAll('.lx-rate__item')[4].element as HTMLElement
     fifthStar.click()
     expect(vm.value).toEqual(5)
     expect(vm.changeCount).toEqual(1)

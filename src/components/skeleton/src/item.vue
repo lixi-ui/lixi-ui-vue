@@ -12,7 +12,7 @@ import type { PropType } from 'vue'
 import type { Variants } from './types'
 
 export default defineComponent({
-  name: 'ElSkeletonItem',
+  name: 'LxSkeletonItem',
   components: {
     [ImgPlaceholder.name]: ImgPlaceholder,
   },

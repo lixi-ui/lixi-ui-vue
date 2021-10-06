@@ -1,5 +1,5 @@
 <template>
-  <el-popper
+  <lx-popper
     ref="popper"
     v-model:visible="suggestionVisible"
     :placement="placement"
@@ -22,7 +22,7 @@
         :aria-expanded="suggestionVisible"
         :aria-owns="id"
       >
-        <el-input
+        <lx-input
           ref="inputRef"
           v-bind="attrs"
           :model-value="modelValue"
@@ -48,7 +48,7 @@
           <template v-if="$slots.suffix" #suffix>
             <slot name="suffix"></slot>
           </template>
-        </el-input>
+        </lx-input>
       </div>
     </template>
     <template #default>
@@ -58,7 +58,7 @@
         :style="{ width: dropdownWidth, outline: 'none' }"
         role="region"
       >
-        <el-scrollbar
+        <lx-scrollbar
           tag="ul"
           wrap-class="el-autocomplete-suggestion__wrap"
           view-class="el-autocomplete-suggestion__list"
@@ -79,10 +79,10 @@
               <slot :item="item">{{ item[valueKey] }}</slot>
             </li>
           </template>
-        </el-scrollbar>
+        </lx-scrollbar>
       </div>
     </template>
-  </el-popper>
+  </lx-popper>
 </template>
 
 <script lang="ts">
@@ -98,18 +98,18 @@ import { ClickOutside } from '@element-plus/directives'
 import { generateId, isArray } from '@element-plus/utils/util'
 import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
 import throwError from '@element-plus/utils/error'
-import ElInput from '@element-plus/components/input'
-import ElScrollbar from '@element-plus/components/scrollbar'
-import ElPopper, { Effect, Placement } from '@element-plus/components/popper'
+import LxInput from '@element-plus/components/input'
+import LxScrollbar from '@element-plus/components/scrollbar'
+import LxPopper, { Effect, Placement } from '@element-plus/components/popper'
 
 import type { PropType } from 'vue'
 
 export default defineComponent({
-  name: 'ElAutocomplete',
+  name: 'LxAutocomplete',
   components: {
-    ElPopper,
-    ElInput,
-    ElScrollbar,
+    LxPopper,
+    LxInput,
+    LxScrollbar,
   },
   directives: {
     clickoutside: ClickOutside,
@@ -201,7 +201,7 @@ export default defineComponent({
       inputRef.value.inputOrTextarea.setAttribute('aria-autocomplete', 'list')
       inputRef.value.inputOrTextarea.setAttribute('aria-controls', 'id')
       inputRef.value.inputOrTextarea.setAttribute('aria-activedescendant', `${id.value}-item-${highlightedIndex.value}`)
-      const $ul = regionRef.value.querySelector('.el-autocomplete-suggestion__list')
+      const $ul = regionRef.value.querySelector('.lx-autocomplete-suggestion__list')
       $ul.setAttribute('role', 'listbox')
       $ul.setAttribute('id', id.value)
     })
@@ -223,7 +223,7 @@ export default defineComponent({
           suggestions.value = suggestionsArg
           highlightedIndex.value = props.highlightFirstItem ? 0 : -1
         } else {
-          throwError('ElAutocomplete', 'autocomplete suggestions must be an array')
+          throwError('LxAutocomplete', 'autocomplete suggestions must be an array')
         }
       })
     }
@@ -297,8 +297,8 @@ export default defineComponent({
       if (index >= suggestions.value.length) {
         index = suggestions.value.length - 1
       }
-      const suggestion = regionRef.value.querySelector('.el-autocomplete-suggestion__wrap')
-      const suggestionList = suggestion.querySelectorAll('.el-autocomplete-suggestion__list li')
+      const suggestion = regionRef.value.querySelector('.lx-autocomplete-suggestion__wrap')
+      const suggestionList = suggestion.querySelectorAll('.lx-autocomplete-suggestion__list li')
       const highlightItem = suggestionList[index]
       const scrollTop = suggestion.scrollTop
       const { offsetTop, scrollHeight } = highlightItem

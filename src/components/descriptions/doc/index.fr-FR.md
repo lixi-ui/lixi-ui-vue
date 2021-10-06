@@ -7,15 +7,15 @@ Display multiple fields in list form.
 :::demo
 
 ```html
-<el-descriptions title="User Info">
-  <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-  <el-descriptions-item label="Place">Suzhou</el-descriptions-item>
-  <el-descriptions-item label="Remarks">
-    <el-tag size="small">School</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item>
-</el-descriptions>
+<lx-descriptions title="User Info">
+  <lx-descriptions-item label="Username">kooriookami</lx-descriptions-item>
+  <lx-descriptions-item label="Telephone">18100000000</lx-descriptions-item>
+  <lx-descriptions-item label="Place">Suzhou</lx-descriptions-item>
+  <lx-descriptions-item label="Remarks">
+    <lx-tag size="small">School</lx-tag>
+  </lx-descriptions-item>
+  <lx-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</lx-descriptions-item>
+</lx-descriptions>
 ```
 :::
 
@@ -25,66 +25,66 @@ Display multiple fields in list form.
 
 ```html
 <template>
-  <el-radio-group v-model="size">
-    <el-radio label="">Default</el-radio>
-    <el-radio label="medium">Medium</el-radio>
-    <el-radio label="small">Small</el-radio>
-    <el-radio label="mini">Mini</el-radio>
-  </el-radio-group>
+  <lx-radio-group v-model="size">
+    <lx-radio label="">Default</lx-radio>
+    <lx-radio label="medium">Medium</lx-radio>
+    <lx-radio label="small">Small</lx-radio>
+    <lx-radio label="mini">Mini</lx-radio>
+  </lx-radio-group>
 
-  <el-descriptions class="margin-top" title="With border" :column="3" :size="size" border>
+  <lx-descriptions class="margin-top" title="With border" :column="3" :size="size" border>
     <template #extra>
-      <el-button type="primary" size="small">Operation</el-button>
+      <lx-button type="primary" size="small">Operation</lx-button>
     </template>
-    <el-descriptions-item>
+    <lx-descriptions-item>
       <template #label>
         <i class="el-icon-user"></i>
         Username
       </template>
       kooriookami
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </lx-descriptions-item>
+    <lx-descriptions-item>
       <template #label>
         <i class="el-icon-mobile-phone"></i>
         Telephone
       </template>
       18100000000
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </lx-descriptions-item>
+    <lx-descriptions-item>
       <template #label>
         <i class="el-icon-location-outline"></i>
         Place
       </template>
       Suzhou
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </lx-descriptions-item>
+    <lx-descriptions-item>
       <template #label>
         <i class="el-icon-tickets"></i>
         Remarks
       </template>
-      <el-tag size="small">School</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item>
+      <lx-tag size="small">School</lx-tag>
+    </lx-descriptions-item>
+    <lx-descriptions-item>
       <template #label>
         <i class="el-icon-office-building"></i>
         Address
       </template>
       No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province
-    </el-descriptions-item>
-  </el-descriptions>
+    </lx-descriptions-item>
+  </lx-descriptions>
 
-  <el-descriptions class="margin-top" title="Without border" :column="3" :size="size">
+  <lx-descriptions class="margin-top" title="Without border" :column="3" :size="size">
     <template #extra>
-      <el-button type="primary" size="small">Operation</el-button>
+      <lx-button type="primary" size="small">Operation</lx-button>
     </template>
-    <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-    <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-    <el-descriptions-item label="Place">Suzhou</el-descriptions-item>
-    <el-descriptions-item label="Remarks">
-      <el-tag size="small">School</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item>
-  </el-descriptions>
+    <lx-descriptions-item label="Username">kooriookami</lx-descriptions-item>
+    <lx-descriptions-item label="Telephone">18100000000</lx-descriptions-item>
+    <lx-descriptions-item label="Place">Suzhou</lx-descriptions-item>
+    <lx-descriptions-item label="Remarks">
+      <lx-tag size="small">School</lx-tag>
+    </lx-descriptions-item>
+    <lx-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</lx-descriptions-item>
+  </lx-descriptions>
 </template>
 
 <script>
@@ -104,25 +104,25 @@ Display multiple fields in list form.
 :::demo
 
 ```html
-<el-descriptions title="Vertical list with border" direction="vertical" :column="4" border>
-  <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-  <el-descriptions-item label="Place" :span="2">Suzhou</el-descriptions-item>
-  <el-descriptions-item label="Remarks">
-    <el-tag size="small">School</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item>
-</el-descriptions>
+<lx-descriptions title="Vertical list with border" direction="vertical" :column="4" border>
+  <lx-descriptions-item label="Username">kooriookami</lx-descriptions-item>
+  <lx-descriptions-item label="Telephone">18100000000</lx-descriptions-item>
+  <lx-descriptions-item label="Place" :span="2">Suzhou</lx-descriptions-item>
+  <lx-descriptions-item label="Remarks">
+    <lx-tag size="small">School</lx-tag>
+  </lx-descriptions-item>
+  <lx-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</lx-descriptions-item>
+</lx-descriptions>
 
-<el-descriptions class="margin-top" title="Vertical list without border" :column="4" direction="vertical">
-  <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-  <el-descriptions-item label="Place" :span="2">Suzhou</el-descriptions-item>
-  <el-descriptions-item label="Remarks">
-    <el-tag size="small">School</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item>
-</el-descriptions>
+<lx-descriptions class="margin-top" title="Vertical list without border" :column="4" direction="vertical">
+  <lx-descriptions-item label="Username">kooriookami</lx-descriptions-item>
+  <lx-descriptions-item label="Telephone">18100000000</lx-descriptions-item>
+  <lx-descriptions-item label="Place" :span="2">Suzhou</lx-descriptions-item>
+  <lx-descriptions-item label="Remarks">
+    <lx-tag size="small">School</lx-tag>
+  </lx-descriptions-item>
+  <lx-descriptions-item label="Address">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</lx-descriptions-item>
+</lx-descriptions>
 ```
 :::
 
@@ -131,15 +131,15 @@ Display multiple fields in list form.
 :::demo
 
 ```html
-<el-descriptions title="Customized style list" :column="3" border>
-  <el-descriptions-item label="Username" label-align="right" align="center" label-class-name="my-label" class-name="my-content" width="150px">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="Telephone" label-align="right" align="center">18100000000</el-descriptions-item>
-  <el-descriptions-item label="Place" label-align="right" align="center">Suzhou</el-descriptions-item>
-  <el-descriptions-item label="Remarks" label-align="right" align="center">
-    <el-tag size="small">School</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="Address" label-align="right" align="center">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</el-descriptions-item>
-</el-descriptions>
+<lx-descriptions title="Customized style list" :column="3" border>
+  <lx-descriptions-item label="Username" label-align="right" align="center" label-class-name="my-label" class-name="my-content" width="150px">kooriookami</lx-descriptions-item>
+  <lx-descriptions-item label="Telephone" label-align="right" align="center">18100000000</lx-descriptions-item>
+  <lx-descriptions-item label="Place" label-align="right" align="center">Suzhou</lx-descriptions-item>
+  <lx-descriptions-item label="Remarks" label-align="right" align="center">
+    <lx-tag size="small">School</lx-tag>
+  </lx-descriptions-item>
+  <lx-descriptions-item label="Address" label-align="right" align="center">No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province</lx-descriptions-item>
+</lx-descriptions>
 ```
 :::
 

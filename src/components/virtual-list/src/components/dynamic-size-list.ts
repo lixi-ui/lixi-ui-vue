@@ -18,7 +18,7 @@ import type { ExtractPropTypes } from 'vue'
 
 type Props = ExtractPropTypes<typeof DefaultListProps>
 
-const SCOPE = 'ElDynamicSizeList'
+const SCOPE = 'LxDynamicSizeList'
 const getItemFromCache = (
   props: Props,
   index: number,
@@ -158,7 +158,7 @@ const getEstimatedTotalSize = (
 }
 
 const DynamicSizeList = createList({
-  name: 'ElDynamicSizeList',
+  name: 'LxDynamicSizeList',
   getItemOffset: (
     props,
     index,

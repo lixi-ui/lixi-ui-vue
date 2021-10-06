@@ -9,9 +9,9 @@
 ```html
 
 <template>
-  <el-scrollbar height="400px">
+  <lx-scrollbar height="400px">
     <p class="item" v-for="item in 20">{{ item }}</p>
-  </el-scrollbar>
+  </lx-scrollbar>
 </template>
 ```
 
@@ -24,11 +24,11 @@
 ```html
 
 <template>
-  <el-scrollbar>
+  <lx-scrollbar>
     <div class="flex-content">
       <p class="item" v-for="item in 50">{{ item }}</p>
     </div>
-  </el-scrollbar>
+  </lx-scrollbar>
 </template>
 ```
 
@@ -41,11 +41,11 @@
 ```html
 
 <template>
-  <el-button @click="add">添加元素</el-button>
-  <el-button @click="delete">删除元素</el-button>
-  <el-scrollbar max-height="400px">
+  <lx-button @click="add">添加元素</lx-button>
+  <lx-button @click="delete">删除元素</lx-button>
+  <lx-scrollbar max-height="400px">
     <p class="item" v-for="item in count">{{ item }}</p>
-  </el-scrollbar>
+  </lx-scrollbar>
 </template>
 
 <script>
@@ -78,13 +78,13 @@
 ```html
 
 <template>
-  <el-scrollbar ref="scrollbar" height="400px" always>
+  <lx-scrollbar ref="scrollbar" height="400px" always>
     <div ref="inner">
       <p class="item" v-for="item in 20">{{ item }}</p>
     </div>
-  </el-scrollbar>
+  </lx-scrollbar>
 
-  <el-slider v-model="value" @input="inputSlider" :max="max" :format-tooltip="formatTooltip"></el-slider>
+  <lx-slider v-model="value" @input="inputSlider" :max="max" :format-tooltip="formatTooltip"></lx-slider>
 </template>
 
 <script>

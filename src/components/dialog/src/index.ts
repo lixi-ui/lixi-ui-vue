@@ -15,4 +15,4 @@ export {
   useDialogEmits,
 } from './src/useDialog'
 
-export const ElDialog = _Dialog
+export const LxDialog = _Dialog

@@ -10,7 +10,7 @@ import type {
   Callback,
   MessageBoxState,
   IElMessageBox,
-  ElMessageBoxOptions,
+  LxMessageBoxOptions,
   MessageBoxData,
 } from './message-box.type'
 
@@ -107,9 +107,9 @@ const showMessage = (options: any) => {
   return vm
 }
 
-async function MessageBox(options: ElMessageBoxOptions): Promise<MessageBoxData>
+async function MessageBox(options: LxMessageBoxOptions): Promise<MessageBoxData>
 function MessageBox(
-  options: ElMessageBoxOptions | string | VNode,
+  options: LxMessageBoxOptions | string | VNode,
 ): Promise<{ value: string; action: Action; } | Action> {
   if (isServer) return
   let callback
@@ -136,7 +136,7 @@ function MessageBox(
 MessageBox.alert = (
   message: string,
   title: string,
-  options?: ElMessageBoxOptions,
+  options?: LxMessageBoxOptions,
 ) => {
   if (typeof title === 'object') {
     options = title
@@ -165,7 +165,7 @@ MessageBox.alert = (
 MessageBox.confirm = (
   message: string,
   title: string,
-  options?: ElMessageBoxOptions,
+  options?: LxMessageBoxOptions,
 ) => {
   if (typeof title === 'object') {
     options = title
@@ -192,7 +192,7 @@ MessageBox.confirm = (
 MessageBox.prompt = (
   message: string,
   title: string,
-  options?: ElMessageBoxOptions,
+  options?: LxMessageBoxOptions,
 ) => {
   if (typeof title === 'object') {
     options = title

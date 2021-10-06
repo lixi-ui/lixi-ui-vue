@@ -37,7 +37,7 @@ import type { PropType } from 'vue'
 import type { ComponentSize } from '@element-plus/utils/types'
 
 export default defineComponent({
-  name: 'ElTag',
+  name: 'LxTag',
   props: {
     closable: Boolean,
     type: {

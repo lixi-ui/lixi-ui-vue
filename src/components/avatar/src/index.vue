@@ -19,7 +19,7 @@ import type { CSSProperties, PropType } from 'vue'
 
 const ERROR_EVENT = 'error'
 export default defineComponent({
-  name: 'ElAvatar',
+  name: 'LxAvatar',
   props: {
     size: {
       type: [Number, String] as PropType<number | string>,

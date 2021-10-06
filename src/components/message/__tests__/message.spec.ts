@@ -91,7 +91,7 @@ describe('Message.vue', () => {
       for (const type of ['success', 'warning', 'info', 'error'] as const) {
         const wrapper = _mount({ props: { type } })
 
-        const renderedClasses = wrapper.find('.el-message__icon').classes()
+        const renderedClasses = wrapper.find('.lx-message__icon').classes()
         expect(renderedClasses).toContain(`el-icon-${type}`)
       }
     })
@@ -115,7 +115,7 @@ describe('Message.vue', () => {
         },
       })
 
-      const closeBtn = wrapper.find('.el-message__closeBtn')
+      const closeBtn = wrapper.find('.lx-message__closeBtn')
       expect(closeBtn.exists()).toBe(true)
       await closeBtn.trigger('click')
       expect((wrapper.vm as MessageInstance).visible).toBe(false)

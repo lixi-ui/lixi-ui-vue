@@ -50,10 +50,10 @@ import { EVENT_CODE } from '@element-plus/utils/aria'
 
 import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
 import type { PropType } from 'vue'
-import type { ElFormContext } from '@element-plus/tokens'
+import type { LxFormContext } from '@element-plus/tokens'
 
 export default defineComponent({
-  name: 'ElRate',
+  name: 'LxRate',
   props: {
     modelValue: {
       type: Number,
@@ -126,7 +126,7 @@ export default defineComponent({
   },
   emits: [UPDATE_MODEL_EVENT, 'change'],
   setup(props, { emit }) {
-    const elForm = inject(elFormKey, {} as ElFormContext)
+    const elForm = inject(elFormKey, {} as LxFormContext)
 
     const currentValue = ref(props.modelValue)
 
@@ -282,7 +282,7 @@ export default defineComponent({
       if (props.allowHalf) {
         let target = event.target as HTMLElement
         if (hasClass(target, 'el-rate__item')) {
-          target = target.querySelector('.el-rate__icon')
+          target = target.querySelector('.lx-rate__icon')
         }
         if (hasClass(target, 'el-rate__decimal')) {
           target = target.parentNode as HTMLElement

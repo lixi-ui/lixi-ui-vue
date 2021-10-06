@@ -14,7 +14,7 @@ import type { PropType } from 'vue'
 import type { ComponentSize } from '@element-plus/utils/types'
 
 export default defineComponent({
-  name: 'ElCheckboxGroup',
+  name: 'LxCheckboxGroup',
 
   props: {
     modelValue: {
@@ -67,7 +67,7 @@ export default defineComponent({
     })
 
     provide('CheckboxGroup', {
-      name: 'ElCheckboxGroup',
+      name: 'LxCheckboxGroup',
       modelValue,
       ...toRefs(props),
       checkboxGroupSize,

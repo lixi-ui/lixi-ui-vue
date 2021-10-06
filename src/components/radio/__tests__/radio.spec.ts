@@ -18,8 +18,8 @@ const _mount = (template: string, data, otherObj?) => mount({
 
 describe('Radio', () => {
   test('create', async () => {
-    const wrapper = _mount(`<el-radio v-model="radio" label="a">
-    </el-radio>`, () => ({ radio: '' }))
+    const wrapper = _mount(`<lx-radio v-model="radio" label="a">
+    </lx-radio>`, () => ({ radio: '' }))
     expect(wrapper.classes()).toContain('el-radio')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-checked')
@@ -27,12 +27,12 @@ describe('Radio', () => {
 
   test('disabled', async () => {
 
-    const wrapper = _mount(`<el-radio
+    const wrapper = _mount(`<lx-radio
     v-model="radio"
     label="3"
     disabled
   >
-  </el-radio>`, () => ({ radio: '' }))
+  </lx-radio>`, () => ({ radio: '' }))
     await wrapper.trigger('click')
     const vm = wrapper.vm as any
     expect(vm.radio).toBe('')
@@ -40,22 +40,22 @@ describe('Radio', () => {
   })
 
   test('border', () => {
-    const wrapper = _mount(`<el-radio
+    const wrapper = _mount(`<lx-radio
     v-model="radio"
     label="3"
     border
   >
-  </el-radio>`, () => ({ radio: '' }))
+  </lx-radio>`, () => ({ radio: '' }))
     expect(wrapper.classes()).toContain('is-bordered')
   })
 
   test('disabled', async () => {
-    const wrapper = _mount(`<el-radio
+    const wrapper = _mount(`<lx-radio
     v-model="radio"
     label="3"
     @change="handleChange"
   >
-  </el-radio>`, () => ({
+  </lx-radio>`, () => ({
       radio: '',
       changeData: '',
     }), {
@@ -72,12 +72,12 @@ describe('Radio', () => {
   })
 
   test('change event only triggers on user input', async () => {
-    const wrapper = _mount(`<el-radio
+    const wrapper = _mount(`<lx-radio
     v-model="radio"
     label="3"
     @change="handleChange"
   >
-  </el-radio>`, () => ({
+  </lx-radio>`, () => ({
       radio: '',
       changeData: '',
     }), {
@@ -98,11 +98,11 @@ describe('Radio', () => {
 describe('Radio group', () => {
 
   it('create', async () => {
-    const wrapper = _mount(`<el-radio-group v-model="radio">
-    <el-radio :label="3" ref="radio1">3</el-radio>
-    <el-radio :label="6" ref="radio2">6</el-radio>
-    <el-radio :label="9">9</el-radio>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(`<lx-radio-group v-model="radio">
+    <lx-radio :label="3" ref="radio1">3</lx-radio>
+    <lx-radio :label="6" ref="radio2">6</lx-radio>
+    <lx-radio :label="9">9</lx-radio>
+  </lx-radio-group>`, () => ({
       radio: 3,
     }))
     const radio1 = wrapper.findComponent({ ref: 'radio1' })
@@ -115,11 +115,11 @@ describe('Radio group', () => {
   })
 
   it('disabled', async () => {
-    const wrapper = _mount(`<el-radio-group v-model="radio" disabled>
-    <el-radio :label="3" ref="radio1">3</el-radio>
-    <el-radio :label="6" ref="radio2">6</el-radio>
-    <el-radio :label="9">7</el-radio>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(`<lx-radio-group v-model="radio" disabled>
+    <lx-radio :label="3" ref="radio1">3</lx-radio>
+    <lx-radio :label="6" ref="radio2">6</lx-radio>
+    <lx-radio :label="9">7</lx-radio>
+  </lx-radio-group>`, () => ({
       radio: 3,
     }))
 
@@ -133,11 +133,11 @@ describe('Radio group', () => {
     expect(radio1.classes()).toContain('is-checked')
   })
   it('change event', async () => {
-    const wrapper = _mount(`<el-radio-group v-model="radio" @change="onChange">
-    <el-radio :label="3">3</el-radio>
-    <el-radio :label="6" ref="radio2">6</el-radio>
-    <el-radio :label="9">9</el-radio>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(`<lx-radio-group v-model="radio" @change="onChange">
+    <lx-radio :label="3">3</lx-radio>
+    <lx-radio :label="6" ref="radio2">6</lx-radio>
+    <lx-radio :label="9">9</lx-radio>
+  </lx-radio-group>`, () => ({
       radio: 3,
       data: 0,
     }), {
@@ -155,11 +155,11 @@ describe('Radio group', () => {
     expect(vm.data).toEqual(6)
   })
   it('change event only triggers on user input', async () => {
-    const wrapper = _mount(`<el-radio-group v-model="radio" @change="onChange">
-    <el-radio :label="3">3</el-radio>
-    <el-radio :label="6" ref="radio2">6</el-radio>
-    <el-radio :label="9">9</el-radio>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(`<lx-radio-group v-model="radio" @change="onChange">
+    <lx-radio :label="3">3</lx-radio>
+    <lx-radio :label="6" ref="radio2">6</lx-radio>
+    <lx-radio :label="9">9</lx-radio>
+  </lx-radio-group>`, () => ({
       radio: 3,
       data: 0,
     }), {
@@ -175,11 +175,11 @@ describe('Radio group', () => {
     expect(vm.data).toEqual(0)
   })
   it('disabled when children is radio button', async () => {
-    const wrapper = _mount(`<el-radio-group v-model="radio" disabled>
-    <el-radio-button :label="3" ref="radio1">3</el-radio-button>
-    <el-radio-button :label="6" ref="radio2">6</el-radio-button>
-    <el-radio-button :label="9">9</el-radio-button>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(`<lx-radio-group v-model="radio" disabled>
+    <lx-radio-button :label="3" ref="radio1">3</lx-radio-button>
+    <lx-radio-button :label="6" ref="radio2">6</lx-radio-button>
+    <lx-radio-button :label="9">9</lx-radio-button>
+  </lx-radio-group>`, () => ({
       radio: 3,
     }))
 
@@ -196,11 +196,11 @@ describe('Radio group', () => {
 
 describe('Radio Button', () => {
   it('create', async () => {
-    const wrapper = _mount(`<el-radio-group v-model="radio">
-    <el-radio-button :label="3" ref="radio1">3</el-radio-button>
-    <el-radio-button :label="6" ref="radio2">6</el-radio-button>
-    <el-radio-button :label="9">9</el-radio-button>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(`<lx-radio-group v-model="radio">
+    <lx-radio-button :label="3" ref="radio1">3</lx-radio-button>
+    <lx-radio-button :label="6" ref="radio2">6</lx-radio-button>
+    <lx-radio-button :label="9">9</lx-radio-button>
+  </lx-radio-group>`, () => ({
       radio: 3,
     }))
     const radio1 = wrapper.findComponent({ ref: 'radio1' })
@@ -212,22 +212,22 @@ describe('Radio Button', () => {
     expect(vm.radio).toEqual(6)
   })
   it('custom color', () => {
-    const wrapper = _mount(`<el-radio-group v-model="radio" fill="#000" text-color="#ff0">
-    <el-radio-button :label="3" ref="radio1">3</el-radio-button>
-    <el-radio-button :label="6" ref="radio2">6</el-radio-button>
-    <el-radio-button :label="9">9</el-radio-button>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(`<lx-radio-group v-model="radio" fill="#000" text-color="#ff0">
+    <lx-radio-button :label="3" ref="radio1">3</lx-radio-button>
+    <lx-radio-button :label="6" ref="radio2">6</lx-radio-button>
+    <lx-radio-button :label="9">9</lx-radio-button>
+  </lx-radio-group>`, () => ({
       radio: 3,
     }))
     const radio1 = wrapper.findComponent({ ref: 'radio1' })
     expect(radio1.find('span').attributes('style')).toContain('background-color: rgb(0, 0, 0); border-color: #000; box-shadow: -1px 0 0 0 #000; color: rgb(255, 255, 0);')
   })
   it('change event', async () => {
-    const wrapper = _mount(`<el-radio-group v-model="radio" @change="onChange">
-    <el-radio-button :label="3">3</el-radio-button>
-    <el-radio-button :label="6" ref="radio2">6</el-radio-button>
-    <el-radio-button :label="9">9</el-radio-button>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(`<lx-radio-group v-model="radio" @change="onChange">
+    <lx-radio-button :label="3">3</lx-radio-button>
+    <lx-radio-button :label="6" ref="radio2">6</lx-radio-button>
+    <lx-radio-button :label="9">9</lx-radio-button>
+  </lx-radio-group>`, () => ({
       data: 0,
       radio: 3,
     }), {
@@ -243,11 +243,11 @@ describe('Radio Button', () => {
     expect(vm.radio).toEqual(6)
   })
   it('change event only triggers on user input', async () => {
-    const wrapper = _mount(`<el-radio-group v-model="radio" @change="onChange">
-    <el-radio-button :label="3">3</el-radio-button>
-    <el-radio-button :label="6" ref="radio2">6</el-radio-button>
-    <el-radio-button :label="9">9</el-radio-button>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(`<lx-radio-group v-model="radio" @change="onChange">
+    <lx-radio-button :label="3">3</lx-radio-button>
+    <lx-radio-button :label="6" ref="radio2">6</lx-radio-button>
+    <lx-radio-button :label="9">9</lx-radio-button>
+  </lx-radio-group>`, () => ({
       data: 0,
       radio: 3,
     }), {
@@ -264,21 +264,21 @@ describe('Radio Button', () => {
   })
 
   it('size', () => {
-    const wrapper = _mount(`<el-radio-group v-model="radio" size="large">
-    <el-radio-button :label="3" ref="radio1">3</el-radio-button>
-    <el-radio-button :label="6" ref="radio2">6</el-radio-button>
-    <el-radio-button :label="9">9</el-radio-button>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(`<lx-radio-group v-model="radio" size="large">
+    <lx-radio-button :label="3" ref="radio1">3</lx-radio-button>
+    <lx-radio-button :label="6" ref="radio2">6</lx-radio-button>
+    <lx-radio-button :label="9">9</lx-radio-button>
+  </lx-radio-group>`, () => ({
       radio: 3,
     }))
-    expect(wrapper.findAll('.el-radio-button--large').length).toBe(3)
+    expect(wrapper.findAll('.lx-radio-button--large').length).toBe(3)
   })
   it('keyboard event', async () => {
-    const wrapper = _mount(` <el-radio-group v-model="radio">
-    <el-radio-button ref="radio1" :label="3">3</el-radio-button>
-    <el-radio-button ref="radio2" :label="6">6</el-radio-button>
-    <el-radio-button ref="radio3" :label="9">9</el-radio-button>
-  </el-radio-group>`, () => ({
+    const wrapper = _mount(` <lx-radio-group v-model="radio">
+    <lx-radio-button ref="radio1" :label="3">3</lx-radio-button>
+    <lx-radio-button ref="radio2" :label="6">6</lx-radio-button>
+    <lx-radio-button ref="radio3" :label="9">9</lx-radio-button>
+  </lx-radio-group>`, () => ({
       radio: 6,
     }))
     const radio1 = wrapper.findComponent({ ref: 'radio1' })

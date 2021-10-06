@@ -42,7 +42,7 @@
         <!-- This is a bug which needs to be fixed -->
         <!-- TODO: Fix the incorrect navigation interaction -->
         <i v-if="!disabled" class="el-icon-close-tip">{{ t('el.upload.deleteTip') }}</i>
-        <el-progress
+        <lx-progress
           v-if="file.status === 'uploading'"
           :type="listType === 'picture-card' ? 'circle' : 'line'"
           :stroke-width="listType === 'picture-card' ? 6 : 2"
@@ -72,14 +72,14 @@ import { defineComponent, ref } from 'vue'
 import { NOOP } from '@vue/shared'
 
 import { useLocaleInject } from '@element-plus/hooks'
-import ElProgress from '@element-plus/components/progress'
+import LxProgress from '@element-plus/components/progress'
 
 import type { PropType } from 'vue'
 import type { UploadFile } from './upload.type'
 
 export default defineComponent({
-  name: 'ElUploadList',
-  components: { ElProgress },
+  name: 'LxUploadList',
+  components: { LxProgress },
   props: {
     files: {
       type: Array as PropType<UploadFile[]>,

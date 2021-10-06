@@ -8,13 +8,13 @@ Provide a list of fixed time for users to choose.
 
 :::demo Use `el-time-select` label, then assign start time, end time and time step with `start`, `end` and `step`.
 ```html
-<el-time-select
+<lx-time-select
   v-model="value"
   start='08:30'
   step='00:15'
   end='18:30'
   placeholder="Select time">
-</el-time-select>
+</lx-time-select>
 
 <script>
   export default {
@@ -35,22 +35,22 @@ If start time is picked at first, then the end time will change accordingly.
 :::demo
 ```html
 <template>
-  <el-time-select
+  <lx-time-select
     placeholder="Start time"
     v-model="startTime"
     start='08:30'
     step='00:15'
     end='18:30'
   >
-  </el-time-select>
-  <el-time-select
+  </lx-time-select>
+  <lx-time-select
     placeholder="End time"
     v-model="endTime"
     start='08:30'
     step='00:15'
     end='18:30'
     :minTime="startTime">
-  </el-time-select>
+  </lx-time-select>
 </template>
 
 <script>

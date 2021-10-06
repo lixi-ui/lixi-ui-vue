@@ -7,9 +7,9 @@
 :::demo `v-model` を `Boolean` 型変数にバインドする。`active-color`と`inactive-color`属性は、2 つの状態の背景色を決定する。
 
 ```html
-<el-switch v-model="value1"> </el-switch>
-<el-switch v-model="value2" active-color="#13ce66" inactive-color="#ff4949">
-</el-switch>
+<lx-switch v-model="value1"> </lx-switch>
+<lx-switch v-model="value2" active-color="#13ce66" inactive-color="#ff4949">
+</lx-switch>
 
 <script>
   export default {
@@ -30,13 +30,13 @@
 :::demo テキストを表示するために `active-color` と `inactive-color` 属性を追加することができます。
 
 ```html
-<el-switch
+<lx-switch
   v-model="value1"
   active-text="Pay by month"
   inactive-text="Pay by year"
 >
-</el-switch>
-<el-switch
+</lx-switch>
+<lx-switch
   style="display: block"
   v-model="value2"
   active-color="#13ce66"
@@ -44,7 +44,7 @@
   active-text="Pay by month"
   inactive-text="Pay by year"
 >
-</el-switch>
+</lx-switch>
 
 <script>
   export default {
@@ -65,16 +65,16 @@
 :::demo `active-value`と`inactive-value`を設定することができる。どちらも `Boolean`, `String` または `Number` 型の値を受け取る。
 
 ```html
-<el-tooltip :content="'Switch value: ' + value" placement="top">
-  <el-switch
+<lx-tooltip :content="'Switch value: ' + value" placement="top">
+  <lx-switch
     v-model="value"
     active-color="#13ce66"
     inactive-color="#ff4949"
     active-value="100"
     inactive-value="0"
   >
-  </el-switch>
-</el-tooltip>
+  </lx-switch>
+</lx-tooltip>
 
 <script>
   export default {
@@ -94,8 +94,8 @@
 :::demo `disabled`属性を追加すると、スイッチを無効にすることができます。
 
 ```html
-<el-switch v-model="value1" disabled> </el-switch>
-<el-switch v-model="value2" disabled> </el-switch>
+<lx-switch v-model="value1" disabled> </lx-switch>
+<lx-switch v-model="value2" disabled> </lx-switch>
 
 <script>
   export default {
@@ -116,8 +116,8 @@
 :::demo `loading`属性を`true`に設定すると、ロード状態を表示することができます。
 
 ```html
-<el-switch v-model="value1" loading> </el-switch>
-<el-switch v-model="value2" loading> </el-switch>
+<lx-switch v-model="value1" loading> </lx-switch>
+<lx-switch v-model="value2" loading> </lx-switch>
 <script>
   export default {
     data() {
@@ -137,13 +137,13 @@
 :::demo `beforeChange`プロパティを設定します。false を返すか、Promise を返し、拒否された場合は、切り替えを停止します。
 
 ```html
-<el-switch v-model="value1" :loading="loading1" :beforeChange="beforeChange1">
-</el-switch>
-<el-switch v-model="value2" :loading="loading2" :beforeChange="beforeChange2">
-</el-switch>
+<lx-switch v-model="value1" :loading="loading1" :beforeChange="beforeChange1">
+</lx-switch>
+<lx-switch v-model="value2" :loading="loading2" :beforeChange="beforeChange2">
+</lx-switch>
 <script>
   import { reactive, toRefs } from 'vue'
-  import { ElMessage } from 'element-plus'
+  import { LxMessage } from 'element-plus'
 
   export default {
     setup() {
@@ -157,7 +157,7 @@
         return new Promise(resolve => {
           setTimeout(() => {
             status1.loading1 = false
-            ElMessage.success('正常に切り替えます')
+            LxMessage.success('正常に切り替えます')
             return resolve(true)
           }, 1000)
         })
@@ -173,7 +173,7 @@
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             status2.loading2 = false
-            ElMessage.error('スイッチに失敗しました')
+            LxMessage.error('スイッチに失敗しました')
             return reject(new Error('error'))
           }, 1000)
         })

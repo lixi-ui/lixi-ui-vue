@@ -80,7 +80,7 @@ export interface IStepsInject {
 }
 
 export default defineComponent({
-  name: 'ElStep',
+  name: 'LxStep',
   props: {
     title: {
       type: String,
@@ -104,7 +104,7 @@ export default defineComponent({
     const index = ref(-1)
     const lineStyle = ref({})
     const internalStatus = ref('')
-    const parent: IStepsInject = inject('ElSteps')
+    const parent: IStepsInject = inject('LxSteps')
     const currentInstance = getCurrentInstance()
 
     onMounted(() => {

@@ -1,5 +1,5 @@
 <template>
-  <el-popper
+  <lx-popper
     ref="triggerVnode"
     v-model:visible="visible"
     :placement="placement"
@@ -15,39 +15,39 @@
     :gpu-acceleration="false"
   >
     <template #default>
-      <el-scrollbar
+      <lx-scrollbar
         ref="scrollbar"
         tag="ul"
         :wrap-style="wrapStyle"
         view-class="el-dropdown__list"
       >
         <slot name="dropdown"></slot>
-      </el-scrollbar>
+      </lx-scrollbar>
     </template>
     <template #trigger>
       <div :class="['el-dropdown', dropdownSize ? 'el-dropdown--' + dropdownSize : '']">
         <slot v-if="!splitButton" name="default"></slot>
         <template v-else>
-          <el-button-group>
-            <el-button
+          <lx-button-group>
+            <lx-button
               :size="dropdownSize"
               :type="type"
               @click="handlerMainButtonClick"
             >
               <slot name="default"></slot>
-            </el-button>
-            <el-button
+            </lx-button>
+            <lx-button
               :size="dropdownSize"
               :type="type"
               class="el-dropdown__caret-button"
             >
               <i class="el-dropdown__icon el-icon-arrow-down"></i>
-            </el-button>
-          </el-button-group>
+            </lx-button>
+          </lx-button-group>
         </template>
       </div>
     </template>
-  </el-popper>
+  </lx-popper>
 </template>
 <script lang="ts">
 import {
@@ -60,9 +60,9 @@ import {
   onMounted,
 } from 'vue'
 import type { PropType } from 'vue'
-import ElButton from '@element-plus/components/button'
-import ElPopper, { Effect, Placement } from '@element-plus/components/popper'
-import ElScrollbar from '@element-plus/components/scrollbar'
+import LxButton from '@element-plus/components/button'
+import LxPopper, { Effect, Placement } from '@element-plus/components/popper'
+import LxScrollbar from '@element-plus/components/scrollbar'
 import { on, addClass, removeClass } from '@element-plus/utils/dom'
 import { addUnit } from '@element-plus/utils/util'
 import { useDropdown } from './useDropdown'
@@ -72,15 +72,15 @@ import type { TriggerType } from '@element-plus/hooks/use-popper/use-target-even
 import type { ButtonType } from '@element-plus/components/button/src/types'
 
 type Nullable<T> = null | T
-const { ButtonGroup: ElButtonGroup } = ElButton
+const { ButtonGroup: LxButtonGroup } = LxButton
 
 export default defineComponent({
-  name: 'ElDropdown',
+  name: 'LxDropdown',
   components: {
-    ElButton,
-    ElButtonGroup,
-    ElScrollbar,
-    ElPopper,
+    LxButton,
+    LxButtonGroup,
+    LxScrollbar,
+    LxPopper,
   },
   props: {
     trigger: {

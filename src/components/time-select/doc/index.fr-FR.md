@@ -8,13 +8,13 @@ Vous pouvez fournir une liste d'horaires fixés pour que l'utilisateur en choisi
 
 :::demo Utilisez `el-time-select` puis assignez un horaire de début, de fin et un pas grâce aux propriétés `start`, `end` et `step` de l'attribut.
 ```html
-<el-time-select
+<lx-time-select
   v-model="value"
   start='08:30'
   step='00:15'
   end='18:30'
   placeholder="Choisissez un horaire">
-</el-time-select>
+</lx-time-select>
 
 <script>
   export default {
@@ -35,21 +35,21 @@ Vous pouvez définir un intervalle de temps. Si l'horaire de début est sélecti
 :::demo
 ```html
 <template>
-  <el-time-select
+  <lx-time-select
     placeholder="Horaire de début"
     v-model="startTime"
     start='08:30'
   step='00:15'
   end='18:30'>
-  </el-time-select>
-  <el-time-select
+  </lx-time-select>
+  <lx-time-select
     placeholder="Horaire de fin"
     v-model="endTime"
     start='08:30'
     step='00:15'
     end='18:30'
     :minTime="startTime">
-  </el-time-select>
+  </lx-time-select>
 </template>
 
 <script>

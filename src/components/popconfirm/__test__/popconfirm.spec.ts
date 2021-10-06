@@ -1,8 +1,8 @@
 import { h } from 'vue'
 import { mount } from '@vue/test-utils'
-import ElPopconfirm from '../src/index.vue'
+import LxPopconfirm from '../src/index.vue'
 
-const selector = '.el-popper'
+const selector = '.lx-popper'
 const _mount = (props: any = {}) => mount(ElPopconfirm, {
   props,
   slots: {

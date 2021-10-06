@@ -13,12 +13,12 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs>
-          <el-tab-pane label="label-1">A</el-tab-pane>
-          <el-tab-pane label="label-2">B</el-tab-pane>
-          <el-tab-pane label="label-3" ref="pane-click">C</el-tab-pane>
-          <el-tab-pane label="label-4">D</el-tab-pane>
-        </el-tabs>
+        <lx-tabs>
+          <lx-tab-pane label="label-1">A</lx-tab-pane>
+          <lx-tab-pane label="label-2">B</lx-tab-pane>
+          <lx-tab-pane label="label-3" ref="pane-click">C</lx-tab-pane>
+          <lx-tab-pane label="label-4">D</lx-tab-pane>
+        </lx-tabs>
       `,
     })
 
@@ -27,7 +27,7 @@ describe('Tabs.vue', () => {
     const panesWrapper = wrapper.findAllComponents(TabPane)
     await nextTick()
 
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
 
     expect(navItemsWrapper[0].classes('is-active')).toBe(true)
     expect(panesWrapper[0].classes('el-tab-pane')).toBe(true)
@@ -60,12 +60,12 @@ describe('Tabs.vue', () => {
         },
       },
       template: `
-        <el-tabs :active-name="activeName" @tab-click="handleClick">
-          <el-tab-pane name="a" label="label-1">A</el-tab-pane>
-          <el-tab-pane name="b" label="label-2">B</el-tab-pane>
-          <el-tab-pane name="c" label="label-3" ref="pane-click">C</el-tab-pane>
-          <el-tab-pane name="d" label="label-4">D</el-tab-pane>
-        </el-tabs>
+        <lx-tabs :active-name="activeName" @tab-click="handleClick">
+          <lx-tab-pane name="a" label="label-1">A</lx-tab-pane>
+          <lx-tab-pane name="b" label="label-2">B</lx-tab-pane>
+          <lx-tab-pane name="c" label="label-3" ref="pane-click">C</lx-tab-pane>
+          <lx-tab-pane name="d" label="label-4">D</lx-tab-pane>
+        </lx-tabs>
       `,
     })
 
@@ -74,7 +74,7 @@ describe('Tabs.vue', () => {
     const panesWrapper = wrapper.findAllComponents(TabPane)
     await nextTick()
 
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
     expect(navItemsWrapper[1].classes('is-active')).toBe(true)
     expect(panesWrapper[1].classes('el-tab-pane')).toBe(true)
     expect(panesWrapper[1].attributes('id')).toBe('pane-b')
@@ -96,12 +96,12 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs type="card">
-          <el-tab-pane label="label-1">A</el-tab-pane>
-          <el-tab-pane label="label-2">B</el-tab-pane>
-          <el-tab-pane label="label-3" ref="pane-click">C</el-tab-pane>
-          <el-tab-pane label="label-4">D</el-tab-pane>
-        </el-tabs>
+        <lx-tabs type="card">
+          <lx-tab-pane label="label-1">A</lx-tab-pane>
+          <lx-tab-pane label="label-2">B</lx-tab-pane>
+          <lx-tab-pane label="label-3" ref="pane-click">C</lx-tab-pane>
+          <lx-tab-pane label="label-4">D</lx-tab-pane>
+        </lx-tabs>
       `,
     })
 
@@ -116,12 +116,12 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs type="border-card">
-          <el-tab-pane label="label-1">A</el-tab-pane>
-          <el-tab-pane label="label-2">B</el-tab-pane>
-          <el-tab-pane label="label-3" ref="pane-click">C</el-tab-pane>
-          <el-tab-pane label="label-4">D</el-tab-pane>
-        </el-tabs>
+        <lx-tabs type="border-card">
+          <lx-tab-pane label="label-1">A</lx-tab-pane>
+          <lx-tab-pane label="label-2">B</lx-tab-pane>
+          <lx-tab-pane label="label-3" ref="pane-click">C</lx-tab-pane>
+          <lx-tab-pane label="label-4">D</lx-tab-pane>
+        </lx-tabs>
       `,
     })
 
@@ -136,9 +136,9 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs type="card" ref="tabs">
-          <el-tab-pane :label="tab.label" :name="tab.name" v-for="tab in tabs" :key="tab.name">Test Content</el-tab-pane>
-        </el-tabs>
+        <lx-tabs type="card" ref="tabs">
+          <lx-tab-pane :label="tab.label" :name="tab.name" v-for="tab in tabs" :key="tab.name">Test Content</lx-tab-pane>
+        </lx-tabs>
       `,
       data() {
         return {
@@ -163,7 +163,7 @@ describe('Tabs.vue', () => {
     let panesWrapper = wrapper.findAllComponents(TabPane)
     await nextTick()
 
-    let navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    let navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(4)
     expect(panesWrapper.length).toEqual(4)
@@ -173,7 +173,7 @@ describe('Tabs.vue', () => {
     await nextTick()
     navWrapper = wrapper.findComponent(TabNav)
     panesWrapper = wrapper.findAllComponents(TabPane)
-    navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(5)
     expect(panesWrapper.length).toEqual(5)
@@ -186,16 +186,16 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs ref="tabs" v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
-          <el-tab-pane
+        <lx-tabs ref="tabs" v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
+          <lx-tab-pane
             v-for="(item, index) in editableTabs"
             :key="item.name"
             :label="item.title"
             :name="item.name"
           >
             {{item.content}}
-          </el-tab-pane>
-        </el-tabs>
+          </lx-tab-pane>
+        </lx-tabs>
       `,
       data() {
         return {
@@ -251,26 +251,26 @@ describe('Tabs.vue', () => {
     let panesWrapper = wrapper.findAllComponents(TabPane)
     await nextTick()
 
-    let navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    let navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(3)
     expect(panesWrapper.length).toEqual(3)
     expect(navItemsWrapper[1].classes('is-active')).toBe(true)
 
     // remove one tab, check panes length
-    await navItemsWrapper[1].find('.el-icon-close').trigger('click')
+    await navItemsWrapper[1].find('.lx-icon-close').trigger('click')
 
     panesWrapper = wrapper.findAllComponents(TabPane)
-    navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(2)
     expect(panesWrapper.length).toEqual(2)
 
     // add one tab, check panes length and current tab
-    await navWrapper.find('.el-tabs__new-tab').trigger('click')
+    await navWrapper.find('.lx-tabs__new-tab').trigger('click')
 
     panesWrapper = wrapper.findAllComponents(TabPane)
-    navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(3)
     expect(panesWrapper.length).toEqual(3)
@@ -284,7 +284,7 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs
+        <lx-tabs
           ref="tabs"
           v-model="editableTabsValue"
           type="card"
@@ -293,15 +293,15 @@ describe('Tabs.vue', () => {
           @tab-add="addTab"
           @tab-remove="removeTab"
         >
-          <el-tab-pane
+          <lx-tab-pane
             v-for="(item, index) in editableTabs"
             :label="item.title"
             :key="item.name"
             :name="item.name"
           >
             {{item.content}}
-          </el-tab-pane>
-        </el-tabs>
+          </lx-tab-pane>
+        </lx-tabs>
       `,
       data() {
         return {
@@ -350,18 +350,18 @@ describe('Tabs.vue', () => {
     const navWrapper = wrapper.findComponent(TabNav)
     await nextTick()
 
-    await navWrapper.find('.el-tabs__new-tab').trigger('click')
+    await navWrapper.find('.lx-tabs__new-tab').trigger('click')
 
-    let navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    let navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
     let panesWrapper = wrapper.findAllComponents(TabPane)
     expect(navItemsWrapper.length).toEqual(3)
     expect(panesWrapper.length).toEqual(3)
     expect(navItemsWrapper[2].classes('is-active')).toBe(true)
 
-    await navItemsWrapper[2].find('.el-icon-close').trigger('click')
+    await navItemsWrapper[2].find('.lx-icon-close').trigger('click')
 
     panesWrapper = wrapper.findAllComponents(TabPane)
-    navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(2)
     expect(panesWrapper.length).toEqual(2)
@@ -374,19 +374,19 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs type="card" ref="tabs">
-          <el-tab-pane label="label-1" closable>A</el-tab-pane>
-          <el-tab-pane label="label-2">B</el-tab-pane>
-          <el-tab-pane label="label-3" closable>C</el-tab-pane>
-          <el-tab-pane label="label-4">D</el-tab-pane>
-        </el-tabs>
+        <lx-tabs type="card" ref="tabs">
+          <lx-tab-pane label="label-1" closable>A</lx-tab-pane>
+          <lx-tab-pane label="label-2">B</lx-tab-pane>
+          <lx-tab-pane label="label-3" closable>C</lx-tab-pane>
+          <lx-tab-pane label="label-4">D</lx-tab-pane>
+        </lx-tabs>
       `,
     })
 
     const navWrapper = wrapper.findComponent(TabNav)
     await nextTick()
 
-    expect(navWrapper.findAll('.el-icon-close').length).toBe(2)
+    expect(navWrapper.findAll('.lx-icon-close').length).toBe(2)
   })
 
   test('disabled', async () => {
@@ -396,18 +396,18 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs type="card" ref="tabs">
-          <el-tab-pane label="label-1">A</el-tab-pane>
-          <el-tab-pane disabled label="label-2" ref="disabled">B</el-tab-pane>
-          <el-tab-pane label="label-3">C</el-tab-pane>
-          <el-tab-pane label="label-4">D</el-tab-pane>
-        </el-tabs>
+        <lx-tabs type="card" ref="tabs">
+          <lx-tab-pane label="label-1">A</lx-tab-pane>
+          <lx-tab-pane disabled label="label-2" ref="disabled">B</lx-tab-pane>
+          <lx-tab-pane label="label-3">C</lx-tab-pane>
+          <lx-tab-pane label="label-4">D</lx-tab-pane>
+        </lx-tabs>
       `,
     })
 
     const navWrapper = wrapper.findComponent(TabNav)
     await nextTick()
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
     expect(navItemsWrapper[1].classes('is-active')).toBe(false)
 
     await navItemsWrapper[1].trigger('click')
@@ -421,12 +421,12 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs ref="tabs" tab-position="left">
-          <el-tab-pane label="label-1">A</el-tab-pane>
-          <el-tab-pane label="label-2">B</el-tab-pane>
-          <el-tab-pane label="label-3" ref="pane-click">C</el-tab-pane>
-          <el-tab-pane label="label-4">D</el-tab-pane>
-        </el-tabs>
+        <lx-tabs ref="tabs" tab-position="left">
+          <lx-tab-pane label="label-1">A</lx-tab-pane>
+          <lx-tab-pane label="label-2">B</lx-tab-pane>
+          <lx-tab-pane label="label-3" ref="pane-click">C</lx-tab-pane>
+          <lx-tab-pane label="label-4">D</lx-tab-pane>
+        </lx-tabs>
       `,
     })
 
@@ -434,11 +434,11 @@ describe('Tabs.vue', () => {
     await nextTick()
 
     expect(tabsWrapper.classes('el-tabs--left')).toBe(true)
-    expect(tabsWrapper.find('.el-tabs__header').classes('is-left')).toBe(true)
-    expect(tabsWrapper.find('.el-tabs__nav-wrap').classes('is-left')).toBe(true)
-    expect(tabsWrapper.find('.el-tabs__nav').classes('is-left')).toBe(true)
-    expect(tabsWrapper.find('.el-tabs__active-bar').classes('is-left')).toBe(true)
-    expect(tabsWrapper.find('.el-tabs__item').classes('is-left')).toBe(true)
+    expect(tabsWrapper.find('.lx-tabs__header').classes('is-left')).toBe(true)
+    expect(tabsWrapper.find('.lx-tabs__nav-wrap').classes('is-left')).toBe(true)
+    expect(tabsWrapper.find('.lx-tabs__nav').classes('is-left')).toBe(true)
+    expect(tabsWrapper.find('.lx-tabs__active-bar').classes('is-left')).toBe(true)
+    expect(tabsWrapper.find('.lx-tabs__item').classes('is-left')).toBe(true)
   })
 
   test('stretch', async () => {
@@ -448,12 +448,12 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-      <el-tabs ref="tabs" stretch :tab-position="tabPosition">
-        <el-tab-pane label="label-1">A</el-tab-pane>
-        <el-tab-pane label="label-2">B</el-tab-pane>
-        <el-tab-pane label="label-3">C</el-tab-pane>
-        <el-tab-pane label="label-4">D</el-tab-pane>
-      </el-tabs>
+      <lx-tabs ref="tabs" stretch :tab-position="tabPosition">
+        <lx-tab-pane label="label-1">A</lx-tab-pane>
+        <lx-tab-pane label="label-2">B</lx-tab-pane>
+        <lx-tab-pane label="label-3">C</lx-tab-pane>
+        <lx-tab-pane label="label-4">D</lx-tab-pane>
+      </lx-tabs>
       `,
       data() {
         return {
@@ -465,12 +465,12 @@ describe('Tabs.vue', () => {
     const tabsWrapper = wrapper.findComponent(Tabs)
     await nextTick()
 
-    expect(tabsWrapper.find('.el-tabs__nav').classes('is-stretch')).toBe(true)
+    expect(tabsWrapper.find('.lx-tabs__nav').classes('is-stretch')).toBe(true)
 
     wrapper.vm.tabPosition = 'left'
     await nextTick()
 
-    expect(tabsWrapper.find('.el-tabs__nav').classes('is-stretch')).toBe(false)
+    expect(tabsWrapper.find('.lx-tabs__nav').classes('is-stretch')).toBe(false)
   })
 
   test('tab active bar offset', async () => {
@@ -480,12 +480,12 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-      <el-tabs ref="tabs" stretch :tab-position="tabPosition">
-        <el-tab-pane label="label-1" name="A">A</el-tab-pane>
-        <el-tab-pane label="label-2" name="B">B</el-tab-pane>
-        <el-tab-pane label="label-3" name="C">C</el-tab-pane>
-        <el-tab-pane label="label-4" name="D">D</el-tab-pane>
-      </el-tabs>
+      <lx-tabs ref="tabs" stretch :tab-position="tabPosition">
+        <lx-tab-pane label="label-1" name="A">A</lx-tab-pane>
+        <lx-tab-pane label="label-2" name="B">B</lx-tab-pane>
+        <lx-tab-pane label="label-3" name="C">C</lx-tab-pane>
+        <lx-tab-pane label="label-4" name="D">D</lx-tab-pane>
+      </lx-tabs>
       `,
       data() {
         return {
@@ -500,7 +500,7 @@ describe('Tabs.vue', () => {
     const mockComputedStyle = jest.spyOn(window, 'getComputedStyle').mockReturnValue({ paddingLeft: '0px' } as CSSStyleDeclaration)
     await wrapper.find('#tab-C').trigger('click')
 
-    expect(tabsWrapper.find('.el-tabs__active-bar').attributes().style).toMatch('translateX(300px)')
+    expect(tabsWrapper.find('.lx-tabs__active-bar').attributes().style).toMatch('translateX(300px)')
 
     wrapper.vm.tabPosition = 'left'
     await nextTick()
@@ -508,7 +508,7 @@ describe('Tabs.vue', () => {
     await wrapper.find('#tab-A').trigger('click')
     await wrapper.find('#tab-C').trigger('click')
 
-    expect(tabsWrapper.find('.el-tabs__active-bar').attributes().style).toMatch('translateY(200px)')
+    expect(tabsWrapper.find('.lx-tabs__active-bar').attributes().style).toMatch('translateY(200px)')
 
     mockCRect.mockRestore()
     mockCYRect.mockRestore()
@@ -531,24 +531,24 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs ref="tabs">
-          <el-tab-pane label="label-1" name="A">A</el-tab-pane>
-          <el-tab-pane label="label-2" name="B">B</el-tab-pane>
-          <el-tab-pane label="label-3" name="C">C</el-tab-pane>
-          <el-tab-pane label="label-4" lazy name="D">D</el-tab-pane>
-        </el-tabs>
+        <lx-tabs ref="tabs">
+          <lx-tab-pane label="label-1" name="A">A</lx-tab-pane>
+          <lx-tab-pane label="label-2" name="B">B</lx-tab-pane>
+          <lx-tab-pane label="label-3" name="C">C</lx-tab-pane>
+          <lx-tab-pane label="label-4" lazy name="D">D</lx-tab-pane>
+        </lx-tabs>
       `,
     })
 
     const navWrapper = wrapper.findComponent(TabNav)
     await nextTick()
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
 
-    expect(wrapper.findAll('.el-tab-pane').length).toBe(3)
+    expect(wrapper.findAll('.lx-tab-pane').length).toBe(3)
 
     await navItemsWrapper[3].trigger('click')
 
-    expect(wrapper.findAll('.el-tab-pane').length).toBe(4)
+    expect(wrapper.findAll('.lx-tab-pane').length).toBe(4)
   })
 
   test('before leave', async () => {
@@ -558,12 +558,12 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs ref="tabs" v-model="activeName" :before-leave="beforeLeave">
-          <el-tab-pane name="tab-A" label="label-1">A</el-tab-pane>
-          <el-tab-pane name="tab-B" label="label-2">B</el-tab-pane>
-          <el-tab-pane name="tab-C" label="label-3">C</el-tab-pane>
-          <el-tab-pane name="tab-D" label="label-4">D</el-tab-pane>
-        </el-tabs>
+        <lx-tabs ref="tabs" v-model="activeName" :before-leave="beforeLeave">
+          <lx-tab-pane name="tab-A" label="label-1">A</lx-tab-pane>
+          <lx-tab-pane name="tab-B" label="label-2">B</lx-tab-pane>
+          <lx-tab-pane name="tab-C" label="label-3">C</lx-tab-pane>
+          <lx-tab-pane name="tab-D" label="label-4">D</lx-tab-pane>
+        </lx-tabs>
       `,
       data() {
         return {
@@ -582,7 +582,7 @@ describe('Tabs.vue', () => {
     const navWrapper = wrapper.findComponent(TabNav)
     const panesWrapper = wrapper.findAllComponents(TabPane)
     await nextTick()
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
 
     expect(navItemsWrapper[1].classes('is-active')).toBe(true)
     expect(panesWrapper[1].attributes('style')).toBeFalsy()
@@ -600,12 +600,12 @@ describe('Tabs.vue', () => {
         'el-tab-pane': TabPane,
       },
       template: `
-        <el-tabs v-model="activeName">
-          <el-tab-pane label="label-1" name="first">A</el-tab-pane>
-          <el-tab-pane label="label-2" name="second">B</el-tab-pane>
-          <el-tab-pane label="label-3" name="third">C</el-tab-pane>
-          <el-tab-pane label="label-4" name="fourth">D</el-tab-pane>
-        </el-tabs>
+        <lx-tabs v-model="activeName">
+          <lx-tab-pane label="label-1" name="first">A</lx-tab-pane>
+          <lx-tab-pane label="label-2" name="second">B</lx-tab-pane>
+          <lx-tab-pane label="label-3" name="third">C</lx-tab-pane>
+          <lx-tab-pane label="label-4" name="fourth">D</lx-tab-pane>
+        </lx-tabs>
       `,
       data() {
         return {

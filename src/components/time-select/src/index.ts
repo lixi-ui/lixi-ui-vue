@@ -10,4 +10,4 @@ TimeSelect.install = (app: App): void => {
 const _TimeSelect = TimeSelect as SFCWithInstall<typeof TimeSelect>
 
 export default _TimeSelect
-export const ElTimeSelect = _TimeSelect
+export const LxTimeSelect = _TimeSelect

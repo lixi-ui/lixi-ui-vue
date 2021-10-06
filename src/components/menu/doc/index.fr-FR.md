@@ -8,25 +8,25 @@ La barre du haut peut être utilisée pour différents scénarios.
 
 :::demo Par défaut le menu est vertical, mais vous pouvez le passer en horizontal en réglant l'attribut `mode` sur 'horizontal'. De plus, vous pouvez utiliser le composant sub-menu pour créer un second niveau niveau de menu. Le menu utilises `background-color`, `text-color` et `active-text-color` pour personnaliser les couleurs.
 ```html
-<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-  <el-menu-item index="1">Centre de traitement</el-menu-item>
-  <el-sub-menu index="2">
+<lx-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+  <lx-menu-item index="1">Centre de traitement</lx-menu-item>
+  <lx-sub-menu index="2">
     <template #title>Lieu de travail</template>
-    <el-menu-item index="2-1">item un</el-menu-item>
-    <el-menu-item index="2-2">item deux</el-menu-item>
-    <el-menu-item index="2-3">item trois</el-menu-item>
-    <el-sub-menu index="2-4">
+    <lx-menu-item index="2-1">item un</lx-menu-item>
+    <lx-menu-item index="2-2">item deux</lx-menu-item>
+    <lx-menu-item index="2-3">item trois</lx-menu-item>
+    <lx-sub-menu index="2-4">
       <template #title>item quatre</template>
-      <el-menu-item index="2-4-1">item un</el-menu-item>
-      <el-menu-item index="2-4-2">item deux</el-menu-item>
-      <el-menu-item index="2-4-3">item trois</el-menu-item>
-    </el-sub-menu>
-  </el-sub-menu>
-  <el-menu-item index="3" disabled>Infos</el-menu-item>
-  <el-menu-item index="4">Commandes</el-menu-item>
-</el-menu>
+      <lx-menu-item index="2-4-1">item un</lx-menu-item>
+      <lx-menu-item index="2-4-2">item deux</lx-menu-item>
+      <lx-menu-item index="2-4-3">item trois</lx-menu-item>
+    </lx-sub-menu>
+  </lx-sub-menu>
+  <lx-menu-item index="3" disabled>Infos</lx-menu-item>
+  <lx-menu-item index="4">Commandes</lx-menu-item>
+</lx-menu>
 <div class="line"></div>
-<el-menu
+<lx-menu
   :default-active="activeIndex2"
   class="el-menu-demo"
   mode="horizontal"
@@ -34,22 +34,22 @@ La barre du haut peut être utilisée pour différents scénarios.
   background-color="#545c64"
   text-color="#fff"
   active-text-color="#ffd04b">
-  <el-menu-item index="1">Centre de traitement</el-menu-item>
-  <el-sub-menu index="2">
+  <lx-menu-item index="1">Centre de traitement</lx-menu-item>
+  <lx-sub-menu index="2">
     <template #title>Lieu de travail</template>
-    <el-menu-item index="2-1">item un</el-menu-item>
-    <el-menu-item index="2-2">item deux</el-menu-item>
-    <el-menu-item index="2-3">item trois</el-menu-item>
-    <el-sub-menu index="2-4">
+    <lx-menu-item index="2-1">item un</lx-menu-item>
+    <lx-menu-item index="2-2">item deux</lx-menu-item>
+    <lx-menu-item index="2-3">item trois</lx-menu-item>
+    <lx-sub-menu index="2-4">
       <template #title>item quatre</template>
-      <el-menu-item index="2-4-1">item un</el-menu-item>
-      <el-menu-item index="2-4-2">item deux</el-menu-item>
-      <el-menu-item index="2-4-3">item trois</el-menu-item>
-    </el-sub-menu>
-  </el-sub-menu>
-  <el-menu-item index="3" disabled>Info</el-menu-item>
-  <el-menu-item index="4">Commandes</el-menu-item>
-</el-menu>
+      <lx-menu-item index="2-4-1">item un</lx-menu-item>
+      <lx-menu-item index="2-4-2">item deux</lx-menu-item>
+      <lx-menu-item index="2-4-3">item trois</lx-menu-item>
+    </lx-sub-menu>
+  </lx-sub-menu>
+  <lx-menu-item index="3" disabled>Info</lx-menu-item>
+  <lx-menu-item index="4">Commandes</lx-menu-item>
+</lx-menu>
 
 <script>
   export default {
@@ -97,48 +97,48 @@ Menu vertical avec sous-menus.
 
 :::demo Vous pouvez utiliser le composant el-menu-item-group pour créer un groupe dans le menu dont le nom sera déterminé par celui de la propriété title ou d'un slot.
 ```html
-<el-row class="tac">
-  <el-col :span="12">
+<lx-row class="tac">
+  <lx-col :span="12">
     <h5>Couleurs par défaut</h5>
-    <el-menu
+    <lx-menu
       default-active="2"
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
-      <el-sub-menu index="1">
+      <lx-sub-menu index="1">
         <template #title>
           <i class="el-icon-location"></i>
           <span>Navigateur Un</span>
         </template>
-        <el-menu-item-group title="Group Un">
-          <el-menu-item index="1-1">item un</el-menu-item>
-          <el-menu-item index="1-2">item un</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group Deux">
-          <el-menu-item index="1-3">item trois</el-menu-item>
-        </el-menu-item-group>
-        <el-sub-menu index="1-4">
+        <lx-menu-item-group title="Group Un">
+          <lx-menu-item index="1-1">item un</lx-menu-item>
+          <lx-menu-item index="1-2">item un</lx-menu-item>
+        </lx-menu-item-group>
+        <lx-menu-item-group title="Group Deux">
+          <lx-menu-item index="1-3">item trois</lx-menu-item>
+        </lx-menu-item-group>
+        <lx-sub-menu index="1-4">
           <template #title>item quatre</template>
-          <el-menu-item index="1-4-1">item un</el-menu-item>
-        </el-sub-menu>
-      </el-sub-menu>
-      <el-menu-item index="2">
+          <lx-menu-item index="1-4-1">item un</lx-menu-item>
+        </lx-sub-menu>
+      </lx-sub-menu>
+      <lx-menu-item index="2">
         <i class="el-icon-menu"></i>
         <span>Navigateur Deux</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
+      </lx-menu-item>
+      <lx-menu-item index="3" disabled>
         <i class="el-icon-document"></i>
         <span>Navigateur Trois</span>
-      </el-menu-item>
-      <el-menu-item index="4">
+      </lx-menu-item>
+      <lx-menu-item index="4">
         <i class="el-icon-setting"></i>
         <span>Navigateur Quatre</span>
-      </el-menu-item>
-    </el-menu>
-  </el-col>
-  <el-col :span="12">
+      </lx-menu-item>
+    </lx-menu>
+  </lx-col>
+  <lx-col :span="12">
     <h5>Couleurs personnalisées</h5>
-    <el-menu
+    <lx-menu
       default-active="2"
       class="el-menu-vertical-demo"
       @open="handleOpen"
@@ -146,38 +146,38 @@ Menu vertical avec sous-menus.
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b">
-      <el-sub-menu index="1">
+      <lx-sub-menu index="1">
         <template #title>
           <i class="el-icon-location"></i>
           <span>Navigateur Un</span>
         </template>
-        <el-menu-item-group title="Group Un">
-          <el-menu-item index="1-1">item un</el-menu-item>
-          <el-menu-item index="1-2">item un</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group Deux">
-          <el-menu-item index="1-3">item trois</el-menu-item>
-        </el-menu-item-group>
-        <el-sub-menu index="1-4">
+        <lx-menu-item-group title="Group Un">
+          <lx-menu-item index="1-1">item un</lx-menu-item>
+          <lx-menu-item index="1-2">item un</lx-menu-item>
+        </lx-menu-item-group>
+        <lx-menu-item-group title="Group Deux">
+          <lx-menu-item index="1-3">item trois</lx-menu-item>
+        </lx-menu-item-group>
+        <lx-sub-menu index="1-4">
           <template #title>item quatre</template>
-          <el-menu-item index="1-4-1">item un</el-menu-item>
-        </el-sub-menu>
-      </el-sub-menu>
-      <el-menu-item index="2">
+          <lx-menu-item index="1-4-1">item un</lx-menu-item>
+        </lx-sub-menu>
+      </lx-sub-menu>
+      <lx-menu-item index="2">
         <i class="el-icon-menu"></i>
         <span>Navigateur Deux</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
+      </lx-menu-item>
+      <lx-menu-item index="3" disabled>
         <i class="el-icon-document"></i>
         <span>Navigateur Trois</span>
-      </el-menu-item>
-      <el-menu-item index="4">
+      </lx-menu-item>
+      <lx-menu-item index="4">
         <i class="el-icon-setting"></i>
         <span>Navigateur Quatre</span>
-      </el-menu-item>
-    </el-menu>
-  </el-col>
-</el-row>
+      </lx-menu-item>
+    </lx-menu>
+  </lx-col>
+</lx-row>
 
 <script>
   export default {
@@ -222,45 +222,45 @@ Le menu vertical peut être réduit.
 
 :::demo
 ```html
-<el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-  <el-radio-button :label="false">Agrandir</el-radio-button>
-  <el-radio-button :label="true">Réduire</el-radio-button>
-</el-radio-group>
-<el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-  <el-sub-menu index="1">
+<lx-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+  <lx-radio-button :label="false">Agrandir</lx-radio-button>
+  <lx-radio-button :label="true">Réduire</lx-radio-button>
+</lx-radio-group>
+<lx-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+  <lx-sub-menu index="1">
     <template #title>
       <i class="el-icon-location"></i>
       <span>Navigateur Un</span>
     </template>
-    <el-menu-item-group>
+    <lx-menu-item-group>
       <template #title><span>Group Un</span></template>
-      <el-menu-item index="1-1">item un</el-menu-item>
-      <el-menu-item index="1-2">item deux</el-menu-item>
-    </el-menu-item-group>
-    <el-menu-item-group title="Group Deux">
-      <el-menu-item index="1-3">item trois</el-menu-item>
-    </el-menu-item-group>
-    <el-sub-menu index="1-4">
+      <lx-menu-item index="1-1">item un</lx-menu-item>
+      <lx-menu-item index="1-2">item deux</lx-menu-item>
+    </lx-menu-item-group>
+    <lx-menu-item-group title="Group Deux">
+      <lx-menu-item index="1-3">item trois</lx-menu-item>
+    </lx-menu-item-group>
+    <lx-sub-menu index="1-4">
       <template #title><span>item quatre</span></template>
-      <el-menu-item index="1-4-1">item un</el-menu-item>
-    </el-sub-menu>
-  </el-sub-menu>
-  <el-menu-item index="2">
+      <lx-menu-item index="1-4-1">item un</lx-menu-item>
+    </lx-sub-menu>
+  </lx-sub-menu>
+  <lx-menu-item index="2">
     <i class="el-icon-menu"></i>
     <template #title>Navigator Deux</template>
-  </el-menu-item>
-  <el-menu-item index="3" disabled>
+  </lx-menu-item>
+  <lx-menu-item index="3" disabled>
     <i class="el-icon-document"></i>
     <template #title>Navigator Trois</template>
-  </el-menu-item>
-  <el-menu-item index="4">
+  </lx-menu-item>
+  <lx-menu-item index="4">
     <i class="el-icon-setting"></i>
     <template #title>Navigator Quatre</template>
-  </el-menu-item>
-</el-menu>
+  </lx-menu-item>
+</lx-menu>
 
 <style>
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
+  .lx-menu-vertical-demo:not(.lx-menu--collapse) {
     width: 200px;
     min-height: 400px;
   }

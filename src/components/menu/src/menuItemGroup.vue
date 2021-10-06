@@ -25,8 +25,8 @@ import {
 import type { IMenuGroupProps, RootMenuProvider } from './menu.type'
 
 export default defineComponent({
-  name: 'ElMenuItemGroup',
-  componentName: 'ElMenuItemGroup',
+  name: 'LxMenuItemGroup',
+  componentName: 'LxMenuItemGroup',
 
   props: {
     title: {
@@ -44,8 +44,8 @@ export default defineComponent({
       let padding = 20
       let parent = instance.parent
       if (rootProps.collapse) return 20
-      while (parent && parent.type.name !== 'ElMenu') {
-        if (parent.type.name === 'ElSubMenu') {
+      while (parent && parent.type.name !== 'LxMenu') {
+        if (parent.type.name === 'LxSubMenu') {
           padding += 20
         }
         parent = parent.parent

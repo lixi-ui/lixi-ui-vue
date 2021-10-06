@@ -23,7 +23,7 @@ describe('Drawer', () => {
   test('create', async () => {
     const wrapper = _mount(
       `
-      <el-drawer :title="title" v-model="visible"></el-drawer>
+      <lx-drawer :title="title" v-model="visible"></lx-drawer>
       `,
       () => ({
         title,
@@ -33,8 +33,8 @@ describe('Drawer', () => {
     await nextTick()
     await rAF()
     await nextTick()
-    const wrapperEl = wrapper.find('.el-overlay').element as HTMLDivElement
-    const headerEl = wrapper.find('.el-drawer__header').element
+    const wrapperEl = wrapper.find('.lx-overlay').element as HTMLDivElement
+    const headerEl = wrapper.find('.lx-drawer__header').element
 
     await nextTick()
     expect(wrapperEl.style.display).not.toEqual('none')
@@ -44,11 +44,11 @@ describe('Drawer', () => {
   test('render correct content', async () => {
     const wrapper = _mount(
       `
-      <el-drawer :title='title' v-model='visible'>
+      <lx-drawer :title='title' v-model='visible'>
         <span>this is a sentence</span>
-        <el-button @click='dialogVisible = false'>cancel</el-button>
-        <el-button type='primary' @click='dialogVisible = false'>confirm</el-button>
-      </el-drawer>
+        <lx-button @click='dialogVisible = false'>cancel</lx-button>
+        <lx-button type='primary' @click='dialogVisible = false'>confirm</lx-button>
+      </lx-drawer>
       `,
       () => ({
         title,
@@ -59,8 +59,8 @@ describe('Drawer', () => {
     await nextTick()
     await rAF()
     await nextTick()
-    expect(wrapper.find('.el-drawer__body span').element.textContent).toEqual('this is a sentence')
-    const footerBtns = wrapper.findAll('.el-button')
+    expect(wrapper.find('.lx-drawer__body span').element.textContent).toEqual('this is a sentence')
+    const footerBtns = wrapper.findAll('.lx-button')
     expect(footerBtns.length).toEqual(2)
     expect(footerBtns[0].find('span').element.textContent).toEqual('cancel')
     expect(footerBtns[1].find('span').element.textContent).toEqual('confirm')
@@ -69,9 +69,9 @@ describe('Drawer', () => {
   test('should append to body, when append-to-body flag is true', async () => {
     const wrapper = _mount(
       `
-      <el-drawer ref='d' :title='title' v-model='visible' :append-to-body='true'>
+      <lx-drawer ref='d' :title='title' v-model='visible' :append-to-body='true'>
         <span> content </span>
-      </el-drawer>
+      </lx-drawer>
       `,
       () => ({
         title,
@@ -84,7 +84,7 @@ describe('Drawer', () => {
     await nextTick()
     await rAF()
     await nextTick()
-    expect(document.querySelector('.el-overlay').parentNode).toEqual(document.body)
+    expect(document.querySelector('.lx-overlay').parentNode).toEqual(document.body)
   })
 
   test('should open and close drawer properly', async () => {
@@ -93,9 +93,9 @@ describe('Drawer', () => {
     const onOpened = jest.fn()
     const wrapper = _mount(
       `
-      <el-drawer :title='title' v-model='visible' @closed="onClosed" @close="onClose" @opened="onOpened">
+      <lx-drawer :title='title' v-model='visible' @closed="onClosed" @close="onClose" @opened="onOpened">
         <span>${content}</span>
-      </el-drawer>
+      </lx-drawer>
       `,
       () => ({
         title,
@@ -115,7 +115,7 @@ describe('Drawer', () => {
     await nextTick()
     expect(onOpened).not.toHaveBeenCalled()
 
-    const drawerEl = wrapper.find('.el-overlay').element as HTMLDivElement
+    const drawerEl = wrapper.find('.lx-overlay').element as HTMLDivElement
     expect(drawerEl.style.display).toEqual('none')
 
     vm.visible = true
@@ -134,9 +134,9 @@ describe('Drawer', () => {
   test('should destroy every child after drawer was closed when destroy-on-close flag is true', async () => {
     const wrapper = _mount(
       `
-      <el-drawer :title='title' v-model='visible' :append-to-body='false' :destroy-on-close='true' ref='drawer'>
+      <lx-drawer :title='title' v-model='visible' :append-to-body='false' :destroy-on-close='true' ref='drawer'>
         <span>${content}</span>
-      </el-drawer>
+      </lx-drawer>
       `,
       () => ({
         title,
@@ -148,20 +148,20 @@ describe('Drawer', () => {
     await nextTick()
     await rAF()
     await nextTick()
-    expect(wrapper.find('.el-drawer__body span').element.textContent).toEqual(content)
+    expect(wrapper.find('.lx-drawer__body span').element.textContent).toEqual(content)
     vm.$refs.drawer.handleClose()
     await nextTick()
     await rAF()
     await nextTick()
-    expect(wrapper.find('.el-drawer__body').exists()).toBe(false)
+    expect(wrapper.find('.lx-drawer__body').exists()).toBe(false)
   })
 
   test('should close dialog by clicking the close button', async () => {
     const wrapper = _mount(
       `
-      <el-drawer :title='title' v-model='visible' :append-to-body='false' :destroy-on-close='true' ref='drawer'>
+      <lx-drawer :title='title' v-model='visible' :append-to-body='false' :destroy-on-close='true' ref='drawer'>
         <span>${content}</span>
-      </el-drawer>
+      </lx-drawer>
       `,
       () => ({
         title,
@@ -173,7 +173,7 @@ describe('Drawer', () => {
     await nextTick()
     const vm = wrapper.vm as any
 
-    await wrapper.find('.el-drawer__close-btn').trigger('click')
+    await wrapper.find('.lx-drawer__close-btn').trigger('click')
     await nextTick()
     await rAF()
     await nextTick()
@@ -184,7 +184,7 @@ describe('Drawer', () => {
     const beforeClose = jest.fn()
     const wrapper = _mount(
       `
-      <el-drawer
+      <lx-drawer
           :before-close='beforeClose'
           :title='title'
           v-model='visible'
@@ -193,7 +193,7 @@ describe('Drawer', () => {
           ref='drawer'
           >
         <span>${content}</span>
-      </el-drawer>
+      </lx-drawer>
       `,
       () => ({
         title,
@@ -210,9 +210,9 @@ describe('Drawer', () => {
   test('should not show close button when show-close flag is false', async () => {
     const wrapper = _mount(
       `
-      <el-drawer :title='title' v-model='visible' ref='drawer' :show-close='false'>
+      <lx-drawer :title='title' v-model='visible' ref='drawer' :show-close='false'>
         <span>${content}</span>
-      </el-drawer>
+      </lx-drawer>
       `,
       () => ({
         title,
@@ -220,16 +220,16 @@ describe('Drawer', () => {
       }),
     )
 
-    expect(wrapper.find('.el-drawer__close-btn').exists()).toBe(false)
+    expect(wrapper.find('.lx-drawer__close-btn').exists()).toBe(false)
   })
 
   test('should have custom classes when custom classes were given', async () => {
     const classes = 'some-custom-class'
     const wrapper = _mount(
       `
-      <el-drawer :title='title' v-model='visible' ref='drawer' custom-class='${classes}'>
+      <lx-drawer :title='title' v-model='visible' ref='drawer' custom-class='${classes}'>
         <span>${content}</span>
-      </el-drawer>
+      </lx-drawer>
       `,
       () => ({
         title,
@@ -243,9 +243,9 @@ describe('Drawer', () => {
   test('should not render header when withHeader attribute is false', async () => {
     const wrapper = _mount(
       `
-      <el-drawer :title='title' v-model='visible' ref='drawer' :with-header='false'>
+      <lx-drawer :title='title' v-model='visible' ref='drawer' :with-header='false'>
         <span>${content}</span>
-      </el-drawer>
+      </lx-drawer>
       `,
       () => ({
         title,
@@ -253,16 +253,16 @@ describe('Drawer', () => {
       }),
     )
 
-    expect(wrapper.find('.el-drawer__header').exists()).toBe(false)
+    expect(wrapper.find('.lx-drawer__header').exists()).toBe(false)
   })
 
   describe('directions', () => {
     const renderer = direction => {
       return _mount(
         `
-        <el-drawer :title='title' v-model='visible' direction='${direction}'>
+        <lx-drawer :title='title' v-model='visible' direction='${direction}'>
           <span>${content}</span>
-        </el-drawer>
+        </lx-drawer>
         `,
         () => ({
           title,
@@ -294,7 +294,7 @@ describe('Drawer', () => {
     const closed = jest.fn()
     const wrapper = _mount(
       `
-      <el-drawer
+      <lx-drawer
         :title='title'
         v-model='visible'
         ref="drawer"
@@ -303,7 +303,7 @@ describe('Drawer', () => {
         @close="close"
         @closed="closed">
         <span>${content}</span>
-      </el-drawer>
+      </lx-drawer>
       `,
       () => ({
         title,
@@ -340,9 +340,9 @@ describe('Drawer', () => {
     const renderer = (size, isVertical) =>
       _mount(
         `
-        <el-drawer :title='title' v-model='visible' direction='${isVertical ? 'ltr' : 'ttb'}' size='${size}'>
+        <lx-drawer :title='title' v-model='visible' direction='${isVertical ? 'ltr' : 'ttb'}' size='${size}'>
           <span>${content}</span>
-        </el-drawer>
+        </lx-drawer>
         `,
         () => ({
           visible: true,
@@ -351,12 +351,12 @@ describe('Drawer', () => {
       )
 
     test('should effect height when drawer is vertical', async () => {
-      const drawerEl = renderer('50%', true).find('.el-drawer').element as HTMLDivElement
+      const drawerEl = renderer('50%', true).find('.lx-drawer').element as HTMLDivElement
       expect(drawerEl.style.width).toEqual('50%')
     })
 
     test('should effect width when drawer is horizontal', async () => {
-      const drawerEl = renderer('50%', false).find('.el-drawer').element as HTMLDivElement
+      const drawerEl = renderer('50%', false).find('.lx-drawer').element as HTMLDivElement
       expect(drawerEl.style.height).toEqual('50%')
     })
   })

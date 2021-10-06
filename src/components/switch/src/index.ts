@@ -10,4 +10,4 @@ Switch.install = (app: App): void => {
 const _Switch = Switch as SFCWithInstall<typeof Switch>
 
 export default _Switch
-export const ElSwitch = _Switch
+export const LxSwitch = _Switch

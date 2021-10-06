@@ -20,7 +20,7 @@ import { defineComponent } from 'vue'
 import { useLocaleInject } from '@element-plus/hooks'
 
 export default defineComponent({
-  name: 'ElPageHeader',
+  name: 'LxPageHeader',
   props: {
     icon: {
       type: String,

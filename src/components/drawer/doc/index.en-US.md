@@ -13,24 +13,24 @@ Callout a temporary drawer, from multiple direction
 :::demo You must set `model-value` for `Drawer` like `Dialog` does to control the visibility of `Drawer` itself, it's `boolean` type. `Drawer` has to parts: `title` & `body`, the `title` is a named slot, you can also set the title through attribute named `title`, default to an empty string, the `body` part is the main area of `Drawer`, which contains user defined content. When opening, `Drawer` expand itself from the **right corner to left** which size is **30%** of the browser window by default. You can change that default behavior by setting `direction` and `size` attribute. This show case also demonstrated how to use the `before-close` API, check the Attribute section for more detail
 
 ```html
-<el-radio-group v-model="direction">
-  <el-radio label="ltr">left to right</el-radio>
-  <el-radio label="rtl">right to left</el-radio>
-  <el-radio label="ttb">top to bottom</el-radio>
-  <el-radio label="btt">bottom to top</el-radio>
-</el-radio-group>
+<lx-radio-group v-model="direction">
+  <lx-radio label="ltr">left to right</lx-radio>
+  <lx-radio label="rtl">right to left</lx-radio>
+  <lx-radio label="ttb">top to bottom</lx-radio>
+  <lx-radio label="btt">bottom to top</lx-radio>
+</lx-radio-group>
 
-<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+<lx-button @click="drawer = true" type="primary" style="margin-left: 16px;">
   open
-</el-button>
+</lx-button>
 
-<el-drawer
+<lx-drawer
   title="I am the title"
   v-model="drawer"
   :direction="direction"
   :before-close="handleClose">
   <span>Hi, there!</span>
-</el-drawer>
+</lx-drawer>
 
 <script>
   export default {
@@ -55,7 +55,7 @@ Callout a temporary drawer, from multiple direction
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
@@ -63,7 +63,7 @@ Callout a temporary drawer, from multiple direction
       const drawer = ref(false);
       const direction = ref('rtl');
       const handleClose = (done) => {
-        ElMessageBox
+        LxMessageBox
           .confirm('Are you sure you want to close this?')
           .then((_) => {
             done();
@@ -90,16 +90,16 @@ When you no longer need a title, you can remove title from drawer.
 :::demo Set the `withHeader` attribute to **false**, you can remove the title from drawer, thus your drawer can have more space on screen. If you want to be accessible, make sure to set the `title` attribute.
 
 ```html
-<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+<lx-button @click="drawer = true" type="primary" style="margin-left: 16px;">
   open
-</el-button>
+</lx-button>
 
-<el-drawer
+<lx-drawer
   title="I am the title"
   v-model="drawer"
   :with-header="false">
   <span>Hi there!</span>
-</el-drawer>
+</lx-drawer>
 
 <script>
   export default {
@@ -135,21 +135,21 @@ Like `Dialog`, `Drawer` can do many diverse interaction as you wanted.
 :::demo
 
 ```html
-<el-button type="text" @click="table = true">Open Drawer with nested table</el-button>
-<el-button type="text" @click="dialog = true">Open Drawer with nested form</el-button>
-<el-drawer
+<lx-button type="text" @click="table = true">Open Drawer with nested table</lx-button>
+<lx-button type="text" @click="dialog = true">Open Drawer with nested form</lx-button>
+<lx-drawer
   title="I have a nested table inside!"
   v-model="table"
   direction="rtl"
   size="50%">
-   <el-table :data="gridData">
-      <el-table-column property="date" label="Date" width="150"></el-table-column>
-      <el-table-column property="name" label="Name" width="200"></el-table-column>
-      <el-table-column property="address" label="Address"></el-table-column>
-    </el-table>
-</el-drawer>
+   <lx-table :data="gridData">
+      <lx-table-column property="date" label="Date" width="150"></lx-table-column>
+      <lx-table-column property="name" label="Name" width="200"></lx-table-column>
+      <lx-table-column property="address" label="Address"></lx-table-column>
+    </lx-table>
+</lx-drawer>
 
-<el-drawer
+<lx-drawer
   title="I have a nested form inside!"
   :before-close="handleClose"
   v-model="dialog"
@@ -158,23 +158,23 @@ Like `Dialog`, `Drawer` can do many diverse interaction as you wanted.
   ref="drawer"
   >
   <div class="demo-drawer__content">
-    <el-form :model="form">
-      <el-form-item label="Name" :label-width="formLabelWidth">
-        <el-input v-model="form.name" autocomplete="off"></el-input>
-      </el-form-item>
-      <el-form-item label="Area" :label-width="formLabelWidth">
-        <el-select v-model="form.region" placeholder="Please select activity area">
-          <el-option label="Area1" value="shanghai"></el-option>
-          <el-option label="Area2" value="beijing"></el-option>
-        </el-select>
-      </el-form-item>
-    </el-form>
+    <lx-form :model="form">
+      <lx-form-item label="Name" :label-width="formLabelWidth">
+        <lx-input v-model="form.name" autocomplete="off"></lx-input>
+      </lx-form-item>
+      <lx-form-item label="Area" :label-width="formLabelWidth">
+        <lx-select v-model="form.region" placeholder="Please select activity area">
+          <lx-option label="Area1" value="shanghai"></lx-option>
+          <lx-option label="Area2" value="beijing"></lx-option>
+        </lx-select>
+      </lx-form-item>
+    </lx-form>
     <div class="demo-drawer__footer">
-      <el-button @click="cancelForm">Cancel</el-button>
-      <el-button type="primary" @click="$refs.drawer.closeDrawer()" :loading="loading">{{ loading ? 'Submitting ...' : 'Submit' }}</el-button>
+      <lx-button @click="cancelForm">Cancel</lx-button>
+      <lx-button type="primary" @click="$refs.drawer.closeDrawer()" :loading="loading">{{ loading ? 'Submitting ...' : 'Submit' }}</lx-button>
     </div>
   </div>
-</el-drawer>
+</lx-drawer>
 
 <script>
 export default {
@@ -244,7 +244,7 @@ export default {
 <setup>
 
 import {defineComponent, reactive, toRefs } from 'vue';
-import { ElMessageBox } from 'element-plus';
+import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
@@ -293,7 +293,7 @@ import { ElMessageBox } from 'element-plus';
         if (state.loading) {
           return;
         }
-        ElMessageBox
+        LxMessageBox
           .confirm('Do you want to submit?')
           .then((_) => {
             state.loading = true;
@@ -334,25 +334,25 @@ You can also have multiple layer of `Drawer` just like `Dialog`.
 
 ```html
 
-<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+<lx-button @click="drawer = true" type="primary" style="margin-left: 16px;">
   open
-</el-button>
+</lx-button>
 
-<el-drawer
+<lx-drawer
   title="I'm outer Drawer"
   v-model="drawer"
   size="50%">
   <div>
-   <el-button @click="innerDrawer = true">Click me!</el-button>
-   <el-drawer
+   <lx-button @click="innerDrawer = true">Click me!</lx-button>
+   <lx-drawer
      title="I'm inner Drawer"
      :append-to-body="true"
      :before-close="handleClose"
      v-model="innerDrawer">
      <p>_(:зゝ∠)_</p>
-   </el-drawer>
+   </lx-drawer>
   </div>
-</el-drawer>
+</lx-drawer>
 
 <script>
   export default {
@@ -377,7 +377,7 @@ You can also have multiple layer of `Drawer` just like `Dialog`.
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
@@ -385,7 +385,7 @@ You can also have multiple layer of `Drawer` just like `Dialog`.
       const drawer = ref(false);
       const innerDrawer = ref(false);
       const handleClose = (done) => {
-        ElMessageBox
+        LxMessageBox
           .confirm('You still have unsaved data, proceed?')
           .then((_) => {
             done();
@@ -425,7 +425,7 @@ Drawer provides an API called `destroyOnClose`, which is a flag variable that in
 | Attribute | Description | Type      | Acceptable Values                           | Default  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
 | model-value / v-model | Should Drawer be displayed | boolean | — | false |
-| append-to-body | Controls should Drawer be inserted to DocumentBody Element, nested Drawer must assign this param to **true**| boolean   | — | false |
+| append-to-body | Controls should Drawer be inserted to DocumentBody Lxement, nested Drawer must assign this param to **true**| boolean   | — | false |
 | lock-scroll     | whether scroll of body is disabled while Drawer is displayed | boolean   | — | true |
 | before-close | If set, closing procedure will be halted | function(done) (done is function type that accepts a boolean as parameter, calling done with true or without parameter will abort the close procedure) | — | — |
 | close-on-click-modal | whether the Drawer can be closed by clicking the mask | boolean    | — | true |

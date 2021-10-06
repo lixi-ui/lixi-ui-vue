@@ -34,7 +34,7 @@ describe('<upload />', () => {
         drag: true,
       })
 
-      expect(wrapper.find('.el-upload-dragger').exists()).toBe(true)
+      expect(wrapper.find('.lx-upload-dragger').exists()).toBe(true)
     })
   })
 

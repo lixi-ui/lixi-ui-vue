@@ -88,7 +88,7 @@ class TableLayout<T> {
       if (this.bodyHeight.value === null) {
         scrollY = false
       } else {
-        const body = bodyWrapper.querySelector('.el-table__body') as HTMLElement
+        const body = bodyWrapper.querySelector('.lx-table__body') as HTMLElement
         scrollY = body.offsetHeight > this.bodyHeight.value
       }
       this.scrollY.value = scrollY
@@ -141,7 +141,7 @@ class TableLayout<T> {
     if (this.showHeader && !headerWrapper) return
 
     const headerTrElm: HTMLElement = headerWrapper
-      ? headerWrapper.querySelector('.el-table__header tr')
+      ? headerWrapper.querySelector('.lx-table__header tr')
       : null
     const noneHeader = this.headerDisplayNone(headerTrElm)
 

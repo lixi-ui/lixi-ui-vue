@@ -1,19 +1,19 @@
 import { defineComponent, h, ref, cloneVNode } from 'vue'
-import { default as ElPopper, popperDefaultProps } from '@element-plus/components/popper'
+import { default as LxPopper, popperDefaultProps } from '@element-plus/components/popper'
 import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
 import throwError from '@element-plus/utils/error'
 import { getFirstValidNode } from '@element-plus/utils/vnode'
 
 /**
- * ElTooltip
+ * LxTooltip
  * Tooltip is essentially an upper layer for Popper, due to popper has already implemented so many functionalities and Popper is essentially a component shared internally
  * Tooltip also does the API translation work for popper.
  * Tooltip shares the exact same API which v2 has, so that the user should be able to
  */
 export default defineComponent({
-  name: 'ElTooltip',
+  name: 'LxTooltip',
   components: {
-    ElPopper,
+    LxPopper,
   },
   props: {
     ...popperDefaultProps,
@@ -83,7 +83,7 @@ export default defineComponent({
     }
 
     const popper = h(
-      ElPopper,
+      LxPopper,
       {
         ...Object.keys(popperDefaultProps).reduce((result, key) => {
           return { ...result, [key]: this[key] }

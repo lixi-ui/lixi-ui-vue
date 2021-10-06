@@ -31,7 +31,7 @@ interface IElBacktopProps {
 }
 
 export default defineComponent({
-  name: 'ElBacktop',
+  name: 'LxBacktop',
   props: {
     visibilityHeight: {
       type: Number,
@@ -57,7 +57,7 @@ export default defineComponent({
     const visible = ref(false)
     const styleBottom = computed(() => `${props.bottom}px`)
     const styleRight = computed(() => `${props.right}px`)
-    const scope = 'ElBackTop'
+    const scope = 'LxBackTop'
 
     const scrollToTop = () => {
       const beginTime = Date.now()

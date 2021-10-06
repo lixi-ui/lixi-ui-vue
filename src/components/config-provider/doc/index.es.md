@@ -10,12 +10,12 @@ Configure i18n related properties via Config Provider, to get language switching
 
 ```html
 <div>
-  <el-config-provider :locale="locale1">
-    <el-color-picker :modelValue="''" style="vertical-align: middle;" />
-  </el-config-provider>
-  <el-button @click="toggle" style="margin-left: 8px; vertical-align: middle;">
+  <lx-config-provider :locale="locale1">
+    <lx-color-picker :modelValue="''" style="vertical-align: middle;" />
+  </lx-config-provider>
+  <lx-button @click="toggle" style="margin-left: 8px; vertical-align: middle;">
     Switch Lang
-  </el-button>
+  </lx-button>
 </div>
 
 <script>

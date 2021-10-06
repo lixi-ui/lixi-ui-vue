@@ -25,7 +25,7 @@ describe('Transfer', () => {
         this.testData = getTestData()
       },
     })
-    expect(wrapper.findComponent({ name: 'ElTransfer' })).toBeTruthy()
+    expect(wrapper.findComponent({ name: 'LxTransfer' })).toBeTruthy()
   })
 
   it('default target list', () => {
@@ -43,7 +43,7 @@ describe('Transfer', () => {
         }
       },
     })
-    const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
+    const LxTransfer: any = wrapper.findComponent({ name: 'LxTransfer' })
     expect(ElTransfer.vm.sourceData.length).toBe(13)
   })
 
@@ -71,7 +71,7 @@ describe('Transfer', () => {
         },
       },
     })
-    const leftList: any = wrapper.findComponent({ name: 'ElTransferPanel' })
+    const leftList: any = wrapper.findComponent({ name: 'LxTransferPanel' })
     leftList.vm.query = '1'
     await leftList.find('input').setValue('1')
     expect(leftList.vm.filteredData.length).toBe(1)
@@ -97,12 +97,12 @@ describe('Transfer', () => {
         }
       },
     })
-    const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
+    const LxTransfer: any = wrapper.findComponent({ name: 'LxTransfer' })
 
-    ElTransfer.vm.addToLeft()
+    LxTransfer.vm.addToLeft()
     await nextTick()
     expect(ElTransfer.vm.sourceData.length).toBe(14)
-    ElTransfer.vm.addToRight()
+    LxTransfer.vm.addToRight()
     await nextTick()
     expect(ElTransfer.vm.sourceData.length).toBe(12)
   })
@@ -136,9 +136,9 @@ describe('Transfer', () => {
       },
     })
 
-    const label = wrapper.find('.el-transfer-panel__header .el-checkbox__label')
+    const label = wrapper.find('.lx-transfer-panel__header .lx-checkbox__label')
     expect(label.text().includes('表1')).toBeTruthy()
-    expect(wrapper.find('.el-transfer-panel__list .el-checkbox__label span').text()).toBe('1 - 备选项 1')
+    expect(wrapper.find('.lx-transfer-panel__list .lx-checkbox__label span').text()).toBe('1 - 备选项 1')
     expect(label.find('span').text()).toBe('no')
   })
 
@@ -161,7 +161,7 @@ describe('Transfer', () => {
       },
     })
 
-    const leftList: any = wrapper.findComponent({ name: 'ElTransferPanel' })
+    const leftList: any = wrapper.findComponent({ name: 'LxTransferPanel' })
     leftList.vm.handleAllCheckedChange({ target: { checked: true } })
     expect(leftList.vm.checked.length).toBe(12)
   })
@@ -187,10 +187,10 @@ describe('Transfer', () => {
         },
       })
 
-      const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
-      ElTransfer.vm.addToRight()
+      const LxTransfer: any = wrapper.findComponent({ name: 'LxTransfer' })
+      LxTransfer.vm.addToRight()
       await nextTick()
-      const targetItems = wrapper.findAll('.el-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span')
+      const targetItems = wrapper.findAll('.lx-transfer__buttons + .lx-transfer-panel .lx-transfer-panel__body .lx-checkbox__label span')
       expect(targetItems.map(item => item.text())).toStrictEqual(['备选项 1', '备选项 2', '备选项 3', '备选项 4'])
     })
 
@@ -215,10 +215,10 @@ describe('Transfer', () => {
         },
       })
 
-      const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
-      ElTransfer.vm.addToRight()
+      const LxTransfer: any = wrapper.findComponent({ name: 'LxTransfer' })
+      LxTransfer.vm.addToRight()
       await nextTick()
-      const targetItems = wrapper.findAll('.el-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span')
+      const targetItems = wrapper.findAll('.lx-transfer__buttons + .lx-transfer-panel .lx-transfer-panel__body .lx-checkbox__label span')
       expect(targetItems.map(item => item.text()))
         .toStrictEqual(['备选项 1', '备选项 4', '备选项 2', '备选项 3'])
     })
@@ -244,10 +244,10 @@ describe('Transfer', () => {
         },
       })
 
-      const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
-      ElTransfer.vm.addToRight()
+      const LxTransfer: any = wrapper.findComponent({ name: 'LxTransfer' })
+      LxTransfer.vm.addToRight()
       await nextTick()
-      const targetItems = wrapper.findAll('.el-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span')
+      const targetItems = wrapper.findAll('.lx-transfer__buttons + .lx-transfer-panel .lx-transfer-panel__body .lx-checkbox__label span')
       expect(targetItems.map(item => item.text())).toStrictEqual(['备选项 2', '备选项 3', '备选项 1', '备选项 4'])
     })
   })

@@ -14,8 +14,8 @@ import { defineComponent, provide, inject, ref, reactive, toRefs, getCurrentInst
 import { selectGroupKey, selectKey, selectEvents } from './token'
 
 export default defineComponent({
-  name: 'ElOptionGroup',
-  componentName: 'ElOptionGroup',
+  name: 'LxOptionGroup',
+  componentName: 'LxOptionGroup',
 
   props: {
     label: String,
@@ -49,7 +49,7 @@ export default defineComponent({
         node.children.forEach(child => {
           if (
             child.type &&
-            child.type.name === 'ElOption' &&
+            child.type.name === 'LxOption' &&
             child.component &&
             child.component.proxy
           ) {

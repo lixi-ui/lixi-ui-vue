@@ -8,7 +8,7 @@ Estructura básica de árbol.
 
 :::demo
 ```html
-<el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+<lx-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></lx-tree>
 
 <script>
   export default {
@@ -71,13 +71,13 @@ Usado para la selección de nodos.
 
 :::demo Este ejemplo también muestra como cargar los datos de forma asíncrona.
 ```html
-<el-tree
+<lx-tree
   :props="props"
   :load="loadNode"
   lazy
   show-checkbox
   @check-change="handleCheckChange">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -137,12 +137,12 @@ Usado para la selección de nodos.
 
 :::demo Los datos de un nodo no son cargados hasta que no es pinchado, así que el árbol no puede predecir si es una hoja. Por eso a cada nodo se le añade el botón de desplegar, y si el nodo es una hoja el botón desaparecerá al pinchar en él. También puede decirle al árbol que el nodo es una hoja de antemano, y así evita que muestre el botón de desplegar.
 ```html
-<el-tree
+<lx-tree
   :props="props"
   :load="loadNode"
   lazy
   show-checkbox>
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -185,11 +185,11 @@ El checkbox de un nodo se puede poner como desactivado.
 
 :::demo En el ejemplo, la propiedad `disabled` se declara en `defaultProps`, y algunos nodos se ponen como `disabled:true`. Los checkboxes correspondientes son desactivados y no se pueden pinchar.
 ```html
-<el-tree
+<lx-tree
   :data="data"
   :props="defaultProps"
   show-checkbox>
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -240,14 +240,14 @@ Los nodos pueden estar desplegados o seleccionados por defecto.
 
 :::demo Utilice `default-expanded-keys` y `default-checked-keys` para establecer los nodos desplegados y seleccionados respectivamente. Tenga en cuenta que para que funcione es necesario que tengan `node-key`. Su valor es el nombre de una clave en el objeto data, y el valor de la clave debe ser único en todo el árbol.
 ```html
-<el-tree
+<lx-tree
   :data="data"
   show-checkbox
   node-key="id"
   :default-expanded-keys="[2, 3]"
   :default-checked-keys="[5]"
   :props="defaultProps">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -303,7 +303,7 @@ Los nodos pueden estar desplegados o seleccionados por defecto.
 
 :::demo Este ejemplo muestra como establecer y leer nodos seleccionados. Esto se puede hacer por nodos o por claves. Si lo hace por claves el atributo `node-key` es necesario.
 ```html
-<el-tree
+<lx-tree
   :data="data"
   show-checkbox
   default-expand-all
@@ -311,14 +311,14 @@ Los nodos pueden estar desplegados o seleccionados por defecto.
   ref="tree"
   highlight-current
   :props="defaultProps">
-</el-tree>
+</lx-tree>
 
 <div class="buttons">
-  <el-button @click="getCheckedNodes">get by node</el-button>
-  <el-button @click="getCheckedKeys">get by key</el-button>
-  <el-button @click="setCheckedNodes">set by node</el-button>
-  <el-button @click="setCheckedKeys">set by key</el-button>
-  <el-button @click="resetChecked">reset</el-button>
+  <lx-button @click="getCheckedNodes">get by node</lx-button>
+  <lx-button @click="getCheckedKeys">get by key</lx-button>
+  <lx-button @click="setCheckedNodes">set by node</lx-button>
+  <lx-button @click="setCheckedKeys">set by key</lx-button>
+  <lx-button @click="resetChecked">reset</lx-button>
 </div>
 
 <script>
@@ -403,18 +403,18 @@ El contenido de los nodos puede ser personalizado, así que puede añadir iconos
 <div class="custom-tree-container">
   <div class="block">
     <p>Using render-content</p>
-    <el-tree
+    <lx-tree
       :data="data"
       show-checkbox
       node-key="id"
       default-expand-all
       :expand-on-click-node="false"
       :render-content="renderContent">
-    </el-tree>
+    </lx-tree>
   </div>
   <div class="block">
     <p>Using scoped slot</p>
-    <el-tree
+    <lx-tree
       :data="data"
       show-checkbox
       node-key="id"
@@ -435,7 +435,7 @@ El contenido de los nodos puede ser personalizado, así que puede añadir iconos
           </span>
         </span>
       </template>
-    </el-tree>
+    </lx-tree>
   </div>
 </div>
 
@@ -533,19 +533,19 @@ Los nodos del árbol se pueden filtrar.
 
 :::demo Invoque el método `filter` de la instancia de Tree para filtrar los nodos. Su parámetro es la palabra de filtrado. Tenga en cuenta que para que funcione es necesario `filter-node-method`, y su valor el método de filtrado.
 ```html
-<el-input
+<lx-input
   placeholder="Filter keyword"
   v-model="filterText">
-</el-input>
+</lx-input>
 
-<el-tree
+<lx-tree
   class="filter-tree"
   :data="data"
   :props="defaultProps"
   default-expand-all
   :filter-node-method="filterNode"
   ref="tree">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -617,12 +617,12 @@ Solo puede ser expandido un nodo del mismo nivel a la vez.
 
 :::demo
 ```html
-<el-tree
+<lx-tree
   :data="data"
   :props="defaultProps"
   accordion
   @node-click="handleNodeClick">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -685,7 +685,7 @@ Puede arrastrar y soltar nodos de Tree añadiendo un atributo `draggable` .
 
 :::demo
 ```html
-<el-tree
+<lx-tree
   :data="data"
   node-key="id"
   default-expand-all
@@ -698,7 +698,7 @@ Puede arrastrar y soltar nodos de Tree añadiendo un atributo `draggable` .
   draggable
   :allow-drop="allowDrop"
   :allow-drag="allowDrag">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -797,7 +797,7 @@ Puede arrastrar y soltar nodos de Tree añadiendo un atributo `draggable` .
 | auto-expand-parent    | Expandir un nodo padre si el hijo está seleccionado | boolean                           | —                 | true        |
 | default-expanded-keys | Array de claves de los nodos expandidos inicialmente | array                             | —                 | —           |
 | show-checkbox         | Si un nodo es seleccionable              | boolean                           | —                 | false       |
-| check-strictly        | El estado de selección de un nodo no afecta a sus padres o hijos, cuando `show-checkbox` es `true` | boolean                           | —                 | false       |
+| check-strictly        | Lx estado de selección de un nodo no afecta a sus padres o hijos, cuando `show-checkbox` es `true` | boolean                           | —                 | false       |
 | default-checked-keys  | Array con claves de los nodos seleccionados inicialmente | array                             | —                 | —           |
 | current-node-key      | la clave del nodo inicialmente seleccionado | string, number                       | —               | —       |
 | filter-node-method    | Esta función se ejecutará en cada nodo cuando se use el método filtrar, si devuelve `false` el nodo se oculta | Function(value, data, node)       | —                 | —           |
@@ -823,7 +823,7 @@ Puede arrastrar y soltar nodos de Tree añadiendo un atributo `draggable` .
 | ----------------- | ---------------------------------------- | ---------------------------------------- |
 | filter            | Filtra los nodos del árbol, los nodos filtrados estarán ocultos | Acepta un parámetro que será usado como primer parámetro para filter-node-method |
 | updateKeyChildren | Asocia un nuevo dato al nodo, solo funciona si `node-key` está asignado | (key, data)Acepta dos parámetros: 1. clave del nodo 2. nuevo dato |
-| getCheckedNodes   | si el nodo puede ser seleccionado (`show-checkbox` es `true`), devuelve el array de nodos actualmente seleccionada. | (leafOnly, includeHalfChecked) Acepta dos parámetros de tipo booleano: 1. El valor por defecto es `false`. Si el parámetro es `true`, sólo devuelve el array de subnodos actualmente seleccionado. 2. El valor por defecto es `false`. Si el parámetro es `true`, el valor de retorno contiene nodos halfchecked. |
+| getCheckedNodes   | si el nodo puede ser seleccionado (`show-checkbox` es `true`), devuelve el array de nodos actualmente seleccionada. | (leafOnly, includeHalfChecked) Acepta dos parámetros de tipo booleano: 1. Lx valor por defecto es `false`. Si el parámetro es `true`, sólo devuelve el array de subnodos actualmente seleccionado. 2. Lx valor por defecto es `false`. Si el parámetro es `true`, el valor de retorno contiene nodos halfchecked. |
 | setCheckedNodes   | Establece algunos nodos como seleccionados, solo funciona cuando `node-key` está asignado | Un array de nodos a seleccionar          |
 | getCheckedKeys    | Si los nodos pueden ser seleccionados (`show-checkbox` es `true`), devuelve un array con las claves de los nodos seleccionados | (leafOnly) Acepta un booleano que por defecto es `false`. |
 | setCheckedKeys    | Establece algunos nodos como seleccionados, solo si `node-key` está asignado | (keys, leafOnly) Acepta dos parametros: 1. un array de claves 2. un booleano cuyo valor por defecto es `false`. Si el parámetro es `true`, solo devuelve los nodos seleccionados |
@@ -860,4 +860,4 @@ Puede arrastrar y soltar nodos de Tree añadiendo un atributo `draggable` .
 ### Scoped Slot
 | Nombre | Descripción |
 |------|--------|
-| — | Contenido personalizado para nodos de tree. El parámetro del scope es { node, data }. |
+| — | Contenido personalizado para nodos de tree. Lx parámetro del scope es { node, data }. |

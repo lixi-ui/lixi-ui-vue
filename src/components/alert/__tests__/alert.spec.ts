@@ -11,8 +11,8 @@ describe('Alert.vue', () => {
         showIcon: true,
       },
     })
-    expect(wrapper.find('.el-alert__title').text()).toEqual(AXIOM)
-    expect(wrapper.find('.el-alert').classes()).toContain('el-alert--info')
+    expect(wrapper.find('.lx-alert__title').text()).toEqual(AXIOM)
+    expect(wrapper.find('.lx-alert').classes()).toContain('el-alert--info')
   })
 
   test('type', () => {
@@ -23,8 +23,8 @@ describe('Alert.vue', () => {
         showIcon: true,
       },
     })
-    expect(wrapper.find('.el-alert').classes()).toContain('el-alert--success')
-    expect(wrapper.find('.el-alert__icon').classes()).toContain('el-icon-success')
+    expect(wrapper.find('.lx-alert').classes()).toContain('el-alert--success')
+    expect(wrapper.find('.lx-alert__icon').classes()).toContain('el-icon-success')
   })
 
   test('description', () => {
@@ -35,7 +35,7 @@ describe('Alert.vue', () => {
         showIcon: true,
       },
     })
-    expect(wrapper.find('.el-alert__description').text()).toEqual(AXIOM)
+    expect(wrapper.find('.lx-alert__description').text()).toEqual(AXIOM)
   })
 
   test('theme', () => {
@@ -45,7 +45,7 @@ describe('Alert.vue', () => {
         effect: 'dark',
       },
     })
-    expect(wrapper.find('.el-alert').classes()).toContain('is-dark')
+    expect(wrapper.find('.lx-alert').classes()).toContain('is-dark')
   })
 
   test('title slot', () => {
@@ -54,7 +54,7 @@ describe('Alert.vue', () => {
         title: AXIOM,
       },
     })
-    expect(wrapper.find('.el-alert__title').text()).toEqual(AXIOM)
+    expect(wrapper.find('.lx-alert__title').text()).toEqual(AXIOM)
   })
 
   test('close', async () => {
@@ -64,7 +64,7 @@ describe('Alert.vue', () => {
       },
     })
 
-    const closeBtn = wrapper.find('.el-alert__closebtn')
+    const closeBtn = wrapper.find('.lx-alert__closebtn')
     expect(closeBtn.exists()).toBe(true)
 
     await closeBtn.trigger('click')

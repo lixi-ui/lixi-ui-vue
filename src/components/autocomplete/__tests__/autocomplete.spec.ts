@@ -28,7 +28,7 @@ const _mount = (payload = {}) => mount({
     },
   },
   template: `
-    <el-autocomplete
+    <lx-autocomplete
       ref="autocomplete"
       v-model="state"
       :fetch-suggestions="querySearch"
@@ -76,16 +76,16 @@ describe('Autocomplete.vue', () => {
     const wrapper = _mount()
 
     await wrapper.setProps({ popperClass: 'error' })
-    expect(document.body.querySelector('.el-popper').classList.contains('error')).toBe(true)
+    expect(document.body.querySelector('.lx-popper').classList.contains('error')).toBe(true)
 
     await wrapper.setProps({ popperClass: 'success' })
-    expect(document.body.querySelector('.el-popper').classList.contains('error')).toBe(false)
-    expect(document.body.querySelector('.el-popper').classList.contains('success')).toBe(true)
+    expect(document.body.querySelector('.lx-popper').classList.contains('error')).toBe(false)
+    expect(document.body.querySelector('.lx-popper').classList.contains('success')).toBe(true)
   })
 
   test('popperAppendToBody', async () => {
     _mount({ popperAppendToBody: false })
-    expect(document.body.querySelector('.el-popper__mask')).toBeNull()
+    expect(document.body.querySelector('.lx-popper__mask')).toBeNull()
   })
 
   test('debounce / fetchSuggestions', async () => {
@@ -130,9 +130,9 @@ describe('Autocomplete.vue', () => {
     })
     await wrapper.find('input').trigger('focus')
     await sleep(30)
-    expect(document.body.querySelector('.el-icon-loading')).toBeDefined()
+    expect(document.body.querySelector('.lx-icon-loading')).toBeDefined()
     await wrapper.setProps({ hideLoading: true })
-    expect(document.body.querySelector('.el-icon-loading')).toBeNull()
+    expect(document.body.querySelector('.lx-icon-loading')).toBeNull()
   })
 
   test('selectWhenUnmatched', async () => {

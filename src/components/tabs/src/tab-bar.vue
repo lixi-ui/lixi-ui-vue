@@ -14,7 +14,7 @@ import { Pane, RootTabs } from './token'
 import type { CSSProperties, PropType } from 'vue'
 
 export default defineComponent({
-  name: 'ElTabBar',
+  name: 'LxTabBar',
   directives: {
     Resize,
   },
@@ -27,7 +27,7 @@ export default defineComponent({
   setup(props) {
     const rootTabs = inject<RootTabs>('rootTabs')
     if (!rootTabs) {
-      throw new Error(`ElTabBar must use with ElTabs`)
+      throw new Error(`ElTabBar must use with LxTabs`)
     }
     const instance = getCurrentInstance()
 
@@ -40,7 +40,7 @@ export default defineComponent({
       const sizeDir = sizeName === 'width' ? 'x' : 'y'
 
       props.tabs.every(tab => {
-        let $el = instance.parent.refs?.[`tab-${tab.paneName}`] as Element
+        let $el = instance.parent.refs?.[`tab-${tab.paneName}`] as Lxement
         if (!$el) {
           return false
         }

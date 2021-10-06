@@ -22,7 +22,7 @@ import type { ItemProps } from '@element-plus/components/virtual-list'
 import type { OptionItemProps, Option } from './select.types'
 
 export default defineComponent({
-  name: 'ElSelectDropdown',
+  name: 'LxSelectDropdown',
 
   props: {
     data: Array,

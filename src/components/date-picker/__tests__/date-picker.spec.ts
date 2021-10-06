@@ -29,7 +29,7 @@ describe('DatePicker', () => {
   it('create & custom class & style', async () => {
     const popperClassName = 'popper-class-test'
     const customClassName = 'custom-class-test'
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
         :readonly="true"
         placeholder='test_'
         format='HH-mm-ss'
@@ -40,17 +40,17 @@ describe('DatePicker', () => {
     const input = wrapper.find('input')
     expect(input.attributes('placeholder')).toBe('test_')
     expect(input.attributes('readonly')).not.toBeUndefined()
-    const outterInput = wrapper.find('.el-input')
+    const outterInput = wrapper.find('.lx-input')
     expect(outterInput.classes()).toContain(customClassName)
     expect(outterInput.attributes().style).toBeDefined()
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    expect(document.querySelector('.el-picker__popper').classList.contains(popperClassName)).toBe(true)
+    expect(document.querySelector('.lx-picker__popper').classList.contains(popperClassName)).toBe(true)
   })
 
   it('select date', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
         v-model="value"
     />`, () => ({ value: '' }))
     const date = dayjs()
@@ -59,12 +59,12 @@ describe('DatePicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const spans = document.querySelectorAll('.el-date-picker__header-label')
-    const arrowLeftElm = document.querySelector('.el-date-picker__prev-btn.el-icon-arrow-left') as HTMLElement
-    const arrowRightElm = document.querySelector('.el-date-picker__next-btn.el-icon-arrow-right') as HTMLElement
+    const spans = document.querySelectorAll('.lx-date-picker__header-label')
+    const arrowLeftElm = document.querySelector('.lx-date-picker__prev-btn.lx-icon-arrow-left') as HTMLElement
+    const arrowRightElm = document.querySelector('.lx-date-picker__next-btn.lx-icon-arrow-right') as HTMLElement
     expect(spans[0].textContent).toContain(date.year())
     expect(spans[1].textContent).toContain(date.format('MMMM'))
-    const arrowLeftYeayElm = document.querySelector('.el-date-picker__prev-btn.el-icon-d-arrow-left') as HTMLElement
+    const arrowLeftYeayElm = document.querySelector('.lx-date-picker__prev-btn.lx-icon-d-arrow-left') as HTMLElement
     arrowLeftYeayElm.click()
     let count = 20
     while (--count) {
@@ -84,7 +84,7 @@ describe('DatePicker', () => {
   })
 
   it('defaultTime and clear value', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
         v-model="value"
         :default-time="new Date(2011,1,1,12,0,1)"
     />`, () => ({ value: '' }))
@@ -102,7 +102,7 @@ describe('DatePicker', () => {
     const picker = wrapper.findComponent(CommonPicker);
     (picker.vm as any).showClose = true
     await nextTick();
-    (document.querySelector('.el-icon-circle-close') as HTMLElement).click()
+    (document.querySelector('.lx-icon-circle-close') as HTMLElement).click()
     expect(vm.value).toBeNull()
   })
 
@@ -111,7 +111,7 @@ describe('DatePicker', () => {
     const focusHandler = jest.fn()
     const blurHandler = jest.fn()
     let onChangeValue
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
         v-model="value"
         @change="onChange"
         @focus="onFocus"
@@ -148,7 +148,7 @@ describe('DatePicker', () => {
     const text = 'Yesterday'
     const value = new Date(Date.now() - 86400000)
     value.setHours(0,0,0,0)
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
         v-model="value"
         :shortcuts="shortcuts"
     />`, () => ({ value: '', shortcuts: [{
@@ -159,9 +159,9 @@ describe('DatePicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const shortcut = document.querySelector('.el-picker-panel__shortcut')
+    const shortcut = document.querySelector('.lx-picker-panel__shortcut')
     expect(shortcut.textContent).toBe(text)
-    expect(document.querySelector('.el-picker-panel__sidebar')).not.toBeNull();
+    expect(document.querySelector('.lx-picker-panel__sidebar')).not.toBeNull();
     (shortcut as HTMLElement).click()
     await nextTick()
     const vm = wrapper.vm as any
@@ -169,7 +169,7 @@ describe('DatePicker', () => {
   })
 
   it('disabledDate', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
         v-model="value"
         :disabledDate="disabledDate"
     />`, () => ({ value: '', disabledDate(time) {
@@ -183,7 +183,7 @@ describe('DatePicker', () => {
   })
 
   it('ref focus', async () => {
-    _mount(`<el-date-picker
+    _mount(`<lx-date-picker
         v-model="value"
         ref="input"
       />`, () => ({ value: '' }), {
@@ -192,7 +192,7 @@ describe('DatePicker', () => {
       },
     })
     await nextTick()
-    const popperEl = document.querySelector('.el-picker__popper')
+    const popperEl = document.querySelector('.lx-picker__popper')
     const attr = popperEl.getAttribute('aria-hidden')
     expect(attr).toEqual('false')
   })
@@ -204,7 +204,7 @@ describe('DatePicker', () => {
       const valueFormat = '[Element-Plus] DD/MM YYYY'
       const value = day.format(valueFormat)
       const wrapper = _mount(`
-        <el-date-picker
+        <lx-date-picker
           ref="compo"
           v-model="value"
           type="date"
@@ -244,7 +244,7 @@ describe('DatePicker Navigation', () => {
   let prevMonth, prevYear, nextMonth, nextYear, getYearLabel, getMonthLabel
 
   const initNavigationTest = async value => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
         v-model="value"
     />`, () => ({ value }))
 
@@ -252,12 +252,12 @@ describe('DatePicker Navigation', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    prevMonth = document.querySelector('button.el-icon-arrow-left')
-    prevYear = document.querySelector('button.el-icon-d-arrow-left')
-    nextMonth = document.querySelector('button.el-icon-arrow-right')
-    nextYear = document.querySelector('button.el-icon-d-arrow-right')
-    getYearLabel = () => document.querySelectorAll('.el-date-picker__header-label')[0].textContent
-    getMonthLabel = () => document.querySelectorAll('.el-date-picker__header-label')[1].textContent
+    prevMonth = document.querySelector('button.lx-icon-arrow-left')
+    prevYear = document.querySelector('button.lx-icon-d-arrow-left')
+    nextMonth = document.querySelector('button.lx-icon-arrow-right')
+    nextYear = document.querySelector('button.lx-icon-d-arrow-right')
+    getYearLabel = () => document.querySelectorAll('.lx-date-picker__header-label')[0].textContent
+    getMonthLabel = () => document.querySelectorAll('.lx-date-picker__header-label')[1].textContent
   }
 
   it('month, year', async() => {
@@ -306,21 +306,21 @@ describe('DatePicker Navigation', () => {
 
   it('month label with fewer dates', async() => {
     await initNavigationTest(new Date(2000, 6, 31))
-    const yearLabel = document.querySelectorAll('.el-date-picker__header-label')[0];
+    const yearLabel = document.querySelectorAll('.lx-date-picker__header-label')[0];
     (yearLabel as HTMLElement).click()
     await nextTick()
-    const year1999Label = document.querySelectorAll('.el-year-table td a')[1];
+    const year1999Label = document.querySelectorAll('.lx-year-table td a')[1];
     (year1999Label as HTMLElement).click()
     await nextTick()
-    const juneLabel = document.querySelectorAll('.el-month-table td a')[5];
+    const juneLabel = document.querySelectorAll('.lx-month-table td a')[5];
     (juneLabel as HTMLElement).click()
     await nextTick()
     expect(getYearLabel()).toContain('2001')
     expect(getMonthLabel()).toContain('June')
-    const monthLabel = document.querySelectorAll('.el-date-picker__header-label')[1];
+    const monthLabel = document.querySelectorAll('.lx-date-picker__header-label')[1];
     (monthLabel as HTMLElement).click()
     await nextTick()
-    const janLabel = document.querySelectorAll('.el-month-table td a')[0];
+    const janLabel = document.querySelectorAll('.lx-month-table td a')[0];
     (janLabel as HTMLElement).click()
     await nextTick()
     expect(getYearLabel()).toContain('2001')
@@ -330,7 +330,7 @@ describe('DatePicker Navigation', () => {
 
 describe('MonthPicker', () => {
   it('basic', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
     type='month'
     v-model="value"
   />`, () => ({ value: new Date(2020, 7, 1) }))
@@ -338,9 +338,9 @@ describe('MonthPicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    expect((document.querySelector('.el-month-table') as HTMLElement).style.display).toBe('')
-    expect(document.querySelector('.el-year-table')).toBeNull();
-    (document.querySelector('.el-month-table a.cell') as HTMLElement).click()
+    expect((document.querySelector('.lx-month-table') as HTMLElement).style.display).toBe('')
+    expect(document.querySelector('.lx-year-table')).toBeNull();
+    (document.querySelector('.lx-month-table a.cell') as HTMLElement).click()
     await nextTick()
     const vm = wrapper.vm as any
     expect(vm.value.getMonth()).toBe(0)
@@ -349,11 +349,11 @@ describe('MonthPicker', () => {
   it('value-format', async () => {
     const valueFormat = '[Element-Plus] YYYY.MM'
     const wrapper = _mount(`
-      <el-date-picker
+      <lx-date-picker
         type="month"
         v-model="value"
         value-format="${valueFormat}"
-      ></el-date-picker>
+      ></lx-date-picker>
     `, () => ({ value: dayjs(new Date(2020, 7, 1)).format(valueFormat) }))
     await nextTick()
     expect(wrapper.findComponent(Input).vm.modelValue).toBe('2020-08')
@@ -362,7 +362,7 @@ describe('MonthPicker', () => {
     input.trigger('focus')
     await nextTick()
     {
-      (document.querySelector('.el-month-table a.cell') as HTMLElement).click()
+      (document.querySelector('.lx-month-table a.cell') as HTMLElement).click()
     }
     await nextTick()
     expect(wrapper.findComponent(Input).vm.modelValue).toBe('2020-01')
@@ -372,7 +372,7 @@ describe('MonthPicker', () => {
 
 describe('YearPicker', () => {
   it('basic', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
     type='year'
     v-model="value"
   />`, () => ({ value: new Date(2020, 7, 1) }))
@@ -380,11 +380,11 @@ describe('YearPicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    expect((document.querySelector('.el-year-table') as HTMLElement).style.display).toBe('')
-    expect(document.querySelector('.el-month-table')).toBeNull()
+    expect((document.querySelector('.lx-year-table') as HTMLElement).style.display).toBe('')
+    expect(document.querySelector('.lx-month-table')).toBeNull()
 
-    const leftBtn = document.querySelector('.el-icon-d-arrow-left') as HTMLElement
-    const rightBtn = document.querySelector('.el-icon-d-arrow-right') as HTMLElement
+    const leftBtn = document.querySelector('.lx-icon-d-arrow-left') as HTMLElement
+    const rightBtn = document.querySelector('.lx-icon-d-arrow-right') as HTMLElement
     let count = 2
 
     while (--count) {
@@ -397,7 +397,7 @@ describe('YearPicker', () => {
 
     await nextTick();
 
-    (document.querySelector('.el-year-table a.cell') as HTMLElement).click()
+    (document.querySelector('.lx-year-table a.cell') as HTMLElement).click()
     await nextTick()
     const vm = wrapper.vm as any
     expect(vm.value.getFullYear()).toBe(2030)
@@ -406,11 +406,11 @@ describe('YearPicker', () => {
   it('value-format', async () => {
     const valueFormat = '[Element-Plus] YYYY'
     const wrapper = _mount(`
-      <el-date-picker
+      <lx-date-picker
         type="year"
         v-model="value"
         value-format="${valueFormat}"
-      ></el-date-picker>
+      ></lx-date-picker>
     `, () => ({ value: dayjs(new Date(2005, 7, 1)).format(valueFormat) }))
     await nextTick()
     expect(wrapper.findComponent(Input).vm.modelValue).toBe('2005')
@@ -418,7 +418,7 @@ describe('YearPicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const cell = (document.querySelector('.el-year-table a.cell') as HTMLElement)
+    const cell = (document.querySelector('.lx-year-table a.cell') as HTMLElement)
     cell.click()
     await nextTick()
     expect((wrapper.vm as any).value).toBe(dayjs(new Date(Number.parseInt(cell.innerHTML.trim()), 0, 1)).format(valueFormat))
@@ -427,7 +427,7 @@ describe('YearPicker', () => {
 
 describe('WeekPicker', () => {
   it('create', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
     type='week'
     v-model="value"
   />`, () => ({ value: new Date(2020, 7, 15) }))
@@ -437,13 +437,13 @@ describe('WeekPicker', () => {
     await nextTick()
     expect(document.querySelector('.is-week-mode')).not.toBeNull();
     // select month still is in week-mode
-    (document.querySelectorAll('.el-date-picker__header-label')[1] as HTMLElement).click()
+    (document.querySelectorAll('.lx-date-picker__header-label')[1] as HTMLElement).click()
     await nextTick();
-    (document.querySelectorAll('.el-month-table .cell')[7] as HTMLElement).click()
+    (document.querySelectorAll('.lx-month-table .cell')[7] as HTMLElement).click()
     await nextTick()
     expect(document.querySelector('.is-week-mode')).not.toBeNull()
-    const numberOfHighlightRows = () => document.querySelectorAll('.el-date-table__row.current').length;
-    (document.querySelector('.el-date-table__row ~ .el-date-table__row td.available') as HTMLElement).click()
+    const numberOfHighlightRows = () => document.querySelectorAll('.lx-date-table__row.current').length;
+    (document.querySelector('.lx-date-table__row ~ .lx-date-table__row td.available') as HTMLElement).click()
     await nextTick()
     const vm = wrapper.vm as any
     expect(vm.value).not.toBeNull()
@@ -452,13 +452,13 @@ describe('WeekPicker', () => {
     await nextTick()
     expect(numberOfHighlightRows()).toBe(1);
     // test: next month should not have highlight
-    (document.querySelector('.el-icon-arrow-right') as HTMLElement).click()
+    (document.querySelector('.lx-icon-arrow-right') as HTMLElement).click()
     await nextTick()
     expect(numberOfHighlightRows()).toBe(0);
     // test: next year should not have highlight
-    (document.querySelector('.el-icon-arrow-left') as HTMLElement).click()
+    (document.querySelector('.lx-icon-arrow-left') as HTMLElement).click()
     await nextTick();
-    (document.querySelector('.el-icon-d-arrow-right') as HTMLElement).click()
+    (document.querySelector('.lx-icon-d-arrow-right') as HTMLElement).click()
     await nextTick()
     expect(numberOfHighlightRows()).toBe(0)
   })
@@ -474,12 +474,12 @@ describe('WeekPicker', () => {
           'el-config-provider': ConfigProvider,
         },
         template: `
-          <el-config-provider :locale="locale">
-            <el-date-picker
+          <lx-config-provider :locale="locale">
+            <lx-date-picker
               type='week'
               v-model="value"
             />
-          </el-config-provider>
+          </lx-config-provider>
         `,
         data() {
           return {
@@ -495,7 +495,7 @@ describe('WeekPicker', () => {
       input.trigger('focus')
       await nextTick();
       // click Wednesday
-      (document.querySelectorAll('.el-date-table__row ~ .el-date-table__row td')[3] as HTMLElement).click()
+      (document.querySelectorAll('.lx-date-table__row ~ .lx-date-table__row td')[3] as HTMLElement).click()
       await nextTick()
       const vm = wrapper.vm as any
       expect(vm.value).not.toBeNull()
@@ -507,7 +507,7 @@ describe('WeekPicker', () => {
 
 describe('DatePicker dates', () => {
   it('create', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
     type='dates'
     v-model="value"
   />`, () => ({ value: '' }))
@@ -515,7 +515,7 @@ describe('DatePicker dates', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const td = (document.querySelectorAll('.el-date-table__row .available') as NodeListOf<HTMLElement>)
+    const td = (document.querySelectorAll('.lx-date-table__row .available') as NodeListOf<HTMLElement>)
     const vm = wrapper.vm as any
     td[0].click()
     await nextTick()
@@ -523,7 +523,7 @@ describe('DatePicker dates', () => {
     td[1].click()
     await nextTick()
     expect(vm.value.length).toBe(2)
-    expect(document.querySelectorAll('.el-date-table__row .selected').length).toBe(2)
+    expect(document.querySelectorAll('.lx-date-table__row .selected').length).toBe(2)
     td[0].click()
     await nextTick()
     expect(vm.value.length).toBe(1)
@@ -538,7 +538,7 @@ describe('DateRangePicker', () => {
   it('create', async () => {
     let calendarChangeValue = null
     const changeHandler = jest.fn()
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
     type='daterange'
     v-model="value"
     @CalendarChange="onCalendarChange"
@@ -555,7 +555,7 @@ describe('DateRangePicker', () => {
     inputs[0].trigger('focus')
     await nextTick()
 
-    const panels = document.querySelectorAll('.el-date-range-picker__content')
+    const panels = document.querySelectorAll('.lx-date-range-picker__content')
     expect(panels.length).toBe(2);
     (panels[0].querySelector('td.available') as HTMLElement).click()
     await nextTick();
@@ -585,7 +585,7 @@ describe('DateRangePicker', () => {
   })
 
   it('reverse selection', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
       type='daterange'
       v-model="value"
     />`, () => ({ value: '' }))
@@ -594,7 +594,7 @@ describe('DateRangePicker', () => {
     inputs[0].trigger('focus')
     await nextTick()
 
-    const panels = document.querySelectorAll('.el-date-range-picker__content');
+    const panels = document.querySelectorAll('.lx-date-range-picker__content');
     (panels[1].querySelector('td.available') as HTMLElement).click()
     await nextTick();
     (panels[0].querySelector('td.available') as HTMLElement).click()
@@ -614,7 +614,7 @@ describe('DateRangePicker', () => {
   })
 
   it('reset selection', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
       type='daterange'
       v-model="value"
     />`, () => ({ value: '' }))
@@ -623,7 +623,7 @@ describe('DateRangePicker', () => {
     inputs[0].trigger('blur')
     inputs[0].trigger('focus')
     await nextTick()
-    const panels = document.querySelectorAll('.el-date-range-picker__content');
+    const panels = document.querySelectorAll('.lx-date-range-picker__content');
     (panels[1].querySelector('td.available') as HTMLElement).click()
     await nextTick();
     (panels[0].querySelector('td.available') as HTMLElement).click()
@@ -638,12 +638,12 @@ describe('DateRangePicker', () => {
   })
 
   it('range, start-date and end-date', async () => {
-    _mount(`<el-date-picker
+    _mount(`<lx-date-picker
       type='daterange'
       v-model="value"
     />`, () => ({ value: '' }))
 
-    const table = document.querySelector('.el-date-table')
+    const table = document.querySelector('.lx-date-table')
     const availableTds = (table as HTMLTableElement).querySelectorAll('td.available');
 
     (availableTds[0] as HTMLElement).click()
@@ -675,7 +675,7 @@ describe('DateRangePicker', () => {
   })
 
   it('unlink:true', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
       type='daterange'
       v-model="value"
       unlink-panels
@@ -684,14 +684,14 @@ describe('DateRangePicker', () => {
     inputs[0].trigger('blur')
     inputs[0].trigger('focus')
     await nextTick()
-    const panels = document.querySelectorAll('.el-date-range-picker__content')
-    const left = panels[0].querySelector('.el-date-range-picker__header')
-    const right = panels[1].querySelector('.is-right .el-date-range-picker__header')
+    const panels = document.querySelectorAll('.lx-date-range-picker__content')
+    const left = panels[0].querySelector('.lx-date-range-picker__header')
+    const right = panels[1].querySelector('.is-right .lx-date-range-picker__header')
     expect(left.textContent).toBe('2000  October')
     expect(right.textContent).toBe('2000  December');
-    (panels[1].querySelector('.el-icon-d-arrow-right') as HTMLElement).click()
+    (panels[1].querySelector('.lx-icon-d-arrow-right') as HTMLElement).click()
     await nextTick();
-    (panels[1].querySelector('.el-icon-arrow-right') as HTMLElement).click()
+    (panels[1].querySelector('.lx-icon-arrow-right') as HTMLElement).click()
     await nextTick()
     expect(left.textContent).toBe('2000  October')
     expect(right.textContent).toBe('2002  January')
@@ -701,7 +701,7 @@ describe('DateRangePicker', () => {
     // Run test with environment variable TZ=Australia/Sydney
     // The following test uses Australian Eastern Daylight Time (AEDT)
     // AEST -> AEDT shift happened on 2016-10-02 02:00:00
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
       type='daterange'
       v-model="value"
       unlink-panels
@@ -721,7 +721,7 @@ describe('DateRangePicker', () => {
   it('value-format', async () => {
     const valueFormat = 'DD/MM YYYY'
     const wrapper = _mount( `
-      <el-date-picker
+      <lx-date-picker
         v-model="value"
         type="daterange"
         format="YYYY-MM-DD"
@@ -737,7 +737,7 @@ describe('DateRangePicker', () => {
     startInput.trigger('blur')
     startInput.trigger('focus')
     await nextTick()
-    const panels = document.querySelectorAll('.el-date-range-picker__content')
+    const panels = document.querySelectorAll('.lx-date-range-picker__content')
     expect(panels.length).toBe(2);
     (panels[0].querySelector('td.available') as HTMLElement).click()
     await nextTick();
@@ -749,7 +749,7 @@ describe('DateRangePicker', () => {
 
 describe('MonthRange', () => {
   it('works', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
       type='monthrange'
       v-model="value"
     />`, () => ({ value: '' }))
@@ -758,7 +758,7 @@ describe('MonthRange', () => {
     inputs[0].trigger('blur')
     inputs[0].trigger('focus')
     await nextTick()
-    const panels = document.querySelectorAll('.el-date-range-picker__content')
+    const panels = document.querySelectorAll('.lx-date-range-picker__content')
     expect(panels.length).toBe(2)
     const p0 = <HTMLElement>panels[0].querySelector('td:not(.disabled)')
     p0.click()
@@ -790,12 +790,12 @@ describe('MonthRange', () => {
   })
 
   it('range, start-date and end-date', async () => {
-    _mount(`<el-date-picker
+    _mount(`<lx-date-picker
       type='monthrange'
       v-model="value"
     />`, () => ({ value: '' }))
 
-    const table = document.querySelector('.el-month-table')
+    const table = document.querySelector('.lx-month-table')
     const tds = (table as HTMLTableElement).querySelectorAll('td');
 
     (tds[0] as HTMLElement).click()
@@ -828,7 +828,7 @@ describe('MonthRange', () => {
 
 
   it('type:monthrange unlink:true', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
       type='monthrange'
       v-model="value"
       unlink-panels
@@ -838,19 +838,19 @@ describe('MonthRange', () => {
     inputs[0].trigger('blur')
     inputs[0].trigger('focus')
     await nextTick()
-    const panels = document.querySelectorAll('.el-date-range-picker__content')
-    const left = panels[0].querySelector('.el-date-range-picker__header')
-    const right = panels[1].querySelector('.is-right .el-date-range-picker__header')
+    const panels = document.querySelectorAll('.lx-date-range-picker__content')
+    const left = panels[0].querySelector('.lx-date-range-picker__header')
+    const right = panels[1].querySelector('.is-right .lx-date-range-picker__header')
     expect(left.textContent).toContain(2000)
     expect(right.textContent).toContain(2002);
-    (panels[1].querySelector('.el-icon-d-arrow-right') as HTMLElement).click()
+    (panels[1].querySelector('.lx-icon-d-arrow-right') as HTMLElement).click()
     await nextTick()
     expect(left.textContent).toContain(2000)
     expect(right.textContent).toContain(2003)
   })
 
   it('daylight saving time highlight', async () => {
-    const wrapper = _mount(`<el-date-picker
+    const wrapper = _mount(`<lx-date-picker
       type='monthrange'
       v-model="value"
       unlink-panels
@@ -867,20 +867,20 @@ describe('MonthRange', () => {
   })
 
   it('should accept popper options and pass down', async () => {
-    const ElPopperOptions = {
+    const LxPopperOptions = {
       strategy: 'fixed',
     }
     const wrapper = _mount(
-      `<el-date-picker
+      `<lx-date-picker
         type='monthrange'
         v-model="value"
         :popper-options="options"
         unlink-panels
-      />`, () => ({ value: [new Date(2016, 6), new Date(2016, 12)], options: ElPopperOptions }),
+      />`, () => ({ value: [new Date(2016, 6), new Date(2016, 12)], options: LxPopperOptions }),
       {
         provide() {
           return {
-            ElPopperOptions,
+            LxPopperOptions,
           }
         },
       },

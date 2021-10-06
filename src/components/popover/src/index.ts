@@ -25,5 +25,5 @@ const _Popover = Popover as any as SFCWithInstall<typeof Popover> & {
 
 
 export default _Popover
-export const ElPopover = _Popover
-export const ElPopoverDirective = _PopoverDirective
+export const LxPopover = _Popover
+export const LxPopoverDirective = _PopoverDirective

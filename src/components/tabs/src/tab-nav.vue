@@ -32,7 +32,7 @@ interface Scrollable {
 }
 
 export default defineComponent({
-  name: 'ElTabNav',
+  name: 'LxTabNav',
   components: {
     TabBar,
   },
@@ -65,7 +65,7 @@ export default defineComponent({
   setup() {
     const rootTabs = inject<RootTabs>('rootTabs')
     if (!rootTabs) {
-      throwError('[ElTabNav]', `ElTabNav must be nested inside ElTabs`)
+      throwError('[ElTabNav]', `ElTabNav must be nested inside LxTabs`)
     }
 
     const scrollable = ref<boolean | Scrollable>(false)

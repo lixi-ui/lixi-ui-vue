@@ -79,7 +79,7 @@ import {
 import type { ICarouselProps, CarouselItem, InjectCarouselScope } from './carousel'
 
 export default defineComponent({
-  name: 'ElCarousel',
+  name: 'LxCarousel',
   props: {
     initialIndex: {
       type: Number,

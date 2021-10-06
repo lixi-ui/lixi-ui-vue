@@ -7,8 +7,8 @@
 :::demo 绑定`v-model`到一个`Boolean`类型的变量。可以使用`active-color`属性与`inactive-color`属性来设置开关的背景色。
 
 ```html
-<el-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949">
-</el-switch>
+<lx-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949">
+</lx-switch>
 
 <script>
   export default {
@@ -28,9 +28,9 @@
 :::demo 使用`active-text`属性与`inactive-text`属性来设置开关的文字描述。
 
 ```html
-<el-switch v-model="value1" active-text="按月付费" inactive-text="按年付费">
-</el-switch>
-<el-switch
+<lx-switch v-model="value1" active-text="按月付费" inactive-text="按年付费">
+</lx-switch>
+<lx-switch
   style="display: block"
   v-model="value2"
   active-color="#13ce66"
@@ -38,7 +38,7 @@
   active-text="按月付费"
   inactive-text="按年付费"
 >
-</el-switch>
+</lx-switch>
 
 <script>
   export default {
@@ -59,16 +59,16 @@
 :::demo 设置`active-value`和`inactive-value`属性，接受`Boolean`, `String`或`Number`类型的值。
 
 ```html
-<el-tooltip :content="'Switch value: ' + value" placement="top">
-  <el-switch
+<lx-tooltip :content="'Switch value: ' + value" placement="top">
+  <lx-switch
     v-model="value"
     active-color="#13ce66"
     inactive-color="#ff4949"
     active-value="100"
     inactive-value="0"
   >
-  </el-switch>
-</el-tooltip>
+  </lx-switch>
+</lx-tooltip>
 
 <script>
   export default {
@@ -88,8 +88,8 @@
 :::demo 设置`disabled`属性，接受一个`Boolean`，设置`true`即可禁用。
 
 ```html
-<el-switch v-model="value1" disabled> </el-switch>
-<el-switch v-model="value2" disabled> </el-switch>
+<lx-switch v-model="value1" disabled> </lx-switch>
+<lx-switch v-model="value2" disabled> </lx-switch>
 <script>
   export default {
     data() {
@@ -109,8 +109,8 @@
 :::demo 设置`loading`属性，接受一个`Boolean`，设置`true`即加载中状态。
 
 ```html
-<el-switch v-model="value1" loading> </el-switch>
-<el-switch v-model="value2" loading> </el-switch>
+<lx-switch v-model="value1" loading> </lx-switch>
+<lx-switch v-model="value2" loading> </lx-switch>
 <script>
   export default {
     data() {
@@ -130,13 +130,13 @@
 :::demo 设置`beforeChange`属性，若返回 false 或者返回 Promise 且被 reject，则停止切换。
 
 ```html
-<el-switch v-model="value1" :loading="loading1" :beforeChange="beforeChange1">
-</el-switch>
-<el-switch v-model="value2" :loading="loading2" :beforeChange="beforeChange2">
-</el-switch>
+<lx-switch v-model="value1" :loading="loading1" :beforeChange="beforeChange1">
+</lx-switch>
+<lx-switch v-model="value2" :loading="loading2" :beforeChange="beforeChange2">
+</lx-switch>
 <script>
   import { reactive, toRefs } from 'vue'
-  import { ElMessage } from 'element-plus'
+  import { LxMessage } from 'element-plus'
 
   export default {
     setup() {
@@ -150,7 +150,7 @@
         return new Promise(resolve => {
           setTimeout(() => {
             status1.loading1 = false
-            ElMessage.success('切换成功')
+            LxMessage.success('切换成功')
             return resolve(true)
           }, 1000)
         })
@@ -166,7 +166,7 @@
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             status2.loading2 = false
-            ElMessage.error('切换失败')
+            LxMessage.error('切换失败')
             return reject(new Error('error'))
           }, 1000)
         })

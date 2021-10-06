@@ -1,5 +1,5 @@
 <template>
-  <el-select
+  <lx-select
     ref="select"
     :model-value="value"
     :disabled="disabled"
@@ -14,7 +14,7 @@
     @blur="event => $emit('blur', event)"
     @focus="event => $emit('focus', event)"
   >
-    <el-option
+    <lx-option
       v-for="item in items"
       :key="item.value"
       :label="item.value"
@@ -24,15 +24,15 @@
     <template #prefix>
       <i :class="`el-input__icon ${prefixIcon}`"></i>
     </template>
-  </el-select>
+  </lx-select>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed, ref, PropType } from 'vue'
-import ElSelect from '@element-plus/components/select'
+import LxSelect from '@element-plus/components/select'
 import { ComponentSize } from '@element-plus/utils/types'
 
-const { Option: ElOption } = ElSelect
+const { Option: LxOption } = LxSelect
 
 interface Time {
   hours: number
@@ -83,8 +83,8 @@ const nextTime = (time: string, step: string): string => {
 }
 
 export default defineComponent({
-  name: 'ElTimeSelect',
-  components: { ElSelect, ElOption },
+  name: 'LxTimeSelect',
+  components: { LxSelect, LxOption },
   model: {
     prop: 'value',
     event: 'change',

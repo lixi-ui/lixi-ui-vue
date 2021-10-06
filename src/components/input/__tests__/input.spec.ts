@@ -16,13 +16,13 @@ describe('Input.vue', () => {
     const handleFocus = jest.fn()
     const wrapper = _mount({
       template: `
-        <el-input
+        <lx-input
           :minlength="3"
           :maxlength="5"
           placeholder="请输入内容"
           @focus="handleFocus"
           :model-value="input">
-        </el-input>
+        </lx-input>
       `,
       setup() {
         const input = ref('input')
@@ -54,7 +54,7 @@ describe('Input.vue', () => {
 
   test('default to empty', () => {
     const wrapper = _mount({
-      template: '<el-input />',
+      template: '<lx-input />',
     })
     const inputElm = wrapper.find('input')
     expect(inputElm.element.value).toBe('')
@@ -62,7 +62,7 @@ describe('Input.vue', () => {
 
   test('disabled', () => {
     const wrapper = _mount({
-      template: `<el-input disabled />`,
+      template: `<lx-input disabled />`,
     })
     const inputElm = wrapper.find('input')
     expect(inputElm.element.disabled).not.toBeNull()
@@ -71,7 +71,7 @@ describe('Input.vue', () => {
   describe('test emoji',()=>{
     test('el-input should minimize value between emoji length and maxLength', async () => {
       const wrapper = _mount({
-        template: `<el-input class="test-exceed" maxlength="4" show-word-limit v-model="inputVal" />`,
+        template: `<lx-input class="test-exceed" maxlength="4" show-word-limit v-model="inputVal" />`,
         setup() {
           const inputVal = ref('12🌚')
           return { inputVal }
@@ -82,7 +82,7 @@ describe('Input.vue', () => {
       const nativeInput = inputElm.element
       expect(nativeInput.value).toBe('12🌚')
 
-      const elCount = wrapper.find('.el-input__count-inner')
+      const elCount = wrapper.find('.lx-input__count-inner')
       expect(elCount.exists()).toBe(true)
       expect(elCount.text()).toBe('3/4')
 
@@ -100,7 +100,7 @@ describe('Input.vue', () => {
 
     test('textarea should minimize value between emoji length and maxLength', async () => {
       const wrapper = _mount({
-        template: `<el-input type="textarea"  maxlength="4" show-word-limit v-model="inputVal" />`,
+        template: `<lx-input type="textarea"  maxlength="4" show-word-limit v-model="inputVal" />`,
         setup() {
           const inputVal = ref('啊好😄')
           return { inputVal }
@@ -111,7 +111,7 @@ describe('Input.vue', () => {
       const nativeInput = inputElm.element
       expect(nativeInput.value).toBe('啊好😄')
 
-      const elCount = wrapper.find('.el-input__count')
+      const elCount = wrapper.find('.lx-input__count')
       expect(elCount.exists()).toBe(true)
       expect(elCount.text()).toBe('3/4')
 
@@ -125,37 +125,37 @@ describe('Input.vue', () => {
 
   test('suffixIcon', () => {
     const wrapper = _mount({
-      template: `<el-input suffix-icon="time" />`,
+      template: `<lx-input suffix-icon="time" />`,
     })
-    const icon = wrapper.find('.el-input__icon')
+    const icon = wrapper.find('.lx-input__icon')
     expect(icon.exists()).toBe(true)
   })
 
   test('prefixIcon', () => {
     const wrapper = _mount({
-      template: `<el-input prefix-icon="time" />`,
+      template: `<lx-input prefix-icon="time" />`,
     })
-    const icon = wrapper.find('.el-input__icon')
+    const icon = wrapper.find('.lx-input__icon')
     expect(icon.exists()).toBe(true)
   })
 
   test('size', () => {
     const wrapper = _mount({
-      template: `<el-input size="large" />`,
+      template: `<lx-input size="large" />`,
     })
     expect(wrapper.classes('el-input--large')).toBe(true)
   })
 
   test('type', () => {
     const wrapper = _mount({
-      template: `<el-input type="textarea" />`,
+      template: `<lx-input type="textarea" />`,
     })
     expect(wrapper.classes('el-textarea')).toBe(true)
   })
 
   test('rows', () => {
     const wrapper = _mount({
-      template: `<el-input type="textarea" :rows="3" />`,
+      template: `<lx-input type="textarea" :rows="3" />`,
     })
     expect(wrapper.find('textarea').element.rows).toEqual(3)
   })
@@ -164,7 +164,7 @@ describe('Input.vue', () => {
     const wrapper = _mount({
       template: `
         <div>
-          <el-input type="textarea" :resize="resize" />
+          <lx-input type="textarea" :resize="resize" />
         </div>
       `,
       data() {
@@ -186,7 +186,7 @@ describe('Input.vue', () => {
   // test('autosize', async() => {
   //   const wrapper = _mount({
   //     template: `<div>
-  //       <el-input
+  //       <lx-input
   //         ref="limitSize"
   //         type="textarea"
   //         :autosize="{minRows: 3, maxRows: 5}"
@@ -213,7 +213,7 @@ describe('Input.vue', () => {
 
   test('sets value on textarea / input type change', async () => {
     const wrapper = _mount({
-      template: `<el-input :type="type" v-model="val" />`,
+      template: `<lx-input :type="type" v-model="val" />`,
       data() {
         return {
           type: 'text',
@@ -235,34 +235,34 @@ describe('Input.vue', () => {
     const wrapper = _mount({
       template: `
         <div>
-          <el-input
+          <lx-input
             class="test-text"
             type="text"
             v-model="input1"
             maxlength="10"
             :show-word-limit="show">
-          </el-input>
-          <el-input
+          </lx-input>
+          <lx-input
             class="test-textarea"
             type="textarea"
             v-model="input2"
             maxlength="10"
             show-word-limit>
-          </el-input>
-          <el-input
+          </lx-input>
+          <lx-input
             class="test-password"
             type="password"
             v-model="input3"
             maxlength="10"
             show-word-limit>
-          </el-input>
-          <el-input
+          </lx-input>
+          <lx-input
             class="test-initial-exceed"
             type="text"
             v-model="input4"
             maxlength="2"
             show-word-limit>
-          </el-input>
+          </lx-input>
         </div>
       `,
       data() {
@@ -281,15 +281,15 @@ describe('Input.vue', () => {
     const inputElm3 = wrapper.vm.$el.querySelector('.test-password')
     const inputElm4 = wrapper.vm.$el.querySelector('.test-initial-exceed')
 
-    expect(inputElm1.querySelectorAll('.el-input__count').length).toEqual(0)
-    expect(inputElm2.querySelectorAll('.el-input__count').length).toEqual(1)
-    expect(inputElm3.querySelectorAll('.el-input__count').length).toEqual(0)
+    expect(inputElm1.querySelectorAll('.lx-input__count').length).toEqual(0)
+    expect(inputElm2.querySelectorAll('.lx-input__count').length).toEqual(1)
+    expect(inputElm3.querySelectorAll('.lx-input__count').length).toEqual(0)
     expect(inputElm4.classList.contains('is-exceed')).toBe(true)
 
     const vm = wrapper.vm as any
     vm.show = true
     await sleep()
-    expect(inputElm1.querySelectorAll('.el-input__count').length).toEqual(1)
+    expect(inputElm1.querySelectorAll('.lx-input__count').length).toEqual(1)
 
     vm.input4 = '1'
     await sleep()
@@ -301,7 +301,7 @@ describe('Input.vue', () => {
     test('method:select', async () => {
       const testContent = 'test'
       const wrapper = _mount({
-        template: `<el-input v-model="text" />`,
+        template: `<lx-input v-model="text" />`,
         data() {
           return {
             text: testContent,
@@ -331,7 +331,7 @@ describe('Input.vue', () => {
     test('method:resizeTextarea', async () => {
       const testContent = 'TEXT:resizeTextarea'
       const wrapper = _mount({
-        template: `<el-input  ref="textarea"  :autosize="{ minRows: 1, maxRows: 1 }" type="textarea" v-model="text" />`,
+        template: `<lx-input  ref="textarea"  :autosize="{ minRows: 1, maxRows: 1 }" type="textarea" v-model="text" />`,
         data() {
           return {
             text: testContent,
@@ -355,7 +355,7 @@ describe('Input.vue', () => {
 
     test('event:focus & blur', async () => {
       const wrapper = _mount({
-        template: `<el-input
+        template: `<lx-input
           placeholder="请输入内容"
           :model-value="input"
           @focus="handleFocus"
@@ -385,7 +385,7 @@ describe('Input.vue', () => {
       // NOTE: should be same as native's change behavior
       const wrapper = _mount({
         template: `
-          <el-input
+          <lx-input
             placeholder="请输入内容"
             :model-value="input"
             @change="handleChange"
@@ -425,7 +425,7 @@ describe('Input.vue', () => {
       const handleInput = jest.fn()
       const wrapper = _mount({
         template: `
-          <el-input
+          <lx-input
             placeholder="请输入内容"
             clearable
             v-model="input"
@@ -449,7 +449,7 @@ describe('Input.vue', () => {
       // focus to show clear button
       await input.trigger('focus')
       await sleep()
-      vm.$el.querySelector('.el-input__clear').click()
+      vm.$el.querySelector('.lx-input__clear').click()
       await sleep()
       expect(vm.input).toEqual('')
       expect(handleClear).toBeCalled()
@@ -460,7 +460,7 @@ describe('Input.vue', () => {
       const handleInput = jest.fn()
       const wrapper = _mount({
         template: `
-          <el-input
+          <lx-input
             placeholder="请输入内容"
             clearable
             :model-value="input"
@@ -507,11 +507,11 @@ describe('Input.vue', () => {
   test('input-style', async () => {
     const wrapper = _mount({
       template: `
-          <el-input
+          <lx-input
             placeholder="请输入内容"
             :input-style="{color: 'red'}"
           />
-          <el-input
+          <lx-input
             placeholder="请输入内容"
             :input-style="{color: 'red'}"
             type="textarea"
@@ -530,7 +530,7 @@ describe('Input.vue', () => {
     test('event:keydown', async () => {
       const handleKeydown = jest.fn()
       const wrapper = _mount({
-        template: `<el-input
+        template: `<lx-input
           type="textarea"
           :model-value="val"
           @keydown="handleKeydown"

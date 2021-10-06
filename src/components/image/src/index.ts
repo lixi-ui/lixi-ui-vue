@@ -10,4 +10,4 @@ Image.install = (app: App): void => {
 const _Image = Image as SFCWithInstall<typeof Image>
 
 export default _Image
-export const ElImage = _Image
+export const LxImage = _Image

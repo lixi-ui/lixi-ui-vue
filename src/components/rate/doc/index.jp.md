@@ -9,14 +9,14 @@
 ```html
 <div class="block">
   <span class="demonstration">Default</span>
-  <el-rate v-model="value1"></el-rate>
+  <lx-rate v-model="value1"></lx-rate>
 </div>
 <div class="block">
   <span class="demonstration">Color for different levels</span>
-  <el-rate
+  <lx-rate
     v-model="value2"
     :colors="colors">
-  </el-rate>
+  </lx-rate>
 </div>
 
 <script>
@@ -55,7 +55,7 @@
 ```html
 
 <div class="block">
-  <el-rate  v-model="value"  allow-half />
+  <lx-rate  v-model="value"  allow-half />
 </div>
 
 
@@ -93,11 +93,11 @@
 :::demo 属性 `show-text` を追加して、Rateの右にテキストを表示するようにします。テキストは `texts` を使って異なるスコアに割り当てることができます。`texts` は配列で、長さが最大スコアの `max` と等しくなければなりません。
 
 ```html
-<el-rate
+<lx-rate
   v-model="value"
   :texts="['oops', 'disappointed', 'normal', 'good', 'great']"
   show-text>
-</el-rate>
+</lx-rate>
 
 <script>
   export default {
@@ -133,12 +133,12 @@
 :::demo `icon-classes` には3つの要素を持つ配列か、2つのレベルの間のしきい値をキー、値を対応するアイコンクラスとするオブジェクトを渡すことで、アイコンをカスタマイズすることができます。この例では、非選択時にアイコンを設定するために `void-icon-class` を利用しています。
 
 ```html
-<el-rate
+<lx-rate
   v-model="value"
   :icon-classes="iconClasses"
   void-icon-class="icon-rate-face-off"
   :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
-</el-rate>
+</lx-rate>
 
 <script>
   export default {
@@ -176,13 +176,13 @@
 :::demo 属性 `disabled` を用いてコンポーネントを読み取り専用にする。右側にレーティングスコアを表示するために `show-score` を追加します。さらに、属性 `score-template` を用いてスコアのテンプレートを提供することもできます。これは `{value}` を含んでいなければならず、`{value}` はレーティングスコアに置き換えられます。
 
 ```html
-<el-rate
+<lx-rate
   v-model="value"
   disabled
   show-score
   text-color="#ff9900"
   score-template="{value} points">
-</el-rate>
+</lx-rate>
 
 <script>
   export default {

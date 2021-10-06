@@ -10,24 +10,24 @@
 
 ```html
   <template>
-    <el-table
+    <lx-table
       :data="tableData"
       style="width: 100%">
-      <el-table-column
+      <lx-table-column
         prop="date"
         label="Date"
         width="180">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="name"
         label="Name"
         width="180">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="address"
         label="Address">
-      </el-table-column>
-    </el-table>
+      </lx-table-column>
+    </lx-table>
   </template>
 
   <script>
@@ -65,25 +65,25 @@
 :::demo 属性 `stripe` は `Boolean` を受け入れる。`true` の場合、テーブルは縞模様になる。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     stripe
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -120,25 +120,25 @@
 
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     border
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -176,32 +176,32 @@
 :::demo 特定の行にカスタムクラスを追加するには、`el-table` の `row-class-name` を使います。そうすれば、カスタムクラスを使ってスタイルを設定することができます。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%"
     :row-class-name="tableRowClassName">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <style>
-  .el-table .warning-row {
+  .lx-table .warning-row {
     --el-table-tr-background-color: var(--el-color-warning-lighter);
   }
-  .el-table .success-row {
+  .lx-table .success-row {
     --el-table-tr-background-color: var(--el-color-success-lighter);
   }
 </style>
@@ -251,25 +251,25 @@
 :::demo `el-table` の `height` 属性を設定することで、他のコードを使わずにテーブルのヘッダを固定することができる。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     height="250"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -319,50 +319,50 @@
 :::demo 属性 `fixed` は `el-table-column` で用いられる。 `true` の場合、列は左に固定される。また、'left' と 'right' の2つの文字列リテラルを受け取ることができ、どちらも対応する方向に固定されることを示す。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       fixed
       prop="date"
       label="Date"
       width="150">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="state"
       label="State"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="city"
       label="City"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address"
       width="600">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="zip"
       label="Zip"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       fixed="right"
       label="Operations"
       width="120">
       <template #default="scope">
-        <el-button @click="handleClick" type="text" size="small">Detail</el-button>
-        <el-button type="text" size="small">Edit</el-button>
+        <lx-button @click="handleClick" type="text" size="small">Detail</lx-button>
+        <lx-button type="text" size="small">Edit</lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -421,42 +421,42 @@
 :::demo  上記2つの例を組み合わせて、カラムとヘッダーを同時に固定します。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%"
     height="250">
-    <el-table-column
+    <lx-table-column
       fixed
       prop="date"
       label="Date"
       width="150">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="state"
       label="State"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="city"
       label="City"
       width="320">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address"
       width="600">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="zip"
       label="Zip"
       width="120">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -527,55 +527,55 @@
 :::demo  `el-table`の属性 `max-height` を設定することで、テーブルのヘッダを固定することができる。テーブル本体は行の高さが最大の高さを超えた場合のみスクロールする。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%"
     max-height="250">
-    <el-table-column
+    <lx-table-column
       fixed
       prop="date"
       label="Date"
       width="150">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="state"
       label="State"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="city"
       label="City"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address"
       width="600">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="zip"
       label="Zip"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       fixed="right"
       label="Operations"
       width="120">
       <template #default="scope">
-        <el-button
+        <lx-button
           @click.prevent="deleteRow(scope.$index, tableData)"
           type="text"
           size="small">
           Remove
-        </el-button>
+        </lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -651,43 +651,43 @@
 :::demo el-table-columnの中にel-table-columnを配置するだけで、グループヘッダーを実現することができます。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="150">
-    </el-table-column>
-    <el-table-column label="Delivery Info">
-      <el-table-column
+    </lx-table-column>
+    <lx-table-column label="Delivery Info">
+      <lx-table-column
         prop="name"
         label="Name"
         width="120">
-      </el-table-column>
-      <el-table-column label="Address Info">
-        <el-table-column
+      </lx-table-column>
+      <lx-table-column label="Address Info">
+        <lx-table-column
           prop="state"
           label="State"
           width="120">
-        </el-table-column>
-        <el-table-column
+        </lx-table-column>
+        <lx-table-column
           prop="city"
           label="City"
           width="120">
-        </el-table-column>
-        <el-table-column
+        </lx-table-column>
+        <lx-table-column
           prop="address"
           label="Address">
-        </el-table-column>
-        <el-table-column
+        </lx-table-column>
+        <lx-table-column
           prop="zip"
           label="Zip"
           width="120">
-        </el-table-column>
-      </el-table-column>
-    </el-table-column>
-  </el-table>
+        </lx-table-column>
+      </lx-table-column>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -758,34 +758,34 @@
 :::demo テーブルは1行選択をサポートしています。これを有効にするには、`highlight-current-row` 属性を追加します。行の選択が変更されると `current-change` というイベントがトリガされ、そのパラメータは変更後の行と変更前の行である `currentRow` と `oldCurrentRow` である。行のインデックスを表示したい場合は、新しい `el-table-column` を追加して `type` 属性を `index` に代入すると、1から始まるインデックスが表示されます。
 ```html
 <template>
-  <el-table
+  <lx-table
     ref="singleTable"
     :data="tableData"
     highlight-current-row
     @current-change="handleCurrentChange"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       type="index"
       width="50">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       property="date"
       label="Date"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       property="name"
       label="Name"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       property="address"
       label="Address">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
   <div style="margin-top: 20px">
-    <el-button @click="setCurrent(tableData[1])">Select second row</el-button>
-    <el-button @click="setCurrent()">Clear selection</el-button>
+    <lx-button @click="setCurrent(tableData[1])">Select second row</lx-button>
+    <lx-button @click="setCurrent()">Clear selection</lx-button>
   </div>
 </template>
 
@@ -834,34 +834,34 @@
 :::demo 複数選択を有効にするのは簡単です: `el-table-column` に `type` を `selection` に設定して追加するだけです。複数選択とは別に、この例では `show-overflow-tooltip` を利用しています: デフォルトでは、内容が長すぎると複数行に分割されます。1行にまとめたい場合は、`show-overflow-tooltip` 属性を利用します。`true` を設定すると、セル上にカーソルを置いたときに追加内容がツールチップに表示されます。
 ```html
 <template>
-  <el-table
+  <lx-table
     ref="multipleTable"
     :data="tableData"
     style="width: 100%"
     @selection-change="handleSelectionChange">
-    <el-table-column
+    <lx-table-column
       type="selection"
       width="55">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Date"
       width="120">
       <template #default="scope">{{ scope.row.date }}</template>
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       property="name"
       label="Name"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       property="address"
       label="Address"
       show-overflow-tooltip>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
   <div style="margin-top: 20px">
-    <el-button @click="toggleSelection([tableData[1], tableData[2]])">Toggle selection status of second and third rows</el-button>
-    <el-button @click="toggleSelection()">Clear selection</el-button>
+    <lx-button @click="toggleSelection([tableData[1], tableData[2]])">Toggle selection status of second and third rows</lx-button>
+    <lx-button @click="toggleSelection()">Clear selection</lx-button>
   </div>
 </template>
 
@@ -928,27 +928,27 @@
 :::demo 特定のカラムに `sortable` 属性を設定し、そのカラムに基づいてデータをソートする。これは `Boolean` を受け付け、デフォルト値は `false` である。テーブル属性 `default-sort` を設定して、デフォルトのソート列と順序を決定する。独自のソートルールを適用するには、`sort-method` や `sort-by` を用いる。バックエンドからのリモートソートが必要な場合は、`sortable` を `custom` に設定し、テーブル上で `sort-change` イベントをリッスンします。イベントハンドラではソートカラムとソート順にアクセスできるので、APIからソートされたテーブルデータを取得することができます。この例では、特定のカラムの値を整形するために `formatter` という名前の別の属性を使います。これは2つのパラメータを持つ関数を受け入れます。 `row` と `column` の2つのパラメータを持つ関数を受け付ける。この関数は、`row` と `column` の2つのパラメータを持つ関数を受け付ける。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     :default-sort = "{prop: 'date', order: 'descending'}"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       sortable
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address"
       :formatter="formatter">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -991,14 +991,14 @@
 :::demo `el-table-column` に `filters` と `filter-method` という属性を設定すると、この列をフィルタリング可能な状態にする。`filters` は配列であり、`filter-method` はどの行を表示するかを決定する関数である。パラメータは3つある。`value`, `row`, `column` の3つのパラメータを持つ。
 ```html
 <template>
-  <el-button @click="resetDateFilter">reset date filter</el-button>
-  <el-button @click="clearFilter">reset all filters</el-button>
-  <el-table
+  <lx-button @click="resetDateFilter">reset date filter</lx-button>
+  <lx-button @click="clearFilter">reset all filters</lx-button>
+  <lx-table
     row-key="date"
     ref="filterTable"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       sortable
@@ -1007,18 +1007,18 @@
       :filters="[{text: '2016-05-01', value: '2016-05-01'}, {text: '2016-05-02', value: '2016-05-02'}, {text: '2016-05-03', value: '2016-05-03'}, {text: '2016-05-04', value: '2016-05-04'}]"
       :filter-method="filterHandler"
     >
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address"
       :formatter="formatter">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="tag"
       label="Tag"
       width="100"
@@ -1026,12 +1026,12 @@
       :filter-method="filterTag"
       filter-placement="bottom-end">
       <template #default="scope">
-        <el-tag
+        <lx-tag
           :type="scope.row.tag === 'Home' ? 'primary' : 'success'"
-          disable-transitions>{{scope.row.tag}}</el-tag>
+          disable-transitions>{{scope.row.tag}}</lx-tag>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1090,47 +1090,47 @@
 :::demo 行、列、$index、ストア(テーブルの状態管理)は、[slot](https://v3.vuejs.org/guide/component-slots.html)でアクセスできます。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       label="Date"
       width="180">
       <template #default="scope">
         <i class="el-icon-time"></i>
         <span style="margin-left: 10px">{{ scope.row.date }}</span>
       </template>
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Name"
       width="180">
       <template #default="scope">
-        <el-popover effect="light" trigger="hover" placement="top">
+        <lx-popover effect="light" trigger="hover" placement="top">
           <template #default>
             <p>姓名: {{ scope.row.name }}</p>
             <p>住址: {{ scope.row.address }}</p>
           </template>
           <template #reference>
             <div class="name-wrapper">
-              <el-tag size="medium">{{ scope.row.name }}</el-tag>
+              <lx-tag size="medium">{{ scope.row.name }}</lx-tag>
             </div>
           </template>
-        </el-popover>
+        </lx-popover>
       </template>
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Operations">
       <template #default="scope">
-        <el-button
+        <lx-button
           size="mini"
-          @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
-        <el-button
+          @click="handleEdit(scope.$index, scope.row)">Edit</lx-button>
+        <lx-button
           size="mini"
           type="danger"
-          @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
+          @click="handleDelete(scope.$index, scope.row)">Delete</lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1175,36 +1175,36 @@
 :::demo ヘッダー[slots](https://v3.vuejs.org/guide/component-slots.html)でヘッダーの見え方をカスタマイズすることができます。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       label="Date"
       prop="date">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Name"
       prop="name">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       align="right">
       <template #header>
-        <el-input
+        <lx-input
           v-model="search"
           size="mini"
           placeholder="Type to search"/>
       </template>
       <template #default="scope">
-        <el-button
+        <lx-button
           size="mini"
-          @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
-        <el-button
+          @click="handleEdit(scope.$index, scope.row)">Edit</lx-button>
+        <lx-button
           size="mini"
           type="danger"
-          @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
+          @click="handleDelete(scope.$index, scope.row)">Delete</lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1250,26 +1250,26 @@
 :::demo type="expand" と slotを追加して、拡張可能な行を有効にします。el-table-columnのテンプレートは拡張された行の内容としてレンダリングされ、カスタムカラムテンプレートで `slot` を使用している場合と同じ属性にアクセスできます。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%">
-    <el-table-column type="expand">
+    <lx-table-column type="expand">
       <template #default="props">
         <p>State: {{ props.row.state }}</p>
         <p>City: {{ props.row.city }}</p>
         <p>Address: {{ props.row.address }}</p>
         <p>Zip: {{ props.row.zip }}</p>
       </template>
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Date"
       prop="date">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Name"
       prop="name">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1340,27 +1340,27 @@
 ```html
 <template>
 <div>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%;margin-bottom: 20px;"
     row-key="id"
     border
     default-expand-all>
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="date"
       sortable
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       sortable
       width="180">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 
-  <el-table
+  <lx-table
     :data="tableData1"
     style="width: 100%"
     row-key="id"
@@ -1368,17 +1368,17 @@
     lazy
     :load="load"
     :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </div>
 </template>
 <script>
@@ -1459,66 +1459,66 @@
 :::demo `show-summary` を `true` に設定することでサマリー行を追加することができる。デフォルトでは、サマリー行の最初のカラムは何も合計せずに常に 'Sum' を表示します (表示するテキストは `sum-text` で設定できます)。もちろん、独自の合計の振る舞いを定義することもできます。そのためには、`summary-method` に配列を返すメソッドを渡すと、配列の各要素がサマリー行の列に表示されます。この例の2番目の表に詳細なデモを示します。
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     border
     show-summary
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="id"
       label="ID"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount1"
       sortable
       label="Amount 1">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount2"
       sortable
       label="Amount 2">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount3"
       sortable
       label="Amount 3">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 
-  <el-table
+  <lx-table
     :data="tableData"
     border
     height="200"
     :summary-method="getSummaries"
     show-summary
     style="width: 100%; margin-top: 20px">
-    <el-table-column
+    <lx-table-column
       prop="id"
       label="ID"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount1"
       label="Cost 1 ($)">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount2"
       label="Cost 2 ($)">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount3"
       label="Cost 3 ($)">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1598,64 +1598,64 @@ rowspan と colspan を設定すると、セルをマージすることができ
 ```html
 <template>
   <div>
-    <el-table
+    <lx-table
       :data="tableData"
       :span-method="arraySpanMethod"
       border
       style="width: 100%">
-      <el-table-column
+      <lx-table-column
         prop="id"
         label="ID"
         width="180">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="name"
         label="Name">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount1"
         sortable
         label="Amount 1">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount2"
         sortable
         label="Amount 2">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount3"
         sortable
         label="Amount 3">
-      </el-table-column>
-    </el-table>
+      </lx-table-column>
+    </lx-table>
 
-    <el-table
+    <lx-table
       :data="tableData"
       :span-method="objectSpanMethod"
       border
       style="width: 100%; margin-top: 20px">
-      <el-table-column
+      <lx-table-column
         prop="id"
         label="ID"
         width="180">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="name"
         label="Name">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount1"
         label="Amount 1">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount2"
         label="Amount 2">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount3"
         label="Amount 3">
-      </el-table-column>
-    </el-table>
+      </lx-table-column>
+    </lx-table>
   </div>
 </template>
 
@@ -1735,28 +1735,28 @@ rowspan と colspan を設定すると、セルをマージすることができ
 
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       type="index"
       :index="indexMethod">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>

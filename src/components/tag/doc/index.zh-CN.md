@@ -7,11 +7,11 @@
 :::demo 由`type`属性来选择tag的类型，也可以通过`color`属性来自定义背景色。
 
 ```html
-<el-tag>标签一</el-tag>
-<el-tag type="success">标签二</el-tag>
-<el-tag type="info">标签三</el-tag>
-<el-tag type="warning">标签四</el-tag>
-<el-tag type="danger">标签五</el-tag>
+<lx-tag>标签一</lx-tag>
+<lx-tag type="success">标签二</lx-tag>
+<lx-tag type="info">标签三</lx-tag>
+<lx-tag type="warning">标签四</lx-tag>
+<lx-tag type="danger">标签五</lx-tag>
 ```
 :::
 
@@ -20,13 +20,13 @@
 :::demo 设置`closable`属性可以定义一个标签是否可移除。默认的标签移除时会附带渐变动画，如果不想使用，可以设置`disable-transitions`属性，它接受一个`Boolean`，true 为关闭。
 
 ```html
-<el-tag
+<lx-tag
   v-for="tag in tags"
   :key="tag.name"
   closable
   :type="tag.type">
   {{tag.name}}
-</el-tag>
+</lx-tag>
 
 <script>
   export default {
@@ -52,15 +52,15 @@
 
 :::demo
 ```html
-<el-tag
+<lx-tag
   :key="tag"
   v-for="tag in dynamicTags"
   closable
   :disable-transitions="false"
   @close="handleClose(tag)">
   {{tag}}
-</el-tag>
-<el-input
+</lx-tag>
+<lx-input
   class="input-new-tag"
   v-if="inputVisible"
   v-model="inputValue"
@@ -69,11 +69,11 @@
   @keyup.enter="handleInputConfirm"
   @blur="handleInputConfirm"
 >
-</el-input>
-<el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</el-button>
+</lx-input>
+<lx-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</lx-button>
 
 <style>
-  .el-tag + .el-tag {
+  .lx-tag + .lx-tag {
     margin-left: 10px;
   }
   .button-new-tag {
@@ -132,10 +132,10 @@ Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下�
 :::demo 额外的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
 
 ```html
-<el-tag closable>默认标签</el-tag>
-<el-tag size="medium" closable>中等标签</el-tag>
-<el-tag size="small" closable>小型标签</el-tag>
-<el-tag size="mini" closable>超小标签</el-tag>
+<lx-tag closable>默认标签</lx-tag>
+<lx-tag size="medium" closable>中等标签</lx-tag>
+<lx-tag size="small" closable>小型标签</lx-tag>
+<lx-tag size="mini" closable>超小标签</lx-tag>
 ```
 :::
 
@@ -147,23 +147,23 @@ Tag 组件提供了三个不同的主题：`dark`、`light` 和 `plain`
 ```html
 <div class="tag-group">
   <span class="tag-group__title">Dark</span>
-  <el-tag
+  <lx-tag
     v-for="item in items"
     :key="item.label"
     :type="item.type"
     effect="dark">
     {{ item.label }}
-  </el-tag>
+  </lx-tag>
 </div>
 <div class="tag-group">
   <span class="tag-group__title">Plain</span>
-  <el-tag
+  <lx-tag
     v-for="item in items"
     :key="item.label"
     :type="item.type"
     effect="plain">
     {{ item.label }}
-  </el-tag>
+  </lx-tag>
 </div>
 
 <script>
@@ -192,8 +192,8 @@ Tag 组件提供了三个不同的主题：`dark`、`light` 和 `plain`
 ```html
 
 <div>
-  <el-check-tag checked style="margin-right: 8px;">选中</el-check-tag>
-  <el-check-tag @change="onChange" :checked="checked">点我切换</el-check-tag>
+  <lx-check-tag checked style="margin-right: 8px;">选中</lx-check-tag>
+  <lx-check-tag @change="onChange" :checked="checked">点我切换</lx-check-tag>
 </div>
 
 <script>

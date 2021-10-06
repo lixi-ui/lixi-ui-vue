@@ -46,7 +46,7 @@ describe('Tag.vue', () => {
         closable: true,
       },
     })
-    const closeBtn = wrapper.find('.el-tag .el-tag__close')
+    const closeBtn = wrapper.find('.lx-tag .lx-tag__close')
     expect(closeBtn.exists()).toBe(true)
 
     await closeBtn.trigger('click')

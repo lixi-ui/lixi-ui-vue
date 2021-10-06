@@ -9,14 +9,14 @@ Timeline 可拆分成多个按照时间戳排列的 activity，时间戳是其�
 :::demo
 ```html
 <div class="block">
-  <el-timeline>
-    <el-timeline-item
+  <lx-timeline>
+    <lx-timeline-item
       v-for="(activity, index) in activities"
       :key="index"
       :timestamp="activity.timestamp">
       {{activity.content}}
-    </el-timeline-item>
-  </el-timeline>
+    </lx-timeline-item>
+  </lx-timeline>
 </div>
 
 <script>
@@ -47,8 +47,8 @@ Timeline 可拆分成多个按照时间戳排列的 activity，时间戳是其�
 :::demo
 ```html
 <div class="block">
-  <el-timeline>
-    <el-timeline-item
+  <lx-timeline>
+    <lx-timeline-item
       v-for="(activity, index) in activities"
       :key="index"
       :icon="activity.icon"
@@ -57,8 +57,8 @@ Timeline 可拆分成多个按照时间戳排列的 activity，时间戳是其�
       :size="activity.size"
       :timestamp="activity.timestamp">
       {{activity.content}}
-    </el-timeline-item>
-  </el-timeline>
+    </lx-timeline-item>
+  </lx-timeline>
 </div>
 
 <script>
@@ -97,26 +97,26 @@ Timeline 可拆分成多个按照时间戳排列的 activity，时间戳是其�
 :::demo
 ```html
 <div class="block">
-  <el-timeline>
-    <el-timeline-item timestamp="2018/4/12" placement="top">
-      <el-card>
+  <lx-timeline>
+    <lx-timeline-item timestamp="2018/4/12" placement="top">
+      <lx-card>
         <h4>更新 Github 模板</h4>
         <p>王小虎 提交于 2018/4/12 20:46</p>
-      </el-card>
-    </el-timeline-item>
-    <el-timeline-item timestamp="2018/4/3" placement="top">
-      <el-card>
+      </lx-card>
+    </lx-timeline-item>
+    <lx-timeline-item timestamp="2018/4/3" placement="top">
+      <lx-card>
         <h4>更新 Github 模板</h4>
         <p>王小虎 提交于 2018/4/3 20:46</p>
-      </el-card>
-    </el-timeline-item>
-    <el-timeline-item timestamp="2018/4/2" placement="top">
-      <el-card>
+      </lx-card>
+    </lx-timeline-item>
+    <lx-timeline-item timestamp="2018/4/2" placement="top">
+      <lx-card>
         <h4>更新 Github 模板</h4>
         <p>王小虎 提交于 2018/4/2 20:46</p>
-      </el-card>
-    </el-timeline-item>
-  </el-timeline>
+      </lx-card>
+    </lx-timeline-item>
+  </lx-timeline>
 </div>
 ```
 :::

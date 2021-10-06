@@ -6,8 +6,8 @@
 
 :::demo
 ```html
-<el-page-header @back="goBack" content="详情页面">
-</el-page-header>
+<lx-page-header @back="goBack" content="详情页面">
+</lx-page-header>
 
 <script>
   export default {
@@ -44,7 +44,7 @@
 
 :::demo
 ```html
-<el-page-header icon="el-icon-arrow-left" content="详情页面"></el-page-header>
+<lx-page-header icon="el-icon-arrow-left" content="详情页面"></lx-page-header>
 ```
 :::
 

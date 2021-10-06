@@ -19,35 +19,35 @@ const _mount = (template: string) => mount({
 describe('Breadcrumb.vue', () => {
   test('separator', () => {
     const wrapper = _mount(`
-      <el-breadcrumb separator="?">
-        <el-breadcrumb-item>A</el-breadcrumb-item>
-      </el-breadcrumb>
+      <lx-breadcrumb separator="?">
+        <lx-breadcrumb-item>A</lx-breadcrumb-item>
+      </lx-breadcrumb>
     `)
-    expect(wrapper.find('.el-breadcrumb__separator').text()).toBe('?')
+    expect(wrapper.find('.lx-breadcrumb__separator').text()).toBe('?')
   })
 
   test('separatorClass', () => {
     const wrapper = _mount(`
-      <el-breadcrumb separator="?" separatorClass="test">
-        <el-breadcrumb-item>A</el-breadcrumb-item>
-      </el-breadcrumb>
+      <lx-breadcrumb separator="?" separatorClass="test">
+        <lx-breadcrumb-item>A</lx-breadcrumb-item>
+      </lx-breadcrumb>
     `)
-    expect(wrapper.find('.el-breadcrumb__separator').text()).toBe('')
-    expect(wrapper.find('.el-breadcrumb__separator').classes()).toContain('test')
+    expect(wrapper.find('.lx-breadcrumb__separator').text()).toBe('')
+    expect(wrapper.find('.lx-breadcrumb__separator').classes()).toContain('test')
   })
 
   test('to', () => {
     const wrapper = _mount(`
-      <el-breadcrumb separator="?" separatorClass="test">
-        <el-breadcrumb-item to="/index">A</el-breadcrumb-item>
-      </el-breadcrumb>
+      <lx-breadcrumb separator="?" separatorClass="test">
+        <lx-breadcrumb-item to="/index">A</lx-breadcrumb-item>
+      </lx-breadcrumb>
     `)
-    expect(wrapper.find('.el-breadcrumb__inner').classes()).toContain('is-link')
+    expect(wrapper.find('.lx-breadcrumb__inner').classes()).toContain('is-link')
   })
 
   test('single', () => {
-    const wrapper = _mount('<el-breadcrumb-item>A</el-breadcrumb-item>')
-    expect(wrapper.find('.el-breadcrumb__inner').text()).toBe('A')
-    expect(wrapper.find('.el-breadcrumb__separator').text()).toBe('')
+    const wrapper = _mount('<lx-breadcrumb-item>A</lx-breadcrumb-item>')
+    expect(wrapper.find('.lx-breadcrumb__inner').text()).toBe('A')
+    expect(wrapper.find('.lx-breadcrumb__separator').text()).toBe('')
   })
 })

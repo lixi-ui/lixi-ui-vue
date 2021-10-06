@@ -9,21 +9,21 @@
 :::demo 使用 el-time-picker 标签，通过 `disabledHours` `disabledMinutes` 和 `disabledSeconds` 限制可选时间范围。提供了两种交互方式：默认情况下通过鼠标滚轮进行选择，打开`arrow-control`属性则通过界面上的箭头进行选择。
 ```html
 <template>
-  <el-time-picker
+  <lx-time-picker
     v-model="value1"
     :disabled-hours="disabledHours"
     :disabled-minutes="disabledMinutes"
     :disabled-seconds="disabledSeconds"
     placeholder="任意时间点">
-  </el-time-picker>
-  <el-time-picker
+  </lx-time-picker>
+  <lx-time-picker
     arrow-control
     v-model="value2"
     :disabled-hours="disabledHours"
     :disabled-minutes="disabledMinutes"
     :disabled-seconds="disabledSeconds"
     placeholder="任意时间点">
-  </el-time-picker>
+  </lx-time-picker>
 </template>
 
 <script>
@@ -72,15 +72,15 @@
 :::demo 添加`is-range`属性即可选择时间范围，同样支持`arrow-control`属性。
 ```html
 <template>
-  <el-time-picker
+  <lx-time-picker
     is-range
     v-model="value1"
     range-separator="至"
     start-placeholder="开始时间"
     end-placeholder="结束时间"
     placeholder="选择时间范围">
-  </el-time-picker>
-  <el-time-picker
+  </lx-time-picker>
+  <lx-time-picker
     is-range
     arrow-control
     v-model="value2"
@@ -88,7 +88,7 @@
     start-placeholder="开始时间"
     end-placeholder="结束时间"
     placeholder="选择时间范围">
-  </el-time-picker>
+  </lx-time-picker>
 </template>
 
 <script>

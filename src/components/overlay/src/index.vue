@@ -3,7 +3,7 @@ import { createVNode, defineComponent, renderSlot, h } from 'vue'
 import { PatchFlags } from '@element-plus/utils/vnode'
 
 export default defineComponent({
-  name: 'ElOverlay',
+  name: 'LxOverlay',
   props: {
     mask: {
       type: Boolean,

@@ -130,7 +130,7 @@ import { isValidComponentSize } from '@element-plus/utils/validators'
 import calcTextareaHeight from './calcTextareaHeight'
 
 import type { PropType } from 'vue'
-import type { ElFormContext, ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
 import type { ComponentSize } from '@element-plus/utils/types'
 
 type AutosizeProp = {
@@ -144,7 +144,7 @@ const PENDANT_MAP = {
 }
 
 export default defineComponent({
-  name: 'ElInput',
+  name: 'LxInput',
 
   inheritAttrs: false,
 
@@ -235,8 +235,8 @@ export default defineComponent({
     const attrs = useAttrs()
     const $ELEMENT = useGlobalConfig()
 
-    const elForm = inject(elFormKey, {} as ElFormContext)
-    const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+    const elForm = inject(elFormKey, {} as LxFormContext)
+    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
 
     const input = ref(null)
     const textarea = ref (null)
@@ -313,7 +313,7 @@ export default defineComponent({
 
     const calcIconOffset = place => {
       const { el } = instance.vnode
-      const elList: HTMLSpanElement[] = Array.from(el.querySelectorAll(`.el-input__${place}`))
+      const elList: HTMLSpanElement[] = Array.from(el.querySelectorAll(`.lx-input__${place}`))
       const target = elList.find(item => item.parentNode === el)
 
       if (!target) return
@@ -321,7 +321,7 @@ export default defineComponent({
       const pendant = PENDANT_MAP[place]
 
       if (ctx.slots[pendant]) {
-        target.style.transform = `translateX(${place === 'suffix' ? '-' : ''}${el.querySelector(`.el-input-group__${pendant}`).offsetWidth}px)`
+        target.style.transform = `translateX(${place === 'suffix' ? '-' : ''}${el.querySelector(`.lx-input-group__${pendant}`).offsetWidth}px)`
       } else {
         target.removeAttribute('style')
       }

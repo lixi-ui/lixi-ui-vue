@@ -10,7 +10,7 @@ Popper.install = (app: App): void => {
 const _Popper = Popper as SFCWithInstall<typeof Popper>
 
 export default _Popper
-export const ElPopper = _Popper
+export const LxPopper = _Popper
 
 export { default as popperDefaultProps, Effect } from './src/use-popper/defaults'
 export * from './src/renderers'

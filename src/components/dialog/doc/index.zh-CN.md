@@ -8,9 +8,9 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
 :::demo 需要设置 `model-value / v-model` 属性，它接收 `Boolean`，当为 `true` 时显示 Dialog。Dialog 分为两个部分：`body` 和 `footer`，`footer` 需要具名为 `footer` 的 `slot`。`title` 属性用于定义标题，它是可选的，默认值为空。最后，本例还展示了 `before-close` 的用法。
 
 ```html
-<el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+<lx-button type="text" @click="dialogVisible = true">点击打开 Dialog</lx-button>
 
-<el-dialog
+<lx-dialog
   title="提示"
   v-model="dialogVisible"
   width="30%"
@@ -18,11 +18,11 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
   <span>这是一段信息</span>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="dialogVisible = false">取 消</el-button>
-      <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+      <lx-button @click="dialogVisible = false">取 消</lx-button>
+      <lx-button type="primary" @click="dialogVisible = false">确 定</lx-button>
     </span>
   </template>
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -46,14 +46,14 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       const dialogVisible = ref(false);
       
       const handleClose = (done) => {
-        ElMessageBox
+        LxMessageBox
           .confirm('确认关闭？')
           .then((_) => {
             done();
@@ -80,42 +80,42 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
 
 ### 自定义内容
 
-Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下面是应用了 Element Plus Table 和 Form 组件的两个样例。
+Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下面是应用了 Lxement Plus Table 和 Form 组件的两个样例。
 
 :::demo
 ```html
-<el-button type="text" @click="dialogTableVisible = true">打开嵌套表格的 Dialog</el-button>
+<lx-button type="text" @click="dialogTableVisible = true">打开嵌套表格的 Dialog</lx-button>
 
-<el-dialog title="收货地址" v-model="dialogTableVisible">
-  <el-table :data="gridData">
-    <el-table-column property="date" label="日期" width="150"></el-table-column>
-    <el-table-column property="name" label="姓名" width="200"></el-table-column>
-    <el-table-column property="address" label="地址"></el-table-column>
-  </el-table>
-</el-dialog>
+<lx-dialog title="收货地址" v-model="dialogTableVisible">
+  <lx-table :data="gridData">
+    <lx-table-column property="date" label="日期" width="150"></lx-table-column>
+    <lx-table-column property="name" label="姓名" width="200"></lx-table-column>
+    <lx-table-column property="address" label="地址"></lx-table-column>
+  </lx-table>
+</lx-dialog>
 
 <!-- Form -->
-<el-button type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</el-button>
+<lx-button type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</lx-button>
 
-<el-dialog title="收货地址" v-model="dialogFormVisible">
-  <el-form :model="form">
-    <el-form-item label="活动名称" :label-width="formLabelWidth">
-      <el-input v-model="form.name" autocomplete="off"></el-input>
-    </el-form-item>
-    <el-form-item label="活动区域" :label-width="formLabelWidth">
-      <el-select v-model="form.region" placeholder="请选择活动区域">
-        <el-option label="区域一" value="shanghai"></el-option>
-        <el-option label="区域二" value="beijing"></el-option>
-      </el-select>
-    </el-form-item>
-  </el-form>
+<lx-dialog title="收货地址" v-model="dialogFormVisible">
+  <lx-form :model="form">
+    <lx-form-item label="活动名称" :label-width="formLabelWidth">
+      <lx-input v-model="form.name" autocomplete="off"></lx-input>
+    </lx-form-item>
+    <lx-form-item label="活动区域" :label-width="formLabelWidth">
+      <lx-select v-model="form.region" placeholder="请选择活动区域">
+        <lx-option label="区域一" value="shanghai"></lx-option>
+        <lx-option label="区域二" value="beijing"></lx-option>
+      </lx-select>
+    </lx-form-item>
+  </lx-form>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="dialogFormVisible = false">取 消</el-button>
-      <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+      <lx-button @click="dialogFormVisible = false">取 消</lx-button>
+      <lx-button type="primary" @click="dialogFormVisible = false">确 定</lx-button>
     </span>
   </template>
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -216,22 +216,22 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 :::demo 正常情况下，我们不建议使用嵌套的 Dialog，如果需要在页面上同时显示多个 Dialog，可以将它们平级放置。对于确实需要嵌套 Dialog 的场景，我们提供了`append-to-body`属性。将内层 Dialog 的该属性设置为 true，它就会插入至 body 元素上，从而保证内外层 Dialog 和遮罩层级关系的正确。
 ```html
 <template>
-  <el-button type="text" @click="outerVisible = true">点击打开外层 Dialog</el-button>
+  <lx-button type="text" @click="outerVisible = true">点击打开外层 Dialog</lx-button>
 
-  <el-dialog title="外层 Dialog" v-model="outerVisible">
-    <el-dialog
+  <lx-dialog title="外层 Dialog" v-model="outerVisible">
+    <lx-dialog
       width="30%"
       title="内层 Dialog"
       v-model="innerVisible"
       append-to-body>
-    </el-dialog>
+    </lx-dialog>
     <template #footer>
       <div class="dialog-footer">
-        <el-button @click="outerVisible = false">取 消</el-button>
-        <el-button type="primary" @click="innerVisible = true">打开内层 Dialog</el-button>
+        <lx-button @click="outerVisible = false">取 消</lx-button>
+        <lx-button type="primary" @click="innerVisible = true">打开内层 Dialog</lx-button>
       </div>
     </template>
-  </el-dialog>
+  </lx-dialog>
 </template>
 
 <script>
@@ -270,9 +270,9 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 :::demo 将`center`设置为`true`即可使标题和底部居中。`center`仅影响标题和底部区域。Dialog 的内容是任意的，在一些情况下，内容并不适合居中布局。如果需要内容也水平居中，请自行为其添加 CSS。
 
 ```html
-<el-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</el-button>
+<lx-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</lx-button>
 
-<el-dialog
+<lx-dialog
   title="提示"
   v-model="centerDialogVisible"
   width="30%"
@@ -280,12 +280,12 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
   <span>需要注意的是内容是默认不居中的</span>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="centerDialogVisible = false">取 消</el-button>
-      <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
+      <lx-button @click="centerDialogVisible = false">取 消</lx-button>
+      <lx-button type="primary" @click="centerDialogVisible = false">确 定</lx-button>
     </span>
   </template>
 
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -324,9 +324,9 @@ Dialog 的内容是懒渲染的，即在第一次被打开之前，传入的默�
 :::demo 需要注意的是，当这个属性被启用时，Dialog 内并不会有任何的 DOM 节点存在，除了 `overlay` `header（如果有）` `footer（如果有）`
 
 ```html
-<el-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</el-button>
+<lx-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</lx-button>
 
-<el-dialog
+<lx-dialog
   title="提示"
   v-model="centerDialogVisible"
   width="30%"
@@ -336,12 +336,12 @@ Dialog 的内容是懒渲染的，即在第一次被打开之前，传入的默�
   <strong>额外的内容</strong>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="centerDialogVisible = false">取 消</el-button>
-      <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
+      <lx-button @click="centerDialogVisible = false">取 消</lx-button>
+      <lx-button type="primary" @click="centerDialogVisible = false">确 定</lx-button>
     </span>
   </template>
 
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {

@@ -7,7 +7,7 @@ import type { VNode } from 'vue'
 import type { IDescriptionsInject, IDescriptionsItemInject } from './descriptions.type'
 
 export default defineComponent({
-  name: 'ElDescriptionsCell',
+  name: 'LxDescriptionsCell',
   props: {
     cell: {
       type: Object,

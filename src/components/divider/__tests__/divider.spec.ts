@@ -31,7 +31,7 @@ describe('Divider.vue', () => {
         contentPosition: 'right',
       },
     })
-    expect(wrapper.find('.el-divider__text').classes()).toContain('is-right')
+    expect(wrapper.find('.lx-divider__text').classes()).toContain('is-right')
   })
 
   test('customClass', () => {

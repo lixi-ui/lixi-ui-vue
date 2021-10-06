@@ -1,7 +1,7 @@
 <template>
   <span class="el-pagination__jump">
     {{ t('el.pagination.goto') }}
-    <el-input
+    <lx-input
       size="mini"
       class="el-pagination__editor is-in-pagination"
       :min="1"
@@ -23,14 +23,14 @@ import {
   ref,
 } from 'vue'
 import { useLocaleInject } from '@element-plus/hooks'
-import ElInput from '@element-plus/components/input'
+import LxInput from '@element-plus/components/input'
 import { usePagination } from './usePagination'
 
 import type { Nullable } from '@element-plus/utils/types'
 
 export default defineComponent({
   components: {
-    ElInput,
+    LxInput,
   },
   setup() {
     const { t } = useLocaleInject()

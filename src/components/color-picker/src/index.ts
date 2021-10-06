@@ -10,4 +10,4 @@ ColorPicker.install = (app: App): void => {
 const _ColorPicker = ColorPicker as SFCWithInstall<typeof ColorPicker>
 
 export default _ColorPicker
-export const ElColorPicker = _ColorPicker
+export const LxColorPicker = _ColorPicker

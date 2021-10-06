@@ -55,7 +55,7 @@ const TypeMap: Indexable<string> = {
 }
 
 export default defineComponent({
-  name: 'ElNotification',
+  name: 'LxNotification',
   props: {
     customClass: { type: String, default: '' },
     dangerouslyUseHTMLString: { type: Boolean, default: false },

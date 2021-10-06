@@ -29,13 +29,13 @@ import { elFormItemKey } from '@element-plus/tokens'
 import radioGroupKey from './token'
 
 import type { PropType } from 'vue'
-import type { ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormItemContext } from '@element-plus/tokens'
 import type { ComponentSize } from '@element-plus/utils/types'
 
 export default defineComponent({
-  name: 'ElRadioGroup',
+  name: 'LxRadioGroup',
 
-  componentName: 'ElRadioGroup',
+  componentName: 'LxRadioGroup',
 
   props: {
     modelValue: {
@@ -62,7 +62,7 @@ export default defineComponent({
   setup(props, ctx) {
     const radioGroup = ref(null)
 
-    const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
 
     const radioGroupSize = computed<ComponentSize>(() => {
       return props.size || elFormItem.size
@@ -77,7 +77,7 @@ export default defineComponent({
     }
 
     provide(radioGroupKey, reactive({
-      name: 'ElRadioGroup',
+      name: 'LxRadioGroup',
       ...toRefs(props),
       radioGroupSize: radioGroupSize,
       changeEvent: changeEvent,

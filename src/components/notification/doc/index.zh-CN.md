@@ -9,16 +9,16 @@
 :::demo Notification 组件提供通知功能，Element Plus 注册了`$notify`方法，接收一个`options`字面量参数，在最简单的情况下，你可以设置`title`字段和`message`字段，用于设置通知的标题和正文。默认情况下，经过一段时间后 Notification 组件会自动关闭，但是通过设置`duration`，可以控制关闭的时间间隔，特别的是，如果设置为`0`，则不会自动关闭。注意：`duration`接收一个`Number`，单位为毫秒，默认为`4500`。
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     可自动关闭
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     不会自动关闭
-    </el-button>
+    </lx-button>
 </template>
 
 <script>
@@ -47,13 +47,13 @@
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: '标题名称',
           message: h(
             'i',
@@ -64,7 +64,7 @@
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: '提示',
           message: '这是一条不会自动关闭的消息',
           duration: 0,
@@ -86,29 +86,29 @@
 
 带有 icon，常用来显示「成功、警告、消息、错误」类的系统消息
 
-:::demo Element Plus 为 Notification 组件准备了四种通知类型：`success`, `warning`, `info`, `error`。通过`type`字段来设置，除此以外的值将被忽略。同时，我们也为 Notification 的各种 type 注册了方法，可以在不传入`type`字段的情况下像`open3`和`open4`那样直接调用。
+:::demo Lxement Plus 为 Notification 组件准备了四种通知类型：`success`, `warning`, `info`, `error`。通过`type`字段来设置，除此以外的值将被忽略。同时，我们也为 Notification 的各种 type 注册了方法，可以在不传入`type`字段的情况下像`open3`和`open4`那样直接调用。
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     成功
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     警告
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open3">
     消息
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open4">
     错误
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -150,13 +150,13 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: '成功',
           message: '这是一条成功的提示消息',
           type: 'success',
@@ -164,7 +164,7 @@
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: '警告',
           message: '这是一条警告的提示消息',
           type: 'warning',
@@ -172,14 +172,14 @@
       };
 
       const open3 = () => {
-        ElNotification({
+        LxNotification({
           title: '消息',
           message: '这是一条消息的提示消息',
         });
       };
 
       const open4 = () => {
-        ElNotification({
+        LxNotification({
           title: '错误',
           message: '这是一条错误的提示消息',
         });
@@ -205,26 +205,26 @@
 :::demo 使用`position`属性定义 Notification 的弹出位置，支持四个选项：`top-right`、`top-left`、`bottom-right`、`bottom-left`，默认为`top-right`。
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     右上角
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     右下角
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open3">
     左下角
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open4">
     左上角
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -267,20 +267,20 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: '自定义位置',
           message: '右上角弹出的消息',
         });
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: '自定义位置',
           message: '右下角弹出的消息',
           position: 'bottom-right',
@@ -288,7 +288,7 @@
       };
 
       const open3 = () => {
-        ElNotification({
+        LxNotification({
           title: '自定义位置',
           message: '左下角弹出的消息',
           position: 'bottom-left',
@@ -296,7 +296,7 @@
       };
 
       const open4 = () => {
-        ElNotification({
+        LxNotification({
           title: '自定义位置',
           message: '左上角弹出的消息',
           position: 'top-left',
@@ -323,11 +323,11 @@
 :::demo Notification 提供设置偏移量的功能，通过设置 `offset` 字段，可以使弹出的消息距屏幕边缘偏移一段距离。注意在同一时刻，所有的 Notification 实例应当具有一个相同的偏移量。
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     偏移的消息
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -347,13 +347,13 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification({
+        LxNotification({
           title: '偏移',
           message: '这是一条带有偏移的提示消息',
           offset: 100,
@@ -377,11 +377,11 @@
 :::demo 将`dangerouslyUseHTMLString`属性设置为 true，`message` 就会被当作 HTML 片段处理。
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     使用 HTML 片段
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -401,13 +401,13 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification({
+        LxNotification({
           title: 'HTML 片段',
           dangerouslyUseHTMLString: true,
           message: '<strong>这是 <i>HTML</i> 片段</strong>',
@@ -436,11 +436,11 @@
 :::demo 将`showClose`属性设置为`false`即可隐藏关闭按钮。
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     隐藏关闭按钮
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -460,13 +460,13 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification.success({
+        LxNotification.success({
           title: 'Info',
           message: '这是一条没有关闭按钮的消息',
           showClose: false,
@@ -491,7 +491,7 @@ Element Plus 为 ``app.config.globalProperties`` 添加了全局方法 `$notify`
 ### 单独引用
 
 ```javascript
-import { ElNotification } from 'element-plus';
+import { LxNotification } from 'element-plus';
 ```
 
 此时调用方法为 `ElNotification(options)`。我们也为每个 type 定义了各自的方法，如 `ElNotification.success(options)`。并且可以调用 `ElNotification.closeAll()` 手动关闭所有实例。

@@ -87,7 +87,7 @@ interface IProgressProps {
 }
 
 export default defineComponent({
-  name: 'ElProgress',
+  name: 'LxProgress',
   props: {
     type: {
       type: String,

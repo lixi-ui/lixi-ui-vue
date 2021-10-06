@@ -55,7 +55,7 @@ import {
 } from 'vue'
 
 export default defineComponent({
-  name: 'ElPager',
+  name: 'LxPager',
   props: {
     currentPage: {
       type: Number,

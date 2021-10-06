@@ -12,7 +12,7 @@ export default function useMenu(
   const indexPath = computed(() => {
     let parent = instance.parent
     const path = [currentIndex.value]
-    while (parent.type.name !== 'ElMenu') {
+    while (parent.type.name !== 'LxMenu') {
       if (parent.props.index) {
         path.unshift(parent.props.index as string)
       }
@@ -23,7 +23,7 @@ export default function useMenu(
 
   const parentMenu = computed(() => {
     let parent = instance.parent
-    while (parent && ['ElMenu', 'ElSubMenu'].indexOf(parent.type.name) === -1) {
+    while (parent && ['LxMenu', 'LxSubMenu'].indexOf(parent.type.name) === -1) {
       parent = parent.parent
     }
     return parent
@@ -37,8 +37,8 @@ export default function useMenu(
     if (rootMenu.props.collapse) {
       padding = 20
     } else {
-      while (parent && parent.type.name !== 'ElMenu') {
-        if (parent.type.name === 'ElSubMenu') {
+      while (parent && parent.type.name !== 'LxMenu') {
+        if (parent.type.name === 'LxSubMenu') {
           padding += 20
         }
         parent = parent.parent

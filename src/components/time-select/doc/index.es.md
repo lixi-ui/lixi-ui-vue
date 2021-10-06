@@ -8,13 +8,13 @@ Provee una lista de tiempo fijo para que los usuarios escojan.
 
 :::demo Use el tag `el-time-select`, se pueden asignar tiempo de inicio, tiempo de finalización y salto de tiempo con `start`, `end` y `step`.
 ```html
-<el-time-select
+<lx-time-select
   v-model="value"
   start='08:30'
   step='00:15'
   end='18:30'
   placeholder="Select time">
-</el-time-select>
+</lx-time-select>
 
 <script>
   export default {
@@ -35,21 +35,21 @@ Si se escoge el tiempo de inicio al principio, el tiempo de finalización cambia
 :::demo
 ```html
 <template>
-  <el-time-select
+  <lx-time-select
     placeholder="Start time"
     v-model="startTime"
     start='08:30'
   step='00:15'
   end='18:30'>
-  </el-time-select>
-  <el-time-select
+  </lx-time-select>
+  <lx-time-select
     placeholder="End time"
     v-model="endTime"
     start='08:30'
     step='00:15'
     end='18:30'
     :minTime="startTime">
-  </el-time-select>
+  </lx-time-select>
 </template>
 
 <script>

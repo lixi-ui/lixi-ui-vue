@@ -1,12 +1,12 @@
 import { VueWrapper } from '@vue/test-utils'
 import { ComponentPublicInstance, nextTick } from 'vue'
-import ElTable from '../src/table.vue'
-import ElTableColumn from '../src/table-column/index'
-import ElCheckbox from '@element-plus/components/checkbox'
+import LxTable from '../src/table.vue'
+import LxTableColumn from '../src/table-column/index'
+import LxCheckbox from '@element-plus/components/checkbox'
 import { triggerEvent } from '@element-plus/test-utils'
 import { mount, getTestData } from './table-test-common'
 
-const { CheckboxGroup: ElCheckboxGroup } = ElCheckbox
+const { CheckboxGroup: LxCheckboxGroup } = LxCheckbox
 
 async function sleep(time: number) {
   return new Promise(resolve => {
@@ -20,17 +20,17 @@ describe('Table.vue', () => {
   describe('rendering data is correct', () => {
     const wrapper = mount({
       components: {
-        ElTable,
-        ElTableColumn,
+        LxTable,
+        LxTableColumn,
       },
       template: `
-      <el-table :data="testData">
-        <el-table-column prop="id" />
-        <el-table-column prop="name" label="片名" />
-        <el-table-column prop="release" label="发行日期" />
-        <el-table-column prop="director" label="导演" />
-        <el-table-column prop="runtime" label="时长（分）" />
-      </el-table>
+      <lx-table :data="testData">
+        <lx-table-column prop="id" />
+        <lx-table-column prop="name" label="片名" />
+        <lx-table-column prop="release" label="发行日期" />
+        <lx-table-column prop="director" label="导演" />
+        <lx-table-column prop="runtime" label="时长（分）" />
+      </lx-table>
       `,
       created() {
         this.testData = getTestData()
@@ -48,7 +48,7 @@ describe('Table.vue', () => {
 
     it('row length', () => {
       expect(
-        wrapper.findAll('.el-table__body-wrapper tbody tr').length,
+        wrapper.findAll('.lx-table__body-wrapper tbody tr').length,
       ).toEqual(getTestData().length)
     })
     it('row data', () => {
@@ -66,22 +66,22 @@ describe('Table.vue', () => {
   it('custom template', async () => {
     const wrapper = mount({
       components: {
-        ElTable,
-        ElTableColumn,
-        ElCheckboxGroup,
-        ElCheckbox,
+        LxTable,
+        LxTableColumn,
+        LxCheckboxGroup,
+        LxCheckbox,
       },
       template: `
-      <el-table :data="tableData">
-        <el-table-column label="someLabel">
+      <lx-table :data="tableData">
+        <lx-table-column label="someLabel">
           <template #default="{ row }">
-            <el-checkbox-group v-model="row.checkList">
-              <el-checkbox label="复选框 A"></el-checkbox>
-              <el-checkbox label="复选框 B"></el-checkbox>
-            </el-checkbox-group>
+            <lx-checkbox-group v-model="row.checkList">
+              <lx-checkbox label="复选框 A"></lx-checkbox>
+              <lx-checkbox label="复选框 B"></lx-checkbox>
+            </lx-checkbox-group>
           </template>
-        </el-table-column>
-      </el-table>
+        </lx-table-column>
+      </lx-table>
       `,
       data() {
         return {
@@ -102,15 +102,15 @@ describe('Table.vue', () => {
     const vm = wrapper.vm
     await nextTick()
     const checkGroup = vm.$el.querySelectorAll(
-      '.el-table__body-wrapper .el-checkbox-group',
+      '.lx-table__body-wrapper .lx-checkbox-group',
     )
     expect(checkGroup.length).toBe(3)
     const checkbox = vm.$el.querySelectorAll(
-      '.el-table__body-wrapper .el-checkbox',
+      '.lx-table__body-wrapper .lx-checkbox',
     )
     expect(checkbox.length).toBe(6)
     const checkSelect = vm.$el.querySelectorAll(
-      '.el-table__body-wrapper label.is-checked',
+      '.lx-table__body-wrapper label.is-checked',
     )
     expect(checkSelect.length).toBe(3)
   })
@@ -120,16 +120,16 @@ describe('Table.vue', () => {
         Object.assign(
           {
             components: {
-              ElTable,
-              ElTableColumn,
+              LxTable,
+              LxTableColumn,
             },
             template: `
-          <el-table :data="testData" ${props}>
-            <el-table-column prop="name" label="片名" />
-            <el-table-column prop="release" label="发行日期" />
-            <el-table-column prop="director" label="导演" />
-            <el-table-column prop="runtime" label="时长（分）" />
-          </el-table>
+          <lx-table :data="testData" ${props}>
+            <lx-table-column prop="name" label="片名" />
+            <lx-table-column prop="release" label="发行日期" />
+            <lx-table-column prop="director" label="导演" />
+            <lx-table-column prop="runtime" label="时长（分）" />
+          </lx-table>
         `,
             created() {
               this.testData = getTestData()
@@ -185,7 +185,7 @@ describe('Table.vue', () => {
     it('show-header', async () => {
       const wrapper = createTable(':show-header="false"')
       await nextTick()
-      expect(wrapper.findAll('.el-table__header-wrapper').length).toEqual(0)
+      expect(wrapper.findAll('.lx-table__header-wrapper').length).toEqual(0)
       wrapper.unmount()
     })
 
@@ -212,7 +212,7 @@ describe('Table.vue', () => {
     it('tableRowStyle[Object]', async () => {
       const wrapper = createTable(':row-style="{ height: \'60px\' }"', {})
       await nextTick()
-      expect(wrapper.find('.el-table__body tr').attributes('style')).toContain(
+      expect(wrapper.find('.lx-table__body tr').attributes('style')).toContain(
         'height: 60px',
       )
       wrapper.unmount()
@@ -232,8 +232,8 @@ describe('Table.vue', () => {
       })
 
       await nextTick()
-      const child1 = wrapper.find('.el-table__body tr:nth-child(1)')
-      const child2 = wrapper.find('.el-table__body tr:nth-child(2)')
+      const child1 = wrapper.find('.lx-table__body tr:nth-child(1)')
+      const child2 = wrapper.find('.lx-table__body tr:nth-child(2)')
       expect(child1.attributes('style')).toBeUndefined()
       expect(child2.attributes('style')).toContain('height: 60px')
       expect(child2.attributes('style')).toContain('display: none')
@@ -243,16 +243,16 @@ describe('Table.vue', () => {
     it('current-row-key', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-        <el-table :data="testData" row-key="id" highlight-current-row :current-row-key="currentRowKey">
-          <el-table-column prop="name" label="片名" />
-          <el-table-column prop="release" label="发行日期" />
-          <el-table-column prop="director" label="导演" />
-          <el-table-column prop="runtime" label="时长（分）" />
-        </el-table>
+        <lx-table :data="testData" row-key="id" highlight-current-row :current-row-key="currentRowKey">
+          <lx-table-column prop="name" label="片名" />
+          <lx-table-column prop="release" label="发行日期" />
+          <lx-table-column prop="director" label="导演" />
+          <lx-table-column prop="runtime" label="时长（分）" />
+        </lx-table>
       `,
         created() {
           this.testData = getTestData()
@@ -263,12 +263,12 @@ describe('Table.vue', () => {
       })
       await nextTick()
       wrapper.vm.currentRowKey = 1
-      const tr = wrapper.find('.el-table__body-wrapper tbody tr')
+      const tr = wrapper.find('.lx-table__body-wrapper tbody tr')
       await nextTick()
       expect(tr.classes()).toContain('current-row')
       wrapper.vm.currentRowKey = 2
 
-      const rows = wrapper.findAll('.el-table__body-wrapper tbody tr')
+      const rows = wrapper.findAll('.lx-table__body-wrapper tbody tr')
       await nextTick()
       expect(tr.classes()).not.toContain('current-row')
       expect(rows[1].classes()).toContain('current-row')
@@ -281,14 +281,14 @@ describe('Table.vue', () => {
     beforeEach(async () => {
       wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table ref="table" :data="testData" @filter-change="handleFilterChange">
-            <el-table-column prop="name" label="片名" />
-            <el-table-column prop="release" label="发行日期" />
-            <el-table-column
+          <lx-table ref="table" :data="testData" @filter-change="handleFilterChange">
+            <lx-table-column prop="name" label="片名" />
+            <lx-table-column prop="release" label="发行日期" />
+            <lx-table-column
               prop="director"
               column-key="director"
               :filters="[
@@ -298,8 +298,8 @@ describe('Table.vue', () => {
               ]"
               :filter-method="filterMethod"
               label="导演" />
-            <el-table-column prop="runtime" label="时长（分）" />
-          </el-table>
+            <lx-table-column prop="runtime" label="时长（分）" />
+          </lx-table>
         `,
 
         created() {
@@ -322,31 +322,31 @@ describe('Table.vue', () => {
 
     it('render', () => {
       expect(
-        wrapper.find('.el-table__column-filter-trigger'),
+        wrapper.find('.lx-table__column-filter-trigger'),
       ).not.toBeUndefined()
     })
 
     it('click dropdown', async () => {
-      const btn = wrapper.find('.el-table__column-filter-trigger')
+      const btn = wrapper.find('.lx-table__column-filter-trigger')
       btn.trigger('click')
       await nextTick()
-      const filter = document.body.querySelector('.el-table-filter')
+      const filter = document.body.querySelector('.lx-table-filter')
       expect(filter).not.toBeUndefined()
       filter.parentNode.removeChild(filter)
     })
 
     fit('click filter', async () => {
-      const btn = wrapper.find('.el-table__column-filter-trigger')
+      const btn = wrapper.find('.lx-table__column-filter-trigger')
 
       btn.trigger('click')
       await nextTick()
-      const filter = document.body.querySelector('.el-table-filter')
+      const filter = document.body.querySelector('.lx-table-filter')
 
-      triggerEvent(filter.querySelector('.el-checkbox'), 'click', true, false)
+      triggerEvent(filter.querySelector('.lx-checkbox'), 'click', true, false)
       // confrim button
       await nextTick()
       triggerEvent(
-        filter.querySelector('.el-table-filter__bottom button'),
+        filter.querySelector('.lx-table-filter__bottom button'),
         'click',
         true,
         false,
@@ -358,21 +358,21 @@ describe('Table.vue', () => {
         ],
       ).toEqual(['John Lasseter'])
       expect(
-        wrapper.findAll('.el-table__body-wrapper tbody tr').length,
+        wrapper.findAll('.lx-table__body-wrapper tbody tr').length,
       ).toEqual(3)
       filter.parentNode.removeChild(filter)
     })
 
     it('click reset', async () => {
-      const btn = wrapper.find('.el-table__column-filter-trigger')
+      const btn = wrapper.find('.lx-table__column-filter-trigger')
       btn.trigger('click')
       await nextTick()
-      const filter = document.body.querySelector('.el-table-filter')
+      const filter = document.body.querySelector('.lx-table-filter')
 
-      triggerEvent(filter.querySelector('.el-checkbox'), 'click', true, false)
+      triggerEvent(filter.querySelector('.lx-checkbox'), 'click', true, false)
       await nextTick()
       triggerEvent(
-        filter.querySelectorAll('.el-table-filter__bottom button')[1],
+        filter.querySelectorAll('.lx-table-filter__bottom button')[1],
         'click',
         true,
         false,
@@ -384,7 +384,7 @@ describe('Table.vue', () => {
         ],
       ).toEqual([])
       expect(
-        filter.querySelector('.el-table-filter__bottom button').classList,
+        filter.querySelector('.lx-table-filter__bottom button').classList,
       ).toContain('is-disabled')
       filter.parentNode.removeChild(filter)
       wrapper.unmount()
@@ -395,17 +395,17 @@ describe('Table.vue', () => {
     const createTable = function(prop = '') {
       return mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" @${prop}="handleEvent">
-            <el-table-column type="selection" />
-            <el-table-column prop="name" />
-            <el-table-column prop="release" />
-            <el-table-column prop="director" />
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <lx-table :data="testData" @${prop}="handleEvent">
+            <lx-table-column type="selection" />
+            <lx-table-column prop="name" />
+            <lx-table-column prop="release" />
+            <lx-table-column prop="director" />
+            <lx-table-column prop="runtime"/>
+          </lx-table>
         `,
 
         methods: {
@@ -423,7 +423,7 @@ describe('Table.vue', () => {
     it('select', async () => {
       const wrapper = createTable('select')
       await nextTick()
-      wrapper.findAll('.el-checkbox')[1].trigger('click')
+      wrapper.findAll('.lx-checkbox')[1].trigger('click')
       expect(wrapper.vm.result.length).toEqual(2)
       expect(wrapper.vm.result[1]).toHaveProperty('name')
       expect(wrapper.vm.result[1]['name']).toEqual(getTestData()[0].name)
@@ -433,7 +433,7 @@ describe('Table.vue', () => {
     it('selection-change', async () => {
       const wrapper = createTable('selection-change')
       await nextTick()
-      wrapper.findAll('.el-checkbox')[1].trigger('click')
+      wrapper.findAll('.lx-checkbox')[1].trigger('click')
       expect(wrapper.vm.result.length).toEqual(1)
       wrapper.unmount()
     })
@@ -441,7 +441,7 @@ describe('Table.vue', () => {
     it('cell-mouse-enter', async () => {
       const wrapper = createTable('cell-mouse-enter')
       await nextTick()
-      const cell = wrapper.findAll('.el-table__body .cell')[2] // first row
+      const cell = wrapper.findAll('.lx-table__body .cell')[2] // first row
       triggerEvent(cell.element.parentElement, 'mouseenter')
       expect(wrapper.vm.result.length).toEqual(4) // row, column, cell, event
       expect(wrapper.vm.result[0]).toHaveProperty('name')
@@ -452,8 +452,8 @@ describe('Table.vue', () => {
     it('cell-mouse-leave', async () => {
       const wrapper = createTable('cell-mouse-leave')
       await nextTick()
-      const cell = wrapper.findAll('.el-table__body .cell')[7] // second row
-      const cell2 = wrapper.findAll('.el-table__body .cell')[2] // first row
+      const cell = wrapper.findAll('.lx-table__body .cell')[7] // second row
+      const cell2 = wrapper.findAll('.lx-table__body .cell')[2] // first row
 
       triggerEvent(cell2.element.parentElement, 'mouseenter')
       triggerEvent(cell.element.parentElement, 'mouseleave')
@@ -466,7 +466,7 @@ describe('Table.vue', () => {
     it('row-click', async () => {
       const wrapper = createTable('row-click')
       await nextTick()
-      const cell = wrapper.findAll('.el-table__body .cell')[2] // first row
+      const cell = wrapper.findAll('.lx-table__body .cell')[2] // first row
 
       triggerEvent(cell.element.parentElement.parentElement, 'click')
       expect(wrapper.vm.result.length).toEqual(3) // row, event, column
@@ -478,7 +478,7 @@ describe('Table.vue', () => {
     it('row-dblclick', async () => {
       const wrapper = createTable('row-dblclick')
       await nextTick()
-      const cell = wrapper.findAll('.el-table__body .cell')[2] // first row
+      const cell = wrapper.findAll('.lx-table__body .cell')[2] // first row
 
       triggerEvent(cell.element.parentElement.parentElement, 'dblclick')
       expect(wrapper.vm.result.length).toEqual(3) // row, event, column
@@ -490,7 +490,7 @@ describe('Table.vue', () => {
     it('header-click', async () => {
       const wrapper = createTable('header-click')
       await nextTick()
-      const cell = wrapper.findAll('.el-table__header th')[1] // header[prop='name']
+      const cell = wrapper.findAll('.lx-table__header th')[1] // header[prop='name']
       cell.trigger('click')
       expect(wrapper.vm.result.length).toEqual(2) // column, event
       expect(wrapper.vm.result[0]['name']).toBeUndefined()
@@ -501,16 +501,16 @@ describe('Table.vue', () => {
     it('should render', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" show-summary>
-            <el-table-column prop="name" />
-            <el-table-column prop="release"/>
-            <el-table-column prop="director"/>
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <lx-table :data="testData" show-summary>
+            <lx-table-column prop="name" />
+            <lx-table-column prop="release"/>
+            <lx-table-column prop="director"/>
+            <lx-table-column prop="runtime"/>
+          </lx-table>
         `,
 
         created() {
@@ -519,7 +519,7 @@ describe('Table.vue', () => {
       })
 
       await nextTick()
-      const footer = wrapper.find('.el-table__footer')
+      const footer = wrapper.find('.lx-table__footer')
       expect(footer).not.toBeUndefined()
       const cells = footer.findAll('.cell')
       expect(cells[cells.length - 1].text()).toEqual('459')
@@ -529,16 +529,16 @@ describe('Table.vue', () => {
     it('custom sum text', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" show-summary sum-text="Time">
-            <el-table-column prop="name" />
-            <el-table-column prop="release"/>
-            <el-table-column prop="director"/>
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <lx-table :data="testData" show-summary sum-text="Time">
+            <lx-table-column prop="name" />
+            <lx-table-column prop="release"/>
+            <lx-table-column prop="director"/>
+            <lx-table-column prop="runtime"/>
+          </lx-table>
         `,
 
         created() {
@@ -547,7 +547,7 @@ describe('Table.vue', () => {
       })
 
       await nextTick()
-      const cells = wrapper.findAll('.el-table__footer .cell')
+      const cells = wrapper.findAll('.lx-table__footer .cell')
       expect(cells[0].text()).toEqual('Time')
       wrapper.unmount()
     })
@@ -555,16 +555,16 @@ describe('Table.vue', () => {
     it('custom summary method', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" show-summary :summary-method="getSummary">
-            <el-table-column prop="name" />
-            <el-table-column prop="release"/>
-            <el-table-column prop="director"/>
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <lx-table :data="testData" show-summary :summary-method="getSummary">
+            <lx-table-column prop="name" />
+            <lx-table-column prop="release"/>
+            <lx-table-column prop="director"/>
+            <lx-table-column prop="runtime"/>
+          </lx-table>
         `,
 
         created() {
@@ -595,7 +595,7 @@ describe('Table.vue', () => {
       })
 
       await nextTick()
-      const cells = wrapper.findAll('.el-table__footer .cell')
+      const cells = wrapper.findAll('.lx-table__footer .cell')
       expect(cells[1].text()).toEqual('9996')
       wrapper.unmount()
     })
@@ -604,17 +604,17 @@ describe('Table.vue', () => {
     const createTable = function(prop = '') {
       return mount({
         components: {
-          ElTableColumn,
-          ElTable,
+          LxTableColumn,
+          LxTable,
         },
         template: `
-          <el-table ref="table" :data="testData" @${prop}="handleEvent">
-            <el-table-column type="selection" />
-            <el-table-column prop="name" />
-            <el-table-column prop="release" />
-            <el-table-column prop="director" />
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <lx-table ref="table" :data="testData" @${prop}="handleEvent">
+            <lx-table-column type="selection" />
+            <lx-table-column prop="name" />
+            <lx-table-column prop="release" />
+            <lx-table-column prop="director" />
+            <lx-table-column prop="runtime"/>
+          </lx-table>
         `,
 
         methods: {
@@ -681,16 +681,16 @@ describe('Table.vue', () => {
     it('sort', async () => {
       const wrapper = mount({
         components: {
-          ElTableColumn,
-          ElTable,
+          LxTableColumn,
+          LxTable,
         },
         template: `
-          <el-table ref="table" :data="testData" :default-sort = "{prop: 'runtime', order: 'ascending'}">
-            <el-table-column prop="name" />
-            <el-table-column prop="release" />
-            <el-table-column prop="director" />
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <lx-table ref="table" :data="testData" :default-sort = "{prop: 'runtime', order: 'ascending'}">
+            <lx-table-column prop="name" />
+            <lx-table-column prop="release" />
+            <lx-table-column prop="director" />
+            <lx-table-column prop="runtime"/>
+          </lx-table>
         `,
         data() {
           return { testData: getTestData() }
@@ -700,7 +700,7 @@ describe('Table.vue', () => {
       const vm = wrapper.vm
       await nextTick()
       const lastCells = wrapper.findAll(
-        '.el-table__body-wrapper tbody tr td:last-child',
+        '.lx-table__body-wrapper tbody tr td:last-child',
       )
       expect(
         lastCells.map(node => node.text()),
@@ -731,16 +731,16 @@ describe('Table.vue', () => {
 
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table ref="table" :data="testData" >
-            <el-table-column prop="name" sortable />
-            <el-table-column prop="release" sortable />
-            <el-table-column prop="director" sortable />
-            <el-table-column prop="runtime" sortable />
-          </el-table>
+          <lx-table ref="table" :data="testData" >
+            <lx-table-column prop="name" sortable />
+            <lx-table-column prop="release" sortable />
+            <lx-table-column prop="director" sortable />
+            <lx-table-column prop="runtime" sortable />
+          </lx-table>
         `,
         data() {
           return { testData: getTestData() }
@@ -779,17 +779,17 @@ describe('Table.vue', () => {
     it('setCurrentRow', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
         <div>
-          <el-table ref="table" :data="testData" highlight-current-row>
-            <el-table-column prop="name" sortable />
-            <el-table-column prop="release" sortable />
-            <el-table-column prop="director" sortable />
-            <el-table-column prop="runtime" sortable />
-          </el-table>
+          <lx-table ref="table" :data="testData" highlight-current-row>
+            <lx-table-column prop="name" sortable />
+            <lx-table-column prop="release" sortable />
+            <lx-table-column prop="director" sortable />
+            <lx-table-column prop="runtime" sortable />
+          </lx-table>
           <button class="clear" @click="clear">clear</button>
         </div>
         `,
@@ -806,7 +806,7 @@ describe('Table.vue', () => {
 
       vm.$refs.table.setCurrentRow(vm.testData[1])
       await nextTick()
-      const secondRow = vm.$el.querySelectorAll('.el-table__row')[1]
+      const secondRow = vm.$el.querySelectorAll('.lx-table__row')[1]
       expect(secondRow.classList).toContain('current-row')
 
       vm.$el.querySelector('.clear').click()
@@ -820,16 +820,16 @@ describe('Table.vue', () => {
   it('hover', async () => {
     const wrapper = mount({
       components: {
-        ElTable,
-        ElTableColumn,
+        LxTable,
+        LxTableColumn,
       },
       template: `
-        <el-table :data="testData">
-          <el-table-column prop="name" label="片名" fixed />
-          <el-table-column prop="release" label="发行日期" />
-          <el-table-column prop="director" label="导演" />
-          <el-table-column prop="runtime" label="时长（分）" />
-        </el-table>
+        <lx-table :data="testData">
+          <lx-table-column prop="name" label="片名" fixed />
+          <lx-table-column prop="release" label="发行日期" />
+          <lx-table-column prop="director" label="导演" />
+          <lx-table-column prop="runtime" label="时长（分）" />
+        </lx-table>
       `,
       data() {
         return {
@@ -838,7 +838,7 @@ describe('Table.vue', () => {
       },
     })
     await nextTick()
-    const tr = wrapper.find('.el-table__body-wrapper tbody tr')
+    const tr = wrapper.find('.lx-table__body-wrapper tbody tr')
     tr.trigger('mouseenter')
 
     await sleep(50)
@@ -853,16 +853,16 @@ describe('Table.vue', () => {
   it('highlight-current-row', async () => {
     const wrapper = mount({
       components: {
-        ElTable,
-        ElTableColumn,
+        LxTable,
+        LxTableColumn,
       },
       template: `
-        <el-table :data="testData" highlight-current-row>
-          <el-table-column prop="name" label="片名" />
-          <el-table-column prop="release" label="发行日期" />
-          <el-table-column prop="director" label="导演" />
-          <el-table-column prop="runtime" label="时长（分）" sortable />
-        </el-table>
+        <lx-table :data="testData" highlight-current-row>
+          <lx-table-column prop="name" label="片名" />
+          <lx-table-column prop="release" label="发行日期" />
+          <lx-table-column prop="director" label="导演" />
+          <lx-table-column prop="runtime" label="时长（分）" sortable />
+        </lx-table>
       `,
 
       created() {
@@ -871,22 +871,22 @@ describe('Table.vue', () => {
     })
     const vm = wrapper.vm
     await nextTick()
-    const tr = vm.$el.querySelector('.el-table__body-wrapper tbody tr')
+    const tr = vm.$el.querySelector('.lx-table__body-wrapper tbody tr')
     triggerEvent(tr, 'click', true, false)
     await nextTick()
     expect(tr.classList).toContain('current-row')
-    let rows = vm.$el.querySelectorAll('.el-table__body-wrapper tbody tr')
+    let rows = vm.$el.querySelectorAll('.lx-table__body-wrapper tbody tr')
 
     triggerEvent(rows[1], 'click', true, false)
     await nextTick()
     expect(tr.classList).not.toContain('current-row')
     expect(rows[1].classList).toContain('current-row')
 
-    const ths = vm.$el.querySelectorAll('.el-table__header-wrapper thead th')
+    const ths = vm.$el.querySelectorAll('.lx-table__header-wrapper thead th')
     triggerEvent(ths[3], 'click', true, false)
 
     await nextTick()
-    rows = vm.$el.querySelectorAll('.el-table__body-wrapper tbody tr')
+    rows = vm.$el.querySelectorAll('.lx-table__body-wrapper tbody tr')
 
     expect(rows[1].classList).not.toContain('current-row')
     expect(rows[3].classList).toContain('current-row')
@@ -896,16 +896,16 @@ describe('Table.vue', () => {
   it('keep highlight row when data change', async () => {
     const wrapper = mount({
       components: {
-        ElTable,
-        ElTableColumn,
+        LxTable,
+        LxTableColumn,
       },
       template: `
-        <el-table :data="testData" highlight-current-row row-key="release">
-          <el-table-column prop="name" label="片名" />
-          <el-table-column prop="release" label="发行日期" />
-          <el-table-column prop="director" label="导演" />
-          <el-table-column prop="runtime" label="时长（分）" sortable />
-        </el-table>
+        <lx-table :data="testData" highlight-current-row row-key="release">
+          <lx-table-column prop="name" label="片名" />
+          <lx-table-column prop="release" label="发行日期" />
+          <lx-table-column prop="director" label="导演" />
+          <lx-table-column prop="runtime" label="时长（分）" sortable />
+        </lx-table>
       `,
       data() {
         return {
@@ -915,7 +915,7 @@ describe('Table.vue', () => {
     })
     const vm = wrapper.vm
     await nextTick()
-    let rows = vm.$el.querySelectorAll('.el-table__body-wrapper tbody tr')
+    let rows = vm.$el.querySelectorAll('.lx-table__body-wrapper tbody tr')
     triggerEvent(rows[2], 'click', true, false)
     await nextTick()
     expect(rows[2].classList).toContain('current-row')
@@ -931,7 +931,7 @@ describe('Table.vue', () => {
     vm.testData = data
 
     await nextTick()
-    rows = vm.$el.querySelectorAll('.el-table__body-wrapper tbody tr')
+    rows = vm.$el.querySelectorAll('.lx-table__body-wrapper tbody tr')
     expect(rows[3].classList).toContain('current-row')
     wrapper.unmount()
   })
@@ -939,16 +939,16 @@ describe('Table.vue', () => {
   it('keep highlight row after sort', async () => {
     const wrapper = mount({
       components: {
-        ElTable,
-        ElTableColumn,
+        LxTable,
+        LxTableColumn,
       },
       template: `
-        <el-table :data="testData" row-key="release" highlight-current-row >
-          <el-table-column prop="name" label="片名" />
-          <el-table-column prop="release" label="发行日期" />
-          <el-table-column prop="director" label="导演" />
-          <el-table-column prop="runtime" label="时长（分）" sortable />
-        </el-table>
+        <lx-table :data="testData" row-key="release" highlight-current-row >
+          <lx-table-column prop="name" label="片名" />
+          <lx-table-column prop="release" label="发行日期" />
+          <lx-table-column prop="director" label="导演" />
+          <lx-table-column prop="runtime" label="时长（分）" sortable />
+        </lx-table>
       `,
       data() {
         return {
@@ -958,7 +958,7 @@ describe('Table.vue', () => {
     })
     const vm = wrapper.vm
     await nextTick()
-    const rows = vm.$el.querySelectorAll('.el-table__body-wrapper tbody tr')
+    const rows = vm.$el.querySelectorAll('.lx-table__body-wrapper tbody tr')
     triggerEvent(rows[1], 'click', true, false)
     await nextTick()
     expect(rows[1].classList).toContain('current-row')
@@ -971,25 +971,25 @@ describe('Table.vue', () => {
   it('table append is visible in viewport if height is 100%', async () => {
     const wrapper = mount({
       components: {
-        ElTable,
-        ElTableColumn,
+        LxTable,
+        LxTableColumn,
       },
       template: `
-      <el-table :data="[]" height="100%">
-        <el-table-column prop="name" label="片名" />
-        <el-table-column prop="release" label="发行日期" />
-        <el-table-column prop="director" label="导演" />
-        <el-table-column prop="runtime" label="时长（分）" />
+      <lx-table :data="[]" height="100%">
+        <lx-table-column prop="name" label="片名" />
+        <lx-table-column prop="release" label="发行日期" />
+        <lx-table-column prop="director" label="导演" />
+        <lx-table-column prop="runtime" label="时长（分）" />
         <template #append>
           <div class="append-content" style="height: 48px;">
             append 区域始终出现在视图内
           </div>
         </template>
-      </el-table>
+      </lx-table>
       `,
     })
     await nextTick()
-    const emptyBlockEl = wrapper.find('.el-table__empty-block')
+    const emptyBlockEl = wrapper.find('.lx-table__empty-block')
     expect(emptyBlockEl.attributes('style')).toContain('height: 100%')
     wrapper.unmount()
   })
@@ -998,17 +998,17 @@ describe('Table.vue', () => {
     it('key type is string', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" row-key="release" highlight-current-row >
-            <el-table-column type="index" />
-            <el-table-column prop="name" label="片名" />
-            <el-table-column prop="release" label="发行日期" />
-            <el-table-column prop="director" label="导演" />
-            <el-table-column prop="runtime" label="时长（分）" sortable />
-          </el-table>
+          <lx-table :data="testData" row-key="release" highlight-current-row >
+            <lx-table-column type="index" />
+            <lx-table-column prop="name" label="片名" />
+            <lx-table-column prop="release" label="发行日期" />
+            <lx-table-column prop="director" label="导演" />
+            <lx-table-column prop="runtime" label="时长（分）" sortable />
+          </lx-table>
         `,
         data() {
           return {
@@ -1017,7 +1017,7 @@ describe('Table.vue', () => {
         },
       })
       await nextTick()
-      const rows = wrapper.findAll('.el-table__row')
+      const rows = wrapper.findAll('.lx-table__row')
       rows.forEach((row, index) => {
         const cell = row.find('td')
         expect(cell.text()).toMatch(`${index + 1}`)
@@ -1026,23 +1026,23 @@ describe('Table.vue', () => {
     it('with expand row', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" row-key="release" highlight-current-row >
-            <el-table-column type="index" />
-            <el-table-column type="expand">
+          <lx-table :data="testData" row-key="release" highlight-current-row >
+            <lx-table-column type="index" />
+            <lx-table-column type="expand">
               <template #default="props">
                 <span class="index">{{ props.$index }}</span>
                 <span class="director">{{ props.row.director }}</span>
               </template>
-            </el-table-column>
-            <el-table-column prop="name" label="片名" />
-            <el-table-column prop="release" label="发行日期" />
-            <el-table-column prop="director" label="导演" />
-            <el-table-column prop="runtime" label="时长（分）" sortable />
-          </el-table>
+            </lx-table-column>
+            <lx-table-column prop="name" label="片名" />
+            <lx-table-column prop="release" label="发行日期" />
+            <lx-table-column prop="director" label="导演" />
+            <lx-table-column prop="runtime" label="时长（分）" sortable />
+          </lx-table>
         `,
         data() {
           return {
@@ -1051,7 +1051,7 @@ describe('Table.vue', () => {
         },
       })
       await nextTick()
-      const rows = wrapper.findAll('.el-table__row')
+      const rows = wrapper.findAll('.lx-table__row')
       rows.forEach((row, index) => {
         const cell = row.find('td')
         expect(cell.text()).toMatch(`${index + 1}`)
@@ -1059,7 +1059,7 @@ describe('Table.vue', () => {
       let index = 0
       for (const row of rows) {
         const expandCell = row.findAll('td')[1]
-        const triggerIcon = expandCell.find('.el-table__expand-icon')
+        const triggerIcon = expandCell.find('.lx-table__expand-icon')
         triggerIcon.trigger('click')
         await nextTick()
         const cell = row.find('td')
@@ -1076,16 +1076,16 @@ describe('Table.vue', () => {
     it('render tree structual data', async () => {
       wrapper = mount({
         components: {
-          ElTableColumn,
-          ElTable,
+          LxTableColumn,
+          LxTable,
         },
         template: `
-          <el-table :data="testData" row-key="release">
-            <el-table-column prop="name" label="片名" />
-            <el-table-column prop="release" label="发行日期" />
-            <el-table-column prop="director" label="导演" />
-            <el-table-column prop="runtime" label="时长（分）" />
-          </el-table>
+          <lx-table :data="testData" row-key="release">
+            <lx-table-column prop="name" label="片名" />
+            <lx-table-column prop="release" label="发行日期" />
+            <lx-table-column prop="director" label="导演" />
+            <lx-table-column prop="runtime" label="时长（分）" />
+          </lx-table>
         `,
         data() {
           const testData = getTestData() as any
@@ -1109,14 +1109,14 @@ describe('Table.vue', () => {
         },
       })
       await nextTick()
-      const rows = wrapper.findAll('.el-table__row')
+      const rows = wrapper.findAll('.lx-table__row')
       expect(rows.length).toEqual(7)
-      const childRows = wrapper.findAll('.el-table__row--level-1')
+      const childRows = wrapper.findAll('.lx-table__row--level-1')
       expect(childRows.length).toEqual(2)
       childRows.forEach(item => {
         expect(item.attributes('style')).toContain('display: none')
       })
-      wrapper.find('.el-table__expand-icon').trigger('click')
+      wrapper.find('.lx-table__expand-icon').trigger('click')
 
       await nextTick()
       childRows.forEach(item => {
@@ -1127,16 +1127,16 @@ describe('Table.vue', () => {
     it('load substree row data', async () => {
       wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" row-key="release" lazy :load="load">
-            <el-table-column prop="name" label="片名" />
-            <el-table-column prop="release" label="发行日期" />
-            <el-table-column prop="director" label="导演" />
-            <el-table-column prop="runtime" label="时长（分）" />
-          </el-table>
+          <lx-table :data="testData" row-key="release" lazy :load="load">
+            <lx-table-column prop="name" label="片名" />
+            <lx-table-column prop="release" label="发行日期" />
+            <lx-table-column prop="director" label="导演" />
+            <lx-table-column prop="runtime" label="时长（分）" />
+          </lx-table>
         `,
         data() {
           const testData = getTestData() as any
@@ -1173,30 +1173,30 @@ describe('Table.vue', () => {
         },
       })
       await nextTick()
-      const expandIcon = wrapper.find('.el-table__expand-icon')
+      const expandIcon = wrapper.find('.lx-table__expand-icon')
       expandIcon.trigger('click')
 
       await nextTick()
       expect(expandIcon.classes()).toContain('el-table__expand-icon--expanded')
-      expect(wrapper.findAll('.el-table__row').length).toEqual(8)
+      expect(wrapper.findAll('.lx-table__row').length).toEqual(8)
     })
 
     it('tree-props & default-expand-all & expand-change', async () => {
       const spy = jest.fn()
       wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table
+          <lx-table
             :data="testData" lazy default-expand-all row-key="release" :tree-props="{children: 'childrenTest', hasChildren: 'hasChildrenTest'}"
             :load="load" @expand-change="change">
-            <el-table-column prop="name" label="片名" />
-            <el-table-column prop="release" label="发行日期" />
-            <el-table-column prop="director" label="导演" />
-            <el-table-column prop="runtime" label="时长（分）" />
-          </el-table>
+            <lx-table-column prop="name" label="片名" />
+            <lx-table-column prop="release" label="发行日期" />
+            <lx-table-column prop="director" label="导演" />
+            <lx-table-column prop="runtime" label="时长（分）" />
+          </lx-table>
         `,
         data() {
           const testData = getTestData() as any
@@ -1234,17 +1234,17 @@ describe('Table.vue', () => {
         },
       })
       await nextTick()
-      const childRows = wrapper.findAll('.el-table__row--level-1')
+      const childRows = wrapper.findAll('.lx-table__row--level-1')
       childRows.forEach(item => {
         expect(item.attributes('style')).toBeUndefined()
       })
-      const expandIcon = wrapper.find('.el-table__expand-icon')
+      const expandIcon = wrapper.find('.lx-table__expand-icon')
       expandIcon.trigger('click')
       await nextTick()
       expect(
         expandIcon.classes().includes('el-table__expand-icon--expanded'),
       ).toBeTruthy()
-      expect(wrapper.findAll('.el-table__row').length).toEqual(8)
+      expect(wrapper.findAll('.lx-table__row').length).toEqual(8)
       expect(spy.mock.calls[0][0]).toBeInstanceOf(Object)
       expect(spy.mock.calls[0][1]).toBeTruthy()
     })
@@ -1252,16 +1252,16 @@ describe('Table.vue', () => {
     it('expand-row-keys & toggleRowExpansion', async () => {
       wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" row-key="release" lazy :load="load" :expand-row-keys="['2003-5-30']" ref="table">
-            <el-table-column prop="name" label="片名" />
-            <el-table-column prop="release" label="发行日期" />
-            <el-table-column prop="director" label="导演" />
-            <el-table-column prop="runtime" label="时长（分）" />
-          </el-table>
+          <lx-table :data="testData" row-key="release" lazy :load="load" :expand-row-keys="['2003-5-30']" ref="table">
+            <lx-table-column prop="name" label="片名" />
+            <lx-table-column prop="release" label="发行日期" />
+            <lx-table-column prop="director" label="导演" />
+            <lx-table-column prop="runtime" label="时长（分）" />
+          </lx-table>
         `,
         data() {
           const testData = getTestData() as any
@@ -1297,11 +1297,11 @@ describe('Table.vue', () => {
         },
       })
       await nextTick()
-      const childRows = wrapper.findAll('.el-table__row--level-1')
+      const childRows = wrapper.findAll('.lx-table__row--level-1')
       childRows.forEach(item => {
         expect(item.attributes('style')).toBeUndefined()
       })
-      const expandIcon = childRows[0].find('.el-table__expand-icon')
+      const expandIcon = childRows[0].find('.lx-table__expand-icon')
       expandIcon.trigger('click')
       await nextTick()
       expect(expandIcon.classes()).toContain('el-table__expand-icon--expanded')
@@ -1315,20 +1315,20 @@ describe('Table.vue', () => {
     it('v-if on el-table-column should patch correctly', async () => {
       wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
           <div>
             <button @click="hideName">hide name column</button>
-            <el-table :data="testData">
-              <el-table-column key="name" label="片名" v-if="showName">
+            <lx-table :data="testData">
+              <lx-table-column key="name" label="片名" v-if="showName">
                 <template #default="{ row }"><span class="name">{{ row.name }}</span></template>
-              </el-table-column>
-              <el-table-column key="release" label="发行日期" >
+              </lx-table-column>
+              <lx-table-column key="release" label="发行日期" >
                 <template #default="{ row }"><span class="release">{{ row.release }}</span></template>
-              </el-table-column>
-            </el-table>
+              </lx-table-column>
+            </lx-table>
           </div>
         `,
         data() {
@@ -1344,11 +1344,11 @@ describe('Table.vue', () => {
         },
       })
       await nextTick()
-      const firstCellSpanBeforeHide = wrapper.find('.el-table__body tr td span')
+      const firstCellSpanBeforeHide = wrapper.find('.lx-table__body tr td span')
       expect(firstCellSpanBeforeHide.classes().includes('name')).toBeTruthy()
       wrapper.find('button').trigger('click')
       await nextTick()
-      const firstCellSpanAfterHide = wrapper.find('.el-table__body tr td span')
+      const firstCellSpanAfterHide = wrapper.find('.lx-table__body tr td span')
       expect(firstCellSpanAfterHide.classes().includes('release')).toBeTruthy()
     })
   })

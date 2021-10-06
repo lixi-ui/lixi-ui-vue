@@ -8,10 +8,10 @@ imgのネイティブ機能の他に、遅延ロード、カスタムプレー�
 <div class="demo-image">
   <div class="block" v-for="fit in fits" :key="fit">
     <span class="demonstration">{{ fit }}</span>
-    <el-image
+    <lx-image
       style="width: 100px; height: 100px"
       :src="url"
-      :fit="fit"></el-image>
+      :fit="fit"></lx-image>
   </div>
 </div>
 
@@ -54,17 +54,17 @@ imgのネイティブ機能の他に、遅延ロード、カスタムプレー�
 <div class="demo-image__placeholder">
   <div class="block">
     <span class="demonstration">Default</span>
-    <el-image :src="src"></el-image>
+    <lx-image :src="src"></lx-image>
   </div>
   <div class="block">
     <span class="demonstration">Custom</span>
-    <el-image :src="src">
+    <lx-image :src="src">
       <template #placeholder>
         <div class="image-slot">
           Loading<span class="dot">...</span>
         </div>
       </template>
-    </el-image>
+    </lx-image>
   </div>
 </div>
 
@@ -104,17 +104,17 @@ imgのネイティブ機能の他に、遅延ロード、カスタムプレー�
 <div class="demo-image__error">
   <div class="block">
     <span class="demonstration">Default</span>
-    <el-image></el-image>
+    <lx-image></lx-image>
   </div>
   <div class="block">
     <span class="demonstration">Custom</span>
-    <el-image>
+    <lx-image>
       <template #error>
         <div class="image-slot">
           <i class="el-icon-picture-outline"></i>
         </div>
       </template>
-    </el-image>
+    </lx-image>
   </div>
 </div>
 ```
@@ -125,7 +125,7 @@ imgのネイティブ機能の他に、遅延ロード、カスタムプレー�
 :::demo `lazy = true` で遅延ロードを利用します。設定すると、画像はビューにスクロールするまで読み込まれます。スクロールリスナーを追加するスクロールコンテナは `scroll-container` で指定できます。未定義の場合は、オーバーフロープロパティが auto または scroll である最も近い親コンテナを指定します。
 ```html
 <div class="demo-image__lazy">
-  <el-image v-for="url in urls" :key="url" :src="url" lazy></el-image>
+  <lx-image v-for="url in urls" :key="url" :src="url" lazy></lx-image>
 </div>
 
 <script>
@@ -177,11 +177,11 @@ imgのネイティブ機能の他に、遅延ロード、カスタムプレー�
 :::demo `previewSrcList` prop を設定することで大きなイメージのプレビューを許可します。
 ```html
 <div class="demo-image__preview">
-  <el-image
+  <lx-image
     style="width: 100px; height: 100px"
     :src="url"
     :preview-src-list="srcList">
-  </el-image>
+  </lx-image>
 </div>
 
 <script>

@@ -8,19 +8,19 @@ The basic use case is using this component to provide unified space between each
 
 ```html
 <template>
-  <el-space wrap>
-    <el-card class="box-card" style="width: 250px" v-for="i in 3" :key="i">
+  <lx-space wrap>
+    <lx-card class="box-card" style="width: 250px" v-for="i in 3" :key="i">
       <template #header>
         <div class="card-header">
           <span>Card name</span>
-          <el-button class="button" type="text">Operation button</el-button>
+          <lx-button class="button" type="text">Operation button</lx-button>
         </div>
       </template>
       <div v-for="o in 4" :key="o" class="text item">
         {{ 'List item ' + o }}
       </div>
-    </el-card>
-  </el-space>
+    </lx-card>
+  </lx-space>
 </template>
 ```
 :::
@@ -32,19 +32,19 @@ Using `direction` attribute to control the layout, we use `flex-direction` to im
 
 ```html
 <template>
-  <el-space direction="vertical">
-    <el-card class="box-card" style="width: 250px" v-for="i in 2" :key="i">
+  <lx-space direction="vertical">
+    <lx-card class="box-card" style="width: 250px" v-for="i in 2" :key="i">
       <template #header>
         <div class="card-header">
           <span>Card name</span>
-          <el-button class="button" type="text">Operation button</el-button>
+          <lx-button class="button" type="text">Operation button</lx-button>
         </div>
       </template>
       <div v-for="o in 4" :key="o" class="text item">
         {{ 'List item ' + o }}
       </div>
-    </el-card>
-  </el-space>
+    </lx-card>
+  </lx-space>
 </template>
 ```
 
@@ -60,28 +60,28 @@ You can also using customized size to override it. Refer to the next part.
 :::demo
 ```html
 <template>
-  <el-space direction="vertical" alignment="start" :size="30">
-  <el-radio-group v-model="size">
-    <el-radio :label="'mini'">mini</el-radio>
-    <el-radio :label="'small'">small</el-radio>
-    <el-radio :label="'medium'">medium</el-radio>
-    <el-radio :label="'large'">large</el-radio>
-  </el-radio-group>
+  <lx-space direction="vertical" alignment="start" :size="30">
+  <lx-radio-group v-model="size">
+    <lx-radio :label="'mini'">mini</lx-radio>
+    <lx-radio :label="'small'">small</lx-radio>
+    <lx-radio :label="'medium'">medium</lx-radio>
+    <lx-radio :label="'large'">large</lx-radio>
+  </lx-radio-group>
 
-  <el-space wrap :size="size">
-    <el-card class="box-card" style="width: 250px" v-for="i in 3" :key="i">
+  <lx-space wrap :size="size">
+    <lx-card class="box-card" style="width: 250px" v-for="i in 3" :key="i">
       <template #header>
         <div class="card-header">
           <span>Card name</span>
-          <el-button class="button" type="text">Operation button</el-button>
+          <lx-button class="button" type="text">Operation button</lx-button>
         </div>
       </template>
       <div v-for="o in 4" :key="o" class="text item">
         {{ 'List item ' + o }}
       </div>
-    </el-card>
-  </el-space>
-  </el-space>
+    </lx-card>
+  </lx-space>
+  </lx-space>
 </template>
 
 <script>
@@ -104,20 +104,20 @@ Sometimes built-in sizes could not meet the business needs, we can use custom si
 :::demo
 ```html
 <template>
-  <el-slider v-model="size" />
-  <el-space wrap :size="size">
-    <el-card class="box-card" style="width: 250px" v-for="i in 2" :key="i">
+  <lx-slider v-model="size" />
+  <lx-space wrap :size="size">
+    <lx-card class="box-card" style="width: 250px" v-for="i in 2" :key="i">
       <template #header>
         <div class="card-header">
           <span>Card name</span>
-          <el-button class="button" type="text">Operation button</el-button>
+          <lx-button class="button" type="text">Operation button</lx-button>
         </div>
       </template>
       <div v-for="o in 4" :key="o" class="text item">
         {{ 'List item ' + o }}
       </div>
-    </el-card>
-  </el-space>
+    </lx-card>
+  </lx-space>
 </template>
 
 <script>
@@ -143,13 +143,13 @@ When in **horizontal** mode, using `wrap` (**bool type**) to control auto wrappi
 :::demo Using `wrap` to control line wrap
 
 ```html
-<el-space wrap>
+<lx-space wrap>
   <div v-for="i in 20" :key="i">
-    <el-button type="text">
+    <lx-button type="text">
       Text button
-    </el-button>
+    </lx-button>
   </div>
-</el-space>
+</lx-space>
 ```
 :::
 
@@ -162,13 +162,13 @@ Sometimes we want something more than blank space, so we have (spacer) to help u
 
 ```html
 <template>
- <el-space :size="size" spacer="|">
+ <lx-space :size="size" spacer="|">
     <div v-for="i in 2" :key="i">
-      <el-button>
+      <lx-button>
         button {{ i }}
-      </el-button>
+      </lx-button>
     </div>
-  </el-space>
+  </lx-space>
 </template>
 
 <script>
@@ -189,18 +189,18 @@ export default {
 :::demo
 ```html
 <template>
- <el-space :size="size" :spacer="spacer">
+ <lx-space :size="size" :spacer="spacer">
     <div v-for="i in 2" :key="i">
-      <el-button>
+      <lx-button>
         button {{ i }}
-      </el-button>
+      </lx-button>
     </div>
-  </el-space>
+  </lx-space>
 </template>
 
 <script>
 import { h, resolveComponent } from 'vue'
-import { ElDivider } from 'element-plus'
+import { LxDivider } from 'element-plus'
 export default {
   data() {
     return {
@@ -223,46 +223,46 @@ Setting this attribute can adjust the alignment of child nodes, the desirable va
 
 <template>
   <div style="width: 240px;margin-bottom: 20px;padding: 8px;border: 1px solid #ccc;">
-    <el-space>
+    <lx-space>
       string
-      <el-button>
+      <lx-button>
         button
-      </el-button>
-      <el-card>
+      </lx-button>
+      <lx-card>
         <template #header>
           header
         </template>
         body
-      </el-card>
-    </el-space>
+      </lx-card>
+    </lx-space>
   </div>
   <div style="width: 240px;margin-bottom: 20px;padding: 8px;border: 1px solid #ccc;">
-    <el-space alignment="flex-start">
+    <lx-space alignment="flex-start">
       string
-      <el-button>
+      <lx-button>
         button
-      </el-button>
-      <el-card>
+      </lx-button>
+      <lx-card>
         <template #header>
           header
         </template>
         body
-      </el-card>
-    </el-space>
+      </lx-card>
+    </lx-space>
   </div>
   <div style="width: 240px;margin-bottom: 20px;padding: 8px;border: 1px solid #ccc;">
-    <el-space alignment="flex-end">
+    <lx-space alignment="flex-end">
       string
-      <el-button>
+      <lx-button>
         button
-      </el-button>
-      <el-card>
+      </lx-button>
+      <lx-card>
         <template #header>
           header
         </template>
         body
-      </el-card>
-    </el-space>
+      </lx-card>
+    </lx-space>
   </div>
 </template>
 
@@ -281,21 +281,21 @@ In the following example, when set to `fill`, the width of the child node will a
 <template>
   <div>
   <div style="margin-bottom:15px">
-    fill:  <el-switch v-model="fill"></el-switch>
+    fill:  <lx-switch v-model="fill"></lx-switch>
   </div>
-  <el-space :fill="fill" wrap>
-    <el-card class="box-card" v-for="i in 3" :key="i">
+  <lx-space :fill="fill" wrap>
+    <lx-card class="box-card" v-for="i in 3" :key="i">
       <template #header>
         <div class="card-header">
           <span>Card name</span>
-          <el-button class="button" type="text">Operation button</el-button>
+          <lx-button class="button" type="text">Operation button</lx-button>
         </div>
       </template>
       <div v-for="o in 4" :key="o" class="text item">
         {{ 'List item ' + o }}
       </div>
-    </el-card>
-  </el-space>
+    </lx-card>
+  </lx-space>
   </div>
 </template>
 
@@ -321,25 +321,25 @@ It should be noted that the expression of horizontal layout and vertical layout 
   <div>
   <div style="margin-bottom: 15px">
     direction:
-    <el-radio v-model="direction" label="horizontal">horizontal</el-radio>
-    <el-radio v-model="direction" label="vertical">vertical</el-radio>
+    <lx-radio v-model="direction" label="horizontal">horizontal</lx-radio>
+    <lx-radio v-model="direction" label="vertical">vertical</lx-radio>
   </div>
   <div style="margin-bottom: 15px">
-    fillRatio:<el-slider v-model="fillRatio"></el-slider>
+    fillRatio:<lx-slider v-model="fillRatio"></lx-slider>
   </div>
-  <el-space fill wrap :fillRatio="fillRatio" :direction="direction" style=" width: 100%">
-    <el-card class="box-card" v-for="i in 5" :key="i">
+  <lx-space fill wrap :fillRatio="fillRatio" :direction="direction" style=" width: 100%">
+    <lx-card class="box-card" v-for="i in 5" :key="i">
       <template #header>
         <div class="card-header">
           <span>Card name</span>
-          <el-button class="button" type="text">Operation button</el-button>
+          <lx-button class="button" type="text">Operation button</lx-button>
         </div>
       </template>
       <div v-for="o in 4" :key="o" class="text item">
         {{ 'List item ' + o }}
       </div>
-    </el-card>
-  </el-space>
+    </lx-card>
+  </lx-space>
   </div>
 </template>
 

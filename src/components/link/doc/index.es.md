@@ -9,12 +9,12 @@ Texto con hipervinculo básico
 
 ```html
 <div>
-  <el-link href="https://element.eleme.io" target="_blank">default</el-link>
-  <el-link type="primary">primary</el-link>
-  <el-link type="success">success</el-link>
-  <el-link type="warning">warning</el-link>
-  <el-link type="danger">danger</el-link>
-  <el-link type="info">info</el-link>
+  <lx-link href="https://element.eleme.io" target="_blank">default</lx-link>
+  <lx-link type="primary">primary</lx-link>
+  <lx-link type="success">success</lx-link>
+  <lx-link type="warning">warning</lx-link>
+  <lx-link type="danger">danger</lx-link>
+  <lx-link type="info">info</lx-link>
 </div>
 ```
 
@@ -27,12 +27,12 @@ Deshabilita el hipervinculo
 
 ```html
 <div>
-  <el-link disabled>default</el-link>
-  <el-link type="primary" disabled>primary</el-link>
-  <el-link type="success" disabled>success</el-link>
-  <el-link type="warning" disabled>warning</el-link>
-  <el-link type="danger" disabled>danger</el-link>
-  <el-link type="info" disabled>info</el-link>
+  <lx-link disabled>default</lx-link>
+  <lx-link type="primary" disabled>primary</lx-link>
+  <lx-link type="success" disabled>success</lx-link>
+  <lx-link type="warning" disabled>warning</lx-link>
+  <lx-link type="danger" disabled>danger</lx-link>
+  <lx-link type="info" disabled>info</lx-link>
 </div>
 ```
 
@@ -45,8 +45,8 @@ Subrayado del hipervinculo
 
 ```html
 <div>
-  <el-link :underline="false">Without Underline</el-link>
-  <el-link>With Underline</el-link>
+  <lx-link :underline="false">Without Underline</lx-link>
+  <lx-link>With Underline</lx-link>
 </div>
 ```
 
@@ -59,8 +59,8 @@ Hipervinculo con icono
 
 ```html
 <div>
-  <el-link icon="el-icon-edit">Edit</el-link>
-  <el-link>Check<i class="el-icon-view el-icon--right"></i> </el-link>
+  <lx-link icon="el-icon-edit">Edit</lx-link>
+  <lx-link>Check<i class="el-icon-view el-icon--right"></i> </lx-link>
 </div>
 ```
 

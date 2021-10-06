@@ -6,29 +6,29 @@ Affiche une animation durant le chargement de données.
 
 Affiche une animation dans un conteneur (Comme un tableau par exemple) pendant le chargement des données.
 
-:::demo Element Plus fournit deux moyens d'invoquer Loading: la directive et le service. Pour la directive `v-loading`, attachez simplement un `boolean`. Par défaut le masque sera ajouté à l'élément contenant la directive. Ajoutez le modificateur `body` pour ajouter le masque à l'élément body.
+:::demo Lxement Plus fournit deux moyens d'invoquer Loading: la directive et le service. Pour la directive `v-loading`, attachez simplement un `boolean`. Par défaut le masque sera ajouté à l'élément contenant la directive. Ajoutez le modificateur `body` pour ajouter le masque à l'élément body.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     v-loading="loading"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nom"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Adresse">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <style>
@@ -104,50 +104,50 @@ Vous pouvez personnaliser le texte, le spinner et la couleur de fond.
 :::demo Ajoutez l'attribut `element-loading-text` à l'élement sur lequel `v-loading` est attaché et sa valeur sera affichée sous le spinner. De même, les attributs `element-loading-spinner`, `element-loading-background` et `element-loading-svg` sont utilisés pour définir respectivement le nom de la classe d'icône, la valeur de la couleur d'arrière-plan et l'icône de chargement.
 ```html
 <template>
-  <el-table
+  <lx-table
     v-loading="loading"
     element-loading-text="Loading..."
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nom"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Adresse">
-    </el-table-column>
-  </el-table>
-  <el-table
+    </lx-table-column>
+  </lx-table>
+  <lx-table
     v-loading="loading"
     :element-loading-svg="svg"
     class="custom-loading-svg"
     element-loading-svg-view-box="-10, -10, 50, 50"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nom"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Adresse">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -242,17 +242,17 @@ Affichez une animation en plein écran quand vous charger des données.
 
 ```html
 <template>
-  <el-button
+  <lx-button
     type="primary"
     @click="openFullScreen1"
     v-loading.fullscreen.lock="fullscreenLoading">
     Comme directive
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     type="primary"
     @click="openFullScreen2">
     Comme service
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -287,7 +287,7 @@ Affichez une animation en plein écran quand vous charger des données.
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { ElLoading } from 'element-plus';
+  import { LxLoading } from 'element-plus';
 
   export default defineComponent({
     setup() {
@@ -300,7 +300,7 @@ Affichez une animation en plein écran quand vous charger des données.
       };
 
       const openFullScreen2 = () => {
-        const loading = ElLoading.service({
+        const loading = LxLoading.service({
           lock: true,
           text: 'Loading',
           spinner: 'el-icon-loading',
@@ -329,7 +329,7 @@ Affichez une animation en plein écran quand vous charger des données.
 Vous pouvez invoquer Loading comme un service. Importez le service Loading:
 
 ```javascript
-import { ElLoading } from 'element-plus';
+import { LxLoading } from 'element-plus';
 ```
 Et invoquer-le:
 
@@ -340,7 +340,7 @@ ElLoading.service(options);
 Le paramètre `options` correspond à la configuration de Loading (voir table suivante). `LoadingService` retourne une instance de Loading, que vous pouvez fermer en appelant la méthode `close`:
 
 ```javascript
-let loadingInstance = ElLoading.service(options);
+let loadingInstance = LxLoading.service(options);
 this.$nextTick(() => { // Loading should be closed asynchronously
   loadingInstance.close();
 });
@@ -349,14 +349,14 @@ this.$nextTick(() => { // Loading should be closed asynchronously
 Notez que dans ce cas le Loading plein écran est un singleton. Si un nouveau Loading plein écran est invoqué avant la fermeture du précédent, celui-ci sera retourné au lieu d'en créer un nouveau:
 
 ```javascript
-let loadingInstance1 = ElLoading.service({ fullscreen: true });
-let loadingInstance2 = ElLoading.service({ fullscreen: true });
+let loadingInstance1 = LxLoading.service({ fullscreen: true });
+let loadingInstance2 = LxLoading.service({ fullscreen: true });
 console.log(loadingInstance1 === loadingInstance2); // true
 ```
 
 Appeler la méthode `close` sur n'importe lequel des deux fermera le Loading.
 
-Si Element Plus est importé en entier, une méthode globale `$loading` sera ajoutée à `app.config.globalProperties`. Vous pourrez l'invoquer comme ceci: `this.$loading(options)` et elle retournera une instance Loading.
+Si Lxement Plus est importé en entier, une méthode globale `$loading` sera ajoutée à `app.config.globalProperties`. Vous pourrez l'invoquer comme ceci: `this.$loading(options)` et elle retournera une instance Loading.
 
 ### Options
 

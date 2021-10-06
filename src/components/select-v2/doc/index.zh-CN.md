@@ -16,7 +16,7 @@
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     :options="options"
     placeholder="请选择"
@@ -49,7 +49,7 @@
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     :options="options"
     placeholder="请选择"
@@ -82,7 +82,7 @@
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     :options="options"
     placeholder="请选择"
@@ -117,7 +117,7 @@
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     filterable
     :options="options"
@@ -152,7 +152,7 @@
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     filterable
     :options="options"
@@ -160,7 +160,7 @@
     style="width: 240px; margin-right: 16px; vertical-align: middle;"
     multiple
   />
-  <el-select-v2
+  <lx-select-v2
     disabled
     v-model="value"
     filterable
@@ -198,7 +198,7 @@
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     filterable
     :options="options"
@@ -241,7 +241,7 @@
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     filterable
     :options="options"
@@ -255,7 +255,7 @@
         {{ item.value }}
       </span>
     </template>
-  </el-select-v2>
+  </lx-select-v2>
 </template>
 
 <script>
@@ -283,7 +283,7 @@
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value1"
     :options="options"
     placeholder="请选择"
@@ -291,7 +291,7 @@
     multiple
     clearable
   />
-  <el-select-v2
+  <lx-select-v2
     v-model="value2"
     :options="options"
     placeholder="请选择"
@@ -325,7 +325,7 @@
 :::demo 使用`allow-create`属性即可通过在输入框中输入文字来创建新的条目。注意此时`filterable`必须为真。
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value1"
     :options="options"
     placeholder="请选择"
@@ -335,7 +335,7 @@
     multiple
     clearable
   />
-  <el-select-v2
+  <lx-select-v2
     v-model="value2"
     :options="options"
     placeholder="请选择"
@@ -370,7 +370,7 @@
 :::demo 为了启用远程搜索，需要将`filterable`和`remote`设置为`true`，同时传入一个`remote-method`。`remote-method`为一个`Function`，它会在输入值发生变化时调用，参数为当前输入值。
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     style="width: 240px"
     multiple

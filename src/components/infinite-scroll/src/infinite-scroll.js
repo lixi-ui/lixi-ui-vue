@@ -7,7 +7,7 @@ import { entries } from '@element-plus/utils/util'
 
 import type { ObjectDirective, ComponentPublicInstance } from 'vue'
 
-export const SCOPE = 'ElInfiniteScroll'
+export const SCOPE = 'LxInfiniteScroll'
 export const CHECK_INTERVAL = 50
 export const DEFAULT_DELAY = 200
 export const DEFAULT_DISTANCE = 0

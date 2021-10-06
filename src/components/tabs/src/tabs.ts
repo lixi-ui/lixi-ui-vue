@@ -26,7 +26,7 @@ import type {
 } from './token'
 
 export default defineComponent({
-  name: 'ElTabs',
+  name: 'LxTabs',
   components: { TabNav },
   props: {
     type: {
@@ -108,7 +108,7 @@ export default defineComponent({
       Array.from((vnode.children || []) as ArrayLike<VNode>).forEach(node => {
         let type = node.type
         type = (type as Component).name || type
-        if (type === 'ElTabPane' && node.component) {
+        if (type === 'LxTabPane' && node.component) {
           paneInstanceList.push(node.component)
         } else if (type === Fragment || type === 'template') {
           getPaneInstanceFromSlot(node, paneInstanceList)

@@ -1,7 +1,7 @@
 import { nextTick } from 'vue'
 import { triggerEvent } from '@element-plus/test-utils'
-import ElTable from '../src/table.vue'
-import ElTableColumn from '../src/table-column/index'
+import LxTable from '../src/table.vue'
+import LxTableColumn from '../src/table-column/index'
 import { mount, getTestData } from './table-test-common'
 
 describe('table column', () => {
@@ -19,16 +19,16 @@ describe('table column', () => {
         Object.assign(
           {
             components: {
-              ElTable,
-              ElTableColumn,
+              LxTable,
+              LxTableColumn,
             },
             template: `
-          <el-table :data="testData" ${tableProps || ''}>
-            <el-table-column prop="name" ${props1 || ''} />
-            <el-table-column prop="release" ${props2 || ''} />
-            <el-table-column prop="director" ${props3 || ''} />
-            <el-table-column prop="runtime" ${props4 || ''} />
-          </el-table>
+          <lx-table :data="testData" ${tableProps || ''}>
+            <lx-table-column prop="name" ${props1 || ''} />
+            <lx-table-column prop="release" ${props2 || ''} />
+            <lx-table-column prop="director" ${props3 || ''} />
+            <lx-table-column prop="runtime" ${props4 || ''} />
+          </lx-table>
         `,
 
             created() {
@@ -54,7 +54,7 @@ describe('table column', () => {
     it('width', async () => {
       const wrapper = createTable('width="123px"', ':width="102"', 'width="39"')
       await nextTick()
-      const ths = wrapper.findAll('.el-table__header-wrapper col')
+      const ths = wrapper.findAll('.lx-table__header-wrapper col')
         .map(node => node.attributes('width'))
         .filter(o => o)
       expect(ths).toContain('123')
@@ -71,15 +71,15 @@ describe('table column', () => {
       )
       await nextTick()
       expect(
-        wrapper.findAll('.el-table__fixed th:not(.is-hidden)').map(node => node.text()),
+        wrapper.findAll('.lx-table__fixed th:not(.is-hidden)').map(node => node.text()),
       ).toEqual(['test1', 'test3'])
 
       expect(
-        wrapper.findAll('.el-table__fixed-right th:not(.is-hidden)')
+        wrapper.findAll('.lx-table__fixed-right th:not(.is-hidden)')
           .map(node => node.text()),
       ).toEqual(['test2'])
       expect(
-        wrapper.find('.el-table__body-wrapper').attributes('style'),
+        wrapper.find('.lx-table__body-wrapper').attributes('style'),
       ).toBeFalsy()
       wrapper.unmount()
     })
@@ -111,7 +111,7 @@ describe('table column', () => {
 
       await nextTick()
       const cells =
-        wrapper.findAll('.el-table__body-wrapper tbody tr td:first-child')
+        wrapper.findAll('.lx-table__body-wrapper tbody tr td:first-child')
       expect(cells.map(n => n.text())).toEqual(
         getTestData().map(o => `[${o.name}]`),
       )
@@ -121,7 +121,7 @@ describe('table column', () => {
     it('show-overflow-tooltip', async () => {
       const wrapper = createTable('show-overflow-tooltip')
       await nextTick()
-      expect(wrapper.findAll('.el-tooltip').length).toEqual(5)
+      expect(wrapper.findAll('.lx-tooltip').length).toEqual(5)
       wrapper.unmount()
     })
 
@@ -129,7 +129,7 @@ describe('table column', () => {
       // old version prop name
       const wrapper = createTable('show-tooltip-when-overflow')
       await nextTick()
-      expect(wrapper.findAll('.el-tooltip').length).toEqual(5)
+      expect(wrapper.findAll('.lx-tooltip').length).toEqual(5)
       wrapper.unmount()
     })
 
@@ -164,17 +164,17 @@ describe('table column', () => {
     it('selectable === false & check selectAll status', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" @selection-change="change">
-            <el-table-column type="selection" :selectable="filterSelect" />
-            <el-table-column prop="name" label="name" />
-            <el-table-column prop="release" label="release" />
-            <el-table-column prop="director" label="director" />
-            <el-table-column prop="runtime" label="runtime" />
-          </el-table>
+          <lx-table :data="testData" @selection-change="change">
+            <lx-table-column type="selection" :selectable="filterSelect" />
+            <lx-table-column prop="name" label="name" />
+            <lx-table-column prop="release" label="release" />
+            <lx-table-column prop="director" label="director" />
+            <lx-table-column prop="runtime" label="runtime" />
+          </lx-table>
         `,
 
         data() {
@@ -193,7 +193,7 @@ describe('table column', () => {
       })
 
       await nextTick()
-      expect(wrapper.find('.el-checkbox').attributes('checked')).toBeFalsy()
+      expect(wrapper.find('.lx-checkbox').attributes('checked')).toBeFalsy()
       await nextTick()
       expect(wrapper.vm.selected.length).toEqual(0)
       wrapper.unmount()
@@ -203,17 +203,17 @@ describe('table column', () => {
       const createTable = function(type) {
         return mount({
           components: {
-            ElTable,
-            ElTableColumn,
+            LxTable,
+            LxTableColumn,
           },
           template: `
-            <el-table :data="testData" @selection-change="change">
-              <el-table-column type="${type}" />
-              <el-table-column prop="name" label="name" />
-              <el-table-column prop="release" label="release" />
-              <el-table-column prop="director" label="director" />
-              <el-table-column prop="runtime" label="runtime" />
-            </el-table>
+            <lx-table :data="testData" @selection-change="change">
+              <lx-table-column type="${type}" />
+              <lx-table-column prop="name" label="name" />
+              <lx-table-column prop="release" label="release" />
+              <lx-table-column prop="director" label="director" />
+              <lx-table-column prop="runtime" label="runtime" />
+            </lx-table>
           `,
 
           created() {
@@ -237,13 +237,13 @@ describe('table column', () => {
 
         it('render', async () => {
           await nextTick()
-          expect(wrapper.findAll('.el-checkbox').length).toEqual(
+          expect(wrapper.findAll('.lx-checkbox').length).toEqual(
             getTestData().length + 1,
           )
         })
 
         it('select all', async () => {
-          wrapper.find('.el-checkbox').trigger('click')
+          wrapper.find('.lx-checkbox').trigger('click')
           await nextTick()
           expect(wrapper.vm.selected.length).toEqual(5)
           wrapper.unmount()
@@ -253,7 +253,7 @@ describe('table column', () => {
           const wrapper2 = createTable('selection')
 
           await nextTick()
-          wrapper2.findAll('.el-checkbox')[1].trigger('click')
+          wrapper2.findAll('.lx-checkbox')[1].trigger('click')
 
           await nextTick()
           expect(wrapper2.vm.selected.length).toEqual(1)
@@ -269,7 +269,7 @@ describe('table column', () => {
           await nextTick()
           expect(
             wrapper.findAll(
-              '.el-table__body-wrapper tbody tr td:first-child',
+              '.lx-table__body-wrapper tbody tr td:first-child',
             ).map(node => node.text()),
           ).toEqual(['1', '2', '3', '4', '5'])
           wrapper.unmount()
@@ -281,20 +281,20 @@ describe('table column', () => {
           extra = extra || ''
           return mount({
             components: {
-              ElTableColumn,
-              ElTable,
+              LxTableColumn,
+              LxTable,
             },
             template: `
-            <el-table row-key="id" :data="testData" @expand-change="handleExpand" ${extra}>
-              <el-table-column type="expand">
+            <lx-table row-key="id" :data="testData" @expand-change="handleExpand" ${extra}>
+              <lx-table-column type="expand">
                 <template #default="props">
                   <div>{{props.row.name}}</div>
                 </template>
-              </el-table-column>
-              <el-table-column prop="release" label="release" />
-              <el-table-column prop="director" label="director" />
-              <el-table-column prop="runtime" label="runtime" />
-            </el-table>
+              </lx-table-column>
+              <lx-table-column prop="release" label="release" />
+              <lx-table-column prop="director" label="director" />
+              <lx-table-column prop="runtime" label="runtime" />
+            </lx-table>
           `,
 
             data() {
@@ -319,7 +319,7 @@ describe('table column', () => {
         it('works', async () => {
           const wrapper = createInstance()
           await nextTick()
-          expect(wrapper.findAll('td.el-table__expand-column').length).toEqual(
+          expect(wrapper.findAll('td.lx-table__expand-column').length).toEqual(
             5,
           )
           wrapper.unmount()
@@ -350,7 +350,7 @@ describe('table column', () => {
 
         await nextTick()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child',
+          '.lx-table__body-wrapper tbody tr td:last-child',
         )
         expect(lastCells.map(node => node.text())).toEqual([
           '100',
@@ -390,7 +390,7 @@ describe('table column', () => {
 
         await nextTick()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child',
+          '.lx-table__body-wrapper tbody tr td:last-child',
         )
         expect(lastCells.map(node => node.text())).toEqual([
           '100',
@@ -417,7 +417,7 @@ describe('table column', () => {
 
         await nextTick()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child',
+          '.lx-table__body-wrapper tbody tr td:last-child',
         )
         expect(lastCells.map(node => node.text())).toEqual([
           '100',
@@ -444,7 +444,7 @@ describe('table column', () => {
 
         await nextTick()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child',
+          '.lx-table__body-wrapper tbody tr td:last-child',
         )
         expect(lastCells.map(node => node.text())).toEqual([
           '80',
@@ -466,7 +466,7 @@ describe('table column', () => {
         elm.trigger('click')
         await nextTick()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child',
+          '.lx-table__body-wrapper tbody tr td:last-child',
         )
         expect(lastCells.map(node => node.text())).toEqual([
           '80',
@@ -483,7 +483,7 @@ describe('table column', () => {
         elm.trigger('click')
         await nextTick()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child',
+          '.lx-table__body-wrapper tbody tr td:last-child',
         )
         expect(lastCells.map(node => node.text())).toEqual([
           '100',
@@ -499,8 +499,8 @@ describe('table column', () => {
     it('change column configuration', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
           <template>
@@ -520,14 +520,14 @@ describe('table column', () => {
                 }
               "
               >-</button>
-            <el-table :data="data">
-              <el-table-column
+            <lx-table :data="data">
+              <lx-table-column
                 v-for="item of cols"
                 :prop="item"
                 :label="item"
                 :key="item"
-              ></el-table-column>
-            </el-table>
+              ></lx-table-column>
+            </lx-table>
           </template>
         `,
 
@@ -537,21 +537,21 @@ describe('table column', () => {
       })
 
       await nextTick()
-      expect(wrapper.findAll('.el-table__header-wrapper th').length).toEqual(3)
+      expect(wrapper.findAll('.lx-table__header-wrapper th').length).toEqual(3)
       const addBut = wrapper.find('#addBut')
       const delBut = wrapper.find('#delBut')
       addBut.trigger('click')
       await nextTick()
-      expect(wrapper.findAll('.el-table__header-wrapper th').length).toEqual(4)
+      expect(wrapper.findAll('.lx-table__header-wrapper th').length).toEqual(4)
       addBut.trigger('click')
       await nextTick()
-      expect(wrapper.findAll('.el-table__header-wrapper th').length).toEqual(5)
+      expect(wrapper.findAll('.lx-table__header-wrapper th').length).toEqual(5)
       delBut.trigger('click')
       await nextTick()
-      expect(wrapper.findAll('.el-table__header-wrapper th').length).toEqual(4)
+      expect(wrapper.findAll('.lx-table__header-wrapper th').length).toEqual(4)
       delBut.trigger('click')
       await nextTick()
-      expect(wrapper.findAll('.el-table__header-wrapper th').length).toEqual(3)
+      expect(wrapper.findAll('.lx-table__header-wrapper th').length).toEqual(3)
     })
   })
 
@@ -559,18 +559,18 @@ describe('table column', () => {
     it('should works', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" />
-            <el-table-column label="group">
-              <el-table-column prop="release"/>
-              <el-table-column prop="director"/>
-            </el-table-column>
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <lx-table :data="testData">
+            <lx-table-column prop="name" />
+            <lx-table-column label="group">
+              <lx-table-column prop="release"/>
+              <lx-table-column prop="director"/>
+            </lx-table-column>
+            <lx-table-column prop="runtime"/>
+          </lx-table>
         `,
 
         created() {
@@ -579,7 +579,7 @@ describe('table column', () => {
       })
 
       await nextTick()
-      const trs = wrapper.findAll('.el-table__header tr')
+      const trs = wrapper.findAll('.lx-table__header tr')
       expect(trs.length).toEqual(2)
       const firstRowHeader = trs[0].findAll('th .cell').length
       const secondRowHeader = trs[1].findAll('th .cell').length
@@ -594,21 +594,21 @@ describe('table column', () => {
     it('should works', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" />
-            <el-table-column label="group">
-              <el-table-column label="group's group">
-                <el-table-column prop="release" />
-                <el-table-column prop="runtime"/>
-              </el-table-column>
-              <el-table-column prop="director" />
-            </el-table-column>
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <lx-table :data="testData">
+            <lx-table-column prop="name" />
+            <lx-table-column label="group">
+              <lx-table-column label="group's group">
+                <lx-table-column prop="release" />
+                <lx-table-column prop="runtime"/>
+              </lx-table-column>
+              <lx-table-column prop="director" />
+            </lx-table-column>
+            <lx-table-column prop="runtime"/>
+          </lx-table>
         `,
 
         created() {
@@ -617,7 +617,7 @@ describe('table column', () => {
       })
 
       await nextTick()
-      const trs = wrapper.findAll('.el-table__header tr')
+      const trs = wrapper.findAll('.lx-table__header tr')
       expect(trs.length).toEqual(3)
       const firstRowHeader = trs[0].findAll('th .cell').length
       const secondRowHeader = trs[1].findAll('th .cell').length
@@ -637,15 +637,15 @@ describe('table column', () => {
     it('should work in one column', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column label="group">
-              <el-table-column prop="release"/>
-            </el-table-column>
-          </el-table>
+          <lx-table :data="testData">
+            <lx-table-column label="group">
+              <lx-table-column prop="release"/>
+            </lx-table-column>
+          </lx-table>
         `,
 
         created() {
@@ -654,7 +654,7 @@ describe('table column', () => {
       })
 
       await nextTick()
-      const trs = wrapper.findAll('.el-table__header tr')
+      const trs = wrapper.findAll('.lx-table__header tr')
       expect(trs.length).toEqual(2)
       const firstRowLength = trs[0].findAll('th .cell').length
       const secondRowLength = trs[1].findAll('th .cell').length
@@ -670,28 +670,28 @@ describe('table column', () => {
       const TableColumn = {
         name: 'TableColumn',
         components: {
-          ElTableColumn,
+          LxTableColumn,
         },
         props: {
           item: Object,
         },
         template: `
-          <el-table-column :prop="item.prop" :label="item.label">
+          <lx-table-column :prop="item.prop" :label="item.label">
             <template v-if="item.children" #default>
               <table-column v-for="c in item.children" :key="c.prop" :item="c"/>
             </template>
-          </el-table-column>
+          </lx-table-column>
         `,
       }
       const App = {
         template: `
-          <el-table :data="data">
+          <lx-table :data="data">
             <table-column v-for="item in column" :key="item.prop" :item="item"/>
-          </el-table>
+          </lx-table>
         `,
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
           TableColumn,
         },
         setup() {
@@ -736,8 +736,8 @@ describe('table column', () => {
       }
       const wrapper = mount(App)
       await nextTick()
-      expect(wrapper.find('.el-table__header-wrapper').text()).toMatch('姓名')
-      expect(wrapper.find('.el-table__header-wrapper').text()).toMatch('地址')
+      expect(wrapper.find('.lx-table__header-wrapper').text()).toMatch('姓名')
+      expect(wrapper.find('.lx-table__header-wrapper').text()).toMatch('地址')
     })
 
     it('should not rendered other components in hidden-columns', async () => {
@@ -748,16 +748,16 @@ describe('table column', () => {
       }
       const wrapper = mount({
         components: {
-          ElTableColumn,
-          ElTable,
+          LxTableColumn,
+          LxTable,
           Comp,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name">
+          <lx-table :data="testData">
+            <lx-table-column prop="name">
               <comp></comp>
-            </el-table-column>
-          </el-table>
+            </lx-table-column>
+          </lx-table>
         `,
         data() {
           return {
@@ -774,16 +774,16 @@ describe('table column', () => {
     it('label', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" :label="label"/>
-            <el-table-column prop="release" />
-            <el-table-column prop="director" />
-            <el-table-column prop="runtime" />
-          </el-table>
+          <lx-table :data="testData">
+            <lx-table-column prop="name" :label="label"/>
+            <lx-table-column prop="release" />
+            <lx-table-column prop="director" />
+            <lx-table-column prop="runtime" />
+          </lx-table>
         `,
         data() {
           return {
@@ -797,10 +797,10 @@ describe('table column', () => {
       })
 
       await nextTick()
-      expect(wrapper.find('.el-table__header th .cell').text()).toEqual('name')
+      expect(wrapper.find('.lx-table__header th .cell').text()).toEqual('name')
       wrapper.vm.label = 'NAME'
       wrapper.vm.$nextTick(() => {
-        expect(wrapper.find('.el-table__header th .cell').text()).toEqual(
+        expect(wrapper.find('.lx-table__header th .cell').text()).toEqual(
           'NAME',
         )
         wrapper.unmount()
@@ -810,13 +810,13 @@ describe('table column', () => {
     it('align', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" :align="align"/>
-          </el-table>
+          <lx-table :data="testData">
+            <lx-table-column prop="name" :align="align"/>
+          </lx-table>
         `,
 
         data() {
@@ -831,11 +831,11 @@ describe('table column', () => {
       })
 
       await nextTick()
-      expect(wrapper.findAll('.el-table__body td.is-right').length).toEqual(0)
+      expect(wrapper.findAll('.lx-table__body td.is-right').length).toEqual(0)
       wrapper.vm.align = 'right'
       wrapper.vm.$nextTick(() => {
         expect(
-          wrapper.findAll('.el-table__body td.is-right').length > 0,
+          wrapper.findAll('.lx-table__body td.is-right').length > 0,
         ).toBeTruthy()
         wrapper.unmount()
       })
@@ -843,13 +843,13 @@ describe('table column', () => {
     it('header-align', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" :align="align" :header-align="headerAlign"/>
-          </el-table>
+          <lx-table :data="testData">
+            <lx-table-column prop="name" :align="align" :header-align="headerAlign"/>
+          </lx-table>
         `,
 
         data() {
@@ -865,36 +865,36 @@ describe('table column', () => {
       })
       await nextTick()
       expect(
-        wrapper.findAll('.el-table__header th.is-left').length,
+        wrapper.findAll('.lx-table__header th.is-left').length,
       ).toBeGreaterThanOrEqual(0)
-      expect(wrapper.findAll('.el-table__header th.is-center').length).toEqual(
+      expect(wrapper.findAll('.lx-table__header th.is-center').length).toEqual(
         0,
       )
-      expect(wrapper.findAll('.el-table__header th.is-right').length).toEqual(0)
+      expect(wrapper.findAll('.lx-table__header th.is-right').length).toEqual(0)
       wrapper.vm.align = 'right'
       await nextTick()
-      expect(wrapper.findAll('.el-table__header th.is-left').length).toEqual(0)
-      expect(wrapper.findAll('.el-table__header th.is-center').length).toEqual(
+      expect(wrapper.findAll('.lx-table__header th.is-left').length).toEqual(0)
+      expect(wrapper.findAll('.lx-table__header th.is-center').length).toEqual(
         0,
       )
       expect(
-        wrapper.findAll('.el-table__header th.is-right').length,
+        wrapper.findAll('.lx-table__header th.is-right').length,
       ).toBeGreaterThanOrEqual(0)
       wrapper.vm.headerAlign = 'center'
       await nextTick()
-      expect(wrapper.findAll('.el-table__header th.is-left').length).toEqual(0)
+      expect(wrapper.findAll('.lx-table__header th.is-left').length).toEqual(0)
       expect(
-        wrapper.findAll('.el-table__header th.is-center').length,
+        wrapper.findAll('.lx-table__header th.is-center').length,
       ).toBeGreaterThanOrEqual(0)
-      expect(wrapper.findAll('.el-table__header th.is-right').length).toEqual(0)
+      expect(wrapper.findAll('.lx-table__header th.is-right').length).toEqual(0)
       wrapper.vm.headerAlign = null
       await nextTick()
-      expect(wrapper.findAll('.el-table__header th.is-left').length).toEqual(0)
-      expect(wrapper.findAll('.el-table__header th.is-center').length).toEqual(
+      expect(wrapper.findAll('.lx-table__header th.is-left').length).toEqual(0)
+      expect(wrapper.findAll('.lx-table__header th.is-center').length).toEqual(
         0,
       )
       expect(
-        wrapper.findAll('.el-table__header th.is-right').length,
+        wrapper.findAll('.lx-table__header th.is-right').length,
       ).toBeGreaterThanOrEqual(0)
       wrapper.unmount()
     })
@@ -902,13 +902,13 @@ describe('table column', () => {
     it('width', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" :fit="false">
-            <el-table-column prop="name" :width="width"/>
-          </el-table>
+          <lx-table :data="testData" :fit="false">
+            <lx-table-column prop="name" :width="width"/>
+          </lx-table>
         `,
 
         data() {
@@ -923,19 +923,19 @@ describe('table column', () => {
       })
 
       await nextTick()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.lx-table__body col').attributes('width')).toEqual(
         '100',
       )
 
       wrapper.vm.width = 200
       await nextTick()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.lx-table__body col').attributes('width')).toEqual(
         '200',
       )
 
       wrapper.vm.width = '300px'
       await nextTick()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.lx-table__body col').attributes('width')).toEqual(
         '300',
       )
       wrapper.unmount()
@@ -944,13 +944,13 @@ describe('table column', () => {
     it('min-width', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData" :fit="false">
-            <el-table-column prop="name" :min-width="width"/>
-          </el-table>
+          <lx-table :data="testData" :fit="false">
+            <lx-table-column prop="name" :min-width="width"/>
+          </lx-table>
         `,
 
         data() {
@@ -965,19 +965,19 @@ describe('table column', () => {
       })
 
       await nextTick()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.lx-table__body col').attributes('width')).toEqual(
         '100',
       )
 
       wrapper.vm.width = 200
       await nextTick()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.lx-table__body col').attributes('width')).toEqual(
         '200',
       )
 
       wrapper.vm.width = '300px'
       await nextTick()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.lx-table__body col').attributes('width')).toEqual(
         '300',
       )
       wrapper.unmount()
@@ -986,16 +986,16 @@ describe('table column', () => {
     it('fixed', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column :fixed="fixed" />
-            <el-table-column prop="release" />
-            <el-table-column prop="director" />
-            <el-table-column prop="runtime" />
-          </el-table>
+          <lx-table :data="testData">
+            <lx-table-column :fixed="fixed" />
+            <lx-table-column prop="release" />
+            <lx-table-column prop="director" />
+            <lx-table-column prop="runtime" />
+          </lx-table>
         `,
 
         data() {
@@ -1010,11 +1010,11 @@ describe('table column', () => {
       })
 
       await nextTick()
-      expect(Object.keys(wrapper.find('.el-table__fixed')).length).toEqual(0)
+      expect(Object.keys(wrapper.find('.lx-table__fixed')).length).toEqual(0)
       wrapper.vm.fixed = true
       await nextTick()
       expect(
-        Object.keys(wrapper.find('.el-table__fixed')).length,
+        Object.keys(wrapper.find('.lx-table__fixed')).length,
       ).toBeGreaterThan(0)
       wrapper.unmount()
     })
@@ -1022,16 +1022,16 @@ describe('table column', () => {
     it('prop', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          LxTable,
+          LxTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column :prop="prop" />
-            <el-table-column prop="release" />
-            <el-table-column prop="director" />
-            <el-table-column prop="runtime" />
-          </el-table>
+          <lx-table :data="testData">
+            <lx-table-column :prop="prop" />
+            <lx-table-column prop="release" />
+            <lx-table-column prop="director" />
+            <lx-table-column prop="runtime" />
+          </lx-table>
         `,
 
         data() {
@@ -1046,16 +1046,16 @@ describe('table column', () => {
       })
 
       await nextTick()
-      let firstColumnContent = wrapper.find('.el-table__body td .cell').text()
+      let firstColumnContent = wrapper.find('.lx-table__body td .cell').text()
       let secondColumnContent = wrapper
-        .find('.el-table__body td:nth-child(2) .cell')
+        .find('.lx-table__body td:nth-child(2) .cell')
         .text()
       expect(firstColumnContent).not.toEqual(secondColumnContent)
       wrapper.vm.prop = 'release'
       await nextTick()
-      firstColumnContent = wrapper.find('.el-table__body td .cell').text()
+      firstColumnContent = wrapper.find('.lx-table__body td .cell').text()
       secondColumnContent = wrapper
-        .find('.el-table__body td:nth-child(2) .cell')
+        .find('.lx-table__body td:nth-child(2) .cell')
         .text()
       expect(firstColumnContent).toEqual(secondColumnContent)
       wrapper.unmount()
@@ -1134,11 +1134,11 @@ describe('table column', () => {
         Object.assign(
           {
             components: {
-              ElTable,
-              ElTableColumn,
+              LxTable,
+              LxTableColumn,
             },
             template: `
-              <el-table
+              <lx-table
                 ref="table"
                 :data="testData"
                 row-key="id"
@@ -1146,26 +1146,26 @@ describe('table column', () => {
                 default-expand-all
                 :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
               >
-                <el-table-column type="index"></el-table-column>
-                <el-table-column type="selection" :selectable="selectable"></el-table-column>
-                <el-table-column prop="id" label="id"></el-table-column>
-                <el-table-column
+                <lx-table-column type="index"></lx-table-column>
+                <lx-table-column type="selection" :selectable="selectable"></lx-table-column>
+                <lx-table-column prop="id" label="id"></lx-table-column>
+                <lx-table-column
                   prop="date"
                   label="Date"
                   sortable
                   width="180">
-                </el-table-column>
-                <el-table-column
+                </lx-table-column>
+                <lx-table-column
                   prop="name"
                   label="Name"
                   sortable
                   width="180">
-                </el-table-column>
-                <el-table-column
+                </lx-table-column>
+                <lx-table-column
                   prop="address"
                   label="Address">
-                </el-table-column>
-              </el-table>
+                </lx-table-column>
+              </lx-table>
           `,
             methods: {
               selectable(row) {

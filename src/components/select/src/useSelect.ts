@@ -24,7 +24,7 @@ import { elFormKey, elFormItemKey } from '@element-plus/tokens'
 import isEqual from 'lodash/isEqual'
 import { isObject, toRawType } from '@vue/shared'
 
-import type { ElFormContext, ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
 import { SelectOptionProxy } from './token'
 
 export function useSelectStates(props) {
@@ -75,8 +75,8 @@ export const useSelect = (props, states: States, ctx) => {
   const hoverOption = ref(-1)
 
   // inject
-  const elForm = inject(elFormKey, {} as ElFormContext)
-  const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+  const elForm = inject(elFormKey, {} as LxFormContext)
+  const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
 
   const readonly = computed(() => !props.filterable || props.multiple || (!isIE() && !isEdge() && !states.visible))
 
@@ -552,7 +552,7 @@ export const useSelect = (props, states: States, ctx) => {
     }
 
     if (popper.value && target) {
-      const menu = popper.value?.popperRef?.querySelector?.('.el-select-dropdown__wrap')
+      const menu = popper.value?.popperRef?.querySelector?.('.lx-select-dropdown__wrap')
       if (menu) {
         scrollIntoView(menu, target)
       }

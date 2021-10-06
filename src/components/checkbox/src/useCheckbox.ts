@@ -11,7 +11,7 @@ import { useGlobalConfig } from '@element-plus/utils/util'
 import { elFormKey, elFormItemKey } from '@element-plus/tokens'
 
 import type { ExtractPropTypes } from 'vue'
-import type { ElFormContext, ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
 import type { PartialReturnType } from '@element-plus/utils/types'
 import type { ICheckboxGroupInstance } from './checkbox.type'
 
@@ -45,10 +45,10 @@ export type IUseCheckboxProps = ExtractPropTypes<typeof useCheckboxProps>
 
 export const useCheckboxGroup = () => {
   const ELEMENT = useGlobalConfig()
-  const elForm = inject(elFormKey, {} as ElFormContext)
-  const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+  const elForm = inject(elFormKey, {} as LxFormContext)
+  const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
   const checkboxGroup = inject<ICheckboxGroupInstance>('CheckboxGroup', {})
-  const isGroup = computed(() => checkboxGroup && checkboxGroup?.name === 'ElCheckboxGroup')
+  const isGroup = computed(() => checkboxGroup && checkboxGroup?.name === 'LxCheckboxGroup')
   const elFormItemSize = computed(() => {
     return elFormItem.size
   })

@@ -10,6 +10,6 @@ Select.install = (app: App): void => {
 const _Select = Select as SFCWithInstall<typeof Select>
 
 export default _Select
-export const ElSelectV2 = _Select
+export const LxSelectV2 = _Select
 
 export * from './src/token'

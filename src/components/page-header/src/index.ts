@@ -10,4 +10,4 @@ PageHeader.install = (app: App): void => {
 const _PageHeader = PageHeader as SFCWithInstall<typeof PageHeader>
 
 export default _PageHeader
-export const ElPageHeader = _PageHeader
+export const LxPageHeader = _PageHeader

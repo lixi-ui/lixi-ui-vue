@@ -106,7 +106,7 @@ export function useDragNodeHandler({ props, ctx, el$, dropIndicator$, store }) {
       dropType = 'none'
     }
 
-    const iconPosition = dropNode.$el.querySelector('.el-tree-node__expand-icon').getBoundingClientRect()
+    const iconPosition = dropNode.$el.querySelector('.lx-tree-node__expand-icon').getBoundingClientRect()
     const dropIndicator = dropIndicator$.value
     if (dropType === 'before') {
       indicatorTop = iconPosition.top - treePosition.top

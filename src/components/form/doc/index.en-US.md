@@ -13,59 +13,59 @@ It includes all kinds of input items, such as `input`, `select`, `radio` and `ch
 :::demo In each `form` component, you need a `form-item` field to be the container of your input item.
 
 ```html
-<el-form ref="form" :model="form" label-width="120px">
-  <el-form-item label="Activity name">
-    <el-input v-model="form.name"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity zone">
-    <el-select v-model="form.region" placeholder="please select your zone">
-      <el-option label="Zone one" value="shanghai"></el-option>
-      <el-option label="Zone two" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="Activity time">
-    <el-col :span="11">
-      <el-date-picker
+<lx-form ref="form" :model="form" label-width="120px">
+  <lx-form-item label="Activity name">
+    <lx-input v-model="form.name"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="Activity zone">
+    <lx-select v-model="form.region" placeholder="please select your zone">
+      <lx-option label="Zone one" value="shanghai"></lx-option>
+      <lx-option label="Zone two" value="beijing"></lx-option>
+    </lx-select>
+  </lx-form-item>
+  <lx-form-item label="Activity time">
+    <lx-col :span="11">
+      <lx-date-picker
         type="date"
         placeholder="Pick a date"
         v-model="form.date1"
         style="width: 100%;"
-      ></el-date-picker>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-time-picker
+      ></lx-date-picker>
+    </lx-col>
+    <lx-col class="line" :span="2">-</lx-col>
+    <lx-col :span="11">
+      <lx-time-picker
         placeholder="Pick a time"
         v-model="form.date2"
         style="width: 100%;"
-      ></el-time-picker>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="Instant delivery">
-    <el-switch v-model="form.delivery"></el-switch>
-  </el-form-item>
-  <el-form-item label="Activity type">
-    <el-checkbox-group v-model="form.type">
-      <el-checkbox label="Online activities" name="type"></el-checkbox>
-      <el-checkbox label="Promotion activities" name="type"></el-checkbox>
-      <el-checkbox label="Offline activities" name="type"></el-checkbox>
-      <el-checkbox label="Simple brand exposure" name="type"></el-checkbox>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="Resources">
-    <el-radio-group v-model="form.resource">
-      <el-radio label="Sponsor"></el-radio>
-      <el-radio label="Venue"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item label="Activity form">
-    <el-input type="textarea" v-model="form.desc"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="onSubmit">Create</el-button>
-    <el-button>Cancel</el-button>
-  </el-form-item>
-</el-form>
+      ></lx-time-picker>
+    </lx-col>
+  </lx-form-item>
+  <lx-form-item label="Instant delivery">
+    <lx-switch v-model="form.delivery"></lx-switch>
+  </lx-form-item>
+  <lx-form-item label="Activity type">
+    <lx-checkbox-group v-model="form.type">
+      <lx-checkbox label="Online activities" name="type"></lx-checkbox>
+      <lx-checkbox label="Promotion activities" name="type"></lx-checkbox>
+      <lx-checkbox label="Offline activities" name="type"></lx-checkbox>
+      <lx-checkbox label="Simple brand exposure" name="type"></lx-checkbox>
+    </lx-checkbox-group>
+  </lx-form-item>
+  <lx-form-item label="Resources">
+    <lx-radio-group v-model="form.resource">
+      <lx-radio label="Sponsor"></lx-radio>
+      <lx-radio label="Venue"></lx-radio>
+    </lx-radio-group>
+  </lx-form-item>
+  <lx-form-item label="Activity form">
+    <lx-input type="textarea" v-model="form.desc"></lx-input>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="onSubmit">Create</lx-button>
+    <lx-button>Cancel</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -98,7 +98,7 @@ It includes all kinds of input items, such as `input`, `select`, `radio` and `ch
 
 > <i>When there is only one single-line text input field in a form, the user agent should accept Enter in that field as a request to submit the form.</i>
 
-To prevent this behavior, you can add `@submit.prevent` on `<el-form>`.
+To prevent this behavior, you can add `@submit.prevent` on `<lx-form>`.
 :::
 
 ### Inline form
@@ -108,20 +108,20 @@ When the vertical space is limited and the form is relatively simple, you can pu
 :::demo Set the `inline` attribute to `true` and the form will be inline.
 
 ```html
-<el-form :inline="true" :model="formInline" class="demo-form-inline">
-  <el-form-item label="Approved by">
-    <el-input v-model="formInline.user" placeholder="Approved by"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity zone">
-    <el-select v-model="formInline.region" placeholder="Activity zone">
-      <el-option label="Zone one" value="shanghai"></el-option>
-      <el-option label="Zone two" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="onSubmit">Query</el-button>
-  </el-form-item>
-</el-form>
+<lx-form :inline="true" :model="formInline" class="demo-form-inline">
+  <lx-form-item label="Approved by">
+    <lx-input v-model="formInline.user" placeholder="Approved by"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="Activity zone">
+    <lx-select v-model="formInline.region" placeholder="Activity zone">
+      <lx-option label="Zone one" value="shanghai"></lx-option>
+      <lx-option label="Zone two" value="beijing"></lx-option>
+    </lx-select>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="onSubmit">Query</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -150,27 +150,27 @@ Depending on your design, there are several different ways to align your label e
 :::demo The `label-position` attribute decides how labels align, it can be `top` or `left`. When set to `top`, labels will be placed at the top of the form field.
 
 ```html
-<el-radio-group v-model="labelPosition" size="small">
-  <el-radio-button label="left">Left</el-radio-button>
-  <el-radio-button label="right">Right</el-radio-button>
-  <el-radio-button label="top">Top</el-radio-button>
-</el-radio-group>
+<lx-radio-group v-model="labelPosition" size="small">
+  <lx-radio-button label="left">Left</lx-radio-button>
+  <lx-radio-button label="right">Right</lx-radio-button>
+  <lx-radio-button label="top">Top</lx-radio-button>
+</lx-radio-group>
 <div style="margin: 20px;"></div>
-<el-form
+<lx-form
   :label-position="labelPosition"
   label-width="100px"
   :model="formLabelAlign"
 >
-  <el-form-item label="Name">
-    <el-input v-model="formLabelAlign.name"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity zone">
-    <el-input v-model="formLabelAlign.region"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity form">
-    <el-input v-model="formLabelAlign.type"></el-input>
-  </el-form-item>
-</el-form>
+  <lx-form-item label="Name">
+    <lx-input v-model="formLabelAlign.name"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="Activity zone">
+    <lx-input v-model="formLabelAlign.region"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="Activity form">
+    <lx-input v-model="formLabelAlign.type"></lx-input>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -196,69 +196,69 @@ Form component allows you to verify your data, helping you find and correct erro
 :::demo Just add the `rules` attribute for `Form` component, pass validation rules, and set `prop` attribute for `Form-Item` as a specific key that needs to be validated. See more information at [async-validator](https://github.com/yiminghe/async-validator).
 
 ```html
-<el-form
+<lx-form
   :model="ruleForm"
   :rules="rules"
   ref="ruleForm"
   label-width="120px"
   class="demo-ruleForm"
 >
-  <el-form-item label="Activity name" prop="name">
-    <el-input v-model="ruleForm.name"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity zone" prop="region">
-    <el-select v-model="ruleForm.region" placeholder="Activity zone">
-      <el-option label="Zone one" value="shanghai"></el-option>
-      <el-option label="Zone two" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="Activity time" required>
-    <el-col :span="11">
-      <el-form-item prop="date1">
-        <el-date-picker
+  <lx-form-item label="Activity name" prop="name">
+    <lx-input v-model="ruleForm.name"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="Activity zone" prop="region">
+    <lx-select v-model="ruleForm.region" placeholder="Activity zone">
+      <lx-option label="Zone one" value="shanghai"></lx-option>
+      <lx-option label="Zone two" value="beijing"></lx-option>
+    </lx-select>
+  </lx-form-item>
+  <lx-form-item label="Activity time" required>
+    <lx-col :span="11">
+      <lx-form-item prop="date1">
+        <lx-date-picker
           type="date"
           placeholder="Pick a date"
           v-model="ruleForm.date1"
           style="width: 100%;"
-        ></el-date-picker>
-      </el-form-item>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-form-item prop="date2">
-        <el-time-picker
+        ></lx-date-picker>
+      </lx-form-item>
+    </lx-col>
+    <lx-col class="line" :span="2">-</lx-col>
+    <lx-col :span="11">
+      <lx-form-item prop="date2">
+        <lx-time-picker
           placeholder="Pick a time"
           v-model="ruleForm.date2"
           style="width: 100%;"
-        ></el-time-picker>
-      </el-form-item>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="Instant delivery" prop="delivery">
-    <el-switch v-model="ruleForm.delivery"></el-switch>
-  </el-form-item>
-  <el-form-item label="Activity type" prop="type">
-    <el-checkbox-group v-model="ruleForm.type">
-      <el-checkbox label="Online activities" name="type"></el-checkbox>
-      <el-checkbox label="Promotion activities" name="type"></el-checkbox>
-      <el-checkbox label="Offline activities" name="type"></el-checkbox>
-      <el-checkbox label="Simple brand exposure" name="type"></el-checkbox>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="Resources" prop="resource">
-    <el-radio-group v-model="ruleForm.resource">
-      <el-radio label="Sponsorship"></el-radio>
-      <el-radio label="Venue"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item label="Activity form" prop="desc">
-    <el-input type="textarea" v-model="ruleForm.desc"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')">Create</el-button>
-    <el-button @click="resetForm('ruleForm')">Reset</el-button>
-  </el-form-item>
-</el-form>
+        ></lx-time-picker>
+      </lx-form-item>
+    </lx-col>
+  </lx-form-item>
+  <lx-form-item label="Instant delivery" prop="delivery">
+    <lx-switch v-model="ruleForm.delivery"></lx-switch>
+  </lx-form-item>
+  <lx-form-item label="Activity type" prop="type">
+    <lx-checkbox-group v-model="ruleForm.type">
+      <lx-checkbox label="Online activities" name="type"></lx-checkbox>
+      <lx-checkbox label="Promotion activities" name="type"></lx-checkbox>
+      <lx-checkbox label="Offline activities" name="type"></lx-checkbox>
+      <lx-checkbox label="Simple brand exposure" name="type"></lx-checkbox>
+    </lx-checkbox-group>
+  </lx-form-item>
+  <lx-form-item label="Resources" prop="resource">
+    <lx-radio-group v-model="ruleForm.resource">
+      <lx-radio label="Sponsorship"></lx-radio>
+      <lx-radio label="Venue"></lx-radio>
+    </lx-radio-group>
+  </lx-form-item>
+  <lx-form-item label="Activity form" prop="desc">
+    <lx-input type="textarea" v-model="ruleForm.desc"></lx-input>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="submitForm('ruleForm')">Create</lx-button>
+    <lx-button @click="resetForm('ruleForm')">Reset</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -363,7 +363,7 @@ This example shows how to customize your own validation rules to finish a two-fa
 :::demo Here we use `status-icon` to reflect validation result as an icon.
 
 ```html
-<el-form
+<lx-form
   :model="ruleForm"
   status-icon
   :rules="rules"
@@ -371,28 +371,28 @@ This example shows how to customize your own validation rules to finish a two-fa
   label-width="120px"
   class="demo-ruleForm"
 >
-  <el-form-item label="Password" prop="pass">
-    <el-input
+  <lx-form-item label="Password" prop="pass">
+    <lx-input
       type="password"
       v-model="ruleForm.pass"
       autocomplete="off"
-    ></el-input>
-  </el-form-item>
-  <el-form-item label="Confirm" prop="checkPass">
-    <el-input
+    ></lx-input>
+  </lx-form-item>
+  <lx-form-item label="Confirm" prop="checkPass">
+    <lx-input
       type="password"
       v-model="ruleForm.checkPass"
       autocomplete="off"
-    ></el-input>
-  </el-form-item>
-  <el-form-item label="Age" prop="age">
-    <el-input v-model.number="ruleForm.age"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')">Submit</el-button>
-    <el-button @click="resetForm('ruleForm')">Reset</el-button>
-  </el-form-item>
-</el-form>
+    ></lx-input>
+  </lx-form-item>
+  <lx-form-item label="Age" prop="age">
+    <lx-input v-model.number="ruleForm.age"></lx-input>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="submitForm('ruleForm')">Submit</lx-button>
+    <lx-button @click="resetForm('ruleForm')">Reset</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -474,13 +474,13 @@ Custom validate callback function must be called. See more advanced usage at [as
 :::demo In addition to passing all validation rules at once on the form component, you can also pass the validation rules or delete rules on a single form field dynamically.
 
 ```html
-<el-form
+<lx-form
   :model="dynamicValidateForm"
   ref="dynamicValidateForm"
   label-width="120px"
   class="demo-dynamic"
 >
-  <el-form-item
+  <lx-form-item
     prop="email"
     label="Email"
     :rules="[
@@ -488,9 +488,9 @@ Custom validate callback function must be called. See more advanced usage at [as
       { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
     ]"
   >
-    <el-input v-model="dynamicValidateForm.email"></el-input>
-  </el-form-item>
-  <el-form-item
+    <lx-input v-model="dynamicValidateForm.email"></lx-input>
+  </lx-form-item>
+  <lx-form-item
     v-for="(domain, index) in dynamicValidateForm.domains"
     :label="'Domain' + index"
     :key="domain.key"
@@ -499,17 +499,17 @@ Custom validate callback function must be called. See more advanced usage at [as
       required: true, message: 'domain can not be null', trigger: 'blur'
     }"
   >
-    <el-input v-model="domain.value"></el-input
-    ><el-button @click.prevent="removeDomain(domain)">Delete</el-button>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('dynamicValidateForm')"
-      >Submit</el-button
+    <lx-input v-model="domain.value"></lx-input
+    ><lx-button @click.prevent="removeDomain(domain)">Delete</lx-button>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="submitForm('dynamicValidateForm')"
+      >Submit</lx-button
     >
-    <el-button @click="addDomain">New domain</el-button>
-    <el-button @click="resetForm('dynamicValidateForm')">Reset</el-button>
-  </el-form-item>
-</el-form>
+    <lx-button @click="addDomain">New domain</lx-button>
+    <lx-button @click="resetForm('dynamicValidateForm')">Reset</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -563,13 +563,13 @@ Custom validate callback function must be called. See more advanced usage at [as
 :::demo Number Validate need a `.number` modifier added on the input `v-model` binding，it's used to transform the string value to the number which is provided by Vuejs.
 
 ```html
-<el-form
+<lx-form
   :model="numberValidateForm"
   ref="numberValidateForm"
   label-width="100px"
   class="demo-ruleForm"
 >
-  <el-form-item
+  <lx-form-item
     label="age"
     prop="age"
     :rules="[
@@ -577,19 +577,19 @@ Custom validate callback function must be called. See more advanced usage at [as
       { type: 'number', message: 'age must be a number'}
     ]"
   >
-    <el-input
+    <lx-input
       type="age"
       v-model.number="numberValidateForm.age"
       autocomplete="off"
-    ></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('numberValidateForm')"
-      >Submit</el-button
+    ></lx-input>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="submitForm('numberValidateForm')"
+      >Submit</lx-button
     >
-    <el-button @click="resetForm('numberValidateForm')">Reset</el-button>
-  </el-form-item>
-</el-form>
+    <lx-button @click="resetForm('numberValidateForm')">Reset</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -631,57 +631,57 @@ All components in a Form inherit their `size` attribute from that Form. Similarl
 :::demo Still you can fine tune each component's `size` if you don't want that component to inherit its size from From or FormIten.
 
 ```html
-<el-form ref="form" :model="sizeForm" label-width="120px" size="mini">
-  <el-form-item label="Activity name">
-    <el-input v-model="sizeForm.name"></el-input>
-  </el-form-item>
-  <el-form-item label="Activity zone">
-    <el-select v-model="sizeForm.region" placeholder="please select your zone">
-      <el-option label="Zone one" value="shanghai"></el-option>
-      <el-option label="Zone two" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="Activity time">
-    <el-col :span="11">
-      <el-date-picker
+<lx-form ref="form" :model="sizeForm" label-width="120px" size="mini">
+  <lx-form-item label="Activity name">
+    <lx-input v-model="sizeForm.name"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="Activity zone">
+    <lx-select v-model="sizeForm.region" placeholder="please select your zone">
+      <lx-option label="Zone one" value="shanghai"></lx-option>
+      <lx-option label="Zone two" value="beijing"></lx-option>
+    </lx-select>
+  </lx-form-item>
+  <lx-form-item label="Activity time">
+    <lx-col :span="11">
+      <lx-date-picker
         type="date"
         placeholder="Pick a date"
         v-model="sizeForm.date1"
         style="width: 100%;"
-      ></el-date-picker>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-time-picker
+      ></lx-date-picker>
+    </lx-col>
+    <lx-col class="line" :span="2">-</lx-col>
+    <lx-col :span="11">
+      <lx-time-picker
         placeholder="Pick a time"
         v-model="sizeForm.date2"
         style="width: 100%;"
-      ></el-time-picker>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="Activity type">
-    <el-checkbox-group v-model="sizeForm.type">
-      <el-checkbox-button
+      ></lx-time-picker>
+    </lx-col>
+  </lx-form-item>
+  <lx-form-item label="Activity type">
+    <lx-checkbox-group v-model="sizeForm.type">
+      <lx-checkbox-button
         label="Online activities"
         name="type"
-      ></el-checkbox-button>
-      <el-checkbox-button
+      ></lx-checkbox-button>
+      <lx-checkbox-button
         label="Promotion activities"
         name="type"
-      ></el-checkbox-button>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="Resources">
-    <el-radio-group v-model="sizeForm.resource" size="medium">
-      <el-radio border label="Sponsor"></el-radio>
-      <el-radio border label="Venue"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item size="large">
-    <el-button type="primary" @click="onSubmit">Create</el-button>
-    <el-button>Cancel</el-button>
-  </el-form-item>
-</el-form>
+      ></lx-checkbox-button>
+    </lx-checkbox-group>
+  </lx-form-item>
+  <lx-form-item label="Resources">
+    <lx-radio-group v-model="sizeForm.resource" size="medium">
+      <lx-radio border label="Sponsor"></lx-radio>
+      <lx-radio border label="Venue"></lx-radio>
+    </lx-radio-group>
+  </lx-form-item>
+  <lx-form-item size="large">
+    <lx-button type="primary" @click="onSubmit">Create</lx-button>
+    <lx-button>Cancel</lx-button>
+  </lx-form-item>
+</lx-form>
 
 <script>
   export default {

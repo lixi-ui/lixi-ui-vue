@@ -10,6 +10,6 @@ CascaderPanel.install = (app: App): void => {
 const _CascaderPanel = CascaderPanel as SFCWithInstall<typeof CascaderPanel>
 
 export default _CascaderPanel
-export const ElCascaderPanel = _CascaderPanel
+export const LxCascaderPanel = _CascaderPanel
 export * from './src/types'
 export * from './src/config'

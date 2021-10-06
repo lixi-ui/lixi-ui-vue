@@ -9,10 +9,10 @@ Además de las características nativas de img, soporte de carga perezosa, marca
 <div class="demo-image">
   <div class="block" v-for="fit in fits" :key="fit">
     <span class="demonstration">{{ fit }}</span>
-    <el-image
+    <lx-image
       style="width: 100px; height: 100px"
       :src="url"
-      :fit="fit"></el-image>
+      :fit="fit"></lx-image>
   </div>
 </div>
 
@@ -55,17 +55,17 @@ Además de las características nativas de img, soporte de carga perezosa, marca
 <div class="demo-image__placeholder">
   <div class="block">
     <span class="demonstration">Default</span>
-    <el-image :src="src"></el-image>
+    <lx-image :src="src"></lx-image>
   </div>
   <div class="block">
     <span class="demonstration">Custom</span>
-    <el-image :src="src">
+    <lx-image :src="src">
       <template #placeholder>
         <div class="image-slot">
           Loading<span class="dot">...</span>
         </div>
       </template>
-    </el-image>
+    </lx-image>
   </div>
 </div>
 
@@ -105,17 +105,17 @@ Además de las características nativas de img, soporte de carga perezosa, marca
 <div class="demo-image__error">
   <div class="block">
     <span class="demonstration">Default</span>
-    <el-image></el-image>
+    <lx-image></lx-image>
   </div>
   <div class="block">
     <span class="demonstration">Custom</span>
-    <el-image>
+    <lx-image>
       <template #error>
         <div class="image-slot">
           <i class="el-icon-picture-outline"></i>
         </div>
       </template>
-    </el-image>
+    </lx-image>
   </div>
 </div>
 ```
@@ -127,7 +127,7 @@ Además de las características nativas de img, soporte de carga perezosa, marca
 
 ```html
 <div class="demo-image__lazy">
-  <el-image v-for="url in urls" :key="url" :src="url" lazy></el-image>
+  <lx-image v-for="url in urls" :key="url" :src="url" lazy></lx-image>
 </div>
 
 <script>
@@ -179,11 +179,11 @@ Además de las características nativas de img, soporte de carga perezosa, marca
 :::demo permitir una vista previa grande de la imagen configurando la prop `previewSrcList`.
 ```html
 <div class="demo-image__preview">
-  <el-image
+  <lx-image
     style="width: 100px; height: 100px"
     :src="url"
     :preview-src-list="srcList">
-  </el-image>
+  </lx-image>
 </div>
 
 <script>
@@ -234,7 +234,7 @@ Además de las características nativas de img, soporte de carga perezosa, marca
 | preview-src-list | permitir una vista previa grande de la imagen | Array | — | - |
 | referrer-policy | referrerPolicy nativo | string | - | - |
 | src | origen de la imagen, igual que en nativo | string | — | - |
-| scroll-container | El contenedor para añadir el scroll listener cuando se utiliza lazy load | string / HTMLElement | — | El contenedor padre más cercano cuya propiedad de desbordamiento es auto o scroll |
+| scroll-container | Lx contenedor para añadir el scroll listener cuando se utiliza lazy load | string / HTMLElement | — | Lx contenedor padre más cercano cuya propiedad de desbordamiento es auto o scroll |
 | z-index | establecer el z-index de la vista previa de la imagen | Number | — | 2000 |
 | append-to-body     | whether to append image itself to body. A nested parent element attribute transform should have this attribute set to `true` | boolean   | — | false |
 

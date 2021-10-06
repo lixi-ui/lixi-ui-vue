@@ -85,7 +85,7 @@ export function createLoadingComponent({
   }
 
   const elLoadingComponent = {
-    name: 'ElLoading',
+    name: 'LxLoading',
     setup() {
       return componentSetupConfig
     },

@@ -4,20 +4,20 @@ Muestra un mensaje de notificación global en una esquina de la página.
 
 ### Uso básico
 
-:::demo Element Plus ha registrado el método`$notify` y recibe un objeto como parámetro. En el caso más sencillo, puede establecer el campo de `title` y el campo de ` message` para el título y el cuerpo de la notificación. De forma predeterminada, la notificación se cierra automáticamente después de 4500ms, pero configurando `duration`  se puede controlar su duración. Específicamente, si está configurado en `0`, no se cerrará automáticamente. Tenga en cuenta que `duration` recibe un `Number` en milisegundos.
+:::demo Lxement Plus ha registrado el método`$notify` y recibe un objeto como parámetro. En el caso más sencillo, puede establecer el campo de `title` y el campo de ` message` para el título y el cuerpo de la notificación. De forma predeterminada, la notificación se cierra automáticamente después de 4500ms, pero configurando `duration`  se puede controlar su duración. Específicamente, si está configurado en `0`, no se cerrará automáticamente. Tenga en cuenta que `duration` recibe un `Number` en milisegundos.
 
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     Closes automatically
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     Won't close automatically
-    </el-button>
+    </lx-button>
 </template>
 
 <script>
@@ -46,20 +46,20 @@ Muestra un mensaje de notificación global en una esquina de la página.
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Title',
           message: h('i', { style: 'color: teal' }, 'This is a reminder')
         });
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Prompt',
           message: 'This is a message that does not automatically close',
           duration: 0
@@ -81,30 +81,30 @@ Muestra un mensaje de notificación global en una esquina de la página.
 
 Proporcionamos cuatro tipos: success, warning, info y error.
 
-:::demo Element Plus proporciona cuatro tipos de notificación: `success`, `warning`, `info` y `error`. Se definen por el campo `type`  y se ignorarán otros valores. También se han registrado métodos para estos tipos que se pueden invocar directamente como en el ejemplo `open3` y `open4` sin pasar un campo `type`.
+:::demo Lxement Plus proporciona cuatro tipos de notificación: `success`, `warning`, `info` y `error`. Se definen por el campo `type`  y se ignorarán otros valores. También se han registrado métodos para estos tipos que se pueden invocar directamente como en el ejemplo `open3` y `open4` sin pasar un campo `type`.
 
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     Success
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     Warning
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open3">
     Info
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open4">
     Error
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -146,13 +146,13 @@ Proporcionamos cuatro tipos: success, warning, info y error.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Success',
           message: 'This is a success message',
           type: 'success',
@@ -160,7 +160,7 @@ Proporcionamos cuatro tipos: success, warning, info y error.
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Warning',
           message: 'This is a warning message',
           type: 'warning',
@@ -168,14 +168,14 @@ Proporcionamos cuatro tipos: success, warning, info y error.
       };
 
       const open3 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Info',
           message: 'This is an info message',
         });
       };
 
       const open4 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Error',
           message: 'This is an error message',
         });
@@ -198,30 +198,30 @@ Proporcionamos cuatro tipos: success, warning, info y error.
 
 La notificación puede surgir de cualquier rincón que uno desee.
 
-:::demo El atributo `position` define desde qué esquina se desliza la notificación. Puede ser `top-right`, `top-left`, `bottom-right` o `bottom-left`. Predeterminado: `top-right`.
+:::demo Lx atributo `position` define desde qué esquina se desliza la notificación. Puede ser `top-right`, `top-left`, `bottom-right` o `bottom-left`. Predeterminado: `top-right`.
 
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     Top Right
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     Bottom Right
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open3">
     Bottom Left
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open4">
     Top Left
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -264,20 +264,20 @@ La notificación puede surgir de cualquier rincón que uno desee.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'I\'m at the top right corner',
         });
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'I\'m at the bottom right corner',
           position: 'bottom-right',
@@ -285,7 +285,7 @@ La notificación puede surgir de cualquier rincón que uno desee.
       };
 
       const open3 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'I\'m at the bottom left corner',
           position: 'bottom-left',
@@ -293,7 +293,7 @@ La notificación puede surgir de cualquier rincón que uno desee.
       };
 
       const open4 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'I\'m at the top left corner',
           position: 'top-left',
@@ -321,11 +321,11 @@ Personalizar el desplazamiento de notificación desde el borde de la pantalla.
 
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     Notification with offset
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -345,13 +345,13 @@ Personalizar el desplazamiento de notificación desde el borde de la pantalla.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification.success({
+        LxNotification.success({
           title: 'Success',
           message: 'This is a success message',
           offset: 100,
@@ -376,11 +376,11 @@ Personalizar el desplazamiento de notificación desde el borde de la pantalla.
 
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     Use HTML String
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -400,13 +400,13 @@ Personalizar el desplazamiento de notificación desde el borde de la pantalla.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification({
+        LxNotification({
           title: 'HTML String',
           dangerouslyUseHTMLString: true,
           message: '<strong>This is <i>HTML</i> string</strong>',
@@ -438,11 +438,11 @@ Es posible ocultar el botón de cerrar
 
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     Hide close button
-    </el-button>
+    </lx-button>
 </template>
 
 <script>
@@ -462,13 +462,13 @@ Es posible ocultar el botón de cerrar
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification.success({
+        LxNotification.success({
           title: 'Info',
           message: 'This is a message without close button',
           showClose: false,
@@ -493,7 +493,7 @@ Element Plus ha añadido un método global `$notify` para `app.config.globalProp
 ### Importar localmente
 
 ```javascript
-import { ElNotification } from 'element-plus';
+import { LxNotification } from 'element-plus';
 ```
 
 En este caso, debe llamar a `ElNotification(options)`. También se han registrado métodos para diferentes tipos, e.j. `ElNotification.success(options)`. Puede llamar al método `ElNotification.closeAll()` para cerrar manualmente todas las instancias.

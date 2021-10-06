@@ -16,7 +16,7 @@
 :::demo
 
 ```html
-<el-input placeholder="Please input" v-model="input"></el-input>
+<lx-input placeholder="Please input" v-model="input"></lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -36,11 +36,11 @@ export default defineComponent ({
 :::demo インプットを`disabled`属性で無効にする。
 
 ```html
-<el-input
+<lx-input
   placeholder="Please input"
   v-model="input"
   :disabled="true">
-</el-input>
+</lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -60,11 +60,11 @@ export default defineComponent ({
 :::demo インプットを `clearable` 属性でクリア可能にできます。
 
 ```html
-<el-input
+<lx-input
   placeholder="Please input"
   v-model="input"
   clearable>
-</el-input>
+</lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -84,7 +84,7 @@ export default defineComponent ({
 :::demo `show-password`属性を用いて、トグル可能なパスワードインプットを作成する。
 
 ```html
-<el-input placeholder="Please input password" v-model="input" show-password></el-input>
+<lx-input placeholder="Please input password" v-model="input" show-password></lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -107,33 +107,33 @@ export default defineComponent ({
 ```html
 <div class="demo-input-suffix">
   <span class="demo-input-label">Using attributes</span>
-  <el-input
+  <lx-input
     placeholder="Pick a date"
     suffix-icon="el-icon-date"
     v-model="input1">
-  </el-input>
-  <el-input
+  </lx-input>
+  <lx-input
     placeholder="Type something"
     prefix-icon="el-icon-search"
     v-model="input2">
-  </el-input>
+  </lx-input>
 </div>
 <div class="demo-input-suffix">
   <span class="demo-input-label">Using slots</span>
-  <el-input
+  <lx-input
     placeholder="Pick a date"
     v-model="input3">
     <template #suffix>
       <i class="el-input__icon el-icon-date"></i>
     </template>
-  </el-input>
-  <el-input
+  </lx-input>
+  <lx-input
     placeholder="Type something"
     v-model="input4">
     <template #prefix>
       <i class="el-input__icon el-icon-search"></i>
     </template>
-  </el-input>
+  </lx-input>
 </div>
 
 <style>
@@ -166,12 +166,12 @@ export default defineComponent ({
 :::demo Control the height by setting the `rows` prop.
 
 ```html
-<el-input
+<lx-input
   type="textarea"
   :rows="2"
   placeholder="Please input"
   v-model="textarea">
-</el-input>
+</lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -193,19 +193,19 @@ export default defineComponent ({
 :::demo
 
 ```html
-<el-input
+<lx-input
   type="textarea"
   autosize
   placeholder="Please input"
   v-model="textarea1">
-</el-input>
+</lx-input>
 <div style="margin: 20px 0;"></div>
-<el-input
+<lx-input
   type="textarea"
   :autosize="{ minRows: 2, maxRows: 4}"
   placeholder="Please input"
   v-model="textarea2">
-</el-input>
+</lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -229,35 +229,35 @@ export default defineComponent ({
 
 ```html
 <div>
-  <el-input placeholder="Please input" v-model="input1">
+  <lx-input placeholder="Please input" v-model="input1">
     <template #prepend>Http://</template>
-  </el-input>
+  </lx-input>
 </div>
 <div style="margin-top: 15px;">
-  <el-input placeholder="Please input" v-model="input2">
+  <lx-input placeholder="Please input" v-model="input2">
     <template #append>.com</template>
-  </el-input>
+  </lx-input>
 </div>
 <div style="margin-top: 15px;">
-  <el-input placeholder="Please input" v-model="input3" class="input-with-select">
+  <lx-input placeholder="Please input" v-model="input3" class="input-with-select">
     <template #prepend>
-      <el-select v-model="select" placeholder="Select">
-        <el-option label="Restaurant" value="1"></el-option>
-        <el-option label="Order No." value="2"></el-option>
-        <el-option label="Tel" value="3"></el-option>
-      </el-select>
+      <lx-select v-model="select" placeholder="Select">
+        <lx-option label="Restaurant" value="1"></lx-option>
+        <lx-option label="Order No." value="2"></lx-option>
+        <lx-option label="Tel" value="3"></lx-option>
+      </lx-select>
     </template>
     <template #append>
-      <el-button icon="el-icon-search"></el-button>
+      <lx-button icon="el-icon-search"></lx-button>
     </template>
-  </el-input>
+  </lx-input>
 </div>
 
 <style>
-  .el-select .el-input {
+  .lx-select .lx-input {
     width: 110px;
   }
-  .input-with-select .el-input-group__prepend {
+  .input-with-select .lx-input-group__prepend {
     background-color: #fff;
   }
 </style>
@@ -282,25 +282,25 @@ export default defineComponent ({
 :::demo インプットサイズを変更するために`size`属性を追加する。デフォルトのサイズの他に、3つのオプションがある: `large`, `small`, `mini`
 ```html
 <div class="demo-input-size">
-  <el-input
+  <lx-input
     placeholder="Please Input"
     v-model="input1">
-  </el-input>
-  <el-input
+  </lx-input>
+  <lx-input
     size="medium"
     placeholder="Please Input"
     v-model="input2">
-  </el-input>
-  <el-input
+  </lx-input>
+  <lx-input
     size="small"
     placeholder="Please Input"
     v-model="input3">
-  </el-input>
-  <el-input
+  </lx-input>
+  <lx-input
     size="mini"
     placeholder="Please Input"
     v-model="input4">
-  </el-input>
+  </lx-input>
 </div>
 
 <script>
@@ -325,29 +325,29 @@ export default defineComponent ({
 
 :::demo オートコンプリートコンポーネントはインプットサジェスチョンを提供します。`fetch-suggestions` 属性は、提案されたインプットを返すメソッドです。この例では、`querySearch(queryString, cb)` は、準備ができたら `cb(data)` を経由してオートコンプリートにサジェスチョンを返します。
 ```html
-<el-row class="demo-autocomplete">
-  <el-col :span="12">
+<lx-row class="demo-autocomplete">
+  <lx-col :span="12">
     <div class="sub-title">list suggestions when activated</div>
-    <el-autocomplete
+    <lx-autocomplete
       class="inline-input"
       v-model="state1"
       :fetch-suggestions="querySearch"
       placeholder="Please Input"
       @select="handleSelect"
-    ></el-autocomplete>
-  </el-col>
-  <el-col :span="12">
+    ></lx-autocomplete>
+  </lx-col>
+  <lx-col :span="12">
     <div class="sub-title">list suggestions on input</div>
-    <el-autocomplete
+    <lx-autocomplete
       class="inline-input"
       v-model="state2"
       :fetch-suggestions="querySearch"
       placeholder="Please Input"
       :trigger-on-focus="false"
       @select="handleSelect"
-    ></el-autocomplete>
-  </el-col>
-</el-row>
+    ></lx-autocomplete>
+  </lx-col>
+</lx-row>
 <script>
 import { defineComponent, ref, onMounted } from 'vue'
 export default defineComponent({
@@ -406,7 +406,7 @@ export default defineComponent({
 
 :::demo サジェスチョンアイテムをカスタマイズするには、`scoped slot`を使う。スコープでは、`item` キーを使ってサジェスチョンオブジェクトにアクセスすることができます。
 ```html
-<el-autocomplete
+<lx-autocomplete
   popper-class="my-autocomplete"
   v-model="state"
   :fetch-suggestions="querySearch"
@@ -420,7 +420,7 @@ export default defineComponent({
     <div class="value">{{ item.value }}</div>
     <span class="link">{{ item.link }}</span>
   </template>
-</el-autocomplete>
+</lx-autocomplete>
 
 <style>
   .my-autocomplete {
@@ -505,12 +505,12 @@ export default defineComponent({
 
 :::demo
 ```html
-<el-autocomplete
+<lx-autocomplete
   v-model="state"
   :fetch-suggestions="querySearchAsync"
   placeholder="Please input"
   @select="handleSelect"
-></el-autocomplete>
+></lx-autocomplete>
 <script>
 import { defineComponent, ref, onMounted } from 'vue'
 export default defineComponent({
@@ -571,23 +571,23 @@ export default defineComponent({
 :::demo `maxlength` と `minlength` 属性であり、ユーザが入力できる文字数の制限を宣言するものである。テキストやテキストエリア型のインプットに対して `maxlength` プロップを設定すると、インプット値の長さを制限することができ、同時に `show-word-limit` を `true` に設定することで単語数を表示することができます。
 
 ```html
-<el-input
+<lx-input
   type="text"
   placeholder="Please input"
   v-model="text"
   maxlength="10"
   show-word-limit
 >
-</el-input>
+</lx-input>
 <div style="margin: 20px 0;"></div>
-<el-input
+<lx-input
   type="textarea"
   placeholder="Please input"
   v-model="textarea"
   maxlength="30"
   show-word-limit
 >
-</el-input>
+</lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'

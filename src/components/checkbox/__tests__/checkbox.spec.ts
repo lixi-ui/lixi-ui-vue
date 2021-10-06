@@ -17,7 +17,7 @@ const _mount = <D>(template: string, data: () => D, otherObj?: Record<string, un
 
 describe('Checkbox', () => {
   test('create', async () => {
-    const wrapper = _mount('<el-checkbox v-model="checkbox" label="a"/>', () => ({ checkbox: false }))
+    const wrapper = _mount('<lx-checkbox v-model="checkbox" label="a"/>', () => ({ checkbox: false }))
     expect(wrapper.classes()).toContain('el-checkbox')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-checked')
@@ -26,12 +26,12 @@ describe('Checkbox', () => {
   })
 
   test('no v-model', async () => {
-    const wrapper = _mount('<el-checkbox label="a"/>', () => ({ checkbox: false }))
+    const wrapper = _mount('<lx-checkbox label="a"/>', () => ({ checkbox: false }))
     expect(wrapper.classes('is-checked')).toBe(false)
   })
 
   test('disabled', async () => {
-    const wrapper = _mount('<el-checkbox v-model="checkbox" disabled label="a"/>', () => ({ checkbox: false }))
+    const wrapper = _mount('<lx-checkbox v-model="checkbox" disabled label="a"/>', () => ({ checkbox: false }))
     expect(wrapper.classes()).toContain('is-disabled')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-disabled')
@@ -39,7 +39,7 @@ describe('Checkbox', () => {
 
   test('change event', async () => {
     const wrapper = _mount(
-      `<el-checkbox v-model="checked" @change="onChange" />`,
+      `<lx-checkbox v-model="checked" @change="onChange" />`,
       () => ({
         data: null,
         checked: false,
@@ -61,12 +61,12 @@ describe('Checkbox', () => {
   test('checkbox group', async () => {
     const wrapper = _mount(
       `
-      <el-checkbox-group v-model="checkList">
-        <el-checkbox label="a" ref="a"></el-checkbox>
-        <el-checkbox label="b" ref="b"></el-checkbox>
-        <el-checkbox label="c" ref="c"></el-checkbox>
-        <el-checkbox label="d" ref="d"></el-checkbox>
-      </el-checkbox-group>
+      <lx-checkbox-group v-model="checkList">
+        <lx-checkbox label="a" ref="a"></lx-checkbox>
+        <lx-checkbox label="b" ref="b"></lx-checkbox>
+        <lx-checkbox label="c" ref="c"></lx-checkbox>
+        <lx-checkbox label="d" ref="d"></lx-checkbox>
+      </lx-checkbox-group>
       `,
       () => ({ checkList: [] }),
     )
@@ -84,10 +84,10 @@ describe('Checkbox', () => {
   test('checkbox group change', async () => {
     const wrapper = _mount(
       `
-      <el-checkbox-group v-model="checkList" @change="onChange">
-        <el-checkbox label="a" ref="a"></el-checkbox>
-        <el-checkbox label="b" ref="b"></el-checkbox>
-      </el-checkbox-group>
+      <lx-checkbox-group v-model="checkList" @change="onChange">
+        <lx-checkbox label="a" ref="a"></lx-checkbox>
+        <lx-checkbox label="b" ref="b"></lx-checkbox>
+      </lx-checkbox-group>
       `,
       () => ({ checkList: [], data: null }),
       {
@@ -108,14 +108,14 @@ describe('Checkbox', () => {
   test('nested group', async () => {
     const wrapper = _mount(
       `
-      <el-checkbox-group v-model="checkList">
+      <lx-checkbox-group v-model="checkList">
         <div>
-          <el-checkbox label="a" ref="a"></el-checkbox>
-          <el-checkbox label="b" ref="b"></el-checkbox>
-          <el-checkbox label="c" ref="c"></el-checkbox>
-          <el-checkbox label="d" ref="d"></el-checkbox>
+          <lx-checkbox label="a" ref="a"></lx-checkbox>
+          <lx-checkbox label="b" ref="b"></lx-checkbox>
+          <lx-checkbox label="c" ref="c"></lx-checkbox>
+          <lx-checkbox label="d" ref="d"></lx-checkbox>
         </div>
-      </el-checkbox-group>
+      </lx-checkbox-group>
       `,
       () => ({ checkList: [] }),
     )
@@ -127,7 +127,7 @@ describe('Checkbox', () => {
 
   test('true false label', async () => {
     const wrapper = _mount(
-      `<el-checkbox true-label="a" :false-label="3" v-model="checked"></el-checkbox>`,
+      `<lx-checkbox true-label="a" :false-label="3" v-model="checked"></lx-checkbox>`,
       () => ({
         checked: 'a',
       }),
@@ -141,10 +141,10 @@ describe('Checkbox', () => {
     const wrapper = _mount(
       `
       <div>
-        <el-checkbox v-model="checked" checked></el-checkbox>
-        <el-checkbox-group v-model="checklist">
-          <el-checkbox checked label="a"></el-checkbox>
-        </el-checkbox-group>
+        <lx-checkbox v-model="checked" checked></lx-checkbox>
+        <lx-checkbox-group v-model="checklist">
+          <lx-checkbox checked label="a"></lx-checkbox>
+        </lx-checkbox-group>
       </div>
       `,
       () => ({
@@ -160,11 +160,11 @@ describe('Checkbox', () => {
     const wrapper = _mount(
       `
       <div>
-        <el-checkbox-group v-model="checklist">
-          <el-checkbox label="">all</el-checkbox>
-          <el-checkbox label="a">a</el-checkbox>
-          <el-checkbox label="b">b</el-checkbox>
-        </el-checkbox-group>
+        <lx-checkbox-group v-model="checklist">
+          <lx-checkbox label="">all</lx-checkbox>
+          <lx-checkbox label="a">a</lx-checkbox>
+          <lx-checkbox label="b">b</lx-checkbox>
+        </lx-checkbox-group>
       </div>
       `,
       () => ({
@@ -172,7 +172,7 @@ describe('Checkbox', () => {
         checklist: [],
       }),
     )
-    const checkbox = wrapper.find('.el-checkbox')
+    const checkbox = wrapper.find('.lx-checkbox')
     await checkbox.trigger('click')
     expect(wrapper.vm.checklist[0]).toEqual('')
   })
@@ -180,7 +180,7 @@ describe('Checkbox', () => {
 
 describe('check-button', () => {
   test('create', async () => {
-    const wrapper = _mount('<el-checkbox-button v-model="checkbox" label="a"/>', () => ({ checkbox: false }))
+    const wrapper = _mount('<lx-checkbox-button v-model="checkbox" label="a"/>', () => ({ checkbox: false }))
     expect(wrapper.classes()).toContain('el-checkbox-button')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-checked')
@@ -189,7 +189,7 @@ describe('check-button', () => {
   })
 
   test('disabled', async () => {
-    const wrapper = _mount('<el-checkbox-button v-model="checkbox" disabled label="a"/>', () => ({ checkbox: false }))
+    const wrapper = _mount('<lx-checkbox-button v-model="checkbox" disabled label="a"/>', () => ({ checkbox: false }))
     expect(wrapper.classes()).toContain('is-disabled')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-disabled')
@@ -198,7 +198,7 @@ describe('check-button', () => {
   test('change event', async () => {
     const wrapper = _mount(
       `
-      <el-checkbox-button v-model="checked" @change="onChange" />
+      <lx-checkbox-button v-model="checked" @change="onChange" />
       `,
       () => ({
         data: '',
@@ -221,12 +221,12 @@ describe('check-button', () => {
   test('button group change', async () => {
     const wrapper = _mount(
       `
-      <el-checkbox-group v-model="checkList" @change="onChange">
-        <el-checkbox-button label="a" ref="a"></el-checkbox-button>
-        <el-checkbox-button label="b" ref="b"></el-checkbox-button>
-        <el-checkbox-button label="c" ref="c"></el-checkbox-button>
-        <el-checkbox-button label="d" ref="d"></el-checkbox-button>
-      </el-checkbox-group>
+      <lx-checkbox-group v-model="checkList" @change="onChange">
+        <lx-checkbox-button label="a" ref="a"></lx-checkbox-button>
+        <lx-checkbox-button label="b" ref="b"></lx-checkbox-button>
+        <lx-checkbox-button label="c" ref="c"></lx-checkbox-button>
+        <lx-checkbox-button label="d" ref="d"></lx-checkbox-button>
+      </lx-checkbox-group>
       `,
       () => ({
         data: null,
@@ -252,34 +252,34 @@ describe('check-button', () => {
   test('button group props', () => {
     const wrapper = _mount(
       `
-      <el-checkbox-group v-model="checkList" size="large" fill="#FF0000" text-color="#000">
-        <el-checkbox-button label="a" ref="a"></el-checkbox-button>
-        <el-checkbox-button label="b" ref="b"></el-checkbox-button>
-        <el-checkbox-button label="c" ref="c"></el-checkbox-button>
-        <el-checkbox-button label="d" ref="d"></el-checkbox-button>
-      </el-checkbox-group>
+      <lx-checkbox-group v-model="checkList" size="large" fill="#FF0000" text-color="#000">
+        <lx-checkbox-button label="a" ref="a"></lx-checkbox-button>
+        <lx-checkbox-button label="b" ref="b"></lx-checkbox-button>
+        <lx-checkbox-button label="c" ref="c"></lx-checkbox-button>
+        <lx-checkbox-button label="d" ref="d"></lx-checkbox-button>
+      </lx-checkbox-group>
       `,
       () => ({ checkList: ['a', 'b'] }),
     )
     const vm = wrapper.vm
     expect(vm.checkList.length).toBe(2)
     expect((vm.$refs.a as any).$el.classList.contains('is-checked')).toBe(true)
-    expect((vm.$refs.a as any).$el.querySelector('.el-checkbox-button__inner').style.borderColor).toEqual('#ff0000')
+    expect((vm.$refs.a as any).$el.querySelector('.lx-checkbox-button__inner').style.borderColor).toEqual('#ff0000')
   })
 
   test('button group min and max', async () => {
     const wrapper = _mount(
       `
-      <el-checkbox-group
+      <lx-checkbox-group
         v-model="checkList"
         :min="1"
         :max="2"
       >
-        <el-checkbox-button label="a" ref="a"></el-checkbox-button>
-        <el-checkbox-button label="b" ref="b"></el-checkbox-button>
-        <el-checkbox-button label="c" ref="c"></el-checkbox-button>
-        <el-checkbox-button label="d" ref="d"></el-checkbox-button>
-      </el-checkbox-group>
+        <lx-checkbox-button label="a" ref="a"></lx-checkbox-button>
+        <lx-checkbox-button label="b" ref="b"></lx-checkbox-button>
+        <lx-checkbox-button label="c" ref="c"></lx-checkbox-button>
+        <lx-checkbox-button label="d" ref="d"></lx-checkbox-button>
+      </lx-checkbox-group>
       `,
       () => ({
         checkList: ['a'],
@@ -304,14 +304,14 @@ describe('check-button', () => {
   test('nested group', async () => {
     const wrapper = _mount(
       `
-      <el-checkbox-group v-model="checkList">
+      <lx-checkbox-group v-model="checkList">
         <div>
-          <el-checkbox-button label="a" ref="a"></el-checkbox-button>
-          <el-checkbox-button label="b" ref="b"></el-checkbox-button>
-          <el-checkbox-button label="c" ref="c"></el-checkbox-button>
-          <el-checkbox-button label="d" ref="d"></el-checkbox-button>
+          <lx-checkbox-button label="a" ref="a"></lx-checkbox-button>
+          <lx-checkbox-button label="b" ref="b"></lx-checkbox-button>
+          <lx-checkbox-button label="c" ref="c"></lx-checkbox-button>
+          <lx-checkbox-button label="d" ref="d"></lx-checkbox-button>
         </div>
-      </el-checkbox-group>
+      </lx-checkbox-group>
       `,
       () => ({ checkList: [] }),
     )
@@ -323,7 +323,7 @@ describe('check-button', () => {
 
   test('true false lable', async () => {
     const wrapper = _mount(
-      `<el-checkbox-button true-label="a" :false-label="3" v-model="checked" />`,
+      `<lx-checkbox-button true-label="a" :false-label="3" v-model="checked" />`,
       () => ({
         checked: 'a',
       }),
@@ -337,10 +337,10 @@ describe('check-button', () => {
     const wrapper = _mount(
       `
       <div>
-        <el-checkbox-button v-model="checked" checked />
-        <el-checkbox-group v-model="checklist">
-          <el-checkbox-button checked label="a" />
-        </el-checkbox-group>
+        <lx-checkbox-button v-model="checked" checked />
+        <lx-checkbox-group v-model="checklist">
+          <lx-checkbox-button checked label="a" />
+        </lx-checkbox-group>
       </div>
       `,
       () => ({
@@ -354,9 +354,9 @@ describe('check-button', () => {
 
   test('checked', () => {
     const wrapper = _mount(
-      `<el-checkbox checked />`,
+      `<lx-checkbox checked />`,
       () => ({}))
-    expect(wrapper.find('.el-checkbox').classes().toString()).toMatch('is-checked')
+    expect(wrapper.find('.lx-checkbox').classes().toString()).toMatch('is-checked')
   })
 
 })

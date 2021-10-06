@@ -16,27 +16,27 @@ describe('Collapse.vue', () => {
         }
       },
       template: `
-        <el-collapse v-model="activeNames">
-          <el-collapse-item title="title1" name="1">
+        <lx-collapse v-model="activeNames">
+          <lx-collapse-item title="title1" name="1">
             <div class="content">111</div>
-          </el-collapse-item>
-          <el-collapse-item title="title2" name="2">
+          </lx-collapse-item>
+          <lx-collapse-item title="title2" name="2">
             <div class="content">222</div>
-          </el-collapse-item>
-          <el-collapse-item title="title3" name="3">
+          </lx-collapse-item>
+          <lx-collapse-item title="title3" name="3">
             <div class="content">333</div>
-          </el-collapse-item>
-          <el-collapse-item title="title4" name="4">
+          </lx-collapse-item>
+          <lx-collapse-item title="title4" name="4">
             <div class="content">444</div>
-          </el-collapse-item>
-        </el-collapse>
+          </lx-collapse-item>
+        </lx-collapse>
       `,
     })
 
     const vm = wrapper.vm
     const collapseWrapper = wrapper.findComponent(Collapse)
     const collapseItemWrappers = collapseWrapper.findAllComponents(CollapseItem)
-    const collapseItemHeaderEls = vm.$el.querySelectorAll('.el-collapse-item__header')
+    const collapseItemHeaderEls = vm.$el.querySelectorAll('.lx-collapse-item__header')
     expect(collapseItemWrappers[0].vm.isActive).toBe(true)
 
     collapseItemHeaderEls[2].click()
@@ -60,27 +60,27 @@ describe('Collapse.vue', () => {
         }
       },
       template: `
-        <el-collapse accordion v-model="activeNames">
-          <el-collapse-item title="title1" name="1">
+        <lx-collapse accordion v-model="activeNames">
+          <lx-collapse-item title="title1" name="1">
             <div class="content">111</div>
-          </el-collapse-item>
-          <el-collapse-item title="title2" name="2">
+          </lx-collapse-item>
+          <lx-collapse-item title="title2" name="2">
             <div class="content">222</div>
-          </el-collapse-item>
-          <el-collapse-item title="title3" name="3">
+          </lx-collapse-item>
+          <lx-collapse-item title="title3" name="3">
             <div class="content">333</div>
-          </el-collapse-item>
-          <el-collapse-item title="title4" name="4">
+          </lx-collapse-item>
+          <lx-collapse-item title="title4" name="4">
             <div class="content">444</div>
-          </el-collapse-item>
-        </el-collapse>
+          </lx-collapse-item>
+        </lx-collapse>
       `,
     })
 
     const vm = wrapper.vm
     const collapseWrapper = wrapper.findComponent(Collapse)
     const collapseItemWrappers = collapseWrapper.findAllComponents(CollapseItem)
-    const collapseItemHeaderEls = vm.$el.querySelectorAll('.el-collapse-item__header')
+    const collapseItemHeaderEls = vm.$el.querySelectorAll('.lx-collapse-item__header')
     expect(collapseItemWrappers[0].vm.isActive).toBe(true)
 
     collapseItemHeaderEls[2].click()
@@ -106,20 +106,20 @@ describe('Collapse.vue', () => {
         }
       },
       template: `
-        <el-collapse v-model="activeNames" @change="onChange">
-          <el-collapse-item title="title1" name="1">
+        <lx-collapse v-model="activeNames" @change="onChange">
+          <lx-collapse-item title="title1" name="1">
             <div class="content">111</div>
-          </el-collapse-item>
-          <el-collapse-item title="title2" name="2">
+          </lx-collapse-item>
+          <lx-collapse-item title="title2" name="2">
             <div class="content">222</div>
-          </el-collapse-item>
-          <el-collapse-item title="title3" name="3">
+          </lx-collapse-item>
+          <lx-collapse-item title="title3" name="3">
             <div class="content">333</div>
-          </el-collapse-item>
-          <el-collapse-item title="title4" name="4">
+          </lx-collapse-item>
+          <lx-collapse-item title="title4" name="4">
             <div class="content">444</div>
-          </el-collapse-item>
-        </el-collapse>
+          </lx-collapse-item>
+        </lx-collapse>
       `,
       methods: {
         onChange,
@@ -129,7 +129,7 @@ describe('Collapse.vue', () => {
     const vm = wrapper.vm
     const collapseWrapper = wrapper.findComponent(Collapse)
     const collapseItemWrappers = collapseWrapper.findAllComponents(CollapseItem)
-    const collapseItemHeaderEls = vm.$el.querySelectorAll('.el-collapse-item__header')
+    const collapseItemHeaderEls = vm.$el.querySelectorAll('.lx-collapse-item__header')
     expect(collapseItemWrappers[0].vm.isActive).toBe(true)
     expect(vm.activeNames).toEqual(['1'])
     expect(onChange).not.toHaveBeenCalled()

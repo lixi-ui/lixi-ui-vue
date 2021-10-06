@@ -38,7 +38,7 @@ const _mount = (template: string, data: any = () => ({}), otherObj?) => mount({
 
 function getOptions(): HTMLElement[] {
   return Array.from(document.querySelectorAll<HTMLElement>(
-    'body > div:last-child .el-select-dropdown__item',
+    'body > div:last-child .lx-select-dropdown__item',
   ))
 }
 
@@ -72,7 +72,7 @@ const getSelectVm = (configs: SelectProps = {}, options?) => {
   }
 
   return _mount(`
-    <el-select
+    <lx-select
       ref="select"
       v-model="value"
       :multiple="multiple"
@@ -88,14 +88,14 @@ const getSelectVm = (configs: SelectProps = {}, options?) => {
       :loading="loading"
       :remoteMethod="remoteMethod"
       :automatic-dropdown="automaticDropdown">
-      <el-option
+      <lx-option
         v-for="item in options"
         :label="item.label"
         :key="item.value"
         :disabled="item.disabled"
         :value="item.value">
-      </el-option>
-    </el-select>
+      </lx-option>
+    </lx-select>
   `, () => ({
     options,
     multiple: configs.multiple,
@@ -170,7 +170,7 @@ const getGroupSelectVm = (configs: SelectProps = {}, options?) => {
   }
 
   return _mount(`
-    <el-select
+    <lx-select
       ref="select"
       v-model="value"
       :multiple="multiple"
@@ -185,21 +185,21 @@ const getGroupSelectVm = (configs: SelectProps = {}, options?) => {
       :loading="loading"
       :remoteMethod="remoteMethod"
       :automatic-dropdown="automaticDropdown">
-      <el-group-option
+      <lx-group-option
         v-for="group in options"
         :key="group.label"
         :label="group.label">
-        <el-option
+        <lx-option
           v-for="item in group.options"
           :key="item.value"
           :label="item.label"
           :value="item.value"/>
-      </el-group-option>
-    </el-select>
+      </lx-group-option>
+    </lx-select>
   <script>
-import ElOptionGroup from './option-group'
+import LxOptionGroup from './option-group'
 export default {
-components: { ElOptionGroup }
+components: { LxOptionGroup }
  }
 </script>`, () => ({
     options,
@@ -226,17 +226,17 @@ describe('Select', () => {
   })
 
   test('create', async () => {
-    const wrapper = _mount(`<el-select v-model="value"></el-select>`, () => ({ value: '' }))
+    const wrapper = _mount(`<lx-select v-model="value"></lx-select>`, () => ({ value: '' }))
     expect(wrapper.classes()).toContain('el-select')
-    expect(wrapper.find('.el-input__inner').element.placeholder).toBe('Select')
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    expect(wrapper.find('.lx-input__inner').element.placeholder).toBe('Select')
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     wrapper.trigger('click')
     expect((select.vm as any).visible).toBe(true)
   })
 
   test('options rendered correctly', () => {
     const wrapper = getSelectVm()
-    const options = wrapper.element.querySelectorAll('.el-select-dropdown__item')
+    const options = wrapper.element.querySelectorAll('.lx-select-dropdown__item')
     const result = [].every.call(options, (option, index) => {
       const text = option.querySelector('span').textContent
       const vm = wrapper.vm as any
@@ -247,20 +247,20 @@ describe('Select', () => {
 
   test('custom dropdown class', () => {
     const wrapper = getSelectVm({ popperClass: 'custom-dropdown' })
-    const dropdown = wrapper.findComponent({ name: 'ElSelectDropdown' })
+    const dropdown = wrapper.findComponent({ name: 'LxSelectDropdown' })
     expect(dropdown.classes()).toContain('custom-dropdown')
   })
 
   test('default value', async() => {
     const wrapper = _mount(`
-      <el-select v-model="value">
-        <el-option
+      <lx-select v-model="value">
+        <lx-option
           v-for="item in options"
           :label="item.label"
           :key="item.value"
           :value="item.value">
-        </el-option>
-      </el-select>
+        </lx-option>
+      </lx-select>
     `,
     () => ({
       options: [{
@@ -273,19 +273,19 @@ describe('Select', () => {
       value: '选项2',
     }))
     await wrapper.vm.$nextTick()
-    expect(wrapper.find('.el-input__inner').element.value).toBe('双皮奶')
+    expect(wrapper.find('.lx-input__inner').element.value).toBe('双皮奶')
   })
 
   test('sync set value and options', async () => {
     const wrapper = _mount(`
-    <el-select v-model="value">
-      <el-option
+    <lx-select v-model="value">
+      <lx-option
         v-for="item in options"
         :label="item.label"
         :key="item.value"
         :value="item.value">
-      </el-option>
-    </el-select>
+      </lx-option>
+    </lx-select>
   `,
     () => ({
       options: [{
@@ -304,20 +304,20 @@ describe('Select', () => {
     }]
     vm.value = '选项1'
     await wrapper.vm.$nextTick()
-    expect(wrapper.find('.el-input__inner').element.value).toBe('黄金糕')
+    expect(wrapper.find('.lx-input__inner').element.value).toBe('黄金糕')
   })
 
   test('single select', async () => {
     const wrapper = _mount(`
-      <el-select v-model="value" @change="handleChange">
-        <el-option
+      <lx-select v-model="value" @change="handleChange">
+        <lx-option
           v-for="item in options"
           :label="item.label"
           :key="item.value"
           :value="item.value">
           <p>{{item.label}} {{item.value}}</p>
-        </el-option>
-      </el-select>
+        </lx-option>
+      </lx-select>
     `,
     () => ({
       options: [{
@@ -351,16 +351,16 @@ describe('Select', () => {
     const options = getOptions()
     const vm = wrapper.vm as any
     expect(vm.value).toBe('')
-    expect(wrapper.find('.el-input__inner').element.value).toBe('')
+    expect(wrapper.find('.lx-input__inner').element.value).toBe('')
     options[2].click()
     await nextTick()
     expect(vm.value).toBe('选项3')
-    expect(wrapper.find('.el-input__inner').element.value).toBe('蚵仔煎')
+    expect(wrapper.find('.lx-input__inner').element.value).toBe('蚵仔煎')
     expect(vm.count).toBe(1)
     options[4].click()
     await nextTick()
     expect(vm.value).toBe('选项5')
-    expect(wrapper.find('.el-input__inner').element.value).toBe('北京烤鸭')
+    expect(wrapper.find('.lx-input__inner').element.value).toBe('北京烤鸭')
     expect(vm.count).toBe(2)
   })
 
@@ -378,20 +378,20 @@ describe('Select', () => {
   })
 
   test('disabled select', () => {
-    const wrapper = _mount(`<el-select disabled></el-select>`)
-    expect(wrapper.find('.el-input').classes()).toContain('is-disabled')
+    const wrapper = _mount(`<lx-select disabled></lx-select>`)
+    expect(wrapper.find('.lx-input').classes()).toContain('is-disabled')
   })
 
   test('visible event', async() => {
     const wrapper = _mount(`
-    <el-select v-model="value" @visible-change="handleVisibleChange">
-      <el-option
+    <lx-select v-model="value" @visible-change="handleVisibleChange">
+      <lx-option
         v-for="item in options"
         :label="item.label"
         :key="item.value"
         :value="item.value">
-      </el-option>
-    </el-select>`,
+      </lx-option>
+    </lx-select>`,
     () => ({
       options: [],
       value: '',
@@ -404,7 +404,7 @@ describe('Select', () => {
         },
       },
     })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     const vm = wrapper.vm as any
     const selectVm = select.vm as any
     selectVm.visible = true
@@ -414,7 +414,7 @@ describe('Select', () => {
 
   test('keyboard operations', async() => {
     const wrapper = getSelectVm()
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     const vm = select.vm as any
     let i = 8
     while (i--) {
@@ -439,14 +439,14 @@ describe('Select', () => {
 
   test('clearable', async () => {
     const wrapper = getSelectVm({ clearable: true })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     const vm = wrapper.vm as any
     const selectVm = select.vm as any
     vm.value = '选项1'
     await vm.$nextTick()
     selectVm.inputHovering = true
     await selectVm.$nextTick()
-    const iconClear = wrapper.find('.el-input__icon.el-icon-circle-close')
+    const iconClear = wrapper.find('.lx-input__icon.lx-icon-circle-close')
     expect(iconClear.exists()).toBe(true)
     await iconClear.trigger('click')
     expect(vm.value).toBe('')
@@ -457,7 +457,7 @@ describe('Select', () => {
       filterable: true,
       defaultFirstOption: true,
     })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     const selectVm = select.vm as any
     const input = wrapper.find('input')
     input.element.focus()
@@ -485,7 +485,7 @@ describe('Select', () => {
       filterable: true,
       defaultFirstOption: true,
     }, demoOptions)
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     const selectVm = select.vm as any
     const input = wrapper.find('input')
     input.element.focus()
@@ -499,7 +499,7 @@ describe('Select', () => {
 
   test('allow create', async () => {
     const wrapper = getSelectVm({ filterable: true, allowCreate: true })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     const selectVm = select.vm as any
     const input = wrapper.find('input')
     input.element.focus()
@@ -524,17 +524,17 @@ describe('Select', () => {
     options[3].click()
     await nextTick()
     expect(vm.value.indexOf('选项2') > -1 && vm.value.indexOf('选项4') > -1).toBe(true)
-    const tagCloseIcons = wrapper.findAll('.el-tag__close')
+    const tagCloseIcons = wrapper.findAll('.lx-tag__close')
     await tagCloseIcons[0].trigger('click')
     expect(vm.value.indexOf('选项1')).toBe(-1)
   })
 
   test('multiple select when content overflow', async () => {
     const wrapper = _mount(`
-      <el-select v-model="selectedList" multiple placeholder="请选择">
-        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-        </el-option>
-      </el-select>
+      <lx-select v-model="selectedList" multiple placeholder="请选择">
+        <lx-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+        </lx-option>
+      </lx-select>
     `,
     () => ({
       options: [{
@@ -575,7 +575,7 @@ describe('Select', () => {
     await nextTick()
     options[2].click()
     await nextTick()
-    const tagWrappers = wrapper.findAll('.el-select__tags-text')
+    const tagWrappers = wrapper.findAll('.lx-select__tags-text')
     for(let i = 0;i < tagWrappers.length;i++) {
       const tagWrapperDom = tagWrappers[i].element
       expect(parseInt(tagWrapperDom.style.maxWidth) === inputRect.width - 75).toBe(true)
@@ -585,10 +585,10 @@ describe('Select', () => {
 
   test('multiple select with collapseTags when content overflow', async () => {
     const wrapper = _mount(`
-      <el-select v-model="selectedList" multiple collapseTags placeholder="请选择">
-        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-        </el-option>
-      </el-select>
+      <lx-select v-model="selectedList" multiple collapseTags placeholder="请选择">
+        <lx-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+        </lx-option>
+      </lx-select>
     `,
     () => ({
       options: [{
@@ -629,7 +629,7 @@ describe('Select', () => {
     await nextTick()
     options[2].click()
     await nextTick()
-    const tagWrappers = wrapper.findAll('.el-select__tags-text')
+    const tagWrappers = wrapper.findAll('.lx-select__tags-text')
     const tagWrapperDom = tagWrappers[0].element
     expect(parseInt(tagWrapperDom.style.maxWidth) === inputRect.width - 123).toBe(true)
     mockInputWidth.mockRestore()
@@ -637,15 +637,15 @@ describe('Select', () => {
 
   test('multiple remove-tag', async () => {
     const wrapper = _mount(`
-      <el-select v-model="value" multiple @remove-tag="handleRemoveTag">
-        <el-option
+      <lx-select v-model="value" multiple @remove-tag="handleRemoveTag">
+        <lx-option
           v-for="item in options"
           :label="item.label"
           :key="item.value"
           :value="item.value">
           <p>{{item.label}} {{item.value}}</p>
-        </el-option>
-      </el-select>
+        </lx-option>
+      </lx-select>
     `,
     () => ({
       options: [{
@@ -677,7 +677,7 @@ describe('Select', () => {
     const vm = wrapper.vm as any
     await vm.$nextTick()
     expect(vm.value.length).toBe(2)
-    const tagCloseIcons = wrapper.findAll('.el-tag__close')
+    const tagCloseIcons = wrapper.findAll('.lx-tag__close')
     await tagCloseIcons[1].trigger('click')
     expect(vm.value.length).toBe(1)
     await tagCloseIcons[0].trigger('click')
@@ -700,13 +700,13 @@ describe('Select', () => {
   test('event:focus & blur', async () => {
     const handleFocus = jest.fn()
     const handleBlur = jest.fn()
-    const wrapper = _mount(`<el-select
+    const wrapper = _mount(`<lx-select
       @focus="handleFocus"
       @blur="handleBlur" />`, () => ({
       handleFocus,
       handleBlur,
     }))
-    const select = wrapper.findComponent(({ name: 'ElSelect' }))
+    const select = wrapper.findComponent(({ name: 'LxSelect' }))
     const input = select.find('input')
 
     expect(input.exists()).toBe(true)
@@ -720,7 +720,7 @@ describe('Select', () => {
     const handleFocus = jest.fn()
     const handleBlur = jest.fn()
     const wrapper = _mount(`
-    <el-select
+    <lx-select
       @focus="handleFocus"
       @blur="handleBlur"
       multiple
@@ -729,7 +729,7 @@ describe('Select', () => {
       handleFocus,
       handleBlur,
     }))
-    const select = wrapper.findComponent(({ name: 'ElSelect' }))
+    const select = wrapper.findComponent(({ name: 'LxSelect' }))
     const input = select.find('input')
 
     expect(input.exists()).toBe(true)
@@ -741,7 +741,7 @@ describe('Select', () => {
 
   test('should not open popper when automatic-dropdown not set', async () => {
     const wrapper = getSelectVm()
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     await select.findComponent({ ref: 'reference' })
       .find('input')
       .element.focus()
@@ -750,7 +750,7 @@ describe('Select', () => {
 
   test('should open popper when automatic-dropdown is set', async () => {
     const wrapper = getSelectVm({ automaticDropdown: true })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     await select.findComponent({ ref: 'reference' }).find('input').trigger('focus')
     expect((select.vm as any).visible).toBe(true)
   })
@@ -758,11 +758,11 @@ describe('Select', () => {
   test('only emit change on user input', async () => {
     let callCount = 0
     const wrapper = _mount(`
-    <el-select v-model="value" @change="change" ref="select">
-      <el-option label="1" value="1" />
-      <el-option label="2" value="2" />
-      <el-option label="3" value="3" />
-    </el-select>`,
+    <lx-select v-model="value" @change="change" ref="select">
+      <lx-option label="1" value="1" />
+      <lx-option label="2" value="2" />
+      <lx-option label="3" value="3" />
+    </lx-select>`,
     () => ({
       value: '1',
       change: () => ++callCount,
@@ -777,11 +777,11 @@ describe('Select', () => {
 
   test('render slot `empty`', async () => {
     const wrapper = _mount(`
-      <el-select v-model="value">
+      <lx-select v-model="value">
         <template #empty>
           <div class="empty-slot">EmptySlot</div>
         </template>
-      </el-select>`,
+      </lx-select>`,
     () => ({
       value: '1',
     }))
@@ -791,28 +791,28 @@ describe('Select', () => {
 
   test('should set placeholder to label of selected option when filterable is true and multiple is false', async() => {
     const wrapper = _mount(`
-      <el-select ref="select" v-model="value" filterable>
-        <el-option label="test" value="test" />
-      </el-select>`,
+      <lx-select ref="select" v-model="value" filterable>
+        <lx-option label="test" value="test" />
+      </lx-select>`,
     () => ({ value: 'test' }))
     const vm = wrapper.vm as any
     await wrapper.trigger('click')
-    const selectVm = wrapper.findComponent({ name: 'ElSelect' }).vm as any
+    const selectVm = wrapper.findComponent({ name: 'LxSelect' }).vm as any
     expect(selectVm.visible).toBe(true)
-    expect(wrapper.find('.el-input__inner').element.placeholder).toBe('test')
+    expect(wrapper.find('.lx-input__inner').element.placeholder).toBe('test')
     expect(vm.value).toBe('test')
   })
 
   test('default value is null or undefined', async() => {
     const wrapper = _mount(`
-    <el-select v-model="value">
-      <el-option
+    <lx-select v-model="value">
+      <lx-option
         v-for="item in options"
         :label="item.label"
         :key="item.value"
         :value="item.value">
-      </el-option>
-    </el-select>`,
+      </lx-option>
+    </lx-select>`,
     () => ({
       options: [{
         value: '选项1',
@@ -826,22 +826,22 @@ describe('Select', () => {
     const vm = wrapper.vm as any
     vm.value = null
     await vm.$nextTick()
-    expect(wrapper.find('.el-input__inner').element.value).toBe('')
+    expect(wrapper.find('.lx-input__inner').element.value).toBe('')
     vm.value = '选项1'
     await vm.$nextTick()
-    expect(wrapper.find('.el-input__inner').element.value).toBe('黄金糕')
+    expect(wrapper.find('.lx-input__inner').element.value).toBe('黄金糕')
   })
 
   test('emptyText error show', async () => {
     const wrapper = _mount(`
-    <el-select :model-value="value" filterable placeholder="Select">
-      <el-option
+    <lx-select :model-value="value" filterable placeholder="Select">
+      <lx-option
         v-for="item in options"
         :key="item.value"
         :label="item.label"
         :value="item.value">
-      </el-option>
-    </el-select>`,
+      </lx-option>
+    </lx-select>`,
     () => ({
       options: [{
         value: 'Option1',
@@ -861,17 +861,17 @@ describe('Select', () => {
       }],
       value: 'test',
     }))
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     select.trigger('click')
     await nextTick()
-    expect(!!document.querySelector('.el-select__popper').style.display).toBeFalsy()
-    expect(wrapper.findAll('.el-select-dropdown__empty').length).toBe(0)
+    expect(!!document.querySelector('.lx-select__popper').style.display).toBeFalsy()
+    expect(wrapper.findAll('.lx-select-dropdown__empty').length).toBe(0)
   })
 
   test('multiple select with remote load', async () => {
     const wrapper = mount({
       template: `
-      <el-select
+      <lx-select
         v-model="value"
         multiple
         filterable
@@ -881,14 +881,14 @@ describe('Select', () => {
         :remote-method="remoteMethod"
         :loading="loading"
       >
-        <el-option
+        <lx-option
           v-for="item in options"
           :key="item.value"
           :label="item.label"
           :value="item"
         />
-      </el-select>`,
-      components: { ElSelect: Select, ElOption: Option },
+      </lx-select>`,
+      components: { LxSelect: Select, LxOption: Option },
       data() {
         return {
           options: [],
@@ -937,7 +937,7 @@ describe('Select', () => {
       },
     })
 
-    const select = wrapper.findComponent({ name: 'ElSelect' }).vm
+    const select = wrapper.findComponent({ name: 'LxSelect' }).vm
     select.debouncedQueryChange({
       target: {
         value: '',
@@ -971,20 +971,20 @@ describe('Select', () => {
 
   test('disabled group', async () => {
     const wrapper = _mount(`
-    <el-select v-model="value">
-      <el-group-option
+    <lx-select v-model="value">
+      <lx-group-option
         v-for="group in options"
         :key="group.label"
         :label="group.label"
         :disabled="group.disabled">
-        <el-option
+        <lx-option
           v-for="item in group.options"
           :key="item.value"
           :label="item.label"
           :value="item.value">
-        </el-option>
-      </el-group-option>
-    </el-select>`,
+        </lx-option>
+      </lx-group-option>
+    </lx-select>`,
     () => ({
       options: [
         {
@@ -1025,16 +1025,16 @@ describe('Select', () => {
 
   test('tag of disabled option is not closable', async () => {
     const wrapper = _mount(`
-    <el-select v-model="vendors" multiple :collapse-tags="isCollapsed" :clearable="isClearable" placeholder="Select Business Unit">
-    <el-option
+    <lx-select v-model="vendors" multiple :collapse-tags="isCollapsed" :clearable="isClearable" placeholder="Select Business Unit">
+    <lx-option
       v-for="(vendor, index) in options"
       :key="index"
       :value="index + 1"
       :label="vendor.name"
       :disabled="vendor.isDisabled"
     >
-    </el-option>
-  </el-select>`, () => ({
+    </lx-option>
+  </lx-select>`, () => ({
       vendors: [2, 3, 4],
       isCollapsed: false,
       isClearable: false,
@@ -1047,13 +1047,13 @@ describe('Select', () => {
     }))
     const vm = wrapper.vm as any
     await vm.$nextTick()
-    const selectVm = wrapper.findComponent({ name: 'ElSelect' }).vm as any
-    expect(wrapper.findAll('.el-tag').length).toBe(3)
-    const tagCloseIcons = wrapper.findAll('.el-tag__close')
+    const selectVm = wrapper.findComponent({ name: 'LxSelect' }).vm as any
+    expect(wrapper.findAll('.lx-tag').length).toBe(3)
+    const tagCloseIcons = wrapper.findAll('.lx-tag__close')
     expect(tagCloseIcons.length).toBe(1)
     await tagCloseIcons[0].trigger('click')
-    expect(wrapper.findAll('.el-tag__close').length).toBe(0)
-    expect(wrapper.findAll('.el-tag').length).toBe(2)
+    expect(wrapper.findAll('.lx-tag__close').length).toBe(0)
+    expect(wrapper.findAll('.lx-tag').length).toBe(2)
 
     //test if is clearable
     vm.isClearable = true
@@ -1061,43 +1061,43 @@ describe('Select', () => {
     await vm.$nextTick()
     selectVm.inputHovering = true
     await selectVm.$nextTick()
-    const iconClear = wrapper.find('.el-input__icon.el-icon-circle-close')
-    expect(wrapper.findAll('.el-tag').length).toBe(3)
+    const iconClear = wrapper.find('.lx-input__icon.lx-icon-circle-close')
+    expect(wrapper.findAll('.lx-tag').length).toBe(3)
     await iconClear.trigger('click')
-    expect(wrapper.findAll('.el-tag').length).toBe(2)
+    expect(wrapper.findAll('.lx-tag').length).toBe(2)
 
     // test for collapse select
     vm.vendors = [1, 2, 4]
     vm.isCollapsed = true
     vm.isClearable = false
     await vm.$nextTick()
-    expect(wrapper.findAll('.el-tag').length).toBe(2)
-    await wrapper.find('.el-tag__close').trigger('click')
-    expect(wrapper.findAll('.el-tag').length).toBe(2)
-    expect(wrapper.findAll('.el-tag__close').length).toBe(0)
+    expect(wrapper.findAll('.lx-tag').length).toBe(2)
+    await wrapper.find('.lx-tag__close').trigger('click')
+    expect(wrapper.findAll('.lx-tag').length).toBe(2)
+    expect(wrapper.findAll('.lx-tag__close').length).toBe(0)
 
     // test for collapse select if is clearable
     vm.vendors = [1, 2, 4]
     vm.isCollapsed = true
     vm.isClearable = true
     await vm.$nextTick()
-    expect(wrapper.findAll('.el-tag__close').length).toBe(1)
-    await wrapper.find('.el-tag__close').trigger('click')
-    expect(wrapper.findAll('.el-tag').length).toBe(2)
-    expect(wrapper.findAll('.el-tag__close').length).toBe(0)
+    expect(wrapper.findAll('.lx-tag__close').length).toBe(1)
+    await wrapper.find('.lx-tag__close').trigger('click')
+    expect(wrapper.findAll('.lx-tag').length).toBe(2)
+    expect(wrapper.findAll('.lx-tag__close').length).toBe(0)
   })
 
   test('modelValue should be deep reactive in multiple mode', async () => {
     const wrapper = _mount(`
-    <el-select v-model="modelValue" multiple>
-      <el-option
+    <lx-select v-model="modelValue" multiple>
+      <lx-option
         v-for="option in options"
         :key="option.value"
         :value="option.value"
         :label="option.label"
       >
-      </el-option>
-    </el-select>`, () => ({
+      </lx-option>
+    </lx-select>`, () => ({
       modelValue: [1],
       options: [
         { label: 'Test 1', value: 1 },
@@ -1108,34 +1108,34 @@ describe('Select', () => {
     }))
     const vm = wrapper.vm as any
     await vm.$nextTick()
-    expect(wrapper.findAll('.el-tag').length).toBe(1)
+    expect(wrapper.findAll('.lx-tag').length).toBe(1)
 
     vm.modelValue.splice(0, 1)
 
     await vm.$nextTick()
-    expect(wrapper.findAll('.el-tag').length).toBe(0)
+    expect(wrapper.findAll('.lx-tag').length).toBe(0)
   })
 
   test('should reset placeholder after clear when both multiple and filterable are true', async () => {
     const placeholder = 'placeholder'
     const wrapper = _mount(`
-    <el-select v-model="modelValue" multiple filterable placeholder=${placeholder}>
-      <el-option label="1" value="1" />
-    </el-select>`, () => ({
+    <lx-select v-model="modelValue" multiple filterable placeholder=${placeholder}>
+      <lx-option label="1" value="1" />
+    </lx-select>`, () => ({
       modelValue: ['1'],
     }))
     const vm = wrapper.vm as any
     await vm.$nextTick()
 
-    const innerInput = wrapper.find('.el-input__inner')
+    const innerInput = wrapper.find('.lx-input__inner')
     const innerInputEl = innerInput.element as HTMLInputElement
     expect(innerInputEl.placeholder).toBe('')
 
-    const tagCloseIcon = wrapper.find('.el-tag__close')
+    const tagCloseIcon = wrapper.find('.lx-tag__close')
     await tagCloseIcon.trigger('click')
     expect(innerInputEl.placeholder).toBe(placeholder)
 
-    const selectInput = wrapper.find('.el-select__input')
+    const selectInput = wrapper.find('.lx-select__input')
     const selectInputEl = selectInput.element as HTMLInputElement
     selectInputEl.value = 'a'
     selectInput.trigger('input')
@@ -1152,7 +1152,7 @@ describe('Select', () => {
   describe('should show all options when open select dropdown', () => {
     async function testShowOptions({ filterable, multiple }: SelectProps = {}) {
       const wrapper = getSelectVm({ filterable, multiple })
-      const options = wrapper.findAllComponents({ name: 'ElOption' })
+      const options = wrapper.findAllComponents({ name: 'LxOption' })
 
       await wrapper.find('.select-trigger').trigger('click')
       expect(options.every(option => option.vm.visible)).toBe(true)
@@ -1203,7 +1203,7 @@ describe('Select', () => {
       const vm = wrapper.vm as any
       await vm.$nextTick()
 
-      const input = wrapper.find(multiple ? '.el-select__input' : '.el-input__inner')
+      const input = wrapper.find(multiple ? '.lx-select__input' : '.lx-input__inner')
       const inputEl = input.element as HTMLInputElement
       await input.trigger('click')
       inputEl.value = firstInputLetter

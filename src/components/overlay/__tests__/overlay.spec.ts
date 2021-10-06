@@ -25,7 +25,7 @@ describe('Overlay.vue', () => {
         default: AXIOM,
       },
     })
-    await wrapper.find('.el-overlay').trigger('click')
+    await wrapper.find('.lx-overlay').trigger('click')
     expect(wrapper.emitted()).toBeTruthy()
   })
 
@@ -35,7 +35,7 @@ describe('Overlay.vue', () => {
         default: AXIOM,
       },
     })
-    const selector = '.el-overlay'
+    const selector = '.lx-overlay'
     expect(wrapper.find(selector).exists()).toBe(true)
 
     await wrapper.setProps({

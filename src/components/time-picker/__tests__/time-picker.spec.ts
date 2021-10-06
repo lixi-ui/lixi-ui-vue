@@ -36,7 +36,7 @@ afterEach(() => {
 
 describe('TimePicker', () => {
   it('create & custom class & style', async () => {
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
     :placeholder="placeholder"
     :readonly="readonly"
     :style="{color:'red'}"
@@ -46,13 +46,13 @@ describe('TimePicker', () => {
     const input = wrapper.find('input')
     expect(input.attributes('placeholder')).toBe('test_')
     expect(input.attributes('readonly')).not.toBeUndefined()
-    const outterInput = wrapper.find('.el-input')
+    const outterInput = wrapper.find('.lx-input')
     expect(outterInput.classes()).toContain('customClass')
     expect(outterInput.attributes().style).toBeDefined()
   })
 
   it('set format && default value && set AM/PM spinner && no $attr to panel', async () => {
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         :format="format"
         v-model="value"
         class="customClass"
@@ -64,36 +64,36 @@ describe('TimePicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.lx-time-spinner__list')
     const hoursEl = list[0]
-    const items = hoursEl.querySelectorAll('.el-time-spinner__item')
+    const items = hoursEl.querySelectorAll('.lx-time-spinner__item')
     expect(items[0].textContent).toBe('12 AM') // am pm
     expect(items[1].textContent).toBe('01 AM')
     expect(items[12].textContent).toBe('12 PM')
     expect(items[15].textContent).toBe('03 PM')
-    const times = document.querySelectorAll('.el-time-spinner__list .active')
+    const times = document.querySelectorAll('.lx-time-spinner__list .active')
     expect(times[0].textContent).toBe('06 PM')
     expect(times[1].textContent).toBe('40') // default value
     expect(times[2].textContent).toBe('00')
-    const panel = document.querySelector('.el-time-panel') as any
+    const panel = document.querySelector('.lx-time-panel') as any
     expect(panel.classList).not.toContain('customClass')
   })
 
   it('select time', async () => {
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
       />`, () => ({ value: '' }))
     const input = wrapper.find('input')
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.lx-time-spinner__list')
     const hoursEl = list[0]
     const minutesEl = list[1]
     const secondsEl = list[2]
-    const hourEl = hoursEl.querySelectorAll('.el-time-spinner__item')[4] as any
-    const minuteEl = minutesEl.querySelectorAll('.el-time-spinner__item')[36] as any
-    const secondEl = secondsEl.querySelectorAll('.el-time-spinner__item')[20] as any
+    const hourEl = hoursEl.querySelectorAll('.lx-time-spinner__item')[4] as any
+    const minuteEl = minutesEl.querySelectorAll('.lx-time-spinner__item')[36] as any
+    const secondEl = secondsEl.querySelectorAll('.lx-time-spinner__item')[20] as any
     // click hour, minute, second one at a time.
     hourEl.click()
     await nextTick()
@@ -112,25 +112,25 @@ describe('TimePicker', () => {
   })
 
   it('click confirm / cancel button', async () => {
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
       />`, () => ({ value: '' }))
     const input = wrapper.find('input')
     input.trigger('blur')
     input.trigger('focus')
     await nextTick();
-    (document.querySelector('.el-time-panel__btn.cancel') as any).click()
+    (document.querySelector('.lx-time-panel__btn.cancel') as any).click()
     const vm = wrapper.vm as any
     expect(vm.value).toBe('')
     input.trigger('blur')
     input.trigger('focus')
     await nextTick();
-    (document.querySelector('.el-time-panel__btn.confirm') as any).click()
+    (document.querySelector('.lx-time-panel__btn.confirm') as any).click()
     expect(vm.value instanceof Date).toBeTruthy()
   })
 
   it('should update oldValue when visible change', async () => {
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
       />`, () => ({ value: new Date(2016, 9, 10, 18, 40) }))
 
@@ -141,13 +141,13 @@ describe('TimePicker', () => {
     await nextTick()
 
     // select time
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.lx-time-spinner__list')
     const hoursEl = list[0]
     const minutesEl = list[1]
     const secondsEl = list[2]
-    const hourEl = hoursEl.querySelectorAll('.el-time-spinner__item')[4] as any
-    const minuteEl = minutesEl.querySelectorAll('.el-time-spinner__item')[36] as any
-    const secondEl = secondsEl.querySelectorAll('.el-time-spinner__item')[20] as any
+    const hourEl = hoursEl.querySelectorAll('.lx-time-spinner__item')[4] as any
+    const minuteEl = minutesEl.querySelectorAll('.lx-time-spinner__item')[36] as any
+    const secondEl = secondsEl.querySelectorAll('.lx-time-spinner__item')[20] as any
     hourEl.click()
     await nextTick()
     minuteEl.click()
@@ -156,7 +156,7 @@ describe('TimePicker', () => {
     await nextTick();
 
     // click confirm button
-    (document.querySelector('.el-time-panel__btn.confirm') as any).click()
+    (document.querySelector('.lx-time-panel__btn.confirm') as any).click()
     const date = (wrapper.vm as any).value
     expect(date.getHours()).toBe(4)
     expect(date.getMinutes()).toBe(36)
@@ -166,14 +166,14 @@ describe('TimePicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick();
-    (document.querySelector('.el-time-panel__btn.cancel') as any).click()
+    (document.querySelector('.lx-time-panel__btn.cancel') as any).click()
     expect(date.getHours()).toBe(4)
     expect(date.getMinutes()).toBe(36)
     expect(date.getSeconds()).toBe(20)
   })
 
   it('set format', async () => {
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
         format='HH:mm'
       />`, () => ({ value: '' }))
@@ -181,7 +181,7 @@ describe('TimePicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const spinnerDom = document.querySelectorAll('.el-time-spinner__wrapper')
+    const spinnerDom = document.querySelectorAll('.lx-time-spinner__wrapper')
     const minutesDom = spinnerDom[1]
     const secondsDom = spinnerDom[2]
     expect(minutesDom).not.toBeUndefined()
@@ -192,7 +192,7 @@ describe('TimePicker', () => {
     const changeHandler = jest.fn()
     const focusHandler = jest.fn()
     const blurHandler = jest.fn()
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
         @change="onChange"
         @focus="onFocus"
@@ -215,13 +215,13 @@ describe('TimePicker', () => {
     input.trigger('focus')
     await nextTick()
     expect(focusHandler).toHaveBeenCalledTimes(1)
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.lx-time-spinner__list')
     const hoursEl = list[0]
-    const hourEl = hoursEl.querySelectorAll('.el-time-spinner__item')[4] as any
+    const hourEl = hoursEl.querySelectorAll('.lx-time-spinner__item')[4] as any
     hourEl.click()
     await nextTick()
     expect(changeHandler).toHaveBeenCalledTimes(0);
-    (document.querySelector('.el-time-panel__btn.confirm') as any).click()
+    (document.querySelector('.lx-time-panel__btn.confirm') as any).click()
     await nextTick()
     await nextTick() // onchange is triggered by props.modelValue update
     expect(changeHandler).toHaveBeenCalledTimes(1)
@@ -231,7 +231,7 @@ describe('TimePicker', () => {
   it('selectableRange ', async () => {
     // ['17:30:00 - 18:30:00', '18:50:00 - 20:30:00', '21:00:00 - 22:00:00']
     const disabledHoursArr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,23]
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
         :disabled-hours="disabledHours"
         :disabled-minutes="disabledMinutes"
@@ -273,13 +273,13 @@ describe('TimePicker', () => {
     input.trigger('focus')
     await nextTick()
 
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.lx-time-spinner__list')
     const hoursEl = list[0]
     const minutesEl = list[1]
     const secondsEl = list[2]
     const disabledHours = getSpinnerTextAsArray(hoursEl, '.disabled')
     expect(disabledHours).toEqual(disabledHoursArr)
-    const hourSpinners = hoursEl.querySelectorAll('.el-time-spinner__item');
+    const hourSpinners = hoursEl.querySelectorAll('.lx-time-spinner__item');
     (hourSpinners[18] as any).click()
     await nextTick()
     const disabledMinutes = getSpinnerTextAsArray(minutesEl, '.disabled')
@@ -294,7 +294,7 @@ describe('TimePicker', () => {
   })
 
   it('ref focus', async () => {
-    _mount(`<el-time-picker
+    _mount(`<lx-time-picker
         v-model="value"
         ref="input"
       />`, () => ({ value: new Date(2016, 9, 10, 18, 40) }), {
@@ -303,13 +303,13 @@ describe('TimePicker', () => {
       },
     })
     await nextTick()
-    const popperEl = document.querySelector('.el-picker__popper')
+    const popperEl = document.querySelector('.lx-picker__popper')
     const attr = popperEl.getAttribute('aria-hidden')
     expect(attr).toEqual('false')
   })
 
   it('ref blur', async () => {
-    _mount(`<el-time-picker
+    _mount(`<lx-time-picker
         v-model="value"
         ref="input"
       />`, () => ({ value: new Date(2016, 9, 10, 18, 40) }), {
@@ -319,14 +319,14 @@ describe('TimePicker', () => {
       },
     })
     await nextTick()
-    const popperEl = document.querySelector('.el-picker__popper')
+    const popperEl = document.querySelector('.lx-picker__popper')
     const attr = popperEl.getAttribute('aria-hidden')
     expect(attr).toEqual('true')
   })
 
   it('model value should sync when disabled-hours was updated', async () => {
     const wrapper = _mount(`
-       <el-time-picker
+       <lx-time-picker
         v-model="value"
         :disabled-hours="disabledHours"
         value-format="YYYY-MM-DD HH:mm:ss"
@@ -360,17 +360,17 @@ describe('TimePicker', () => {
 
 describe('TimePicker(range)', () => {
   it('create', async () => {
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
         size="mini"
         :is-range="true"
       />`, () => ({ value: [new Date(2016, 9, 10, 18, 40), new Date(2016, 9, 10, 19, 40)] }))
-    expect(wrapper.find('.el-range-editor--mini').exists()).toBeTruthy()
+    expect(wrapper.find('.lx-range-editor--mini').exists()).toBeTruthy()
     const input = wrapper.find('input')
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const list = document.querySelectorAll('.el-time-spinner__list .el-time-spinner__item.active');
+    const list = document.querySelectorAll('.lx-time-spinner__list .lx-time-spinner__item.active');
 
     ['18','40','00','19','40','00'].forEach((_, i) => {
       expect(list[i].textContent).toBe(_)
@@ -379,7 +379,7 @@ describe('TimePicker(range)', () => {
 
   it('default value', async() => {
     const defaultValue = [new Date(2000, 9, 1, 10, 20, 0), new Date(2000, 9, 1, 11, 10, 0)]
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
         :default-value="defaultValue"
         :is-range="true"
@@ -391,7 +391,7 @@ describe('TimePicker(range)', () => {
     input.trigger('focus')
     await nextTick()
 
-    const list = document.querySelectorAll('.el-time-spinner__list .el-time-spinner__item.active');
+    const list = document.querySelectorAll('.lx-time-spinner__list .lx-time-spinner__item.active');
 
     ['10','20','00','11','10','00'].forEach((_, i) => {
       expect(list[i].textContent).toBe(_)
@@ -399,7 +399,7 @@ describe('TimePicker(range)', () => {
   })
 
   it('cancel button', async () => {
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
         is-range
       />`, () => ({ value: '' }))
@@ -408,14 +408,14 @@ describe('TimePicker(range)', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick();
-    (document.querySelector('.el-time-panel__btn.cancel') as any).click()
+    (document.querySelector('.lx-time-panel__btn.cancel') as any).click()
     await nextTick()
     const vm = wrapper.vm as any
     expect(vm.value).toBe('')
     input.trigger('blur')
     input.trigger('focus')
     await nextTick();
-    (document.querySelector('.el-time-panel__btn.confirm') as any).click()
+    (document.querySelector('.lx-time-panel__btn.confirm') as any).click()
     expect(vm.value instanceof Array).toBeTruthy()
     vm.value.forEach(_ => {
       expect(_ instanceof Date).toBeTruthy()
@@ -424,7 +424,7 @@ describe('TimePicker(range)', () => {
 
   it('selectableRange ', async () => {
     // left ['08:00:00 - 12:59:59'] right ['11:00:00 - 16:59:59']
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
         is-range
         :disabled-hours="disabledHours"
@@ -442,21 +442,21 @@ describe('TimePicker(range)', () => {
     input.trigger('focus')
     await nextTick()
 
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.lx-time-spinner__list')
     const leftHoursEl = list[0]
     const leftEndbledHours = getSpinnerTextAsArray(leftHoursEl, ':not(.disabled)')
     expect(leftEndbledHours).toEqual([8, 9, 10, 11, 12])
     const rightHoursEl = list[3]
     const rightEndbledHours = getSpinnerTextAsArray(rightHoursEl, ':not(.disabled)')
     expect(rightEndbledHours).toEqual([11, 12, 13, 14, 15, 16]);
-    (leftHoursEl.querySelectorAll('.el-time-spinner__item')[12] as any).click()
+    (leftHoursEl.querySelectorAll('.lx-time-spinner__item')[12] as any).click()
     await nextTick()
     const NextRightEndbledHours = getSpinnerTextAsArray(rightHoursEl, ':not(.disabled)')
     expect(NextRightEndbledHours).toEqual([12, 13, 14, 15, 16])
   })
 
   it('arrow key', async () => {
-    const wrapper = _mount(`<el-time-picker
+    const wrapper = _mount(`<lx-time-picker
         v-model="value"
         format="YYYY-MM-DD HH:mm:ss"
       />`, () => ({ value: new Date(2016, 9, 10, 18, 40) }))
@@ -479,19 +479,19 @@ describe('TimePicker(range)', () => {
   })
 
   it('should be able to inherit options from parent injection', async () => {
-    const ElPopperOptions = {
+    const LxPopperOptions = {
       strategy: 'fixed',
     }
     const wrapper = _mount(
-      `<el-time-picker
+      `<lx-time-picker
         v-model="value"
         format="YYYY-MM-DD HH:mm:ss"
         :popper-options="options"
-      />`, () => ({ value: new Date(2016, 9, 10, 18, 40), options: ElPopperOptions }),
+      />`, () => ({ value: new Date(2016, 9, 10, 18, 40), options: LxPopperOptions }),
       {
         provide() {
           return {
-            ElPopperOptions,
+            LxPopperOptions,
           }
         },
       },

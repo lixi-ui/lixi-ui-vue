@@ -31,7 +31,7 @@ describe('<upload-dragger />', () => {
   describe('functionality', () => {
     test('onDrag works', async () => {
       const wrapper = mount()
-      await wrapper.find('.el-upload-dragger').trigger('dragover')
+      await wrapper.find('.lx-upload-dragger').trigger('dragover')
       expect(wrapper.classes('is-dragover')).toBe(true)
     })
 

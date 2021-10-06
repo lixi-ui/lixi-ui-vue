@@ -8,11 +8,11 @@ color-pickerは、複数のカラーフォーマットに対応したカラー�
 ```html
 <div class="block">
   <span class="demonstration">With default value</span>
-  <el-color-picker v-model="color1"></el-color-picker>
+  <lx-color-picker v-model="color1"></lx-color-picker>
 </div>
 <div class="block">
   <span class="demonstration">With no default value</span>
-  <el-color-picker v-model="color2"></el-color-picker>
+  <lx-color-picker v-model="color2"></lx-color-picker>
 </div>
 
 <script>
@@ -50,7 +50,7 @@ color-pickerは、複数のカラーフォーマットに対応したカラー�
 
 :::demo color-pickerはアルファチャンネルの選択をサポートしています。アルファチャンネルの選択を有効にするには、`show-alpha` アトリビュートを追加するだけです。
 ```html
-<el-color-picker v-model="color" show-alpha></el-color-picker>
+<lx-color-picker v-model="color" show-alpha></lx-color-picker>
 
 <script>
   export default {
@@ -84,11 +84,11 @@ color-pickerは、複数のカラーフォーマットに対応したカラー�
 
 :::demo color-pickerは事前定義されたカラーオプションをサポートしています。
 ```html
-<el-color-picker
+<lx-color-picker
   v-model="color"
   show-alpha
   :predefine="predefineColors">
-</el-color-picker>
+</lx-color-picker>
 
 <script>
   export default {
@@ -156,10 +156,10 @@ color-pickerは、複数のカラーフォーマットに対応したカラー�
 
 :::demo
 ```html
-<el-color-picker v-model="color"></el-color-picker>
-<el-color-picker v-model="color" size="medium"></el-color-picker>
-<el-color-picker v-model="color" size="small"></el-color-picker>
-<el-color-picker v-model="color" size="mini"></el-color-picker>
+<lx-color-picker v-model="color"></lx-color-picker>
+<lx-color-picker v-model="color" size="medium"></lx-color-picker>
+<lx-color-picker v-model="color" size="small"></lx-color-picker>
+<lx-color-picker v-model="color" size="mini"></lx-color-picker>
 
 <script>
   export default {

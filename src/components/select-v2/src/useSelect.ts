@@ -32,7 +32,7 @@ import { flattenOptions } from './util'
 
 
 import type { ExtractPropTypes, CSSProperties } from 'vue'
-import type { ElFormContext, ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
 import type { OptionType, Option } from './select.types'
 import { useInput } from './useInput'
 
@@ -47,8 +47,8 @@ const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
 
   // inject
   const { t } = useLocaleInject()
-  const elForm = inject(elFormKey, {} as ElFormContext)
-  const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+  const elForm = inject(elFormKey, {} as LxFormContext)
+  const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
   const $ELEMENT = useGlobalConfig()
 
   const states = reactive({

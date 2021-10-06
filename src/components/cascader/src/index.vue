@@ -1,5 +1,5 @@
 <template>
-  <el-popper
+  <lx-popper
     ref="popper"
     v-model:visible="popperVisible"
     manual-mode
@@ -28,7 +28,7 @@
         @mouseenter="inputHover = true"
         @mouseleave="inputHover = false"
       >
-        <el-input
+        <lx-input
           ref="input"
           v-model.trim="inputValue"
           :placeholder="inputPlaceholder"
@@ -59,10 +59,10 @@
               @click.stop="togglePopperVisible()"
             ></i>
           </template>
-        </el-input>
+        </lx-input>
 
         <div v-if="multiple" ref="tagWrapper" class="el-cascader__tags">
-          <el-tag
+          <lx-tag
             v-for="tag in presentTags"
             :key="tag.key"
             type="info"
@@ -73,7 +73,7 @@
             @close="deleteTag(tag)"
           >
             <span>{{ tag.text }}</span>
-          </el-tag>
+          </lx-tag>
           <input
             v-if="filterable && !isDisabled"
             v-model.trim="searchInputValue"
@@ -89,7 +89,7 @@
     </template>
 
     <template #default>
-      <el-cascader-panel
+      <lx-cascader-panel
         v-show="!filtering"
         ref="panel"
         v-model="checkedValue"
@@ -100,7 +100,7 @@
         @expand-change="handleExpandChange"
         @close="togglePopperVisible(false)"
       />
-      <el-scrollbar
+      <lx-scrollbar
         v-if="filterable"
         v-show="filtering"
         ref="suggestionPanel"
@@ -126,9 +126,9 @@
         <slot v-else name="empty">
           <li class="el-cascader__empty-text">{{ t('el.cascader.noMatch') }}</li>
         </slot>
-      </el-scrollbar>
+      </lx-scrollbar>
     </template>
-  </el-popper>
+  </lx-popper>
 </template>
 
 <script lang='ts'>
@@ -141,11 +141,11 @@ import {
 import { isPromise } from '@vue/shared'
 import debounce from 'lodash/debounce'
 
-import ElCascaderPanel, { CommonProps } from '@element-plus/components/cascader-panel'
-import ElInput from '@element-plus/components/input'
-import ElPopper from '@element-plus/components/popper'
-import ElScrollbar from '@element-plus/components/scrollbar'
-import ElTag from '@element-plus/components/tag'
+import LxCascaderPanel, { CommonProps } from '@element-plus/components/cascader-panel'
+import LxInput from '@element-plus/components/input'
+import LxPopper from '@element-plus/components/popper'
+import LxScrollbar from '@element-plus/components/scrollbar'
+import LxTag from '@element-plus/components/tag'
 import { elFormKey, elFormItemKey } from '@element-plus/tokens'
 
 import { ClickOutside as Clickoutside } from '@element-plus/directives'
@@ -160,7 +160,7 @@ import { isValidComponentSize } from '@element-plus/utils/validators'
 import { Effect, Options } from '@element-plus/components/popper'
 
 import type { ComputedRef, PropType } from 'vue'
-import type { ElFormContext, ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
 import type { CascaderValue, CascaderNode, Tag } from '@element-plus/components/cascader-panel'
 import type { ComponentSize } from '@element-plus/utils/types'
 
@@ -189,14 +189,14 @@ const popperOptions: Partial<Options> = {
 }
 
 export default defineComponent({
-  name: 'ElCascader',
+  name: 'LxCascader',
 
   components: {
-    ElCascaderPanel,
-    ElInput,
-    ElPopper,
-    ElScrollbar,
-    ElTag,
+    LxCascaderPanel,
+    LxInput,
+    LxPopper,
+    LxScrollbar,
+    LxTag,
   },
 
   directives: {
@@ -262,8 +262,8 @@ export default defineComponent({
 
     const { t } = useLocaleInject()
     const $ELEMENT = useGlobalConfig()
-    const elForm = inject(elFormKey, {} as ElFormContext)
-    const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+    const elForm = inject(elFormKey, {} as LxFormContext)
+    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
 
     const popper = ref(null)
     const input = ref(null)
@@ -419,9 +419,9 @@ export default defineComponent({
       let firstNode = null
 
       if (filtering.value && suggestionPanel.value) {
-        firstNode = suggestionPanel.value.$el.querySelector('.el-cascader__suggestion-item')
+        firstNode = suggestionPanel.value.$el.querySelector('.lx-cascader__suggestion-item')
       } else {
-        firstNode = panel.value?.$el.querySelector('.el-cascader-node[tabindex="-1"]')
+        firstNode = panel.value?.$el.querySelector('.lx-cascader-node[tabindex="-1"]')
       }
 
       if (firstNode) {
@@ -438,7 +438,7 @@ export default defineComponent({
       if (isServer || !inputInner) return
 
       if (suggestionPanelEl) {
-        const suggestionList = suggestionPanelEl.querySelector('.el-cascader__suggestion-list')
+        const suggestionList = suggestionPanelEl.querySelector('.lx-cascader__suggestion-list')
         suggestionList.style.minWidth = inputInner.offsetWidth + 'px'
       }
 

@@ -43,12 +43,12 @@ describe('config-provider', () => {
           }
         },
         template: `
-          <el-config-provider :locale="currentLocale">
-            <el-test class="current-locale" />
-            <el-config-provider :locale="oppositeLocale">
-              <el-test class="opposite-locale" />
-            </el-config-provider>
-          </el-config-provider>
+          <lx-config-provider :locale="currentLocale">
+            <lx-test class="current-locale" />
+            <lx-config-provider :locale="oppositeLocale">
+              <lx-test class="opposite-locale" />
+            </lx-config-provider>
+          </lx-config-provider>
 
           <button @click="toEn" class="to-en">toEn</button>
           <button @click="toZh" class="to-zh">toZh</button>

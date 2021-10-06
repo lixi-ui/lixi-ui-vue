@@ -8,7 +8,7 @@
 
 :::demo
 ```html
-<el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+<lx-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></lx-tree>
 
 <script>
   export default {
@@ -71,13 +71,13 @@
 
 :::demo 本例还展示了动态加载节点数据的方法。
 ```html
-<el-tree
+<lx-tree
   :props="props"
   :load="loadNode"
   lazy
   show-checkbox
   @check-change="handleCheckChange">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -137,12 +137,12 @@
 
 :::demo 由于在点击节点时才进行该层数据的获取，默认情况下 Tree 无法预知某个节点是否为叶子节点，所以会为每个节点添加一个下拉按钮，如果节点没有下层数据，则点击后下拉按钮会消失。同时，你也可以提前告知 Tree 某个节点是否为叶子节点，从而避免在叶子节点前渲染下拉按钮。
 ```html
-<el-tree
+<lx-tree
   :props="props"
   :load="loadNode"
   lazy
   show-checkbox>
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -184,14 +184,14 @@
 
 :::demo 分别通过`default-expanded-keys`和`default-checked-keys`设置默认展开和默认选中的节点。需要注意的是，此时必须设置`node-key`，其值为节点数据中的一个字段名，该字段在整棵树中是唯一的。
 ```html
-<el-tree
+<lx-tree
   :data="data"
   show-checkbox
   node-key="id"
   :default-expanded-keys="[2, 3]"
   :default-checked-keys="[5]"
   :props="defaultProps">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -248,13 +248,13 @@
 
 :::demo 通过`disabled`设置禁用状态。
 ```html
-<el-tree
+<lx-tree
   :data="data"
   show-checkbox
   node-key="id"
   :default-expanded-keys="[2, 3]"
   :default-checked-keys="[5]">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -303,7 +303,7 @@
 
 :::demo 本例展示如何获取和设置选中节点。获取和设置各有两种方式：通过 node 或通过 key。如果需要通过 key 来获取或设置，则必须设置`node-key`。
 ```html
-<el-tree
+<lx-tree
   :data="data"
   show-checkbox
   default-expand-all
@@ -311,14 +311,14 @@
   ref="tree"
   highlight-current
   :props="defaultProps">
-</el-tree>
+</lx-tree>
 
 <div class="buttons">
-  <el-button @click="getCheckedNodes">通过 node 获取</el-button>
-  <el-button @click="getCheckedKeys">通过 key 获取</el-button>
-  <el-button @click="setCheckedNodes">通过 node 设置</el-button>
-  <el-button @click="setCheckedKeys">通过 key 设置</el-button>
-  <el-button @click="resetChecked">清空</el-button>
+  <lx-button @click="getCheckedNodes">通过 node 获取</lx-button>
+  <lx-button @click="getCheckedKeys">通过 key 获取</lx-button>
+  <lx-button @click="setCheckedNodes">通过 node 设置</lx-button>
+  <lx-button @click="setCheckedKeys">通过 key 设置</lx-button>
+  <lx-button @click="resetChecked">清空</lx-button>
 </div>
 
 <script>
@@ -403,18 +403,18 @@
 <div class="custom-tree-container">
   <div class="block">
     <p>使用 render-content</p>
-    <el-tree
+    <lx-tree
       :data="data"
       show-checkbox
       node-key="id"
       default-expand-all
       :expand-on-click-node="false"
       :render-content="renderContent">
-    </el-tree>
+    </lx-tree>
   </div>
   <div class="block">
     <p>使用 scoped slot</p>
-    <el-tree
+    <lx-tree
       :data="data"
       show-checkbox
       node-key="id"
@@ -435,7 +435,7 @@
           </span>
         </span>
       </template>
-    </el-tree>
+    </lx-tree>
   </div>
 </div>
 
@@ -533,19 +533,19 @@
 
 :::demo 在需要对节点进行过滤时，调用 Tree 实例的`filter`方法，参数为关键字。需要注意的是，此时需要设置`filter-node-method`，值为过滤函数。
 ```html
-<el-input
+<lx-input
   placeholder="输入关键字进行过滤"
   v-model="filterText">
-</el-input>
+</lx-input>
 
-<el-tree
+<lx-tree
   class="filter-tree"
   :data="data"
   :props="defaultProps"
   default-expand-all
   :filter-node-method="filterNode"
   ref="tree">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -617,12 +617,12 @@
 
 :::demo
 ```html
-<el-tree
+<lx-tree
   :data="data"
   :props="defaultProps"
   accordion
   @node-click="handleNodeClick">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -685,7 +685,7 @@
 
 :::demo
 ```html
-<el-tree
+<lx-tree
   :data="data"
   node-key="id"
   default-expand-all
@@ -698,7 +698,7 @@
   draggable
   :allow-drop="allowDrop"
   :allow-drag="allowDrag">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {

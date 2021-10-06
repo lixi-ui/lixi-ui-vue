@@ -90,7 +90,7 @@ const SWITCH_EVENT = 'switch'
 export type ImageViewerAction = 'zoomIn' | 'zoomOut' | 'clocelise' | 'anticlocelise'
 
 export default defineComponent({
-  name: 'ElImageViewer',
+  name: 'LxImageViewer',
   props: {
     urlList: {
       type: Array as PropType<string[]>,

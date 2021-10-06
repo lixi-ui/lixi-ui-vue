@@ -30,7 +30,7 @@ import type { PropType } from 'vue'
 import type { IBreadcrumbProps } from './breadcrumb'
 
 export default defineComponent({
-  name: 'ElBreadcrumbItem',
+  name: 'LxBreadcrumbItem',
   props: {
     to: {
       type: [String, Object] as PropType<string | Record<string, unknown>>,

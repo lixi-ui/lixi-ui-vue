@@ -18,9 +18,9 @@ describe('CheckTag.vue', () => {
 
   test('functionality', async () => {
     const wrapper = mount({
-      template: `<el-check-tag @change="checked = !checked" :checked="checked">
+      template: `<lx-check-tag @change="checked = !checked" :checked="checked">
         ${AXIOM}
-      </el-check-tag>`,
+      </lx-check-tag>`,
       components: {
         'el-check-tag': CheckTag,
       },
@@ -36,11 +36,11 @@ describe('CheckTag.vue', () => {
     })
     expect(wrapper.text()).toEqual(AXIOM)
 
-    await wrapper.find('.el-check-tag').trigger('click')
+    await wrapper.find('.lx-check-tag').trigger('click')
 
     expect(wrapper.vm.checked).toBe(true)
 
-    await wrapper.find('.el-check-tag').trigger('click')
+    await wrapper.find('.lx-check-tag').trigger('click')
 
     expect(wrapper.vm.checked).toBe(false)
 

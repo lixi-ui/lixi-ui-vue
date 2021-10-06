@@ -10,4 +10,4 @@ Tag.install = (app: App): void => {
 const _Tag = Tag as SFCWithInstall<typeof Tag>
 
 export default _Tag
-export const ElTag = _Tag
+export const LxTag = _Tag

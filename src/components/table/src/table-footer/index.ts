@@ -15,7 +15,7 @@ export interface TableFooter<T> {
 }
 
 export default defineComponent({
-  name: 'ElTableFooter',
+  name: 'LxTableFooter',
 
   props: {
     fixed: {

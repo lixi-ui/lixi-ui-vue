@@ -9,13 +9,13 @@ popconfirm は ポップオーバー と似ています。そのため、重複�
 :::demo popconfirm では `title` 属性のみが利用可能で、`content` 属性は無視されます。
 ```html
 <template>
-<el-popconfirm
+<lx-popconfirm
   title="Are you sure to delete this?"
 >
 <template #reference>
-  <el-button>Delete</el-button>
+  <lx-button>Delete</lx-button>
   </template>
-  </el-popconfirm>
+  </lx-popconfirm>
 </template>
 ````
 :::
@@ -25,7 +25,7 @@ popconfirmは以下のようにカスタマイズすることができます。:
 :::demo
 ```html
 <template>
-<el-popconfirm
+<lx-popconfirm
   confirmButtonText='OK'
   cancelButtonText='No, Thanks'
   icon="el-icon-info"
@@ -33,9 +33,9 @@ popconfirmは以下のようにカスタマイズすることができます。:
   title="Are you sure to delete this?"
 >
 <template #reference>
-  <el-button>Delete</el-button>
+  <lx-button>Delete</lx-button>
   </template>
-</el-popconfirm>
+</lx-popconfirm>
 </template>
 ```
 :::
@@ -48,7 +48,7 @@ popconfirmは以下のようにカスタマイズすることができます。:
 
 ```html
 <template>
-  <el-popconfirm
+  <lx-popconfirm
     confirmButtonText="Yes"
     cancelButtonText="No"
     icon="el-icon-info"
@@ -58,9 +58,9 @@ popconfirmは以下のようにカスタマイズすることができます。:
     @cancel="cancelEvent"
   >
     <template #reference>
-      <el-button>Delete</el-button>
+      <lx-button>Delete</lx-button>
     </template>
-  </el-popconfirm>
+  </lx-popconfirm>
 </template>
 
 <script>

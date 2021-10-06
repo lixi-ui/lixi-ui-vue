@@ -7,7 +7,7 @@
 :::demo
 
 ```html
-<el-empty description="描述文字"></el-empty>
+<lx-empty description="描述文字"></lx-empty>
 ```
 :::
 
@@ -18,7 +18,7 @@
 :::demo
 
 ```html
-<el-empty image="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-empty>
+<lx-empty image="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></lx-empty>
 ```
 :::
 
@@ -29,7 +29,7 @@
 :::demo
 
 ```html
-<el-empty :image-size="200"></el-empty>
+<lx-empty :image-size="200"></lx-empty>
 ```
 :::
 
@@ -39,9 +39,9 @@
 
 :::demo
 ```html
-<el-empty>
-  <el-button type="primary">按钮</el-button>
-</el-empty>
+<lx-empty>
+  <lx-button type="primary">按钮</lx-button>
+</lx-empty>
 ```
 :::
 

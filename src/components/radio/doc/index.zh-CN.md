@@ -11,20 +11,20 @@
 ```html
 <template>
   <div>
-    <el-radio v-model="radio1" label="1">备选项1</el-radio>
-    <el-radio v-model="radio1" label="2">备选项2</el-radio>
+    <lx-radio v-model="radio1" label="1">备选项1</lx-radio>
+    <lx-radio v-model="radio1" label="2">备选项2</lx-radio>
   </div>
   <div>
-    <el-radio v-model="radio2" label="1" size="medium">备选项1</el-radio>
-    <el-radio v-model="radio2" label="2" size="medium">备选项2</el-radio>
+    <lx-radio v-model="radio2" label="1" size="medium">备选项1</lx-radio>
+    <lx-radio v-model="radio2" label="2" size="medium">备选项2</lx-radio>
   </div>
   <div>
-    <el-radio v-model="radio3" label="1" size="small">备选项1</el-radio>
-    <el-radio v-model="radio3" label="2" size="small">备选项2</el-radio>
+    <lx-radio v-model="radio3" label="1" size="small">备选项1</lx-radio>
+    <lx-radio v-model="radio3" label="2" size="small">备选项2</lx-radio>
   </div>
   <div>
-    <el-radio v-model="radio4" label="1" size="mini">备选项1</el-radio>
-    <el-radio v-model="radio4" label="2" size="mini">备选项2</el-radio>
+    <lx-radio v-model="radio4" label="1" size="mini">备选项1</lx-radio>
+    <lx-radio v-model="radio4" label="2" size="mini">备选项2</lx-radio>
   </div>
 </template>
 
@@ -66,8 +66,8 @@
 :::demo 只要在`el-radio`元素中设置`disabled`属性即可，它接受一个`Boolean`，`true`为禁用。
 ```html
 <template>
-  <el-radio disabled v-model="radio" label="禁用">备选项</el-radio>
-  <el-radio disabled v-model="radio" label="选中且禁用">备选项</el-radio>
+  <lx-radio disabled v-model="radio" label="禁用">备选项</lx-radio>
+  <lx-radio disabled v-model="radio" label="选中且禁用">备选项</lx-radio>
 </template>
 
 <script>
@@ -103,11 +103,11 @@
 
 ```html
 <template>
-  <el-radio-group v-model="radio">
-    <el-radio :label="3">备选项</el-radio>
-    <el-radio :label="6">备选项</el-radio>
-    <el-radio :label="9">备选项</el-radio>
-  </el-radio-group>
+  <lx-radio-group v-model="radio">
+    <lx-radio :label="3">备选项</lx-radio>
+    <lx-radio :label="6">备选项</lx-radio>
+    <lx-radio :label="9">备选项</lx-radio>
+  </lx-radio-group>
 </template>
 
 <script>
@@ -143,36 +143,36 @@
 ```html
 <template>
   <div>
-    <el-radio-group v-model="radio1">
-      <el-radio-button label="上海"></el-radio-button>
-      <el-radio-button label="北京"></el-radio-button>
-      <el-radio-button label="广州"></el-radio-button>
-      <el-radio-button label="深圳"></el-radio-button>
-    </el-radio-group>
+    <lx-radio-group v-model="radio1">
+      <lx-radio-button label="上海"></lx-radio-button>
+      <lx-radio-button label="北京"></lx-radio-button>
+      <lx-radio-button label="广州"></lx-radio-button>
+      <lx-radio-button label="深圳"></lx-radio-button>
+    </lx-radio-group>
   </div>
   <div style="margin-top: 20px">
-    <el-radio-group v-model="radio2" size="medium">
-      <el-radio-button label="上海" ></el-radio-button>
-      <el-radio-button label="北京"></el-radio-button>
-      <el-radio-button label="广州"></el-radio-button>
-      <el-radio-button label="深圳"></el-radio-button>
-    </el-radio-group>
+    <lx-radio-group v-model="radio2" size="medium">
+      <lx-radio-button label="上海" ></lx-radio-button>
+      <lx-radio-button label="北京"></lx-radio-button>
+      <lx-radio-button label="广州"></lx-radio-button>
+      <lx-radio-button label="深圳"></lx-radio-button>
+    </lx-radio-group>
   </div>
   <div style="margin-top: 20px">
-    <el-radio-group v-model="radio3" size="small">
-      <el-radio-button label="上海"></el-radio-button>
-      <el-radio-button label="北京" disabled ></el-radio-button>
-      <el-radio-button label="广州"></el-radio-button>
-      <el-radio-button label="深圳"></el-radio-button>
-    </el-radio-group>
+    <lx-radio-group v-model="radio3" size="small">
+      <lx-radio-button label="上海"></lx-radio-button>
+      <lx-radio-button label="北京" disabled ></lx-radio-button>
+      <lx-radio-button label="广州"></lx-radio-button>
+      <lx-radio-button label="深圳"></lx-radio-button>
+    </lx-radio-group>
   </div>
   <div style="margin-top: 20px">
-    <el-radio-group v-model="radio4" disabled size="mini">
-      <el-radio-button label="上海"></el-radio-button>
-      <el-radio-button label="北京"></el-radio-button>
-      <el-radio-button label="广州"></el-radio-button>
-      <el-radio-button label="深圳"></el-radio-button>
-    </el-radio-group>
+    <lx-radio-group v-model="radio4" disabled size="mini">
+      <lx-radio-button label="上海"></lx-radio-button>
+      <lx-radio-button label="北京"></lx-radio-button>
+      <lx-radio-button label="广州"></lx-radio-button>
+      <lx-radio-button label="深圳"></lx-radio-button>
+    </lx-radio-group>
   </div>
 </template>
 
@@ -213,24 +213,24 @@
 ```html
 <template>
   <div>
-    <el-radio v-model="radio1" label="1" border>备选项1</el-radio>
-    <el-radio v-model="radio1" label="2" border>备选项2</el-radio>
+    <lx-radio v-model="radio1" label="1" border>备选项1</lx-radio>
+    <lx-radio v-model="radio1" label="2" border>备选项2</lx-radio>
   </div>
   <div style="margin-top: 20px">
-    <el-radio v-model="radio2" label="1" border size="medium">备选项1</el-radio>
-    <el-radio v-model="radio2" label="2" border size="medium">备选项2</el-radio>
+    <lx-radio v-model="radio2" label="1" border size="medium">备选项1</lx-radio>
+    <lx-radio v-model="radio2" label="2" border size="medium">备选项2</lx-radio>
   </div>
   <div style="margin-top: 20px">
-    <el-radio-group v-model="radio3" size="small">
-      <el-radio label="1" border>备选项1</el-radio>
-      <el-radio label="2" border disabled>备选项2</el-radio>
-    </el-radio-group>
+    <lx-radio-group v-model="radio3" size="small">
+      <lx-radio label="1" border>备选项1</lx-radio>
+      <lx-radio label="2" border disabled>备选项2</lx-radio>
+    </lx-radio-group>
   </div>
   <div style="margin-top: 20px">
-    <el-radio-group v-model="radio4" size="mini" disabled>
-      <el-radio label="1" border>备选项1</el-radio>
-      <el-radio label="2" border>备选项2</el-radio>
-    </el-radio-group>
+    <lx-radio-group v-model="radio4" size="mini" disabled>
+      <lx-radio label="1" border>备选项1</lx-radio>
+      <lx-radio label="2" border>备选项2</lx-radio>
+    </lx-radio-group>
   </div>
 </template>
 

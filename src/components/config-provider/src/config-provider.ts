@@ -3,7 +3,7 @@ import { defineComponent } from 'vue'
 import { useLocaleProps, useLocale } from '@element-plus/hooks'
 
 export const ConfigProvider = defineComponent({
-  name: 'ElConfigProvider',
+  name: 'LxConfigProvider',
   props: {
     ...useLocaleProps,
     // Add more configs

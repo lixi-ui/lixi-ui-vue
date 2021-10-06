@@ -6,29 +6,29 @@ Show animation while loading data.
 
 Displays animation in a container (such as a table) while loading data.
 
-:::demo Element Plus provides two ways to invoke Loading: directive and service. For the custom directive `v-loading`, you just need to bind a `boolean` value to it. By default, the loading mask will append to the element where the directive is used. Adding the `body` modifier makes the mask append to the body element.
+:::demo Lxement Plus provides two ways to invoke Loading: directive and service. For the custom directive `v-loading`, you just need to bind a `boolean` value to it. By default, the loading mask will append to the element where the directive is used. Adding the `body` modifier makes the mask append to the body element.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     v-loading="loading"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <style>
@@ -104,50 +104,50 @@ You can customize loading text, loading spinner and background color.
 :::demo Add attribute `element-loading-text` to the element on which `v-loading` is bound, and its value will be displayed under the spinner. Similarly, the `element-loading-spinner`, `element-loading-background`, and `element-loading-svg` attributes are used to set the icon class name, background color value, and loading icon, respectively.
 ```html
 <template>
-  <el-table
+  <lx-table
     v-loading="loading"
     element-loading-text="Loading..."
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
-  <el-table
+    </lx-table-column>
+  </lx-table>
+  <lx-table
     v-loading="loading"
     :element-loading-svg="svg"
     class="custom-loading-svg"
     element-loading-svg-view-box="-10, -10, 50, 50"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -242,17 +242,17 @@ Show a full screen animation while loading data.
 
 ```html
 <template>
-  <el-button
+  <lx-button
     type="primary"
     @click="openFullScreen1"
     v-loading.fullscreen.lock="fullscreenLoading">
     As a directive
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     type="primary"
     @click="openFullScreen2">
     As a service
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -287,7 +287,7 @@ Show a full screen animation while loading data.
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { ElLoading } from 'element-plus';
+  import { LxLoading } from 'element-plus';
 
   export default defineComponent({
     setup() {
@@ -300,7 +300,7 @@ Show a full screen animation while loading data.
       };
 
       const openFullScreen2 = () => {
-        const loading = ElLoading.service({
+        const loading = LxLoading.service({
           lock: true,
           text: 'Loading',
           spinner: 'el-icon-loading',
@@ -327,7 +327,7 @@ Show a full screen animation while loading data.
 ### Service
 You can also invoke Loading with a service. Import Loading service:
 ```javascript
-import { ElLoading } from 'element-plus';
+import { LxLoading } from 'element-plus';
 ```
 Invoke it:
 ```javascript
@@ -335,20 +335,20 @@ ElLoading.service(options);
 ```
 The parameter `options` is the configuration of Loading, and its details can be found in the following table. `LoadingService` returns a Loading instance, and you can close it by invoking its `close` method:
 ```javascript
-let loadingInstance = ElLoading.service(options);
+let loadingInstance = LxLoading.service(options);
 this.$nextTick(() => { // Loading should be closed asynchronously
   loadingInstance.close();
 });
 ```
 Note that in this case the full screen Loading is singleton. If a new full screen Loading is invoked before an existing one is closed, the existing full screen Loading instance will be returned instead of actually creating another Loading instance:
 ```javascript
-let loadingInstance1 = ElLoading.service({ fullscreen: true });
-let loadingInstance2 = ElLoading.service({ fullscreen: true });
+let loadingInstance1 = LxLoading.service({ fullscreen: true });
+let loadingInstance2 = LxLoading.service({ fullscreen: true });
 console.log(loadingInstance1 === loadingInstance2); // true
 ```
 Calling the `close` method on any one of them can close this full screen Loading.
 
-If Element Plus is imported entirely, a globally method `$loading` will be registered to `app.config.globalProperties`. You can invoke it like this: `this.$loading(options)`, and it also returns a Loading instance.
+If Lxement Plus is imported entirely, a globally method `$loading` will be registered to `app.config.globalProperties`. You can invoke it like this: `this.$loading(options)`, and it also returns a Loading instance.
 
 ### Options
 | Attribute      | Description          | Type      | Accepted Values       | Default  |

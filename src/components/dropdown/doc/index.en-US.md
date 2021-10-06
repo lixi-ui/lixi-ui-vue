@@ -7,27 +7,27 @@ Hover on the dropdown menu to unfold it for more actions.
 :::demo The triggering element is rendered by the default `slot`, and the dropdown part is rendered by the `slot` named `dropdown`. By default, dropdown list shows when you hover on the triggering element without having to click it.
 
 ```html
-<el-dropdown>
+<lx-dropdown>
   <span class="el-dropdown-link">
     Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>Action 1</el-dropdown-item>
-      <el-dropdown-item>Action 2</el-dropdown-item>
-      <el-dropdown-item>Action 3</el-dropdown-item>
-      <el-dropdown-item disabled>Action 4</el-dropdown-item>
-      <el-dropdown-item divided>Action 5</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>Action 1</lx-dropdown-item>
+      <lx-dropdown-item>Action 2</lx-dropdown-item>
+      <lx-dropdown-item>Action 3</lx-dropdown-item>
+      <lx-dropdown-item disabled>Action 4</lx-dropdown-item>
+      <lx-dropdown-item divided>Action 5</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .lx-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .lx-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -42,41 +42,41 @@ Use the button to trigger the dropdown list.
 
 :::demo Use `split-button` to split the triggering element into a button group with the left button being a normal button and right one the actual triggering target. If you wanna insert a separator line between item three and item four, just add a class `divider` to item four.
 ```html
-<el-dropdown>
-  <el-button type="primary">
+<lx-dropdown>
+  <lx-button type="primary">
     Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
-  </el-button>
+  </lx-button>
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>Action 1</el-dropdown-item>
-      <el-dropdown-item>Action 2</el-dropdown-item>
-      <el-dropdown-item>Action 3</el-dropdown-item>
-      <el-dropdown-item>Action 4</el-dropdown-item>
-      <el-dropdown-item>Action 5</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>Action 1</lx-dropdown-item>
+      <lx-dropdown-item>Action 2</lx-dropdown-item>
+      <lx-dropdown-item>Action 3</lx-dropdown-item>
+      <lx-dropdown-item>Action 4</lx-dropdown-item>
+      <lx-dropdown-item>Action 5</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
-<el-dropdown split-button type="primary" @click="handleClick">
+</lx-dropdown>
+<lx-dropdown split-button type="primary" @click="handleClick">
   Dropdown List
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>Action 1</el-dropdown-item>
-      <el-dropdown-item>Action 2</el-dropdown-item>
-      <el-dropdown-item>Action 3</el-dropdown-item>
-      <el-dropdown-item>Action 4</el-dropdown-item>
-      <el-dropdown-item>Action 5</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>Action 1</lx-dropdown-item>
+      <lx-dropdown-item>Action 2</lx-dropdown-item>
+      <lx-dropdown-item>Action 3</lx-dropdown-item>
+      <lx-dropdown-item>Action 4</lx-dropdown-item>
+      <lx-dropdown-item>Action 5</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
 <style>
-  .el-dropdown {
+  .lx-dropdown {
     vertical-align: top;
   }
-  .el-dropdown + .el-dropdown {
+  .lx-dropdown + .lx-dropdown {
     margin-left: 15px;
   }
-  .el-icon-arrow-down {
+  .lx-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -118,66 +118,66 @@ Click the triggering element or hover on it.
 :::demo Use the attribute `trigger`. By default, it is `hover`.
 
 ```html
-<el-row class="block-col-2">
-  <el-col :span="8">
+<lx-row class="block-col-2">
+  <lx-col :span="8">
     <span class="demonstration">hover to trigger</span>
-    <el-dropdown>
+    <lx-dropdown>
       <span class="el-dropdown-link">
         Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item icon="el-icon-plus">Action 1</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus">Action 2</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus-outline">Action 3</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-check">Action 4</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-check">Action 5</el-dropdown-item>
-        </el-dropdown-menu>
+        <lx-dropdown-menu>
+          <lx-dropdown-item icon="el-icon-plus">Action 1</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus">Action 2</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus-outline">Action 3</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-check">Action 4</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-check">Action 5</lx-dropdown-item>
+        </lx-dropdown-menu>
       </template>
-    </el-dropdown>
-  </el-col>
-  <el-col :span="8">
+    </lx-dropdown>
+  </lx-col>
+  <lx-col :span="8">
     <span class="demonstration">click to trigger</span>
-    <el-dropdown trigger="click">
+    <lx-dropdown trigger="click">
       <span class="el-dropdown-link">
         Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item icon="el-icon-plus">Action 1</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus">Action 2</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus-outline">Action 3</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-check">Action 4</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-check">Action 5</el-dropdown-item>
-        </el-dropdown-menu>
+        <lx-dropdown-menu>
+          <lx-dropdown-item icon="el-icon-plus">Action 1</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus">Action 2</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus-outline">Action 3</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-check">Action 4</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-check">Action 5</lx-dropdown-item>
+        </lx-dropdown-menu>
       </template>
-    </el-dropdown>
-  </el-col>
-  <el-col :span="8">
+    </lx-dropdown>
+  </lx-col>
+  <lx-col :span="8">
     <span class="demonstration">right click to trigger</span>
-    <el-dropdown trigger="contextmenu">
+    <lx-dropdown trigger="contextmenu">
       <span class="el-dropdown-link">
         Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item icon="el-icon-plus">Action 1</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus">Action 2</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus-outline">Action 3</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-check">Action 4</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-check">Action 5</el-dropdown-item>
-        </el-dropdown-menu>
+        <lx-dropdown-menu>
+          <lx-dropdown-item icon="el-icon-plus">Action 1</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus">Action 2</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus-outline">Action 3</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-check">Action 4</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-check">Action 5</lx-dropdown-item>
+        </lx-dropdown-menu>
       </template>
-    </el-dropdown>
-  </el-col>
-</el-row>
+    </lx-dropdown>
+  </lx-col>
+</lx-row>
 
 <style>
-  .el-dropdown-link {
+  .lx-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .lx-icon-arrow-down {
     font-size: 12px;
   }
   .demonstration {
@@ -196,27 +196,27 @@ Use `hide-on-click` to define if menu closes on clicking.
 
 :::demo By default menu will close when you click on menu items, and it can be turned off by setting hide-on-click to false.
 ```html
-<el-dropdown :hide-on-click="false">
+<lx-dropdown :hide-on-click="false">
   <span class="el-dropdown-link">
     Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>Action 1</el-dropdown-item>
-      <el-dropdown-item>Action 2</el-dropdown-item>
-      <el-dropdown-item>Action 3</el-dropdown-item>
-      <el-dropdown-item disabled>Action 4</el-dropdown-item>
-      <el-dropdown-item divided>Action 5</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>Action 1</lx-dropdown-item>
+      <lx-dropdown-item>Action 2</lx-dropdown-item>
+      <lx-dropdown-item>Action 3</lx-dropdown-item>
+      <lx-dropdown-item disabled>Action 4</lx-dropdown-item>
+      <lx-dropdown-item divided>Action 5</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .lx-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .lx-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -229,27 +229,27 @@ Clicking each dropdown item fires an event whose parameter is assigned by each i
 
 :::demo
 ```html
-<el-dropdown @command="handleCommand">
+<lx-dropdown @command="handleCommand">
   <span class="el-dropdown-link">
     Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item command="a">Action 1</el-dropdown-item>
-      <el-dropdown-item command="b">Action 2</el-dropdown-item>
-      <el-dropdown-item command="c">Action 3</el-dropdown-item>
-      <el-dropdown-item command="d" disabled>Action 4</el-dropdown-item>
-      <el-dropdown-item command="e" divided>Action 5</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item command="a">Action 1</lx-dropdown-item>
+      <lx-dropdown-item command="b">Action 2</lx-dropdown-item>
+      <lx-dropdown-item command="c">Action 3</lx-dropdown-item>
+      <lx-dropdown-item command="d" disabled>Action 4</lx-dropdown-item>
+      <lx-dropdown-item command="e" divided>Action 5</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .lx-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .lx-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -267,13 +267,13 @@ Clicking each dropdown item fires an event whose parameter is assigned by each i
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
 
       const handleCommand = (command) => {
-        ElMessage(`click on item ${command}`);
+        LxMessage(`click on item ${command}`);
       };
       return {
         handleCommand,
@@ -293,54 +293,54 @@ Besides default size, Dropdown component provides three additional sizes for you
 :::demo Use attribute `size` to set additional sizes with `medium`, `small` or `mini`.
 
 ```html
-<el-dropdown split-button type="primary">
+<lx-dropdown split-button type="primary">
   Default
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>Action 1</el-dropdown-item>
-      <el-dropdown-item>Action 2</el-dropdown-item>
-      <el-dropdown-item>Action 3</el-dropdown-item>
-      <el-dropdown-item>Action 4</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>Action 1</lx-dropdown-item>
+      <lx-dropdown-item>Action 2</lx-dropdown-item>
+      <lx-dropdown-item>Action 3</lx-dropdown-item>
+      <lx-dropdown-item>Action 4</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
-<el-dropdown size="medium" split-button type="primary">
+<lx-dropdown size="medium" split-button type="primary">
   Medium
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>Action 1</el-dropdown-item>
-      <el-dropdown-item>Action 2</el-dropdown-item>
-      <el-dropdown-item>Action 3</el-dropdown-item>
-      <el-dropdown-item>Action 4</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>Action 1</lx-dropdown-item>
+      <lx-dropdown-item>Action 2</lx-dropdown-item>
+      <lx-dropdown-item>Action 3</lx-dropdown-item>
+      <lx-dropdown-item>Action 4</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
 
-<el-dropdown size="small" split-button type="primary">
+<lx-dropdown size="small" split-button type="primary">
   Small
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>Action 1</el-dropdown-item>
-      <el-dropdown-item>Action 2</el-dropdown-item>
-      <el-dropdown-item>Action 3</el-dropdown-item>
-      <el-dropdown-item>Action 4</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>Action 1</lx-dropdown-item>
+      <lx-dropdown-item>Action 2</lx-dropdown-item>
+      <lx-dropdown-item>Action 3</lx-dropdown-item>
+      <lx-dropdown-item>Action 4</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
-<el-dropdown size="mini" split-button type="primary">
+<lx-dropdown size="mini" split-button type="primary">
   Mini
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>Action 1</el-dropdown-item>
-      <el-dropdown-item>Action 2</el-dropdown-item>
-      <el-dropdown-item>Action 3</el-dropdown-item>
-      <el-dropdown-item>Action 4</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>Action 1</lx-dropdown-item>
+      <lx-dropdown-item>Action 2</lx-dropdown-item>
+      <lx-dropdown-item>Action 3</lx-dropdown-item>
+      <lx-dropdown-item>Action 4</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 ```
 :::
 
@@ -364,7 +364,7 @@ Besides default size, Dropdown component provides three additional sizes for you
 | Name | Description |
 |------|--------|
 | — | content of Dropdown. Notice: Must be a valid html dom element (ex. `<span>, <button> etc.`) or `el-component`, to attach the trigger listener  |
-| dropdown | content of the Dropdown Menu, usually a `<el-dropdown-menu>` element |
+| dropdown | content of the Dropdown Menu, usually a `<lx-dropdown-menu>` element |
 
 ### Dropdown Events
 | Event Name | Description | Parameters |

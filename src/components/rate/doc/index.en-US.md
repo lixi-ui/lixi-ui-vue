@@ -9,14 +9,14 @@ Used for rating
 ```html
 <div class="block">
   <span class="demonstration">Default</span>
-  <el-rate v-model="value1"></el-rate>
+  <lx-rate v-model="value1"></lx-rate>
 </div>
 <div class="block">
   <span class="demonstration">Color for different levels</span>
-  <el-rate
+  <lx-rate
     v-model="value2"
     :colors="colors">
-  </el-rate>
+  </lx-rate>
 </div>
 
 <script>
@@ -55,7 +55,7 @@ Used for rating
 ```html
 
 <div class="block">
-  <el-rate  v-model="value"  allow-half />
+  <lx-rate  v-model="value"  allow-half />
 </div>
 
 
@@ -93,11 +93,11 @@ Using text to indicate rating score
 :::demo Add attribute `show-text` to display text at the right of Rate. You can assign texts for different scores using `texts`. `texts` is an array whose length should be equal to the max score `max`.
 
 ```html
-<el-rate
+<lx-rate
   v-model="value"
   :texts="['oops', 'disappointed', 'normal', 'good', 'great']"
   show-text>
-</el-rate>
+</lx-rate>
 
 <script>
   export default {
@@ -133,12 +133,12 @@ You can use different icons to distinguish different rate components.
 :::demo You can customize icons by passing `icon-classes` an array with three elements or a object which key is the threshold between two levels and value is the corresponding icon class. In this example, we also use `void-icon-class` to set the icon if it is unselected.
 
 ```html
-<el-rate
+<lx-rate
   v-model="value"
   :icon-classes="iconClasses"
   void-icon-class="icon-rate-face-off"
   :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
-</el-rate>
+</lx-rate>
 
 <script>
   export default {
@@ -176,13 +176,13 @@ Read-only Rate is for displaying rating score. Half star is supported.
 :::demo Use attribute `disabled` to make the component read-only. Add `show-score` to display the rating score at the right side. Additionally, you can use attribute `score-template` to provide a score template. It must contain `{value}`, and `{value}` will be replaced with the rating score.
 
 ```html
-<el-rate
+<lx-rate
   v-model="value"
   disabled
   show-score
   text-color="#ff9900"
   score-template="{value} points">
-</el-rate>
+</lx-rate>
 
 <script>
   export default {

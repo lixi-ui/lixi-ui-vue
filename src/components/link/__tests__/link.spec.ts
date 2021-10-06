@@ -20,7 +20,7 @@ describe('Link.vue', () => {
       },
     })
 
-    await wrapper.find('.el-link').trigger('click')
+    await wrapper.find('.lx-link').trigger('click')
     expect(wrapper.emitted('click')).toHaveLength(1)
   })
 
@@ -34,7 +34,7 @@ describe('Link.vue', () => {
       },
     })
 
-    await wrapper.find('.el-link').trigger('click')
+    await wrapper.find('.lx-link').trigger('click')
     expect(wrapper.emitted('click')).toBeUndefined()
   })
 

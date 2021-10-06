@@ -13,59 +13,59 @@
 :::demo 在 Form 组件中，每一个表单域由一个 Form-Item 组件构成，表单域中可以放置各种类型的表单控件，包括 Input、Select、Checkbox、Radio、Switch、DatePicker、TimePicker
 
 ```html
-<el-form ref="form" :model="form" label-width="80px">
-  <el-form-item label="活动名称">
-    <el-input v-model="form.name"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域">
-    <el-select v-model="form.region" placeholder="请选择活动区域">
-      <el-option label="区域一" value="shanghai"></el-option>
-      <el-option label="区域二" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="活动时间">
-    <el-col :span="11">
-      <el-date-picker
+<lx-form ref="form" :model="form" label-width="80px">
+  <lx-form-item label="活动名称">
+    <lx-input v-model="form.name"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="活动区域">
+    <lx-select v-model="form.region" placeholder="请选择活动区域">
+      <lx-option label="区域一" value="shanghai"></lx-option>
+      <lx-option label="区域二" value="beijing"></lx-option>
+    </lx-select>
+  </lx-form-item>
+  <lx-form-item label="活动时间">
+    <lx-col :span="11">
+      <lx-date-picker
         type="date"
         placeholder="选择日期"
         v-model="form.date1"
         style="width: 100%;"
-      ></el-date-picker>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-time-picker
+      ></lx-date-picker>
+    </lx-col>
+    <lx-col class="line" :span="2">-</lx-col>
+    <lx-col :span="11">
+      <lx-time-picker
         placeholder="选择时间"
         v-model="form.date2"
         style="width: 100%;"
-      ></el-time-picker>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="即时配送">
-    <el-switch v-model="form.delivery"></el-switch>
-  </el-form-item>
-  <el-form-item label="活动性质">
-    <el-checkbox-group v-model="form.type">
-      <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-      <el-checkbox label="地推活动" name="type"></el-checkbox>
-      <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-      <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="特殊资源">
-    <el-radio-group v-model="form.resource">
-      <el-radio label="线上品牌商赞助"></el-radio>
-      <el-radio label="线下场地免费"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item label="活动形式">
-    <el-input type="textarea" v-model="form.desc"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="onSubmit">立即创建</el-button>
-    <el-button>取消</el-button>
-  </el-form-item>
-</el-form>
+      ></lx-time-picker>
+    </lx-col>
+  </lx-form-item>
+  <lx-form-item label="即时配送">
+    <lx-switch v-model="form.delivery"></lx-switch>
+  </lx-form-item>
+  <lx-form-item label="活动性质">
+    <lx-checkbox-group v-model="form.type">
+      <lx-checkbox label="美食/餐厅线上活动" name="type"></lx-checkbox>
+      <lx-checkbox label="地推活动" name="type"></lx-checkbox>
+      <lx-checkbox label="线下主题活动" name="type"></lx-checkbox>
+      <lx-checkbox label="单纯品牌曝光" name="type"></lx-checkbox>
+    </lx-checkbox-group>
+  </lx-form-item>
+  <lx-form-item label="特殊资源">
+    <lx-radio-group v-model="form.resource">
+      <lx-radio label="线上品牌商赞助"></lx-radio>
+      <lx-radio label="线下场地免费"></lx-radio>
+    </lx-radio-group>
+  </lx-form-item>
+  <lx-form-item label="活动形式">
+    <lx-input type="textarea" v-model="form.desc"></lx-input>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="onSubmit">立即创建</lx-button>
+    <lx-button>取消</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -98,7 +98,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 > <i>When there is only one single-line text input field in a form, the user agent should accept Enter in that field as a request to submit the form.</i>
 
-即：当一个 form 元素中只有一个输入框时，在该输入框中按下回车应提交该表单。如果希望阻止这一默认行为，可以在 `<el-form>` 标签上添加 `@submit.prevent`。
+即：当一个 form 元素中只有一个输入框时，在该输入框中按下回车应提交该表单。如果希望阻止这一默认行为，可以在 `<lx-form>` 标签上添加 `@submit.prevent`。
 :::
 
 ### 行内表单
@@ -108,20 +108,20 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 :::demo 设置 `inline` 属性可以让表单域变为行内的表单域
 
 ```html
-<el-form :inline="true" :model="formInline" class="demo-form-inline">
-  <el-form-item label="审批人">
-    <el-input v-model="formInline.user" placeholder="审批人"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域">
-    <el-select v-model="formInline.region" placeholder="活动区域">
-      <el-option label="区域一" value="shanghai"></el-option>
-      <el-option label="区域二" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="onSubmit">查询</el-button>
-  </el-form-item>
-</el-form>
+<lx-form :inline="true" :model="formInline" class="demo-form-inline">
+  <lx-form-item label="审批人">
+    <lx-input v-model="formInline.user" placeholder="审批人"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="活动区域">
+    <lx-select v-model="formInline.region" placeholder="活动区域">
+      <lx-option label="区域一" value="shanghai"></lx-option>
+      <lx-option label="区域二" value="beijing"></lx-option>
+    </lx-select>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="onSubmit">查询</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -150,27 +150,27 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 :::demo 通过设置 `label-position` 属性可以改变表单域标签的位置，可选值为 `top`、`left`，当设为 `top` 时标签会置于表单域的顶部
 
 ```html
-<el-radio-group v-model="labelPosition" size="small">
-  <el-radio-button label="left">左对齐</el-radio-button>
-  <el-radio-button label="right">右对齐</el-radio-button>
-  <el-radio-button label="top">顶部对齐</el-radio-button>
-</el-radio-group>
+<lx-radio-group v-model="labelPosition" size="small">
+  <lx-radio-button label="left">左对齐</lx-radio-button>
+  <lx-radio-button label="right">右对齐</lx-radio-button>
+  <lx-radio-button label="top">顶部对齐</lx-radio-button>
+</lx-radio-group>
 <div style="margin: 20px;"></div>
-<el-form
+<lx-form
   :label-position="labelPosition"
   label-width="80px"
   :model="formLabelAlign"
 >
-  <el-form-item label="名称">
-    <el-input v-model="formLabelAlign.name"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域">
-    <el-input v-model="formLabelAlign.region"></el-input>
-  </el-form-item>
-  <el-form-item label="活动形式">
-    <el-input v-model="formLabelAlign.type"></el-input>
-  </el-form-item>
-</el-form>
+  <lx-form-item label="名称">
+    <lx-input v-model="formLabelAlign.name"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="活动区域">
+    <lx-input v-model="formLabelAlign.region"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="活动形式">
+    <lx-input v-model="formLabelAlign.type"></lx-input>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -196,71 +196,71 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 :::demo Form 组件提供了表单验证的功能，只需要通过 `rules` 属性传入约定的验证规则，并将 Form-Item 的 `prop` 属性设置为需校验的字段名即可。校验规则参见 [async-validator](https://github.com/yiminghe/async-validator)
 
 ```html
-<el-form
+<lx-form
   :model="ruleForm"
   :rules="rules"
   ref="ruleForm"
   label-width="100px"
   class="demo-ruleForm"
 >
-  <el-form-item label="活动名称" prop="name">
-    <el-input v-model="ruleForm.name"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域" prop="region">
-    <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
-      <el-option label="区域一" value="shanghai"></el-option>
-      <el-option label="区域二" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="活动时间" required>
-    <el-col :span="11">
-      <el-form-item prop="date1">
-        <el-date-picker
+  <lx-form-item label="活动名称" prop="name">
+    <lx-input v-model="ruleForm.name"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="活动区域" prop="region">
+    <lx-select v-model="ruleForm.region" placeholder="请选择活动区域">
+      <lx-option label="区域一" value="shanghai"></lx-option>
+      <lx-option label="区域二" value="beijing"></lx-option>
+    </lx-select>
+  </lx-form-item>
+  <lx-form-item label="活动时间" required>
+    <lx-col :span="11">
+      <lx-form-item prop="date1">
+        <lx-date-picker
           type="date"
           placeholder="选择日期"
           v-model="ruleForm.date1"
           style="width: 100%;"
-        ></el-date-picker>
-      </el-form-item>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-form-item prop="date2">
-        <el-time-picker
+        ></lx-date-picker>
+      </lx-form-item>
+    </lx-col>
+    <lx-col class="line" :span="2">-</lx-col>
+    <lx-col :span="11">
+      <lx-form-item prop="date2">
+        <lx-time-picker
           placeholder="选择时间"
           v-model="ruleForm.date2"
           style="width: 100%;"
-        ></el-time-picker>
-      </el-form-item>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="即时配送" prop="delivery">
-    <el-switch v-model="ruleForm.delivery"></el-switch>
-  </el-form-item>
-  <el-form-item label="活动性质" prop="type">
-    <el-checkbox-group v-model="ruleForm.type">
-      <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-      <el-checkbox label="地推活动" name="type"></el-checkbox>
-      <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-      <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="特殊资源" prop="resource">
-    <el-radio-group v-model="ruleForm.resource">
-      <el-radio label="线上品牌商赞助"></el-radio>
-      <el-radio label="线下场地免费"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item label="活动形式" prop="desc">
-    <el-input type="textarea" v-model="ruleForm.desc"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')"
-      >立即创建</el-button
+        ></lx-time-picker>
+      </lx-form-item>
+    </lx-col>
+  </lx-form-item>
+  <lx-form-item label="即时配送" prop="delivery">
+    <lx-switch v-model="ruleForm.delivery"></lx-switch>
+  </lx-form-item>
+  <lx-form-item label="活动性质" prop="type">
+    <lx-checkbox-group v-model="ruleForm.type">
+      <lx-checkbox label="美食/餐厅线上活动" name="type"></lx-checkbox>
+      <lx-checkbox label="地推活动" name="type"></lx-checkbox>
+      <lx-checkbox label="线下主题活动" name="type"></lx-checkbox>
+      <lx-checkbox label="单纯品牌曝光" name="type"></lx-checkbox>
+    </lx-checkbox-group>
+  </lx-form-item>
+  <lx-form-item label="特殊资源" prop="resource">
+    <lx-radio-group v-model="ruleForm.resource">
+      <lx-radio label="线上品牌商赞助"></lx-radio>
+      <lx-radio label="线下场地免费"></lx-radio>
+    </lx-radio-group>
+  </lx-form-item>
+  <lx-form-item label="活动形式" prop="desc">
+    <lx-input type="textarea" v-model="ruleForm.desc"></lx-input>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="submitForm('ruleForm')"
+      >立即创建</lx-button
     >
-    <el-button @click="resetForm('ruleForm')">重置</el-button>
-  </el-form-item>
-</el-form>
+    <lx-button @click="resetForm('ruleForm')">重置</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -349,7 +349,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 :::demo 本例还使用`status-icon`属性为输入框添加了表示校验结果的反馈图标。
 
 ```html
-<el-form
+<lx-form
   :model="ruleForm"
   status-icon
   :rules="rules"
@@ -357,28 +357,28 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   label-width="100px"
   class="demo-ruleForm"
 >
-  <el-form-item label="密码" prop="pass">
-    <el-input
+  <lx-form-item label="密码" prop="pass">
+    <lx-input
       type="password"
       v-model="ruleForm.pass"
       autocomplete="off"
-    ></el-input>
-  </el-form-item>
-  <el-form-item label="确认密码" prop="checkPass">
-    <el-input
+    ></lx-input>
+  </lx-form-item>
+  <lx-form-item label="确认密码" prop="checkPass">
+    <lx-input
       type="password"
       v-model="ruleForm.checkPass"
       autocomplete="off"
-    ></el-input>
-  </el-form-item>
-  <el-form-item label="年龄" prop="age">
-    <el-input v-model.number="ruleForm.age"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-    <el-button @click="resetForm('ruleForm')">重置</el-button>
-  </el-form-item>
-</el-form>
+    ></lx-input>
+  </lx-form-item>
+  <lx-form-item label="年龄" prop="age">
+    <lx-input v-model.number="ruleForm.age"></lx-input>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="submitForm('ruleForm')">提交</lx-button>
+    <lx-button @click="resetForm('ruleForm')">重置</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -460,13 +460,13 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 :::demo 除了在 Form 组件上一次性传递所有的验证规则外还可以在单个的表单域上传递属性的验证规则
 
 ```html
-<el-form
+<lx-form
   :model="dynamicValidateForm"
   ref="dynamicValidateForm"
   label-width="100px"
   class="demo-dynamic"
 >
-  <el-form-item
+  <lx-form-item
     prop="email"
     label="邮箱"
     :rules="[
@@ -474,9 +474,9 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       { type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
     ]"
   >
-    <el-input v-model="dynamicValidateForm.email"></el-input>
-  </el-form-item>
-  <el-form-item
+    <lx-input v-model="dynamicValidateForm.email"></lx-input>
+  </lx-form-item>
+  <lx-form-item
     v-for="(domain, index) in dynamicValidateForm.domains"
     :label="'域名' + index"
     :key="domain.key"
@@ -485,17 +485,17 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       required: true, message: '域名不能为空', trigger: 'blur'
     }"
   >
-    <el-input v-model="domain.value"></el-input
-    ><el-button @click.prevent="removeDomain(domain)">删除</el-button>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('dynamicValidateForm')"
-      >提交</el-button
+    <lx-input v-model="domain.value"></lx-input
+    ><lx-button @click.prevent="removeDomain(domain)">删除</lx-button>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="submitForm('dynamicValidateForm')"
+      >提交</lx-button
     >
-    <el-button @click="addDomain">新增域名</el-button>
-    <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
-  </el-form-item>
-</el-form>
+    <lx-button @click="addDomain">新增域名</lx-button>
+    <lx-button @click="resetForm('dynamicValidateForm')">重置</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -548,13 +548,13 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 :::demo 数字类型的验证需要在 `v-model` 处加上 `.number` 的修饰符，这是 `Vue` 自身提供的用于将绑定值转化为 `number` 类型的修饰符。
 
 ```html
-<el-form
+<lx-form
   :model="numberValidateForm"
   ref="numberValidateForm"
   label-width="100px"
   class="demo-ruleForm"
 >
-  <el-form-item
+  <lx-form-item
     label="年龄"
     prop="age"
     :rules="[
@@ -562,19 +562,19 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       { type: 'number', message: '年龄必须为数字值'}
     ]"
   >
-    <el-input
+    <lx-input
       type="age"
       v-model.number="numberValidateForm.age"
       autocomplete="off"
-    ></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('numberValidateForm')"
-      >提交</el-button
+    ></lx-input>
+  </lx-form-item>
+  <lx-form-item>
+    <lx-button type="primary" @click="submitForm('numberValidateForm')"
+      >提交</lx-button
     >
-    <el-button @click="resetForm('numberValidateForm')">重置</el-button>
-  </el-form-item>
-</el-form>
+    <lx-button @click="resetForm('numberValidateForm')">重置</lx-button>
+  </lx-form-item>
+</lx-form>
 <script>
   export default {
     data() {
@@ -616,55 +616,55 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 :::demo 如果希望某个表单项或某个表单组件的尺寸不同于 Form 上的`size`属性，直接为这个表单项或表单组件设置自己的`size`即可。
 
 ```html
-<el-form ref="form" :model="sizeForm" label-width="80px" size="mini">
-  <el-form-item label="活动名称">
-    <el-input v-model="sizeForm.name"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域">
-    <el-select v-model="sizeForm.region" placeholder="请选择活动区域">
-      <el-option label="区域一" value="shanghai"></el-option>
-      <el-option label="区域二" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="活动时间">
-    <el-col :span="11">
-      <el-date-picker
+<lx-form ref="form" :model="sizeForm" label-width="80px" size="mini">
+  <lx-form-item label="活动名称">
+    <lx-input v-model="sizeForm.name"></lx-input>
+  </lx-form-item>
+  <lx-form-item label="活动区域">
+    <lx-select v-model="sizeForm.region" placeholder="请选择活动区域">
+      <lx-option label="区域一" value="shanghai"></lx-option>
+      <lx-option label="区域二" value="beijing"></lx-option>
+    </lx-select>
+  </lx-form-item>
+  <lx-form-item label="活动时间">
+    <lx-col :span="11">
+      <lx-date-picker
         type="date"
         placeholder="选择日期"
         v-model="sizeForm.date1"
         style="width: 100%;"
-      ></el-date-picker>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-time-picker
+      ></lx-date-picker>
+    </lx-col>
+    <lx-col class="line" :span="2">-</lx-col>
+    <lx-col :span="11">
+      <lx-time-picker
         placeholder="选择时间"
         v-model="sizeForm.date2"
         style="width: 100%;"
-      ></el-time-picker>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="活动性质">
-    <el-checkbox-group v-model="sizeForm.type">
-      <el-checkbox-button
+      ></lx-time-picker>
+    </lx-col>
+  </lx-form-item>
+  <lx-form-item label="活动性质">
+    <lx-checkbox-group v-model="sizeForm.type">
+      <lx-checkbox-button
         label="美食/餐厅线上活动"
         name="type"
-      ></el-checkbox-button>
-      <el-checkbox-button label="地推活动" name="type"></el-checkbox-button>
-      <el-checkbox-button label="线下主题活动" name="type"></el-checkbox-button>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="特殊资源">
-    <el-radio-group v-model="sizeForm.resource" size="medium">
-      <el-radio border label="线上品牌商赞助"></el-radio>
-      <el-radio border label="线下场地免费"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item size="large">
-    <el-button type="primary" @click="onSubmit">立即创建</el-button>
-    <el-button>取消</el-button>
-  </el-form-item>
-</el-form>
+      ></lx-checkbox-button>
+      <lx-checkbox-button label="地推活动" name="type"></lx-checkbox-button>
+      <lx-checkbox-button label="线下主题活动" name="type"></lx-checkbox-button>
+    </lx-checkbox-group>
+  </lx-form-item>
+  <lx-form-item label="特殊资源">
+    <lx-radio-group v-model="sizeForm.resource" size="medium">
+      <lx-radio border label="线上品牌商赞助"></lx-radio>
+      <lx-radio border label="线下场地免费"></lx-radio>
+    </lx-radio-group>
+  </lx-form-item>
+  <lx-form-item size="large">
+    <lx-button type="primary" @click="onSubmit">立即创建</lx-button>
+    <lx-button>取消</lx-button>
+  </lx-form-item>
+</lx-form>
 
 <script>
   export default {

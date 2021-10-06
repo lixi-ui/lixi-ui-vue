@@ -21,9 +21,9 @@ describe('<image-viewer />', () => {
   test('big image preview', async() => {
     const wrapper = mount()
     await doubleWait()
-    const viewer = wrapper.find('.el-image-viewer__wrapper')
+    const viewer = wrapper.find('.lx-image-viewer__wrapper')
     expect(viewer.exists()).toBe(true)
-    await wrapper.find('.el-image-viewer__close').trigger('click')
+    await wrapper.find('.lx-image-viewer__close').trigger('click')
     expect(wrapper.emitted('close')).toEqual([[]])
   })
 
@@ -31,16 +31,16 @@ describe('<image-viewer />', () => {
     const wrapper = mount()
 
     await doubleWait()
-    const viewer = wrapper.find('.el-image-viewer__wrapper')
+    const viewer = wrapper.find('.lx-image-viewer__wrapper')
     expect(viewer.exists()).toBe(true)
-    await wrapper.find('.el-image-viewer__mask').trigger('click')
+    await wrapper.find('.lx-image-viewer__mask').trigger('click')
     expect(wrapper.emitted('close')).toBeUndefined()
 
     await wrapper.setProps({
       hideOnClickModal: true,
     })
 
-    await wrapper.find('.el-image-viewer__mask').trigger('click')
+    await wrapper.find('.lx-image-viewer__mask').trigger('click')
     expect(wrapper.emitted('close')).toBeDefined()
 
   })

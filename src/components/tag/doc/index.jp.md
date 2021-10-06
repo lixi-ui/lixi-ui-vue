@@ -7,11 +7,11 @@
 :::demo タグの型を定義するには `type` 属性を用いる。さらに、`color` 属性を用いてタグの背景色を設定することもできる。
 
 ```html
-<el-tag>Tag 1</el-tag>
-<el-tag type="success">Tag 2</el-tag>
-<el-tag type="info">Tag 3</el-tag>
-<el-tag type="warning">Tag 4</el-tag>
-<el-tag type="danger">Tag 5</el-tag>
+<lx-tag>Tag 1</lx-tag>
+<lx-tag type="success">Tag 2</lx-tag>
+<lx-tag type="info">Tag 3</lx-tag>
+<lx-tag type="warning">Tag 4</lx-tag>
+<lx-tag type="danger">Tag 5</lx-tag>
 ```
 :::
 
@@ -20,13 +20,13 @@
 :::demo `closable` 属性は取り外し可能なタグを定義するために用いることができる。これは `Boolean` を受け付けます。デフォルトでは、タグの削除にはフェージングアニメーションが付きます。アニメーションを使いたくない場合は、`disable-transitions` 属性に `Boolean` を指定して `true` に設定すればよい。`close` イベントはタグが削除されたときに発生する。
 
 ```html
-<el-tag
+<lx-tag
   v-for="tag in tags"
   :key="tag.name"
   closable
   :type="tag.type">
   {{tag.name}}
-</el-tag>
+</lx-tag>
 
 <script>
   export default {
@@ -52,15 +52,15 @@
 
 :::demo
 ```html
-<el-tag
+<lx-tag
   :key="tag"
   v-for="tag in dynamicTags"
   closable
   :disable-transitions="false"
   @close="handleClose(tag)">
   {{tag}}
-</el-tag>
-<el-input
+</lx-tag>
+<lx-input
   class="input-new-tag"
   v-if="inputVisible"
   v-model="inputValue"
@@ -69,11 +69,11 @@
   @keyup.enter="handleInputConfirm"
   @blur="handleInputConfirm"
 >
-</el-input>
-<el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</el-button>
+</lx-input>
+<lx-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</lx-button>
 
 <style>
-  .el-tag + .el-tag {
+  .lx-tag + .lx-tag {
     margin-left: 10px;
   }
   .button-new-tag {
@@ -132,10 +132,10 @@
 :::demo 追加のサイズを `medium`, `small`, `mini` で設定するには、属性 `size` を使用します。
 
 ```html
-<el-tag>Default</el-tag>
-<el-tag size="medium">Medium</el-tag>
-<el-tag size="small">Small</el-tag>
-<el-tag size="mini">Mini</el-tag>
+<lx-tag>Default</lx-tag>
+<lx-tag size="medium">Medium</lx-tag>
+<lx-tag size="small">Small</lx-tag>
+<lx-tag size="mini">Mini</lx-tag>
 ```
 :::
 
@@ -148,23 +148,23 @@
 ```html
 <div class="tag-group">
   <span class="tag-group__title">Dark</span>
-  <el-tag
+  <lx-tag
     v-for="item in items"
     :key="item.label"
     :type="item.type"
     effect="dark">
     {{ item.label }}
-  </el-tag>
+  </lx-tag>
 </div>
 <div class="tag-group">
   <span class="tag-group__title">Plain</span>
-  <el-tag
+  <lx-tag
     v-for="item in items"
     :key="item.label"
     :type="item.type"
     effect="plain">
     {{ item.label }}
-  </el-tag>
+  </lx-tag>
 </div>
 
 <script>
@@ -193,8 +193,8 @@ Sometimes because of the business needs, we might need checkbox like tag, but **
 ```html
 
 <div>
-  <el-check-tag checked style="margin-right: 8px;">Checked</el-check-tag>
-  <el-check-tag @change="onChange" :checked="checked">Toggle me</el-check-tag>
+  <lx-check-tag checked style="margin-right: 8px;">Checked</lx-check-tag>
+  <lx-check-tag @change="onChange" :checked="checked">Toggle me</lx-check-tag>
 </div>
 
 <script>

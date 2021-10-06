@@ -10,4 +10,4 @@ Result.install = (app: App): void => {
 const _Result = Result as SFCWithInstall<typeof Result>
 
 export default _Result
-export const ElResult = _Result
+export const LxResult = _Result

@@ -15,12 +15,12 @@ describe('ScrollBar', () => {
     const outerHeight = 204
     const innerHeight = 500
     const wrapper = _mount(`
-      <el-scrollbar style="height: ${outerHeight}px">
+      <lx-scrollbar style="height: ${outerHeight}px">
         <div style="height: ${innerHeight}px;"></div>
-      </el-scrollbar>
+      </lx-scrollbar>
     `)
 
-    const scrollDom = wrapper.find('.el-scrollbar__wrap').element
+    const scrollDom = wrapper.find('.lx-scrollbar__wrap').element
 
     const offsetHeightRestore = defineGetter(scrollDom, 'offsetHeight', outerHeight)
     const scrollHeightRestore = defineGetter(scrollDom, 'scrollHeight', innerHeight)
@@ -37,12 +37,12 @@ describe('ScrollBar', () => {
     const outerWidth = 204
     const innerWidth = 500
     const wrapper = _mount(`
-      <el-scrollbar style="height: 100px; width: ${outerWidth}px">
+      <lx-scrollbar style="height: 100px; width: ${outerWidth}px">
         <div style="height:100px; width: ${innerWidth}px;"></div>
-      </el-scrollbar>
+      </lx-scrollbar>
     `)
 
-    const scrollDom = wrapper.find('.el-scrollbar__wrap').element
+    const scrollDom = wrapper.find('.lx-scrollbar__wrap').element
 
     const offsetWidthRestore = defineGetter(scrollDom, 'offsetWidth', outerWidth)
     const scrollWidthRestore = defineGetter(scrollDom, 'scrollWidth', innerWidth)
@@ -61,12 +61,12 @@ describe('ScrollBar', () => {
     const outerWidth = 204
     const innerWidth = 500
     const wrapper = _mount(`
-      <el-scrollbar style="height: ${outerHeight}px; width: ${outerWidth}px;">
+      <lx-scrollbar style="height: ${outerHeight}px; width: ${outerWidth}px;">
         <div style="height: ${innerHeight}px; width: ${innerWidth}px;"></div>
-      </el-scrollbar>
+      </lx-scrollbar>
     `)
 
-    const scrollDom = wrapper.find('.el-scrollbar__wrap').element
+    const scrollDom = wrapper.find('.lx-scrollbar__wrap').element
 
     const offsetHeightRestore = defineGetter(scrollDom, 'offsetHeight', outerHeight)
     const scrollHeightRestore = defineGetter(scrollDom, 'scrollHeight', innerHeight)
@@ -92,36 +92,36 @@ describe('ScrollBar', () => {
     const outerHeight = 204
     const innerHeight = 500
     const wrapper = _mount(`
-      <el-scrollbar height="${outerHeight}px">
+      <lx-scrollbar height="${outerHeight}px">
         <div style="height: ${innerHeight}px;"></div>
-      </el-scrollbar>
+      </lx-scrollbar>
     `)
 
-    expect(wrapper.find('.el-scrollbar__wrap').attributes('style')).toContain('height: 204px;')
+    expect(wrapper.find('.lx-scrollbar__wrap').attributes('style')).toContain('height: 204px;')
   })
 
   test('should render max-height props', async () => {
     const outerHeight = 204
     const innerHeight = 100
     const wrapper = _mount(`
-      <el-scrollbar max-height="${outerHeight}px">
+      <lx-scrollbar max-height="${outerHeight}px">
         <div style="height: ${innerHeight}px;"></div>
-      </el-scrollbar>
+      </lx-scrollbar>
     `)
 
-    expect(wrapper.find('.el-scrollbar__wrap').attributes('style')).toContain('max-height: 204px;')
+    expect(wrapper.find('.lx-scrollbar__wrap').attributes('style')).toContain('max-height: 204px;')
   })
 
   test('should render always props', async () => {
     const outerHeight = 204
     const innerHeight = 500
     const wrapper = _mount(`
-      <el-scrollbar height="${outerHeight}px" always>
+      <lx-scrollbar height="${outerHeight}px" always>
         <div style="height: ${innerHeight}px;"></div>
-      </el-scrollbar>
+      </lx-scrollbar>
     `)
 
-    expect(wrapper.find('.el-scrollbar__bar').attributes('style')).toBeFalsy()
+    expect(wrapper.find('.lx-scrollbar__bar').attributes('style')).toBeFalsy()
   })
 
   test('set scrollTop & scrollLeft', async () => {
@@ -130,13 +130,13 @@ describe('ScrollBar', () => {
     const outerWidth = 204
     const innerWidth = 500
     const wrapper = _mount(`
-      <el-scrollbar ref="scrollbar" style="height: ${outerHeight}px; width: ${outerWidth}px;">
+      <lx-scrollbar ref="scrollbar" style="height: ${outerHeight}px; width: ${outerWidth}px;">
         <div style="height: ${innerHeight}px; width: ${innerWidth}px;"></div>
-      </el-scrollbar>
+      </lx-scrollbar>
     `)
 
     const scrollbar = wrapper.vm.$refs.scrollbar as any
-    const scrollDom = wrapper.find('.el-scrollbar__wrap').element
+    const scrollDom = wrapper.find('.lx-scrollbar__wrap').element
 
     const offsetHeightRestore = defineGetter(scrollDom, 'offsetHeight', outerHeight)
     const scrollHeightRestore = defineGetter(scrollDom, 'scrollHeight', innerHeight)
@@ -161,12 +161,12 @@ describe('ScrollBar', () => {
     const outerHeight = 204
     const innerHeight = 10000
     const wrapper = _mount(`
-      <el-scrollbar style="height: ${outerHeight}px">
+      <lx-scrollbar style="height: ${outerHeight}px">
         <div style="height: ${innerHeight}px;"></div>
-      </el-scrollbar>
+      </lx-scrollbar>
     `)
 
-    const scrollDom = wrapper.find('.el-scrollbar__wrap').element
+    const scrollDom = wrapper.find('.lx-scrollbar__wrap').element
 
     const offsetHeightRestore = defineGetter(scrollDom, 'offsetHeight', outerHeight)
     const scrollHeightRestore = defineGetter(scrollDom, 'scrollHeight', innerHeight)

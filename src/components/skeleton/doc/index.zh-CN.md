@@ -10,7 +10,7 @@
 
 ```html
 <template>
-  <el-skeleton />
+  <lx-skeleton />
 </template>
 ```
 
@@ -23,7 +23,7 @@
 :::demo
 
 ```html
-<el-skeleton :rows="5" />
+<lx-skeleton :rows="5" />
 ```
 
 :::
@@ -35,7 +35,7 @@
 :::demo
 
 ```html
-<el-skeleton :rows="5" animated />
+<lx-skeleton :rows="5" animated />
 ```
 
 :::
@@ -49,20 +49,20 @@ ElementPlus 提供的排版模式有时候并不满足要求，当您想要用�
 
 ```html
 <template>
-  <el-skeleton style="width: 240px">
+  <lx-skeleton style="width: 240px">
     <template #template>
-      <el-skeleton-item variant="image" style="width: 240px; height: 240px;" />
+      <lx-skeleton-item variant="image" style="width: 240px; height: 240px;" />
       <div style="padding: 14px;">
-        <el-skeleton-item variant="p" style="width: 50%" />
+        <lx-skeleton-item variant="p" style="width: 50%" />
         <div
           style="display: flex; align-items: center; justify-items: space-between;"
         >
-          <el-skeleton-item variant="text" style="margin-right: 16px;" />
-          <el-skeleton-item variant="text" style="width: 30%;" />
+          <lx-skeleton-item variant="text" style="margin-right: 16px;" />
+          <lx-skeleton-item variant="text" style="width: 30%;" />
         </div>
       </div>
     </template>
-  </el-skeleton>
+  </lx-skeleton>
 </template>
 ```
 
@@ -77,29 +77,29 @@ ElementPlus 提供的排版模式有时候并不满足要求，当您想要用�
 
 ```html
 <template>
-  <el-space direction="vertical" alignment="flex-start">
+  <lx-space direction="vertical" alignment="flex-start">
     <div>
       <label style="margin-right: 16px;">切换 Loading</label>
-      <el-switch v-model="loading" />
+      <lx-switch v-model="loading" />
     </div>
-    <el-skeleton style="width: 240px" :loading="loading" animated>
+    <lx-skeleton style="width: 240px" :loading="loading" animated>
       <template #template>
-        <el-skeleton-item
+        <lx-skeleton-item
           variant="image"
           style="width: 240px; height: 240px;"
         />
         <div style="padding: 14px;">
-          <el-skeleton-item variant="h3" style="width: 50%;" />
+          <lx-skeleton-item variant="h3" style="width: 50%;" />
           <div
             style="display: flex; align-items: center; justify-items: space-between; margin-top: 16px; height: 16px;"
           >
-            <el-skeleton-item variant="text" style="margin-right: 16px;" />
-            <el-skeleton-item variant="text" style="width: 30%;" />
+            <lx-skeleton-item variant="text" style="margin-right: 16px;" />
+            <lx-skeleton-item variant="text" style="width: 30%;" />
           </div>
         </div>
       </template>
       <template #default>
-        <el-card :body-style="{ padding: '0px', marginBottom: '1px' }">
+        <lx-card :body-style="{ padding: '0px', marginBottom: '1px' }">
           <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
             class="image"
@@ -108,13 +108,13 @@ ElementPlus 提供的排版模式有时候并不满足要求，当您想要用�
             <span>好吃的汉堡</span>
             <div class="bottom card-header">
               <span class="time">{{ currentDate }}</span>
-              <el-button type="text" class="button">操作按钮</el-button>
+              <lx-button type="text" class="button">操作按钮</lx-button>
             </div>
           </div>
-        </el-card>
+        </lx-card>
       </template>
-    </el-skeleton>
-  </el-space>
+    </lx-skeleton>
+  </lx-space>
 </template>
 
 <script>
@@ -148,26 +148,26 @@ ElementPlus 提供的排版模式有时候并不满足要求，当您想要用�
 
 ```html
 <template>
-  <el-space direction="vertical" alignment="flex-start">
-    <el-button @click="setLoading">点我重新加载</el-button>
-    <el-skeleton style="width: 240px" :loading="loading" animated :count="3">
+  <lx-space direction="vertical" alignment="flex-start">
+    <lx-button @click="setLoading">点我重新加载</lx-button>
+    <lx-skeleton style="width: 240px" :loading="loading" animated :count="3">
       <template #template>
-        <el-skeleton-item
+        <lx-skeleton-item
           variant="image"
           style="width: 400px; height: 267px;"
         />
         <div style="padding: 14px;">
-          <el-skeleton-item variant="h3" style="width: 50%;" />
+          <lx-skeleton-item variant="h3" style="width: 50%;" />
           <div
             style="display: flex; align-items: center; justify-items: space-between; margin-top: 16px; height: 16px;"
           >
-            <el-skeleton-item variant="text" style="margin-right: 16px;" />
-            <el-skeleton-item variant="text" style="width: 30%;" />
+            <lx-skeleton-item variant="text" style="margin-right: 16px;" />
+            <lx-skeleton-item variant="text" style="width: 30%;" />
           </div>
         </div>
       </template>
       <template #default>
-        <el-card
+        <lx-card
           :body-style="{ padding: '0px', marginBottom: '1px' }"
           v-for="item in lists"
           :key="item.name"
@@ -177,13 +177,13 @@ ElementPlus 提供的排版模式有时候并不满足要求，当您想要用�
             <span>{{ item.name }}</span>
             <div class="bottom card-header">
               <span class="time">{{ currentDate }}</span>
-              <el-button type="text" class="button">操作按钮</el-button>
+              <lx-button type="text" class="button">操作按钮</lx-button>
             </div>
           </div>
-        </el-card>
+        </lx-card>
       </template>
-    </el-skeleton>
-  </el-space>
+    </lx-skeleton>
+  </lx-space>
 </template>
 
 <script>
@@ -239,34 +239,34 @@ ElementPlus 提供的排版模式有时候并不满足要求，当您想要用�
 
 ```html
 <template>
-  <el-space direction="vertical" alignment="flex-start">
+  <lx-space direction="vertical" alignment="flex-start">
     <div>
       <label style="margin-right: 16px;">切换 Loading</label>
-      <el-switch v-model="loading" />
+      <lx-switch v-model="loading" />
     </div>
-    <el-skeleton
+    <lx-skeleton
       style="width: 240px"
       :loading="loading"
       animated
       :throttle="500"
     >
       <template #template>
-        <el-skeleton-item
+        <lx-skeleton-item
           variant="image"
           style="width: 240px; height: 240px;"
         />
         <div style="padding: 14px;">
-          <el-skeleton-item variant="h3" style="width: 50%;" />
+          <lx-skeleton-item variant="h3" style="width: 50%;" />
           <div
             style="display: flex; align-items: center; justify-items: space-between; margin-top: 16px; height: 16px;"
           >
-            <el-skeleton-item variant="text" style="margin-right: 16px;" />
-            <el-skeleton-item variant="text" style="width: 30%;" />
+            <lx-skeleton-item variant="text" style="margin-right: 16px;" />
+            <lx-skeleton-item variant="text" style="width: 30%;" />
           </div>
         </div>
       </template>
       <template #default>
-        <el-card :body-style="{ padding: '0px', marginBottom: '1px' }">
+        <lx-card :body-style="{ padding: '0px', marginBottom: '1px' }">
           <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
             class="image"
@@ -275,13 +275,13 @@ ElementPlus 提供的排版模式有时候并不满足要求，当您想要用�
             <span>好吃的汉堡</span>
             <div class="bottom card-header">
               <span class="time">{{ currentDate }}</span>
-              <el-button type="text" class="button">操作按钮</el-button>
+              <lx-button type="text" class="button">操作按钮</lx-button>
             </div>
           </div>
-        </el-card>
+        </lx-card>
       </template>
-    </el-skeleton>
-  </el-space>
+    </lx-skeleton>
+  </lx-space>
 </template>
 
 <script>

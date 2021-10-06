@@ -6,8 +6,8 @@ If path of the page is simple, it is recommended to use PageHeader instead of th
 
 :::demo
 ```html
-<el-page-header @back="goBack" content="detail">
-</el-page-header>
+<lx-page-header @back="goBack" content="detail">
+</lx-page-header>
 
 <script>
   export default {
@@ -44,7 +44,7 @@ If path of the page is simple, it is recommended to use PageHeader instead of th
 
 :::demo
 ```html
-<el-page-header icon="el-icon-arrow-left" content="detail"></el-page-header>
+<lx-page-header icon="el-icon-arrow-left" content="detail"></lx-page-header>
 ```
 :::
 

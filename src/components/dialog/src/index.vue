@@ -6,7 +6,7 @@
       @after-leave="afterLeave"
       @before-leave="beforeLeave"
     >
-      <el-overlay
+      <lx-overlay
         v-show="visible"
         :mask="modal"
         :overlay-class="modalClass"
@@ -55,7 +55,7 @@
             <slot name="footer"></slot>
           </div>
         </div>
-      </el-overlay>
+      </lx-overlay>
     </transition>
   </teleport>
 </template>
@@ -74,7 +74,7 @@ import {
 import type { SetupContext } from 'vue'
 
 export default defineComponent({
-  name: 'ElDialog',
+  name: 'LxDialog',
   components: {
     'el-overlay': Overlay,
   },

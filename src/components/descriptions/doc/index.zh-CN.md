@@ -7,15 +7,15 @@
 :::demo
 
 ```html
-<el-descriptions title="用户信息">
-  <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
-  <el-descriptions-item label="居住地">苏州市</el-descriptions-item>
-  <el-descriptions-item label="备注">
-    <el-tag size="small">学校</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-</el-descriptions>
+<lx-descriptions title="用户信息">
+  <lx-descriptions-item label="用户名">kooriookami</lx-descriptions-item>
+  <lx-descriptions-item label="手机号">18100000000</lx-descriptions-item>
+  <lx-descriptions-item label="居住地">苏州市</lx-descriptions-item>
+  <lx-descriptions-item label="备注">
+    <lx-tag size="small">学校</lx-tag>
+  </lx-descriptions-item>
+  <lx-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</lx-descriptions-item>
+</lx-descriptions>
 ```
 :::
 
@@ -25,66 +25,66 @@
 
 ```html
 <template>
-  <el-radio-group v-model="size">
-    <el-radio label="">默认</el-radio>
-    <el-radio label="medium">中等</el-radio>
-    <el-radio label="small">小型</el-radio>
-    <el-radio label="mini">超小</el-radio>
-  </el-radio-group>
+  <lx-radio-group v-model="size">
+    <lx-radio label="">默认</lx-radio>
+    <lx-radio label="medium">中等</lx-radio>
+    <lx-radio label="small">小型</lx-radio>
+    <lx-radio label="mini">超小</lx-radio>
+  </lx-radio-group>
 
-  <el-descriptions class="margin-top" title="带边框列表" :column="3" :size="size" border>
+  <lx-descriptions class="margin-top" title="带边框列表" :column="3" :size="size" border>
     <template #extra>
-      <el-button type="primary" size="small">操作</el-button>
+      <lx-button type="primary" size="small">操作</lx-button>
     </template>
-    <el-descriptions-item>
+    <lx-descriptions-item>
       <template #label>
         <i class="el-icon-user"></i>
         用户名
       </template>
       kooriookami
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </lx-descriptions-item>
+    <lx-descriptions-item>
       <template #label>
         <i class="el-icon-mobile-phone"></i>
         手机号
       </template>
       18100000000
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </lx-descriptions-item>
+    <lx-descriptions-item>
       <template #label>
         <i class="el-icon-location-outline"></i>
         居住地
       </template>
       苏州市
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </lx-descriptions-item>
+    <lx-descriptions-item>
       <template #label>
         <i class="el-icon-tickets"></i>
         备注
       </template>
-      <el-tag size="small">学校</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item>
+      <lx-tag size="small">学校</lx-tag>
+    </lx-descriptions-item>
+    <lx-descriptions-item>
       <template #label>
         <i class="el-icon-office-building"></i>
         联系地址
       </template>
       江苏省苏州市吴中区吴中大道 1188 号
-    </el-descriptions-item>
-  </el-descriptions>
+    </lx-descriptions-item>
+  </lx-descriptions>
 
-  <el-descriptions class="margin-top" title="无边框列表" :column="3" :size="size">
+  <lx-descriptions class="margin-top" title="无边框列表" :column="3" :size="size">
     <template #extra>
-      <el-button type="primary" size="small">操作</el-button>
+      <lx-button type="primary" size="small">操作</lx-button>
     </template>
-    <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
-    <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
-    <el-descriptions-item label="居住地">苏州市</el-descriptions-item>
-    <el-descriptions-item label="备注">
-      <el-tag size="small">学校</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-  </el-descriptions>
+    <lx-descriptions-item label="用户名">kooriookami</lx-descriptions-item>
+    <lx-descriptions-item label="手机号">18100000000</lx-descriptions-item>
+    <lx-descriptions-item label="居住地">苏州市</lx-descriptions-item>
+    <lx-descriptions-item label="备注">
+      <lx-tag size="small">学校</lx-tag>
+    </lx-descriptions-item>
+    <lx-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</lx-descriptions-item>
+  </lx-descriptions>
 </template>
 
 <script>
@@ -104,25 +104,25 @@
 :::demo
 
 ```html
-<el-descriptions title="垂直带边框列表" direction="vertical" :column="4" border>
-  <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
-  <el-descriptions-item label="居住地" :span="2">苏州市</el-descriptions-item>
-  <el-descriptions-item label="备注">
-    <el-tag size="small">学校</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-</el-descriptions>
+<lx-descriptions title="垂直带边框列表" direction="vertical" :column="4" border>
+  <lx-descriptions-item label="用户名">kooriookami</lx-descriptions-item>
+  <lx-descriptions-item label="手机号">18100000000</lx-descriptions-item>
+  <lx-descriptions-item label="居住地" :span="2">苏州市</lx-descriptions-item>
+  <lx-descriptions-item label="备注">
+    <lx-tag size="small">学校</lx-tag>
+  </lx-descriptions-item>
+  <lx-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</lx-descriptions-item>
+</lx-descriptions>
 
-<el-descriptions class="margin-top" title="垂直无边框列表" :column="4" direction="vertical">
-  <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
-  <el-descriptions-item label="居住地" :span="2">苏州市</el-descriptions-item>
-  <el-descriptions-item label="备注">
-    <el-tag size="small">学校</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-</el-descriptions>
+<lx-descriptions class="margin-top" title="垂直无边框列表" :column="4" direction="vertical">
+  <lx-descriptions-item label="用户名">kooriookami</lx-descriptions-item>
+  <lx-descriptions-item label="手机号">18100000000</lx-descriptions-item>
+  <lx-descriptions-item label="居住地" :span="2">苏州市</lx-descriptions-item>
+  <lx-descriptions-item label="备注">
+    <lx-tag size="small">学校</lx-tag>
+  </lx-descriptions-item>
+  <lx-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</lx-descriptions-item>
+</lx-descriptions>
 ```
 :::
 
@@ -131,15 +131,15 @@
 :::demo
 
 ```html
-<el-descriptions title="自定义样式列表" :column="3" border>
-  <el-descriptions-item label="用户名" label-align="right" align="center" label-class-name="my-label" class-name="my-content" width="150px">kooriookami</el-descriptions-item>
-  <el-descriptions-item label="手机号" label-align="right" align="center">18100000000</el-descriptions-item>
-  <el-descriptions-item label="居住地" label-align="right" align="center">苏州市</el-descriptions-item>
-  <el-descriptions-item label="备注" label-align="right" align="center">
-    <el-tag size="small">学校</el-tag>
-  </el-descriptions-item>
-  <el-descriptions-item label="联系地址" label-align="right" align="center">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-</el-descriptions>
+<lx-descriptions title="自定义样式列表" :column="3" border>
+  <lx-descriptions-item label="用户名" label-align="right" align="center" label-class-name="my-label" class-name="my-content" width="150px">kooriookami</lx-descriptions-item>
+  <lx-descriptions-item label="手机号" label-align="right" align="center">18100000000</lx-descriptions-item>
+  <lx-descriptions-item label="居住地" label-align="right" align="center">苏州市</lx-descriptions-item>
+  <lx-descriptions-item label="备注" label-align="right" align="center">
+    <lx-tag size="small">学校</lx-tag>
+  </lx-descriptions-item>
+  <lx-descriptions-item label="联系地址" label-align="right" align="center">江苏省苏州市吴中区吴中大道 1188 号</lx-descriptions-item>
+</lx-descriptions>
 ```
 :::
 

@@ -16,7 +16,7 @@ import { defineComponent, ref, computed, inject, getCurrentInstance, watch } fro
 import type { RootTabs, UpdatePaneStateCallback } from './token'
 
 export default defineComponent({
-  name: 'ElTabPane',
+  name: 'LxTabPane',
   props: {
     label: {
       type: String,
@@ -37,7 +37,7 @@ export default defineComponent({
     const updatePaneState = inject<UpdatePaneStateCallback>('updatePaneState')
 
     if (!rootTabs || !updatePaneState) {
-      throw new Error(`ElTabPane must use with ElTabs`)
+      throw new Error(`ElTabPane must use with LxTabs`)
     }
 
     const isClosable = computed(() => {

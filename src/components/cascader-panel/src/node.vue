@@ -19,7 +19,7 @@
     @click="handleClick"
   >
     <!-- prefix -->
-    <el-checkbox
+    <lx-checkbox
       v-if="multiple"
       :model-value="node.checked"
       :indeterminate="node.indeterminate"
@@ -27,7 +27,7 @@
       @click.stop
       @update:model-value="handleCheck"
     />
-    <el-radio
+    <lx-radio
       v-else-if="checkStrictly"
       :model-value="checkedNodeId"
       :label="node.uid"
@@ -40,7 +40,7 @@
         do not use empty fragment here for https://github.com/vuejs/vue-next/pull/2485
       -->
       <span></span>
-    </el-radio>
+    </lx-radio>
     <i v-else-if="isLeaf && node.checked" class="el-icon-check el-cascader-node__prefix"></i>
 
     <!-- content -->
@@ -56,8 +56,8 @@
 
 <script lang="ts">
 import { computed, defineComponent, inject } from 'vue'
-import ElCheckbox from '@element-plus/components/checkbox'
-import ElRadio from '@element-plus/components/radio'
+import LxCheckbox from '@element-plus/components/checkbox'
+import LxRadio from '@element-plus/components/radio'
 import NodeContent from './node-content'
 import type { default as CascaderNode } from './node'
 import {
@@ -67,11 +67,11 @@ import {
 import type { PropType } from 'vue'
 
 export default defineComponent({
-  name: 'ElCascaderNode',
+  name: 'LxCascaderNode',
 
   components: {
-    ElCheckbox,
-    ElRadio,
+    LxCheckbox,
+    LxRadio,
     NodeContent,
   },
 

@@ -10,25 +10,25 @@
 
 ```html
 <template>
-  <el-table
+  <lx-table
     v-loading="loading"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <style>
@@ -104,54 +104,54 @@ export default defineComponent({
 :::demo `v-loading` がバインドされている要素に `element-loading-text` 属性を追加すると、その値がスピナの下に表示されるようになります。同様に、 `element-loading-spinner`、` element-loading-background`、および `element-loading-svg`属性は、それぞれアイコンクラス名、背景色の値、および読み込みアイコンを設定するために使用されます。
 ```html
 <template>
-  <el-table
+  <lx-table
     v-loading="loading"
     element-loading-text="Loading..."
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
-  <el-table
+    </lx-table-column>
+  </lx-table>
+  <lx-table
     v-loading="loading"
     :element-loading-svg="svg"
     class="custom-loading-svg"
     element-loading-svg-view-box="-10, -10, 50, 50"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Name"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Address">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <style>
-  .custom-loading-svg .el-loading-mask > .el-loading-spinner > .circular {
+  .custom-loading-svg .lx-loading-mask > .lx-loading-spinner > .circular {
     animation: none;
   }
 </style>
@@ -248,17 +248,17 @@ export default defineComponent({
 
 ```html
 <template>
-  <el-button
+  <lx-button
     type="primary"
     @click="openFullScreen1"
     v-loading.fullscreen.lock="fullscreenLoading">
     As a directive
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     type="primary"
     @click="openFullScreen2">
     As a service
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -293,7 +293,7 @@ export default defineComponent({
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { ElLoading } from 'element-plus';
+  import { LxLoading } from 'element-plus';
 
   export default defineComponent({
     setup() {
@@ -306,7 +306,7 @@ export default defineComponent({
       };
 
       const openFullScreen2 = () => {
-        const loading = ElLoading.service({
+        const loading = LxLoading.service({
           lock: true,
           text: 'Loading',
           spinner: 'el-icon-loading',
@@ -333,7 +333,7 @@ export default defineComponent({
 ### サービス
 サービスで Loading を呼び出すこともできます。Loadingサービスをインポートします:
 ```javascript
-import { ElLoading } from 'element-plus';
+import { LxLoading } from 'element-plus';
 ```
 呼び出す:
 ```javascript
@@ -341,15 +341,15 @@ ElLoading.service(options);
 ```
 パラメータ `options` はLoadingの設定であり、その詳細は以下の表にある。LoadingService` はLoadingのインスタンスを返し、その `close` メソッドを呼び出すことでインスタンスを閉じることができる。:
 ```javascript
-let loadingInstance = ElLoading.service(options);
+let loadingInstance = LxLoading.service(options);
 this.$nextTick(() => { // Loading should be closed asynchronously
   loadingInstance.close();
 });
 ```
 フルスクリーン Loading はシングルトンであることに注意してください。既存のフルスクリーン Loading がクローズされる前に新しいフルスクリーン Loading が呼び出された場合、実際に別の Loading インスタンスを作成するのではなく、既存のフルスクリーン Loading インスタンスが返されます。:
 ```javascript
-let loadingInstance1 = ElLoading.service({ fullscreen: true });
-let loadingInstance2 = ElLoading.service({ fullscreen: true });
+let loadingInstance1 = LxLoading.service({ fullscreen: true });
+let loadingInstance2 = LxLoading.service({ fullscreen: true });
 console.log(loadingInstance1 === loadingInstance2); // true
 ```
 これらのいずれかで`close` メソッドを呼び出すことで、このフルスクリーンの読み込みを閉じることができる。

@@ -17,7 +17,7 @@ import type { CSSProperties } from 'vue'
 import type { Nullable } from '@element-plus/utils/types'
 
 export default defineComponent({
-  name: 'ElLabelWrap',
+  name: 'LxLabelWrap',
   props: {
     isAutoWidth: Boolean,
     updateAll: Boolean,

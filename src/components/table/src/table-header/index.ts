@@ -7,7 +7,7 @@ import {
   ref,
   h,
 } from 'vue'
-import ElCheckbox from '@element-plus/components/checkbox'
+import LxCheckbox from '@element-plus/components/checkbox'
 import FilterPanel from '../filter-panel.vue'
 import useLayoutObserver from '../layout-observer'
 import useEvent from './event-helper'
@@ -37,9 +37,9 @@ export interface TableHeaderProps<T> {
 }
 
 export default defineComponent({
-  name: 'ElTableHeader',
+  name: 'LxTableHeader',
   components: {
-    ElCheckbox,
+    LxCheckbox,
   },
   props: {
     fixed: {

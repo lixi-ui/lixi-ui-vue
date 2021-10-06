@@ -18,7 +18,7 @@ import { defineComponent, getCurrentInstance } from 'vue'
 import { useDropdown } from './useDropdown'
 
 export default defineComponent({
-  name: 'ElDropdownItem',
+  name: 'LxDropdownItem',
   props: {
     command: {
       type: [Object, String, Number],

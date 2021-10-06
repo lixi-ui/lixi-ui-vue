@@ -14,6 +14,6 @@ _MessageBox.install = (app: App) => {
 }
 
 export default _MessageBox
-export const ElMessageBox = _MessageBox
+export const LxMessageBox = _MessageBox
 
 export * from './src/message-box.type'

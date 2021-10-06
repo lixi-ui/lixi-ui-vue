@@ -4,11 +4,11 @@
 
 ### 基本的な使い方
 
-:::demo `<el-input-number>` 要素の `v-model` に変数をバインドすれば設定完了です。
+:::demo `<lx-input-number>` 要素の `v-model` に変数をバインドすれば設定完了です。
 
 ```html
 <template>
-  <el-input-number v-model="num" @change="handleChange" :min="1" :max="10"></el-input-number>
+  <lx-input-number v-model="num" @change="handleChange" :min="1" :max="10"></lx-input-number>
 </template>
 <script>
   export default {
@@ -53,7 +53,7 @@
 
 ```html
 <template>
-  <el-input-number v-model="num" :disabled="true"></el-input-number>
+  <lx-input-number v-model="num" :disabled="true"></lx-input-number>
 </template>
 <script>
   export default {
@@ -91,7 +91,7 @@
 
 ```html
 <template>
-  <el-input-number v-model="num" :step="2"></el-input-number>
+  <lx-input-number v-model="num" :step="2"></lx-input-number>
 </template>
 <script>
   export default {
@@ -127,7 +127,7 @@
 
 ```html
 <template>
-  <el-input-number v-model="num" :step="2" step-strictly></el-input-number>
+  <lx-input-number v-model="num" :step="2" step-strictly></lx-input-number>
 </template>
 <script>
   export default {
@@ -163,7 +163,7 @@
 
 ```html
 <template>
-  <el-input-number v-model="num" :precision="2" :step="0.1" :max="10"></el-input-number>
+  <lx-input-number v-model="num" :precision="2" :step="0.1" :max="10"></lx-input-number>
 </template>
 <script>
   export default {
@@ -206,10 +206,10 @@
 
 ```html
 <template>
-  <el-input-number v-model="num1"></el-input-number>
-    <el-input-number size="medium" v-model="num2"></el-input-number>
-    <el-input-number size="small" v-model="num3"></el-input-number>
-    <el-input-number size="mini" v-model="num4"></el-input-number>
+  <lx-input-number v-model="num1"></lx-input-number>
+    <lx-input-number size="medium" v-model="num2"></lx-input-number>
+    <lx-input-number size="small" v-model="num3"></lx-input-number>
+    <lx-input-number size="mini" v-model="num4"></lx-input-number>
 </template>
 <script>
   export default {
@@ -253,7 +253,7 @@
 :::demo コントロールボタンの位置を決めるには `controls-position` を設定します。
 ```html
 <template>
-  <el-input-number v-model="num" controls-position="right" @change="handleChange" :min="1" :max="10"></el-input-number>
+  <lx-input-number v-model="num" controls-position="right" @change="handleChange" :min="1" :max="10"></lx-input-number>
 </template>
 <script>
   export default {

@@ -52,7 +52,7 @@ const createGrid = ({
 }: GridConstructorProps<typeof DefaultGridProps>) => {
 
   return defineComponent({
-    name: name ?? 'ElVirtualList',
+    name: name ?? 'LxVirtualList',
     props: DefaultGridProps,
     emits: [ITEM_RENDER_EVT, SCROLL_EVT],
     setup(props, { emit, expose }) {

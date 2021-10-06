@@ -17,21 +17,21 @@ const _mount = (template: string, data?: () => void, methods?: any) =>
 describe('Descriptions.vue', () => {
   test('render test', () => {
     const wrapper = _mount(`
-      <el-descriptions title="title" extra="extra">
-        <el-descriptions-item v-for="item in 4"></el-descriptions-item>
-      </el-descriptions>
+      <lx-descriptions title="title" extra="extra">
+        <lx-descriptions-item v-for="item in 4"></lx-descriptions-item>
+      </lx-descriptions>
     `)
 
-    expect(wrapper.find('.el-descriptions__title').text()).toEqual('title')
-    expect(wrapper.find('.el-descriptions__extra').text()).toEqual('extra')
-    expect(wrapper.findAll('.el-descriptions__label').length).toEqual(4)
+    expect(wrapper.find('.lx-descriptions__title').text()).toEqual('title')
+    expect(wrapper.find('.lx-descriptions__extra').text()).toEqual('extra')
+    expect(wrapper.findAll('.lx-descriptions__label').length).toEqual(4)
   })
 
   test('should render border props', () => {
     const wrapper = _mount(`
-      <el-descriptions border>
-        <el-descriptions-item v-for="item in 3" :label="item">{{ item }}</el-descriptions-item>
-      </el-descriptions>
+      <lx-descriptions border>
+        <lx-descriptions-item v-for="item in 3" :label="item">{{ item }}</lx-descriptions-item>
+      </lx-descriptions>
     `)
 
     expect(wrapper.find('table').classes()).toContain('is-bordered')
@@ -39,53 +39,53 @@ describe('Descriptions.vue', () => {
 
   test('should render align props', () => {
     const wrapper = _mount(`
-      <el-descriptions border>
-        <el-descriptions-item v-for="item in 3" :label="item" align="right" label-align="center">{{ item }}</el-descriptions-item>
-      </el-descriptions>
+      <lx-descriptions border>
+        <lx-descriptions-item v-for="item in 3" :label="item" align="right" label-align="center">{{ item }}</lx-descriptions-item>
+      </lx-descriptions>
     `)
 
-    expect(wrapper.find('.el-descriptions__label').classes()).toContain('is-center')
-    expect(wrapper.find('.el-descriptions__content').classes()).toContain('is-right')
+    expect(wrapper.find('.lx-descriptions__label').classes()).toContain('is-center')
+    expect(wrapper.find('.lx-descriptions__content').classes()).toContain('is-right')
   })
 
   test('should render width props', () => {
     const wrapper = _mount(`
-      <el-descriptions border>
-        <el-descriptions-item v-for="item in 3" :label="item" width="50px" min-width="60px">{{ item }}</el-descriptions-item>
-      </el-descriptions>
+      <lx-descriptions border>
+        <lx-descriptions-item v-for="item in 3" :label="item" width="50px" min-width="60px">{{ item }}</lx-descriptions-item>
+      </lx-descriptions>
     `)
 
-    expect(wrapper.find('.el-descriptions__label').attributes('style')).toContain('width: 50px; min-width: 60px;')
-    expect(wrapper.find('.el-descriptions__content').attributes('style')).toContain('width: 50px; min-width: 60px;')
+    expect(wrapper.find('.lx-descriptions__label').attributes('style')).toContain('width: 50px; min-width: 60px;')
+    expect(wrapper.find('.lx-descriptions__content').attributes('style')).toContain('width: 50px; min-width: 60px;')
   })
 
   test('should render class props', () => {
     const wrapper = _mount(`
-      <el-descriptions border>
-        <el-descriptions-item v-for="item in 3" :label="item" class-name="class-name" label-class-name="label-class-name">{{ item }}</el-descriptions-item>
-      </el-descriptions>
+      <lx-descriptions border>
+        <lx-descriptions-item v-for="item in 3" :label="item" class-name="class-name" label-class-name="label-class-name">{{ item }}</lx-descriptions-item>
+      </lx-descriptions>
     `)
 
-    expect(wrapper.find('.el-descriptions__label').classes()).toContain('label-class-name')
-    expect(wrapper.find('.el-descriptions__content').classes()).toContain('class-name')
+    expect(wrapper.find('.lx-descriptions__label').classes()).toContain('label-class-name')
+    expect(wrapper.find('.lx-descriptions__content').classes()).toContain('class-name')
   })
 
   test('should render width props', () => {
     const wrapper = _mount(`
-      <el-descriptions border>
-        <el-descriptions-item v-for="item in 3" :label="item" width="50px" min-width="60px">{{ item }}</el-descriptions-item>
-      </el-descriptions>
+      <lx-descriptions border>
+        <lx-descriptions-item v-for="item in 3" :label="item" width="50px" min-width="60px">{{ item }}</lx-descriptions-item>
+      </lx-descriptions>
     `)
 
-    expect(wrapper.find('.el-descriptions__label').attributes('style')).toContain('width: 50px; min-width: 60px;')
-    expect(wrapper.find('.el-descriptions__content').attributes('style')).toContain('width: 50px; min-width: 60px;')
+    expect(wrapper.find('.lx-descriptions__label').attributes('style')).toContain('width: 50px; min-width: 60px;')
+    expect(wrapper.find('.lx-descriptions__content').attributes('style')).toContain('width: 50px; min-width: 60px;')
   })
 
   test('should render column props', async () => {
     const wrapper = _mount(`
-      <el-descriptions :column="5" :border="border">
-        <el-descriptions-item v-for="item in 10" :label="item">{{ item }}</el-descriptions-item>
-      </el-descriptions>
+      <lx-descriptions :column="5" :border="border">
+        <lx-descriptions-item v-for="item in 10" :label="item">{{ item }}</lx-descriptions-item>
+      </lx-descriptions>
     `, () => {
       return {
         border: false,
@@ -100,9 +100,9 @@ describe('Descriptions.vue', () => {
 
   test('should render direction props', async () => {
     const wrapper = _mount(`
-      <el-descriptions :column="5" :direction="direction" border>
-        <el-descriptions-item v-for="item in 10" :label="item">{{ item }}</el-descriptions-item>
-      </el-descriptions>
+      <lx-descriptions :column="5" :direction="direction" border>
+        <lx-descriptions-item v-for="item in 10" :label="item">{{ item }}</lx-descriptions-item>
+      </lx-descriptions>
     `, () => {
       return {
         direction: 'horizontal',
@@ -119,23 +119,23 @@ describe('Descriptions.vue', () => {
 
   test('should render title slots', async () => {
     const wrapper = _mount(`
-      <el-descriptions>
+      <lx-descriptions>
         <template #title>title</template>
-        <el-descriptions-item v-for="item in 10" :label="item">{{ item }}</el-descriptions-item>
-      </el-descriptions>
+        <lx-descriptions-item v-for="item in 10" :label="item">{{ item }}</lx-descriptions-item>
+      </lx-descriptions>
     `)
 
-    expect(wrapper.find('.el-descriptions__title').text()).toEqual('title')
+    expect(wrapper.find('.lx-descriptions__title').text()).toEqual('title')
   })
 
   test('should render span props', async () => {
     const wrapper = _mount(`
-      <el-descriptions :column="3">
-        <el-descriptions-item label="1">1</el-descriptions-item>
-        <el-descriptions-item label="2" :span="2">2</el-descriptions-item>
-        <el-descriptions-item label="3">3</el-descriptions-item>
-        <el-descriptions-item label="4">4</el-descriptions-item>
-      </el-descriptions>
+      <lx-descriptions :column="3">
+        <lx-descriptions-item label="1">1</lx-descriptions-item>
+        <lx-descriptions-item label="2" :span="2">2</lx-descriptions-item>
+        <lx-descriptions-item label="3">3</lx-descriptions-item>
+        <lx-descriptions-item label="4">4</lx-descriptions-item>
+      </lx-descriptions>
     `)
 
     expect(wrapper.findAll('td')[1].element.getAttribute('colSpan')).toEqual('2')
@@ -145,11 +145,11 @@ describe('Descriptions.vue', () => {
   test('re-rendered when slots is updated', async () => {
     const CHANGE_VALUE = 'company'
     const wrapper = _mount(`
-      <el-descriptions v-for="(remark,index) in remarks" :key="index" :title="remark">
-        <el-descriptions-item label="remark">
-          <el-tag size="small">{{remark}}</el-tag>
-        </el-descriptions-item>
-      </el-descriptions>
+      <lx-descriptions v-for="(remark,index) in remarks" :key="index" :title="remark">
+        <lx-descriptions-item label="remark">
+          <lx-tag size="small">{{remark}}</lx-tag>
+        </lx-descriptions-item>
+      </lx-descriptions>
       <button @click="onClick">click</button>
     `, () => {
       return {

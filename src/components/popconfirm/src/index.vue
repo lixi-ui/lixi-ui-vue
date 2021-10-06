@@ -1,5 +1,5 @@
 <template>
-  <el-popper
+  <lx-popper
     v-model:visible="visible"
     trigger="click"
     :effect="Effect.LIGHT"
@@ -18,43 +18,43 @@
         {{ title }}
       </p>
       <div class="el-popconfirm__action">
-        <el-button
+        <lx-button
           size="mini"
           :type="cancelButtonType"
           @click="cancel"
         >
           {{ cancelButtonText_ }}
-        </el-button>
-        <el-button
+        </lx-button>
+        <lx-button
           size="mini"
           :type="confirmButtonType"
           @click="confirm"
         >
           {{ confirmButtonText_ }}
-        </el-button>
+        </lx-button>
       </div>
     </div>
     <template #trigger>
       <slot name="reference"></slot>
     </template>
-  </el-popper>
+  </lx-popper>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue'
-import ElButton from '@element-plus/components/button'
-import ElPopper, { Effect } from '@element-plus/components/popper'
+import LxButton from '@element-plus/components/button'
+import LxPopper, { Effect } from '@element-plus/components/popper'
 import { useLocaleInject } from '@element-plus/hooks'
 
 import type { PropType } from 'vue'
 import type { ButtonType } from '@element-plus/components/button/src/types'
 
 export default defineComponent({
-  name: 'ElPopconfirm',
+  name: 'LxPopconfirm',
 
   components: {
-    ElButton,
-    ElPopper,
+    LxButton,
+    LxPopper,
   },
 
   props: {

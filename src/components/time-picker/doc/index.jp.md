@@ -10,21 +10,21 @@
 
 ```html
 <template>
-  <el-time-picker
+  <lx-time-picker
     v-model="value1"
     :disabled-hours="disabledHours"
     :disabled-minutes="disabledMinutes"
     :disabled-seconds="disabledSeconds"
     placeholder="Arbitrary time">
-  </el-time-picker>
-  <el-time-picker
+  </lx-time-picker>
+  <lx-time-picker
     arrow-control
     v-model="value2"
     :disabled-hours="disabledHours"
     :disabled-minutes="disabledMinutes"
     :disabled-seconds="disabledSeconds"
     placeholder="Arbitrary time">
-  </el-time-picker>
+  </lx-time-picker>
 </template>
 
 <script>
@@ -73,21 +73,21 @@
 :::demo 範囲を指定するには、`is-range` 属性を追加する。また、範囲モードでは `arrow-control` がサポートされている。
 ```html
 <template>
-  <el-time-picker
+  <lx-time-picker
     is-range
     v-model="value1"
     range-separator="To"
     start-placeholder="Start time"
     end-placeholder="End time">
-  </el-time-picker>
-  <el-time-picker
+  </lx-time-picker>
+  <lx-time-picker
     is-range
     arrow-control
     v-model="value2"
     range-separator="To"
     start-placeholder="Start time"
     end-placeholder="End time">
-  </el-time-picker>
+  </lx-time-picker>
 </template>
 
 <script>

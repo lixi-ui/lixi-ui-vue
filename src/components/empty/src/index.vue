@@ -22,7 +22,7 @@ import { useLocaleInject } from '@element-plus/hooks'
 import ImgEmpty from './img-empty.vue'
 
 export default defineComponent({
-  name: 'ElEmpty',
+  name: 'LxEmpty',
   components: {
     [ImgEmpty.name]: ImgEmpty,
   },

@@ -10,7 +10,7 @@ import { defineComponent, watch, ref, provide } from 'vue'
 import { CHANGE_EVENT } from '@element-plus/utils/constants'
 
 export default defineComponent({
-  name: 'ElSteps',
+  name: 'LxSteps',
   props: {
     space: {
       type: [Number, String],
@@ -54,7 +54,7 @@ export default defineComponent({
       })
     })
 
-    provide('ElSteps', { props, steps })
+    provide('LxSteps', { props, steps })
 
     watch(() => props.active, (newVal, oldVal) => {
       emit(CHANGE_EVENT, newVal, oldVal)

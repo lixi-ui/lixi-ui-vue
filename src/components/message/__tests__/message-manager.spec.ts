@@ -4,7 +4,7 @@ import { rAF } from '@element-plus/test-utils/tick'
 import Message from '../src/message'
 
 jest.useFakeTimers()
-const selector = '.el-message'
+const selector = '.lx-message'
 // TODO: testing the original transition with `nextTick`'
 
 describe('Message on command', () => {
@@ -66,7 +66,7 @@ describe('Message on command', () => {
     const elements = document.querySelectorAll(selector)
     expect(elements.length).toBe(3)
 
-    const getTopValue = (elm: Element): number =>
+    const getTopValue = (elm: Lxement): number =>
       parseInt(getStyle(elm as HTMLElement, 'top'), 10)
 
     const topValues = []

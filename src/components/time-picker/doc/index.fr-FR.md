@@ -10,21 +10,21 @@ Vous pouvez aussi laisser l'utilisateur choisir librement un horaire.
 
 ```html
 <template>
-  <el-time-picker
+  <lx-time-picker
     v-model="value1"
     :disabled-hours="disabledHours"
     :disabled-minutes="disabledMinutes"
     :disabled-seconds="disabledSeconds"
     placeholder="Horaire libre">
-  </el-time-picker>
-  <el-time-picker
+  </lx-time-picker>
+  <lx-time-picker
     arrow-control
     v-model="value2"
     :disabled-hours="disabledHours"
     :disabled-minutes="disabledMinutes"
     :disabled-seconds="disabledSeconds"
     placeholder="Horaire libre">
-  </el-time-picker>
+  </lx-time-picker>
 </template>
 
 <script>
@@ -73,21 +73,21 @@ Vous pouvez également définir un intervalle libre.
 :::demo Ajoutez l'attribut `is-range`. L'attribut `arrow-control` est aussi supporté dans ce mode.
 ```html
 <template>
-  <el-time-picker
+  <lx-time-picker
     is-range
     v-model="value1"
     range-separator="To"
     start-placeholder="Horaire de début"
     end-placeholder="Horaire de fin">
-  </el-time-picker>
-  <el-time-picker
+  </lx-time-picker>
+  <lx-time-picker
     is-range
     arrow-control
     v-model="value2"
     range-separator="To"
     start-placeholder="Horaire de début"
     end-placeholder="Horaire de fin">
-  </el-time-picker>
+  </lx-time-picker>
 </template>
 
 <script>

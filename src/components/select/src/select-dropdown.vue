@@ -24,9 +24,9 @@ import {
 
 
 export default defineComponent({
-  name: 'ElSelectDropdown',
+  name: 'LxSelectDropdown',
 
-  componentName: 'ElSelectDropdown',
+  componentName: 'LxSelectDropdown',
 
   setup() {
     const select = inject(selectKey)

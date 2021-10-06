@@ -14,7 +14,7 @@ import type { PropType } from 'vue'
 import type { StyleValue } from '@element-plus/utils/types'
 
 export default defineComponent({
-  name: 'ElCard',
+  name: 'LxCard',
   props: {
     header: {
       type: String,

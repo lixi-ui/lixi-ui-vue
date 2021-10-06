@@ -4,11 +4,11 @@ Un champ d'input de valeurs numériques, avec un domaine personnalisable.
 
 ### Usage
 
-:::demo Liez une variable à `v-model` dans l'élément `<el-input-number>` et c'est tout !
+:::demo Liez une variable à `v-model` dans l'élément `<lx-input-number>` et c'est tout !
 
 ```html
 <template>
-  <el-input-number v-model="num" @change="handleChange" :min="1" :max="10"></el-input-number>
+  <lx-input-number v-model="num" @change="handleChange" :min="1" :max="10"></lx-input-number>
 </template>
 <script>
   export default {
@@ -53,7 +53,7 @@ Un champ d'input de valeurs numériques, avec un domaine personnalisable.
 
 ```html
 <template>
-  <el-input-number v-model="num" :disabled="true"></el-input-number>
+  <lx-input-number v-model="num" :disabled="true"></lx-input-number>
 </template>
 <script>
   export default {
@@ -91,7 +91,7 @@ Vous pouvez déterminer un pas pour le champs.
 
 ```html
 <template>
-  <el-input-number v-model="num" :step="2"></el-input-number>
+  <lx-input-number v-model="num" :step="2"></lx-input-number>
 </template>
 <script>
   export default {
@@ -127,7 +127,7 @@ Vous pouvez déterminer un pas pour le champs.
 
 ```html
 <template>
-  <el-input-number v-model="num" :step="2" step-strictly></el-input-number>
+  <lx-input-number v-model="num" :step="2" step-strictly></lx-input-number>
 </template>
 <script>
   export default {
@@ -163,7 +163,7 @@ Vous pouvez déterminer un pas pour le champs.
 
 ```html
 <template>
-  <el-input-number v-model="num" :precision="2" :step="0.1" :max="10"></el-input-number>
+  <lx-input-number v-model="num" :precision="2" :step="0.1" :max="10"></lx-input-number>
 </template>
 <script>
   export default {
@@ -206,10 +206,10 @@ Utilisez l'attribut `size` pour régler la taille avec `medium`, `small` ou `min
 
 ```html
 <template>
-  <el-input-number v-model="num1"></el-input-number>
-    <el-input-number size="medium" v-model="num2"></el-input-number>
-    <el-input-number size="small" v-model="num3"></el-input-number>
-    <el-input-number size="mini" v-model="num4"></el-input-number>
+  <lx-input-number v-model="num1"></lx-input-number>
+    <lx-input-number size="medium" v-model="num2"></lx-input-number>
+    <lx-input-number size="small" v-model="num3"></lx-input-number>
+    <lx-input-number size="mini" v-model="num4"></lx-input-number>
 </template>
 <script>
   export default {
@@ -253,7 +253,7 @@ Utilisez l'attribut `size` pour régler la taille avec `medium`, `small` ou `min
 :::demo Réglez `controls-position` pour déterminer la position des boutons.
 ```html
 <template>
-  <el-input-number v-model="num" controls-position="right" @change="handleChange" :min="1" :max="10"></el-input-number>
+  <lx-input-number v-model="num" controls-position="right" @change="handleChange" :min="1" :max="10"></lx-input-number>
 </template>
 <script>
   export default {

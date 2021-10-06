@@ -6,8 +6,8 @@
 
 :::demo 現在表示されている月を指定するために `value` を設定する。`value` が指定されない場合は現在の月を表示する。`value` は双方向のバインディングをサポートする。
 ```html
-<el-calendar v-model="value">
-</el-calendar>
+<lx-calendar v-model="value">
+</lx-calendar>
 
 <script>
   export default {
@@ -42,13 +42,13 @@
 
 :::demo `scoped-slot` に `dateCell` という名前を設定することで、calendarセルに表示する内容をカスタマイズすることができる。`scoped-slot`では、日付(現在のセルの日付)とデータ(type, isSelected, day属性を含む)を取得することができます。詳細は以下のAPIドキュメントを参照のこと。
 ```html
-<el-calendar>
+<lx-calendar>
   <template #dateCell="{data}">
     <p :class="data.isSelected ? 'is-selected' : ''">
       {{ data.day.split('-').slice(1).join('-') }} {{ data.isSelected ? '✔️' : ''}}
     </p>
   </template>
-</el-calendar>
+</lx-calendar>
 <style>
   .is-selected {
     color: #1989FA;
@@ -61,8 +61,8 @@
 
 :::demo calendarの表示範囲を指定するために `range` 属性を設定する。開始時刻は月曜日、終了時刻は日曜日でなければならず、期間は2ヶ月を超えてはならない。
 ```html
-<el-calendar :range="['2019-03-04', '2019-03-24']">
-</el-calendar>
+<lx-calendar :range="['2019-03-04', '2019-03-24']">
+</lx-calendar>
 ```
 :::
 

@@ -42,7 +42,7 @@ import { computed, defineComponent, ref } from 'vue'
 import { useRadio, useRadioAttrs } from './useRadio'
 
 export default defineComponent({
-  name: 'ElRadioButton',
+  name: 'LxRadioButton',
 
   props: {
     label: {

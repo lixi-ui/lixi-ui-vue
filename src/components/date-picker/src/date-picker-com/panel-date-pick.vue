@@ -22,7 +22,7 @@
       <div class="el-picker-panel__body">
         <div v-if="showTime" class="el-date-picker__time-header">
           <span class="el-date-picker__editor-wrap">
-            <el-input
+            <lx-input
               :placeholder="t('el.datepicker.selectDate')"
               :model-value="visibleDate"
               size="small"
@@ -34,7 +34,7 @@
             v-clickoutside="handleTimePickClose"
             class="el-date-picker__editor-wrap"
           >
-            <el-input
+            <lx-input
               :placeholder="t('el.datepicker.selectTime')"
               :model-value="visibleTime"
               size="small"
@@ -129,7 +129,7 @@
       v-show="footerVisible && currentView === 'date'"
       class="el-picker-panel__footer"
     >
-      <el-button
+      <lx-button
         v-show="selectionMode !== 'dates'"
         size="mini"
         type="text"
@@ -137,15 +137,15 @@
         @click="changeToNow"
       >
         {{ t('el.datepicker.now') }}
-      </el-button>
-      <el-button
+      </lx-button>
+      <lx-button
         plain
         size="mini"
         class="el-picker-panel__link-btn"
         @click="onConfirm"
       >
         {{ t('el.datepicker.confirm') }}
-      </el-button>
+      </lx-button>
     </div>
   </div>
 </template>
@@ -153,10 +153,10 @@
 <script lang="ts">
 import { computed, defineComponent, inject, ref, watch } from 'vue'
 import dayjs from 'dayjs'
-import ElButton from '@element-plus/components/button'
+import LxButton from '@element-plus/components/button'
 import { ClickOutside } from '@element-plus/directives'
 import { useLocaleInject } from '@element-plus/hooks'
-import ElInput from '@element-plus/components/input'
+import LxInput from '@element-plus/components/input'
 import { extractDateFormat, extractTimeFormat, TimePickPanel } from '@element-plus/components/time-picker'
 import { EVENT_CODE } from '@element-plus/utils/aria'
 import { isValidDatePickType } from '@element-plus/utils/validators'
@@ -174,7 +174,7 @@ const timeWithinRange = (_: ConfigType, __: any, ___: string) => true
 
 export default defineComponent({
   components: {
-    DateTable, ElInput, ElButton, TimePickPanel, MonthTable, YearTable,
+    DateTable, LxInput, LxButton, TimePickPanel, MonthTable, YearTable,
   },
 
   directives: { clickoutside: ClickOutside },

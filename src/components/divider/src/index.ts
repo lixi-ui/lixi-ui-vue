@@ -10,4 +10,4 @@ Divider.install = (app: App): void => {
 const _Divider = Divider as SFCWithInstall<typeof Divider>
 
 export default _Divider
-export const ElDivider = _Divider
+export const LxDivider = _Divider

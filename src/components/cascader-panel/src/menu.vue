@@ -1,5 +1,5 @@
 <template>
-  <el-scrollbar
+  <lx-scrollbar
     :id="menuId"
     tag="ul"
     role="menu"
@@ -12,7 +12,7 @@
     @mousemove="handleMouseMove"
     @mouseleave="clearHoverZone"
   >
-    <el-cascader-node
+    <lx-cascader-node
       v-for="node in nodes"
       :key="node.uid"
       :node="node"
@@ -30,7 +30,7 @@
       ref="hoverZone"
       class="el-cascader-menu__hover-zone"
     />
-  </el-scrollbar>
+  </lx-scrollbar>
 </template>
 
 <script lang="ts">
@@ -38,10 +38,10 @@ import {
   computed, defineComponent, getCurrentInstance,
   inject, ref,
 } from 'vue'
-import ElScrollbar from '@element-plus/components/scrollbar'
+import LxScrollbar from '@element-plus/components/scrollbar'
 import { useLocaleInject } from '@element-plus/hooks'
 import { generateId } from '@element-plus/utils/util'
-import ElCascaderNode from './node.vue'
+import LxCascaderNode from './node.vue'
 import { default as CascaderNode } from './node'
 import {
   CASCADER_PANEL_INJECTION_KEY,
@@ -51,11 +51,11 @@ import type { PropType } from 'vue'
 import type { TimeoutHandle, Nullable } from '@element-plus/utils/types'
 
 export default defineComponent({
-  name: 'ElCascaderMenu',
+  name: 'LxCascaderMenu',
 
   components: {
-    ElScrollbar,
-    ElCascaderNode,
+    LxScrollbar,
+    LxCascaderNode,
   },
 
   props: {

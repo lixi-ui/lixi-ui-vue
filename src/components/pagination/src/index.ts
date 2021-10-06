@@ -10,6 +10,6 @@ _Pagination.install = (app: App) => {
 }
 
 export default _Pagination
-export const ElPagination = _Pagination
+export const LxPagination = _Pagination
 
 export * from './src/pagination'

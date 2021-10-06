@@ -1,39 +1,39 @@
 <template>
   <span class="el-pagination__sizes">
-    <el-select
+    <lx-select
       :model-value="innerPageSize"
       :disabled="disabled"
       :popper-class="popperClass"
       size="mini"
       @change="handleChange"
     >
-      <el-option
+      <lx-option
         v-for="item in innerPagesizes"
         :key="item"
         :value="item"
         :label="item + t('el.pagination.pagesize')"
       />
-    </el-select>
+    </lx-select>
   </span>
 </template>
 
 <script lang="ts">
 import { defineComponent, watch, computed, ref } from 'vue'
 import isEqual from 'lodash/isEqual'
-import ElSelect from '@element-plus/components/select'
+import LxSelect from '@element-plus/components/select'
 import { useLocaleInject } from '@element-plus/hooks'
 import { usePagination } from './usePagination'
 
 import type { PropType } from 'vue'
 import type { Nullable } from '@element-plus/utils/types'
 
-const { Option: ElOption } = ElSelect
+const { Option: LxOption } = LxSelect
 
 export default defineComponent({
   name: 'Sizes',
   components: {
-    ElSelect,
-    ElOption,
+    LxSelect,
+    LxOption,
   },
   props: {
     pageSize: Number,

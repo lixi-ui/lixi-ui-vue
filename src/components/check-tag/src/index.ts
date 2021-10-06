@@ -9,4 +9,4 @@ CheckTag.install = (app: App): void => {
 const _CheckTag = CheckTag as SFCWithInstall<typeof CheckTag>
 
 export default _CheckTag
-export const ElCheckTag = _CheckTag
+export const LxCheckTag = _CheckTag

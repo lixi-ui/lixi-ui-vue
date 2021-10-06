@@ -10,24 +10,24 @@ La tabla básica es solo para mostrar datos.
 
 ```html
   <template>
-    <el-table
+    <lx-table
       :data="tableData"
       style="width: 100%">
-      <el-table-column
+      <lx-table-column
         prop="date"
         label="Fecha"
         width="180">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="name"
         label="Nombre"
         width="180">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="address"
         label="Dirección">
-      </el-table-column>
-    </el-table>
+      </lx-table-column>
+    </lx-table>
   </template>
 
   <script>
@@ -62,28 +62,28 @@ La tabla básica es solo para mostrar datos.
 
 La tabla con franjas hace más fácil distinguir filas diferentes.
 
-:::demo El atributo `stripe` también acepta un `Boolean`. Si se encuentra `true`, la tabla será con franjas.
+:::demo Lx atributo `stripe` también acepta un `Boolean`. Si se encuentra `true`, la tabla será con franjas.
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     stripe
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Fecha"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -120,25 +120,25 @@ La tabla con franjas hace más fácil distinguir filas diferentes.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     border
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Fecha"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -176,33 +176,33 @@ Puede destacar el contenido de la tabla para distinguir entre "success, informat
 :::demo Utilice `row-class-name` en `el-table` para agregar clases personalizadas a una fila en específico. Y entonces, podrá darle diseño con estas clases.
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%"
     :row-class-name="tableRowClassName">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Fecha"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <style>
-  .el-table .warning-row {
+  .lx-table .warning-row {
     background: oldlace;
   }
 
-  .el-table .success-row {
+  .lx-table .success-row {
     background: #f0f9eb;
   }
 </style>
@@ -252,25 +252,25 @@ Cuando esta tiene demasiadas filas, puede utilizar una cabecera fija.
 :::demo Al configurar el atributo `height` de `el-table`, puede fijar la cabecera de la tabla sin agregar otro código.
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     height="250"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Fecha"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -317,53 +317,53 @@ Cuando esta tiene demasiadas filas, puede utilizar una cabecera fija.
 
 Cuando se tienen demasiadas columnas, puede fijar alguna de estas.
 
-:::demo El atributo `fixed` es utilizado en `el-table-column`, este acepta un `Boolean`. Si es `true`, la columna será fijada a la izquierda. También acepta dos tipos: `left` y `right`, ambos indican donde debe ser fijada la columna.
+:::demo Lx atributo `fixed` es utilizado en `el-table-column`, este acepta un `Boolean`. Si es `true`, la columna será fijada a la izquierda. También acepta dos tipos: `left` y `right`, ambos indican donde debe ser fijada la columna.
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       fixed
       prop="date"
       label="Fecha"
       width="150">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="state"
       label="Estado"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="city"
       label="Ciudad"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección"
       width="600">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="zip"
       label="Código postal"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       fixed="right"
       label="Operaciones"
       width="120">
       <template #default="scope">
-        <el-button @click="handleClick" type="text" size="small">Detalle</el-button>
-        <el-button type="text" size="small">Editar</el-button>
+        <lx-button @click="handleClick" type="text" size="small">Detalle</lx-button>
+        <lx-button type="text" size="small">Editar</lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -422,42 +422,42 @@ Cuando tienes grandes cantidades de datos para colocar en una tabla, puede fijar
 :::demo  Fije las columnas y cabecera al mismo tiempo combinando los dos ejemplos anteriores.
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%"
     height="250">
-    <el-table-column
+    <lx-table-column
       fixed
       prop="date"
       label="Fecha"
       width="150">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="state"
       label="Estado"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="city"
       label="Ciudad"
       width="320">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección"
       width="600">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="zip"
       label="Código postal"
       width="120">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -528,55 +528,55 @@ Cuando los datos se modifican dinámicamente, es posible que necesite que la tab
 :::demo Al configurar el atributo `max-height` de `el-table`, tu puedes fijar la cabecera de la tabla. La barra de desplazamiento únicamente se mostrará si la altura sobrepasa el valor de la altura máxima.
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%"
     max-height="250">
-    <el-table-column
+    <lx-table-column
       fixed
       prop="date"
       label="Fecha"
       width="150">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="state"
       label="Estado"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="city"
       label="Ciudad"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección"
       width="600">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="zip"
       label="Código postal"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       fixed="right"
       label="Operaciones"
       width="120">
       <template #default="scope">
-        <el-button
+        <lx-button
           @click.prevent="deleteRow(scope.$index, tableData)"
           type="text"
           size="small">
-          Eliminar
-        </el-button>
+          Lximinar
+        </lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -652,43 +652,43 @@ Cuando la estructura de datos es compleja, tu puedes hacer uso de cabeceras agru
 :::demo Solo necesitas colocar `el-table-column` dentro de un `el-table-column`, de esta forma lograrás agruparlas.
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Fecha"
       width="150">
-    </el-table-column>
-    <el-table-column label="Información de entrega">
-      <el-table-column
+    </lx-table-column>
+    <lx-table-column label="Información de entrega">
+      <lx-table-column
         prop="name"
         label="Nombre"
         width="120">
-      </el-table-column>
-      <el-table-column label="Información de dirección">
-        <el-table-column
+      </lx-table-column>
+      <lx-table-column label="Información de dirección">
+        <lx-table-column
           prop="state"
           label="Estado"
           width="120">
-        </el-table-column>
-        <el-table-column
+        </lx-table-column>
+        <lx-table-column
           prop="city"
           label="Ciudad"
           width="120">
-        </el-table-column>
-        <el-table-column
+        </lx-table-column>
+        <lx-table-column
           prop="address"
           label="Dirección">
-        </el-table-column>
-        <el-table-column
+        </lx-table-column>
+        <lx-table-column
           prop="zip"
           label="Código postal"
           width="120">
-        </el-table-column>
-      </el-table-column>
-    </el-table-column>
-  </el-table>
+        </lx-table-column>
+      </lx-table-column>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -759,34 +759,34 @@ La selección de una fila esta soportada.
 :::demo La tabla permite la selección de una sola fila. Puede activarlo agregando el atributo `highlight-current-row`. Un evento llamado `current-change` será disparado cuando la selección de la fila cambie, sus parámetros son la fila antes y después de que ocurre el cambio: `currentRow` y `oldCurrentRow`. Si necesita mostrar el índice de la fila, puede agregar un nuevo `el-table-column` con el atributo `type` asignado al `index` y podrá ver el índice iniciando desde 1.
 ```html
 <template>
-  <el-table
+  <lx-table
     ref="singleTable"
     :data="tableData"
     highlight-current-row
     @current-change="handleCurrentChange"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       type="index"
       width="50">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       property="date"
       label="Fecha"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       property="name"
       label="Nombre"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       property="address"
       label="Dirección">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
   <div style="margin-top: 20px">
-    <el-button @click="setCurrent(tableData[1])">Seleccionar segunda fila</el-button>
-    <el-button @click="setCurrent()">Limpiar selección</el-button>
+    <lx-button @click="setCurrent(tableData[1])">Seleccionar segunda fila</lx-button>
+    <lx-button @click="setCurrent()">Limpiar selección</lx-button>
   </div>
 </template>
 
@@ -835,34 +835,34 @@ También puede seleccionar múltiples filas.
 :::demo Activar la selección múltiple es sencillo: Solo debe agregar a `el-table-column` con su `type` establecido en `selection`. Además de la selección múltiple, este ejemplo también utiliza `show-overflow-tooltip`: por defecto, si el contenido es demasiado largo, este permite córtalo dentro de múltiples líneas. Si lo que busca es mantener una línea, utilice el atributo `show-overflow-tooltip`, que acepta un valor `Boolean`. Cuando este está establecido en `true`, el contenido extra puede mostrar un _tooltip_ cuando se hace _hover_ sobre la celda.
 ```html
 <template>
-  <el-table
+  <lx-table
     ref="multipleTable"
     :data="tableData"
     style="width: 100%"
     @selection-change="handleSelectionChange">
-    <el-table-column
+    <lx-table-column
       type="selection"
       width="55">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Fecha"
       width="120">
       <template #default="scope">{{ scope.row.date }}</template>
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       property="name"
       label="Nombre"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       property="address"
       label="Dirección"
       show-overflow-tooltip>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
   <div style="margin-top: 20px">
-    <el-button @click="toggleSelection([tableData[1], tableData[2]])">Cambia el estado de selección de la segunda y tercera fila.</el-button>
-    <el-button @click="toggleSelection()">Limpiar selección</el-button>
+    <lx-button @click="toggleSelection([tableData[1], tableData[2]])">Cambia el estado de selección de la segunda y tercera fila.</lx-button>
+    <lx-button @click="toggleSelection()">Limpiar selección</lx-button>
   </div>
 </template>
 
@@ -929,27 +929,27 @@ Ordena los datos para encontrar o comparar información rápidamente.
 :::demo Establezca el atributo `sortable` para ordenar los datos de una columna. Este acepta un `Boolean` con un valor por defecto `false`. Establezca el atributo `default-sort` para determinar la columna y orden por defecto. Para aplicar sus propias reglas de ordenamiento, utilice `sort-method` o `sort-by`. Si lo que necesita es ordenar de forma remota desde backend, establezca `sortable` a `custom`, y escuche el evento `sort-change` de la tabla. Al dispararse el evento, tendrá acceso a la columna ordenada y orden para que pueda obtener los datos de la tabla ordenada desde su API. En este ejemplo utilizamos otro atributo llamado `formatter` para darle un formato al valor de ciertas columnas. Este acepta una función que tiene dos parámetros: `row` y `column`. Puede disparar este de acuerdo a sus propias necesidades.
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     :default-sort = "{prop: 'date', order: 'descending'}"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Fecha"
       sortable
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección"
       :formatter="formatter">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -992,14 +992,14 @@ Filtra la tabla para encontrar la información que necesita.
 :::demo Establezca el atributo `filters` y `filter-method` en `el-table-column` haciendo esta columna filtrable. `filters` es un arreglo, y `filter-method` es una función que decide que filas se muestra. Esta tiene tres parámetros: `value`, `row` y `column`.
 ```html
 <template>
-  <el-button @click="resetDateFilter">清除日期过滤器</el-button>
-  <el-button @click="clearFilter">清除所有过滤器</el-button>
-  <el-table
+  <lx-button @click="resetDateFilter">清除日期过滤器</lx-button>
+  <lx-button @click="clearFilter">清除所有过滤器</lx-button>
+  <lx-table
     row-key="date"
     ref="filterTable"
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Fecha"
       sortable
@@ -1008,18 +1008,18 @@ Filtra la tabla para encontrar la información que necesita.
       :filters="[{text: '2016-05-01', value: '2016-05-01'}, {text: '2016-05-02', value: '2016-05-02'}, {text: '2016-05-03', value: '2016-05-03'}, {text: '2016-05-04', value: '2016-05-04'}]"
       :filter-method="filterHandler"
     >
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección"
       :formatter="formatter">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="tag"
       label="Etiqueta"
       width="100"
@@ -1027,12 +1027,12 @@ Filtra la tabla para encontrar la información que necesita.
       :filter-method="filterTag"
       filter-placement="bottom-end">
       <template #default="scope">
-        <el-tag
+        <lx-tag
           :type="scope.row.tag === 'Home' ? 'primary' : 'success'"
-          disable-transitions>{{scope.row.tag}}</el-tag>
+          disable-transitions>{{scope.row.tag}}</lx-tag>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1092,47 +1092,47 @@ Personalice la columna de la tabla para que pueda integrarse con otros component
 :::demo Tiene acceso a la siguiente información: row, column, $index, store (gestor de estados de la tabla) por [slots](https://v3.vuejs.org/guide/component-slots.html).
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       label="Fecha"
       width="180">
       <template #default="scope">
         <i class="el-icon-time"></i>
         <span style="margin-left: 10px">{{ scope.row.date }}</span>
       </template>
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Nombre"
       width="180">
       <template #default="scope">
-        <el-popover effect="light" trigger="hover" placement="top">
+        <lx-popover effect="light" trigger="hover" placement="top">
           <template #default>
             <p>姓名: {{ scope.row.name }}</p>
             <p>住址: {{ scope.row.address }}</p>
           </template>
           <template #reference>
             <div class="name-wrapper">
-              <el-tag size="medium">{{ scope.row.name }}</el-tag>
+              <lx-tag size="medium">{{ scope.row.name }}</lx-tag>
             </div>
           </template>
-        </el-popover>
+        </lx-popover>
       </template>
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Operaciones">
       <template #default="scope">
-        <el-button
+        <lx-button
           size="mini"
-          @click="handleEdit(scope.$index, scope.row)">Editar</el-button>
-        <el-button
+          @click="handleEdit(scope.$index, scope.row)">Editar</lx-button>
+        <lx-button
           size="mini"
           type="danger"
-          @click="handleDelete(scope.$index, scope.row)">Eliminar</el-button>
+          @click="handleDelete(scope.$index, scope.row)">Eliminar</lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1177,36 +1177,36 @@ Se puede personalizar el encabezado de la tabla para que se pueda adaptar aún m
 :::demo Puede personalizar el aspecto del encabezado con header [slots](https://v3.vuejs.org/guide/component-slots.html).
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       label="Date"
       prop="date">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Name"
       prop="name">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       align="right">
       <template #header>
-        <el-input
+        <lx-input
           v-model="search"
           size="mini"
           placeholder="Type to search"/>
       </template>
       <template #default="scope">
-        <el-button
+        <lx-button
           size="mini"
-          @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
-        <el-button
+          @click="handleEdit(scope.$index, scope.row)">Edit</lx-button>
+        <lx-button
           size="mini"
           type="danger"
-          @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
+          @click="handleDelete(scope.$index, scope.row)">Delete</lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1253,26 +1253,26 @@ Cuando el contenido de la fila es demasiado largo y busca no mostrar la barra de
 :::demo Puede activar la fila expandible estableciendo la propiedad `type` a `expand` y Slots. La plantilla para `el-table-column` se representará como el contenido de la fila expandible, y puede acceder a algunos atributos cuando está usando `Slots` en plantillas de columna personalizadas.
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%">
-    <el-table-column type="expand">
+    <lx-table-column type="expand">
       <template #default="props">
         <p>Estado: {{ props.row.state }}</p>
         <p>Ciudad: {{ props.row.city }}</p>
         <p>Dirección: {{ props.row.address }}</p>
         <p>Código postal: {{ props.row.zip }}</p>
       </template>
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Fecha"
       prop="date">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       label="Nombre"
       prop="name">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1343,27 +1343,27 @@ Cuando el contenido de la fila es demasiado largo y busca no mostrar la barra de
 ```html
 <template>
 <div>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%;margin-bottom: 20px;"
     row-key="id"
     border
     default-expand-all>
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="日期"
       sortable
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="name"
       sortable
       width="180">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 
-  <el-table
+  <lx-table
     :data="tableData1"
     style="width: 100%"
     row-key="id"
@@ -1371,17 +1371,17 @@ Cuando el contenido de la fila es demasiado largo y busca no mostrar la barra de
     lazy
     :load="load"
     :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="date"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="name"
       width="180">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </div>
 </template>
 <script>
@@ -1463,66 +1463,66 @@ Para una tabla de números, puede agregar una fila extra en el pie de página de
 :::demo Puede agregar la fila de resumen configurando `show-summary` a `true`. Por defecto, para la fila de resumen, la primera columna no resume nada, pero siempre muestra la suma (puede configurar el texto mostrado usando `sum-text`), mientras que otras columnas suman todos los números en esa columna y los muestran. Por supuesto, puede definir su propio comportamiento de suma. Para hacerlo, utiliza un método `summary-method`, que devuelve un array, y cada elemento que fue retornado desde el arreglo puede ser mostrado en las columnas del resumen de fila. La segunda tabla de este ejemplo es una demostración detallada.
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     border
     show-summary
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       prop="id"
       label="ID"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount1"
       sortable
       label="Monto 1">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount2"
       sortable
       label="Monto 2">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount3"
       sortable
       label="Monto 3">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 
-  <el-table
+  <lx-table
     :data="tableData"
     border
     height="200"
     :summary-method="getSummaries"
     show-summary
     style="width: 100%; margin-top: 20px">
-    <el-table-column
+    <lx-table-column
       prop="id"
       label="ID"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount1"
       label="Costo 1 ($)">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount2"
       label="Costo 2 ($)">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="amount3"
       label="Costo 3 ($)">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1598,69 +1598,69 @@ Para una tabla de números, puede agregar una fila extra en el pie de página de
 
 Configurar _rowspan_ y _colspan_ le permite fusionar celdas.
 
-:::demo Utilice el atributo `span-method` para configurar rowspan y colspan. Este acepta un método, y pasa un objeto a ese método incluyendo la fila actual `row`, columna actual `column`, índice de fila actual `rowIndex` y índice de columna actual `columnIndex`. El método debe devolver un arreglo de dos números, el primer número siendo `rowspan` y el segundo `colspan`. También puede devolver un objeto con las propiedades `rowspan` y `colspan`.
+:::demo Utilice el atributo `span-method` para configurar rowspan y colspan. Este acepta un método, y pasa un objeto a ese método incluyendo la fila actual `row`, columna actual `column`, índice de fila actual `rowIndex` y índice de columna actual `columnIndex`. Lx método debe devolver un arreglo de dos números, el primer número siendo `rowspan` y el segundo `colspan`. También puede devolver un objeto con las propiedades `rowspan` y `colspan`.
 
 ```html
 <template>
   <div>
-    <el-table
+    <lx-table
       :data="tableData"
       :span-method="arraySpanMethod"
       border
       style="width: 100%">
-      <el-table-column
+      <lx-table-column
         prop="id"
         label="ID"
         width="180">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="name"
         label="Nombre">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount1"
         sortable
         label="Monto 1">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount2"
         sortable
         label="Monto 2">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount3"
         sortable
         label="Monto 3">
-      </el-table-column>
-    </el-table>
+      </lx-table-column>
+    </lx-table>
 
-    <el-table
+    <lx-table
       :data="tableData"
       :span-method="objectSpanMethod"
       border
       style="width: 100%; margin-top: 20px">
-      <el-table-column
+      <lx-table-column
         prop="id"
         label="ID"
         width="180">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="name"
         label="Nombre">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount1"
         label="Monto 1">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount2"
         label="Monto 2">
-      </el-table-column>
-      <el-table-column
+      </lx-table-column>
+      <lx-table-column
         prop="amount3"
         label="Monto 3">
-      </el-table-column>
-    </el-table>
+      </lx-table-column>
+    </lx-table>
   </div>
 </template>
 
@@ -1737,32 +1737,32 @@ Configurar _rowspan_ y _colspan_ le permite fusionar celdas.
 
 Puede personalizar el índice de la fila con la propiedad `type=index` de las columnas.
 
-:::demo Para personalizar el índice de la fila, utilice el atributo `index` en `<el-table-column>` con `type=index`. Si este es asignado a un número, todos los índices tendrán un desplazamiento de ese número. Este también acepta un método con cada índice (iniciando desde 0) como un parámetro, y este devuelve un valor que puede ser mostrado como índice.
+:::demo Para personalizar el índice de la fila, utilice el atributo `index` en `<lx-table-column>` con `type=index`. Si este es asignado a un número, todos los índices tendrán un desplazamiento de ese número. Este también acepta un método con cada índice (iniciando desde 0) como un parámetro, y este devuelve un valor que puede ser mostrado como índice.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%">
-    <el-table-column
+    <lx-table-column
       type="index"
       :index="indexMethod">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="date"
       label="Fecha"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="name"
       label="Nombre"
       width="180">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column
       prop="address"
       label="Dirección">
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1889,7 +1889,7 @@ Puede personalizar el índice de la fila con la propiedad `type=index` de las co
 ### Slots de la tabla
 | Nombre | Descripción                              |
 | ------ | ---------------------------------------- |
-| append | El contenido será insertado después de la última fila. Es posible que necesites este espacio si deseas implementar _scroll_ infinito para la tabla. Este espacio se mostrará sobre la fila de resumen si hay uno. |
+| append | Lx contenido será insertado después de la última fila. Es posible que necesites este espacio si deseas implementar _scroll_ infinito para la tabla. Este espacio se mostrará sobre la fila de resumen si hay uno. |
 
 ### Atributos para las columnas de la tabla
 | Atributo              | Descripción                              | Tipo                              | Valores aceptados             | Por defecto |
@@ -1903,7 +1903,7 @@ Puede personalizar el índice de la fila con la propiedad `type=index` de las co
 | min-width             | ancho mínimo de la columna. Columnas con `width` tienen un ancho fijo, mientras que las columnas con `min-width` tienen un ancho que se distribuye en proporción. | string / number                            | —                             | —           |
 | fixed                 | especifica si la columna se fija a la izquierda o a la derecha. Se fijará a la izquierda si es `true` | string / boolean                    | true / 'left' / 'right'               | —           |
 | render-header         | Función de renderizado para la cabecera de la tabla de esta columna | Function({ column, $index })   | —                             | —           |
-| sortable              | especifica que columna puede ser ordenado. El ordenamiento remoto puede ser hecho configurando el atributo `custom` y escucha al evento de tabla `sort-change` | boolean / string                   | true, false, 'custom'           | false       |
+| sortable              | especifica que columna puede ser ordenado. Lx ordenamiento remoto puede ser hecho configurando el atributo `custom` y escucha al evento de tabla `sort-change` | boolean / string                   | true, false, 'custom'           | false       |
 | sort-method           | método de ordenamiento, funciona cuando `sortable` está en `true`. Debería devolver un número, al igual que Array.sort | function(a, b)                    | —                             | —           |
 | sort-by               | especifica por cual propiedad de va a ordenar, funciona cuando `sortable` es `true` y `sort-method` es `undefined`. Si se establece a un arreglo, la columna ordenara secuencialmente por la siguiente propiedad si la anterior es igual | function(row, index) / string / array | —                             | —           |
 | sort-orders           | el orden de las estrategias de ordenación utilizadas al ordenar los datos, funciona cuando `sortable` es `true`. Acepta un array, a medida que el usuario hace clic en el encabezado, la columna se ordena en el orden de los elementos del array. | array | los elementos en el arreglo necesitan ser uno de los siguientes: `ascending`, `descending` y `null` (restaura el orden original) | ['ascending', 'descending', null] |
@@ -1925,5 +1925,5 @@ Puede personalizar el índice de la fila con la propiedad `type=index` de las co
 ### Table-column Slot
 | Name | Description |
 |------|--------|
-| — | Contenido personalizado para las columnas de la tabla. El parámetro del scope es { row, column, $index } |
-| header | Contenido personalizado para el encabezado de la tabla. El parámetro del scope es { column, $index } |
+| — | Contenido personalizado para las columnas de la tabla. Lx parámetro del scope es { row, column, $index } |
+| header | Contenido personalizado para el encabezado de la tabla. Lx parámetro del scope es { column, $index } |

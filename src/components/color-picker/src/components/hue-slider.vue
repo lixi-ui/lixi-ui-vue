@@ -20,7 +20,7 @@ import type { PropType } from 'vue'
 import type Color from '../color'
 
 export default defineComponent({
-  name: 'ElColorHueSlider',
+  name: 'LxColorHueSlider',
 
   props: {
     color: {

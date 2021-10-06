@@ -10,20 +10,20 @@
 ```html
 <template>
   <div>
-    <el-checkbox v-model="checked1" label="备选项1"></el-checkbox>
-    <el-checkbox v-model="checked2" label="备选项2"></el-checkbox>
+    <lx-checkbox v-model="checked1" label="备选项1"></lx-checkbox>
+    <lx-checkbox v-model="checked2" label="备选项2"></lx-checkbox>
   </div>
   <div>
-    <el-checkbox v-model="checked3" label="备选项1" size="medium"></el-checkbox>
-    <el-checkbox v-model="checked4" label="备选项2" size="medium"></el-checkbox>
+    <lx-checkbox v-model="checked3" label="备选项1" size="medium"></lx-checkbox>
+    <lx-checkbox v-model="checked4" label="备选项2" size="medium"></lx-checkbox>
   </div>
   <div>
-    <el-checkbox v-model="checked5" label="备选项1" size="small"></el-checkbox>
-    <el-checkbox v-model="checked6" label="备选项2" size="small"></el-checkbox>
+    <lx-checkbox v-model="checked5" label="备选项1" size="small"></lx-checkbox>
+    <lx-checkbox v-model="checked6" label="备选项2" size="small"></lx-checkbox>
   </div>
   <div>
-    <el-checkbox v-model="checked7" label="备选项1" size="mini"></el-checkbox>
-    <el-checkbox v-model="checked8" label="备选项2" size="mini"></el-checkbox>
+    <lx-checkbox v-model="checked7" label="备选项1" size="mini"></lx-checkbox>
+    <lx-checkbox v-model="checked8" label="备选项2" size="mini"></lx-checkbox>
   </div>
 </template>
 <script>
@@ -83,8 +83,8 @@
 
 ```html
 <template>
-  <el-checkbox v-model="checked1" disabled>备选项1</el-checkbox>
-  <el-checkbox v-model="checked2" disabled>备选项</el-checkbox>
+  <lx-checkbox v-model="checked1" disabled>备选项1</lx-checkbox>
+  <lx-checkbox v-model="checked2" disabled>备选项</lx-checkbox>
 </template>
 <script>
   export default {
@@ -124,13 +124,13 @@
 
 ```html
 <template>
-  <el-checkbox-group v-model="checkList">
-    <el-checkbox label="复选框 A"></el-checkbox>
-    <el-checkbox label="复选框 B"></el-checkbox>
-    <el-checkbox label="复选框 C"></el-checkbox>
-    <el-checkbox label="禁用" disabled></el-checkbox>
-    <el-checkbox label="选中且禁用" disabled></el-checkbox>
-  </el-checkbox-group>
+  <lx-checkbox-group v-model="checkList">
+    <lx-checkbox label="复选框 A"></lx-checkbox>
+    <lx-checkbox label="复选框 B"></lx-checkbox>
+    <lx-checkbox label="复选框 C"></lx-checkbox>
+    <lx-checkbox label="禁用" disabled></lx-checkbox>
+    <lx-checkbox label="选中且禁用" disabled></lx-checkbox>
+  </lx-checkbox-group>
 </template>
 
 <script>
@@ -169,10 +169,10 @@
 
 ```html
 <template>
-  <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
-  <el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
-    <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
-  </el-checkbox-group>
+  <lx-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</lx-checkbox>
+  <lx-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
+    <lx-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</lx-checkbox>
+  </lx-checkbox-group>
 </template>
 <script>
   const cityOptions = ['上海', '北京', '广州', '深圳'];
@@ -243,12 +243,12 @@
 
 ```html
 <template>
-  <el-checkbox-group
+  <lx-checkbox-group
     v-model="checkedCities"
     :min="1"
     :max="2">
-    <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
-  </el-checkbox-group>
+    <lx-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</lx-checkbox>
+  </lx-checkbox-group>
 </template>
 <script>
   const cityOptions = ['上海', '北京', '广州', '深圳'];
@@ -296,24 +296,24 @@
 ```html
 <template>
   <div>
-    <el-checkbox-group v-model="checkboxGroup1">
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup1">
+      <lx-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</lx-checkbox-button>
+    </lx-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup2" size="medium">
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup2" size="medium">
+      <lx-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</lx-checkbox-button>
+    </lx-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup3" size="small">
-      <el-checkbox-button v-for="city in cities" :label="city" :disabled="city === '北京'" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup3" size="small">
+      <lx-checkbox-button v-for="city in cities" :label="city" :disabled="city === '北京'" :key="city">{{city}}</lx-checkbox-button>
+    </lx-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
+      <lx-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</lx-checkbox-button>
+    </lx-checkbox-group>
   </div>
 </template>
 <script>
@@ -365,24 +365,24 @@
 ```html
 <template>
   <div>
-    <el-checkbox v-model="checked1" label="备选项1" border></el-checkbox>
-    <el-checkbox v-model="checked2" label="备选项2" border></el-checkbox>
+    <lx-checkbox v-model="checked1" label="备选项1" border></lx-checkbox>
+    <lx-checkbox v-model="checked2" label="备选项2" border></lx-checkbox>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox v-model="checked3" label="备选项1" border size="medium"></el-checkbox>
-    <el-checkbox v-model="checked4" label="备选项2" border size="medium"></el-checkbox>
+    <lx-checkbox v-model="checked3" label="备选项1" border size="medium"></lx-checkbox>
+    <lx-checkbox v-model="checked4" label="备选项2" border size="medium"></lx-checkbox>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup1" size="small">
-      <el-checkbox label="备选项1" border></el-checkbox>
-      <el-checkbox label="备选项2" border disabled></el-checkbox>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup1" size="small">
+      <lx-checkbox label="备选项1" border></lx-checkbox>
+      <lx-checkbox label="备选项2" border disabled></lx-checkbox>
+    </lx-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup2" size="mini" disabled>
-      <el-checkbox label="备选项1" border></el-checkbox>
-      <el-checkbox label="备选项2" border></el-checkbox>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup2" size="mini" disabled>
+      <lx-checkbox label="备选项1" border></lx-checkbox>
+      <lx-checkbox label="备选项2" border></lx-checkbox>
+    </lx-checkbox-group>
   </div>
 </template>
 

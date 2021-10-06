@@ -76,7 +76,7 @@ function useRender<T>(
       check(children)
     }
     function check(item: TableColumn<T>) {
-      if (item?.type?.name === 'ElTableColumn') {
+      if (item?.type?.name === 'LxTableColumn') {
         item.vParent = instance
       }
     }

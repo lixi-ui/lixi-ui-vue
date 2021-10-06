@@ -9,7 +9,7 @@
     :aria-orientation="vertical ? 'vertical': 'horizontal'"
     :aria-disabled="sliderDisabled"
   >
-    <el-input-number
+    <lx-input-number
       v-if="showInput && !range"
       ref="input"
       v-model="firstValue"
@@ -93,7 +93,7 @@ import {
   toRefs,
   watch,
 } from 'vue'
-import ElInputNumber from '@element-plus/components/input-number'
+import LxInputNumber from '@element-plus/components/input-number'
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT, INPUT_EVENT } from '@element-plus/utils/constants'
 import { off, on } from '@element-plus/utils/dom'
 import throwError from '@element-plus/utils/error'
@@ -107,10 +107,10 @@ import type { PropType } from 'vue'
 import type { ComponentSize, Nullable } from '@element-plus/utils/types'
 
 export default defineComponent({
-  name: 'ElSlider',
+  name: 'LxSlider',
 
   components: {
-    ElInputNumber,
+    LxInputNumber,
     SliderButton,
     SliderMarker,
   },

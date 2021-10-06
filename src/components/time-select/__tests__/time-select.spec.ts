@@ -28,18 +28,18 @@ afterEach(() => {
 describe('TimeSelect', () => {
   it('create', async () => {
     const wrapper = _mount(
-      `<el-time-select :style="{color:'red'}" class="customClass" />`,
+      `<lx-time-select :style="{color:'red'}" class="customClass" />`,
       () => ({
         readonly: true,
       }),
     )
-    const outerInput = wrapper.find('.el-select')
+    const outerInput = wrapper.find('.lx-select')
     expect(outerInput.classes()).toContain('customClass')
     expect(outerInput.attributes().style).toBeDefined()
   })
 
   it('set default value', async () => {
-    const wrapper = _mount(`<el-time-select v-model="value" />`, () => ({
+    const wrapper = _mount(`<lx-time-select v-model="value" />`, () => ({
       value: '14:30',
     }))
     const input = wrapper.find('input')
@@ -51,7 +51,7 @@ describe('TimeSelect', () => {
   })
 
   it('set minTime', async () => {
-    const wrapper = _mount(`<el-time-select minTime="14:30" />`, () => ({}))
+    const wrapper = _mount(`<lx-time-select minTime="14:30" />`, () => ({}))
     const input = wrapper.find('input')
     input.trigger('blur')
     input.trigger('focus')
@@ -62,7 +62,7 @@ describe('TimeSelect', () => {
   })
 
   it('set maxTime', async () => {
-    const wrapper = _mount(`<el-time-select maxTime="14:30" />`, () => ({}))
+    const wrapper = _mount(`<lx-time-select maxTime="14:30" />`, () => ({}))
     const input = wrapper.find('input')
     input.trigger('blur')
     input.trigger('focus')
@@ -72,7 +72,7 @@ describe('TimeSelect', () => {
   })
 
   it('set value update', async () => {
-    const wrapper = _mount(`<el-time-select v-model="value" />`, () => ({
+    const wrapper = _mount(`<lx-time-select v-model="value" />`, () => ({
       value: '10:00',
     }))
     await nextTick()
@@ -91,7 +91,7 @@ describe('TimeSelect', () => {
   })
 
   it('update value', async () => {
-    const wrapper = _mount(`<el-time-select v-model="value" />`, () => ({
+    const wrapper = _mount(`<lx-time-select v-model="value" />`, () => ({
       value: '10:00',
     }))
     await nextTick()
@@ -113,14 +113,14 @@ describe('TimeSelect', () => {
 
   it('set disabled', async () => {
     const wrapper = _mount(
-      `<el-time-select v-model="value" :disabled="disabled" />`,
+      `<lx-time-select v-model="value" :disabled="disabled" />`,
       () => ({
         value: '10:00',
         disabled: false,
       }),
     )
     const vm = wrapper.vm as any
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     expect(select.props().disabled).toBe(false)
 
     vm.disabled = true
@@ -130,14 +130,14 @@ describe('TimeSelect', () => {
 
   it('set editable', async () => {
     const wrapper = _mount(
-      `<el-time-select v-model="value" :editable="editable" />`,
+      `<lx-time-select v-model="value" :editable="editable" />`,
       () => ({
         value: '10:00',
         editable: false,
       }),
     )
     const vm = wrapper.vm as any
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'LxSelect' })
     expect(select.props().filterable).toBe(false)
 
     vm.editable = true
@@ -146,19 +146,19 @@ describe('TimeSelect', () => {
   })
 
   it('ref focus', async () => {
-    _mount(`<el-time-select ref="input" />`, () => ({}), {
+    _mount(`<lx-time-select ref="input" />`, () => ({}), {
       mounted() {
         this.$refs.input.focus()
       },
     })
     await sleep(50)
-    const popperEl = document.querySelector('.el-select__popper')
+    const popperEl = document.querySelector('.lx-select__popper')
     const attr = popperEl.getAttribute('aria-hidden')
     expect(attr).toEqual('false')
   })
 
   it('ref blur', async () => {
-    _mount(`<el-time-select ref="input" />`, () => ({}), {
+    _mount(`<lx-time-select ref="input" />`, () => ({}), {
       async mounted() {
         this.$refs.input.focus()
         await nextTick()
@@ -166,7 +166,7 @@ describe('TimeSelect', () => {
       },
     })
     await sleep(50)
-    const popperEl = document.querySelector('.el-select__popper')
+    const popperEl = document.querySelector('.lx-select__popper')
     const attr = popperEl.getAttribute('aria-hidden')
     expect(attr).toEqual('true')
   })

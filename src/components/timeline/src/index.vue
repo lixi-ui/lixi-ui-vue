@@ -2,7 +2,7 @@
 import { h, provide, defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'ElTimeline',
+  name: 'LxTimeline',
   setup(_, ctx) {
     provide('timeline', ctx)
 

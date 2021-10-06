@@ -9,7 +9,7 @@ describe('Avatar.vue', () => {
 
   test('render test', () => {
     const wrapper = mount(Avatar)
-    expect(wrapper.find('.el-avatar').exists()).toBe(true)
+    expect(wrapper.find('.lx-avatar').exists()).toBe(true)
   })
 
   test('size is number', () => {

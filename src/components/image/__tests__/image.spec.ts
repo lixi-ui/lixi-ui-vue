@@ -16,7 +16,7 @@ describe('Image.vue', () => {
 
   test('render test', () => {
     const wrapper = mount(Image)
-    expect(wrapper.find('.el-image').exists()).toBe(true)
+    expect(wrapper.find('.lx-image').exists()).toBe(true)
   })
 
   test('image load success test', async () => {
@@ -27,12 +27,12 @@ describe('Image.vue', () => {
         alt,
       },
     })
-    expect(wrapper.find('.el-image__placeholder').exists()).toBe(true)
+    expect(wrapper.find('.lx-image__placeholder').exists()).toBe(true)
     await doubleWait()
-    expect(wrapper.find('.el-image__inner').exists()).toBe(true)
+    expect(wrapper.find('.lx-image__inner').exists()).toBe(true)
     expect(wrapper.find('img').exists()).toBe(true)
-    expect(wrapper.find('.el-image__placeholder').exists()).toBe(false)
-    expect(wrapper.find('.el-image__error').exists()).toBe(false)
+    expect(wrapper.find('.lx-image__placeholder').exists()).toBe(false)
+    expect(wrapper.find('.lx-image__error').exists()).toBe(false)
   })
 
   test('image load error test', async () => {
@@ -43,9 +43,9 @@ describe('Image.vue', () => {
     })
     await doubleWait()
     expect(wrapper.emitted('error')).toBeDefined()
-    expect(wrapper.find('.el-image__inner').exists()).toBe(false)
+    expect(wrapper.find('.lx-image__inner').exists()).toBe(false)
     expect(wrapper.find('img').exists()).toBe(false)
-    expect(wrapper.find('.el-image__error').exists()).toBe(true)
+    expect(wrapper.find('.lx-image__error').exists()).toBe(true)
   })
 
   test('imageStyle fit test', async () => {
@@ -95,7 +95,7 @@ describe('Image.vue', () => {
       },
     })
     await doubleWait()
-    await wrapper.find('.el-image__inner').trigger('click')
+    await wrapper.find('.lx-image__inner').trigger('click')
     expect(result).toBeTruthy()
   })
 
@@ -108,7 +108,7 @@ describe('Image.vue', () => {
       },
     })
     await doubleWait()
-    expect(wrapper.find('.el-image__inner').exists()).toBe(true)
+    expect(wrapper.find('.lx-image__inner').exists()).toBe(true)
     expect(handleLoad).toBeCalled()
   })
 

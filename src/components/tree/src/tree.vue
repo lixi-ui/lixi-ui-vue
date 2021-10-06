@@ -10,7 +10,7 @@
     }"
     role="tree"
   >
-    <el-tree-node
+    <lx-tree-node
       v-for="child in root.childNodes"
       :key="getNodeKey(child)"
       :node="child"
@@ -37,7 +37,7 @@ import { defineComponent, ref, provide, computed, watch, getCurrentInstance } fr
 import { useLocaleInject } from '@element-plus/hooks'
 import TreeStore from './model/tree-store'
 import { getNodeKey as getNodeKeyUtil } from './model/util'
-import ElTreeNode from './tree-node.vue'
+import LxTreeNode from './tree-node.vue'
 import { useNodeExpandEventBroadcast } from './model/useNodeExpandEventBroadcast'
 import { useDragNodeHandler } from './model/useDragNode'
 import { useKeydown } from './model/useKeydown'
@@ -53,8 +53,8 @@ import type {
 } from './tree.type'
 
 export default defineComponent({
-  name: 'ElTree',
-  components: { ElTreeNode },
+  name: 'LxTree',
+  components: { LxTreeNode },
   props: {
     data: {
       type: Array,

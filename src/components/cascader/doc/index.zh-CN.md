@@ -10,18 +10,18 @@
 ```html
 <div class="block">
   <span class="demonstration">默认 click 触发子菜单</span>
-  <el-cascader
+  <lx-cascader
     v-model="value"
     :options="options"
-    @change="handleChange"></el-cascader>
+    @change="handleChange"></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">hover 触发子菜单</span>
-  <el-cascader
+  <lx-cascader
     v-model="value"
     :options="options"
     :props="props"
-    @change="handleChange"></el-cascader>
+    @change="handleChange"></lx-cascader>
 </div>
 
 <script>
@@ -534,7 +534,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 :::demo 本例中，`options`指定的数组中的第一个元素含有`disabled: true`键值对，因此是禁用的。在默认情况下，Cascader 会检查数据中每一项的`disabled`字段是否为`true`，如果你的数据中表示禁用含义的字段名不为`disabled`，可以通过`props.disabled`属性来指定（详见下方 API 表格）。当然，`value`、`label`和`children`这三个字段名也可以通过同样的方式指定。
 ```html
-<el-cascader :options="options"></el-cascader>
+<lx-cascader :options="options"></lx-cascader>
 
 <script>
   export default {
@@ -1035,7 +1035,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 :::demo
 ```html
-<el-cascader :options="options" clearable></el-cascader>
+<lx-cascader :options="options" clearable></lx-cascader>
 
 <script>
   export default {
@@ -1535,7 +1535,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 :::demo 属性`show-all-levels`定义了是否显示完整的路径，将其赋值为`false`则仅显示最后一级
 ```html
-<el-cascader :options="options" :show-all-levels="false"></el-cascader>
+<lx-cascader :options="options" :show-all-levels="false"></lx-cascader>
 
 <script>
   export default {
@@ -1962,18 +1962,18 @@ export default defineComponent({
 ```html
 <div class="block">
   <span class="demonstration">默认显示所有Tag</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="props"
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">折叠展示Tag</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="props"
     collapse-tags
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 
 <script>
@@ -2120,17 +2120,17 @@ export default defineComponent({
 ```html
 <div class="block">
   <span class="demonstration">单选选择任意一级选项</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="{ checkStrictly: true }"
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">多选选择任意一级选项</span>
-  <el-cascader
+  <lx-cascader
     :options="options"
     :props="{ multiple: true, checkStrictly: true }"
-    clearable></el-cascader>
+    clearable></lx-cascader>
 </div>
 
 <script>
@@ -2556,7 +2556,7 @@ export default defineComponent({
 
 :::demo 通过`lazy`开启动态加载，并通过`lazyload`来设置加载数据源的方法。`lazyload`方法有两个参数，第一个参数`node`为当前点击的节点，第二个`resolve`为数据加载完成的回调(必须调用)。为了更准确的显示节点的状态，还可以对节点数据添加是否为叶子节点的标志位 (默认字段为`leaf`，可通过`props.leaf`修改)，否则会简单的以有无子节点来判断是否为叶子节点。
 ```html
-<el-cascader :props="props"></el-cascader>
+<lx-cascader :props="props"></lx-cascader>
 
 <script>
   let id = 0;
@@ -2595,18 +2595,18 @@ export default defineComponent({
 ```html
 <div class="block">
   <span class="demonstration">单选可搜索</span>
-  <el-cascader
+  <lx-cascader
     placeholder="试试搜索：指南"
     :options="options"
-    filterable></el-cascader>
+    filterable></lx-cascader>
 </div>
 <div class="block">
   <span class="demonstration">多选可搜索</span>
-  <el-cascader
+  <lx-cascader
     placeholder="试试搜索：指南"
     :options="options"
     :props="{ multiple: true }"
-    filterable></el-cascader>
+    filterable></lx-cascader>
 </div>
 
 <script>
@@ -3032,12 +3032,12 @@ export default defineComponent({
 
 :::demo 可以通过`scoped slot`对级联选择器的备选项的节点内容进行自定义，scoped slot会传入两个字段 `node` 和 `data`，分别表示当前节点的 Node 对象和数据。
 ```html
-<el-cascader :options="options">
+<lx-cascader :options="options">
   <template #default="{ node, data }">
     <span>{{ data.label }}</span>
     <span v-if="!node.isLeaf"> ({{ data.children.length }}) </span>
   </template>
-</el-cascader>
+</lx-cascader>
 
 <script>
   export default {
@@ -3537,7 +3537,7 @@ export default defineComponent({
 
 :::demo 和级联选择器一样，通过`options`来指定选项，也可通过`props`来设置多选、动态加载等功能，具体详情见下方API表格。
 ```html
-<el-cascader-panel :options="options"></el-cascader-panel>
+<lx-cascader-panel :options="options"></lx-cascader-panel>
 
 <script>
   export default {

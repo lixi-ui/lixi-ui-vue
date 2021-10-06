@@ -9,27 +9,27 @@
 :::demo 通过组件`slot`来设置下拉触发的元素以及需要通过具名`slot`为`dropdown` 来设置下拉菜单。默认情况下，下拉按钮只要`hover`即可，无需点击也会显示下拉菜单。
 
 ```html
-<el-dropdown>
+<lx-dropdown>
   <span class="el-dropdown-link">
     下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>黄金糕</el-dropdown-item>
-      <el-dropdown-item>狮子头</el-dropdown-item>
-      <el-dropdown-item>螺蛳粉</el-dropdown-item>
-      <el-dropdown-item disabled>双皮奶</el-dropdown-item>
-      <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>黄金糕</lx-dropdown-item>
+      <lx-dropdown-item>狮子头</lx-dropdown-item>
+      <lx-dropdown-item>螺蛳粉</lx-dropdown-item>
+      <lx-dropdown-item disabled>双皮奶</lx-dropdown-item>
+      <lx-dropdown-item divided>蚵仔煎</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .lx-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .lx-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -43,41 +43,41 @@
 :::demo 设置`split-button`属性来让触发下拉元素呈现为按钮组，左边是功能按钮，右边是触发下拉菜单的按钮，设置为`true`即可。
 
 ```html
-<el-dropdown>
-  <el-button type="primary">
+<lx-dropdown>
+  <lx-button type="primary">
     更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
-  </el-button>
+  </lx-button>
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>黄金糕</el-dropdown-item>
-      <el-dropdown-item>狮子头</el-dropdown-item>
-      <el-dropdown-item>螺蛳粉</el-dropdown-item>
-      <el-dropdown-item>双皮奶</el-dropdown-item>
-      <el-dropdown-item>蚵仔煎</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>黄金糕</lx-dropdown-item>
+      <lx-dropdown-item>狮子头</lx-dropdown-item>
+      <lx-dropdown-item>螺蛳粉</lx-dropdown-item>
+      <lx-dropdown-item>双皮奶</lx-dropdown-item>
+      <lx-dropdown-item>蚵仔煎</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
-<el-dropdown split-button type="primary" @click="handleClick">
+</lx-dropdown>
+<lx-dropdown split-button type="primary" @click="handleClick">
   更多菜单
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>黄金糕</el-dropdown-item>
-      <el-dropdown-item>狮子头</el-dropdown-item>
-      <el-dropdown-item>螺蛳粉</el-dropdown-item>
-      <el-dropdown-item>双皮奶</el-dropdown-item>
-      <el-dropdown-item>蚵仔煎</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>黄金糕</lx-dropdown-item>
+      <lx-dropdown-item>狮子头</lx-dropdown-item>
+      <lx-dropdown-item>螺蛳粉</lx-dropdown-item>
+      <lx-dropdown-item>双皮奶</lx-dropdown-item>
+      <lx-dropdown-item>蚵仔煎</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
 <style>
-  .el-dropdown {
+  .lx-dropdown {
     vertical-align: top;
   }
-  .el-dropdown + .el-dropdown {
+  .lx-dropdown + .lx-dropdown {
     margin-left: 15px;
   }
-  .el-icon-arrow-down {
+  .lx-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -118,66 +118,66 @@
 
 :::demo 在`trigger`属性设置为`click`即可。
 ```html
-<el-row class="block-col-2">
-  <el-col :span="8">
+<lx-row class="block-col-2">
+  <lx-col :span="8">
     <span class="demonstration">hover 激活</span>
-    <el-dropdown>
+    <lx-dropdown>
       <span class="el-dropdown-link">
         下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-check">双皮奶</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-check">蚵仔煎</el-dropdown-item>
-        </el-dropdown-menu>
+        <lx-dropdown-menu>
+          <lx-dropdown-item icon="el-icon-plus">黄金糕</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus">狮子头</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-check">双皮奶</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-check">蚵仔煎</lx-dropdown-item>
+        </lx-dropdown-menu>
       </template>
-    </el-dropdown>
-  </el-col>
-  <el-col :span="8">
+    </lx-dropdown>
+  </lx-col>
+  <lx-col :span="8">
     <span class="demonstration">click 激活</span>
-    <el-dropdown trigger="click">
+    <lx-dropdown trigger="click">
       <span class="el-dropdown-link">
         下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-check">双皮奶</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-check">蚵仔煎</el-dropdown-item>
-        </el-dropdown-menu>
+        <lx-dropdown-menu>
+          <lx-dropdown-item icon="el-icon-plus">黄金糕</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus">狮子头</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-check">双皮奶</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-check">蚵仔煎</lx-dropdown-item>
+        </lx-dropdown-menu>
       </template>
-    </el-dropdown>
-  </el-col>
-  <el-col :span="8">
+    </lx-dropdown>
+  </lx-col>
+  <lx-col :span="8">
     <span class="demonstration">右键(contextmenu) 激活</span>
-    <el-dropdown trigger="contextmenu">
+    <lx-dropdown trigger="contextmenu">
       <span class="el-dropdown-link">
         下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-check">双皮奶</el-dropdown-item>
-          <el-dropdown-item icon="el-icon-circle-check">蚵仔煎</el-dropdown-item>
-        </el-dropdown-menu>
+        <lx-dropdown-menu>
+          <lx-dropdown-item icon="el-icon-plus">黄金糕</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus">狮子头</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-check">双皮奶</lx-dropdown-item>
+          <lx-dropdown-item icon="el-icon-circle-check">蚵仔煎</lx-dropdown-item>
+        </lx-dropdown-menu>
       </template>
-    </el-dropdown>
-  </el-col>
-</el-row>
+    </lx-dropdown>
+  </lx-col>
+</lx-row>
 
 <style>
-  .el-dropdown-link {
+  .lx-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .lx-icon-arrow-down {
     font-size: 12px;
   }
   .demonstration {
@@ -196,27 +196,27 @@
 
 :::demo 下拉菜单默认在点击菜单项后会被隐藏，将`hide-on-click`属性默认为`false`可以关闭此功能。
 ```html
-<el-dropdown :hide-on-click="false">
+<lx-dropdown :hide-on-click="false">
   <span class="el-dropdown-link">
     下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>黄金糕</el-dropdown-item>
-      <el-dropdown-item>狮子头</el-dropdown-item>
-      <el-dropdown-item>螺蛳粉</el-dropdown-item>
-      <el-dropdown-item disabled>双皮奶</el-dropdown-item>
-      <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>黄金糕</lx-dropdown-item>
+      <lx-dropdown-item>狮子头</lx-dropdown-item>
+      <lx-dropdown-item>螺蛳粉</lx-dropdown-item>
+      <lx-dropdown-item disabled>双皮奶</lx-dropdown-item>
+      <lx-dropdown-item divided>蚵仔煎</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .lx-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .lx-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -229,27 +229,27 @@
 
 :::demo
 ```html
-<el-dropdown @command="handleCommand">
+<lx-dropdown @command="handleCommand">
   <span class="el-dropdown-link">
     下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item command="a">黄金糕</el-dropdown-item>
-      <el-dropdown-item command="b">狮子头</el-dropdown-item>
-      <el-dropdown-item command="c">螺蛳粉</el-dropdown-item>
-      <el-dropdown-item command="d" disabled>双皮奶</el-dropdown-item>
-      <el-dropdown-item command="e" divided>蚵仔煎</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item command="a">黄金糕</lx-dropdown-item>
+      <lx-dropdown-item command="b">狮子头</lx-dropdown-item>
+      <lx-dropdown-item command="c">螺蛳粉</lx-dropdown-item>
+      <lx-dropdown-item command="d" disabled>双皮奶</lx-dropdown-item>
+      <lx-dropdown-item command="e" divided>蚵仔煎</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
 <style>
-  .el-dropdown-link {
+  .lx-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
-  .el-icon-arrow-down {
+  .lx-icon-arrow-down {
     font-size: 12px;
   }
 </style>
@@ -267,13 +267,13 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
 
       const handleCommand = (command) => {
-        ElMessage(`click on item ${command}`);
+        LxMessage(`click on item ${command}`);
       };
       return {
         handleCommand,
@@ -293,57 +293,57 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
 :::demo 额外的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
 
 ```html
-<el-dropdown split-button type="primary">
+<lx-dropdown split-button type="primary">
   默认尺寸
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>黄金糕</el-dropdown-item>
-      <el-dropdown-item>狮子头</el-dropdown-item>
-      <el-dropdown-item>螺蛳粉</el-dropdown-item>
-      <el-dropdown-item>双皮奶</el-dropdown-item>
-      <el-dropdown-item>蚵仔煎</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>黄金糕</lx-dropdown-item>
+      <lx-dropdown-item>狮子头</lx-dropdown-item>
+      <lx-dropdown-item>螺蛳粉</lx-dropdown-item>
+      <lx-dropdown-item>双皮奶</lx-dropdown-item>
+      <lx-dropdown-item>蚵仔煎</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
-<el-dropdown size="medium" split-button type="primary">
+<lx-dropdown size="medium" split-button type="primary">
   中等尺寸
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>黄金糕</el-dropdown-item>
-      <el-dropdown-item>狮子头</el-dropdown-item>
-      <el-dropdown-item>螺蛳粉</el-dropdown-item>
-      <el-dropdown-item>双皮奶</el-dropdown-item>
-      <el-dropdown-item>蚵仔煎</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>黄金糕</lx-dropdown-item>
+      <lx-dropdown-item>狮子头</lx-dropdown-item>
+      <lx-dropdown-item>螺蛳粉</lx-dropdown-item>
+      <lx-dropdown-item>双皮奶</lx-dropdown-item>
+      <lx-dropdown-item>蚵仔煎</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
-<el-dropdown size="small" split-button type="primary">
+<lx-dropdown size="small" split-button type="primary">
   小型尺寸
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>黄金糕</el-dropdown-item>
-      <el-dropdown-item>狮子头</el-dropdown-item>
-      <el-dropdown-item>螺蛳粉</el-dropdown-item>
-      <el-dropdown-item>双皮奶</el-dropdown-item>
-      <el-dropdown-item>蚵仔煎</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>黄金糕</lx-dropdown-item>
+      <lx-dropdown-item>狮子头</lx-dropdown-item>
+      <lx-dropdown-item>螺蛳粉</lx-dropdown-item>
+      <lx-dropdown-item>双皮奶</lx-dropdown-item>
+      <lx-dropdown-item>蚵仔煎</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
-<el-dropdown size="mini" split-button type="primary">
+<lx-dropdown size="mini" split-button type="primary">
   超小尺寸
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item>黄金糕</el-dropdown-item>
-      <el-dropdown-item>狮子头</el-dropdown-item>
-      <el-dropdown-item>螺蛳粉</el-dropdown-item>
-      <el-dropdown-item>双皮奶</el-dropdown-item>
-      <el-dropdown-item>蚵仔煎</el-dropdown-item>
-    </el-dropdown-menu>
+    <lx-dropdown-menu>
+      <lx-dropdown-item>黄金糕</lx-dropdown-item>
+      <lx-dropdown-item>狮子头</lx-dropdown-item>
+      <lx-dropdown-item>螺蛳粉</lx-dropdown-item>
+      <lx-dropdown-item>双皮奶</lx-dropdown-item>
+      <lx-dropdown-item>蚵仔煎</lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 ```
 :::
 
@@ -367,7 +367,7 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
 | Name | 说明 |
 |------|--------|
 | — | 触发下拉列表显示的元素。 注意： 必须是一个元素或者或者组件  |
-| dropdown | 下拉列表，通常是 `<el-dropdown-menu>` 组件     |
+| dropdown | 下拉列表，通常是 `<lx-dropdown-menu>` 组件     |
 
 ### Dropdown Events
 | 事件名称      | 说明    | 回调参数      |

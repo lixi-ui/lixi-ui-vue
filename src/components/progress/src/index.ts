@@ -10,4 +10,4 @@ Progress.install = (app: App): void => {
 const _Progress = Progress as SFCWithInstall<typeof Progress>
 
 export default _Progress
-export const ElProgress = _Progress
+export const LxProgress = _Progress

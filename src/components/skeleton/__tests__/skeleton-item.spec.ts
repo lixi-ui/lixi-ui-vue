@@ -7,7 +7,7 @@ describe('<skeleton-item />', () => {
   test('should render correctly', () => {
     const wrapper = mount()
 
-    expect(wrapper.find('.el-skeleton__text').exists()).toBe(true)
+    expect(wrapper.find('.lx-skeleton__text').exists()).toBe(true)
   })
 
   test('should render image placeholder', () => {

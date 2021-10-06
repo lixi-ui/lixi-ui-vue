@@ -8,14 +8,14 @@ Cuando haya muchas opciones, utilice un menú desplegable para mostrar y selecci
 
 ```html
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option
+  <lx-select v-model="value" placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -52,15 +52,15 @@ Cuando haya muchas opciones, utilice un menú desplegable para mostrar y selecci
 
 ```html
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option
+  <lx-select v-model="value" placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value"
       :disabled="item.disabled">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -100,14 +100,14 @@ Desactivar todo el componente.
 
 ```html
 <template>
-  <el-select v-model="value" disabled placeholder="Select">
-    <el-option
+  <lx-select v-model="value" disabled placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -146,14 +146,14 @@ Puede limpiar un Select con un icono.
 
 ```html
 <template>
-  <el-select v-model="value" clearable placeholder="Select">
-    <el-option
+  <lx-select v-model="value" clearable placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -192,28 +192,28 @@ Selección multiple utiliza tags para mostrar las opciones seleccionadas.
 
 ```html
 <template>
-  <el-select v-model="value1" multiple placeholder="Select">
-    <el-option
+  <lx-select v-model="value1" multiple placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 
-  <el-select
+  <lx-select
     v-model="value2"
     multiple
     collapse-tags
     style="margin-left: 20px;"
     placeholder="Select">
-    <el-option
+    <lx-option
         v-for="item in options"
         :key="item.value"
         :label="item.label"
         :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -253,16 +253,16 @@ Puede personalizar templates HTML para las opciones.
 
 ```html
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option
+  <lx-select v-model="value" placeholder="Select">
+    <lx-option
       v-for="item in cities"
       :key="item.value"
       :label="item.label"
       :value="item.value">
       <span style="float: left">{{ item.label }}</span>
       <span style="float: right; color: var(--el-text-color-secondary); font-size: 13px">{{ item.value }}</span>
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -304,19 +304,19 @@ Mostrar opciones en grupos.
 
 ```html
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option-group
+  <lx-select v-model="value" placeholder="Select">
+    <lx-option-group
       v-for="group in options"
       :key="group.label"
       :label="group.label">
-      <el-option
+      <lx-option
         v-for="item in group.options"
         :key="item.value"
         :label="item.label"
         :value="item.value">
-      </el-option>
-    </el-option-group>
-  </el-select>
+      </lx-option>
+    </lx-option-group>
+  </lx-select>
 </template>
 
 <script>
@@ -364,14 +364,14 @@ Puede filtrar opciones como lo desee.
 
 ```html
 <template>
-  <el-select v-model="value" filterable placeholder="Select">
-    <el-option
+  <lx-select v-model="value" filterable placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -410,7 +410,7 @@ Introduzca palabras y datos para buscar desde el servidor.
 
 ```html
 <template>
-  <el-select
+  <lx-select
     v-model="value"
     multiple
     filterable
@@ -419,13 +419,13 @@ Introduzca palabras y datos para buscar desde el servidor.
     placeholder="Please enter a keyword"
     :remote-method="remoteMethod"
     :loading="loading">
-    <el-option
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -488,19 +488,19 @@ Crear y seleccionar nuevos items que no están incluidas en las opciones de sele
 
 ```html
 <template>
-  <el-select
+  <lx-select
     v-model="value"
     multiple
     filterable
     allow-create
     placeholder="Choose tags for your article">
-    <el-option
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>

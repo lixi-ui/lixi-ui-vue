@@ -7,41 +7,41 @@ Bouton communément utilisé.
 :::demo Utilisez `type`, `plain`, `round` et `circle` pour définir le style du bouton.
 
 ```html
-<el-row>
-  <el-button>Défaut</el-button>
-  <el-button type="primary">Primary</el-button>
-  <el-button type="success">Success</el-button>
-  <el-button type="info">Info</el-button>
-  <el-button type="warning">Warning</el-button>
-  <el-button type="danger">Danger</el-button>
-</el-row>
+<lx-row>
+  <lx-button>Défaut</lx-button>
+  <lx-button type="primary">Primary</lx-button>
+  <lx-button type="success">Success</lx-button>
+  <lx-button type="info">Info</lx-button>
+  <lx-button type="warning">Warning</lx-button>
+  <lx-button type="danger">Danger</lx-button>
+</lx-row>
 
-<el-row>
-  <el-button plain>Plein</el-button>
-  <el-button type="primary" plain>Primary</el-button>
-  <el-button type="success" plain>Success</el-button>
-  <el-button type="info" plain>Info</el-button>
-  <el-button type="warning" plain>Warning</el-button>
-  <el-button type="danger" plain>Danger</el-button>
-</el-row>
+<lx-row>
+  <lx-button plain>Plein</lx-button>
+  <lx-button type="primary" plain>Primary</lx-button>
+  <lx-button type="success" plain>Success</lx-button>
+  <lx-button type="info" plain>Info</lx-button>
+  <lx-button type="warning" plain>Warning</lx-button>
+  <lx-button type="danger" plain>Danger</lx-button>
+</lx-row>
 
-<el-row>
-  <el-button round>Arrondi</el-button>
-  <el-button type="primary" round>Primary</el-button>
-  <el-button type="success" round>Success</el-button>
-  <el-button type="info" round>Info</el-button>
-  <el-button type="warning" round>Warning</el-button>
-  <el-button type="danger" round>Danger</el-button>
-</el-row>
+<lx-row>
+  <lx-button round>Arrondi</lx-button>
+  <lx-button type="primary" round>Primary</lx-button>
+  <lx-button type="success" round>Success</lx-button>
+  <lx-button type="info" round>Info</lx-button>
+  <lx-button type="warning" round>Warning</lx-button>
+  <lx-button type="danger" round>Danger</lx-button>
+</lx-row>
 
-<el-row>
-  <el-button icon="el-icon-search" circle></el-button>
-  <el-button type="primary" icon="el-icon-edit" circle></el-button>
-  <el-button type="success" icon="el-icon-check" circle></el-button>
-  <el-button type="info" icon="el-icon-message" circle></el-button>
-  <el-button type="warning" icon="el-icon-star-off" circle></el-button>
-  <el-button type="danger" icon="el-icon-delete" circle></el-button>
-</el-row>
+<lx-row>
+  <lx-button icon="el-icon-search" circle></lx-button>
+  <lx-button type="primary" icon="el-icon-edit" circle></lx-button>
+  <lx-button type="success" icon="el-icon-check" circle></lx-button>
+  <lx-button type="info" icon="el-icon-message" circle></lx-button>
+  <lx-button type="warning" icon="el-icon-star-off" circle></lx-button>
+  <lx-button type="danger" icon="el-icon-delete" circle></lx-button>
+</lx-row>
 ```
 
 :::
@@ -53,23 +53,23 @@ L'attribut `disabled` détermine si le bouton est désactivé.
 :::demo Utilisez l'attribut `disabled` pour déterminer si un bouton est désactivé ou non. Il accepte un `Boolean`.
 
 ```html
-<el-row>
-  <el-button disabled>Défaut</el-button>
-  <el-button type="primary" disabled>Principal</el-button>
-  <el-button type="success" disabled>Succès</el-button>
-  <el-button type="info" disabled>Info</el-button>
-  <el-button type="warning" disabled>Attention</el-button>
-  <el-button type="danger" disabled>Danger</el-button>
-</el-row>
+<lx-row>
+  <lx-button disabled>Défaut</lx-button>
+  <lx-button type="primary" disabled>Principal</lx-button>
+  <lx-button type="success" disabled>Succès</lx-button>
+  <lx-button type="info" disabled>Info</lx-button>
+  <lx-button type="warning" disabled>Attention</lx-button>
+  <lx-button type="danger" disabled>Danger</lx-button>
+</lx-row>
 
-<el-row>
-  <el-button plain disabled>Plein</el-button>
-  <el-button type="primary" plain disabled>Principal</el-button>
-  <el-button type="success" plain disabled>Succès</el-button>
-  <el-button type="info" plain disabled>Info</el-button>
-  <el-button type="warning" plain disabled>Attention</el-button>
-  <el-button type="danger" plain disabled>Danger</el-button>
-</el-row>
+<lx-row>
+  <lx-button plain disabled>Plein</lx-button>
+  <lx-button type="primary" plain disabled>Principal</lx-button>
+  <lx-button type="success" plain disabled>Succès</lx-button>
+  <lx-button type="info" plain disabled>Info</lx-button>
+  <lx-button type="warning" plain disabled>Attention</lx-button>
+  <lx-button type="danger" plain disabled>Danger</lx-button>
+</lx-row>
 ```
 
 :::
@@ -81,8 +81,8 @@ Bouton sans bordure ni fond.
 :::demo
 
 ```html
-<el-button type="text">Bouton texte</el-button>
-<el-button type="text" disabled>Bouton texte</el-button>
+<lx-button type="text">Bouton texte</lx-button>
+<lx-button type="text" disabled>Bouton texte</lx-button>
 ```
 
 :::
@@ -91,16 +91,16 @@ Bouton sans bordure ni fond.
 
 Utilisez des icônes pour ajouter plus de sens aux boutons. Vous pouvez utiliser uniquement l'icône pour économiser de l'espace, ou bien l'utiliser avec du texte.
 
-:::demo Utilisez l'attribut `icon` pour ajouter une icône. Vous pourrez trouver la liste des icônes dans le composant Icon d'Element. Ajouter des icônes sur le coté droit du texte est possible grâce à la balise `<i>`. Des icônes personnalisées peuvent également être utilisées.
+:::demo Utilisez l'attribut `icon` pour ajouter une icône. Vous pourrez trouver la liste des icônes dans le composant Icon d'Lxement. Ajouter des icônes sur le coté droit du texte est possible grâce à la balise `<i>`. Des icônes personnalisées peuvent également être utilisées.
 
 ```html
-<el-button type="primary" icon="el-icon-edit"></el-button>
-<el-button type="primary" icon="el-icon-share"></el-button>
-<el-button type="primary" icon="el-icon-delete"></el-button>
-<el-button type="primary" icon="el-icon-search">Recherche</el-button>
-<el-button type="primary"
+<lx-button type="primary" icon="el-icon-edit"></lx-button>
+<lx-button type="primary" icon="el-icon-share"></lx-button>
+<lx-button type="primary" icon="el-icon-delete"></lx-button>
+<lx-button type="primary" icon="el-icon-search">Recherche</lx-button>
+<lx-button type="primary"
   >Upload<i class="el-icon-upload el-icon-right"></i
-></el-button>
+></lx-button>
 ```
 
 :::
@@ -109,22 +109,22 @@ Utilisez des icônes pour ajouter plus de sens aux boutons. Vous pouvez utiliser
 
 Affiche un groupe de bouton. Peut être utilisé pour grouper un ensemble d'opérations similaires.
 
-:::demo Utilisez la balise `<el-button-group>` pour grouper vos boutons.
+:::demo Utilisez la balise `<lx-button-group>` pour grouper vos boutons.
 
 ```html
-<el-button-group>
-  <el-button type="primary" icon="el-icon-arrow-left"
-    >Page précédente</el-button
+<lx-button-group>
+  <lx-button type="primary" icon="el-icon-arrow-left"
+    >Page précédente</lx-button
   >
-  <el-button type="primary"
+  <lx-button type="primary"
     >Page suivante<i class="el-icon-arrow-right el-icon-right"></i
-  ></el-button>
-</el-button-group>
-<el-button-group>
-  <el-button type="primary" icon="el-icon-edit"></el-button>
-  <el-button type="primary" icon="el-icon-share"></el-button>
-  <el-button type="primary" icon="el-icon-delete"></el-button>
-</el-button-group>
+  ></lx-button>
+</lx-button-group>
+<lx-button-group>
+  <lx-button type="primary" icon="el-icon-edit"></lx-button>
+  <lx-button type="primary" icon="el-icon-share"></lx-button>
+  <lx-button type="primary" icon="el-icon-delete"></lx-button>
+</lx-button-group>
 ```
 
 :::
@@ -136,7 +136,7 @@ Cliquez sur le bouton pour charger des données et il affichera un état de char
 :::demo Configurez l'attribut `loading` à `true` pour afficher un état de chargement.
 
 ```html
-<el-button type="primary" :loading="true">Chargement</el-button>
+<lx-button type="primary" :loading="true">Chargement</lx-button>
 ```
 
 :::
@@ -148,24 +148,24 @@ En plus de la taille par défaut, le composant Button fournit trois tailles supp
 :::demo Utilisez l'attribut `size` pour choisir d'autres tailles parmi `medium`, `small` ou `mini`.
 
 ```html
-<el-row>
-  <el-button>Défaut</el-button>
-  <el-button size="medium">Medium</el-button>
-  <el-button size="small">Small</el-button>
-  <el-button size="mini">Mini</el-button>
-</el-row>
-<el-row>
-  <el-button round>Défaut</el-button>
-  <el-button size="medium" round>Medium</el-button>
-  <el-button size="small" round>Small</el-button>
-  <el-button size="mini" round>Mini</el-button>
-</el-row>
-<el-row>
-  <el-button icon="el-icon-search" circle></el-button>
-  <el-button icon="el-icon-search" size="medium" circle></el-button>
-  <el-button icon="el-icon-search" size="small" circle></el-button>
-  <el-button icon="el-icon-search" size="mini" circle></el-button>
-</el-row>
+<lx-row>
+  <lx-button>Défaut</lx-button>
+  <lx-button size="medium">Medium</lx-button>
+  <lx-button size="small">Small</lx-button>
+  <lx-button size="mini">Mini</lx-button>
+</lx-row>
+<lx-row>
+  <lx-button round>Défaut</lx-button>
+  <lx-button size="medium" round>Medium</lx-button>
+  <lx-button size="small" round>Small</lx-button>
+  <lx-button size="mini" round>Mini</lx-button>
+</lx-row>
+<lx-row>
+  <lx-button icon="el-icon-search" circle></lx-button>
+  <lx-button icon="el-icon-search" size="medium" circle></lx-button>
+  <lx-button icon="el-icon-search" size="small" circle></lx-button>
+  <lx-button icon="el-icon-search" size="mini" circle></lx-button>
+</lx-row>
 ```
 
 :::

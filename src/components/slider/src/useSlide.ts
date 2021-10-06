@@ -3,12 +3,12 @@ import { CHANGE_EVENT } from '@element-plus/utils/constants'
 import { elFormKey, elFormItemKey } from '@element-plus/tokens'
 import type { ButtonRefs, ISliderInitData, ISliderProps } from './slider.type'
 
-import type { ElFormContext, ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
 import type { Nullable } from '@element-plus/utils/types'
 
 export const useSlide = (props: ISliderProps, initData: ISliderInitData, emit) => {
-  const elForm = inject(elFormKey, {} as ElFormContext)
-  const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+  const elForm = inject(elFormKey, {} as LxFormContext)
+  const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
 
   const slider = shallowRef<Nullable<HTMLElement>>(null)
 

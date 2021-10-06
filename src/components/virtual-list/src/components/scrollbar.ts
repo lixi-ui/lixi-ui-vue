@@ -13,7 +13,7 @@ import type { CSSProperties } from 'vue'
 type SyntheticMouseEvent = TouchEvent | MouseEvent
 
 const ScrollBar = defineComponent({
-  name: 'ElVirtualScrollBar',
+  name: 'LxVirtualScrollBar',
   props: DefaultScrollBarProps,
   emits: ['scroll', 'start-move', 'stop-move'],
   setup(props, { emit }) {

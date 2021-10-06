@@ -8,7 +8,7 @@
 
 :::demo
 ```html
-<el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+<lx-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></lx-tree>
 
 <script>
   export default {
@@ -71,13 +71,13 @@
 
 :::demo この例では、ノードデータを非同期にロードする方法も示しています。
 ```html
-<el-tree
+<lx-tree
   :props="props"
   :load="loadNode"
   lazy
   show-checkbox
   @check-change="handleCheckChange">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -137,12 +137,12 @@
 
 :::demo ノードのデータはクリックされるまで取得されないので、ツリーはそのノードがリーフノードであるかどうかを予測することができません。そのため、各ノードにはドロップダウンボタンが追加されており、リーフノードであればクリックされるとドロップダウンボタンは消えてしまいます。つまり、ノードがリーフノードであるかどうかを事前にツリーに伝えることで、リーフノードの前にドロップダウンボタンがレンダリングされるのを避けることもできます。
 ```html
-<el-tree
+<lx-tree
   :props="props"
   :load="loadNode"
   lazy
   show-checkbox>
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -185,12 +185,12 @@
 
 :::demo この例では、defaultPropsで'disabled'プロパティが宣言されており、一部のノードは'disabled:true'として設定されています。対応するチェックボックスは無効化されており、クリックできないようになっています。
 ```html
-<el-tree
+<lx-tree
   :data="data"
   :props="defaultProps"
   show-checkbox
   @check-change="handleCheckChange">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -241,14 +241,14 @@
 
 :::demo `default-expanded-keys` と `default-checked-keys` を用いて、それぞれ初期展開ノードと初期チェックノードを設定する。これらが動作するためには `node-key` が必要であることに注意してください。この値はデータオブジェクトのキーの名前であり、そのキーの値はツリー全体で一意でなければなりません。
 ```html
-<el-tree
+<lx-tree
   :data="data"
   show-checkbox
   node-key="id"
   :default-expanded-keys="[2, 3]"
   :default-checked-keys="[5]"
   :props="defaultProps">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -304,7 +304,7 @@
 
 :::demo この例では、チェックされたノードを取得して設定する方法を示しています。どちらも、ノードとキーの2つのアプローチで行うことができます。キーアプローチの場合は `node-key` が必要です。
 ```html
-<el-tree
+<lx-tree
   :data="data"
   show-checkbox
   default-expand-all
@@ -312,14 +312,14 @@
   ref="tree"
   highlight-current
   :props="defaultProps">
-</el-tree>
+</lx-tree>
 
 <div class="buttons">
-  <el-button @click="getCheckedNodes">get by node</el-button>
-  <el-button @click="getCheckedKeys">get by key</el-button>
-  <el-button @click="setCheckedNodes">set by node</el-button>
-  <el-button @click="setCheckedKeys">set by key</el-button>
-  <el-button @click="resetChecked">reset</el-button>
+  <lx-button @click="getCheckedNodes">get by node</lx-button>
+  <lx-button @click="getCheckedKeys">get by key</lx-button>
+  <lx-button @click="setCheckedNodes">set by node</lx-button>
+  <lx-button @click="setCheckedKeys">set by key</lx-button>
+  <lx-button @click="resetChecked">reset</lx-button>
 </div>
 
 <script>
@@ -404,18 +404,18 @@
 <div class="custom-tree-container">
   <div class="block">
     <p>Using render-content</p>
-    <el-tree
+    <lx-tree
       :data="data"
       show-checkbox
       node-key="id"
       default-expand-all
       :expand-on-click-node="false"
       :render-content="renderContent">
-    </el-tree>
+    </lx-tree>
   </div>
   <div class="block">
     <p>Using scoped slot</p>
-    <el-tree
+    <lx-tree
       :data="data"
       show-checkbox
       node-key="id"
@@ -436,7 +436,7 @@
           </span>
         </span>
       </template>
-    </el-tree>
+    </lx-tree>
   </div>
 </div>
 
@@ -534,19 +534,19 @@
 
 :::demo ツリーインスタンスの `filter` メソッドを呼び出してツリーノードをフィルタリングします。そのパラメータはフィルタリングキーワードである。これが動作するためには `filter-node-method` が必要であり、その値がフィルタリングメソッドであることに注意すること。
 ```html
-<el-input
+<lx-input
   placeholder="Filter keyword"
   v-model="filterText">
-</el-input>
+</lx-input>
 
-<el-tree
+<lx-tree
   class="filter-tree"
   :data="data"
   :props="defaultProps"
   default-expand-all
   :filter-node-method="filterNode"
   ref="tree">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -618,12 +618,12 @@
 
 :::demo
 ```html
-<el-tree
+<lx-tree
   :data="data"
   :props="defaultProps"
   accordion
   @node-click="handleNodeClick">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {
@@ -686,7 +686,7 @@
 
 :::demo
 ```html
-<el-tree
+<lx-tree
   :data="data"
   node-key="id"
   default-expand-all
@@ -699,7 +699,7 @@
   draggable
   :allow-drop="allowDrop"
   :allow-drag="allowDrag">
-</el-tree>
+</lx-tree>
 
 <script>
   export default {

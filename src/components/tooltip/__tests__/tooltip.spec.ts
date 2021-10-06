@@ -15,7 +15,7 @@ const _mount = (props: any = {}, content: string | VNode = '') => mount(Tooltip,
   attachTo: 'body',
 })
 
-const selector = '.el-popper'
+const selector = '.lx-popper'
 describe('Tooltip.vue', () => {
   beforeEach(() => {
     document.body.innerHTML = ''

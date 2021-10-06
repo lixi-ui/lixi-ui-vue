@@ -58,8 +58,8 @@ import type { PropType } from 'vue'
 import type { ComponentSize } from '@element-plus/utils/types'
 
 export default defineComponent({
-  name: 'ElRadio',
-  componentName: 'ElRadio',
+  name: 'LxRadio',
+  componentName: 'LxRadio',
 
   props: {
     modelValue: {

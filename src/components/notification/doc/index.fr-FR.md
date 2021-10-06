@@ -4,20 +4,20 @@ Affiche une notification globale dans un coin de la page.
 
 ### Usage
 
-:::demo Element Plus enregistre la méthode `$notify` qui reçoit un objet en paramètre. Dans le cas le plus simple, vous pouvez simplement configurer les champs `title` et` message`. Par défaut, la notification se ferme automatiquement après 4500ms, mais vous pouvez régler une autre durée avec `duration`. Si la durée est mise à `0`, la notification ne se fermera pas. `duration` prends donc un `Number` en millisecondes.
+:::demo Lxement Plus enregistre la méthode `$notify` qui reçoit un objet en paramètre. Dans le cas le plus simple, vous pouvez simplement configurer les champs `title` et` message`. Par défaut, la notification se ferme automatiquement après 4500ms, mais vous pouvez régler une autre durée avec `duration`. Si la durée est mise à `0`, la notification ne se fermera pas. `duration` prends donc un `Number` en millisecondes.
 
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     Se ferme automatiquement
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     Ne se ferme pas automatiquement
-    </el-button>
+    </lx-button>
 </template>
 
 <script>
@@ -46,20 +46,20 @@ Affiche une notification globale dans un coin de la page.
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Titre',
           message: h('i', { style: 'color: teal' }, 'Ceci est un rappel'),
         });
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Prompt',
           message: 'Ceci est un message qui ne se ferme pas',
           duration: 0,
@@ -82,29 +82,29 @@ Affiche une notification globale dans un coin de la page.
 
 Nous fournissons quatre types: succès, avertissement, information et erreur.
 
-:::demo Element Plus fournit quatre types de notifications: `success`, `warning`, `info` et `error`. Il sont choisis grâce au champs `type`, et n'importe quelle autre valeur sera ignorée. Il existe des méthodes  enregistrées pour chaque type, comme dans `open3` et `open4`, qui ne nécessitent donc pas le champs `type`.
+:::demo Lxement Plus fournit quatre types de notifications: `success`, `warning`, `info` et `error`. Il sont choisis grâce au champs `type`, et n'importe quelle autre valeur sera ignorée. Il existe des méthodes  enregistrées pour chaque type, comme dans `open3` et `open4`, qui ne nécessitent donc pas le champs `type`.
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     Success
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     Warning
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open3">
     Info
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open4">
     Error
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -146,13 +146,13 @@ Nous fournissons quatre types: succès, avertissement, information et erreur.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Success',
           message: 'Ceci est un message de succès',
           type: 'success',
@@ -160,7 +160,7 @@ Nous fournissons quatre types: succès, avertissement, information et erreur.
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Warning',
           message: 'Ceci est un avertissement',
           type: 'warning',
@@ -168,14 +168,14 @@ Nous fournissons quatre types: succès, avertissement, information et erreur.
       };
 
       const open3 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Info',
           message: 'Ceci est une information',
         });
       };
 
       const open4 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Error',
           message: 'Ceci est une erreur',
         });
@@ -201,26 +201,26 @@ La notification peut apparaître dans le coin de votre choix.
 :::demo L'attribut `position` définit le coin d'apparition de la notification. Cela peut être `top-right`, `top-left`, `bottom-right` ou `bottom-left`. Le défaut est `top-right`.
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     Top Right
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     Bottom Right
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open3">
     Bottom Left
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open4">
     Top Left
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -263,20 +263,20 @@ La notification peut apparaître dans le coin de votre choix.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'Je suis dans le coin supérieur droit',
         });
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'Je suis dans le coin inférieur droit',
           position: 'bottom-right',
@@ -284,7 +284,7 @@ La notification peut apparaître dans le coin de votre choix.
       };
 
       const open3 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'Je suis dans le coin inférieur gauche',
           position: 'bottom-left',
@@ -292,7 +292,7 @@ La notification peut apparaître dans le coin de votre choix.
       };
 
       const open4 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'Je suis dans le coin supérieur gauche',
           position: 'top-left',
@@ -319,11 +319,11 @@ Vous pouvez décaler l'emplacement de la notification par rapport au bord de la 
 :::demo Réglez `offset` pour choisir le décalage de la notification. Notez que chaque notification apparaissant au même moment devrait avoir le même décalage.
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     Notification avec décalage
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -343,13 +343,13 @@ Vous pouvez décaler l'emplacement de la notification par rapport au bord de la 
 <setup>
 
 import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
 export default defineComponent({
   setup() {
     
     const open = () => {
-      ElNotification.success({
+      LxNotification.success({
         title: 'Success',
         message: 'Ceci est un message de succès',
         offset: 100,
@@ -375,11 +375,11 @@ L'attribut `message` supporte le HTML.
 
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     Utiliser du HTML
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -399,13 +399,13 @@ L'attribut `message` supporte le HTML.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification({
+        LxNotification({
           title: 'HTML String',
           dangerouslyUseHTMLString: true,
           message: '<strong>Ceci est du <i>HTML</i></strong>',
@@ -435,11 +435,11 @@ Il est possible de cacher le bouton de fermeture.
 
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     Bouton de fermeture caché
-    </el-button>
+    </lx-button>
 </template>
 
 <script>
@@ -459,13 +459,13 @@ Il est possible de cacher le bouton de fermeture.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification.success({
+        LxNotification.success({
           title: 'Info',
           message: 'Ceci est un message sans bouton de fermeture',
           showClose: false,
@@ -490,7 +490,7 @@ Element Plus ajoute la méthode `$notify` à `app.config.globalProperties`. Vous
 ### Import à la demande
 
 ```javascript
-import { ElNotification } from 'element-plus';
+import { LxNotification } from 'element-plus';
 ```
 
 Dans ce cas vous devrez appeler `ElNotification(options)`. Il existe aussi des méthodes pour chaque type, e.g. `ElNotification.success(options)`. Vous pouvez appeler `ElNotification.closeAll()` pour fermer manuellement toutes les instances.

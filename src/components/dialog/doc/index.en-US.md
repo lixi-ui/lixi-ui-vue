@@ -9,9 +9,9 @@ Dialog pops up a dialog box, and it's quite customizable.
 :::demo Set `model-value / v-model` attribute with a `Boolean`, and Dialog shows when it is `true`. The Dialog has two parts: `body` and `footer`, and the latter requires a `slot` named `footer`. The optional `title` attribute (empty by default) is for defining a title. Finally, this example demonstrates how `before-close` is used.
 
 ```html
-<el-button type="text" @click="dialogVisible = true">click to open the Dialog</el-button>
+<lx-button type="text" @click="dialogVisible = true">click to open the Dialog</lx-button>
 
-<el-dialog
+<lx-dialog
   title="Tips"
   v-model="dialogVisible"
   width="30%"
@@ -19,11 +19,11 @@ Dialog pops up a dialog box, and it's quite customizable.
   <span>This is a message</span>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="dialogVisible = false">Cancel</el-button>
-      <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
+      <lx-button @click="dialogVisible = false">Cancel</lx-button>
+      <lx-button type="primary" @click="dialogVisible = false">Confirm</lx-button>
     </span>
   </template>
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -48,14 +48,14 @@ Dialog pops up a dialog box, and it's quite customizable.
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       const dialogVisible = ref(false);
       
       const handleClose = (done) => {
-        ElMessageBox
+        LxMessageBox
           .confirm('Are you sure to close this dialog?')
           .then((_) => {
             done();
@@ -80,43 +80,43 @@ Dialog pops up a dialog box, and it's quite customizable.
 
 ### Customizations
 
-The content of Dialog can be anything, even a table or a form. This example shows how to use Element Plus Table and Form with Dialog。
+The content of Dialog can be anything, even a table or a form. This example shows how to use Lxement Plus Table and Form with Dialog。
 
 :::demo
 
 ```html
-<el-button type="text" @click="dialogTableVisible = true">open a Table nested Dialog</el-button>
+<lx-button type="text" @click="dialogTableVisible = true">open a Table nested Dialog</lx-button>
 
-<el-dialog title="Shipping address" v-model="dialogTableVisible">
-  <el-table :data="gridData">
-    <el-table-column property="date" label="Date" width="150"></el-table-column>
-    <el-table-column property="name" label="Name" width="200"></el-table-column>
-    <el-table-column property="address" label="Address"></el-table-column>
-  </el-table>
-</el-dialog>
+<lx-dialog title="Shipping address" v-model="dialogTableVisible">
+  <lx-table :data="gridData">
+    <lx-table-column property="date" label="Date" width="150"></lx-table-column>
+    <lx-table-column property="name" label="Name" width="200"></lx-table-column>
+    <lx-table-column property="address" label="Address"></lx-table-column>
+  </lx-table>
+</lx-dialog>
 
 <!-- Form -->
-<el-button type="text" @click="dialogFormVisible = true">open a Form nested Dialog</el-button>
+<lx-button type="text" @click="dialogFormVisible = true">open a Form nested Dialog</lx-button>
 
-<el-dialog title="Shipping address" v-model="dialogFormVisible">
-  <el-form :model="form">
-    <el-form-item label="Promotion name" :label-width="formLabelWidth">
-      <el-input v-model="form.name" autocomplete="off"></el-input>
-    </el-form-item>
-    <el-form-item label="Zones" :label-width="formLabelWidth">
-      <el-select v-model="form.region" placeholder="Please select a zone">
-        <el-option label="Zone No.1" value="shanghai"></el-option>
-        <el-option label="Zone No.2" value="beijing"></el-option>
-      </el-select>
-    </el-form-item>
-  </el-form>
+<lx-dialog title="Shipping address" v-model="dialogFormVisible">
+  <lx-form :model="form">
+    <lx-form-item label="Promotion name" :label-width="formLabelWidth">
+      <lx-input v-model="form.name" autocomplete="off"></lx-input>
+    </lx-form-item>
+    <lx-form-item label="Zones" :label-width="formLabelWidth">
+      <lx-select v-model="form.region" placeholder="Please select a zone">
+        <lx-option label="Zone No.1" value="shanghai"></lx-option>
+        <lx-option label="Zone No.2" value="beijing"></lx-option>
+      </lx-select>
+    </lx-form-item>
+  </lx-form>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="dialogFormVisible = false">Cancel</el-button>
-      <el-button type="primary" @click="dialogFormVisible = false">Confirm</el-button>
+      <lx-button @click="dialogFormVisible = false">Cancel</lx-button>
+      <lx-button type="primary" @click="dialogFormVisible = false">Confirm</lx-button>
     </span>
   </template>
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -217,24 +217,24 @@ If a Dialog is nested in another Dialog, `append-to-body` is required.
 :::demo Normally we do not recommend using nested Dialog. If you need multiple Dialogs rendered on the page, you can simply flat them so that they're siblings to each other. If you must nest a Dialog inside another Dialog, set `append-to-body` of the nested Dialog to true, and it will append to body instead of its parent node, so both Dialogs can be correctly rendered.
 ```html
 <template>
-  <el-button type="text" @click="outerVisible = true">open the outer Dialog</el-button>
+  <lx-button type="text" @click="outerVisible = true">open the outer Dialog</lx-button>
 
-  <el-dialog title="Outer Dialog" v-model="outerVisible">
+  <lx-dialog title="Outer Dialog" v-model="outerVisible">
     <template #default>
-      <el-dialog
+      <lx-dialog
           width="30%"
           title="Inner Dialog"
           v-model="innerVisible"
           append-to-body>
-      </el-dialog>
+      </lx-dialog>
     </template>
     <template #footer>
       <div class="dialog-footer">
-        <el-button @click="outerVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="innerVisible = true">open the inner Dialog</el-button>
+        <lx-button @click="outerVisible = false">Cancel</lx-button>
+        <lx-button type="primary" @click="innerVisible = true">open the inner Dialog</lx-button>
       </div>
     </template>
-  </el-dialog>
+  </lx-dialog>
 </template>
 
 <script>
@@ -273,9 +273,9 @@ Dialog's content can be centered.
 
 ```html
 <template>
-  <el-button type="text" @click="centerDialogVisible = true">Click to open the Dialog</el-button>
+  <lx-button type="text" @click="centerDialogVisible = true">Click to open the Dialog</lx-button>
 
-  <el-dialog
+  <lx-dialog
     title="Warning"
     v-model="centerDialogVisible"
     width="30%"
@@ -283,11 +283,11 @@ Dialog's content can be centered.
     <span>It should be noted that the content will not be aligned in center by default</span>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click="centerDialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="centerDialogVisible = false">Confirm</el-button>
+        <lx-button @click="centerDialogVisible = false">Cancel</lx-button>
+        <lx-button type="primary" @click="centerDialogVisible = false">Confirm</lx-button>
       </span>
     </template>
-  </el-dialog>
+  </lx-dialog>
 </template>
 <script>
   export default {
@@ -326,9 +326,9 @@ When this is feature is enabled, the content under default slot will be destroye
 :::demo Note that by enabling this feature, the content will not be rendered before `transition.beforeEnter` dispatched, there will only be `overlay` `header(if any)` `footer(if any)`.
 
 ```html
-<el-button type="text" @click="centerDialogVisible = true">Click to open Dialog</el-button>
+<lx-button type="text" @click="centerDialogVisible = true">Click to open Dialog</lx-button>
 
-<el-dialog
+<lx-dialog
   title="Notice"
   v-model="centerDialogVisible"
   width="30%"
@@ -340,12 +340,12 @@ When this is feature is enabled, the content under default slot will be destroye
   </div>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="centerDialogVisible = false">Cancel</el-button>
-      <el-button type="primary" @click="centerDialogVisible = false">Confirm</el-button>
+      <lx-button @click="centerDialogVisible = false">Cancel</lx-button>
+      <lx-button type="primary" @click="centerDialogVisible = false">Confirm</lx-button>
     </span>
   </template>
 
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {

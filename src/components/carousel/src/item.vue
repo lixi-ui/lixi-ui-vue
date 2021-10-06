@@ -39,7 +39,7 @@ import type { InjectCarouselScope, ICarouselItemProps } from './carousel'
 
 const CARD_SCALE = 0.83
 export default defineComponent({
-  name: 'ElCarouselItem',
+  name: 'LxCarouselItem',
   props: {
     name: { type: String, default: '' },
     label: {

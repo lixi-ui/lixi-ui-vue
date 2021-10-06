@@ -10,4 +10,4 @@ Rate.install = (app: App): void => {
 const _Rate = Rate as SFCWithInstall<typeof Rate>
 
 export default _Rate
-export const ElRate = _Rate
+export const LxRate = _Rate

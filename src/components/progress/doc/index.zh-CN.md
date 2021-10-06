@@ -7,11 +7,11 @@
 :::demo Progress 组件设置`percentage`属性即可，表示进度条对应的百分比，**必填**，必须在 0-100。通过 `format` 属性来指定进度条文字内容。
 
 ```html
-<el-progress :percentage="50"></el-progress>
-<el-progress :percentage="100" :format="format"></el-progress>
-<el-progress :percentage="100" status="success"></el-progress>
-<el-progress :percentage="100" status="warning"></el-progress>
-<el-progress :percentage="50" status="exception"></el-progress>
+<lx-progress :percentage="50"></lx-progress>
+<lx-progress :percentage="100" :format="format"></lx-progress>
+<lx-progress :percentage="100" status="success"></lx-progress>
+<lx-progress :percentage="100" status="warning"></lx-progress>
+<lx-progress :percentage="50" status="exception"></lx-progress>
 
 <script>
   export default {
@@ -49,10 +49,10 @@
 :::demo Progress 组件可通过 `stroke-width` 属性更改进度条的高度，并可通过 `text-inside` 属性来将进度条描述置于进度条内部。
 
 ```html
-<el-progress :text-inside="true" :stroke-width="26" :percentage="70"></el-progress>
-<el-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></el-progress>
-<el-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></el-progress>
-<el-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></el-progress>
+<lx-progress :text-inside="true" :stroke-width="26" :percentage="70"></lx-progress>
+<lx-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></lx-progress>
+<lx-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></lx-progress>
+<lx-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></lx-progress>
 ```
 
 :::
@@ -64,18 +64,18 @@
 :::demo
 
 ```html
-<el-progress :percentage="percentage" :color="customColor"></el-progress>
+<lx-progress :percentage="percentage" :color="customColor"></lx-progress>
 
-<el-progress :percentage="percentage" :color="customColorMethod"></el-progress>
+<lx-progress :percentage="percentage" :color="customColorMethod"></lx-progress>
 
-<el-progress :percentage="percentage" :color="customColors"></el-progress>
+<lx-progress :percentage="percentage" :color="customColors"></lx-progress>
 
-<el-progress :percentage="percentage2" :color="customColors"></el-progress>
+<lx-progress :percentage="percentage2" :color="customColors"></lx-progress>
 <div>
-  <el-button-group>
-    <el-button icon="el-icon-minus" @click="decrease"></el-button>
-    <el-button icon="el-icon-plus" @click="increase"></el-button>
-  </el-button-group>
+  <lx-button-group>
+    <lx-button icon="el-icon-minus" @click="decrease"></lx-button>
+    <lx-button icon="el-icon-plus" @click="increase"></lx-button>
+  </lx-button-group>
 </div>
 
 <script>
@@ -184,11 +184,11 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
 :::demo
 
 ```html
-<el-progress type="circle" :percentage="0"></el-progress>
-<el-progress type="circle" :percentage="25"></el-progress>
-<el-progress type="circle" :percentage="100" status="success"></el-progress>
-<el-progress type="circle" :percentage="70" status="warning"></el-progress>
-<el-progress type="circle" :percentage="50" status="exception"></el-progress>
+<lx-progress type="circle" :percentage="0"></lx-progress>
+<lx-progress type="circle" :percentage="25"></lx-progress>
+<lx-progress type="circle" :percentage="100" status="success"></lx-progress>
+<lx-progress type="circle" :percentage="70" status="warning"></lx-progress>
+<lx-progress type="circle" :percentage="50" status="exception"></lx-progress>
 ```
 
 :::
@@ -198,13 +198,13 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
 :::demo 通过 `type` 属性来指定使用仪表盘形进度条。
 
 ```html
-<el-progress type="dashboard" :percentage="percentage" :color="colors"></el-progress>
-<el-progress type="dashboard" :percentage="percentage2" :color="colors"></el-progress>
+<lx-progress type="dashboard" :percentage="percentage" :color="colors"></lx-progress>
+<lx-progress type="dashboard" :percentage="percentage2" :color="colors"></lx-progress>
 <div>
-  <el-button-group>
-    <el-button icon="el-icon-minus" @click="decrease"></el-button>
-    <el-button icon="el-icon-plus" @click="increase"></el-button>
-  </el-button-group>
+  <lx-button-group>
+    <lx-button icon="el-icon-minus" @click="decrease"></lx-button>
+    <lx-button icon="el-icon-plus" @click="increase"></lx-button>
+  </lx-button-group>
 </div>
 
 <script>
@@ -297,21 +297,21 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
 :::demo 通过默认插槽添加自定义内容。
 
 ```html
-<el-progress :percentage="50">
-  <el-button type="text">自定义内容</el-button>
-</el-progress>
-<el-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception">
+<lx-progress :percentage="50">
+  <lx-button type="text">自定义内容</lx-button>
+</lx-progress>
+<lx-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception">
   <span>自定义内容</span>
-</el-progress>
-<el-progress type="circle" :percentage="100" status="success">
-  <el-button type="success" icon="el-icon-check" circle></el-button>
-</el-progress>
-<el-progress type="dashboard" :percentage="80">
+</lx-progress>
+<lx-progress type="circle" :percentage="100" status="success">
+  <lx-button type="success" icon="el-icon-check" circle></lx-button>
+</lx-progress>
+<lx-progress type="dashboard" :percentage="80">
   <template #default="{ percentage }">
     <span class="percentage-value">{{ percentage }}%</span>
     <span class="percentage-label">当前进度</span>
   </template>
-</el-progress>
+</lx-progress>
 ```
 
 :::
@@ -321,11 +321,11 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
 :::demo Progress 组件设置 `indeterminate` 属性控制进度条运动。通过设置 `duration` 属性可以控制运动速度。
 
 ```html
-<el-progress :percentage="50" :indeterminate="true"></el-progress>
-<el-progress :percentage="100" :format="format" :indeterminate="true"></el-progress>
-<el-progress :percentage="100" status="success" :indeterminate="true" :duration="5"></el-progress>
-<el-progress :percentage="100" status="warning" :indeterminate="true" :duration="1"></el-progress>
-<el-progress :percentage="50" status="exception" :indeterminate="true"></el-progress>
+<lx-progress :percentage="50" :indeterminate="true"></lx-progress>
+<lx-progress :percentage="100" :format="format" :indeterminate="true"></lx-progress>
+<lx-progress :percentage="100" status="success" :indeterminate="true" :duration="5"></lx-progress>
+<lx-progress :percentage="100" status="warning" :indeterminate="true" :duration="1"></lx-progress>
+<lx-progress :percentage="50" status="exception" :indeterminate="true"></lx-progress>
 
 <script>
   export default {

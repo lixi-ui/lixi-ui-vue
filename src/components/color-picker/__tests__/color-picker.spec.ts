@@ -7,7 +7,7 @@ import type { Nullable } from '@element-plus/utils/types'
 const _mount = (template: string, data: () => ({ [key: string]: any; })) => {
   const Component = defineComponent({
     components: {
-      ElColorPicker: ColorPicker,
+      LxColorPicker: ColorPicker,
     },
     data,
     template,
@@ -36,39 +36,39 @@ describe('Color-picker', () => {
   })
   it('should show alpha slider when show-alpha=true', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color" :show-alpha="true"></el-color-picker>`,
+      `<lx-color-picker v-model="color" :show-alpha="true"></lx-color-picker>`,
       () => ({
         color: '#20A0FF',
       }),
     )
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
-    const alphaSlider = document.querySelector('.el-color-alpha-slider')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
+    const alphaSlider = document.querySelector('.lx-color-alpha-slider')
     expect(alphaSlider).toBeTruthy()
     wrapper.unmount()
   })
   it('should show correct rgb value', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color"></el-color-picker>`,
+      `<lx-color-picker v-model="color"></lx-color-picker>`,
       () => ({
         color: '#20A0FF',
       }),
     )
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
     await nextTick()
-    const input = document.querySelector<HTMLInputElement>('.el-color-dropdown__value input')
+    const input = document.querySelector<HTMLInputElement>('.lx-color-dropdown__value input')
     expect(input.value.trim().toUpperCase()).toEqual('#20A0FF')
     wrapper.unmount()
   })
   it('should pick a color when confirm button click', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color"></el-color-picker>`,
+      `<lx-color-picker v-model="color"></lx-color-picker>`,
       () => ({
         color: null,
       }),
     )
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
-    document.querySelector<HTMLElement>('.el-color-dropdown__btn').click()
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
+    document.querySelector<HTMLElement>('.lx-color-dropdown__btn').click()
     await nextTick()
     expect(wrapper.vm.color).toEqual('#FF0000')
     wrapper.unmount()
@@ -76,7 +76,7 @@ describe('Color-picker', () => {
 
   it('should init the right color when open', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color"></el-color-picker>`,
+      `<lx-color-picker v-model="color"></lx-color-picker>`,
       () => ({
         color: '#0F0',
       }),
@@ -84,10 +84,10 @@ describe('Color-picker', () => {
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const hueSlideWrapper = colorPickerWrapper.findComponent({ ref: 'hue' })
     const hueSlideDom = hueSlideWrapper.element as HTMLElement
-    const thumbDom = hueSlideWrapper.find<HTMLElement>('.el-color-hue-slider__thumb').element
+    const thumbDom = hueSlideWrapper.find<HTMLElement>('.lx-color-hue-slider__thumb').element
     const mockHueSlideHeight = jest.spyOn(hueSlideDom, 'offsetHeight', 'get').mockImplementation(() => 200)
     const mockThumbDom = jest.spyOn(thumbDom, 'offsetHeight', 'get').mockImplementation(() => 4)
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
     await nextTick()
     expect((hueSlideWrapper.vm as ComponentPublicInstance<{ thumbTop: number; }>).thumbTop > 10).toBeTruthy()
     mockHueSlideHeight.mockRestore()
@@ -96,41 +96,41 @@ describe('Color-picker', () => {
   })
   it('should show color picker when click trigger', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color"></el-color-picker>`,
+      `<lx-color-picker v-model="color"></lx-color-picker>`,
       () => ({
         color: '#0F0',
       }),
     )
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
-    const dropdown = document.querySelector('.el-color-dropdown')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
+    const dropdown = document.querySelector('.lx-color-dropdown')
     expect(dropdown).toBeTruthy()
     wrapper.unmount()
   })
   it('should clear a color when clear button click', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color"></el-color-picker>`,
+      `<lx-color-picker v-model="color"></lx-color-picker>`,
       () => ({
         color: '#0F0',
       }),
     )
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
-    const clearBtn = document.querySelector<HTMLElement>('.el-color-dropdown__link-btn')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
+    const clearBtn = document.querySelector<HTMLElement>('.lx-color-dropdown__link-btn')
     clearBtn.click()
     expect(wrapper.vm.color).toEqual(null)
     wrapper.unmount()
   })
   it('should change hue when clicking the hue bar', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color"></el-color-picker>`,
+      `<lx-color-picker v-model="color"></lx-color-picker>`,
       () => ({
         color: '#F00',
       }),
     )
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const hueSlideWrapper = colorPickerWrapper.findComponent({ ref: 'hue' })
     const hueSlideDom = hueSlideWrapper.element
-    const thumbDom = hueSlideWrapper.find<HTMLElement>('.el-color-hue-slider__thumb').element
+    const thumbDom = hueSlideWrapper.find<HTMLElement>('.lx-color-hue-slider__thumb').element
     const mockHueBarHeight = jest.spyOn(hueSlideDom,'getBoundingClientRect').mockReturnValue({
       height: 176,
       width: 12,
@@ -149,17 +149,17 @@ describe('Color-picker', () => {
   })
   it('should change hue when saturation is zero', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color"></el-color-picker>`,
+      `<lx-color-picker v-model="color"></lx-color-picker>`,
       () => ({
         color: '20A0FF',
       }),
     )
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const hueSlideWrapper = colorPickerWrapper.findComponent({ ref: 'hue' })
     const hueSlideDom = hueSlideWrapper.element as HTMLElement
-    const thumbDom = hueSlideWrapper.find<HTMLElement>('.el-color-hue-slider__thumb').element
+    const thumbDom = hueSlideWrapper.find<HTMLElement>('.lx-color-hue-slider__thumb').element
     const mockHueSlideRect = jest.spyOn(hueSlideDom,'getBoundingClientRect').mockReturnValue({
       height: 176,
       width: 12,
@@ -180,12 +180,12 @@ describe('Color-picker', () => {
   })
   it('should change alpha when clicking the alpha bar', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color" show-alpha></el-color-picker>`,
+      `<lx-color-picker v-model="color" show-alpha></lx-color-picker>`,
       () => ({
         color: '#F00',
       }),
     )
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const alphaWrapper = colorPickerWrapper.findComponent({ ref: 'alpha' })
     const alphaDom = alphaWrapper.element as HTMLElement
@@ -196,7 +196,7 @@ describe('Color-picker', () => {
       y: 0,
       left: 0,
     } as DOMRect)
-    const thumbDom = alphaWrapper.find<HTMLElement>('.el-color-alpha-slider__thumb').element
+    const thumbDom = alphaWrapper.find<HTMLElement>('.lx-color-alpha-slider__thumb').element
     const mockThumbDom = jest.spyOn(thumbDom, 'offsetWidth', 'get').mockReturnValue(4);
     (alphaWrapper.vm as ColorPickerVM).handleClick({ target: null, clientX: 50, clientY: 0 })
     await nextTick()
@@ -208,13 +208,13 @@ describe('Color-picker', () => {
 
   it('should change saturation and value when clicking the sv-panel', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color" show-alpha color-format="hsv"></el-color-picker>`,
+      `<lx-color-picker v-model="color" show-alpha color-format="hsv"></lx-color-picker>`,
       () => ({
         color: 'hsv(0, 50%, 50%)',
       }),
     )
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const svPanelWrapper = colorPickerWrapper.findComponent({ ref: 'svPanel' });
     (svPanelWrapper.vm as ColorPickerVM).handleDrag({ clientX: 0, clientY: 0 })
@@ -226,7 +226,7 @@ describe('Color-picker', () => {
 
   it('should change color to the selected color', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color" show-alpha :predefine="colors"></el-color-picker>`,
+      `<lx-color-picker v-model="color" show-alpha :predefine="colors"></lx-color-picker>`,
       () => ({
         color: 'hsva(180, 65, 20, 0.5)',
         colors: [
@@ -242,19 +242,19 @@ describe('Color-picker', () => {
         ],
       }),
     )
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const predefineWrapper = colorPickerWrapper.findComponent({ ref: 'predefine' })
     const predefineDom = predefineWrapper.element as HTMLElement
-    expect(predefineDom.querySelectorAll('.el-color-predefine__color-selector').length === 9).toBeTruthy()
-    predefineDom.querySelector<HTMLElement>('.el-color-predefine__color-selector:nth-child(4)').click()
+    expect(predefineDom.querySelectorAll('.lx-color-predefine__color-selector').length === 9).toBeTruthy()
+    predefineDom.querySelector<HTMLElement>('.lx-color-predefine__color-selector:nth-child(4)').click()
     await nextTick()
     expect(colorPickerWrapper.vm.color.get('hue')).toEqual(180)
     expect(colorPickerWrapper.vm.color.get('saturation')).toEqual(65)
     expect(colorPickerWrapper.vm.color.get('value')).toEqual(20)
     expect(colorPickerWrapper.vm.color.get('alpha')).toEqual(50)
 
-    predefineDom.querySelector<HTMLElement>('.el-color-predefine__color-selector:nth-child(3)').click()
+    predefineDom.querySelector<HTMLElement>('.lx-color-predefine__color-selector:nth-child(3)').click()
     await nextTick()
     expect(colorPickerWrapper.vm.color.get('hue')).toEqual(250)
     expect(colorPickerWrapper.vm.color.get('saturation')).toEqual(54)
@@ -264,7 +264,7 @@ describe('Color-picker', () => {
 
   it('should change selected state of predefined color', async () => {
     const wrapper = _mount(
-      `<el-color-picker v-model="color" show-alpha :predefine="colors"></el-color-picker>`,
+      `<lx-color-picker v-model="color" show-alpha :predefine="colors"></lx-color-picker>`,
       () => ({
         color: 'hsva(180, 65, 20, 0.5)',
         colors: [
@@ -280,16 +280,16 @@ describe('Color-picker', () => {
         ],
       }),
     )
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.lx-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const predefineWrapper = colorPickerWrapper.findComponent({ ref: 'predefine' })
     const predefineDom = predefineWrapper.element as HTMLElement
-    predefineDom.querySelector<HTMLElement>('.el-color-predefine__color-selector:nth-child(4)').click()
+    predefineDom.querySelector<HTMLElement>('.lx-color-predefine__color-selector:nth-child(4)').click()
     await nextTick()
-    expect(predefineWrapper.find('.el-color-predefine__color-selector:nth-child(4)').classes()).toContain('selected')
+    expect(predefineWrapper.find('.lx-color-predefine__color-selector:nth-child(4)').classes()).toContain('selected')
     const hueSlideWrapper = colorPickerWrapper.findComponent({ ref: 'hue' })
     const hueSlideDom = hueSlideWrapper.element
-    const thumbDom = hueSlideWrapper.find<HTMLElement>('.el-color-hue-slider__thumb').element
+    const thumbDom = hueSlideWrapper.find<HTMLElement>('.lx-color-hue-slider__thumb').element
     const mockHueSlideRect = jest.spyOn(hueSlideDom,'getBoundingClientRect').mockReturnValue({
       height: 176,
       width: 12,
@@ -301,7 +301,7 @@ describe('Color-picker', () => {
     const mockThumbDom = jest.spyOn(thumbDom, 'offsetHeight', 'get').mockReturnValue(4);
     (hueSlideWrapper.vm as ColorPickerVM).handleClick({ target: null, clientX: 0, clientY: 1000 })
     await nextTick()
-    expect(predefineWrapper.find('.el-color-predefine__color-selector:nth-child(4)').classes()).not.toContain('selected')
+    expect(predefineWrapper.find('.lx-color-predefine__color-selector:nth-child(4)').classes()).not.toContain('selected')
     mockHueSlideRect.mockRestore()
     mockThumbDom.mockRestore()
     mockHueSlideOffsetHeight.mockRestore()

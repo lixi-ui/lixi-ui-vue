@@ -15,7 +15,7 @@ import { ClickOutside } from '@element-plus/directives'
 import { useDropdown, initDropdownDomEvent } from './useDropdown'
 
 export default defineComponent({
-  name: 'ElDropdownMenu',
+  name: 'LxDropdownMenu',
   directives: {
     ClickOutside,
   },

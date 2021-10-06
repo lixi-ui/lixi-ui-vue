@@ -31,7 +31,7 @@
         </i>
       </div>
     </div>
-    <el-collapse-transition>
+    <lx-collapse-transition>
       <div
         v-show="isActive"
         :id="`el-collapse-content-${id}`"
@@ -44,18 +44,18 @@
           <slot></slot>
         </div>
       </div>
-    </el-collapse-transition>
+    </lx-collapse-transition>
   </div>
 </template>
 <script lang='ts'>
 import { defineComponent, PropType, inject, computed, ref } from 'vue'
 import { CollapseProvider } from './collapse'
 import { generateId } from '@element-plus/utils/util'
-import ElCollapseTransition from '@element-plus/components/collapse-transition'
+import LxCollapseTransition from '@element-plus/components/collapse-transition'
 
 export default defineComponent({
-  name: 'ElCollapseItem',
-  components: { ElCollapseTransition },
+  name: 'LxCollapseItem',
+  components: { LxCollapseTransition },
   props: {
     title: {
       type: String,

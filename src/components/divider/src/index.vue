@@ -13,7 +13,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'ElDivider',
+  name: 'LxDivider',
   props: {
     direction: {
       type: String,

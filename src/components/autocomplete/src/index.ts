@@ -9,4 +9,4 @@ Autocomplete.install = (app: App): void => {
 const _Autocomplete = Autocomplete as SFCWithInstall<typeof Autocomplete>
 
 export default _Autocomplete
-export const ElAutocomplete = _Autocomplete
+export const LxAutocomplete = _Autocomplete

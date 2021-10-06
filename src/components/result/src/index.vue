@@ -37,7 +37,7 @@ const IconMap: Indexable<string> = {
 }
 
 export default defineComponent({
-  name: 'ElResult',
+  name: 'LxResult',
   components: {
     [IconSuccess.name]: IconSuccess,
     [IconError.name]: IconError,

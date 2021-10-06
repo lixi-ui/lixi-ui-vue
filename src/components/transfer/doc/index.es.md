@@ -4,10 +4,10 @@
 :::demo Los datos se pasan a Transfer a través del atributo `data`. Los datos tienen que ser un array de objetos, y cada objeto debe tener estos atributos: `key` que será el identificador del ítem, `label` que será el texto a mostrar, y `disabled` que indicará si el elemento esta desactivado. Los items dentro de la lista destino están sincronizados con la variable asociada a `v-model`, y el valor de esa variable es un array de claves de los elementos de la lista destino. Así que si no quiere que la lista destino esté vacía inicialmente puede inicializar el `v-model` con un array.
 ```html
 <template>
-  <el-transfer
+  <lx-transfer
     v-model="value"
     :data="data">
-  </el-transfer>
+  </lx-transfer>
 </template>
 
 <script>
@@ -41,7 +41,7 @@ Puede buscar y filtrar los items.
 :::demo Ponga el atributo `filterable` a true para permitir el filtrado.Por defecto si el `label` del ítem contiene el término buscado será incluido en el resultado. También puede implementar su propio método de filtrado con el atributo `filter-method`, que recibe un método y le pasa la búsqueda y cada ítem. Los items para los que devuelva true serán incluidos en el resultado de la búsqueda.
 ```html
 <template>
-  <el-transfer
+  <lx-transfer
     v-model="value"
     filterable
     :filter-method="filterMethod"
@@ -88,7 +88,7 @@ Puede personalizar los títulos, botones, la función de renderizado de los item
 <template>
   <p style="text-align: center; margin: 0 0 20px">Customize data items using render-content</p>
   <div style="text-align: center">
-    <el-transfer
+    <lx-transfer
       v-model="leftValue"
       style="text-align: left; display: inline-block"
       filterable
@@ -105,16 +105,16 @@ Puede personalizar los títulos, botones, la función de renderizado de los item
       @change="handleChange"
     >
       <template #left-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <lx-button class="transfer-footer" size="small">Operation</lx-button>
       </template>
       <template #right-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <lx-button class="transfer-footer" size="small">Operation</lx-button>
       </template>
-    </el-transfer>
+    </lx-transfer>
   </div>
   <p style="text-align: center; margin: 50px 0 20px">Customize data items using scoped slot</p>
   <div style="text-align: center">
-    <el-transfer
+    <lx-transfer
       v-model="rightValue"
       style="text-align: left; display: inline-block"
       filterable
@@ -133,12 +133,12 @@ Puede personalizar los títulos, botones, la función de renderizado de los item
         <span>{{ option.key }} - {{ option.label }}</span>
       </template>
       <template #left-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <lx-button class="transfer-footer" size="small">Operation</lx-button>
       </template>
       <template #right-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <lx-button class="transfer-footer" size="small">Operation</lx-button>
       </template>
-    </el-transfer>
+    </lx-transfer>
   </div>
 </template>
 
@@ -190,7 +190,7 @@ Por defecto Transfer busca los atributos `key`, `label`, y `disabled` en cada el
 :::demo En este ejemplo los elementos no tienen `key`y `label`, en vez de eso tienen `value` y `desc`. Así que tiene que añadir alias para `key` y `label`.
 ```html
 <template>
-  <el-transfer
+  <lx-transfer
     v-model="value"
     :props="{
       key: 'value',
@@ -250,7 +250,7 @@ Por defecto Transfer busca los atributos `key`, `label`, y `disabled` en cada el
 ### Scoped Slot
 | Name | Description |
 |------|--------|
-| — | Contenido personalizado para los datos de los items. El parámetro del scope es { option } |
+| — | Contenido personalizado para los datos de los items. Lx parámetro del scope es { option } |
 
 ### Methods
 | Method | Description | Parameters |

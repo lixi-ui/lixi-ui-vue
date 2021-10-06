@@ -16,7 +16,7 @@
       <slot name="left-footer"></slot>
     </transfer-panel>
     <div class="el-transfer__buttons">
-      <el-button
+      <lx-button
         type="primary"
         :class="['el-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
         :disabled="rightChecked.length === 0"
@@ -24,8 +24,8 @@
       >
         <i class="el-icon-arrow-left"></i>
         <span v-if="buttonTexts[0] !== undefined">{{ buttonTexts[0] }}</span>
-      </el-button>
-      <el-button
+      </lx-button>
+      <lx-button
         type="primary"
         :class="['el-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
         :disabled="leftChecked.length === 0"
@@ -33,7 +33,7 @@
       >
         <span v-if="buttonTexts[1] !== undefined">{{ buttonTexts[1] }}</span>
         <i class="el-icon-arrow-right"></i>
-      </el-button>
+      </lx-button>
     </div>
     <transfer-panel
       ref="rightPanel"
@@ -58,7 +58,7 @@ import {
   computed, defineComponent, inject, h,
   reactive, ref, toRefs, watch,
 } from 'vue'
-import ElButton from '@element-plus/components/button'
+import LxButton from '@element-plus/components/button'
 import { elFormItemKey } from '@element-plus/tokens'
 import { useLocaleInject } from '@element-plus/hooks'
 import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
@@ -71,7 +71,7 @@ import { CHANGE_EVENT } from './transfer'
 import { LEFT_CHECK_CHANGE_EVENT, RIGHT_CHECK_CHANGE_EVENT } from './useCheckedChange'
 
 import type { PropType, VNode } from 'vue'
-import type { ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormItemContext } from '@element-plus/tokens'
 import type {
   DataItem, Format, Key,
   Props, TargetOrder,
@@ -79,11 +79,11 @@ import type {
 
 
 export default defineComponent({
-  name: 'ElTransfer',
+  name: 'LxTransfer',
 
   components: {
     TransferPanel,
-    ElButton,
+    LxButton,
   },
 
   props: {
@@ -151,7 +151,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const { t } = useLocaleInject()
-    const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
 
     const checkedState = reactive({
       leftChecked: [],

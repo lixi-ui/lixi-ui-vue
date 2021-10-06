@@ -6,12 +6,12 @@ Used to show feedback after an activity. The difference with Notification is tha
 
 Displays at the top, and disappears after 3 seconds.
 
-:::demo The setup of Message is very similar to notification, so parts of the options won't be explained in detail here. You can check the options table below combined with notification doc to understand it. Element Plus has registered a `$message` method for invoking. Message can take a string or a VNode as parameter, and it will be shown as the main body.
+:::demo The setup of Message is very similar to notification, so parts of the options won't be explained in detail here. You can check the options table below combined with notification doc to understand it. Lxement Plus has registered a `$message` method for invoking. Message can take a string or a VNode as parameter, and it will be shown as the main body.
 
 ```html
 <template>
-  <el-button :plain="true" @click="open">Show message</el-button>
-  <el-button :plain="true" @click="openVn">VNode</el-button>
+  <lx-button :plain="true" @click="open">Show message</lx-button>
+  <lx-button :plain="true" @click="openVn">VNode</lx-button>
 </template>
 
 <script>
@@ -38,17 +38,17 @@ Displays at the top, and disappears after 3 seconds.
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessage('this is a message.');
+        LxMessage('this is a message.');
       };
 
       const openVn = () => {
-        ElMessage({
+        LxMessage({
           message: h('p', null, [
             h('span', null, 'Message can be '),
             h('i', { style: 'color: teal' }, 'VNode'),
@@ -75,10 +75,10 @@ Used to show the feedback of Success, Warning, Message and Error activities.
 :::demo When you need more customizations, Message component can also take an object as parameter. For example, setting value of `type` can define different types, and its default is `info`. In such cases the main body is passed in as the value of `message`. Also, we have registered methods for different types, so you can directly call it without passing a type like `open4`.
 ```html
 <template>
-  <el-button :plain="true" @click="open2">success</el-button>
-  <el-button :plain="true" @click="open3">warning</el-button>
-  <el-button :plain="true" @click="open1">message</el-button>
-  <el-button :plain="true" @click="open4">error</el-button>
+  <lx-button :plain="true" @click="open2">success</lx-button>
+  <lx-button :plain="true" @click="open3">warning</lx-button>
+  <lx-button :plain="true" @click="open1">message</lx-button>
+  <lx-button :plain="true" @click="open4">error</lx-button>
 </template>
 
 <script>
@@ -111,28 +111,28 @@ Used to show the feedback of Success, Warning, Message and Error activities.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElMessage('this is a message.');
+        LxMessage('this is a message.');
       };
       const open2 = () => {
-        ElMessage({
+        LxMessage({
           message: 'Congrats, this is a success message.',
           type: 'success',
         });
       };
       const open3 = () => {
-        ElMessage({
+        LxMessage({
           message: 'Warning, this is a warning message.',
           type: 'warning',
         });
       };
       const open4 = () => {
-        ElMessage.error('Oops, this is a error message.');
+        LxMessage.error('Oops, this is a error message.');
       };
       return {
         open1,
@@ -155,10 +155,10 @@ A close button can be added.
 :::demo A default Message cannot be closed manually. If you need a closable message, you can set `showClose` field. Besides, same as notification, message has a controllable `duration`. Default duration is 3000 ms, and it won't disappear when set to `0`.
 ```html
 <template>
-  <el-button :plain="true" @click="open1">message</el-button>
-  <el-button :plain="true" @click="open2">success</el-button>
-  <el-button :plain="true" @click="open3">warning</el-button>
-  <el-button :plain="true" @click="open4">error</el-button>
+  <lx-button :plain="true" @click="open1">message</lx-button>
+  <lx-button :plain="true" @click="open2">success</lx-button>
+  <lx-button :plain="true" @click="open3">warning</lx-button>
+  <lx-button :plain="true" @click="open4">error</lx-button>
 </template>
 
 <script>
@@ -201,33 +201,33 @@ A close button can be added.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElMessage({
+        LxMessage({
           showClose: true,
           message: 'This is a message.',
         });
       };
       const open2 = () => {
-        ElMessage({
+        LxMessage({
           showClose: true,
           message: 'Congrats, this is a success message.',
           type: 'success',
         });
       };
       const open3 = () => {
-        ElMessage({
+        LxMessage({
           showClose: true,
           message: 'Warning, this is a warning message.',
           type: 'warning',
         });
       };
       const open4 = () => {
-        ElMessage({
+        LxMessage({
           showClose: true,
           message: 'Oops, this is a error message.',
           type: 'error',
@@ -254,7 +254,7 @@ Use the `center` attribute to center the text.
 
 ```html
 <template>
-  <el-button :plain="true" @click="openCenter">Centered text</el-button>
+  <lx-button :plain="true" @click="openCenter">Centered text</lx-button>
 </template>
 
 <script>
@@ -273,13 +273,13 @@ Use the `center` attribute to center the text.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const openCenter = () => {
-        ElMessage({
+        LxMessage({
           showClose: true,
           message: 'Centered text',
         });
@@ -302,7 +302,7 @@ Use the `center` attribute to center the text.
 
 ```html
 <template>
-  <el-button :plain="true" @click="openHTML">Use HTML String</el-button>
+  <lx-button :plain="true" @click="openHTML">Use HTML String</lx-button>
 </template>
 
 <script>
@@ -321,13 +321,13 @@ Use the `center` attribute to center the text.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const openCenter = () => {
-        ElMessage({
+        LxMessage({
           dangerouslyUseHTMLString: true,
           message: '<strong>This is <i>HTML</i> string</strong>',
         });
@@ -354,7 +354,7 @@ Element Plus has added a global method `$message` for `app.config.globalProperti
 ### Local import
 
 ```javascript
-import { ElMessage } from 'element-plus';
+import { LxMessage } from 'element-plus';
 ```
 
 In this case you should call `ElMessage(options)`. We have also registered methods for different types, e.g. `ElMessage.success(options)`. You can call `ElMessage.closeAll()` to manually close all the instances.

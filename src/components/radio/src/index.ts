@@ -21,8 +21,8 @@ const _Radio = Radio as any as SFCWithInstall<typeof Radio> & {
 }
 
 export default _Radio
-export const ElRadio = _Radio
-export const ElRadioGroup = RadioGroup
-export const ElRadioButton = RadioButton
+export const LxRadio = _Radio
+export const LxRadioGroup = RadioGroup
+export const LxRadioButton = RadioButton
 
 export * from './src/token'

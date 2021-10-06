@@ -9,7 +9,7 @@ export const getSibling = (el: HTMLElement, distance: number): Nullable<Element>
 
   if (!parentNode) return null
 
-  const siblings = parentNode.querySelectorAll('.el-cascader-node[tabindex="-1"]')
+  const siblings = parentNode.querySelectorAll('.lx-cascader-node[tabindex="-1"]')
   const index = Array.prototype.indexOf.call(siblings, el)
   return siblings[index + distance] || null
 }

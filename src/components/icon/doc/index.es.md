@@ -27,9 +27,9 @@ $ npm install @element-plus/icons
 
 ```html
 <!-- Use el-icon to provide attributes to SVG icon -->
-<el-icon :size="size" :color="color">
+<lx-icon :size="size" :color="color">
   <edit />
-</el-icon>
+</lx-icon>
 <!-- Or use it independently without derive attributes from parent -->
 <edit />
 
@@ -52,26 +52,26 @@ export default defineComponent({
   <p>
     with extra class <b>is-loading</b>, your icon is able to rotate 360 deg in 2 seconds, you can also override this
   </p>
-  <el-icon :size="20">
+  <lx-icon :size="20">
     <edit />
-  </el-icon>
-  <el-icon color="#409EFC" class="no-inherit">
+  </lx-icon>
+  <lx-icon color="#409EFC" class="no-inherit">
     <share />
-  </el-icon>
-  <el-icon>
+  </lx-icon>
+  <lx-icon>
     <delete />
-  </el-icon>
-  <el-icon class="is-loading">
+  </lx-icon>
+  <lx-icon class="is-loading">
     <loading />
-  </el-icon>
-  <el-button type="primary">
-    <el-icon style="vertical-align: middle;">
+  </lx-icon>
+  <lx-button type="primary">
+    <lx-icon style="vertical-align: middle;">
       <search />
-    </el-icon>
+    </lx-icon>
     <span style="vertical-align: middle;">
       Search
     </span>
-  </el-button>
+  </lx-button>
 ```
 :::
 
@@ -92,7 +92,7 @@ export default defineComponent({
 
 ### SVG Icons collection
 :::tip
-This collection is updated after ElementPlus@1.0.2-beta.66(included), you can only use `el-icon` to wrap it after ElementPlus@1.0.2-beta.66(included), or directly use it without version constrains
+This collection is updated after LxementPlus@1.0.2-beta.66(included), you can only use `el-icon` to wrap it after LxementPlus@1.0.2-beta.66(included), or directly use it without version constrains
 
 **You can use SVG icon in any version as long as you install it**
 
@@ -105,9 +105,9 @@ This collection is updated after ElementPlus@1.0.2-beta.66(included), you can on
     :key="component"
     @click="$copySvgIcon(component)">
     <span class="demo-svg-icon">
-      <el-icon color="#000">
+      <lx-icon color="#000">
         <component :is="component" />
-      </el-icon>
+      </lx-icon>
       <span class="icon-name">{{component}}</span>
     </span>
   </li>
@@ -123,7 +123,7 @@ Simplemente asigna el nombre de la clase a `el-icon-iconName`.
 <i class="el-icon-edit"></i>
 <i class="el-icon-share"></i>
 <i class="el-icon-delete"></i>
-<el-button type="primary" icon="el-icon-search">Search</el-button>
+<lx-button type="primary" icon="el-icon-search">Search</lx-button>
 
 ```
 :::

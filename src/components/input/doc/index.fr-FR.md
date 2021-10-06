@@ -15,7 +15,7 @@ Les modificateurs de `v-model` ne sont pas supportés.
 :::demo
 
 ```html
-<el-input placeholder="Entrez quelque chose" v-model="input"></el-input>
+<lx-input placeholder="Entrez quelque chose" v-model="input"></lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -35,11 +35,11 @@ export default defineComponent ({
 :::demo Désactivez l'input avec l'attribut `disabled`.
 
 ```html
-<el-input
+<lx-input
   placeholder="Entrez quelque chose"
   v-model="input"
   :disabled="true">
-</el-input>
+</lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -59,11 +59,11 @@ export default defineComponent ({
 :::demo Rendez l'input effaçable avec l'attribut `clearable`.
 
 ```html
-<el-input
+<lx-input
   placeholder="Entrez quelque chose"
   v-model="input"
   clearable>
-</el-input>
+</lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -83,7 +83,7 @@ export default defineComponent ({
 :::demo Créez un champ de mot de passe avec icône de visualisation grâce à l'attribut `show-password`.
 
 ```html
-<el-input placeholder="Entrez votre mot de passe" v-model="input" show-password></el-input>
+<lx-input placeholder="Entrez votre mot de passe" v-model="input" show-password></lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -106,33 +106,33 @@ Ajoutez une icône pour indiquer le type d'input.
 ```html
 <div class="demo-input-suffix">
   <span class="demo-input-label">Avec les attributs</span>
-  <el-input
+  <lx-input
     placeholder="Entrez une date"
     suffix-icon="el-icon-date"
     v-model="input1">
-  </el-input>
-  <el-input
+  </lx-input>
+  <lx-input
     placeholder="Entrez du texte"
     prefix-icon="el-icon-search"
     v-model="input2">
-  </el-input>
+  </lx-input>
 </div>
 <div class="demo-input-suffix">
   <span class="demo-input-label">Avec les slots</span>
-  <el-input
+  <lx-input
     placeholder="Entrez une date"
     v-model="input3">
     <template #suffix>
       <i class="el-input__icon el-icon-date"></i>
     </template>
-  </el-input>
-  <el-input
+  </lx-input>
+  <lx-input
     placeholder="Entrez du texte"
     v-model="input4">
     <template #prefix>
       <i class="el-input__icon el-icon-search"></i>
     </template>
-  </el-input>
+  </lx-input>
 </div>
 
 <style>
@@ -165,12 +165,12 @@ Une zone de texte de taille réglable à la souris pour écrire plusieurs lignes
 :::demo Réglez la hauteur grâce à la propriété `rows`.
 
 ```html
-<el-input
+<lx-input
   type="textarea"
   :rows="2"
   placeholder="Entrez quelque chose"
   v-model="textarea">
-</el-input>
+</lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -192,19 +192,19 @@ Configurer la propriété `autosize` pour une zone de texte permet de rendre la 
 :::demo
 
 ```html
-<el-input
+<lx-input
   type="textarea"
   autosize
   placeholder="Entrez quelque chose"
   v-model="textarea1">
-</el-input>
+</lx-input>
 <div style="margin: 20px 0;"></div>
-<el-input
+<lx-input
   type="textarea"
   :autosize="{ minRows: 2, maxRows: 4}"
   placeholder="Entrez quelque chose"
   v-model="textarea2">
-</el-input>
+</lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'
@@ -228,35 +228,35 @@ Ajouter un élément avant ou après l'input, généralement du texte ou un bout
 
 ```html
 <div>
-  <el-input placeholder="Entrez quelque chose" v-model="input1">
+  <lx-input placeholder="Entrez quelque chose" v-model="input1">
     <template #prepend>Http://</template>
-  </el-input>
+  </lx-input>
 </div>
 <div style="margin-top: 15px;">
-  <el-input placeholder="Entrez quelque chose" v-model="input2">
+  <lx-input placeholder="Entrez quelque chose" v-model="input2">
     <template #append>.com</template>
-  </el-input>
+  </lx-input>
 </div>
 <div style="margin-top: 15px;">
-  <el-input placeholder="Entrez quelque chose" v-model="input3" class="input-with-select">
+  <lx-input placeholder="Entrez quelque chose" v-model="input3" class="input-with-select">
     <template #prepend>
-      <el-select v-model="select" placeholder="Choisir">
-        <el-option label="Restaurant" value="1"></el-option>
-        <el-option label="Num. Commande" value="2"></el-option>
-        <el-option label="Tel" value="3"></el-option>
-      </el-select>
+      <lx-select v-model="select" placeholder="Choisir">
+        <lx-option label="Restaurant" value="1"></lx-option>
+        <lx-option label="Num. Commande" value="2"></lx-option>
+        <lx-option label="Tel" value="3"></lx-option>
+      </lx-select>
     </template>
     <template #append>
-      <el-button icon="el-icon-search"></el-button>
+      <lx-button icon="el-icon-search"></lx-button>
     </template>
-  </el-input>
+  </lx-input>
 </div>
 
 <style>
-  .el-select .el-input {
+  .lx-select .lx-input {
     width: 110px;
   }
-  .input-with-select .el-input-group__prepend {
+  .input-with-select .lx-input-group__prepend {
     background-color: #fff;
   }
 </style>
@@ -282,25 +282,25 @@ export default defineComponent ({
 :::demo Ajoutez l'attribut `size` pour changer la taille de l'input. En plus de la taille par défaut, il y a trois autres options: `large`, `small` et `mini`.
 ```html
 <div class="demo-input-size">
-  <el-input
+  <lx-input
     placeholder="Entrez quelque chose"
     v-model="input1">
-  </el-input>
-  <el-input
+  </lx-input>
+  <lx-input
     size="medium"
     placeholder="Entrez quelque chose"
     v-model="input2">
-  </el-input>
-  <el-input
+  </lx-input>
+  <lx-input
     size="small"
     placeholder="Entrez quelque chose"
     v-model="input3">
-  </el-input>
-  <el-input
+  </lx-input>
+  <lx-input
     size="mini"
     placeholder="Entrez quelque chose"
     v-model="input4">
-  </el-input>
+  </lx-input>
 </div>
 
 <script>
@@ -325,29 +325,29 @@ Vous pouvez obtenir de l'aide ou des suggestions basées sur ce que vous entrez.
 
 :::demo Le composant d'autocomplétion fournit des suggestions d'entrées. L'attribut `fetch-suggestions` est une méthode qui retourne les suggestions. Dans cet exemple, `querySearch(queryString, cb)` renvoie des suggestions à l'autocomplétion via `cb(data)` quand elles sont prêtes.
 ```html
-<el-row class="demo-autocomplete">
-  <el-col :span="12">
+<lx-row class="demo-autocomplete">
+  <lx-col :span="12">
     <div class="sub-title">Liste des suggestions au focus</div>
-    <el-autocomplete
+    <lx-autocomplete
       class="inline-input"
       v-model="state1"
       :fetch-suggestions="querySearch"
       placeholder="Entrez quelque chose"
       @select="handleSelect"
-    ></el-autocomplete>
-  </el-col>
-  <el-col :span="12">
+    ></lx-autocomplete>
+  </lx-col>
+  <lx-col :span="12">
     <div class="sub-title">Liste des suggestions à l'écriture</div>
-    <el-autocomplete
+    <lx-autocomplete
       class="inline-input"
       v-model="state2"
       :fetch-suggestions="querySearch"
       placeholder="Entrez quelque chose"
       :trigger-on-focus="false"
       @select="handleSelect"
-    ></el-autocomplete>
-  </el-col>
-</el-row>
+    ></lx-autocomplete>
+  </lx-col>
+</lx-row>
 <script>
 import { defineComponent, ref, onMounted } from 'vue';
 export default defineComponent({
@@ -406,7 +406,7 @@ Vous pouvez personnaliser la manière dont les suggestions sont affichées.
 
 :::demo Utilisez `scoped slot` pour personnaliser les différentes suggestions. Dans le scope, vous pouvez accéder à l'objet suggestion via la clé `item`.
 ```html
-<el-autocomplete
+<lx-autocomplete
   popper-class="my-autocomplete"
   v-model="state"
   :fetch-suggestions="querySearch"
@@ -419,7 +419,7 @@ Vous pouvez personnaliser la manière dont les suggestions sont affichées.
     <div class="value">{{ item.value }}</div>
     <span class="link">{{ item.link }}</span>
   </template>
-</el-autocomplete>
+</lx-autocomplete>
 
 <style>
 .my-autocomplete li {
@@ -503,12 +503,12 @@ Vous pouvez aller chercher des infos de suggestions sur un serveur distant.
 
 :::demo
 ```html
-<el-autocomplete
+<lx-autocomplete
   v-model="state"
   :fetch-suggestions="querySearchAsync"
   placeholder="Entrez quelque chose"
   @select="handleSelect"
-></el-autocomplete>
+></lx-autocomplete>
 
 <script>
 import { defineComponent, ref, onMounted } from 'vue';
@@ -570,23 +570,23 @@ export default defineComponent({
 :::demo `maxlength` et `minlength` des attributs, indiquant la taille limite de l'input. Le nombre de caractères est mesuré par la taille de la chaine Javascript. Si vous utilisez `maxlength`, vous pourrez montrer le nombre de caractères en mettant `show-word-limit` à `true`.
 
 ```html
-<el-input
+<lx-input
   type="text"
   placeholder="Please input"
   v-model="text"
   maxlength="10"
   show-word-limit
 >
-</el-input>
+</lx-input>
 <div style="margin: 20px 0;"></div>
-<el-input
+<lx-input
   type="textarea"
   placeholder="Please input"
   v-model="textarea"
   maxlength="30"
   show-word-limit
 >
-</el-input>
+</lx-input>
 
 <script>
 import { defineComponent, ref } from 'vue'

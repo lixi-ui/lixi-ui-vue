@@ -9,7 +9,7 @@ import { timePickerDefaultProps } from './common/props'
 dayjs.extend(customParseFormat)
 
 export default defineComponent({
-  name: 'ElTimePicker',
+  name: 'LxTimePicker',
   install: null,
   props: {
     ...timePickerDefaultProps,
@@ -33,7 +33,7 @@ export default defineComponent({
       },
     }
 
-    provide('ElPopperOptions', props.popperOptions)
+    provide('LxPopperOptions', props.popperOptions)
     ctx.expose(refProps)
     return () => {
       const format = props.format ?? DEFAULT_FORMATS_TIME

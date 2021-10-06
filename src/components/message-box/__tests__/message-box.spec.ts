@@ -3,7 +3,7 @@ import MessageBox from '../src/messageBox'
 import { rAF } from '@element-plus/test-utils/tick'
 import { triggerNativeCompositeClick } from '@element-plus/test-utils/composite-click'
 
-const selector = '.el-overlay'
+const selector = '.lx-overlay'
 
 const _mount = (invoker: () => void) => {
   return mount(
@@ -36,10 +36,10 @@ describe('MessageBox', () => {
     expect(msgbox).toBeDefined()
     await rAF()
     expect(
-      msgbox.querySelector('.el-message-box__title span').textContent,
+      msgbox.querySelector('.lx-message-box__title span').textContent,
     ).toEqual('消息')
     expect(
-      msgbox.querySelector('.el-message-box__message').querySelector('p')
+      msgbox.querySelector('.lx-message-box__message').querySelector('p')
         .textContent,
     ).toEqual('这是一段内容')
     MessageBox.close()
@@ -60,7 +60,7 @@ describe('MessageBox', () => {
       message: '这是一段内容',
     })
     await rAF()
-    const icon = document.querySelector('.el-message-box__status')
+    const icon = document.querySelector('.lx-message-box__status')
     expect(icon.classList.contains('el-icon-question')).toBe(true)
   })
 
@@ -71,7 +71,7 @@ describe('MessageBox', () => {
       message: '<strong>html string</strong>',
     })
     await rAF()
-    const message = document.querySelector('.el-message-box__message strong')
+    const message = document.querySelector('.lx-message-box__message strong')
     expect(message.textContent).toEqual('html string')
   })
 
@@ -92,7 +92,7 @@ describe('MessageBox', () => {
     await rAF()
 
     const btn = document.querySelector(
-      '.el-message-box__close',
+      '.lx-message-box__close',
     ) as HTMLButtonElement
     btn.click()
     await rAF()
@@ -109,7 +109,7 @@ describe('MessageBox', () => {
     await rAF()
     const msgbox: HTMLElement = document.querySelector(selector)
     expect(msgbox.style.display).toEqual('')
-    expect(msgbox.querySelector('.el-icon-warning')).toBeDefined()
+    expect(msgbox.querySelector('.lx-icon-warning')).toBeDefined()
   })
 
   test('confirm', async () => {
@@ -120,7 +120,7 @@ describe('MessageBox', () => {
     await rAF()
     const btn = document
       .querySelector(selector)
-      .querySelector('.el-button--primary') as HTMLButtonElement
+      .querySelector('.lx-button--primary') as HTMLButtonElement
     btn.click()
     await rAF()
     const msgbox: HTMLElement = document.querySelector(selector)
@@ -136,7 +136,7 @@ describe('MessageBox', () => {
     await rAF()
     const inputElm = document
       .querySelector(selector)
-      .querySelector('.el-message-box__input')
+      .querySelector('.lx-message-box__input')
     const haveFocus = inputElm
       .querySelector('input')
       .isSameNode(document.activeElement)
@@ -168,7 +168,7 @@ describe('MessageBox', () => {
     })
     await rAF()
     const closeBtn = document.querySelector(
-      '.el-message-box__close',
+      '.lx-message-box__close',
     ) as HTMLButtonElement
     closeBtn.click()
     await rAF()
@@ -189,7 +189,7 @@ describe('MessageBox', () => {
     })
     await rAF()
     ;(document.querySelector(
-      '.el-message-box__btns .el-button--primary',
+      '.lx-message-box__btns .lx-button--primary',
     ) as HTMLButtonElement).click()
     await rAF()
     expect(msgAction).toEqual('confirm')
@@ -205,7 +205,7 @@ describe('MessageBox', () => {
       )
       await rAF()
       const btn = document.querySelector(
-        '.el-message-box__btns .el-button--primary',
+        '.lx-message-box__btns .lx-button--primary',
       ) as HTMLButtonElement
       btn.click()
       await rAF()
@@ -221,7 +221,7 @@ describe('MessageBox', () => {
       )
       await rAF()
       const btn = document.querySelector(
-        '.el-message-box__btns .el-button',
+        '.lx-message-box__btns .lx-button',
       )
       ;(btn as HTMLButtonElement).click()
       await rAF()

@@ -29,7 +29,7 @@
     >
       <i :class="`el-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
     </span>
-    <el-input
+    <lx-input
       ref="input"
       :model-value="displayValue"
       :placeholder="placeholder"
@@ -62,12 +62,12 @@ import {
 import { toRawType } from '@vue/shared'
 import { RepeatClick } from '@element-plus/directives'
 import { elFormKey, elFormItemKey } from '@element-plus/tokens'
-import ElInput from '@element-plus/components/input'
+import LxInput from '@element-plus/components/input'
 import { useGlobalConfig } from '@element-plus/utils/util'
 import { isValidComponentSize } from '@element-plus/utils/validators'
 
 import type { PropType } from 'vue'
-import type { ElFormContext, ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
 import type { ComponentSize } from '@element-plus/utils/types'
 
 interface IData {
@@ -76,9 +76,9 @@ interface IData {
 }
 
 export default defineComponent({
-  name: 'ElInputNumber',
+  name: 'LxInputNumber',
   components: {
-    ElInput,
+    LxInput,
   },
   directives: {
     RepeatClick,
@@ -130,8 +130,8 @@ export default defineComponent({
   emits: ['update:modelValue', 'change', 'input', 'blur', 'focus'],
   setup(props, { emit }) {
     const ELEMENT = useGlobalConfig()
-    const elForm = inject(elFormKey, {} as ElFormContext)
-    const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
+    const elForm = inject(elFormKey, {} as LxFormContext)
+    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
 
     const input = ref(null)
     const data = reactive<IData>({

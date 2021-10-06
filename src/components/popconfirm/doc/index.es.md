@@ -9,13 +9,13 @@ Popconfirm is similar to Popover. So for some duplicated attributes, please refe
 :::demo Only `title` attribute is avaliable in Popconfirm, `content` will be ignored.
 ```html
 <template>
-<el-popconfirm
+<lx-popconfirm
   title="Are you sure to delete this?"
 >
 <template #reference>
-  <el-button>Delete</el-button>
+  <lx-button>Delete</lx-button>
   </template>
-</el-popconfirm>
+</lx-popconfirm>
 </template>
 ````
 :::
@@ -26,7 +26,7 @@ You can customise Popconfirm like:
 :::demo
 ```html
 <template>
-<el-popconfirm
+<lx-popconfirm
   confirmButtonText='OK'
   cancelButtonText='No, Thanks'
   icon="el-icon-info"
@@ -34,9 +34,9 @@ You can customise Popconfirm like:
   title="Are you sure to delete this?"
 >
 <template #reference>
-  <el-button>Delete</el-button>
+  <lx-button>Delete</lx-button>
   </template>
-</el-popconfirm>
+</lx-popconfirm>
 </template>
 ```
 :::
@@ -48,7 +48,7 @@ Click the button to trigger the event
 
 ```html
 <template>
-  <el-popconfirm
+  <lx-popconfirm
     confirmButtonText="Yes"
     cancelButtonText="No"
     icon="el-icon-info"
@@ -58,9 +58,9 @@ Click the button to trigger the event
     @cancel="cancelEvent"
   >
     <template #reference>
-      <el-button>Delete</el-button>
+      <lx-button>Delete</lx-button>
     </template>
-  </el-popconfirm>
+  </lx-popconfirm>
 </template>
 
 <script>

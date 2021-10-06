@@ -9,24 +9,24 @@
 <template>
   <div class="block">
     <span class="demonstration">Switch when indicator is hovered (default)</span>
-    <el-carousel height="150px">
-      <el-carousel-item v-for="item in 4" :key="item">
+    <lx-carousel height="150px">
+      <lx-carousel-item v-for="item in 4" :key="item">
         <h3 class="small">{{ item }}</h3>
-      </el-carousel-item>
-    </el-carousel>
+      </lx-carousel-item>
+    </lx-carousel>
   </div>
   <div class="block">
     <span class="demonstration">Switch when indicator is clicked</span>
-    <el-carousel trigger="click" height="150px">
-      <el-carousel-item v-for="item in 4" :key="item">
+    <lx-carousel trigger="click" height="150px">
+      <lx-carousel-item v-for="item in 4" :key="item">
         <h3 class="small">{{ item }}</h3>
-      </el-carousel-item>
-    </el-carousel>
+      </lx-carousel-item>
+    </lx-carousel>
   </div>
 </template>
 
 <style>
-  .el-carousel__item h3 {
+  .lx-carousel__item h3 {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
@@ -34,11 +34,11 @@
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .lx-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
+  .lx-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
@@ -52,15 +52,15 @@
 :::demo `indicator-position` 属性はインジケータの位置を決定します。デフォルトではcarouselの内側にあり、`indicator-position` を `outside` に設定すると外側に移動し、`indicator-position` を `none` に設定するとインジケータは非表示になります。
 ```html
 <template>
-  <el-carousel indicator-position="outside">
-    <el-carousel-item v-for="item in 4" :key="item">
+  <lx-carousel indicator-position="outside">
+    <lx-carousel-item v-for="item in 4" :key="item">
       <h3>{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
+    </lx-carousel-item>
+  </lx-carousel>
 </template>
 
 <style>
-  .el-carousel__item h3 {
+  .lx-carousel__item h3 {
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
@@ -68,11 +68,11 @@
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .lx-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
+  .lx-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
@@ -86,15 +86,15 @@
 :::demo `arrow` 属性は、いつ矢印が表示されるかを決定します。デフォルトでは、マウスがcarouselの上にカーソルを置いたときに表示されます。`arrow` を `always` または `never` に設定すると、矢印を恒久的に表示/非表示にすることができます。
 ```html
 <template>
-  <el-carousel :interval="5000" arrow="always">
-    <el-carousel-item v-for="item in 4" :key="item">
+  <lx-carousel :interval="5000" arrow="always">
+    <lx-carousel-item v-for="item in 4" :key="item">
       <h3>{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
+    </lx-carousel-item>
+  </lx-carousel>
 </template>
 
 <style>
-  .el-carousel__item h3 {
+  .lx-carousel__item h3 {
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
@@ -102,11 +102,11 @@
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .lx-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
+  .lx-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
@@ -120,15 +120,15 @@
 :::demo `type` を `card` にするとカードモードになります。見た目とは別に、カードモードと共通モードの最大の違いは、両側のスライドをクリックするとcarouselが直接カードモードに切り替わることです。
 ```html
 <template>
-  <el-carousel :interval="4000" type="card" height="200px">
-    <el-carousel-item v-for="item in 6" :key="item">
+  <lx-carousel :interval="4000" type="card" height="200px">
+    <lx-carousel-item v-for="item in 6" :key="item">
       <h3 class="medium">{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
+    </lx-carousel-item>
+  </lx-carousel>
 </template>
 
 <style>
-  .el-carousel__item h3 {
+  .lx-carousel__item h3 {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
@@ -136,11 +136,11 @@
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .lx-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
+  .lx-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>
@@ -152,15 +152,15 @@
 :::demo
 ```html
 <template>
-  <el-carousel height="200px" direction="vertical" :autoplay="false">
-    <el-carousel-item v-for="item in 4" :key="item">
+  <lx-carousel height="200px" direction="vertical" :autoplay="false">
+    <lx-carousel-item v-for="item in 4" :key="item">
       <h3 class="medium">{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
+    </lx-carousel-item>
+  </lx-carousel>
 </template>
 
 <style>
-  .el-carousel__item h3 {
+  .lx-carousel__item h3 {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
@@ -168,11 +168,11 @@
     margin: 0;
   }
 
-  .el-carousel__item:nth-child(2n) {
+  .lx-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
 
-  .el-carousel__item:nth-child(2n+1) {
+  .lx-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
 </style>

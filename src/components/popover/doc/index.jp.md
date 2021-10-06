@@ -8,7 +8,7 @@ Tooltipと同様に、Popoverも `Vue-popper` で構築されています。そ�
 
 ```html
 <template>
-  <el-popover
+  <lx-popover
     placement="top-start"
     title="Title"
     :width="200"
@@ -16,11 +16,11 @@ Tooltipと同様に、Popoverも `Vue-popper` で構築されています。そ�
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button>Hover to activate</el-button>
+      <lx-button>Hover to activate</lx-button>
     </template>
-  </el-popover>
+  </lx-popover>
 
-  <el-popover
+  <lx-popover
     placement="bottom"
     title="Title"
     :width="200"
@@ -28,11 +28,11 @@ Tooltipと同様に、Popoverも `Vue-popper` で構築されています。そ�
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button>Hover to activate</el-button>
+      <lx-button>Hover to activate</lx-button>
     </template>
-  </el-popover>
+  </lx-popover>
 
-  <el-popover
+  <lx-popover
     ref="popover"
     placement="right"
     title="Title"
@@ -41,11 +41,11 @@ Tooltipと同様に、Popoverも `Vue-popper` で構築されています。そ�
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button>Focus to activate</el-button>
+      <lx-button>Focus to activate</lx-button>
     </template>
-  </el-popover>
+  </lx-popover>
 
-  <el-popover
+  <lx-popover
     placement="bottom"
     title="Title"
     :width="200"
@@ -54,9 +54,9 @@ Tooltipと同様に、Popoverも `Vue-popper` で構築されています。そ�
     v-model:visible="visible"
   >
     <template #reference>
-      <el-button @click="visible = !visible">Manual to activate</el-button>
+      <lx-button @click="visible = !visible">Manual to activate</lx-button>
     </template>
-  </el-popover>
+  </lx-popover>
 </template>
 
 <script>
@@ -93,20 +93,20 @@ popoverの中には、他のコンポーネントを入れ子にすることが�
 :::demo `content`属性をデフォルトの`slot`に置き換えています。
 
 ```html
-<el-popover
+<lx-popover
   placement="right"
   :width="400"
   trigger="click"
 >
   <template #reference>
-    <el-button>Click to activate</el-button>
+    <lx-button>Click to activate</lx-button>
   </template>
-  <el-table :data="gridData">
-    <el-table-column width="150" property="date" label="date"></el-table-column>
-    <el-table-column width="100" property="name" label="name"></el-table-column>
-    <el-table-column width="300" property="address" label="address"></el-table-column>
-  </el-table>
-</el-popover>
+  <lx-table :data="gridData">
+    <lx-table-column width="150" property="date" label="date"></lx-table-column>
+    <lx-table-column width="100" property="name" label="name"></lx-table-column>
+    <lx-table-column width="300" property="address" label="address"></lx-table-column>
+  </lx-table>
+</lx-popover>
 
 <script>
   export default {
@@ -181,20 +181,20 @@ popoverの中には、他のコンポーネントを入れ子にすることが�
 
 :::demo
 ```html
-<el-popover
+<lx-popover
   placement="top"
   :width="160"
   v-model:visible="visible"
 >
   <p>Are you sure to delete this?</p>
   <div style="text-align: right; margin: 0">
-    <el-button size="mini" type="text" @click="visible = false">cancel</el-button>
-    <el-button type="primary" size="mini" @click="visible = false">confirm</el-button>
+    <lx-button size="mini" type="text" @click="visible = false">cancel</lx-button>
+    <lx-button type="primary" size="mini" @click="visible = false">confirm</lx-button>
   </div>
   <template #reference>
-    <el-button @click="visible = true">Delete</el-button>
+    <lx-button @click="visible = true">Delete</lx-button>
   </template>
-</el-popover>
+</lx-popover>
 
 <script>
   export default {

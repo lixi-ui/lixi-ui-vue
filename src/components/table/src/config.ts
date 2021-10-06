@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import ElCheckbox from '@element-plus/components/checkbox'
+import LxCheckbox from '@element-plus/components/checkbox'
 import { getPropByPath } from '@element-plus/utils/util'
 
 import type { TableColumnCtx } from './table-column/defaults'

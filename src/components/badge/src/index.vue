@@ -22,7 +22,7 @@
 import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'ElBadge',
+  name: 'LxBadge',
   props: {
     value: {
       type: [String, Number],

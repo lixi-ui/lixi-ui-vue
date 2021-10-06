@@ -16,5 +16,5 @@ const _Breadcrumb = Breadcrumb as any as SFCWithInstall<typeof Breadcrumb> & {
 }
 
 export default _Breadcrumb
-export const ElBreadcrumb = _Breadcrumb
-export const ElBreadcrumbItem = BreadcrumbItem
+export const LxBreadcrumb = _Breadcrumb
+export const LxBreadcrumbItem = BreadcrumbItem

@@ -7,9 +7,9 @@ dialog はdialogボックスをポップアップ表示します。
 :::demo `model-value / v-model` 属性に `Boolean` を設定し、それが `true` のときにdialogを表示します。dialogは `body` と `footer` の2つの部分からなり、後者は `footer` という名前の `スロット` を必要とします。オプションの `title` 属性 (デフォルトでは空) はタイトルを定義するためのものです。最後に、この例では `before-close` がどのように使われるかを示します。
 
 ```html
-<el-button type="text" @click="dialogVisible = true">click to open the Dialog</el-button>
+<lx-button type="text" @click="dialogVisible = true">click to open the Dialog</lx-button>
 
-<el-dialog
+<lx-dialog
   title="Tips"
   v-model="dialogVisible"
   width="30%"
@@ -17,11 +17,11 @@ dialog はdialogボックスをポップアップ表示します。
   <span>This is a message</span>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="dialogVisible = false">Cancel</el-button>
-      <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
+      <lx-button @click="dialogVisible = false">Cancel</lx-button>
+      <lx-button type="primary" @click="dialogVisible = false">Confirm</lx-button>
     </span>
   </template>
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -45,14 +45,14 @@ dialog はdialogボックスをポップアップ表示します。
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       const dialogVisible = ref(false);
       
       const handleClose = (done) => {
-        ElMessageBox
+        LxMessageBox
           .confirm('Are you sure to close this dialog?')
           .then((_) => {
             done();
@@ -82,38 +82,38 @@ dialog の内容は何でも構いません、テーブルやフォームであ�
 :::demo
 
 ```html
-<el-button type="text" @click="dialogTableVisible = true">open a Table nested Dialog</el-button>
+<lx-button type="text" @click="dialogTableVisible = true">open a Table nested Dialog</lx-button>
 
-<el-dialog title="Shipping address" v-model="dialogTableVisible">
-  <el-table :data="gridData">
-    <el-table-column property="date" label="Date" width="150"></el-table-column>
-    <el-table-column property="name" label="Name" width="200"></el-table-column>
-    <el-table-column property="address" label="Address"></el-table-column>
-  </el-table>
-</el-dialog>
+<lx-dialog title="Shipping address" v-model="dialogTableVisible">
+  <lx-table :data="gridData">
+    <lx-table-column property="date" label="Date" width="150"></lx-table-column>
+    <lx-table-column property="name" label="Name" width="200"></lx-table-column>
+    <lx-table-column property="address" label="Address"></lx-table-column>
+  </lx-table>
+</lx-dialog>
 
 <!-- Form -->
-<el-button type="text" @click="dialogFormVisible = true">open a Form nested Dialog</el-button>
+<lx-button type="text" @click="dialogFormVisible = true">open a Form nested Dialog</lx-button>
 
-<el-dialog title="Shipping address" v-model="dialogFormVisible">
-  <el-form :model="form">
-    <el-form-item label="Promotion name" :label-width="formLabelWidth">
-      <el-input v-model="form.name" autocomplete="off"></el-input>
-    </el-form-item>
-    <el-form-item label="Zones" :label-width="formLabelWidth">
-      <el-select v-model="form.region" placeholder="Please select a zone">
-        <el-option label="Zone No.1" value="shanghai"></el-option>
-        <el-option label="Zone No.2" value="beijing"></el-option>
-      </el-select>
-    </el-form-item>
-  </el-form>
+<lx-dialog title="Shipping address" v-model="dialogFormVisible">
+  <lx-form :model="form">
+    <lx-form-item label="Promotion name" :label-width="formLabelWidth">
+      <lx-input v-model="form.name" autocomplete="off"></lx-input>
+    </lx-form-item>
+    <lx-form-item label="Zones" :label-width="formLabelWidth">
+      <lx-select v-model="form.region" placeholder="Please select a zone">
+        <lx-option label="Zone No.1" value="shanghai"></lx-option>
+        <lx-option label="Zone No.2" value="beijing"></lx-option>
+      </lx-select>
+    </lx-form-item>
+  </lx-form>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="dialogFormVisible = false">Cancel</el-button>
-      <el-button type="primary" @click="dialogFormVisible = false">Confirm</el-button>
+      <lx-button @click="dialogFormVisible = false">Cancel</lx-button>
+      <lx-button type="primary" @click="dialogFormVisible = false">Confirm</lx-button>
     </span>
   </template>
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -214,22 +214,22 @@ dialog の内容は何でも構いません、テーブルやフォームであ�
 :::demo  通常、ネストになったdialogを使うことはお勧めしません。複数のdialogをページ上でレンダリングしたい場合は、単にそれらをフラットにして隣接することができます。dialogを別のdialogの中に入れ子にしなければならない場合は、入れ子にしたdialogの `append-to-body` を true に設定すると、親ノードではなくボディに追加され、両方のdialogが正しくレンダリングされます。
 ```html
 <template>
-  <el-button type="text" @click="outerVisible = true">open the outer Dialog</el-button>
+  <lx-button type="text" @click="outerVisible = true">open the outer Dialog</lx-button>
 
-  <el-dialog title="Outer Dialog" v-model="outerVisible">
-    <el-dialog
+  <lx-dialog title="Outer Dialog" v-model="outerVisible">
+    <lx-dialog
         width="30%"
         title="Inner Dialog"
         v-model="innerVisible"
         append-to-body>
-    </el-dialog>
+    </lx-dialog>
     <template #footer>
       <div class="dialog-footer">
-        <el-button @click="outerVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="innerVisible = true">open the inner Dialog</el-button>
+        <lx-button @click="outerVisible = false">Cancel</lx-button>
+        <lx-button type="primary" @click="innerVisible = true">open the inner Dialog</lx-button>
       </div>
     </template>
-  </el-dialog>
+  </lx-dialog>
 </template>
 
 <script>
@@ -267,9 +267,9 @@ dialogの内容を中央揃えにすることができます。
 :::demo `center` を `true` に設定すると、dialogのヘッダとフッタを水平方向に中央揃えにします。`center`はDialogのヘッダとフッタにのみ影響します。dialogのボディは何でもいいので、中央揃えにすると見栄えが悪くなることがあります。ボディも中央揃えにしたい場合は、CSSを書く必要があります。
 
 ```html
-<el-button type="text" @click="centerDialogVisible = true">Click to open the Dialog</el-button>
+<lx-button type="text" @click="centerDialogVisible = true">Click to open the Dialog</lx-button>
 
-<el-dialog
+<lx-dialog
   title="Warning"
   v-model="centerDialogVisible"
   width="30%"
@@ -277,11 +277,11 @@ dialogの内容を中央揃えにすることができます。
   <span>It should be noted that the content will not be aligned in center by default</span>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="centerDialogVisible = false">Cancel</el-button>
-      <el-button type="primary" @click="centerDialogVisible = false">Confirm</el-button>
+      <lx-button @click="centerDialogVisible = false">Cancel</lx-button>
+      <lx-button type="primary" @click="centerDialogVisible = false">Confirm</lx-button>
     </span>
   </template>
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -321,9 +321,9 @@ When this is feature is enabled, the content under default slot will be destroye
 :::demo Note that by enabling this feature, the content will not be rendered before `transition.beforeEnter` dispatched, there will only be `overlay` `header(if any)` `footer(if any)`.
 
 ```html
-<el-button type="text" @click="centerDialogVisible = true">Click to open Dialog</el-button>
+<lx-button type="text" @click="centerDialogVisible = true">Click to open Dialog</lx-button>
 
-<el-dialog
+<lx-dialog
   title="Notice"
   v-model="centerDialogVisible"
   width="30%"
@@ -335,12 +335,12 @@ When this is feature is enabled, the content under default slot will be destroye
   </div>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="centerDialogVisible = false">Cancel</el-button>
-      <el-button type="primary" @click="centerDialogVisible = false">Confirm</el-button>
+      <lx-button @click="centerDialogVisible = false">Cancel</lx-button>
+      <lx-button type="primary" @click="centerDialogVisible = false">Confirm</lx-button>
     </span>
   </template>
 
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {

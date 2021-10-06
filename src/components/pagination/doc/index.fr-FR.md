@@ -9,17 +9,17 @@ Si vous avez beaucoup de données à afficher sur une seule page, il est préfé
 ```html
 <div class="block">
   <span class="demonstration">Quand vous avez quelques pages</span>
-  <el-pagination
+  <lx-pagination
     layout="prev, pager, next"
     :total="50">
-  </el-pagination>
+  </lx-pagination>
 </div>
 <div class="block">
   <span class="demonstration">Quand vous avez plus que 7 pages</span>
-  <el-pagination
+  <lx-pagination
     layout="prev, pager, next"
     :total="1000">
-  </el-pagination>
+  </lx-pagination>
 </div>
 ```
 :::
@@ -29,12 +29,12 @@ Si vous avez beaucoup de données à afficher sur une seule page, il est préfé
 :::demo Par défaut, Pagination réduit les boutons lorsqu'il y a plus de 7 pages. Ce nombre est configurable avec l'attribut `pager-count`.
 
 ```html
-<el-pagination
+<lx-pagination
   :page-size="20"
   :pager-count="11"
   layout="prev, pager, next"
   :total="1000">
-</el-pagination>
+</lx-pagination>
 ```
 :::
 
@@ -43,11 +43,11 @@ Si vous avez beaucoup de données à afficher sur une seule page, il est préfé
 :::demo Réglez l'attribut `background` pour change la couleur de fond des boutons.
 
 ```html
-<el-pagination
+<lx-pagination
   background
   layout="prev, pager, next"
   :total="1000">
-</el-pagination>
+</lx-pagination>
 ```
 :::
 
@@ -58,11 +58,11 @@ Utilisez une pagination de taille réduite si vous manquez d'espace.
 :::demo Ajoutez simplement l'attribut `small` et la pagination sera de taille réduite.
 
 ```html
-<el-pagination
+<lx-pagination
   small
   layout="prev, pager, next"
   :total="50">
-</el-pagination>
+</lx-pagination>
 ```
 :::
 
@@ -76,18 +76,18 @@ Vous pouvez ajouter plus de modules suivant vos besoins.
 <template>
   <div class="block">
     <span class="demonstration">Total d'entrées</span>
-    <el-pagination
+    <lx-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       v-model:currentPage="currentPage1"
       :page-size="100"
       layout="total, prev, pager, next"
       :total="1000">
-    </el-pagination>
+    </lx-pagination>
   </div>
   <div class="block">
     <span class="demonstration">Changement de taille de la page</span>
-    <el-pagination
+    <lx-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       v-model:currentPage="currentPage2"
@@ -95,22 +95,22 @@ Vous pouvez ajouter plus de modules suivant vos besoins.
       :page-size="100"
       layout="sizes, prev, pager, next"
       :total="1000">
-    </el-pagination>
+    </lx-pagination>
   </div>
   <div class="block">
     <span class="demonstration">Aller à</span>
-    <el-pagination
+    <lx-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       v-model:currentPage="currentPage3"
       :page-size="100"
       layout="prev, pager, next, jumper"
       :total="1000">
-    </el-pagination>
+    </lx-pagination>
   </div>
   <div class="block">
     <span class="demonstration">Tous en même temps</span>
-    <el-pagination
+    <lx-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       v-model:currentPage="currentPage4"
@@ -118,7 +118,7 @@ Vous pouvez ajouter plus de modules suivant vos besoins.
       :page-size="100"
       layout="total, sizes, prev, pager, next, jumper"
       :total="400">
-    </el-pagination>
+    </lx-pagination>
   </div>
 </template>
 <script>
@@ -178,13 +178,13 @@ Lorsqu'il n'y a qu'une seule page, il est possible de cacher la pagination avec 
 :::demo
 ```html
 <div>
- <el-switch v-model="value">
- </el-switch>
- <el-pagination
+ <lx-switch v-model="value">
+ </lx-switch>
+ <lx-pagination
   :hide-on-single-page="value"
   :total="5"
   layout="prev, pager, next">
-</el-pagination>
+</lx-pagination>
 </div>
 
 <script>

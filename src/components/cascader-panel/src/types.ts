@@ -51,7 +51,7 @@ export interface Tag {
   closable: boolean
 }
 
-export interface ElCascaderPanelContext {
+export interface LxCascaderPanelContext {
   config: CascaderConfig
   expandingNode: Nullable<CascaderNode>
   checkedNodes: CascaderNode[]

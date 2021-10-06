@@ -12,23 +12,23 @@ The current value is displayed when the slider is being dragged.
 <template>
   <div class="block">
     <span class="demonstration">Default value</span>
-    <el-slider v-model="value1"></el-slider>
+    <lx-slider v-model="value1"></lx-slider>
   </div>
   <div class="block">
     <span class="demonstration">Customized initial value</span>
-    <el-slider v-model="value2"></el-slider>
+    <lx-slider v-model="value2"></lx-slider>
   </div>
   <div class="block">
     <span class="demonstration">Hide Tooltip</span>
-    <el-slider v-model="value3" :show-tooltip="false"></el-slider>
+    <lx-slider v-model="value3" :show-tooltip="false"></lx-slider>
   </div>
   <div class="block">
     <span class="demonstration">Format Tooltip</span>
-    <el-slider v-model="value4" :format-tooltip="formatTooltip"></el-slider>
+    <lx-slider v-model="value4" :format-tooltip="formatTooltip"></lx-slider>
   </div>
   <div class="block">
     <span class="demonstration">Disabled</span>
-    <el-slider v-model="value5" disabled></el-slider>
+    <lx-slider v-model="value5" disabled></lx-slider>
   </div>
 </template>
 
@@ -63,18 +63,18 @@ The options can be discrete.
 <template>
   <div class="block">
     <span class="demonstration">Breakpoints not displayed</span>
-    <el-slider
+    <lx-slider
       v-model="value1"
       :step="10">
-    </el-slider>
+    </lx-slider>
   </div>
   <div class="block">
     <span class="demonstration">Breakpoints displayed</span>
-    <el-slider
+    <lx-slider
       v-model="value2"
       :step="10"
       show-stops>
-    </el-slider>
+    </lx-slider>
   </div>
 </template>
 
@@ -100,10 +100,10 @@ Set value via a input box.
 ```html
 <template>
   <div class="block">
-    <el-slider
+    <lx-slider
       v-model="value"
       show-input>
-    </el-slider>
+    </lx-slider>
   </div>
 </template>
 
@@ -127,12 +127,12 @@ Selecting a range of values is supported.
 ```html
 <template>
   <div class="block">
-    <el-slider
+    <lx-slider
       v-model="value"
       range
       show-stops
       :max="10">
-    </el-slider>
+    </lx-slider>
   </div>
 </template>
 
@@ -154,11 +154,11 @@ Selecting a range of values is supported.
 ```html
 <template>
   <div class="block">
-    <el-slider
+    <lx-slider
       v-model="value"
       vertical
       height="200px">
-    </el-slider>
+    </lx-slider>
   </div>
 </template>
 
@@ -180,11 +180,11 @@ Selecting a range of values is supported.
 ```html
 <template>
   <div class="block">
-    <el-slider
+    <lx-slider
       v-model="value"
       range
       :marks="marks">
-    </el-slider>
+    </lx-slider>
   </div>
 </template>
 

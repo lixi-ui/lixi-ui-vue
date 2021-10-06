@@ -1,6 +1,6 @@
 <template>
   <transition name="fade-in-linear" @after-leave="$emit('vanish')">
-    <el-overlay
+    <lx-overlay
       v-show="visible"
       :z-index="zIndex"
       :overlay-class="['is-message-box', modalClass]"
@@ -58,7 +58,7 @@
             </div>
           </div>
           <div v-show="showInput" class="el-message-box__input">
-            <el-input
+            <lx-input
               ref="inputRef"
               v-model="inputValue"
               :type="inputType"
@@ -77,7 +77,7 @@
           </div>
         </div>
         <div class="el-message-box__btns">
-          <el-button
+          <lx-button
             v-if="showCancelButton"
             :loading="cancelButtonLoading"
             :class="[cancelButtonClass]"
@@ -87,8 +87,8 @@
             @keydown.prevent.enter="handleAction('cancel')"
           >
             {{ cancelButtonText || t('el.messagebox.cancel') }}
-          </el-button>
-          <el-button
+          </lx-button>
+          <lx-button
             v-show="showConfirmButton"
             ref="confirmRef"
             :loading="confirmButtonLoading"
@@ -100,10 +100,10 @@
             @keydown.prevent.enter="handleAction('confirm')"
           >
             {{ confirmButtonText || t('el.messagebox.confirm') }}
-          </el-button>
+          </lx-button>
         </div>
       </div>
-    </el-overlay>
+    </lx-overlay>
   </transition>
 </template>
 <script lang="ts">
@@ -118,7 +118,7 @@ import {
   ref,
   toRefs,
 } from 'vue'
-import ElButton from '@element-plus/components/button'
+import LxButton from '@element-plus/components/button'
 import { TrapFocus } from '@element-plus/directives'
 import {
   useModal,
@@ -127,8 +127,8 @@ import {
   useRestoreActive,
   usePreventGlobal,
 } from '@element-plus/hooks'
-import ElInput from '@element-plus/components/input'
-import { Overlay as ElOverlay } from '@element-plus/components/overlay'
+import LxInput from '@element-plus/components/input'
+import { Overlay as LxOverlay } from '@element-plus/components/overlay'
 import PopupManager from '@element-plus/utils/popup-manager'
 import { on, off } from '@element-plus/utils/dom'
 import { EVENT_CODE } from '@element-plus/utils/aria'
@@ -146,14 +146,14 @@ const TypeMap: Indexable<string> = {
 }
 
 export default defineComponent({
-  name: 'ElMessageBox',
+  name: 'LxMessageBox',
   directives: {
     TrapFocus,
   },
   components: {
-    ElButton,
-    ElInput,
-    ElOverlay,
+    LxButton,
+    LxInput,
+    LxOverlay,
   },
   inheritAttrs: false,
   props: {

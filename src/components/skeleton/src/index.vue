@@ -3,8 +3,8 @@
     <div :class="['el-skeleton', animated ? 'is-animated' : '', ]" v-bind="$attrs">
       <template v-for="i in count" :key="i">
         <slot v-if="loading" :key="i" name="template">
-          <el-skeleton-item class="is-first" variant="p" />
-          <el-skeleton-item
+          <lx-skeleton-item class="is-first" variant="p" />
+          <lx-skeleton-item
             v-for="item in rows"
             :key="item"
             :class="{
@@ -28,7 +28,7 @@ import { useThrottleRender } from '@element-plus/hooks'
 import SkeletonItem from './item.vue'
 
 export default defineComponent({
-  name: 'ElSkeleton',
+  name: 'LxSkeleton',
   components: {
     [SkeletonItem.name]: SkeletonItem,
   },

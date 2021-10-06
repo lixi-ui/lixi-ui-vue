@@ -14,7 +14,7 @@ import { defineComponent, provide, ref, onMounted } from 'vue'
 import type { IBreadcrumbProps } from './breadcrumb'
 
 export default defineComponent({
-  name: 'ElBreadcrumb',
+  name: 'LxBreadcrumb',
   props: {
     separator: {
       type: String,
@@ -31,7 +31,7 @@ export default defineComponent({
     provide<IBreadcrumbProps>('breadcrumb', props)
 
     onMounted(() => {
-      const items = breadcrumb.value.querySelectorAll('.el-breadcrumb__item')
+      const items = breadcrumb.value.querySelectorAll('.lx-breadcrumb__item')
       if (items.length) {
         items[items.length - 1].setAttribute('aria-current', 'page')
       }

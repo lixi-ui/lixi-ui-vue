@@ -16,7 +16,7 @@ import type { ExtractPropTypes } from 'vue'
 import type { Alignment, GridCache, ListItem, ItemSize } from '../types'
 
 const { max, min, floor } = Math
-const SCOPE = 'ElDynamicSizeGrid'
+const SCOPE = 'LxDynamicSizeGrid'
 
 type Props = ExtractPropTypes<typeof DefaultGridProps>
 type CacheItemType = 'column' | 'row'
@@ -258,7 +258,7 @@ const getOffset = (
 }
 
 const FixedSizeGrid = createGrid({
-  name: 'ElDynamicSizeGrid',
+  name: 'LxDynamicSizeGrid',
   getColumnPosition: (props, idx, cache) => {
     const item = getItemFromCache(props, idx, cache, 'column')
     return [item.size, item.offset]

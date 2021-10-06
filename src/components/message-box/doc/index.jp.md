@@ -12,7 +12,7 @@
 :::demo `$alert` メソッドを呼び出してアラートを開きます。これはシステムの `alert` をシミュレートしたものであり、ESCを押したりボックスの外をクリックしたりして閉じることはできません。この例では、`message` と `title` の2つのパラメータを受け取っている。ボックスが閉じられると `Promise` オブジェクトが返され、さらなる処理が行われます。ターゲットブラウザが `Promise` をサポートしているかどうかわからない場合は、この例のようにサードパーティのポリフィルをインポートするか、コールバックを使用してください。
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open the Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open the Message Box</lx-button>
 </template>
 
 <script>
@@ -36,13 +36,13 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.alert('This is a message', 'Title', {
+        LxMessageBox.alert('This is a message', 'Title', {
           confirmButtonText: 'OK',
           callback: (action) => {
             this.$message({
@@ -72,7 +72,7 @@
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open the Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open the Message Box</lx-button>
 </template>
 
 <script>
@@ -102,25 +102,25 @@
 <setup>
 
 import { defineComponent } from 'vue';
-import { ElMessageBox } from 'element-plus';
-import { ElMessage } from 'element-plus';
+import { LxMessageBox } from 'element-plus';
+import { LxMessage } from 'element-plus';
 
 export default defineComponent({
   setup() {
     
 
     const open = () => {
-      ElMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
+      LxMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
         confirmButtonText: 'OK',
         cancelButtonText: 'Cancel',
         type: 'warning',
       }).then(() => {
-        ElMessage({
+        LxMessage({
           type: 'success',
           message: 'Delete completed',
         });
       }).catch(() => {
-        ElMessage({
+        LxMessage({
           type: 'info',
           message: 'Delete canceled',
         });
@@ -147,7 +147,7 @@ export default defineComponent({
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -178,27 +178,27 @@ export default defineComponent({
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.prompt('Please input your e-mail', 'Tip', {
+        LxMessageBox.prompt('Please input your e-mail', 'Tip', {
           confirmButtonText: 'OK',
           cancelButtonText: 'Cancel',
           inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
           inputErrorMessage: 'Invalid Email',
         })
           .then(({ value }) => {
-            ElMessage({
+            LxMessage({
               type: 'success',
               message: `Your email is:${value}`,
             });
           })
           .catch(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: 'Input canceled',
             });
@@ -224,7 +224,7 @@ export default defineComponent({
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -270,14 +270,14 @@ export default defineComponent({
 <setup>
 
 import { defineComponent, h } from 'vue';
-import { ElMessage } from 'element-plus';
+import { LxMessage } from 'element-plus';
 
 export default defineComponent({
   setup() {
     
 
     const open = () => {
-      ElMessageBox({
+      LxMessageBox({
         title: 'Message',
         message: h('p', null, [
           h('span', null, 'Message can be '),
@@ -301,7 +301,7 @@ export default defineComponent({
           }
         },
       }).then((action) => {
-        ElMessage({
+        LxMessage({
           type: 'info',
           message: `action: ${action}`,
         });
@@ -331,7 +331,7 @@ MessageBoxの内容は `VNode` にすることができ、カスタムコンポ�
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -349,13 +349,13 @@ MessageBoxの内容は `VNode` にすることができ、カスタムコンポ�
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.alert('<strong>proxy is <i>HTML</i> string</strong>', 'HTML String', {
+        LxMessageBox.alert('<strong>proxy is <i>HTML</i> string</strong>', 'HTML String', {
           dangerouslyUseHTMLString: true,
         });
       };
@@ -383,7 +383,7 @@ MessageBoxの内容は `VNode` にすることができ、カスタムコンポ�
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -417,26 +417,26 @@ MessageBoxの内容は `VNode` にすることができ、カスタムコンポ�
 <setup>
 
 import { defineComponent } from 'vue';
-import { ElMessageBox } from 'element-plus';
-import { ElMessage } from 'element-plus';
+import { LxMessageBox } from 'element-plus';
+import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
 
       const open = () => {
-        ElMessageBox.confirm('You have unsaved changes, save and proceed?', 'Confirm', {
+        LxMessageBox.confirm('You have unsaved changes, save and proceed?', 'Confirm', {
           distinguishCancelAndClose: true,
           confirmButtonText: 'Save',
           cancelButtonText: 'Discard Changes',
         })
           .then(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: 'Changes saved. Proceeding to a new route.',
             });
           })
           .catch((action) => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: action === 'cancel'
                 ? 'Changes discarded. Proceeding to a new route.'
@@ -463,7 +463,7 @@ import { ElMessage } from 'element-plus';
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -494,25 +494,25 @@ import { ElMessage } from 'element-plus';
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
 
       const open = () => {
-        ElMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
+        LxMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
           confirmButtonText: 'OK',
           cancelButtonText: 'Cancel',
           type: 'warning',
           center: true,
         }).then(() => {
-          ElMessage({
+          LxMessage({
             type: 'success',
             message: 'Delete completed',
           });
         }).catch(() => {
-          ElMessage({
+          LxMessage({
             type: 'info',
             message: 'Delete canceled',
           });
@@ -543,7 +543,7 @@ Element Plusが完全にインポートされている場合、Vue.prototypeに�
 オンデマンドで `MessageBox` をインポートしたい場合:
 
 ```javascript
-import { ElMessageBox } from 'element-plus';
+import { LxMessageBox } from 'element-plus';
 ```
 
 対応するメソッドは以下の通り: 対応するメソッドは `ElMessageBox`, `ElMessageBox.alert`, `ElMessageBox.confirm`, `ElMessageBox.prompt` である。パラメータは上記と同じである。

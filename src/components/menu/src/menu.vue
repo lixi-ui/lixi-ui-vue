@@ -17,8 +17,8 @@ import {
 import mitt from 'mitt'
 import { Resize } from '@element-plus/directives'
 import Menubar from '@element-plus/utils/menu/menu-bar'
-import ElMenuCollapseTransition from './menu-collapse-transition.vue'
-import ElSubMenu from './submenu.vue'
+import LxMenuCollapseTransition from './menu-collapse-transition.vue'
+import LxSubMenu from './submenu.vue'
 import useMenuColor from './useMenuColor'
 
 import type {
@@ -29,13 +29,13 @@ import type {
 } from './menu.type'
 
 export default defineComponent({
-  name: 'ElMenu',
+  name: 'LxMenu',
   directives: {
     Resize,
   },
   components: {
-    ElMenuCollapseTransition,
-    ElSubMenu,
+    LxMenuCollapseTransition,
+    LxSubMenu,
   },
   props: {
     mode: {

@@ -8,7 +8,7 @@ import { defineComponent } from 'vue'
 import { addClass, removeClass, hasClass } from '@element-plus/utils/dom'
 
 export default defineComponent({
-  name: 'ElMenuCollapseTransition',
+  name: 'LxMenuCollapseTransition',
   setup() {
     return {
       on: {

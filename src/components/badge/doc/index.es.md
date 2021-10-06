@@ -9,36 +9,36 @@ Muestra la cantidad de mensajes nuevos.
 :::demo La cantidad está definida por `value` que acepta `Number` o `String`.
 
 ```html
-<el-badge :value="12" class="item">
-  <el-button size="small">comments</el-button>
-</el-badge>
-<el-badge :value="3" class="item">
-  <el-button size="small">replies</el-button>
-</el-badge>
-<el-badge :value="1" class="item" type="primary">
-  <el-button size="small">comments</el-button>
-</el-badge>
-<el-badge :value="2" class="item" type="warning">
-  <el-button size="small">replies</el-button>
-</el-badge>
+<lx-badge :value="12" class="item">
+  <lx-button size="small">comments</lx-button>
+</lx-badge>
+<lx-badge :value="3" class="item">
+  <lx-button size="small">replies</lx-button>
+</lx-badge>
+<lx-badge :value="1" class="item" type="primary">
+  <lx-button size="small">comments</lx-button>
+</lx-badge>
+<lx-badge :value="2" class="item" type="warning">
+  <lx-button size="small">replies</lx-button>
+</lx-badge>
 
-<el-dropdown trigger="click">
+<lx-dropdown trigger="click">
   <span class="el-dropdown-link">
     Click Me<i class="el-icon-caret-bottom el-icon--right"></i>
   </span>
   <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item class="clearfix">
+    <lx-dropdown-menu>
+      <lx-dropdown-item class="clearfix">
         comments
-        <el-badge class="mark" :value="12" />
-      </el-dropdown-item>
-      <el-dropdown-item class="clearfix">
+        <lx-badge class="mark" :value="12" />
+      </lx-dropdown-item>
+      <lx-dropdown-item class="clearfix">
         replies
-        <el-badge class="mark" :value="3" />
-      </el-dropdown-item>
-    </el-dropdown-menu>
+        <lx-badge class="mark" :value="3" />
+      </lx-dropdown-item>
+    </lx-dropdown-menu>
   </template>
-</el-dropdown>
+</lx-dropdown>
 
 <style>
 .item {
@@ -53,15 +53,15 @@ Muestra la cantidad de mensajes nuevos.
 
 Se puede personalizar el valor máximo.
 
-:::demo El valor máximo se define como `max` el cual es un `Number`. Nota: solo funciona si `value` es también un `Number`.
+:::demo Lx valor máximo se define como `max` el cual es un `Number`. Nota: solo funciona si `value` es también un `Number`.
 
 ```html
-<el-badge :value="200" :max="99" class="item">
-  <el-button size="small">comments</el-button>
-</el-badge>
-<el-badge :value="100" :max="10" class="item">
-  <el-button size="small">replies</el-button>
-</el-badge>
+<lx-badge :value="200" :max="99" class="item">
+  <lx-button size="small">comments</lx-button>
+</lx-badge>
+<lx-badge :value="100" :max="10" class="item">
+  <lx-button size="small">replies</lx-button>
+</lx-badge>
 
 <style>
 .item {
@@ -79,12 +79,12 @@ Mostrar texto en vez de números.
 :::demo Cuando `value` es un `String`, puede mostrar texto personalizado.
 
 ```html
-<el-badge value="new" class="item">
-  <el-button size="small">comments</el-button>
-</el-badge>
-<el-badge value="hot" class="item">
-  <el-button size="small">replies</el-button>
-</el-badge>
+<lx-badge value="new" class="item">
+  <lx-button size="small">comments</lx-button>
+</lx-badge>
+<lx-badge value="hot" class="item">
+  <lx-button size="small">replies</lx-button>
+</lx-badge>
 
 <style>
 .item {
@@ -102,10 +102,10 @@ Puede utilizar un punto rojo para marcar contenido que debe ser notado.
 :::demo Use el atributo `is-dot`. Es un `Boolean`.
 
 ```html
-<el-badge is-dot class="item">query</el-badge>
-<el-badge is-dot class="item">
-  <el-button class="share-button" icon="el-icon-share" type="primary"></el-button>
-</el-badge>
+<lx-badge is-dot class="item">query</lx-badge>
+<lx-badge is-dot class="item">
+  <lx-button class="share-button" icon="el-icon-share" type="primary"></lx-button>
+</lx-badge>
 
 <style>
 .item {

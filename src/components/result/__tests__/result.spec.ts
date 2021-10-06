@@ -7,7 +7,7 @@ describe('Result.vue', () => {
   const mount = makeMount(Result, {})
   test('render test', () => {
     const wrapper = mount()
-    expect(wrapper.find('.el-result__icon').exists()).toBe(true)
+    expect(wrapper.find('.lx-result__icon').exists()).toBe(true)
     expect(wrapper.classes()).toContain('el-result')
   })
 
@@ -17,7 +17,7 @@ describe('Result.vue', () => {
         title: AXIOM,
       },
     })
-    expect(wrapper.find('.el-result__title').text()).toBe(AXIOM)
+    expect(wrapper.find('.lx-result__title').text()).toBe(AXIOM)
   })
 
   test('should render sub-title props', () => {
@@ -26,7 +26,7 @@ describe('Result.vue', () => {
         subTitle: AXIOM,
       },
     })
-    expect(wrapper.find('.el-result__subtitle').text()).toBe(AXIOM)
+    expect(wrapper.find('.lx-result__subtitle').text()).toBe(AXIOM)
   })
 
   test('should render icon props', async () => {
@@ -35,23 +35,23 @@ describe('Result.vue', () => {
         icon: 'success',
       },
     })
-    expect(wrapper.find('.el-result__icon svg').exists()).toBe(true)
-    expect(wrapper.find('.el-result__icon svg').classes()).toContain('icon-success')
+    expect(wrapper.find('.lx-result__icon svg').exists()).toBe(true)
+    expect(wrapper.find('.lx-result__icon svg').classes()).toContain('icon-success')
     await wrapper.setProps({
       icon: 'error',
     })
-    expect(wrapper.find('.el-result__icon svg').exists()).toBe(true)
-    expect(wrapper.find('.el-result__icon svg').classes()).toContain('icon-error')
+    expect(wrapper.find('.lx-result__icon svg').exists()).toBe(true)
+    expect(wrapper.find('.lx-result__icon svg').classes()).toContain('icon-error')
     await wrapper.setProps({
       icon: 'warning',
     })
-    expect(wrapper.find('.el-result__icon svg').exists()).toBe(true)
-    expect(wrapper.find('.el-result__icon svg').classes()).toContain('icon-warning')
+    expect(wrapper.find('.lx-result__icon svg').exists()).toBe(true)
+    expect(wrapper.find('.lx-result__icon svg').classes()).toContain('icon-warning')
     await wrapper.setProps({
       icon: 'info',
     })
-    expect(wrapper.find('.el-result__icon svg').exists()).toBe(true)
-    expect(wrapper.find('.el-result__icon svg').classes()).toContain('icon-info')
+    expect(wrapper.find('.lx-result__icon svg').exists()).toBe(true)
+    expect(wrapper.find('.lx-result__icon svg').classes()).toContain('icon-info')
   })
 
   test('should render icon slots', () => {
@@ -60,8 +60,8 @@ describe('Result.vue', () => {
         icon: AXIOM,
       },
     })
-    expect(wrapper.find('.el-result__icon').exists()).toBe(true)
-    expect(wrapper.find('.el-result__icon').text()).toBe(AXIOM)
+    expect(wrapper.find('.lx-result__icon').exists()).toBe(true)
+    expect(wrapper.find('.lx-result__icon').text()).toBe(AXIOM)
   })
 
   test('should render title slots', () => {
@@ -70,8 +70,8 @@ describe('Result.vue', () => {
         title: AXIOM,
       },
     })
-    expect(wrapper.find('.el-result__title').exists()).toBe(true)
-    expect(wrapper.find('.el-result__title').text()).toBe(AXIOM)
+    expect(wrapper.find('.lx-result__title').exists()).toBe(true)
+    expect(wrapper.find('.lx-result__title').text()).toBe(AXIOM)
   })
 
   test('should render sub-title slots', () => {
@@ -80,8 +80,8 @@ describe('Result.vue', () => {
         subTitle: AXIOM,
       },
     })
-    expect(wrapper.find('.el-result__subtitle').exists()).toBe(true)
-    expect(wrapper.find('.el-result__subtitle').text()).toBe(AXIOM)
+    expect(wrapper.find('.lx-result__subtitle').exists()).toBe(true)
+    expect(wrapper.find('.lx-result__subtitle').text()).toBe(AXIOM)
   })
 
   test('should render extra slots', () => {
@@ -90,7 +90,7 @@ describe('Result.vue', () => {
         extra: AXIOM,
       },
     })
-    expect(wrapper.find('.el-result__extra').exists()).toBe(true)
-    expect(wrapper.find('.el-result__extra').text()).toBe(AXIOM)
+    expect(wrapper.find('.lx-result__extra').exists()).toBe(true)
+    expect(wrapper.find('.lx-result__extra').text()).toBe(AXIOM)
   })
 })

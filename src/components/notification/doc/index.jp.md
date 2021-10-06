@@ -8,16 +8,16 @@
 
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     Closes automatically
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     Won't close automatically
-    </el-button>
+    </lx-button>
 </template>
 
 <script>
@@ -46,20 +46,20 @@
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Title',
           message: h('i', { style: 'color: teal' }, 'This is a reminder')
         });
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Prompt',
           message: 'This is a message that does not automatically close',
           duration: 0
@@ -84,26 +84,26 @@ success, warning, info, errorの4種類を提供しています。
 :::demo要素は4つの通知タイプを提供します。`success`, `warning`, `info`, `error` です。これらは `type` フィールドで設定され、他の値は無視される。また、`open3` や `open4` のように `type` フィールドを渡さずに直接呼び出すことができるメソッドも登録した。
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     Success
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     Warning
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open3">
     Info
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open4">
     Error
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -145,13 +145,13 @@ success, warning, info, errorの4種類を提供しています。
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Success',
           message: 'This is a success message',
           type: 'success',
@@ -159,7 +159,7 @@ success, warning, info, errorの4種類を提供しています。
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Warning',
           message: 'This is a warning message',
           type: 'warning',
@@ -167,14 +167,14 @@ success, warning, info, errorの4種類を提供しています。
       };
 
       const open3 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Info',
           message: 'This is an info message',
         });
       };
 
       const open4 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Error',
           message: 'This is an error message',
         });
@@ -200,26 +200,26 @@ success, warning, info, errorの4種類を提供しています。
 :::demo `position` 属性は、通知がどのコーナーをスライドするかを定義します。`右上`, `左上`, `右下`, `左下`のいずれかです。デフォルトは `右上`です。
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open1">
     Top Right
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open2">
     Bottom Right
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open3">
     Bottom Left
-  </el-button>
-  <el-button
+  </lx-button>
+  <lx-button
     plain
     @click="open4">
     Top Left
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -262,20 +262,20 @@ success, warning, info, errorの4種類を提供しています。
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open1 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'I\'m at the top right corner',
         });
       };
 
       const open2 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'I\'m at the bottom right corner',
           position: 'bottom-right',
@@ -283,7 +283,7 @@ success, warning, info, errorの4種類を提供しています。
       };
 
       const open3 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'I\'m at the bottom left corner',
           position: 'bottom-left',
@@ -291,7 +291,7 @@ success, warning, info, errorの4種類を提供しています。
       };
 
       const open4 = () => {
-        ElNotification({
+        LxNotification({
           title: 'Custom Position',
           message: 'I\'m at the top left corner',
           position: 'top-left',
@@ -318,11 +318,11 @@ success, warning, info, errorの4種類を提供しています。
 :::demo 通知の画面端からのオフセットをカスタマイズするために `offset` 属性を設定します。同じ瞬間のすべての Notification インスタンスは同じオフセットを持つべきであることに注意してください。
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     Notification with offset
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -342,13 +342,13 @@ success, warning, info, errorの4種類を提供しています。
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification.success({
+        LxNotification.success({
           title: 'Success',
           message: 'This is a success message',
           offset: 100,
@@ -372,11 +372,11 @@ success, warning, info, errorの4種類を提供しています。
 :::demo `dangerouslyUseHTMLString` を true に設定すると、`message` は HTML 文字列として扱われます。
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     Use HTML String
-  </el-button>
+  </lx-button>
 </template>
 
 <script>
@@ -396,13 +396,13 @@ success, warning, info, errorの4種類を提供しています。
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification({
+        LxNotification({
           title: 'HTML String',
           dangerouslyUseHTMLString: true,
           message: '<strong>This is <i>HTML</i> string</strong>',
@@ -431,11 +431,11 @@ success, warning, info, errorの4種類を提供しています。
 :::demo Set the `showClose` attribute to `false` so the notification cannot be closed by the user.
 ```html
 <template>
-  <el-button
+  <lx-button
     plain
     @click="open">
     Hide close button
-    </el-button>
+    </lx-button>
 </template>
 
 <script>
@@ -455,13 +455,13 @@ success, warning, info, errorの4種類を提供しています。
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElNotification } from 'element-plus';
+  import { LxNotification } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElNotification.success({
+        LxNotification.success({
           title: 'Info',
           message: 'This is a message without close button',
           showClose: false,
@@ -486,7 +486,7 @@ success, warning, info, errorの4種類を提供しています。
 ### ローカルインポート
 
 ```javascript
-import { ElNotification } from 'element-plus';
+import { LxNotification } from 'element-plus';
 ```
 
 この場合は `ElNotification(options)` を呼び出す必要があります。また、`ElNotification.success(options)`のように、異なるタイプのメソッドも登録しています。すべてのインスタンスを手動で閉じるには、`ElNotification.closeAll()` を呼び出すことができます。

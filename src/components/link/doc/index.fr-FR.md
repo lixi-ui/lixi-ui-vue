@@ -10,12 +10,12 @@ Lien texte basique.
 
 ```html
 <div>
-  <el-link href="https://element.eleme.io" target="_blank">défaut</el-link>
-  <el-link type="primary">primaire</el-link>
-  <el-link type="success">succès</el-link>
-  <el-link type="warning">avertissement</el-link>
-  <el-link type="danger">danger</el-link>
-  <el-link type="info">info</el-link>
+  <lx-link href="https://element.eleme.io" target="_blank">défaut</lx-link>
+  <lx-link type="primary">primaire</lx-link>
+  <lx-link type="success">succès</lx-link>
+  <lx-link type="warning">avertissement</lx-link>
+  <lx-link type="danger">danger</lx-link>
+  <lx-link type="info">info</lx-link>
 </div>
 ```
 
@@ -29,12 +29,12 @@ Lien désactivé.
 
 ```html
 <div>
-  <el-link disabled>défaut</el-link>
-  <el-link type="primary" disabled>primaire</el-link>
-  <el-link type="success" disabled>succès</el-link>
-  <el-link type="warning" disabled>avertissement</el-link>
-  <el-link type="danger" disabled>danger</el-link>
-  <el-link type="info" disabled>info</el-link>
+  <lx-link disabled>défaut</lx-link>
+  <lx-link type="primary" disabled>primaire</lx-link>
+  <lx-link type="success" disabled>succès</lx-link>
+  <lx-link type="warning" disabled>avertissement</lx-link>
+  <lx-link type="danger" disabled>danger</lx-link>
+  <lx-link type="info" disabled>info</lx-link>
 </div>
 ```
 
@@ -48,8 +48,8 @@ Lien souligné.
 
 ```html
 <div>
-  <el-link :underline="false">non souligné</el-link>
-  <el-link>Souligné</el-link>
+  <lx-link :underline="false">non souligné</lx-link>
+  <lx-link>Souligné</lx-link>
 </div>
 ```
 
@@ -63,8 +63,8 @@ Lien avec icône.
 
 ```html
 <div>
-  <el-link icon="el-icon-edit">Éditer</el-link>
-  <el-link>Vérifier<i class="el-icon-view el-icon--right"></i> </el-link>
+  <lx-link icon="el-icon-edit">Éditer</lx-link>
+  <lx-link>Vérifier<i class="el-icon-view el-icon--right"></i> </lx-link>
 </div>
 ```
 

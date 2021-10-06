@@ -8,17 +8,17 @@
 ```html
 <div class="block">
   <span class="demonstration">When you have few pages</span>
-  <el-pagination
+  <lx-pagination
     layout="prev, pager, next"
     :total="50">
-  </el-pagination>
+  </lx-pagination>
 </div>
 <div class="block">
   <span class="demonstration">When you have more than 7 pages</span>
-  <el-pagination
+  <lx-pagination
     layout="prev, pager, next"
     :total="1000">
-  </el-pagination>
+  </lx-pagination>
 </div>
 ```
 :::
@@ -27,12 +27,12 @@
 
 :::demo デフォルトでは、ページネーションは7ページを超えると余分なページャーボタンを折りたたむようになっています。これは `pager-count` 属性で設定できます。
 ```html
-<el-pagination
+<lx-pagination
   :page-size="20"
   :pager-count="11"
   layout="prev, pager, next"
   :total="1000">
-</el-pagination>
+</lx-pagination>
 ```
 :::
 
@@ -40,11 +40,11 @@
 
 :::demo `background`属性を設定すると、ボタンの背景色が設定されます。
 ```html
-<el-pagination
+<lx-pagination
   background
   layout="prev, pager, next"
   :total="1000">
-</el-pagination>
+</lx-pagination>
 ```
 :::
 
@@ -54,11 +54,11 @@
 
 :::demo `small` 属性を `true` に設定するだけで、ページネーションが小さくなります。
 ```html
-<el-pagination
+<lx-pagination
   small
   layout="prev, pager, next"
   :total="50">
-</el-pagination>
+</lx-pagination>
 ```
 :::
 
@@ -72,18 +72,18 @@
 <template>
   <div class="block">
     <span class="demonstration">Total item count</span>
-    <el-pagination
+    <lx-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       v-model:currentPage="currentPage1"
       :page-size="100"
       layout="total, prev, pager, next"
       :total="1000">
-    </el-pagination>
+    </lx-pagination>
   </div>
   <div class="block">
     <span class="demonstration">Change page size</span>
-    <el-pagination
+    <lx-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       v-model:currentPage="currentPage2"
@@ -91,22 +91,22 @@
       :page-size="100"
       layout="sizes, prev, pager, next"
       :total="1000">
-    </el-pagination>
+    </lx-pagination>
   </div>
   <div class="block">
     <span class="demonstration">Jump to</span>
-    <el-pagination
+    <lx-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       v-model:currentPage="currentPage3"
       :page-size="100"
       layout="prev, pager, next, jumper"
       :total="1000">
-    </el-pagination>
+    </lx-pagination>
   </div>
   <div class="block">
     <span class="demonstration">All combined</span>
-    <el-pagination
+    <lx-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       v-model:currentPage="currentPage4"
@@ -114,7 +114,7 @@
       :page-size="100"
       layout="total, sizes, prev, pager, next, jumper"
       :total="400">
-    </el-pagination>
+    </lx-pagination>
   </div>
 </template>
 <script>
@@ -174,13 +174,13 @@
 :::demo
 ```html
 <div>
- <el-switch v-model="value">
- </el-switch>
- <el-pagination
+ <lx-switch v-model="value">
+ </lx-switch>
+ <lx-pagination
   :hide-on-single-page="value"
   :total="5"
   layout="prev, pager, next">
-</el-pagination>
+</lx-pagination>
 </div>
 
 <script>

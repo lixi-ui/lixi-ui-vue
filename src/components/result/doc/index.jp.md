@@ -7,36 +7,36 @@ Used to give feedback on the result of user's operation or access exception.
 :::demo
 
 ```html
-<el-row>
-  <el-col :sm="12" :lg="6">
-    <el-result icon="success" title="Success Tip" subTitle="Please follow the instructions">
+<lx-row>
+  <lx-col :sm="12" :lg="6">
+    <lx-result icon="success" title="Success Tip" subTitle="Please follow the instructions">
       <template #extra>
-        <el-button type="primary" size="medium">Back</el-button>
+        <lx-button type="primary" size="medium">Back</lx-button>
       </template>
-    </el-result>
-  </el-col>
-  <el-col :sm="12" :lg="6">
-    <el-result icon="warning" title="Warning Tip" subTitle="Please follow the instructions">
+    </lx-result>
+  </lx-col>
+  <lx-col :sm="12" :lg="6">
+    <lx-result icon="warning" title="Warning Tip" subTitle="Please follow the instructions">
       <template #extra>
-        <el-button type="primary" size="medium">Back</el-button>
+        <lx-button type="primary" size="medium">Back</lx-button>
       </template>
-    </el-result>
-  </el-col>
-  <el-col :sm="12" :lg="6">
-    <el-result icon="error" title="Error Tip" subTitle="Please follow the instructions">
+    </lx-result>
+  </lx-col>
+  <lx-col :sm="12" :lg="6">
+    <lx-result icon="error" title="Error Tip" subTitle="Please follow the instructions">
       <template #extra>
-        <el-button type="primary" size="medium">Back</el-button>
+        <lx-button type="primary" size="medium">Back</lx-button>
       </template>
-    </el-result>
-  </el-col>
-  <el-col :sm="12" :lg="6">
-    <el-result icon="info" title="Info Tip" subTitle="Please follow the instructions">
+    </lx-result>
+  </lx-col>
+  <lx-col :sm="12" :lg="6">
+    <lx-result icon="info" title="Info Tip" subTitle="Please follow the instructions">
       <template #extra>
-        <el-button type="primary" size="medium">Back</el-button>
+        <lx-button type="primary" size="medium">Back</lx-button>
       </template>
-    </el-result>
-  </el-col>
-</el-row>
+    </lx-result>
+  </lx-col>
+</lx-row>
 ```
 
 :::
@@ -46,14 +46,14 @@ Used to give feedback on the result of user's operation or access exception.
 :::demo
 
 ```html
-<el-result title="404" subTitle="Sorry, request error">
+<lx-result title="404" subTitle="Sorry, request error">
   <template #icon>
-    <el-image src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></el-image>
+    <lx-image src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"></lx-image>
   </template>
   <template #extra>
-    <el-button type="primary" size="medium">Back</el-button>
+    <lx-button type="primary" size="medium">Back</lx-button>
   </template>
-</el-result>
+</lx-result>
 ```
 
 :::

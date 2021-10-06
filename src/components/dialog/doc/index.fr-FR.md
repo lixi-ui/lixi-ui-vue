@@ -9,9 +9,9 @@ Le Dialog ouvre un modal personnalisable.
 :::demo Configurez `model-value / v-model` avec un `Boolean`, un modal apparaîtra quand la valeur sera à `true`. Le Dialog possède deux parties: `body` et `footer`, ce-dernier nécessitant un `slot` appelé `footer`. L'attribut optionnel `title` (vide par défaut) définit le titre. Cet exemple montre également comment `before-close` peut être utilisé.
 
 ```html
-<el-button type="text" @click="dialogVisible = true">Cliquez pour ouvrir le modal</el-button>
+<lx-button type="text" @click="dialogVisible = true">Cliquez pour ouvrir le modal</lx-button>
 
-<el-dialog
+<lx-dialog
   title="Tips"
   v-model="dialogVisible"
   width="30%"
@@ -19,11 +19,11 @@ Le Dialog ouvre un modal personnalisable.
   <span>Ceci est un message</span>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="dialogVisible = false">Annuler</el-button>
-      <el-button type="primary" @click="dialogVisible = false">Confirmer</el-button>
+      <lx-button @click="dialogVisible = false">Annuler</lx-button>
+      <lx-button type="primary" @click="dialogVisible = false">Confirmer</lx-button>
     </span>
   </template>
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -47,14 +47,14 @@ Le Dialog ouvre un modal personnalisable.
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       const dialogVisible = ref(false);
       
       const handleClose = (done) => {
-        ElMessageBox
+        LxMessageBox
           .confirm('Voulez-vous vraiment quitter ?')
           .then((_) => {
             done();
@@ -85,38 +85,38 @@ Le contenu du modal peut être n'importe quoi, tableau ou formulaire compris.
 
 ```html
 <!-- Table -->
-<el-button type="text" @click="dialogTableVisible = true">Ouvrir un modal avec tableau</el-button>
+<lx-button type="text" @click="dialogTableVisible = true">Ouvrir un modal avec tableau</lx-button>
 
-<el-dialog title="Adresse d'expédition" v-model="dialogTableVisible">
-  <el-table :data="gridData">
-    <el-table-column property="date" label="Date" width="150"></el-table-column>
-    <el-table-column property="name" label="Nom" width="200"></el-table-column>
-    <el-table-column property="address" label="Adresse"></el-table-column>
-  </el-table>
-</el-dialog>
+<lx-dialog title="Adresse d'expédition" v-model="dialogTableVisible">
+  <lx-table :data="gridData">
+    <lx-table-column property="date" label="Date" width="150"></lx-table-column>
+    <lx-table-column property="name" label="Nom" width="200"></lx-table-column>
+    <lx-table-column property="address" label="Adresse"></lx-table-column>
+  </lx-table>
+</lx-dialog>
 
 <!-- Form -->
-<el-button type="text" @click="dialogFormVisible = true">Ouvrir un modal avec formulaire</el-button>
+<lx-button type="text" @click="dialogFormVisible = true">Ouvrir un modal avec formulaire</lx-button>
 
-<el-dialog title="Adresse d'expédition" v-model="dialogFormVisible">
-  <el-form :model="form">
-    <el-form-item label="Nom de promotion" :label-width="formLabelWidth">
-      <el-input v-model="form.name" autocomplete="off"></el-input>
-    </el-form-item>
-    <el-form-item label="Zones" :label-width="formLabelWidth">
-      <el-select v-model="form.region" placeholder="Sélectionnez une zone">
-        <el-option label="Zone No.1" value="shanghai"></el-option>
-        <el-option label="Zone No.2" value="beijing"></el-option>
-      </el-select>
-    </el-form-item>
-  </el-form>
+<lx-dialog title="Adresse d'expédition" v-model="dialogFormVisible">
+  <lx-form :model="form">
+    <lx-form-item label="Nom de promotion" :label-width="formLabelWidth">
+      <lx-input v-model="form.name" autocomplete="off"></lx-input>
+    </lx-form-item>
+    <lx-form-item label="Zones" :label-width="formLabelWidth">
+      <lx-select v-model="form.region" placeholder="Sélectionnez une zone">
+        <lx-option label="Zone No.1" value="shanghai"></lx-option>
+        <lx-option label="Zone No.2" value="beijing"></lx-option>
+      </lx-select>
+    </lx-form-item>
+  </lx-form>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="dialogFormVisible = false">Annuler</el-button>
-      <el-button type="primary" @click="dialogFormVisible = false">Confirmer</el-button>
+      <lx-button @click="dialogFormVisible = false">Annuler</lx-button>
+      <lx-button type="primary" @click="dialogFormVisible = false">Confirmer</lx-button>
     </span>
   </template>
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -219,22 +219,22 @@ Si un Dialog est imbriqué dans un autre Dialog, `append-to-body` est requis.
 :::demo Normalement l'utilisation de Dialog imbriqué est déconseillée. Si vous avez besoin de plusieurs Dialogs sur la page, vous pouvez les aplatir afin qu'ils soit au même niveau. Si vous devez absolument utiliser un Dialog imbriqué, configurez l'attribut `append-to-body` du Dialog imbriqué à `true` et il sera ajouté au body au lieu de son noeud parent, afin d'avoir un affichage correct.
 ```html
 <template>
-  <el-button type="text" @click="outerVisible = true">Ouvrir le modal extérieur</el-button>
+  <lx-button type="text" @click="outerVisible = true">Ouvrir le modal extérieur</lx-button>
 
-  <el-dialog title="Modal extérieur" v-model="outerVisible">
-    <el-dialog
+  <lx-dialog title="Modal extérieur" v-model="outerVisible">
+    <lx-dialog
         width="30%"
         title="Modal intérieur"
         v-model="innerVisible"
         append-to-body>
-    </el-dialog>
+    </lx-dialog>
     <template #footer>
       <div class="dialog-footer">
-        <el-button @click="outerVisible = false">Annuler</el-button>
-        <el-button type="primary" @click="innerVisible = true">Ouvrir le modal intérieur</el-button>
+        <lx-button @click="outerVisible = false">Annuler</lx-button>
+        <lx-button type="primary" @click="innerVisible = true">Ouvrir le modal intérieur</lx-button>
       </div>
     </template>
-  </el-dialog>
+  </lx-dialog>
 </template>
 
 <script>
@@ -273,9 +273,9 @@ Le contenu du modal peut être centré.
 :::demo Régler `center` à `true` centrera horizontalement le header et le footer. `center` n'affecte que le header et le footer. Le contenu du body pouvant être n'importe quoi, si vous désirez le centrer vous devrez ajouter des règles CSS.
 
 ```html
-<el-button type="text" @click="centerDialogVisible = true">Cliquez pour ouvrir le modal</el-button>
+<lx-button type="text" @click="centerDialogVisible = true">Cliquez pour ouvrir le modal</lx-button>
 
-<el-dialog
+<lx-dialog
   title="Attention"
   v-model="centerDialogVisible"
   width="30%"
@@ -283,11 +283,11 @@ Le contenu du modal peut être centré.
   <span>Le contenu du modal n'est pas centré par défaut.</span>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="centerDialogVisible = false">Annuler</el-button>
-      <el-button type="primary" @click="centerDialogVisible = false">Confirmer</el-button>
+      <lx-button @click="centerDialogVisible = false">Annuler</lx-button>
+      <lx-button type="primary" @click="centerDialogVisible = false">Confirmer</lx-button>
     </span>
   </template>
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {
@@ -326,9 +326,9 @@ When this is feature is enabled, the content under default slot will be destroye
 :::demo Note that by enabling this feature, the content will not be rendered before `transition.beforeEnter` dispatched, there will only be `overlay` `header(if any)` `footer(if any)`.
 
 ```html
-<el-button type="text" @click="centerDialogVisible = true">Click to open Dialog</el-button>
+<lx-button type="text" @click="centerDialogVisible = true">Click to open Dialog</lx-button>
 
-<el-dialog
+<lx-dialog
   title="Notice"
   v-model="centerDialogVisible"
   width="30%"
@@ -340,12 +340,12 @@ When this is feature is enabled, the content under default slot will be destroye
   </div>
   <template #footer>
     <span class="dialog-footer">
-      <el-button @click="centerDialogVisible = false">Cancel</el-button>
-      <el-button type="primary" @click="centerDialogVisible = false">Confirm</el-button>
+      <lx-button @click="centerDialogVisible = false">Cancel</lx-button>
+      <lx-button type="primary" @click="centerDialogVisible = false">Confirm</lx-button>
     </span>
   </template>
 
-</el-dialog>
+</lx-dialog>
 
 <script>
   export default {

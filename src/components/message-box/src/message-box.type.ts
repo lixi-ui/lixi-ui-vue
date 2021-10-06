@@ -57,7 +57,7 @@ export type Callback =
   | ((action: Action) => any)
 
 /** Options used in MessageBox */
-export interface ElMessageBoxOptions {
+export interface LxMessageBoxOptions {
 
   /** Callback before MessageBox closes, and it will prevent MessageBox from closing */
   beforeClose?: (
@@ -155,15 +155,15 @@ export interface ElMessageBoxOptions {
 
 }
 
-export type ElMessageBoxShortcutMethod =
+export type LxMessageBoxShortcutMethod =
   ((
-    message: ElMessageBoxOptions['message'],
-    title: ElMessageBoxOptions['title'],
-    options?: ElMessageBoxOptions,
+    message: LxMessageBoxOptions['message'],
+    title: LxMessageBoxOptions['title'],
+    options?: LxMessageBoxOptions,
   ) => Promise<MessageBoxData>)
   & ((
-    message: ElMessageBoxOptions['message'],
-    options?: ElMessageBoxOptions,
+    message: LxMessageBoxOptions['message'],
+    options?: LxMessageBoxOptions,
   ) => Promise<MessageBoxData>)
 
 export interface IElMessageBox {
@@ -171,16 +171,16 @@ export interface IElMessageBox {
   // (message: string, title?: string, type?: string): Promise<MessageBoxData>
 
   /** Show a message box */
-  (options: ElMessageBoxOptions): Promise<MessageBoxData>
+  (options: LxMessageBoxOptions): Promise<MessageBoxData>
 
   /** Show an alert message box */
-  alert: ElMessageBoxShortcutMethod
+  alert: LxMessageBoxShortcutMethod
 
   /** Show a confirm message box */
-  confirm: ElMessageBoxShortcutMethod
+  confirm: LxMessageBoxShortcutMethod
 
   /** Show a prompt message box */
-  prompt: ElMessageBoxShortcutMethod
+  prompt: LxMessageBoxShortcutMethod
 
   /** Close current message box */
   close(): void

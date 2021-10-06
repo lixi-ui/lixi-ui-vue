@@ -17,7 +17,7 @@ import { useSpace, defaultProps } from './useSpace'
 import type { VNode, ExtractPropTypes, Slots } from 'vue'
 
 export default defineComponent({
-  name: 'ElSpace',
+  name: 'LxSpace',
   props: defaultProps,
   setup(props) {
     return useSpace(props)

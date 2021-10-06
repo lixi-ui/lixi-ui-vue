@@ -16,7 +16,7 @@ The simplest selector
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     :options="options"
     placeholder="Please select"
@@ -49,7 +49,7 @@ The basic multi-select selector with tags
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     :options="options"
     placeholder="Please select"
@@ -82,7 +82,7 @@ The basic multi-select selector with tags
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     :options="options"
     placeholder="Please select"
@@ -117,7 +117,7 @@ When the options are overwhelmingly too many, you can use `filterable` option to
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     filterable
     :options="options"
@@ -152,7 +152,7 @@ You can choose to disable selector itself or the option.
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     filterable
     :options="options"
@@ -160,7 +160,7 @@ You can choose to disable selector itself or the option.
     style="width: 240px; margin-right: 16px; vertical-align: middle;"
     multiple
   />
-  <el-select-v2
+  <lx-select-v2
     disabled
     v-model="value"
     filterable
@@ -198,7 +198,7 @@ We can group option as we wanted, as long as the data satisfies the pattern.
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     filterable
     :options="options"
@@ -240,7 +240,7 @@ We can define our own template for rendering the option in the popup.
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     filterable
     :options="options"
@@ -254,7 +254,7 @@ We can define our own template for rendering the option in the popup.
         {{ item.value }}
       </span>
     </template>
-  </el-select-v2>
+  </lx-select-v2>
 </template>
 
 <script>
@@ -283,7 +283,7 @@ We can clear all the selected options at once, also applicable for single select
 
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value1"
     :options="options"
     placeholder="Please select"
@@ -291,7 +291,7 @@ We can clear all the selected options at once, also applicable for single select
     multiple
     clearable
   />
-  <el-select-v2
+  <lx-select-v2
     v-model="value2"
     :options="options"
     placeholder="Please select"
@@ -325,7 +325,7 @@ Crear y seleccionar nuevos items que no están incluidas en las opciones de sele
 :::demo Al utilizar el atributo `allow-create`, los usuarios pueden crear nuevos elementos escribiendo en el cuadro del input. Tenga en cuenta que para que `allow-create` funcione, `filterable` debe ser `true`.
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value1"
     :options="options"
     placeholder="Please select"
@@ -335,7 +335,7 @@ Crear y seleccionar nuevos items que no están incluidas en las opciones de sele
     multiple
     clearable
   />
-  <el-select-v2
+  <lx-select-v2
     v-model="value2"
     :options="options"
     placeholder="Please select"
@@ -371,7 +371,7 @@ Introduzca palabras y datos para buscar desde el servidor.
 :::demo Configure el valor de `filterable` y `remote` con `true` para habilitar la búsqueda remota, y debería pasar el método `remote-method`. `remote-method` es una función que se llama cuando el valor del input cambia, y su parámetro es el valor del input actual.
 ```html
 <template>
-  <el-select-v2
+  <lx-select-v2
     v-model="value"
     style="width: 240px"
     multiple

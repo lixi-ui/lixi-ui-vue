@@ -9,7 +9,7 @@ describe('Skeleton.vue', () => {
   const mount = makeMount(Skeleton, { })
   test('render test', () => {
     const wrapper = mount()
-    expect(wrapper.findAll('.el-skeleton__p')).toHaveLength(4)
+    expect(wrapper.findAll('.lx-skeleton__p')).toHaveLength(4)
     expect(wrapper.classes()).toContain('el-skeleton')
 
   })
@@ -27,13 +27,13 @@ describe('Skeleton.vue', () => {
   test('should render x times', async () => {
     const wrapper = mount()
 
-    expect(wrapper.findAll('.el-skeleton__p')).toHaveLength(4)
+    expect(wrapper.findAll('.lx-skeleton__p')).toHaveLength(4)
 
     await wrapper.setProps({
       count: 2,
     })
 
-    expect(wrapper.findAll('.el-skeleton__p')).toHaveLength(8)
+    expect(wrapper.findAll('.lx-skeleton__p')).toHaveLength(8)
   })
 
 
@@ -44,7 +44,7 @@ describe('Skeleton.vue', () => {
       },
     })
 
-    expect(wrapper.findAll('.el-skeleton__p')).toHaveLength(5)
+    expect(wrapper.findAll('.lx-skeleton__p')).toHaveLength(5)
   })
 
   test('should render default slots', () => {

@@ -8,7 +8,7 @@
     @mouseenter="states.comboBoxHovering = true"
     @mouseleave="states.comboBoxHovering = false"
   >
-    <el-popper
+    <lx-popper
       ref="popper"
       v-model:visible="dropdownMenuVisible"
       :append-to-body="popperAppendToBody"
@@ -43,7 +43,7 @@
           <div v-if="multiple" class="el-select-v2__selection">
             <template v-if="collapseTags && modelValue.length > 0">
               <div class="el-select-v2__selected-item">
-                <el-tag
+                <lx-tag
                   :closable="!selectDisabled && !states.cachedOptions[0].disable"
                   :size="collapseTagSize"
                   type="info"
@@ -56,8 +56,8 @@
                       maxWidth: `${tagMaxWidth}px`
                     }"
                   >{{ states.cachedOptions[0].label }}</span>
-                </el-tag>
-                <el-tag
+                </lx-tag>
+                <lx-tag
                   v-if="modelValue.length > 1"
                   :closable="false"
                   :size="collapseTagSize"
@@ -70,7 +70,7 @@
                       maxWidth: `${tagMaxWidth}px`
                     }"
                   >+ {{ modelValue.length - 1 }}</span>
-                </el-tag>
+                </lx-tag>
               </div>
             </template>
 
@@ -80,7 +80,7 @@
                 :key="idx"
                 class="el-select-v2__selected-item"
               >
-                <el-tag
+                <lx-tag
                   :key="getValueKey(selected)"
                   :closable="!selectDisabled && !selected.disabled"
                   :size="collapseTagSize"
@@ -94,7 +94,7 @@
                       maxWidth: `${tagMaxWidth}px`
                     }"
                   >{{ getLabel(selected) }}</span>
-                </el-tag>
+                </lx-tag>
               </div>
             </template>
             <div
@@ -210,7 +210,7 @@
         </div>
       </template>
       <template #default>
-        <el-select-menu
+        <lx-select-menu
           ref="menuRef"
           :data="filteredOptions"
           :width="popperSize"
@@ -224,9 +224,9 @@
               <p class="el-select-v2__empty">{{ emptyText ? emptyText : '' }}</p>
             </slot>
           </template>
-        </el-select-menu>
+        </lx-select-menu>
       </template>
-    </el-popper>
+    </lx-popper>
   </div>
 </template>
 
@@ -239,19 +239,19 @@ import {
   vModelText,
 } from 'vue'
 import { ClickOutside } from '@element-plus/directives'
-import ElPopper from '@element-plus/components/popper'
-import ElTag from '@element-plus/components/tag'
+import LxPopper from '@element-plus/components/popper'
+import LxTag from '@element-plus/components/tag'
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@element-plus/utils/constants'
-import ElSelectMenu from './select-dropdown.vue'
+import LxSelectMenu from './select-dropdown.vue'
 import useSelect from './useSelect'
 import { selectV2InjectionKey } from './token'
 import { SelectProps } from './defaults'
 export default defineComponent({
-  name: 'ElSelectV2',
+  name: 'LxSelectV2',
   components: {
-    ElSelectMenu,
-    ElTag,
-    ElPopper,
+    LxSelectMenu,
+    LxTag,
+    LxPopper,
   },
   directives: { ClickOutside, ModelText: vModelText },
   props: SelectProps,

@@ -69,7 +69,7 @@ import type { PropType } from 'vue'
 import type { ComponentSize } from '@element-plus/utils/types'
 
 export default defineComponent({
-  name: 'ElCheckbox',
+  name: 'LxCheckbox',
   props: {
     modelValue: {
       type: [Boolean, Number, String],

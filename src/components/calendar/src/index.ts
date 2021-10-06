@@ -9,4 +9,4 @@ Calendar.install = (app: App): void => {
 const _Calendar = Calendar as SFCWithInstall<typeof Calendar>
 
 export default _Calendar
-export const ElCalendar = _Calendar
+export const LxCalendar = _Calendar

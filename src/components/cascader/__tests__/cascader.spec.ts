@@ -21,14 +21,14 @@ const OPTIONS = [
 
 const AXIOM = 'Rem is the best girl'
 
-const TRIGGER = '.el-cascader'
-const DROPDOWN = '.el-cascader__dropdown'
-const NODE = '.el-cascader-node'
-const ARROW = '.el-icon-arrow-down'
-const CLEAR_BTN = '.el-icon-circle-close'
-const TAG = '.el-tag'
-const SUGGESTION_ITEM = '.el-cascader__suggestion-item'
-const CHECK_ICON = '.el-icon-check'
+const TRIGGER = '.lx-cascader'
+const DROPDOWN = '.lx-cascader__dropdown'
+const NODE = '.lx-cascader-node'
+const ARROW = '.lx-icon-arrow-down'
+const CLEAR_BTN = '.lx-icon-circle-close'
+const TAG = '.lx-tag'
+const SUGGESTION_ITEM = '.lx-cascader__suggestion-item'
+const CHECK_ICON = '.lx-icon-check'
 
 const _mount: typeof mount = options => mount({
   components: {
@@ -208,7 +208,7 @@ describe('Cascader.vue', () => {
     expect(tags.length).toBe(2)
     expect(firstTag.text()).toBe('Zhejiang / Hangzhou')
     expect(secondTag.text()).toBe('Zhejiang / Ningbo')
-    await firstTag.find('.el-tag__close').trigger('click')
+    await firstTag.find('.lx-tag__close').trigger('click')
     expect(wrapper.findAll(TAG).length).toBe(1)
     expect(wrapper.vm.value).toEqual([['zhejiang', 'ningbo']])
   })
@@ -281,7 +281,7 @@ describe('Cascader.vue', () => {
       },
     })
 
-    const input = wrapper.find('.el-cascader__search-input')
+    const input = wrapper.find('.lx-cascader__search-input')
     const dropdown = document.querySelector(DROPDOWN)
     ;(input.element as HTMLInputElement).value = 'Ha'
     await input.trigger('input')

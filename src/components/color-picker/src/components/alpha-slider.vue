@@ -31,7 +31,7 @@ import type Color from '../color'
 
 
 export default defineComponent({
-  name: 'ElColorAlphaSlider',
+  name: 'LxColorAlphaSlider',
   props: {
     color: {
       type: Object as PropType<Color>,

@@ -20,6 +20,6 @@ const _Checkbox = Checkbox as any as SFCWithInstall<typeof Checkbox> & {
 }
 
 export default _Checkbox
-export const ElCheckbox = _Checkbox
-export const ElCheckboxButton = CheckboxButton
-export const ElCheckboxGroup = CheckboxGroup
+export const LxCheckbox = _Checkbox
+export const LxCheckboxButton = CheckboxButton
+export const LxCheckboxGroup = CheckboxGroup

@@ -9,7 +9,7 @@ You can customize list titles, button texts, render function for data items, che
 <template>
   <p style="text-align: center; margin: 0 0 20px">Customize data items using render-content</p>
   <div style="text-align: center">
-    <el-transfer
+    <lx-transfer
       v-model="leftValue"
       style="text-align: left; display: inline-block"
       filterable
@@ -26,15 +26,15 @@ You can customize list titles, button texts, render function for data items, che
       @change="handleChange"
     >
       <template #left-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <lx-button class="transfer-footer" size="small">Operation</lx-button>
       </template>
       <template #right-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <lx-button class="transfer-footer" size="small">Operation</lx-button>
       </template>
-    </el-transfer>
+    </lx-transfer>
     <p style="text-align: center; margin: 50px 0 20px">Customize data items using scoped slot</p>
     <div style="text-align: center">
-      <el-transfer
+      <lx-transfer
         v-model="rightValue"
         style="text-align: left; display: inline-block"
         filterable
@@ -53,12 +53,12 @@ You can customize list titles, button texts, render function for data items, che
           <span>{{ option.key }} - {{ option.label }}</span>
         </template>
         <template #left-footer>
-          <el-button class="transfer-footer" size="small">Operation</el-button>
+          <lx-button class="transfer-footer" size="small">Operation</lx-button>
         </template>
         <template #right-footer>
-          <el-button class="transfer-footer" size="small">Operation</el-button>
+          <lx-button class="transfer-footer" size="small">Operation</lx-button>
         </template>
-      </el-transfer>
+      </lx-transfer>
     </div>
   </div>
 </template>
@@ -110,14 +110,14 @@ By default, Transfer looks for `key`, `label` and `disabled` in a data item. If 
 :::demo The data items in this example do not have `key`s or `label`s, instead they have `value`s and `desc`s. So you need to set aliases for `key` and `label`.
 ```html
 <template>
-  <el-transfer
+  <lx-transfer
     v-model="value"
     :props="{
       key: 'value',
       label: 'desc'
     }"
     :data="data">
-  </el-transfer>
+  </lx-transfer>
 </template>
 
 <script>

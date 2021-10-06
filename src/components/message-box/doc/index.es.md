@@ -13,7 +13,7 @@ Alert interrumpe las operaciones realizadas hasta que el usuario confirme la ale
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open the Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open the Message Box</lx-button>
 </template>
 
 <script>
@@ -37,13 +37,13 @@ Alert interrumpe las operaciones realizadas hasta que el usuario confirme la ale
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.alert('This is a message', 'Title', {
+        LxMessageBox.alert('This is a message', 'Title', {
           confirmButtonText: 'OK',
           callback: (action) => {
             this.$message({
@@ -70,11 +70,11 @@ Alert interrumpe las operaciones realizadas hasta que el usuario confirme la ale
 Confirm es utilizado para preguntar al usuario y recibir una confirmación.
 
 
-:::demo Llamando al método `$confirm` para abrir el componente confirm, y simula el sistema `confirm`. También podemos personalizar a gran medida el componente Message Box al mandar un tercer atributo llamado `options` que es literalmente un objeto. El atributo `type` indica el tipo de mensaje, y su valor puede ser `success`, `error`, `info` y `warning`. Se debe tener en cuenta que el segundo atributo `title` debe ser de tipo `string`, y si es de tipo `object`, sera manejado como el atributo `options`. Aquí utilizamos `Promise` para manejar posteriormente el proceso.
+:::demo Llamando al método `$confirm` para abrir el componente confirm, y simula el sistema `confirm`. También podemos personalizar a gran medida el componente Message Box al mandar un tercer atributo llamado `options` que es literalmente un objeto. Lx atributo `type` indica el tipo de mensaje, y su valor puede ser `success`, `error`, `info` y `warning`. Se debe tener en cuenta que el segundo atributo `title` debe ser de tipo `string`, y si es de tipo `object`, sera manejado como el atributo `options`. Aquí utilizamos `Promise` para manejar posteriormente el proceso.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open the Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open the Message Box</lx-button>
 </template>
 
 <script>
@@ -104,25 +104,25 @@ Confirm es utilizado para preguntar al usuario y recibir una confirmación.
 <setup>
 
 import { defineComponent } from 'vue';
-import { ElMessageBox } from 'element-plus';
-import { ElMessage } from 'element-plus';
+import { LxMessageBox } from 'element-plus';
+import { LxMessage } from 'element-plus';
 
 export default defineComponent({
   setup() {
     
 
     const open = () => {
-      ElMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
+      LxMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
         confirmButtonText: 'OK',
         cancelButtonText: 'Cancel',
         type: 'warning',
       }).then(() => {
-        ElMessage({
+        LxMessage({
           type: 'success',
           message: 'Delete completed',
         });
       }).catch(() => {
-        ElMessage({
+        LxMessage({
           type: 'info',
           message: 'Delete canceled',
         });
@@ -149,7 +149,7 @@ Prompt es utilizado cuando se requiere entrada de información del usuario.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -180,27 +180,27 @@ Prompt es utilizado cuando se requiere entrada de información del usuario.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.prompt('Please input your e-mail', 'Tip', {
+        LxMessageBox.prompt('Please input your e-mail', 'Tip', {
           confirmButtonText: 'OK',
           cancelButtonText: 'Cancel',
           inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
           inputErrorMessage: 'Invalid Email',
         })
           .then(({ value }) => {
-            ElMessage({
+            LxMessage({
               type: 'success',
               message: `Your email is:${value}`,
             });
           })
           .catch(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: 'Input canceled',
             });
@@ -226,7 +226,7 @@ Puede ser personalizado para mostrar diversos contenidos.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -272,14 +272,14 @@ Puede ser personalizado para mostrar diversos contenidos.
 <setup>
 
 import { defineComponent, h } from 'vue';
-import { ElMessage } from 'element-plus';
+import { LxMessage } from 'element-plus';
 
 export default defineComponent({
   setup() {
     
 
     const open = () => {
-      ElMessageBox({
+      LxMessageBox({
         title: 'Message',
         message: h('p', null, [
           h('span', null, 'Message can be '),
@@ -303,7 +303,7 @@ export default defineComponent({
           }
         },
       }).then((action) => {
-        ElMessage({
+        LxMessage({
           type: 'info',
           message: `action: ${action}`,
         });
@@ -335,7 +335,7 @@ El contenido de MessageBox puede ser `VNode`, permitiéndonos pasar componentes 
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -353,13 +353,13 @@ El contenido de MessageBox puede ser `VNode`, permitiéndonos pasar componentes 
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.alert('<strong>proxy is <i>HTML</i> string</strong>', 'HTML String', {
+        LxMessageBox.alert('<strong>proxy is <i>HTML</i> string</strong>', 'HTML String', {
           dangerouslyUseHTMLString: true,
         });
       };
@@ -388,7 +388,7 @@ En algunos casos, hacer clic en el botón Cancelar y en el botón Cerrar puede t
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -422,26 +422,26 @@ En algunos casos, hacer clic en el botón Cancelar y en el botón Cerrar puede t
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.confirm('You have unsaved changes, save and proceed?', 'Confirm', {
+        LxMessageBox.confirm('You have unsaved changes, save and proceed?', 'Confirm', {
           distinguishCancelAndClose: true,
           confirmButtonText: 'Save',
           cancelButtonText: 'Discard Changes',
         })
           .then(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: 'Changes saved. Proceeding to a new route.',
             });
           })
           .catch((action) => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: action === 'cancel'
                 ? 'Changes discarded. Proceeding to a new route.'
@@ -468,7 +468,7 @@ El contenido del componente MessageBox puede ser centrado.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Click to open Message Box</el-button>
+  <lx-button type="text" @click="open">Click to open Message Box</lx-button>
 </template>
 
 <script>
@@ -499,25 +499,25 @@ El contenido del componente MessageBox puede ser centrado.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
+        LxMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning', {
           confirmButtonText: 'OK',
           cancelButtonText: 'Cancel',
           type: 'warning',
           center: true,
         }).then(() => {
-          ElMessage({
+          LxMessage({
             type: 'success',
             message: 'Delete completed',
           });
         }).catch(() => {
-          ElMessage({
+          LxMessage({
             type: 'info',
             message: 'Delete canceled',
           });
@@ -537,7 +537,7 @@ El contenido del componente MessageBox puede ser centrado.
 
 ### Métodos Globales
 
-Si Element Plus fue importado completamente, agregara los siguientes métodos globales para `app.config.globalProperties`: `$msgbox`, `$alert`, `$confirm` y `$prompt`. Así que en una instancia de Vue puedes llamar el método `MessageBox` como lo que hicimos en esta pagina. Los parámetros son:
+Si Lxement Plus fue importado completamente, agregara los siguientes métodos globales para `app.config.globalProperties`: `$msgbox`, `$alert`, `$confirm` y `$prompt`. Así que en una instancia de Vue puedes llamar el método `MessageBox` como lo que hicimos en esta pagina. Los parámetros son:
 - `$msgbox(options)`
 - `$alert(message, title, options)` or `$alert(message, options)`
 - `$confirm(message, title, options)` or `$confirm(message, options)`
@@ -548,7 +548,7 @@ Si Element Plus fue importado completamente, agregara los siguientes métodos gl
 Si prefieres importar `MessageBox` cuando lo necesites (on demand):
 
 ```javascript
-import { ElMessageBox } from 'element-plus';
+import { LxMessageBox } from 'element-plus';
 ```
 
 Los métodos correspondientes: `ElMessageBox`, `ElMessageBox.alert`, `ElMessageBox.confirm` y `ElMessageBox.prompt`. Los parámetros son los mismos que los anteriores.

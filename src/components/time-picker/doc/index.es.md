@@ -10,21 +10,21 @@ Un tiempo arbitrario puede ser escogido.
 
 ```html
 <template>
-  <el-time-picker
+  <lx-time-picker
     v-model="value1"
     :disabled-hours="disabledHours"
     :disabled-minutes="disabledMinutes"
     :disabled-seconds="disabledSeconds"
     placeholder="Arbitrary time">
-  </el-time-picker>
-  <el-time-picker
+  </lx-time-picker>
+  <lx-time-picker
     arrow-control
     v-model="value2"
     :disabled-hours="disabledHours"
     :disabled-minutes="disabledMinutes"
     :disabled-seconds="disabledSeconds"
     placeholder="Arbitrary time">
-  </el-time-picker>
+  </lx-time-picker>
 </template>
 
 <script>
@@ -73,21 +73,21 @@ Es posible escoger un rango de tiempo arbitrario.
 :::demo Es posible seleccionar un rango de tiempo al añadir el atributo `is-range`. También, `arrow-control` es soportado en modo de rango.
 ```html
 <template>
-  <el-time-picker
+  <lx-time-picker
     is-range
     v-model="value1"
     range-separator="To"
     start-placeholder="Start time"
     end-placeholder="End time">
-  </el-time-picker>
-  <el-time-picker
+  </lx-time-picker>
+  <lx-time-picker
     is-range
     arrow-control
     v-model="value2"
     range-separator="To"
     start-placeholder="Start time"
     end-placeholder="End time">
-  </el-time-picker>
+  </lx-time-picker>
 </template>
 
 <script>

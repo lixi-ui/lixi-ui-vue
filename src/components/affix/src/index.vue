@@ -15,7 +15,7 @@ import type { PropType } from 'vue'
 type Position = 'top' | 'bottom'
 
 export default defineComponent({
-  name: 'ElAffix',
+  name: 'LxAffix',
   props: {
     zIndex: {
       type: Number,

@@ -11,7 +11,7 @@ import {
   h,
 } from 'vue'
 import { ClickOutside } from '@element-plus/directives'
-import ElPopper from '@element-plus/components/popper'
+import LxPopper from '@element-plus/components/popper'
 import {
   popperDefaultProps,
   Effect,
@@ -27,14 +27,14 @@ import type { PropType } from 'vue'
 import type { TriggerType } from '@element-plus/components/popper'
 
 const emits = ['update:visible', 'after-enter', 'after-leave', SHOW_EVENT, HIDE_EVENT]
-const NAME = 'ElPopover'
+const NAME = 'LxPopover'
 
 const _hoist = { key: 0, class: 'el-popover__title', role: 'title' }
 
 export default defineComponent({
   name: NAME,
   components: {
-    ElPopper,
+    LxPopper,
   },
   props: {
     ...popperDefaultProps,

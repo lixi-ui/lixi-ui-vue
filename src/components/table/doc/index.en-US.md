@@ -10,11 +10,11 @@ Basic table is just for data display.
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Name" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Address"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Address"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -59,11 +59,11 @@ Striped table makes it easier to distinguish different rows.
 
 ```html
 <template>
-  <el-table :data="tableData" stripe style="width: 100%">
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Name" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Address"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" stripe style="width: 100%">
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Address"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -106,11 +106,11 @@ Striped table makes it easier to distinguish different rows.
 
 ```html
 <template>
-  <el-table :data="tableData" border style="width: 100%">
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Name" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Address"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" border style="width: 100%">
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Address"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -155,22 +155,22 @@ You can highlight your table content to distinguish between "success, informatio
 
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%"
     :row-class-name="tableRowClassName"
   >
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Name" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Address"> </el-table-column>
-  </el-table>
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Address"> </lx-table-column>
+  </lx-table>
 </template>
 
 <style>
-  .el-table .warning-row {
+  .lx-table .warning-row {
     --el-table-tr-background-color: var(--el-color-warning-lighter);
   }
-  .el-table .success-row {
+  .lx-table .success-row {
     --el-table-tr-background-color: var(--el-color-success-lighter);
   }
 </style>
@@ -227,11 +227,11 @@ When there are too many rows, you can use a fixed header.
 
 ```html
 <template>
-  <el-table :data="tableData" height="250" style="width: 100%">
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Name" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Address"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" height="250" style="width: 100%">
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Address"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -291,24 +291,24 @@ When there are too many columns, you can fix some of them.
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column fixed prop="date" label="Date" width="150">
-    </el-table-column>
-    <el-table-column prop="name" label="Name" width="120"> </el-table-column>
-    <el-table-column prop="state" label="State" width="120"> </el-table-column>
-    <el-table-column prop="city" label="City" width="120"> </el-table-column>
-    <el-table-column prop="address" label="Address" width="600">
-    </el-table-column>
-    <el-table-column prop="zip" label="Zip" width="120"> </el-table-column>
-    <el-table-column fixed="right" label="Operations" width="120">
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column fixed prop="date" label="Date" width="150">
+    </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="120"> </lx-table-column>
+    <lx-table-column prop="state" label="State" width="120"> </lx-table-column>
+    <lx-table-column prop="city" label="City" width="120"> </lx-table-column>
+    <lx-table-column prop="address" label="Address" width="600">
+    </lx-table-column>
+    <lx-table-column prop="zip" label="Zip" width="120"> </lx-table-column>
+    <lx-table-column fixed="right" label="Operations" width="120">
       <template #default="scope">
-        <el-button @click="handleClick" type="text" size="small"
-          >Detail</el-button
+        <lx-button @click="handleClick" type="text" size="small"
+          >Detail</lx-button
         >
-        <el-button type="text" size="small">Edit</el-button>
+        <lx-button type="text" size="small">Edit</lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -374,16 +374,16 @@ When you have huge chunks of data to put in a table, you can fix the header and 
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%" height="250">
-    <el-table-column fixed prop="date" label="Date" width="150">
-    </el-table-column>
-    <el-table-column prop="name" label="Name" width="120"> </el-table-column>
-    <el-table-column prop="state" label="State" width="120"> </el-table-column>
-    <el-table-column prop="city" label="City" width="320"> </el-table-column>
-    <el-table-column prop="address" label="Address" width="600">
-    </el-table-column>
-    <el-table-column prop="zip" label="Zip" width="120"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" style="width: 100%" height="250">
+    <lx-table-column fixed prop="date" label="Date" width="150">
+    </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="120"> </lx-table-column>
+    <lx-table-column prop="state" label="State" width="120"> </lx-table-column>
+    <lx-table-column prop="city" label="City" width="320"> </lx-table-column>
+    <lx-table-column prop="address" label="Address" width="600">
+    </lx-table-column>
+    <lx-table-column prop="zip" label="Zip" width="120"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -464,27 +464,27 @@ When the the data is dynamically changed, you might want the table to have a max
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%" max-height="250">
-    <el-table-column fixed prop="date" label="Date" width="150">
-    </el-table-column>
-    <el-table-column prop="name" label="Name" width="120"> </el-table-column>
-    <el-table-column prop="state" label="State" width="120"> </el-table-column>
-    <el-table-column prop="city" label="City" width="120"> </el-table-column>
-    <el-table-column prop="address" label="Address" width="600">
-    </el-table-column>
-    <el-table-column prop="zip" label="Zip" width="120"> </el-table-column>
-    <el-table-column fixed="right" label="Operations" width="120">
+  <lx-table :data="tableData" style="width: 100%" max-height="250">
+    <lx-table-column fixed prop="date" label="Date" width="150">
+    </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="120"> </lx-table-column>
+    <lx-table-column prop="state" label="State" width="120"> </lx-table-column>
+    <lx-table-column prop="city" label="City" width="120"> </lx-table-column>
+    <lx-table-column prop="address" label="Address" width="600">
+    </lx-table-column>
+    <lx-table-column prop="zip" label="Zip" width="120"> </lx-table-column>
+    <lx-table-column fixed="right" label="Operations" width="120">
       <template #default="scope">
-        <el-button
+        <lx-button
           @click.prevent="deleteRow(scope.$index, tableData)"
           type="text"
           size="small"
         >
           Remove
-        </el-button>
+        </lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -570,20 +570,20 @@ When the data structure is complex, you can use group header to show the data hi
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column prop="date" label="Date" width="150"> </el-table-column>
-    <el-table-column label="Delivery Info">
-      <el-table-column prop="name" label="Name" width="120"> </el-table-column>
-      <el-table-column label="Address Info">
-        <el-table-column prop="state" label="State" width="120">
-        </el-table-column>
-        <el-table-column prop="city" label="City" width="120">
-        </el-table-column>
-        <el-table-column prop="address" label="Address"> </el-table-column>
-        <el-table-column prop="zip" label="Zip" width="120"> </el-table-column>
-      </el-table-column>
-    </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column prop="date" label="Date" width="150"> </lx-table-column>
+    <lx-table-column label="Delivery Info">
+      <lx-table-column prop="name" label="Name" width="120"> </lx-table-column>
+      <lx-table-column label="Address Info">
+        <lx-table-column prop="state" label="State" width="120">
+        </lx-table-column>
+        <lx-table-column prop="city" label="City" width="120">
+        </lx-table-column>
+        <lx-table-column prop="address" label="Address"> </lx-table-column>
+        <lx-table-column prop="zip" label="Zip" width="120"> </lx-table-column>
+      </lx-table-column>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -664,23 +664,23 @@ Single row selection is supported.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     ref="singleTable"
     :data="tableData"
     highlight-current-row
     @current-change="handleCurrentChange"
     style="width: 100%"
   >
-    <el-table-column type="index" width="50"> </el-table-column>
-    <el-table-column property="date" label="Date" width="120">
-    </el-table-column>
-    <el-table-column property="name" label="Name" width="120">
-    </el-table-column>
-    <el-table-column property="address" label="Address"> </el-table-column>
-  </el-table>
+    <lx-table-column type="index" width="50"> </lx-table-column>
+    <lx-table-column property="date" label="Date" width="120">
+    </lx-table-column>
+    <lx-table-column property="name" label="Name" width="120">
+    </lx-table-column>
+    <lx-table-column property="address" label="Address"> </lx-table-column>
+  </lx-table>
   <div style="margin-top: 20px">
-    <el-button @click="setCurrent(tableData[1])">Select second row</el-button>
-    <el-button @click="setCurrent()">Clear selection</el-button>
+    <lx-button @click="setCurrent(tableData[1])">Select second row</lx-button>
+    <lx-button @click="setCurrent()">Clear selection</lx-button>
   </div>
 </template>
 
@@ -736,26 +736,26 @@ You can also select multiple rows.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     ref="multipleTable"
     :data="tableData"
     style="width: 100%"
     @selection-change="handleSelectionChange"
   >
-    <el-table-column type="selection" width="55"> </el-table-column>
-    <el-table-column label="Date" width="120">
+    <lx-table-column type="selection" width="55"> </lx-table-column>
+    <lx-table-column label="Date" width="120">
       <template #default="scope">{{ scope.row.date }}</template>
-    </el-table-column>
-    <el-table-column property="name" label="Name" width="120">
-    </el-table-column>
-    <el-table-column property="address" label="Address" show-overflow-tooltip>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+    <lx-table-column property="name" label="Name" width="120">
+    </lx-table-column>
+    <lx-table-column property="address" label="Address" show-overflow-tooltip>
+    </lx-table-column>
+  </lx-table>
   <div style="margin-top: 20px">
-    <el-button @click="toggleSelection([tableData[1], tableData[2]])"
-      >Toggle selection status of second and third rows</el-button
+    <lx-button @click="toggleSelection([tableData[1], tableData[2]])"
+      >Toggle selection status of second and third rows</lx-button
     >
-    <el-button @click="toggleSelection()">Clear selection</el-button>
+    <lx-button @click="toggleSelection()">Clear selection</lx-button>
   </div>
 </template>
 
@@ -832,17 +832,17 @@ Sort the data to find or compare data quickly.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     :default-sort="{prop: 'date', order: 'descending'}"
     style="width: 100%"
   >
-    <el-table-column prop="date" label="Date" sortable width="180">
-    </el-table-column>
-    <el-table-column prop="name" label="Name" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Address" :formatter="formatter">
-    </el-table-column>
-  </el-table>
+    <lx-table-column prop="date" label="Date" sortable width="180">
+    </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Address" :formatter="formatter">
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -892,15 +892,15 @@ Filter the table to find desired data.
 
 ```html
 <template>
-  <el-button @click="resetDateFilter">reset date filter</el-button>
-  <el-button @click="clearFilter">reset all filters</el-button>
-  <el-table
+  <lx-button @click="resetDateFilter">reset date filter</lx-button>
+  <lx-button @click="clearFilter">reset all filters</lx-button>
+  <lx-table
     row-key="date"
     ref="filterTable"
     :data="tableData"
     style="width: 100%"
   >
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       sortable
@@ -909,11 +909,11 @@ Filter the table to find desired data.
       :filters="[{text: '2016-05-01', value: '2016-05-01'}, {text: '2016-05-02', value: '2016-05-02'}, {text: '2016-05-03', value: '2016-05-03'}, {text: '2016-05-04', value: '2016-05-04'}]"
       :filter-method="filterHandler"
     >
-    </el-table-column>
-    <el-table-column prop="name" label="Name" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Address" :formatter="formatter">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Address" :formatter="formatter">
+    </lx-table-column>
+    <lx-table-column
       prop="tag"
       label="Tag"
       width="100"
@@ -922,14 +922,14 @@ Filter the table to find desired data.
       filter-placement="bottom-end"
     >
       <template #default="scope">
-        <el-tag
+        <lx-tag
           :type="scope.row.tag === 'Home' ? 'primary' : 'success'"
           disable-transitions
-          >{{scope.row.tag}}</el-tag
+          >{{scope.row.tag}}</lx-tag
         >
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -995,42 +995,42 @@ Customize table column so it can be integrated with other components.
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column label="Date" width="180">
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column label="Date" width="180">
       <template #default="scope">
         <i class="el-icon-time"></i>
         <span style="margin-left: 10px">{{ scope.row.date }}</span>
       </template>
-    </el-table-column>
-    <el-table-column label="Name" width="180">
+    </lx-table-column>
+    <lx-table-column label="Name" width="180">
       <template #default="scope">
-        <el-popover effect="light" trigger="hover" placement="top">
+        <lx-popover effect="light" trigger="hover" placement="top">
           <template #default>
             <p>姓名: {{ scope.row.name }}</p>
             <p>住址: {{ scope.row.address }}</p>
           </template>
           <template #reference>
             <div class="name-wrapper">
-              <el-tag size="medium">{{ scope.row.name }}</el-tag>
+              <lx-tag size="medium">{{ scope.row.name }}</lx-tag>
             </div>
           </template>
-        </el-popover>
+        </lx-popover>
       </template>
-    </el-table-column>
-    <el-table-column label="Operations">
+    </lx-table-column>
+    <lx-table-column label="Operations">
       <template #default="scope">
-        <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
-          >Edit</el-button
+        <lx-button size="mini" @click="handleEdit(scope.$index, scope.row)"
+          >Edit</lx-button
         >
-        <el-button
+        <lx-button
           size="mini"
           type="danger"
           @click="handleDelete(scope.$index, scope.row)"
-          >Delete</el-button
+          >Delete</lx-button
         >
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1082,29 +1082,29 @@ Customize table header so it can be even more customized.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
     style="width: 100%"
   >
-    <el-table-column label="Date" prop="date"> </el-table-column>
-    <el-table-column label="Name" prop="name"> </el-table-column>
-    <el-table-column align="right">
+    <lx-table-column label="Date" prop="date"> </lx-table-column>
+    <lx-table-column label="Name" prop="name"> </lx-table-column>
+    <lx-table-column align="right">
       <template #header>
-        <el-input v-model="search" size="mini" placeholder="Type to search" />
+        <lx-input v-model="search" size="mini" placeholder="Type to search" />
       </template>
       <template #default="scope">
-        <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
-          >Edit</el-button
+        <lx-button size="mini" @click="handleEdit(scope.$index, scope.row)"
+          >Edit</lx-button
         >
-        <el-button
+        <lx-button
           size="mini"
           type="danger"
           @click="handleDelete(scope.$index, scope.row)"
-          >Delete</el-button
+          >Delete</lx-button
         >
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1157,18 +1157,18 @@ When the row content is too long and you do not want to display the horizontal s
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column type="expand">
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column type="expand">
       <template #default="props">
         <p>State: {{ props.row.state }}</p>
         <p>City: {{ props.row.city }}</p>
         <p>Address: {{ props.row.address }}</p>
         <p>Zip: {{ props.row.zip }}</p>
       </template>
-    </el-table-column>
-    <el-table-column label="Date" prop="date"> </el-table-column>
-    <el-table-column label="Name" prop="name"> </el-table-column>
-  </el-table>
+    </lx-table-column>
+    <lx-table-column label="Date" prop="date"> </lx-table-column>
+    <lx-table-column label="Name" prop="name"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1248,20 +1248,20 @@ When the row content is too long and you do not want to display the horizontal s
 ```html
 <template>
   <div>
-    <el-table
+    <lx-table
       :data="tableData"
       style="width: 100%;margin-bottom: 20px;"
       row-key="id"
       border
       default-expand-all
     >
-      <el-table-column prop="date" label="date" sortable width="180">
-      </el-table-column>
-      <el-table-column prop="name" label="Name" sortable width="180">
-      </el-table-column>
-    </el-table>
+      <lx-table-column prop="date" label="date" sortable width="180">
+      </lx-table-column>
+      <lx-table-column prop="name" label="Name" sortable width="180">
+      </lx-table-column>
+    </lx-table>
 
-    <el-table
+    <lx-table
       :data="tableData1"
       style="width: 100%"
       row-key="id"
@@ -1270,9 +1270,9 @@ When the row content is too long and you do not want to display the horizontal s
       :load="load"
       :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
     >
-      <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-      <el-table-column prop="name" label="Name" width="180"> </el-table-column>
-    </el-table>
+      <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+      <lx-table-column prop="name" label="Name" width="180"> </lx-table-column>
+    </lx-table>
   </div>
 </template>
 <script>
@@ -1369,18 +1369,18 @@ For table of numbers, you can add an extra row at the table footer displaying ea
 
 ```html
 <template>
-  <el-table :data="tableData" border show-summary style="width: 100%">
-    <el-table-column prop="id" label="ID" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Name"> </el-table-column>
-    <el-table-column prop="amount1" sortable label="Amount 1">
-    </el-table-column>
-    <el-table-column prop="amount2" sortable label="Amount 2">
-    </el-table-column>
-    <el-table-column prop="amount3" sortable label="Amount 3">
-    </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" border show-summary style="width: 100%">
+    <lx-table-column prop="id" label="ID" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Name"> </lx-table-column>
+    <lx-table-column prop="amount1" sortable label="Amount 1">
+    </lx-table-column>
+    <lx-table-column prop="amount2" sortable label="Amount 2">
+    </lx-table-column>
+    <lx-table-column prop="amount3" sortable label="Amount 3">
+    </lx-table-column>
+  </lx-table>
 
-  <el-table
+  <lx-table
     :data="tableData"
     border
     height="200"
@@ -1388,12 +1388,12 @@ For table of numbers, you can add an extra row at the table footer displaying ea
     show-summary
     style="width: 100%; margin-top: 20px"
   >
-    <el-table-column prop="id" label="ID" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Name"> </el-table-column>
-    <el-table-column prop="amount1" label="Cost 1 ($)"> </el-table-column>
-    <el-table-column prop="amount2" label="Cost 2 ($)"> </el-table-column>
-    <el-table-column prop="amount3" label="Cost 3 ($)"> </el-table-column>
-  </el-table>
+    <lx-table-column prop="id" label="ID" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Name"> </lx-table-column>
+    <lx-table-column prop="amount1" label="Cost 1 ($)"> </lx-table-column>
+    <lx-table-column prop="amount2" label="Cost 2 ($)"> </lx-table-column>
+    <lx-table-column prop="amount3" label="Cost 3 ($)"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1482,34 +1482,34 @@ Configuring rowspan and colspan allows you to merge cells
 ```html
 <template>
   <div>
-    <el-table
+    <lx-table
       :data="tableData"
       :span-method="arraySpanMethod"
       border
       style="width: 100%"
     >
-      <el-table-column prop="id" label="ID" width="180"> </el-table-column>
-      <el-table-column prop="name" label="Name"> </el-table-column>
-      <el-table-column prop="amount1" sortable label="Amount 1">
-      </el-table-column>
-      <el-table-column prop="amount2" sortable label="Amount 2">
-      </el-table-column>
-      <el-table-column prop="amount3" sortable label="Amount 3">
-      </el-table-column>
-    </el-table>
+      <lx-table-column prop="id" label="ID" width="180"> </lx-table-column>
+      <lx-table-column prop="name" label="Name"> </lx-table-column>
+      <lx-table-column prop="amount1" sortable label="Amount 1">
+      </lx-table-column>
+      <lx-table-column prop="amount2" sortable label="Amount 2">
+      </lx-table-column>
+      <lx-table-column prop="amount3" sortable label="Amount 3">
+      </lx-table-column>
+    </lx-table>
 
-    <el-table
+    <lx-table
       :data="tableData"
       :span-method="objectSpanMethod"
       border
       style="width: 100%; margin-top: 20px"
     >
-      <el-table-column prop="id" label="ID" width="180"> </el-table-column>
-      <el-table-column prop="name" label="Name"> </el-table-column>
-      <el-table-column prop="amount1" label="Amount 1"> </el-table-column>
-      <el-table-column prop="amount2" label="Amount 2"> </el-table-column>
-      <el-table-column prop="amount3" label="Amount 3"> </el-table-column>
-    </el-table>
+      <lx-table-column prop="id" label="ID" width="180"> </lx-table-column>
+      <lx-table-column prop="name" label="Name"> </lx-table-column>
+      <lx-table-column prop="amount1" label="Amount 1"> </lx-table-column>
+      <lx-table-column prop="amount2" label="Amount 2"> </lx-table-column>
+      <lx-table-column prop="amount3" label="Amount 3"> </lx-table-column>
+    </lx-table>
   </div>
 </template>
 
@@ -1596,12 +1596,12 @@ You can customize row index in `type=index` columns.
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column type="index" :index="indexMethod"> </el-table-column>
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Name" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Address"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column type="index" :index="indexMethod"> </lx-table-column>
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Name" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Address"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>

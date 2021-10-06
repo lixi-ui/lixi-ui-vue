@@ -16,7 +16,7 @@ const _Skeleton = Skeleton as any as SFCWithInstall<typeof Skeleton> & {
 }
 
 export default _Skeleton
-export const ElSkeleton = _Skeleton
-export const ElSkeletonItem = SkeletonItem
+export const LxSkeleton = _Skeleton
+export const LxSkeletonItem = SkeletonItem
 
 export * from './src/types'

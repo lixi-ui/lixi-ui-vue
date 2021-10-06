@@ -16,5 +16,5 @@ const _Timeline = Timeline as any as SFCWithInstall<typeof Timeline> & {
 }
 
 export default _Timeline
-export const ElTimeline = _Timeline
-export const ElTimelineItem = TimelineItem
+export const LxTimeline = _Timeline
+export const LxTimelineItem = TimelineItem

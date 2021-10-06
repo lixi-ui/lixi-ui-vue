@@ -7,7 +7,7 @@
 :::demo `slot` を用いてアップロードボタンの種類とテキストをカスタマイズする。最大アップロード数を制限するために `limit` と `on-exceed` を設定し、制限を超えたときの方法を指定します。さらに、`before-remove` フックでファイルの削除を中止することもできる。
 
 ```html
-<el-upload
+<lx-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-preview="handlePreview"
@@ -18,11 +18,11 @@
   :on-exceed="handleExceed"
   :file-list="fileList"
 >
-  <el-button size="small" type="primary">Click to upload</el-button>
+  <lx-button size="small" type="primary">Click to upload</lx-button>
   <template #tip>
     <div class="el-upload__tip">jpg/png files with a size less than 500kb</div>
   </template>
-</el-upload>
+</lx-upload>
 <script>
   export default {
     data() {
@@ -72,7 +72,7 @@
 
 :::demo
 ```html
-<el-upload
+<lx-upload
   class="avatar-uploader"
   action="https://jsonplaceholder.typicode.com/posts/"
   :show-file-list="false"
@@ -81,17 +81,17 @@
 >
   <img v-if="imageUrl" :src="imageUrl" class="avatar" />
   <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-</el-upload>
+</lx-upload>
 
 <style>
-  .avatar-uploader .el-upload {
+  .avatar-uploader .lx-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
   }
-  .avatar-uploader .el-upload:hover {
+  .avatar-uploader .lx-upload:hover {
     border-color: #409eff;
   }
   .avatar-uploader-icon {
@@ -145,17 +145,17 @@ fileListのスタイルを変更するには `list-type` を用いる。
 :::demo
 
 ```html
-<el-upload
+<lx-upload
   action="https://jsonplaceholder.typicode.com/posts/"
   list-type="picture-card"
   :on-preview="handlePictureCardPreview"
   :on-remove="handleRemove"
 >
   <i class="el-icon-plus"></i>
-</el-upload>
-<el-dialog v-model="dialogVisible">
+</lx-upload>
+<lx-dialog v-model="dialogVisible">
   <img width="100%" :src="dialogImageUrl" alt="" />
-</el-dialog>
+</lx-dialog>
 <script>
   export default {
     data() {
@@ -185,7 +185,7 @@ fileListのスタイルを変更するには `list-type` を用いる。
 :::demo
 
 ```html
-<el-upload action="#" list-type="picture-card" :auto-upload="false">
+<lx-upload action="#" list-type="picture-card" :auto-upload="false">
   <template #default>
     <i class="el-icon-plus"></i>
   </template>
@@ -216,10 +216,10 @@ fileListのスタイルを変更するには `list-type` を用いる。
       </span>
     </div>
   </template>
-</el-upload>
-<el-dialog v-model="dialogVisible">
+</lx-upload>
+<lx-dialog v-model="dialogVisible">
   <img width="100%" :src="dialogImageUrl" alt="" />
-</el-dialog>
+</lx-dialog>
 <script>
   export default {
     data() {
@@ -251,7 +251,7 @@ fileListのスタイルを変更するには `list-type` を用いる。
 :::demo
 
 ```html
-<el-upload
+<lx-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-preview="handlePreview"
@@ -259,13 +259,13 @@ fileListのスタイルを変更するには `list-type` を用いる。
   :file-list="fileList"
   list-type="picture"
 >
-  <el-button size="small" type="primary">Click to upload</el-button>
+  <lx-button size="small" type="primary">Click to upload</lx-button>
   <template #tip>
     <div class="el-upload__tip">
       jpg/png files with a size less than 500kb
     </div>
   </template>
-</el-upload>
+</lx-upload>
 <script>
   export default {
     data() {
@@ -304,19 +304,19 @@ fileListのスタイルを変更するには `list-type` を用いる。
 :::demo
 
 ```html
-<el-upload
+<lx-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-change="handleChange"
   :file-list="fileList"
 >
-  <el-button size="small" type="primary">Click to upload</el-button>
+  <lx-button size="small" type="primary">Click to upload</lx-button>
   <template #tip>
     <div class="el-upload__tip">
       jpg/png files with a size less than 500kb
     </div>
   </template>
-</el-upload>
+</lx-upload>
 <script>
   export default {
     data() {
@@ -352,7 +352,7 @@ fileListのスタイルを変更するには `list-type` を用いる。
 :::demo
 
 ```html
-<el-upload
+<lx-upload
   class="upload-demo"
   drag
   action="https://jsonplaceholder.typicode.com/posts/"
@@ -368,7 +368,7 @@ fileListのスタイルを変更するには `list-type` を用いる。
       jpg/png files with a size less than 500kb
     </div>
   </template>
-</el-upload>
+</lx-upload>
 ```
 :::
 
@@ -376,28 +376,28 @@ fileListのスタイルを変更するには `list-type` を用いる。
 
 :::demo
 ```html
-<el-upload
+<lx-upload
   class="upload-demo"
   ref="upload"
   action="https://jsonplaceholder.typicode.com/posts/"
   :auto-upload="false"
 >
   <template #trigger>
-    <el-button size="small" type="primary">select file</el-button>
+    <lx-button size="small" type="primary">select file</lx-button>
   </template>
-  <el-button
+  <lx-button
     style="margin-left: 10px;"
     size="small"
     type="success"
     @click="submitUpload"
-    >upload to server</el-button
+    >upload to server</lx-button
   >
   <template #tip>
     <div class="el-upload__tip">
       jpg/png files with a size less than 500kb
     </div>
   </template>
-</el-upload>
+</lx-upload>
 <script>
   export default {
     methods: {

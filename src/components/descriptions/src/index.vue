@@ -13,7 +13,7 @@
       <table :class="['el-descriptions__table', {'is-bordered': border}, descriptionsSize ? `el-descriptions--${descriptionsSize}` : '']">
         <tbody>
           <template v-for="(row, index) in getRows()" :key="index">
-            <el-descriptions-row :row="row" />
+            <lx-descriptions-row :row="row" />
           </template>
         </tbody>
       </table>
@@ -32,7 +32,7 @@ import type { PropType } from 'vue'
 import type { ComponentSize } from '@element-plus/utils/types'
 
 export default defineComponent({
-  name: 'ElDescriptions',
+  name: 'LxDescriptions',
   components: {
     [DescriptionsRow.name]: DescriptionsRow,
   },
@@ -98,7 +98,7 @@ export default defineComponent({
     }
 
     const getRows = () => {
-      const children = flattedChildren(slots.default?.()).filter(node => node?.type?.name === 'ElDescriptionsItem')
+      const children = flattedChildren(slots.default?.()).filter(node => node?.type?.name === 'LxDescriptionsItem')
       const rows = []
       let temp = []
       let count = props.column

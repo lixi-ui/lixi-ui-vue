@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import * as Vue from 'vue'
 import * as popperExports from '@popperjs/core'
 import { rAF } from '@element-plus/test-utils/tick'
-import ElPopper from '../src/index.vue'
+import LxPopper from '../src/index.vue'
 
 import type { VueWrapper } from '@vue/test-utils'
 import PopupManager from '@element-plus/utils/popup-manager'
@@ -106,7 +106,7 @@ describe('Popper.vue', () => {
 
     expect(
       Number.parseInt(
-        window.getComputedStyle(wrapper.find('.el-popper').element).zIndex,
+        window.getComputedStyle(wrapper.find('.lx-popper').element).zIndex,
       ),
     ).toBeLessThanOrEqual(PopupManager.zIndex)
   })
@@ -159,9 +159,9 @@ describe('Popper.vue', () => {
     })
     await nextTick()
 
-    await wrapper.find('.el-popper').trigger('mousedown')
+    await wrapper.find('.lx-popper').trigger('mousedown')
     expect(onMouseDown).toHaveBeenCalled()
-    await wrapper.find('.el-popper').trigger('mouseup')
+    await wrapper.find('.lx-popper').trigger('mouseup')
     expect(onMouseUp).toHaveBeenCalled()
 
     await wrapper.setProps({
@@ -169,9 +169,9 @@ describe('Popper.vue', () => {
     })
     await nextTick()
 
-    await wrapper.find('.el-popper').trigger('mousedown')
+    await wrapper.find('.lx-popper').trigger('mousedown')
     expect(onMouseDown).toHaveBeenCalledTimes(1)
-    await wrapper.find('.el-popper').trigger('mouseup')
+    await wrapper.find('.lx-popper').trigger('mouseup')
     expect(onMouseUp).toHaveBeenCalledTimes(1)
     document.removeEventListener('mouseup', onMouseUp)
     document.removeEventListener('mousedown', onMouseDown)
@@ -274,7 +274,7 @@ describe('Popper.vue', () => {
       await trigger.trigger(MOUSE_LEAVE_EVENT)
       expect(popper.vm.visibility).toBe(true)
 
-      await wrapper.find('.el-popper').trigger(MOUSE_LEAVE_EVENT)
+      await wrapper.find('.lx-popper').trigger(MOUSE_LEAVE_EVENT)
       expect(popper.vm.visibility).toBe(true)
       await trigger.trigger(BLUR_EVENT)
       expect(popper.vm.visibility).toBe(true)
@@ -296,7 +296,7 @@ describe('Popper.vue', () => {
       await trigger.trigger(CLICK_EVENT)
       expect(popper.vm.visibility).toBe(true)
 
-      await wrapper.find('.el-popper').trigger(MOUSE_LEAVE_EVENT)
+      await wrapper.find('.lx-popper').trigger(MOUSE_LEAVE_EVENT)
       expect(popper.vm.visibility).toBe(true)
 
       await trigger.trigger(CLICK_EVENT)

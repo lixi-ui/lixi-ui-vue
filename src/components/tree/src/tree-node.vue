@@ -40,7 +40,7 @@
         @click.stop="handleExpandIconClick"
       >
       </span>
-      <el-checkbox
+      <lx-checkbox
         v-if="showCheckbox"
         :model-value="node.checked"
         :indeterminate="node.indeterminate"
@@ -55,7 +55,7 @@
       </span>
       <node-content :node="node" :render-content="renderContent" />
     </div>
-    <el-collapse-transition>
+    <lx-collapse-transition>
       <div
         v-if="!renderAfterExpand || childNodeRendered"
         v-show="expanded"
@@ -63,7 +63,7 @@
         role="group"
         :aria-expanded="expanded"
       >
-        <el-tree-node
+        <lx-tree-node
           v-for="child in node.childNodes"
           :key="getNodeKey(child)"
           :render-content="renderContent"
@@ -73,13 +73,13 @@
           @node-expand="handleChildNodeExpand"
         />
       </div>
-    </el-collapse-transition>
+    </lx-collapse-transition>
   </div>
 </template>
 <script lang='ts'>
 import { defineComponent, getCurrentInstance, ref, watch, nextTick, inject, provide } from 'vue'
-import ElCollapseTransition from '@element-plus/components/collapse-transition'
-import ElCheckbox from '@element-plus/components/checkbox'
+import LxCollapseTransition from '@element-plus/components/collapse-transition'
+import LxCheckbox from '@element-plus/components/checkbox'
 import NodeContent from './tree-node-content.vue'
 import { getNodeKey as getNodeKeyUtil } from './model/util'
 import { useNodeExpandEventBroadcast } from './model/useNodeExpandEventBroadcast'
@@ -91,10 +91,10 @@ import type { Nullable } from '@element-plus/utils/types'
 import type { TreeOptionProps, TreeNodeData, RootTreeType } from './tree.type'
 
 export default defineComponent({
-  name: 'ElTreeNode',
+  name: 'LxTreeNode',
   components: {
-    ElCollapseTransition,
-    ElCheckbox,
+    LxCollapseTransition,
+    LxCheckbox,
     NodeContent,
   },
   props: {

@@ -52,7 +52,7 @@ describe('Dropdown', () => {
       }
     })
     const content = wrapper.findComponent({ ref: 'b' }).vm as any
-    const triggerElm = wrapper.find('.el-dropdown-link')
+    const triggerElm = wrapper.find('.lx-dropdown-link')
     expect(content.visible).toBe(false)
     await triggerElm.trigger('keydown')
     await triggerElm.trigger('focus')
@@ -67,20 +67,20 @@ describe('Dropdown', () => {
   test('menu click', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b" @command="commandHandler" placement="right">
+      <lx-dropdown ref="b" @command="commandHandler" placement="right">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item command="a">Apple</el-dropdown-item>
-            <el-dropdown-item command="b">Orange</el-dropdown-item>
-            <el-dropdown-item ref="c" :command="myCommandObject">Cherry</el-dropdown-item>
-            <el-dropdown-item command="d">Peach</el-dropdown-item>
-            <el-dropdown-item command="e">Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <lx-dropdown-menu>
+            <lx-dropdown-item command="a">Apple</lx-dropdown-item>
+            <lx-dropdown-item command="b">Orange</lx-dropdown-item>
+            <lx-dropdown-item ref="c" :command="myCommandObject">Cherry</lx-dropdown-item>
+            <lx-dropdown-item command="d">Peach</lx-dropdown-item>
+            <lx-dropdown-item command="e">Pear</lx-dropdown-item>
+          </lx-dropdown-menu>
         </template>
-      </el-dropdown>
+      </lx-dropdown>
       `,
       () => ({
         myCommandObject: { name: 'CommandC' },
@@ -95,7 +95,7 @@ describe('Dropdown', () => {
       },
     )
     // const content = wrapper.findComponent({ ref: 'b' }).vm as any
-    const triggerElm = wrapper.find('.el-dropdown-link')
+    const triggerElm = wrapper.find('.lx-dropdown-link')
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
     await sleep(TIMEOUT)
     await wrapper.findComponent({ ref: 'c' }).trigger('click')
@@ -106,20 +106,20 @@ describe('Dropdown', () => {
   test('trigger', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown trigger="click" ref="b" placement="right">
+      <lx-dropdown trigger="click" ref="b" placement="right">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item command="a">Apple</el-dropdown-item>
-            <el-dropdown-item command="b">Orange</el-dropdown-item>
-            <el-dropdown-item ref="c" :command="myCommandObject">Cherry</el-dropdown-item>
-            <el-dropdown-item command="d">Peach</el-dropdown-item>
-            <el-dropdown-item command="e">Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <lx-dropdown-menu>
+            <lx-dropdown-item command="a">Apple</lx-dropdown-item>
+            <lx-dropdown-item command="b">Orange</lx-dropdown-item>
+            <lx-dropdown-item ref="c" :command="myCommandObject">Cherry</lx-dropdown-item>
+            <lx-dropdown-item command="d">Peach</lx-dropdown-item>
+            <lx-dropdown-item command="e">Pear</lx-dropdown-item>
+          </lx-dropdown-menu>
         </template>
-      </el-dropdown>
+      </lx-dropdown>
       `,
       () => ({
         myCommandObject: { name: 'CommandC' },
@@ -127,7 +127,7 @@ describe('Dropdown', () => {
       }),
     )
     const content = wrapper.findComponent({ ref: 'b' }).vm as any
-    const triggerElm = wrapper.find('.el-dropdown-link')
+    const triggerElm = wrapper.find('.lx-dropdown-link')
     expect(content.visible).toBe(false)
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
     await sleep(TIMEOUT)
@@ -140,20 +140,20 @@ describe('Dropdown', () => {
   test('trigger contextmenu', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown trigger="contextmenu" ref="b" placement="right">
+      <lx-dropdown trigger="contextmenu" ref="b" placement="right">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item command="a">Apple</el-dropdown-item>
-            <el-dropdown-item command="b">Orange</el-dropdown-item>
-            <el-dropdown-item ref="c" :command="myCommandObject">Cherry</el-dropdown-item>
-            <el-dropdown-item command="d">Peach</el-dropdown-item>
-            <el-dropdown-item command="e">Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <lx-dropdown-menu>
+            <lx-dropdown-item command="a">Apple</lx-dropdown-item>
+            <lx-dropdown-item command="b">Orange</lx-dropdown-item>
+            <lx-dropdown-item ref="c" :command="myCommandObject">Cherry</lx-dropdown-item>
+            <lx-dropdown-item command="d">Peach</lx-dropdown-item>
+            <lx-dropdown-item command="e">Pear</lx-dropdown-item>
+          </lx-dropdown-menu>
         </template>
-      </el-dropdown>
+      </lx-dropdown>
       `,
       () => ({
         myCommandObject: { name: 'CommandC' },
@@ -161,7 +161,7 @@ describe('Dropdown', () => {
       }),
     )
     const content = wrapper.findComponent({ ref: 'b' }).vm as any
-    const triggerElm = wrapper.find('.el-dropdown-link')
+    const triggerElm = wrapper.find('.lx-dropdown-link')
     expect(content.visible).toBe(false)
     await triggerElm.trigger(CONTEXTMENU)
     await sleep(TIMEOUT)
@@ -171,18 +171,18 @@ describe('Dropdown', () => {
   test('split button', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown  @click="handleClick" split-button type="primary" ref="b" placement="right">
+      <lx-dropdown  @click="handleClick" split-button type="primary" ref="b" placement="right">
         dropdown
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item command="a">Apple</el-dropdown-item>
-            <el-dropdown-item command="b">Orange</el-dropdown-item>
-            <el-dropdown-item ref="c" :command="myCommandObject">Cherry</el-dropdown-item>
-            <el-dropdown-item command="d">Peach</el-dropdown-item>
-            <el-dropdown-item command="e">Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <lx-dropdown-menu>
+            <lx-dropdown-item command="a">Apple</lx-dropdown-item>
+            <lx-dropdown-item command="b">Orange</lx-dropdown-item>
+            <lx-dropdown-item ref="c" :command="myCommandObject">Cherry</lx-dropdown-item>
+            <lx-dropdown-item command="d">Peach</lx-dropdown-item>
+            <lx-dropdown-item command="e">Pear</lx-dropdown-item>
+          </lx-dropdown-menu>
         </template>
-      </el-dropdown>
+      </lx-dropdown>
       `,
       () => ({
         myCommandObject: { name: 'CommandC' },
@@ -197,8 +197,8 @@ describe('Dropdown', () => {
       },
     )
     const content = wrapper.findComponent({ ref: 'b' }).vm as any
-    const triggerElm = wrapper.find('.el-dropdown__caret-button')
-    const button = wrapper.find('.el-button')
+    const triggerElm = wrapper.find('.lx-dropdown__caret-button')
+    const button = wrapper.find('.lx-button')
     expect(content.visible).toBe(false)
     await button.trigger('click')
     expect((wrapper.vm as any).name).toBe('click')
@@ -212,26 +212,26 @@ describe('Dropdown', () => {
   test('hide on click', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b" placement="right" :hide-on-click="false">
+      <lx-dropdown ref="b" placement="right" :hide-on-click="false">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item ref="c">Cherry</el-dropdown-item>
-            <el-dropdown-item disabled>Peach</el-dropdown-item>
-            <el-dropdown-item divided>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <lx-dropdown-menu>
+            <lx-dropdown-item>Apple</lx-dropdown-item>
+            <lx-dropdown-item>Orange</lx-dropdown-item>
+            <lx-dropdown-item ref="c">Cherry</lx-dropdown-item>
+            <lx-dropdown-item disabled>Peach</lx-dropdown-item>
+            <lx-dropdown-item divided>Pear</lx-dropdown-item>
+          </lx-dropdown-menu>
         </template>
-      </el-dropdown>
+      </lx-dropdown>
       `,
       () => ({}),
     )
 
     const content = wrapper.findComponent({ ref: 'b' }).vm as any
-    const triggerElm = wrapper.find('.el-dropdown-link')
+    const triggerElm = wrapper.find('.lx-dropdown-link')
     await triggerElm.trigger('keydown')
     await triggerElm.trigger('focus')
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
@@ -244,26 +244,26 @@ describe('Dropdown', () => {
   test('triggerElm keydown', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b" placement="right" :hide-on-click="false">
+      <lx-dropdown ref="b" placement="right" :hide-on-click="false">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item ref="c">Cherry</el-dropdown-item>
-            <el-dropdown-item disabled>Peach</el-dropdown-item>
-            <el-dropdown-item divided>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <lx-dropdown-menu>
+            <lx-dropdown-item>Apple</lx-dropdown-item>
+            <lx-dropdown-item>Orange</lx-dropdown-item>
+            <lx-dropdown-item ref="c">Cherry</lx-dropdown-item>
+            <lx-dropdown-item disabled>Peach</lx-dropdown-item>
+            <lx-dropdown-item divided>Pear</lx-dropdown-item>
+          </lx-dropdown-menu>
         </template>
-      </el-dropdown>
+      </lx-dropdown>
       `,
       () => ({}),
     )
 
     const content = wrapper.findComponent({ ref: 'b' }).vm as any
-    const triggerElm = wrapper.find('.el-dropdown-link')
+    const triggerElm = wrapper.find('.lx-dropdown-link')
     await triggerElm.trigger('keydown')
     await triggerElm.trigger('focus')
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
@@ -286,26 +286,26 @@ describe('Dropdown', () => {
   test('dropdown menu keydown', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b" placement="right" :hide-on-click="false">
+      <lx-dropdown ref="b" placement="right" :hide-on-click="false">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu ref="a">
-            <el-dropdown-item ref="d">Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item ref="c">Cherry</el-dropdown-item>
-            <el-dropdown-item disabled>Peach</el-dropdown-item>
-            <el-dropdown-item divided>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <lx-dropdown-menu ref="a">
+            <lx-dropdown-item ref="d">Apple</lx-dropdown-item>
+            <lx-dropdown-item>Orange</lx-dropdown-item>
+            <lx-dropdown-item ref="c">Cherry</lx-dropdown-item>
+            <lx-dropdown-item disabled>Peach</lx-dropdown-item>
+            <lx-dropdown-item divided>Pear</lx-dropdown-item>
+          </lx-dropdown-menu>
         </template>
-      </el-dropdown>
+      </lx-dropdown>
       `,
       () => ({}),
     )
 
     const content = wrapper.findComponent({ ref: 'a' })
-    const triggerElm = wrapper.find('.el-dropdown-link')
+    const triggerElm = wrapper.find('.lx-dropdown-link')
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
     await sleep(TIMEOUT)
     await content.trigger('keydown', {
@@ -318,50 +318,50 @@ describe('Dropdown', () => {
   test('max height', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b" max-height="60px">
+      <lx-dropdown ref="b" max-height="60px">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item>Cherry</el-dropdown-item>
-            <el-dropdown-item disabled>Peach</el-dropdown-item>
-            <el-dropdown-item divided>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <lx-dropdown-menu>
+            <lx-dropdown-item>Apple</lx-dropdown-item>
+            <lx-dropdown-item>Orange</lx-dropdown-item>
+            <lx-dropdown-item>Cherry</lx-dropdown-item>
+            <lx-dropdown-item disabled>Peach</lx-dropdown-item>
+            <lx-dropdown-item divided>Pear</lx-dropdown-item>
+          </lx-dropdown-menu>
         </template>
-      </el-dropdown>
+      </lx-dropdown>
       `,
       () => ({}),
     )
     const content = wrapper.findComponent({ ref: 'b' })
     const scrollbar = content.findComponent({ ref: 'scrollbar' })
-    expect(scrollbar.find('.el-scrollbar__wrap').attributes('style')).toContain('max-height: 60px;')
+    expect(scrollbar.find('.lx-scrollbar__wrap').attributes('style')).toContain('max-height: 60px;')
   })
 
   test('tooltip debounce', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b">
+      <lx-dropdown ref="b">
         <span class="el-dropdown-link">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item>Cherry</el-dropdown-item>
-            <el-dropdown-item>Peach</el-dropdown-item>
-            <el-dropdown-item>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <lx-dropdown-menu>
+            <lx-dropdown-item>Apple</lx-dropdown-item>
+            <lx-dropdown-item>Orange</lx-dropdown-item>
+            <lx-dropdown-item>Cherry</lx-dropdown-item>
+            <lx-dropdown-item>Peach</lx-dropdown-item>
+            <lx-dropdown-item>Pear</lx-dropdown-item>
+          </lx-dropdown-menu>
         </template>
-      </el-dropdown>
+      </lx-dropdown>
       `,
       () => ({}),
     )
     const content = wrapper.findComponent({ ref: 'b' }).vm as any
-    const triggerElm = wrapper.find('.el-dropdown-link')
+    const triggerElm = wrapper.find('.lx-dropdown-link')
     expect(content.visible).toBe(false)
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
     await triggerElm.trigger(MOUSE_LEAVE_EVENT)

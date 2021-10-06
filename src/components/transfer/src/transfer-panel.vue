@@ -1,20 +1,20 @@
 <template>
   <div class="el-transfer-panel">
     <p class="el-transfer-panel__header">
-      <el-checkbox
+      <lx-checkbox
         v-model="allChecked"
         :indeterminate="isIndeterminate"
         @change="handleAllCheckedChange"
       >
         {{ title }}
         <span>{{ checkedSummary }}</span>
-      </el-checkbox>
+      </lx-checkbox>
     </p>
 
     <div
       :class="['el-transfer-panel__body', hasFooter ? 'is-with-footer' : '']"
     >
-      <el-input
+      <lx-input
         v-if="filterable"
         v-model="query"
         class="el-transfer-panel__filter"
@@ -29,14 +29,14 @@
             @click="clearQuery"
           ></i>
         </template>
-      </el-input>
-      <el-checkbox-group
+      </lx-input>
+      <lx-checkbox-group
         v-show="!hasNoMatch && data.length > 0"
         v-model="checked"
         :class="{ 'is-filterable': filterable }"
         class="el-transfer-panel__list"
       >
-        <el-checkbox
+        <lx-checkbox
           v-for="item in filteredData"
           :key="item[keyProp]"
           class="el-transfer-panel__item"
@@ -46,8 +46,8 @@
           <option-content
             :option="optionRender(item)"
           />
-        </el-checkbox>
-      </el-checkbox-group>
+        </lx-checkbox>
+      </lx-checkbox-group>
       <p v-show="hasNoMatch || data.length === 0" class="el-transfer-panel__empty">
         {{ hasNoMatch ? t('el.transfer.noMatch') : t('el.transfer.noData') }}
       </p>
@@ -61,17 +61,17 @@
 <script lang="ts">
 import { computed, defineComponent, reactive, toRefs } from 'vue'
 import { useLocaleInject } from '@element-plus/hooks'
-import { ElCheckbox, ElCheckboxGroup } from '@element-plus/components/checkbox'
-import ElInput from '@element-plus/components/input'
+import { LxCheckbox, LxCheckboxGroup } from '@element-plus/components/checkbox'
+import LxInput from '@element-plus/components/input'
 import { useCheck, useCheckProps, CHECKED_CHANGE_EVENT } from './useCheck'
 
 export default defineComponent({
-  name: 'ElTransferPanel',
+  name: 'LxTransferPanel',
 
   components: {
-    ElCheckboxGroup,
-    ElCheckbox,
-    ElInput,
+    LxCheckboxGroup,
+    LxCheckbox,
+    LxInput,
     OptionContent: ({ option }) => option,
   },
 

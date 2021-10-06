@@ -8,14 +8,14 @@
 
 ```html
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option
+  <lx-select v-model="value" placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -52,15 +52,15 @@
 
 ```html
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option
+  <lx-select v-model="value" placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value"
       :disabled="item.disabled">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -99,14 +99,14 @@
 :::demo `el-select` の `disabled` を設定すると無効になります。
 ```html
 <template>
-  <el-select v-model="value" disabled placeholder="Select">
-    <el-option
+  <lx-select v-model="value" disabled placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -144,14 +144,14 @@
 :::demo `el-select` に `clearable` 属性を設定すると、クリアアイコンが表示されるようになる。なお、`clearable`はシングルセレクトの場合のみ有効である。
 ```html
 <template>
-  <el-select v-model="value" clearable placeholder="Select">
-    <el-option
+  <lx-select v-model="value" clearable placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -189,28 +189,28 @@
 :::demo 複数モードを有効にするには、`el-select` に `multiple` 属性を設定する。この場合、`v-model` の値はセレクトされたオプションの配列となる。デフォルトでは、セレクトされたオプションはタグとして表示される。collapse-tags` 属性を用いることで、それらをテキストに折りたたむことができる。
 ```html
 <template>
-  <el-select v-model="value1" multiple placeholder="Select">
-    <el-option
+  <lx-select v-model="value1" multiple placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 
-  <el-select
+  <lx-select
     v-model="value2"
     multiple
     collapse-tags
     style="margin-left: 20px;"
     placeholder="Select">
-    <el-option
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -250,16 +250,16 @@
 
 ```html
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option
+  <lx-select v-model="value" placeholder="Select">
+    <lx-option
       v-for="item in cities"
       :key="item.value"
       :label="item.label"
       :value="item.value">
       <span style="float: left">{{ item.label }}</span>
       <span style="float: right; color: var(--el-text-color-secondary); font-size: 13px">{{ item.value }}</span>
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -301,19 +301,19 @@
 
 ```html
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option-group
+  <lx-select v-model="value" placeholder="Select">
+    <lx-option-group
       v-for="group in options"
       :key="group.label"
       :label="group.label">
-      <el-option
+      <lx-option
         v-for="item in group.options"
         :key="item.value"
         :label="item.label"
         :value="item.value">
-      </el-option>
-    </el-option-group>
-  </el-select>
+      </lx-option>
+    </lx-option-group>
+  </lx-select>
 </template>
 
 <script>
@@ -360,14 +360,14 @@
 :::demo `el-select` に `filterable` を追加すると、フィルタリングが可能になる。デフォルトでは、セレクト肢は `label` 属性に入力値が含まれるすべてのオプションを検索する。他のフィルタリング方法を使いたい場合は、`filter-method`を渡すことができる。`filter-method` は入力値が変更されたときに呼び出される `Function` であり、そのパラメータは現在の入力値である。
 ```html
 <template>
-  <el-select v-model="value" filterable placeholder="Select">
-    <el-option
+  <lx-select v-model="value" filterable placeholder="Select">
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -406,7 +406,7 @@
 
 ```html
 <template>
-  <el-select
+  <lx-select
     v-model="value"
     multiple
     filterable
@@ -415,13 +415,13 @@
     placeholder="Please enter a keyword"
     :remote-method="remoteMethod"
     :loading="loading">
-    <el-option
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>
@@ -482,20 +482,20 @@
 :::demo `allow-create`属性を使うことで、ユーザは入力ボックスに入力することで新しいアイテムを作成することができます。なお、`allow-create` が動作するためには、`filterable` が `true` でなければならない。この例では `default-first-option` も示している。この属性を `true` に設定すると、マウスや矢印キーで移動しなくても、エンターキーを押すことで現在のオプションリストの最初のオプションをセレクトすることができる。
 ```html
 <template>
-  <el-select
+  <lx-select
     v-model="value"
     multiple
     filterable
     allow-create
     default-first-option
     placeholder="Choose tags for your article">
-    <el-option
+    <lx-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
-  </el-select>
+    </lx-option>
+  </lx-select>
 </template>
 
 <script>

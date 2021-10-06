@@ -10,4 +10,4 @@ ImageViewer.install = (app: App): void => {
 const _ImageViewer = ImageViewer as SFCWithInstall<typeof ImageViewer>
 
 export default _ImageViewer
-export const ElImageViewer = _ImageViewer
+export const LxImageViewer = _ImageViewer

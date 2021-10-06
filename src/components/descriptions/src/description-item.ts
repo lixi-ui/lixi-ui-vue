@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'ElDescriptionsItem',
+  name: 'LxDescriptionsItem',
   props: {
     label: {
       type: String,

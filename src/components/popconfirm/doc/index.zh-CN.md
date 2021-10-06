@@ -9,13 +9,13 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
 
 ```html
 <template>
-<el-popconfirm
+<lx-popconfirm
   title="这是一段内容确定删除吗？"
 >
 <template #reference>
-  <el-button>删除</el-button>
+  <lx-button>删除</lx-button>
   </template>
-</el-popconfirm>
+</lx-popconfirm>
 </template>
 ````
 :::
@@ -26,7 +26,7 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
 :::demo
 ```html
 <template>
-<el-popconfirm
+<lx-popconfirm
   confirmButtonText='好的'
   cancelButtonText='不用了'
   icon="el-icon-info"
@@ -34,9 +34,9 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
   title="这是一段内容确定删除吗？"
 >
 <template #reference>
-  <el-button>删除</el-button>
+  <lx-button>删除</lx-button>
   </template>
-</el-popconfirm>
+</lx-popconfirm>
 </template>
 ```
 :::
@@ -49,7 +49,7 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
 
 ```html
 <template>
-  <el-popconfirm
+  <lx-popconfirm
     confirmButtonText="确定"
     cancelButtonText="取消"
     icon="el-icon-info"
@@ -59,9 +59,9 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
     @cancel="cancelEvent"
   >
     <template #reference>
-      <el-button>删除</el-button>
+      <lx-button>删除</lx-button>
     </template>
-  </el-popconfirm>
+  </lx-popconfirm>
 </template>
 
 <script>

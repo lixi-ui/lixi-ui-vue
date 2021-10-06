@@ -10,11 +10,11 @@ Un tableau de base pour afficher seulement.
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Nom" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Adresse"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -59,11 +59,11 @@ Ajouter des couleurs différentes pour les lignes paires et impaires permet de l
 
 ```html
 <template>
-  <el-table :data="tableData" stripe style="width: 100%">
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Nom" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Adresse"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" stripe style="width: 100%">
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -106,11 +106,11 @@ Ajouter des couleurs différentes pour les lignes paires et impaires permet de l
 
 ```html
 <template>
-  <el-table :data="tableData" border style="width: 100%">
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Nom" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Adresse"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" border style="width: 100%">
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -155,22 +155,22 @@ Vous pouvez mettre en valeur certaines lignes du tableau suivant leur état, com
 
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     style="width: 100%"
     :row-class-name="tableRowClassName"
   >
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Nom" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Adresse"> </el-table-column>
-  </el-table>
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse"> </lx-table-column>
+  </lx-table>
 </template>
 
 <style>
-  .el-table .warning-row {
+  .lx-table .warning-row {
     --el-table-tr-background-color: var(--el-color-warning-lighter);
   }
-  .el-table .success-row {
+  .lx-table .success-row {
     --el-table-tr-background-color: var(--el-color-success-lighter);
   }
 </style>
@@ -227,11 +227,11 @@ Lorsqu'il y a beaucoup de lignes, il peut être utile d'avoir un header fixe afi
 
 ```html
 <template>
-  <el-table :data="tableData" height="250" style="width: 100%">
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Nom" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Adresse"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" height="250" style="width: 100%">
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -291,24 +291,24 @@ Lorsque qu'il y a beaucoup de colonnes, il peut être utile d'en fixer certaines
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column fixed prop="date" label="Date" width="150">
-    </el-table-column>
-    <el-table-column prop="name" label="Nom" width="120"> </el-table-column>
-    <el-table-column prop="state" label="État" width="120"> </el-table-column>
-    <el-table-column prop="city" label="Ville" width="120"> </el-table-column>
-    <el-table-column prop="address" label="Adresse" width="600">
-    </el-table-column>
-    <el-table-column prop="zip" label="Zip" width="120"> </el-table-column>
-    <el-table-column fixed="right" label="Opérations" width="120">
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column fixed prop="date" label="Date" width="150">
+    </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="120"> </lx-table-column>
+    <lx-table-column prop="state" label="État" width="120"> </lx-table-column>
+    <lx-table-column prop="city" label="Ville" width="120"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse" width="600">
+    </lx-table-column>
+    <lx-table-column prop="zip" label="Zip" width="120"> </lx-table-column>
+    <lx-table-column fixed="right" label="Opérations" width="120">
       <template #default="scope">
-        <el-button @click="handleClick" type="text" size="small"
-          >Detail</el-button
+        <lx-button @click="handleClick" type="text" size="small"
+          >Detail</lx-button
         >
-        <el-button type="text" size="small">Editer</el-button>
+        <lx-button type="text" size="small">Editer</lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -374,16 +374,16 @@ Si vous avez un gros volume de données à afficher, vous pouvez fixer le header
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%" height="250">
-    <el-table-column fixed prop="date" label="Date" width="150">
-    </el-table-column>
-    <el-table-column prop="name" label="Nom" width="120"> </el-table-column>
-    <el-table-column prop="state" label="État" width="120"> </el-table-column>
-    <el-table-column prop="city" label="Ville" width="320"> </el-table-column>
-    <el-table-column prop="address" label="Adresse" width="600">
-    </el-table-column>
-    <el-table-column prop="zip" label="Zip" width="120"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" style="width: 100%" height="250">
+    <lx-table-column fixed prop="date" label="Date" width="150">
+    </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="120"> </lx-table-column>
+    <lx-table-column prop="state" label="État" width="120"> </lx-table-column>
+    <lx-table-column prop="city" label="Ville" width="320"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse" width="600">
+    </lx-table-column>
+    <lx-table-column prop="zip" label="Zip" width="120"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -464,27 +464,27 @@ Quand les données changent dynamiquement, vous pouvez avoir besoin d'une hauteu
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%" max-height="250">
-    <el-table-column fixed prop="date" label="Date" width="150">
-    </el-table-column>
-    <el-table-column prop="name" label="Nom" width="120"> </el-table-column>
-    <el-table-column prop="state" label="État" width="120"> </el-table-column>
-    <el-table-column prop="city" label="Ville" width="120"> </el-table-column>
-    <el-table-column prop="address" label="Adresse" width="600">
-    </el-table-column>
-    <el-table-column prop="zip" label="Zip" width="120"> </el-table-column>
-    <el-table-column fixed="right" label="Opérations" width="120">
+  <lx-table :data="tableData" style="width: 100%" max-height="250">
+    <lx-table-column fixed prop="date" label="Date" width="150">
+    </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="120"> </lx-table-column>
+    <lx-table-column prop="state" label="État" width="120"> </lx-table-column>
+    <lx-table-column prop="city" label="Ville" width="120"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse" width="600">
+    </lx-table-column>
+    <lx-table-column prop="zip" label="Zip" width="120"> </lx-table-column>
+    <lx-table-column fixed="right" label="Opérations" width="120">
       <template #default="scope">
-        <el-button
+        <lx-button
           @click.prevent="deleteRow(scope.$index, tableData)"
           type="text"
           size="small"
         >
           Supprimer
-        </el-button>
+        </lx-button>
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -570,20 +570,20 @@ Quand la structure du tableau est complexe, vous pouvez grouper les headers afin
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column prop="date" label="Date" width="150"> </el-table-column>
-    <el-table-column label="Informations de livraison">
-      <el-table-column prop="name" label="Nom" width="120"> </el-table-column>
-      <el-table-column label="Informations d'adresse">
-        <el-table-column prop="state" label="État" width="120">
-        </el-table-column>
-        <el-table-column prop="city" label="Ville" width="120">
-        </el-table-column>
-        <el-table-column prop="address" label="Adresse"> </el-table-column>
-        <el-table-column prop="zip" label="Zip" width="120"> </el-table-column>
-      </el-table-column>
-    </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column prop="date" label="Date" width="150"> </lx-table-column>
+    <lx-table-column label="Informations de livraison">
+      <lx-table-column prop="name" label="Nom" width="120"> </lx-table-column>
+      <lx-table-column label="Informations d'adresse">
+        <lx-table-column prop="state" label="État" width="120">
+        </lx-table-column>
+        <lx-table-column prop="city" label="Ville" width="120">
+        </lx-table-column>
+        <lx-table-column prop="address" label="Adresse"> </lx-table-column>
+        <lx-table-column prop="zip" label="Zip" width="120"> </lx-table-column>
+      </lx-table-column>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -664,24 +664,24 @@ Vous pouvez activer la sélection d'une ligne.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     ref="singleTable"
     :data="tableData"
     highlight-current-row
     @current-change="handleCurrentChange"
     style="width: 100%"
   >
-    <el-table-column type="index" width="50"> </el-table-column>
-    <el-table-column property="date" label="Date" width="120">
-    </el-table-column>
-    <el-table-column property="name" label="Nom" width="120"> </el-table-column>
-    <el-table-column property="address" label="Adresse"> </el-table-column>
-  </el-table>
+    <lx-table-column type="index" width="50"> </lx-table-column>
+    <lx-table-column property="date" label="Date" width="120">
+    </lx-table-column>
+    <lx-table-column property="name" label="Nom" width="120"> </lx-table-column>
+    <lx-table-column property="address" label="Adresse"> </lx-table-column>
+  </lx-table>
   <div style="margin-top: 20px">
-    <el-button @click="setCurrent(tableData[1])"
-      >Sélectionner la deuxième ligne</el-button
+    <lx-button @click="setCurrent(tableData[1])"
+      >Sélectionner la deuxième ligne</lx-button
     >
-    <el-button @click="setCurrent()">Effacer la sélection</el-button>
+    <lx-button @click="setCurrent()">Effacer la sélection</lx-button>
   </div>
 </template>
 
@@ -737,25 +737,25 @@ Vous pouvez aussi sélectionner plusieurs lignes.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     ref="multipleTable"
     :data="tableData"
     style="width: 100%"
     @selection-change="handleSelectionChange"
   >
-    <el-table-column type="selection" width="55"> </el-table-column>
-    <el-table-column label="Date" width="120">
+    <lx-table-column type="selection" width="55"> </lx-table-column>
+    <lx-table-column label="Date" width="120">
       <template #default="scope">{{ scope.row.date }}</template>
-    </el-table-column>
-    <el-table-column property="name" label="Nom" width="120"> </el-table-column>
-    <el-table-column property="address" label="Adresse" show-overflow-tooltip>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+    <lx-table-column property="name" label="Nom" width="120"> </lx-table-column>
+    <lx-table-column property="address" label="Adresse" show-overflow-tooltip>
+    </lx-table-column>
+  </lx-table>
   <div style="margin-top: 20px">
-    <el-button @click="toggleSelection([tableData[1], tableData[2]])"
-      >Sélectionner les deuxième et troisième lignes</el-button
+    <lx-button @click="toggleSelection([tableData[1], tableData[2]])"
+      >Sélectionner les deuxième et troisième lignes</lx-button
     >
-    <el-button @click="toggleSelection()">Effacer la sélection</el-button>
+    <lx-button @click="toggleSelection()">Effacer la sélection</lx-button>
   </div>
 </template>
 
@@ -832,17 +832,17 @@ Il est possible de trier les données afin de trouver plus facilement ce qu'on c
 
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData"
     :default-sort="{prop: 'date', order: 'descending'}"
     style="width: 100%"
   >
-    <el-table-column prop="date" label="Date" sortable width="180">
-    </el-table-column>
-    <el-table-column prop="name" label="Nom" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Adresse" :formatter="formatter">
-    </el-table-column>
-  </el-table>
+    <lx-table-column prop="date" label="Date" sortable width="180">
+    </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse" :formatter="formatter">
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -888,19 +888,19 @@ Il est possible de trier les données afin de trouver plus facilement ce qu'on c
 
 Vous pouvez filtrer la table pour obtenir rapidement les lignes désirées.
 
-:::demo Réglez `filters` et `filter-method` dans `el-table-column` pour rendre la colonne filtrable. `filters` prends un tableau, et `filter-method` est une fonction déterminant comment les lignes s'affichent. Elle prend trois paramètres: `value`, `row` et `column`.
+:::demo Réglez `filters` et `filter-method` dans `el-table-column` pour rendre la colonne filtrable. `filters` prends un tableau, et `filter-method` est une fonction déterminant comment les lignes s'affichent. Lxle prend trois paramètres: `value`, `row` et `column`.
 
 ```html
 <template>
-  <el-button @click="resetDateFilter">Effacer le filtre date</el-button>
-  <el-button @click="clearFilter">Effacer tout les filtres</el-button>
-  <el-table
+  <lx-button @click="resetDateFilter">Effacer le filtre date</lx-button>
+  <lx-button @click="clearFilter">Effacer tout les filtres</lx-button>
+  <lx-table
     row-key="date"
     ref="filterTable"
     :data="tableData"
     style="width: 100%"
   >
-    <el-table-column
+    <lx-table-column
       prop="date"
       label="Date"
       sortable
@@ -909,11 +909,11 @@ Vous pouvez filtrer la table pour obtenir rapidement les lignes désirées.
       :filters="[{text: '2016-05-01', value: '2016-05-01'}, {text: '2016-05-02', value: '2016-05-02'}, {text: '2016-05-03', value: '2016-05-03'}, {text: '2016-05-04', value: '2016-05-04'}]"
       :filter-method="filterHandler"
     >
-    </el-table-column>
-    <el-table-column prop="name" label="Nom" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Adresse" :formatter="formatter">
-    </el-table-column>
-    <el-table-column
+    </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse" :formatter="formatter">
+    </lx-table-column>
+    <lx-table-column
       prop="tag"
       label="Tag"
       width="100"
@@ -922,14 +922,14 @@ Vous pouvez filtrer la table pour obtenir rapidement les lignes désirées.
       filter-placement="bottom-end"
     >
       <template #default="scope">
-        <el-tag
+        <lx-tag
           :type="scope.row.tag === 'Home' ? 'primary' : 'success'"
           disable-transitions
-          >{{scope.row.tag}}</el-tag
+          >{{scope.row.tag}}</lx-tag
         >
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -996,42 +996,42 @@ Vous pouvez customiser le contenu des colonnes afin de pouvoir utiliser d'autres
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column label="Date" width="180">
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column label="Date" width="180">
       <template #default="scope">
         <i class="el-icon-time"></i>
         <span style="margin-left: 10px">{{ scope.row.date }}</span>
       </template>
-    </el-table-column>
-    <el-table-column label="Nom" width="180">
+    </lx-table-column>
+    <lx-table-column label="Nom" width="180">
       <template #default="scope">
-        <el-popover effect="light" trigger="hover" placement="top">
+        <lx-popover effect="light" trigger="hover" placement="top">
           <template #default>
             <p>姓名: {{ scope.row.name }}</p>
             <p>住址: {{ scope.row.address }}</p>
           </template>
           <template #reference>
             <div class="name-wrapper">
-              <el-tag size="medium">{{ scope.row.name }}</el-tag>
+              <lx-tag size="medium">{{ scope.row.name }}</lx-tag>
             </div>
           </template>
-        </el-popover>
+        </lx-popover>
       </template>
-    </el-table-column>
-    <el-table-column label="Opérations">
+    </lx-table-column>
+    <lx-table-column label="Opérations">
       <template #default="scope">
-        <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
-          >Editer</el-button
+        <lx-button size="mini" @click="handleEdit(scope.$index, scope.row)"
+          >Editer</lx-button
         >
-        <el-button
+        <lx-button
           size="mini"
           type="danger"
           @click="handleDelete(scope.$index, scope.row)"
-          >Supprimer</el-button
+          >Supprimer</lx-button
         >
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1084,29 +1084,29 @@ Vous pouvez également personnaliser le header de la table.
 
 ```html
 <template>
-  <el-table
+  <lx-table
     :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
     style="width: 100%"
   >
-    <el-table-column label="Date" prop="date"> </el-table-column>
-    <el-table-column label="Name" prop="name"> </el-table-column>
-    <el-table-column align="right">
+    <lx-table-column label="Date" prop="date"> </lx-table-column>
+    <lx-table-column label="Name" prop="name"> </lx-table-column>
+    <lx-table-column align="right">
       <template #header>
-        <el-input v-model="search" size="mini" placeholder="Type to search" />
+        <lx-input v-model="search" size="mini" placeholder="Type to search" />
       </template>
       <template #default="scope">
-        <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
-          >Editer</el-button
+        <lx-button size="mini" @click="handleEdit(scope.$index, scope.row)"
+          >Editer</lx-button
         >
-        <el-button
+        <lx-button
           size="mini"
           type="danger"
           @click="handleDelete(scope.$index, scope.row)"
-          >Supprimer</el-button
+          >Supprimer</lx-button
         >
       </template>
-    </el-table-column>
-  </el-table>
+    </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1160,18 +1160,18 @@ Lorsque le contenu d'une ligne est trop long et que vous ne souhaitez pas affich
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column type="expand">
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column type="expand">
       <template #default="props">
         <p>État: {{ props.row.state }}</p>
         <p>Ville: {{ props.row.city }}</p>
         <p>Adresse: {{ props.row.address }}</p>
         <p>Zip: {{ props.row.zip }}</p>
       </template>
-    </el-table-column>
-    <el-table-column label="Date" prop="date"> </el-table-column>
-    <el-table-column label="Nom" prop="name"> </el-table-column>
-  </el-table>
+    </lx-table-column>
+    <lx-table-column label="Date" prop="date"> </lx-table-column>
+    <lx-table-column label="Nom" prop="name"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1251,20 +1251,20 @@ Lorsque le contenu d'une ligne est trop long et que vous ne souhaitez pas affich
 ```html
 <template>
   <div>
-    <el-table
+    <lx-table
       :data="tableData"
       style="width: 100%;margin-bottom: 20px;"
       row-key="id"
       border
       default-expand-all
     >
-      <el-table-column prop="date" label="date" sortable width="180">
-      </el-table-column>
-      <el-table-column prop="name" label="Nom" sortable width="180">
-      </el-table-column>
-    </el-table>
+      <lx-table-column prop="date" label="date" sortable width="180">
+      </lx-table-column>
+      <lx-table-column prop="name" label="Nom" sortable width="180">
+      </lx-table-column>
+    </lx-table>
 
-    <el-table
+    <lx-table
       :data="tableData1"
       style="width: 100%"
       row-key="id"
@@ -1273,9 +1273,9 @@ Lorsque le contenu d'une ligne est trop long et que vous ne souhaitez pas affich
       :load="load"
       :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
     >
-      <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-      <el-table-column prop="name" label="Nom" width="180"> </el-table-column>
-    </el-table>
+      <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+      <lx-table-column prop="name" label="Nom" width="180"> </lx-table-column>
+    </lx-table>
   </div>
 </template>
 <script>
@@ -1373,18 +1373,18 @@ Pour les tableaux de nombres, vous pouvez ajouter une ligne en plus pour affiche
 
 ```html
 <template>
-  <el-table :data="tableData" border show-summary style="width: 100%">
-    <el-table-column prop="id" label="ID" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Nom"> </el-table-column>
-    <el-table-column prop="amount1" sortable label="Quantité 1">
-    </el-table-column>
-    <el-table-column prop="amount2" sortable label="Quantité 2">
-    </el-table-column>
-    <el-table-column prop="amount3" sortable label="Quantité 3">
-    </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" border show-summary style="width: 100%">
+    <lx-table-column prop="id" label="ID" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Nom"> </lx-table-column>
+    <lx-table-column prop="amount1" sortable label="Quantité 1">
+    </lx-table-column>
+    <lx-table-column prop="amount2" sortable label="Quantité 2">
+    </lx-table-column>
+    <lx-table-column prop="amount3" sortable label="Quantité 3">
+    </lx-table-column>
+  </lx-table>
 
-  <el-table
+  <lx-table
     :data="tableData"
     border
     height="200"
@@ -1392,12 +1392,12 @@ Pour les tableaux de nombres, vous pouvez ajouter une ligne en plus pour affiche
     show-summary
     style="width: 100%; margin-top: 20px"
   >
-    <el-table-column prop="id" label="ID" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Nom"> </el-table-column>
-    <el-table-column prop="amount1" label="Coût 1 ($)"> </el-table-column>
-    <el-table-column prop="amount2" label="Coût 2 ($)"> </el-table-column>
-    <el-table-column prop="amount3" label="Coût 3 ($)"> </el-table-column>
-  </el-table>
+    <lx-table-column prop="id" label="ID" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Nom"> </lx-table-column>
+    <lx-table-column prop="amount1" label="Coût 1 ($)"> </lx-table-column>
+    <lx-table-column prop="amount2" label="Coût 2 ($)"> </lx-table-column>
+    <lx-table-column prop="amount3" label="Coût 3 ($)"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>
@@ -1482,39 +1482,39 @@ Pour les tableaux de nombres, vous pouvez ajouter une ligne en plus pour affiche
 
 Vous pouvez configurer l'étendue des lignes et colonnes afin de fusionner des cellules.
 
-:::demo Utilisez `span-method` pour configurer chaque étendue. Il accepte une fonction, et lui passe un objet incluant la ligne actuelle `row`, la colonne actuelle `column`, l'index de la ligne `rowIndex` et l'index de la colonne `columnIndex`. La fonction doit retourner un tableau contenant deux nombres, le premier étant `rowspan` et le second `colspan`. Elle peut aussi retourner un objet avec les propriétés `rowspan` et `colspan`.
+:::demo Utilisez `span-method` pour configurer chaque étendue. Il accepte une fonction, et lui passe un objet incluant la ligne actuelle `row`, la colonne actuelle `column`, l'index de la ligne `rowIndex` et l'index de la colonne `columnIndex`. La fonction doit retourner un tableau contenant deux nombres, le premier étant `rowspan` et le second `colspan`. Lxle peut aussi retourner un objet avec les propriétés `rowspan` et `colspan`.
 
 ```html
 <template>
   <div>
-    <el-table
+    <lx-table
       :data="tableData"
       :span-method="arraySpanMethod"
       border
       style="width: 100%"
     >
-      <el-table-column prop="id" label="ID" width="180"> </el-table-column>
-      <el-table-column prop="name" label="Nom"> </el-table-column>
-      <el-table-column prop="amount1" sortable label="Quantité 1">
-      </el-table-column>
-      <el-table-column prop="amount2" sortable label="Quantité 2">
-      </el-table-column>
-      <el-table-column prop="amount3" sortable label="Quantité 3">
-      </el-table-column>
-    </el-table>
+      <lx-table-column prop="id" label="ID" width="180"> </lx-table-column>
+      <lx-table-column prop="name" label="Nom"> </lx-table-column>
+      <lx-table-column prop="amount1" sortable label="Quantité 1">
+      </lx-table-column>
+      <lx-table-column prop="amount2" sortable label="Quantité 2">
+      </lx-table-column>
+      <lx-table-column prop="amount3" sortable label="Quantité 3">
+      </lx-table-column>
+    </lx-table>
 
-    <el-table
+    <lx-table
       :data="tableData"
       :span-method="objectSpanMethod"
       border
       style="width: 100%; margin-top: 20px"
     >
-      <el-table-column prop="id" label="ID" width="180"> </el-table-column>
-      <el-table-column prop="name" label="Nom"> </el-table-column>
-      <el-table-column prop="amount1" label="Quantité 1"> </el-table-column>
-      <el-table-column prop="amount2" label="Quantité 2"> </el-table-column>
-      <el-table-column prop="amount3" label="Quantité 3"> </el-table-column>
-    </el-table>
+      <lx-table-column prop="id" label="ID" width="180"> </lx-table-column>
+      <lx-table-column prop="name" label="Nom"> </lx-table-column>
+      <lx-table-column prop="amount1" label="Quantité 1"> </lx-table-column>
+      <lx-table-column prop="amount2" label="Quantité 2"> </lx-table-column>
+      <lx-table-column prop="amount3" label="Quantité 3"> </lx-table-column>
+    </lx-table>
   </div>
 </template>
 
@@ -1602,12 +1602,12 @@ Vous pouvez personnaliser les indices des colonnes de type `index`.
 
 ```html
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column type="index" :index="indexMethod"> </el-table-column>
-    <el-table-column prop="date" label="Date" width="180"> </el-table-column>
-    <el-table-column prop="name" label="Nom" width="180"> </el-table-column>
-    <el-table-column prop="address" label="Adresse"> </el-table-column>
-  </el-table>
+  <lx-table :data="tableData" style="width: 100%">
+    <lx-table-column type="index" :index="indexMethod"> </lx-table-column>
+    <lx-table-column prop="date" label="Date" width="180"> </lx-table-column>
+    <lx-table-column prop="name" label="Nom" width="180"> </lx-table-column>
+    <lx-table-column prop="address" label="Adresse"> </lx-table-column>
+  </lx-table>
 </template>
 
 <script>

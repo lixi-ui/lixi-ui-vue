@@ -30,9 +30,9 @@ export interface SelectContext {
 }
 
 // For individual build sharing injection key, we had to make `Symbol` to string
-export const selectGroupKey = 'ElSelectGroup' as unknown as InjectionKey<SelectGroupContext>
+export const selectGroupKey = 'LxSelectGroup' as unknown as InjectionKey<SelectGroupContext>
 
-export const selectKey = 'ElSelect' as unknown as InjectionKey<SelectContext>
+export const selectKey = 'LxSelect' as unknown as InjectionKey<SelectContext>
 
 export const selectEvents = {
   queryChange: 'elOptionQueryChange',

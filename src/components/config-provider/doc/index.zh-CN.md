@@ -4,20 +4,20 @@ Config Provider 被用来提供全局的配置选项，让你的配置能够在�
 
 ```html
 <template>
-  <el-config-provider :locale="locale">
+  <lx-config-provider :locale="locale">
     <app />
-  </el-config-provider>
+  </lx-config-provider>
 </template>
 
 <script>
   import { defineComponent } from 'vue'
-  import { ElConfigProvider } from 'element-plus'
+  import { LxConfigProvider } from 'element-plus'
 
   import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 
   export default defineComponent({
     components: {
-      ElConfigProvider,
+      LxConfigProvider,
     },
     setup() {
       return {
@@ -34,17 +34,17 @@ Config Provider 被用来提供全局的配置选项，让你的配置能够在�
 
 ```html
 <div>
-  <el-config-provider :locale="locale1">
+  <lx-config-provider :locale="locale1">
     <div style="margin: 8px;">
-      <el-empty />
+      <lx-empty />
     </div>
     <div style="margin: 8px;">
-      <el-transfer />
+      <lx-transfer />
     </div>
-  </el-config-provider>
-  <el-button @click="toggle" style="margin-left: 8px; vertical-align: middle;">
+  </lx-config-provider>
+  <lx-button @click="toggle" style="margin-left: 8px; vertical-align: middle;">
     切换语言
-  </el-button>
+  </lx-button>
 </div>
 <script>
   import { ref } from 'vue'

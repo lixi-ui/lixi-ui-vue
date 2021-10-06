@@ -18,7 +18,7 @@ import Upload from './upload.vue'
 import useHandlers from './useHandlers'
 
 import type { PropType } from 'vue'
-import type { ElFormContext } from '@element-plus/tokens'
+import type { LxFormContext } from '@element-plus/tokens'
 import type { Nullable } from '@element-plus/utils/types'
 import type {
   ListType,
@@ -32,7 +32,7 @@ type PFileResultHandler<T = any> = PropType<FileResultHandler<T>>
 
 
 export default defineComponent({
-  name: 'ElUpload',
+  name: 'LxUpload',
   components: {
     Upload,
     UploadList,
@@ -136,7 +136,7 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const elForm = inject(elFormKey, {} as ElFormContext)
+    const elForm = inject(elFormKey, {} as LxFormContext)
 
     const uploadDisabled = computed(() => {
       return props.disabled || elForm.disabled

@@ -24,14 +24,14 @@ const Component = defineComponent({
     }
   },
   template: `
-    <el-timeline>
-      <el-timeline-item
+    <lx-timeline>
+      <lx-timeline-item
         v-for="(activity, index) in activities"
         :key="index"
         :timestamp="activity.timestamp">
         {{activity.content}}
-      </el-timeline-item>
-    </el-timeline>
+      </lx-timeline-item>
+    </lx-timeline>
   `,
 })
 
@@ -40,12 +40,12 @@ describe('TimeLine.vue', () => {
     const wrapper = mount(Component)
     const vm = wrapper.vm
 
-    const contentWrappers = wrapper.findAll('.el-timeline-item__content')
+    const contentWrappers = wrapper.findAll('.lx-timeline-item__content')
     contentWrappers.forEach((content, index) => {
       expect(content.text()).toEqual(vm.activities[index].content)
     })
 
-    const timestampWrappers = wrapper.findAll('.el-timeline-item__timestamp')
+    const timestampWrappers = wrapper.findAll('.lx-timeline-item__timestamp')
     timestampWrappers.forEach((timestamp, index) => {
       expect(timestamp.text()).toEqual(vm.activities[index].timestamp)
     })
@@ -55,15 +55,15 @@ describe('TimeLine.vue', () => {
     const wrapper = mount({
       ...Component,
       template: `
-        <el-timeline>
-          <el-timeline-item
+        <lx-timeline>
+          <lx-timeline-item
             v-for="(activity, index) in activities"
             :key="index"
             :timestamp="activity.timestamp"
             :placement="activity.placement">
             {{activity.content}}
-          </el-timeline-item>
-        </el-timeline>
+          </lx-timeline-item>
+        </lx-timeline>
       `,
       data() {
         return {
@@ -81,7 +81,7 @@ describe('TimeLine.vue', () => {
         }
       },
     })
-    const timestampWrapper = wrapper.findAll('.el-timeline-item__timestamp')[0]
+    const timestampWrapper = wrapper.findAll('.lx-timeline-item__timestamp')[0]
     expect(timestampWrapper.classes('is-top')).toBe(true)
   })
 
@@ -89,15 +89,15 @@ describe('TimeLine.vue', () => {
     const wrapper = mount({
       ...Component,
       template: `
-        <el-timeline>
-          <el-timeline-item
+        <lx-timeline>
+          <lx-timeline-item
             v-for="(activity, index) in activities"
             :key="index"
             :timestamp="activity.timestamp"
             :hide-timestamp="activity.hideTimestamp">
             {{activity.content}}
-          </el-timeline-item>
-        </el-timeline>
+          </lx-timeline-item>
+        </lx-timeline>
       `,
       data() {
         return {
@@ -115,7 +115,7 @@ describe('TimeLine.vue', () => {
         }
       },
     })
-    const timestampWrappers = wrapper.findAll('.el-timeline-item__timestamp')
+    const timestampWrappers = wrapper.findAll('.lx-timeline-item__timestamp')
     expect(timestampWrappers.length).toEqual(2)
   })
 
@@ -123,17 +123,17 @@ describe('TimeLine.vue', () => {
     const wrapper = mount({
       ...Component,
       template: `
-        <el-timeline>
-          <el-timeline-item
+        <lx-timeline>
+          <lx-timeline-item
             timestamp="2018-04-11"
             color="#f00">
             Step 1: xxxxxx
-          </el-timeline-item>
-        </el-timeline>
+          </lx-timeline-item>
+        </lx-timeline>
       `,
     })
     const vm = wrapper.vm
-    const nodeElm = vm.$el.querySelector('.el-timeline-item__node')
+    const nodeElm = vm.$el.querySelector('.lx-timeline-item__node')
     expect(nodeElm.style.backgroundColor).toEqual('rgb(255, 0, 0)')
   })
 
@@ -141,16 +141,16 @@ describe('TimeLine.vue', () => {
     const wrapper = mount({
       ...Component,
       template: `
-        <el-timeline>
-          <el-timeline-item
+        <lx-timeline>
+          <lx-timeline-item
             timestamp="2018-04-11"
             type="primary">
             Step 1: xxxxxx
-          </el-timeline-item>
-        </el-timeline>
+          </lx-timeline-item>
+        </lx-timeline>
       `,
     })
-    const nodeWrapper = wrapper.find('.el-timeline-item__node')
+    const nodeWrapper = wrapper.find('.lx-timeline-item__node')
     expect(nodeWrapper.classes('el-timeline-item__node--primary')).toBe(true)
   })
 
@@ -158,16 +158,16 @@ describe('TimeLine.vue', () => {
     const wrapper = mount({
       ...Component,
       template: `
-        <el-timeline>
-          <el-timeline-item
+        <lx-timeline>
+          <lx-timeline-item
             timestamp="2018-04-11"
             type="large">
             Step 1: xxxxxx
-          </el-timeline-item>
-        </el-timeline>
+          </lx-timeline-item>
+        </lx-timeline>
       `,
     })
-    const nodeWrapper = wrapper.find('.el-timeline-item__node')
+    const nodeWrapper = wrapper.find('.lx-timeline-item__node')
     expect(nodeWrapper.classes('el-timeline-item__node--large')).toBe(true)
   })
 
@@ -175,16 +175,16 @@ describe('TimeLine.vue', () => {
     const wrapper = mount({
       ...Component,
       template: `
-        <el-timeline>
-          <el-timeline-item
+        <lx-timeline>
+          <lx-timeline-item
             timestamp="2018-04-11"
             icon="el-icon-more">
             Step 1: xxxxxx
-          </el-timeline-item>
-        </el-timeline>
+          </lx-timeline-item>
+        </lx-timeline>
       `,
     })
-    const nodeWrapper = wrapper.find('.el-timeline-item__icon')
+    const nodeWrapper = wrapper.find('.lx-timeline-item__icon')
     expect(nodeWrapper.classes('el-icon-more')).toBe(true)
   })
 
@@ -192,20 +192,20 @@ describe('TimeLine.vue', () => {
     const wrapper = mount({
       ...Component,
       template: `
-        <el-timeline>
-          <el-timeline-item
+        <lx-timeline>
+          <lx-timeline-item
             timestamp="2018-04-11"
           >
             <template #dot>
               dot
             </template>
-          </el-timeline-item>
-        </el-timeline>
+          </lx-timeline-item>
+        </lx-timeline>
       `,
     })
 
-    const dotWrapper = wrapper.find('.el-timeline-item__dot')
+    const dotWrapper = wrapper.find('.lx-timeline-item__dot')
     expect(dotWrapper.text()).toEqual('dot')
-    expect(wrapper.find('.el-timeline-item__node').exists()).toBe(false)
+    expect(wrapper.find('.lx-timeline-item__node').exists()).toBe(false)
   })
 })

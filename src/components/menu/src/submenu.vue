@@ -16,14 +16,14 @@ import {
   vShow,
   h,
 } from 'vue'
-import ElCollapseTransition from '@element-plus/components/collapse-transition'
-import ElPopper from '@element-plus/components/popper'
+import LxCollapseTransition from '@element-plus/components/collapse-transition'
+import LxPopper from '@element-plus/components/popper'
 import useMenu from './useMenu'
 
 import type { ISubMenuProps, RootMenuProvider, SubMenuProvider } from './menu.type'
 
 export default defineComponent({
-  name: 'ElSubMenu',
+  name: 'LxSubMenu',
   props: {
     index: {
       type: String,
@@ -92,8 +92,8 @@ export default defineComponent({
     const isFirstLevel = computed(() => {
       let isFirstLevel = true
       let parent = instance.parent
-      while (parent && parent.type.name !== 'ElMenu') {
-        if (['ElSubMenu', 'ElMenuItemGroup'].includes(parent.type.name)) {
+      while (parent && parent.type.name !== 'LxMenu') {
+        if (['LxSubMenu', 'LxMenuItemGroup'].includes(parent.type.name)) {
           isFirstLevel = false
           break
         } else {
@@ -248,7 +248,7 @@ export default defineComponent({
       }, props.hideTimeout)
 
       if (appendToBody.value && deepDispatch) {
-        if (instance.parent.type.name === 'ElSubMenu') {
+        if (instance.parent.type.name === 'LxSubMenu') {
           parentHandleMouseleave(true)
         }
       }
@@ -360,7 +360,7 @@ export default defineComponent({
       backgroundColor: this.rootProps.backgroundColor || '',
     }
     // this render function is only used for bypass `Vue`'s compiler caused patching issue.
-    // temporaryly mark ElPopper as any due to type inconsistency.
+    // temporaryly mark LxPopper as any due to type inconsistency.
     // TODO: correct popper's type.
     const child = this.isMenuPopup
       ? h(ElPopper as any, {

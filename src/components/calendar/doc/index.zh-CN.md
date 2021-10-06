@@ -6,8 +6,8 @@
 
 :::demo 设置 `value` 来指定当前显示的月份。如果 `value` 未指定，则显示当月。`value` 支持 `v-model` 双向绑定。
 ```html
-<el-calendar v-model="value">
-</el-calendar>
+<lx-calendar v-model="value">
+</lx-calendar>
 
 <script>
   export default {
@@ -42,13 +42,13 @@
 
 :::demo 通过设置名为 `dateCell` 的 `scoped-slot` 来自定义日历单元格中显示的内容。在 `scoped-slot` 可以获取到 date（当前单元格的日期）, data（包括 type，isSelected，day 属性）。详情解释参考下方的 API 文档。
 ```html
-<el-calendar>
+<lx-calendar>
   <template #dateCell="{data}">
     <p :class="data.isSelected ? 'is-selected' : ''">
       {{ data.day.split('-').slice(1).join('-') }} {{ data.isSelected ? '✔️' : '' }}
     </p>
   </template>
-</el-calendar>
+</lx-calendar>
 <style>
   .is-selected {
     color: #1989FA;
@@ -61,8 +61,8 @@
 
 :::demo 设置 `range` 属性指定日历的显示范围。开始时间必须是周起始日，结束时间必须是周结束日，且时间跨度不能超过两个月。
 ```html
-<el-calendar :range="[new Date(2019, 2, 4), new Date(2019, 2, 24)]">
-</el-calendar>
+<lx-calendar :range="[new Date(2019, 2, 4), new Date(2019, 2, 24)]">
+</lx-calendar>
 ```
 :::
 

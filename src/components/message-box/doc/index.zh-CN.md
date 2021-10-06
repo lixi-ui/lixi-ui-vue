@@ -12,7 +12,7 @@
 :::demo 调用`$alert`方法即可打开消息提示，它模拟了系统的 `alert`，无法通过按下 ESC 或点击框外关闭。此例中接收了两个参数，`message`和`title`。值得一提的是，窗口被关闭后，它默认会返回一个`Promise`对象便于进行后续操作的处理。若不确定浏览器是否支持`Promise`，可自行引入第三方 polyfill 或像本例一样使用回调进行后续处理。
 ```html
 <template>
-  <el-button type="text" @click="open">点击打开 Message Box</el-button>
+  <lx-button type="text" @click="open">点击打开 Message Box</lx-button>
 </template>
 
 <script>
@@ -36,17 +36,17 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.alert('这是一段内容', '标题名称', {
+        LxMessageBox.alert('这是一段内容', '标题名称', {
           confirmButtonText: '确定',
           callback: (action) => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: `action: ${action}`,
             });
@@ -73,7 +73,7 @@
 
 ```html
 <template>
-  <el-button type="text" @click="open">点击打开 Message Box</el-button>
+  <lx-button type="text" @click="open">点击打开 Message Box</lx-button>
 </template>
 
 <script>
@@ -103,26 +103,26 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+        LxMessageBox.confirm('此操作将永久删除该文件, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning',
         })
           .then(() => {
-            ElMessage({
+            LxMessage({
               type: 'success',
               message: '删除成功!',
             });
           })
           .catch(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: '已取消删除',
             });
@@ -148,7 +148,7 @@
 
 ```html
 <template>
-  <el-button type="text" @click="open">点击打开 Message Box</el-button>
+  <lx-button type="text" @click="open">点击打开 Message Box</lx-button>
 </template>
 
 <script>
@@ -180,27 +180,27 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.prompt('请输入邮箱', '提示', {
+        LxMessageBox.prompt('请输入邮箱', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
           inputErrorMessage: '邮箱格式不正确',
         })
           .then(({ value }) => {
-            ElMessage({
+            LxMessage({
               type: 'success',
               message: `你的邮箱是: ${value}`,
             });
           })
           .catch(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: '取消输入',
             });
@@ -226,7 +226,7 @@
 
 ```html
 <template>
-  <el-button type="text" @click="open">点击打开 Message Box</el-button>
+  <lx-button type="text" @click="open">点击打开 Message Box</lx-button>
 </template>
 
 <script>
@@ -273,13 +273,13 @@
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox({
+        LxMessageBox({
           title: '消息',
           message: h('p', null, [
             h('span', null, '内容可以是 '),
@@ -303,7 +303,7 @@
             }
           },
         }).then((action) => {
-          ElMessage({
+          LxMessage({
             type: 'info',
             message: `action: ${action}`,
           });
@@ -335,7 +335,7 @@
 
 ```html
 <template>
-  <el-button type="text" @click="open">点击打开 Message Box</el-button>
+  <lx-button type="text" @click="open">点击打开 Message Box</lx-button>
 </template>
 
 <script>
@@ -353,13 +353,13 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.alert('<strong>这是 <i>HTML</i> 片段</strong>', 'HTML 片段', {
+        LxMessageBox.alert('<strong>这是 <i>HTML</i> 片段</strong>', 'HTML 片段', {
           dangerouslyUseHTMLString: true,
         });
       };
@@ -387,7 +387,7 @@
 
 ```html
 <template>
-  <el-button type="text" @click="open">点击打开 Message Box</el-button>
+  <lx-button type="text" @click="open">点击打开 Message Box</lx-button>
 </template>
 
 <script>
@@ -421,26 +421,26 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.confirm('检测到未保存的内容，是否在离开页面前保存修改？', '确认信息', {
+        LxMessageBox.confirm('检测到未保存的内容，是否在离开页面前保存修改？', '确认信息', {
           distinguishCancelAndClose: true,
           confirmButtonText: '保存',
           cancelButtonText: '放弃修改',
         })
           .then(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: '保存修改',
             });
           })
           .catch((action) => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: action === 'cancel'
                 ? '放弃保存并离开页面'
@@ -467,7 +467,7 @@
 
 ```html
 <template>
-  <el-button type="text" @click="open">点击打开 Message Box</el-button>
+  <lx-button type="text" @click="open">点击打开 Message Box</lx-button>
 </template>
 
 <script>
@@ -498,25 +498,25 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+        LxMessageBox.confirm('此操作将永久删除该文件, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning',
           center: true,
         }).then(() => {
-          ElMessage({
+          LxMessage({
             type: 'success',
             message: '删除成功!',
           });
         }).catch(() => {
-          ElMessage({
+          LxMessage({
             type: 'info',
             message: '已取消删除',
           });
@@ -536,7 +536,7 @@
 
 ### 全局方法
 
-如果你完整引入了 Element，它会为 `app.config.globalProperties` 添加如下全局方法：$msgbox, $alert, $confirm 和 $prompt。因此在 Vue instance 中可以采用本页面中的方式调用 `MessageBox`。调用参数为：
+如果你完整引入了 Lxement，它会为 `app.config.globalProperties` 添加如下全局方法：$msgbox, $alert, $confirm 和 $prompt。因此在 Vue instance 中可以采用本页面中的方式调用 `MessageBox`。调用参数为：
 - `$msgbox(options)`
 - `$alert(message, title, options)` 或 `$alert(message, options)`
 - `$confirm(message, title, options)` 或 `$confirm(message, options)`
@@ -547,10 +547,10 @@
 如果单独引入 `MessageBox`：
 
 ```javascript
-import { ElMessageBox } from 'element-plus';
+import { LxMessageBox } from 'element-plus';
 ```
 
-那么对应于上述四个全局方法的调用方法依次为：ElMessageBox, ElMessageBox.alert, ElMessageBox.confirm 和 ElMessageBox.prompt，调用参数与全局方法相同。
+那么对应于上述四个全局方法的调用方法依次为：ElMessageBox, LxMessageBox.alert, LxMessageBox.confirm 和 LxMessageBox.prompt，调用参数与全局方法相同。
 
 ### Options
 

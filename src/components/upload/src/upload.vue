@@ -34,14 +34,14 @@ import UploadDragger from './upload-dragger.vue'
 
 import type { PropType } from 'vue'
 import type { Indexable, Nullable } from '@element-plus/utils/types'
-import type { ListType, UploadFile, ElFile } from './upload.type'
+import type { ListType, UploadFile, LxFile } from './upload.type'
 
 type IFileHanlder = (
   file: Nullable<ElFile[]>,
   fileList?: UploadFile[],
 ) => unknown
 
-type AjaxEventListener = (e: ProgressEvent, file: ElFile) => unknown
+type AjaxEventListener = (e: ProgressEvent, file: LxFile) => unknown
 
 export default defineComponent({
   components: {
@@ -113,9 +113,9 @@ export default defineComponent({
     },
     onRemove: {
       type: Function as PropType<
-      (file: Nullable<FileList>, rawFile: ElFile) => void
+      (file: Nullable<FileList>, rawFile: LxFile) => void
       >,
-      default: NOOP as (file: Nullable<FileList>, rawFile: ElFile) => void,
+      default: NOOP as (file: Nullable<FileList>, rawFile: LxFile) => void,
     },
     fileList: {
       type: Array as PropType<UploadFile[]>,
@@ -166,11 +166,11 @@ export default defineComponent({
       }
       postFiles.forEach(rawFile => {
         props.onStart(rawFile)
-        if (props.autoUpload) upload(rawFile as ElFile)
+        if (props.autoUpload) upload(rawFile as LxFile)
       })
     }
 
-    function upload(rawFile: ElFile) {
+    function upload(rawFile: LxFile) {
       inputRef.value.value = null
       if (!props.beforeUpload) {
         return post(rawFile)
@@ -221,7 +221,7 @@ export default defineComponent({
       }
     }
 
-    function post(rawFile: ElFile) {
+    function post(rawFile: LxFile) {
       const { uid } = rawFile
       const options = {
         headers: props.headers,

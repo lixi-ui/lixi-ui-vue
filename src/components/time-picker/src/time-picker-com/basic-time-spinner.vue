@@ -1,7 +1,7 @@
 <template>
   <div class="el-time-spinner" :class="{ 'has-seconds': showSeconds }">
     <template v-if="!arrowControl">
-      <el-scrollbar
+      <lx-scrollbar
         v-for="item in spinnerItems"
         :key="item"
         :ref="getRefId(item)"
@@ -27,7 +27,7 @@
             {{ ('0' + key).slice(-2) }}
           </template>
         </li>
-      </el-scrollbar>
+      </lx-scrollbar>
     </template>
     <template v-if="arrowControl">
       <div
@@ -64,7 +64,7 @@ import {
 } from 'vue'
 import debounce from 'lodash/debounce'
 import { RepeatClick } from '@element-plus/directives'
-import ElScrollbar from '@element-plus/components/scrollbar'
+import LxScrollbar from '@element-plus/components/scrollbar'
 import { getTimeLists } from './useTimePicker'
 
 import type { PropType } from 'vue'
@@ -78,7 +78,7 @@ export default defineComponent({
   },
 
   components: {
-    ElScrollbar,
+    LxScrollbar,
   },
 
   props: {
@@ -225,7 +225,7 @@ export default defineComponent({
       if (props.arrowControl) return
       const el = listRefsMap[type]
       if (el.value) {
-        el.value.$el.querySelector('.el-scrollbar__wrap').scrollTop = Math.max(0, value * typeItemHeight(type))
+        el.value.$el.querySelector('.lx-scrollbar__wrap').scrollTop = Math.max(0, value * typeItemHeight(type))
       }
     }
 
@@ -294,7 +294,7 @@ export default defineComponent({
     const handleScroll = type => {
       isScrolling = true
       debouncedResetScroll(type)
-      const value = Math.min(Math.round((listRefsMap[type].value.$el.querySelector('.el-scrollbar__wrap').scrollTop - (scrollBarHeight(type) * 0.5 - 10) / typeItemHeight(type) + 3) / typeItemHeight(type)), (type === 'hours' ? 23 : 59))
+      const value = Math.min(Math.round((listRefsMap[type].value.$el.querySelector('.lx-scrollbar__wrap').scrollTop - (scrollBarHeight(type) * 0.5 - 10) / typeItemHeight(type) + 3) / typeItemHeight(type)), (type === 'hours' ? 23 : 59))
       modifyDateField(type, value)
     }
 
@@ -305,7 +305,7 @@ export default defineComponent({
     const bindScrollEvent = () => {
       const bindFuntion = type => {
         if (listRefsMap[type].value) {
-          listRefsMap[type].value.$el.querySelector('.el-scrollbar__wrap').onscroll = () => {
+          listRefsMap[type].value.$el.querySelector('.lx-scrollbar__wrap').onscroll = () => {
           // TODO: scroll is emitted when set scrollTop programatically
           // should find better solutions in the future!
             handleScroll(type)

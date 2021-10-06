@@ -10,4 +10,4 @@ Alert.install = (app: App): void => {
 const _Alert = Alert as SFCWithInstall<typeof Alert>
 
 export default _Alert
-export const ElAlert = _Alert
+export const LxAlert = _Alert

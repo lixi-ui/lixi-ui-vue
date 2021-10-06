@@ -10,10 +10,10 @@ import {
   END_ALIGNMENT,
 } from '../defaults'
 
-const SCOPE = 'ElFixedSizeGrid'
+const SCOPE = 'LxFixedSizeGrid'
 
 const FixedSizeGrid = createGrid({
-  name: 'ElFixedSizeGrid',
+  name: 'LxFixedSizeGrid',
   getColumnPosition: ({ columnWidth }, index) => [
     columnWidth as number,
     index * (columnWidth as number),

@@ -26,9 +26,9 @@ $ npm install @element-plus/icons
 
 ```html
 <!-- 用 el-icon 为 SVG 提供属性 -->
-<el-icon :size="size" :color="color">
+<lx-icon :size="size" :color="color">
   <edit />
-</el-icon>
+</lx-icon>
 <!-- 或者单独使用，不从祖先节点继承任何属性 -->
 <edit />
 
@@ -53,26 +53,26 @@ export default defineComponent({
   <p>
     通过添加额外的类名 <b>is-loading</b>，你的图标就可以在 2 秒内旋转 360 度，但让你也可以自己改写想要的动画。
   </p>
-  <el-icon :size="20">
+  <lx-icon :size="20">
     <edit />
-  </el-icon>
-  <el-icon color="#409EFC" class="no-inherit">
+  </lx-icon>
+  <lx-icon color="#409EFC" class="no-inherit">
     <share />
-  </el-icon>
-  <el-icon>
+  </lx-icon>
+  <lx-icon>
     <delete />
-  </el-icon>
-  <el-icon class="is-loading">
+  </lx-icon>
+  <lx-icon class="is-loading">
     <loading />
-  </el-icon>
-  <el-button type="primary">
-    <el-icon style="vertical-align: middle;">
+  </lx-icon>
+  <lx-button type="primary">
+    <lx-icon style="vertical-align: middle;">
       <search />
-    </el-icon>
+    </lx-icon>
     <span style="vertical-align: middle;">
       搜索
     </span>
-  </el-button>
+  </lx-button>
 ```
 :::
 
@@ -107,9 +107,9 @@ export default defineComponent({
     :key="component"
     @click="$copySvgIcon(component)">
     <span class="demo-svg-icon">
-      <el-icon color="#000">
+      <lx-icon color="#000">
         <component :is="component" />
-      </el-icon>
+      </lx-icon>
       <span class="icon-name">{{component}}</span>
     </span>
   </li>
@@ -124,7 +124,7 @@ export default defineComponent({
   <i class="el-icon-edit"></i>
   <i class="el-icon-share"></i>
   <i class="el-icon-delete"></i>
-  <el-button type="primary" icon="el-icon-search">搜索</el-button>
+  <lx-button type="primary" icon="el-icon-search">搜索</lx-button>
 ```
 :::
 

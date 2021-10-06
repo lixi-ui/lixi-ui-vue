@@ -10,4 +10,4 @@ Drawer.install = (app: App): void => {
 const _Drawer = Drawer as SFCWithInstall<typeof Drawer>
 
 export default _Drawer
-export const ElDrawer = _Drawer
+export const LxDrawer = _Drawer

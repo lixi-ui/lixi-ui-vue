@@ -10,24 +10,24 @@ export type UploadFile = {
   response?: unknown
   uid: number
   url?: string
-  raw: ElFile
+  raw: LxFile
 }
 
-export interface ElFile extends File {
+export interface LxFile extends File {
   uid: number
 }
 
-export interface ElUploadProgressEvent extends ProgressEvent {
+export interface LxUploadProgressEvent extends ProgressEvent {
   percent: number
 }
 
-export interface ElUploadAjaxError extends Error {
+export interface LxUploadAjaxError extends Error {
   status: number
   method: string
   url: string
 }
 
-export interface ElUploadRequestOptions {
+export interface LxUploadRequestOptions {
   action: string
   data: Record<string, string | Blob>
   filename: string
@@ -55,7 +55,7 @@ export interface IUseHandlersProps {
   onError?: FileResultHandler<Error>
 }
 
-export interface ElUpload extends IUseHandlersProps {
+export interface LxUpload extends IUseHandlersProps {
   accept: string
   headers?: Headers
   data?: Record<string, unknown>

@@ -16,5 +16,5 @@ const _Tabs = Tabs as any as SFCWithInstall<typeof Tabs> & {
 }
 
 export default _Tabs
-export const ElTabs = _Tabs
-export const ElTabPane = TabPane
+export const LxTabs = _Tabs
+export const LxTabPane = TabPane

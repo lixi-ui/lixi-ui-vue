@@ -24,10 +24,10 @@ const _Menu = Menu as any as SFCWithInstall<typeof Menu> & {
 }
 
 export default _Menu
-export const ElMenu = _Menu
-export const ElMenuItem = MenuItem
-export const ElMenuItemGroup = MenuItemGroup
-export const ElSubMenu = SubMenu
+export const LxMenu = _Menu
+export const LxMenuItem = MenuItem
+export const LxMenuItemGroup = MenuItemGroup
+export const LxSubMenu = SubMenu
 
 export * from './src/menu.type'
 

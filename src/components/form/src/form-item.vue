@@ -69,12 +69,12 @@ import { elFormEvents, elFormItemKey, elFormKey } from '@element-plus/tokens'
 
 import type { PropType, CSSProperties } from 'vue'
 import type { ComponentSize } from '@element-plus/utils/types'
-import type { ElFormContext, ValidateFieldCallback } from '@element-plus/tokens'
+import type { LxFormContext, ValidateFieldCallback } from '@element-plus/tokens'
 import type { FormItemRule } from './form.type'
 
 export default defineComponent({
-  name: 'ElFormItem',
-  componentName: 'ElFormItem',
+  name: 'LxFormItem',
+  componentName: 'LxFormItem',
   components: {
     LabelWrap,
   },
@@ -110,7 +110,7 @@ export default defineComponent({
     const formItemMitt = mitt()
     const $ELEMENT = useGlobalConfig()
 
-    const elForm = inject(elFormKey, {} as ElFormContext)
+    const elForm = inject(elFormKey, {} as LxFormContext)
     const validateState = ref('')
     const validateMessage = ref('')
     const validateDisabled = ref(false)
@@ -122,8 +122,8 @@ export default defineComponent({
     const vm = getCurrentInstance()
     const isNested = computed(() => {
       let parent = vm.parent
-      while (parent && parent.type.name !== 'ElForm') {
-        if (parent.type.name === 'ElFormItem') {
+      while (parent && parent.type.name !== 'LxForm') {
+        if (parent.type.name === 'LxFormItem') {
           return true
         }
         parent = parent.parent

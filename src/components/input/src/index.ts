@@ -10,4 +10,4 @@ Input.install = (app: App): void => {
 const _Input = Input as SFCWithInstall<typeof Input>
 
 export default _Input
-export const ElInput = _Input
+export const LxInput = _Input

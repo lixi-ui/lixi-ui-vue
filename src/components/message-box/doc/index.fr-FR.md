@@ -10,11 +10,11 @@ MessageBox est avant tout conçue pour émuler des `alert`, `confirm` ou `prompt
 
 Alert interrompt l'action de l'utilisateur jusqu'à ce qu'il confirme.
 
-:::demo Ouvrez un alert en appelant la méthode `$alert`. Elle simule une `alert` système et ne peut être fermée en pressant ESC ou en cliquant hors de la boite. Dans cet exemple, deux paramètres `message` et `title` sont reçus. Notez que lorsque la boite est fermée, elle retourne un objet `Promise`. Si vous n'êtes pas certains que tout vos navigateurs cibles supportent `Promise`, utilisez un polyfill ou utilisez des callbacks comme dans l'exemple qui suit.
+:::demo Ouvrez un alert en appelant la méthode `$alert`. Lxle simule une `alert` système et ne peut être fermée en pressant ESC ou en cliquant hors de la boite. Dans cet exemple, deux paramètres `message` et `title` sont reçus. Notez que lorsque la boite est fermée, elle retourne un objet `Promise`. Si vous n'êtes pas certains que tout vos navigateurs cibles supportent `Promise`, utilisez un polyfill ou utilisez des callbacks comme dans l'exemple qui suit.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</el-button>
+  <lx-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</lx-button>
 </template>
 
 <script>
@@ -38,13 +38,13 @@ Alert interrompt l'action de l'utilisateur jusqu'à ce qu'il confirme.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.alert('Ceci est un message', 'Titre', {
+        LxMessageBox.alert('Ceci est un message', 'Titre', {
           confirmButtonText: 'OK',
           callback: (action) => {
             this.$message({
@@ -74,7 +74,7 @@ Confirm est utilisé pour demander une confirmation à l'utilisateur.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</el-button>
+  <lx-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</lx-button>
 </template>
 
 <script>
@@ -104,26 +104,26 @@ Confirm est utilisé pour demander une confirmation à l'utilisateur.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.confirm('Ceci effacera le fichier. Continuer?', 'Warning', {
+        LxMessageBox.confirm('Ceci effacera le fichier. Continuer?', 'Warning', {
             confirmButtonText: 'OK',
             cancelButtonText: 'Annuler',
             type: 'warning',
           })
           .then(() => {
-            ElMessage({
+            LxMessage({
               type: 'success',
               message: 'Fichier supprimé',
             });
           })
           .catch(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: 'Suppression annulée',
             });
@@ -150,7 +150,7 @@ Prompt est utilisé lorsqu'un utilisateur.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</el-button>
+  <lx-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</lx-button>
 </template>
 
 <script>
@@ -181,25 +181,25 @@ Prompt est utilisé lorsqu'un utilisateur.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.prompt('Entrez votre e-mail', 'Astuce', {
+        LxMessageBox.prompt('Entrez votre e-mail', 'Astuce', {
           confirmButtonText: 'OK',
           cancelButtonText: 'Annuler',
           inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
           inputErrorMessage: 'E-mail invalide',
         }).then(({ value }) => {
-          ElMessage({
+          LxMessage({
             type: 'success',
             message: `Votre e-mail est: ${value}`,
           });
         }).catch(() => {
-          ElMessage({
+          LxMessage({
             type: 'info',
             message: 'Annulé',
           });
@@ -221,11 +221,11 @@ Prompt est utilisé lorsqu'un utilisateur.
 
 Il est possible d'afficher du contenu un peu plus varié et personnalisé.
 
-:::demo les trois précédentes méthodes sont des repackagings de la méthode `$msgbox`. cet exemple appelle directement `$msgbox` en utilisant l'attribut `showCancelButton` pour indiquer si un bouton annuler doit être affiché. De plus, vous pouvez utiliser `cancelButtonClass` pour ajouter du style et `cancelButtonText` pour personnaliser le bouton texte (voir la liste complète en fin de page). La méthode `beforeClose`est appelée quand la MessageBox va être fermée et prévient sa fermeture. Elle prend trois paramètres: `action`, `instance` et `done`. Elle vous permet ainsi d'effectuer des actions avant la fermeture, e.g. activer `loading` pour le bouton de confirmation. Appelez `done` pour fermer la MessageBox, sinon l'instance ne sera jamais fermée.
+:::demo les trois précédentes méthodes sont des repackagings de la méthode `$msgbox`. cet exemple appelle directement `$msgbox` en utilisant l'attribut `showCancelButton` pour indiquer si un bouton annuler doit être affiché. De plus, vous pouvez utiliser `cancelButtonClass` pour ajouter du style et `cancelButtonText` pour personnaliser le bouton texte (voir la liste complète en fin de page). La méthode `beforeClose`est appelée quand la MessageBox va être fermée et prévient sa fermeture. Lxle prend trois paramètres: `action`, `instance` et `done`. Lxle vous permet ainsi d'effectuer des actions avant la fermeture, e.g. activer `loading` pour le bouton de confirmation. Appelez `done` pour fermer la MessageBox, sinon l'instance ne sera jamais fermée.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</el-button>
+  <lx-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</lx-button>
 </template>
 
 <script>
@@ -271,13 +271,13 @@ Il est possible d'afficher du contenu un peu plus varié et personnalisé.
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { ElMessage } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox({
+        LxMessageBox({
           title: 'Message',
           message: h('p', null, [
             h('span', null, 'Le message peut être '),
@@ -301,7 +301,7 @@ Il est possible d'afficher du contenu un peu plus varié et personnalisé.
             }
           },
         }).then((action) => {
-          ElMessage({
+          LxMessage({
             type: 'info',
             message: `Action: ${action}`,
           });
@@ -331,7 +331,7 @@ Le contenu de MessageBox peut être `VNode`, Vous permettant de passer des compo
 
 ```html
 <template>
-  <el-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</el-button>
+  <lx-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</lx-button>
 </template>
 
 <script>
@@ -349,13 +349,13 @@ Le contenu de MessageBox peut être `VNode`, Vous permettant de passer des compo
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.alert('<strong>Ceci est du <i>HTML</i></strong>', 'HTML', {
+        LxMessageBox.alert('<strong>Ceci est du <i>HTML</i></strong>', 'HTML', {
           dangerouslyUseHTMLString: true,
         });
       };
@@ -383,7 +383,7 @@ Dans certains cas, les boutons fermer et annuler peuvent avoir des sens différe
 
 ```html
 <template>
-  <el-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</el-button>
+  <lx-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</lx-button>
 </template>
 
 <script>
@@ -417,26 +417,26 @@ Dans certains cas, les boutons fermer et annuler peuvent avoir des sens différe
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
 
       const open = () => {
-        ElMessageBox.confirm('Vous avez du travail non enregistré, enregistrer et quitter?', 'Confirm', {
+        LxMessageBox.confirm('Vous avez du travail non enregistré, enregistrer et quitter?', 'Confirm', {
           distinguishCancelAndClose: true,
           confirmButtonText: 'Enregistrer',
           cancelButtonText: 'Ne pas enregistrer',
         })
           .then(() => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: 'Enregistré. Passage a une nouvelle route.',
             });
           })
           .catch((action) => {
-            ElMessage({
+            LxMessage({
               type: 'info',
               message: action === 'cancel'
                 ? 'Changements annulés. Passage sur une nouvelle route.'
@@ -464,7 +464,7 @@ le contenu de MessageBox peut être centré.
 
 ```html
 <template>
-  <el-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</el-button>
+  <lx-button type="text" @click="open">Cliquez pour ouvrir la MessageBox</lx-button>
 </template>
 
 <script>
@@ -495,25 +495,25 @@ le contenu de MessageBox peut être centré.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { ElMessageBox } from 'element-plus';
-  import { ElMessage } from 'element-plus';
+  import { LxMessageBox } from 'element-plus';
+  import { LxMessage } from 'element-plus';
 
   export default defineComponent({
     setup() {
       
       const open = () => {
-        ElMessageBox.confirm('Ceci effacera le fichier, continuer?', 'Warning', {
+        LxMessageBox.confirm('Ceci effacera le fichier, continuer?', 'Warning', {
           confirmButtonText: 'OK',
           cancelButtonText: 'Annuler',
           type: 'warning',
           center: true,
         }).then(() => {
-          ElMessage({
+          LxMessage({
             type: 'success',
             message: 'Fichier supprimé',
           });
         }).catch(() => {
-          ElMessage({
+          LxMessage({
             type: 'info',
             message: 'Annulé',
           });
@@ -533,7 +533,7 @@ le contenu de MessageBox peut être centré.
 
 ### Méthode globale
 
-Si Element Plus est importé entièrement, il ajoutera les méthodes suivantes à `app.config.globalProperties`: `$msgbox`, `$alert`, `$confirm` et `$prompt`. Dans ce cas vous pouvez appeler `MessageBox` comme nous l'avons fait dans cette page. Les paramètres sont:
+Si Lxement Plus est importé entièrement, il ajoutera les méthodes suivantes à `app.config.globalProperties`: `$msgbox`, `$alert`, `$confirm` et `$prompt`. Dans ce cas vous pouvez appeler `MessageBox` comme nous l'avons fait dans cette page. Les paramètres sont:
 - `$msgbox(options)`
 - `$alert(message, title, options)` ou `$alert(message, options)`
 - `$confirm(message, title, options)` ou `$confirm(message, options)`
@@ -544,7 +544,7 @@ Si Element Plus est importé entièrement, il ajoutera les méthodes suivantes �
 Si vous préférer importer `MessageBox` à la demande:
 
 ```javascript
-import { ElMessageBox } from 'element-plus';
+import { LxMessageBox } from 'element-plus';
 ```
 
 Les méthodes correspondantes sont: `ElMessageBox`, `ElMessageBox.alert`, `ElMessageBox.confirm` et `ElMessageBox.prompt`. Les paramètres sont les mêmes que précédemment.

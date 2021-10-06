@@ -17,10 +17,10 @@ describe('Switch.vue', () => {
       },
     })
     const vm = wrapper.vm
-    const coreEl = vm.$el.querySelector('.el-switch__core')
+    const coreEl = vm.$el.querySelector('.lx-switch__core')
     expect(coreEl.style.backgroundColor).toEqual('rgb(255, 0, 0)')
     expect(coreEl.style.width).toEqual('100px')
-    const leftLabelWrapper = wrapper.find('.el-switch__label--left span')
+    const leftLabelWrapper = wrapper.find('.lx-switch__label--left span')
     expect(leftLabelWrapper.text()).toEqual('off')
   })
 
@@ -32,7 +32,7 @@ describe('Switch.vue', () => {
       },
     })
 
-    const iconWrapper = wrapper.find('.el-switch__label--left i')
+    const iconWrapper = wrapper.find('.lx-switch__label--left i')
     expect(iconWrapper.classes('el-icon-close')).toBe(true)
   })
 
@@ -43,11 +43,11 @@ describe('Switch.vue', () => {
       },
       template: `
         <div>
-          <el-switch
+          <lx-switch
             v-model="value"
             activeColor="#0f0"
             inactiveColor="#f00">
-          </el-switch>
+          </lx-switch>
         </div>
       `,
       data() {
@@ -57,9 +57,9 @@ describe('Switch.vue', () => {
       },
     })
     const vm = wrapper.vm
-    const coreEl = vm.$el.querySelector('.el-switch__core')
+    const coreEl = vm.$el.querySelector('.lx-switch__core')
     expect(coreEl.style.backgroundColor).toEqual('rgb(0, 255, 0)')
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.lx-switch__core')
     await coreWrapper.trigger('click')
     expect(coreEl.style.backgroundColor).toEqual('rgb(255, 0, 0)')
     expect(vm.value).toEqual(false)
@@ -74,10 +74,10 @@ describe('Switch.vue', () => {
       },
       template: `
         <div>
-          <el-switch
+          <lx-switch
             v-model="value"
             @update:modelValue="handleChange">
-          </el-switch>
+          </lx-switch>
         </div>
       `,
       methods: {
@@ -95,7 +95,7 @@ describe('Switch.vue', () => {
     const vm = wrapper.vm
 
     expect(vm.target).toEqual(1)
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.lx-switch__core')
     await coreWrapper.trigger('click')
     const switchWrapper = wrapper.findComponent(Switch)
     expect(switchWrapper.emitted()['update:modelValue']).toBeTruthy()
@@ -109,7 +109,7 @@ describe('Switch.vue', () => {
       },
       template: `
         <div>
-          <el-switch disabled v-model="value"></el-switch>
+          <lx-switch disabled v-model="value"></lx-switch>
         </div>
       `,
       data() {
@@ -121,7 +121,7 @@ describe('Switch.vue', () => {
     const vm = wrapper.vm
 
     expect(vm.value).toEqual(true)
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.lx-switch__core')
     await coreWrapper.trigger('click')
     expect(vm.value).toEqual(true)
   })
@@ -133,7 +133,7 @@ describe('Switch.vue', () => {
       },
       template: `
         <div>
-          <el-switch v-model="value" :active-value="onValue" :inactive-value="offValue"></el-switch>
+          <lx-switch v-model="value" :active-value="onValue" :inactive-value="offValue"></lx-switch>
         </div>
       `,
       data() {
@@ -146,7 +146,7 @@ describe('Switch.vue', () => {
     })
     const vm = wrapper.vm
 
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.lx-switch__core')
     await coreWrapper.trigger('click')
     expect(vm.value).toEqual('0')
     await coreWrapper.trigger('click')
@@ -160,12 +160,12 @@ describe('Switch.vue', () => {
       },
       template: `
         <div>
-          <el-switch :value="true"></el-switch>
+          <lx-switch :value="true"></lx-switch>
         </div>
       `,
     })
     const vm = wrapper.vm
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.lx-switch__core')
     const switchWrapper = wrapper.findComponent(Switch)
     const switchVm = switchWrapper.vm
     const inputEl = vm.$el.querySelector('input')
@@ -186,12 +186,12 @@ describe('Switch.vue', () => {
       },
       template: `
         <div>
-          <el-switch :model-value="true"></el-switch>
+          <lx-switch :model-value="true"></lx-switch>
         </div>
       `,
     })
     const vm = wrapper.vm
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.lx-switch__core')
     const switchWrapper = wrapper.findComponent(Switch)
     const switchVm = switchWrapper.vm
     const inputEl = vm.$el.querySelector('input')
@@ -212,7 +212,7 @@ describe('Switch.vue', () => {
       },
       template: `
         <div>
-          <el-switch v-model="value"></el-switch>
+          <lx-switch v-model="value"></lx-switch>
         </div>
       `,
       data() {
@@ -239,7 +239,7 @@ describe('Switch.vue', () => {
       },
       template: `
         <div>
-          <el-switch
+          <lx-switch
             v-model="value"
             :loading="loading"
             :before-change="beforeChange"
@@ -269,7 +269,7 @@ describe('Switch.vue', () => {
     })
     const vm = wrapper.vm
 
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.lx-switch__core')
 
     coreWrapper.trigger('click')
     jest.runAllTimers()
@@ -296,7 +296,7 @@ describe('Switch.vue', () => {
       },
       template: `
         <div>
-          <el-switch
+          <lx-switch
             v-model="value"
             :before-change="beforeChange"
           />
@@ -317,7 +317,7 @@ describe('Switch.vue', () => {
     })
     const vm = wrapper.vm
 
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.lx-switch__core')
 
     await coreWrapper.trigger('click')
     expect(vm.value).toEqual(true)

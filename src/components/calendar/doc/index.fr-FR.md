@@ -6,8 +6,8 @@ Affiche un calendrier.
 
 :::demo Réglez `value` pour spécifier le mois à afficher. Si `value` n'est pas spécifiée, le mois actuel sera affiché. `value` supporte le two-way binding.
 ```html
-<el-calendar v-model="value">
-</el-calendar>
+<lx-calendar v-model="value">
+</lx-calendar>
 
 <script>
   export default {
@@ -42,13 +42,13 @@ Affiche un calendrier.
 
 :::demo Personnalisez le contenu du calendrier en utilisant le `scoped-slot` appelé `dateCell`. Dans ce `scoped-slot` vous aurez accès au paramètres date (date de la cellule courante), data (incluant les attributs type, isSelected et day). Pour plus d'informations, référez-vous à la documentation ci-dessous.
 ```html
-<el-calendar>
+<lx-calendar>
   <template #dateCell="{data}">
     <p :class="data.isSelected ? 'is-selected' : ''">
       {{ data.day.split('-').slice(1).join('-') }} {{ data.isSelected ? '✔️' : '' }}
     </p>
   </template>
-</el-calendar>
+</lx-calendar>
 <style>
   .is-selected {
     color: #1989FA;
@@ -61,8 +61,8 @@ Affiche un calendrier.
 
 :::demo Utilisez l'attribut `range` pour afficher un intervalle particulier. Le début doit être un lundi et la fin un dimanche, l'intervalle ne pouvant excéder deux mois.
 ```html
-<el-calendar :range="[new Date(2019, 2, 4), new Date(2019, 2, 24)]">
-</el-calendar>
+<lx-calendar :range="[new Date(2019, 2, 4), new Date(2019, 2, 24)]">
+</lx-calendar>
 ```
 :::
 

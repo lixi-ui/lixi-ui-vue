@@ -7,9 +7,9 @@ Switch es utilizado para realizar cambios entre dos estados opuestos.
 :::demo Enlace `v-model` a una variable de tipo `Boolean`. Los atributos `active-color` y `inactive-color` deciden el color de fondo en cada estado.
 
 ```html
-<el-switch v-model="value1"> </el-switch>
-<el-switch v-model="value2" active-color="#13ce66" inactive-color="#ff4949">
-</el-switch>
+<lx-switch v-model="value1"> </lx-switch>
+<lx-switch v-model="value2" active-color="#13ce66" inactive-color="#ff4949">
+</lx-switch>
 
 <script>
   export default {
@@ -30,13 +30,13 @@ Switch es utilizado para realizar cambios entre dos estados opuestos.
 :::demo Puede agregar los atributos `active-text` y `inactive-text` para mostrar los textos.
 
 ```html
-<el-switch
+<lx-switch
   v-model="value1"
   active-text="Pay by month"
   inactive-text="Pay by year"
 >
-</el-switch>
-<el-switch
+</lx-switch>
+<lx-switch
   style="display: block"
   v-model="value2"
   active-color="#13ce66"
@@ -44,7 +44,7 @@ Switch es utilizado para realizar cambios entre dos estados opuestos.
   active-text="Pay by month"
   inactive-text="Pay by year"
 >
-</el-switch>
+</lx-switch>
 
 <script>
   export default {
@@ -65,16 +65,16 @@ Switch es utilizado para realizar cambios entre dos estados opuestos.
 :::demo Puede establecer los atributos `active-value` y `inactive-value`. Ambos reciben valores de tipo `Boolean`, `String` o `Number`.
 
 ```html
-<el-tooltip :content="'Switch value: ' + value" placement="top">
-  <el-switch
+<lx-tooltip :content="'Switch value: ' + value" placement="top">
+  <lx-switch
     v-model="value"
     active-color="#13ce66"
     inactive-color="#ff4949"
     active-value="100"
     inactive-value="0"
   >
-  </el-switch>
-</el-tooltip>
+  </lx-switch>
+</lx-tooltip>
 
 <script>
   export default {
@@ -94,8 +94,8 @@ Switch es utilizado para realizar cambios entre dos estados opuestos.
 :::demo Agregar el atributo `disabled` desactiva el componente Switch.
 
 ```html
-<el-switch v-model="value1" disabled> </el-switch>
-<el-switch v-model="value2" disabled> </el-switch>
+<lx-switch v-model="value1" disabled> </lx-switch>
+<lx-switch v-model="value2" disabled> </lx-switch>
 
 <script>
   export default {
@@ -116,8 +116,8 @@ Switch es utilizado para realizar cambios entre dos estados opuestos.
 :::demo Setting the `loading` attribute to `true` indicates a loading state on the Switch.
 
 ```html
-<el-switch v-model="value1" loading> </el-switch>
-<el-switch v-model="value2" loading> </el-switch>
+<lx-switch v-model="value1" loading> </lx-switch>
+<lx-switch v-model="value2" loading> </lx-switch>
 <script>
   export default {
     data() {
@@ -137,13 +137,13 @@ Switch es utilizado para realizar cambios entre dos estados opuestos.
 :::demo set the `beforeChange` property, If `false` is returned or a `Promise` is returned and then is rejected, will stop switching.
 
 ```html
-<el-switch v-model="value1" :loading="loading1" :beforeChange="beforeChange1">
-</el-switch>
-<el-switch v-model="value2" :loading="loading2" :beforeChange="beforeChange2">
-</el-switch>
+<lx-switch v-model="value1" :loading="loading1" :beforeChange="beforeChange1">
+</lx-switch>
+<lx-switch v-model="value2" :loading="loading2" :beforeChange="beforeChange2">
+</lx-switch>
 <script>
   import { reactive, toRefs } from 'vue'
-  import { ElMessage } from 'element-plus'
+  import { LxMessage } from 'element-plus'
 
   export default {
     setup() {
@@ -157,7 +157,7 @@ Switch es utilizado para realizar cambios entre dos estados opuestos.
         return new Promise(resolve => {
           setTimeout(() => {
             status1.loading1 = false
-            ElMessage.success('switch success')
+            LxMessage.success('switch success')
             return resolve(true)
           }, 1000)
         })
@@ -173,7 +173,7 @@ Switch es utilizado para realizar cambios entre dos estados opuestos.
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             status2.loading2 = false
-            ElMessage.error('switch failed')
+            LxMessage.error('switch failed')
             return reject(new Error('error'))
           }, 1000)
         })
@@ -196,7 +196,7 @@ Switch es utilizado para realizar cambios entre dos estados opuestos.
 
 | Atributo            | Descripción                                                                                                                                     | Tipo                      | Valores aceptados | Por defecto |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ----------------- | ----------- |
-| model-value / v-model     | valor vinculante, debe ser equivalente al `active-value` o al `inactive-value`. El tipo por defecto es el tipo `boolean`.                       | boolean / string / number | —                 | —           |
+| model-value / v-model     | valor vinculante, debe ser equivalente al `active-value` o al `inactive-value`. Lx tipo por defecto es el tipo `boolean`.                       | boolean / string / number | —                 | —           |
 | disabled            | si Switch esta deshabilitado                                                                                                                    | boolean                   | —                 | false       |
 | loading             | whether Switch is in loading state                                                                                                              | boolean                   | —                 | false       |
 | width               | ancho del componente Switch                                                                                                                     | number                    | —                 | 40          |

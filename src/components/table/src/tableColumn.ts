@@ -1,3 +1,3 @@
-import ElTableColumn from './table-column'
+import LxTableColumn from './table-column'
 
-export default ElTableColumn
+export default LxTableColumn

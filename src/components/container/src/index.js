@@ -21,8 +21,8 @@ Container.Main = Main
 const _Container = Container
 
 export default _Container
-export const ElContainer = _Container
-export const ElAside = Aside
-export const ElFooter = Footer
-export const ElHeader = Header
-export const ElMain = Main
+export const LxContainer = _Container
+export const LxAside = Aside
+export const LxFooter = Footer
+export const LxHeader = Header
+export const LxMain = Main

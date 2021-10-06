@@ -16,7 +16,7 @@ import type { ExtractPropTypes } from 'vue'
 type IProps = ExtractPropTypes<typeof DefaultListProps>
 
 const FixedSizeList = buildList({
-  name: 'ElFixedSizeList',
+  name: 'LxFixedSizeList',
   getItemOffset: (
     { itemSize },
     index,

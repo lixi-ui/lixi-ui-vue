@@ -10,4 +10,4 @@ Badge.install = (app: App): void => {
 const _Badge = Badge as SFCWithInstall<typeof Badge>
 
 export default _Badge
-export const ElBadge = _Badge
+export const LxBadge = _Badge

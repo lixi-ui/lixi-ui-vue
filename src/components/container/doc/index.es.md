@@ -1,19 +1,19 @@
 ## Contenedor
 Componentes contenedores para iniciar una estructura básica de un sitio:
 
-`<el-container>`: Contenedor. Cuando este elemento se anida con un `<el-header>` o `<el-footer>`, todos los elementos secundarios se organizan verticalmente.
+`<lx-container>`: Contenedor. Cuando este elemento se anida con un `<lx-header>` o `<lx-footer>`, todos los elementos secundarios se organizan verticalmente.
 De lo contrario, de forma horizontal.
 
-`<el-header>`: Contenedor para cabeceras.
+`<lx-header>`: Contenedor para cabeceras.
 
-`<el-aside>`: Contenedor para secciones laterales (generalmente, una barra lateral).
+`<lx-aside>`: Contenedor para secciones laterales (generalmente, una barra lateral).
 
-`<el-main>`: Contenedor para sección principal.
+`<lx-main>`: Contenedor para sección principal.
 
-`<el-footer>`: Contenedor para pie de página.
+`<lx-footer>`: Contenedor para pie de página.
 
 :::tip
-Estos componentes utilizan flex para el diseño, así que asegúrese que el navegador lo soporta. Además, los elementos directos de `<el-container>` tienen que ser uno o más de los últimos cuatro componentes. Y el elemento padre de los últimos cuatro componentes debe ser un `<el-container>`.
+Estos componentes utilizan flex para el diseño, así que asegúrese que el navegador lo soporta. Además, los elementos directos de `<lx-container>` tienen que ser uno o más de los últimos cuatro componentes. Y el elemento padre de los últimos cuatro componentes debe ser un `<lx-container>`.
 :::
 
 ### Diseños comunes
@@ -21,82 +21,82 @@ Estos componentes utilizan flex para el diseño, así que asegúrese que el nave
 :::demo
 ```html
 <div class="common-layout">
-  <el-container>
-    <el-header>Cabecera</el-header>
-    <el-main>Principal</el-main>
-  </el-container>
+  <lx-container>
+    <lx-header>Cabecera</lx-header>
+    <lx-main>Principal</lx-main>
+  </lx-container>
 
-  <el-container>
-    <el-header>Cabecera</el-header>
-    <el-main>Principal</el-main>
-    <el-footer>Pie de página</el-footer>
-  </el-container>
+  <lx-container>
+    <lx-header>Cabecera</lx-header>
+    <lx-main>Principal</lx-main>
+    <lx-footer>Pie de página</lx-footer>
+  </lx-container>
 
-  <el-container>
-    <el-aside width="200px">Barra lateral</el-aside>
-    <el-main>Principal</el-main>
-  </el-container>
+  <lx-container>
+    <lx-aside width="200px">Barra lateral</lx-aside>
+    <lx-main>Principal</lx-main>
+  </lx-container>
 
-  <el-container>
-    <el-header>Cabecera</el-header>
-    <el-container>
-      <el-aside width="200px">Barra lateral</el-aside>
-      <el-main>Principal</el-main>
-    </el-container>
-  </el-container>
+  <lx-container>
+    <lx-header>Cabecera</lx-header>
+    <lx-container>
+      <lx-aside width="200px">Barra lateral</lx-aside>
+      <lx-main>Principal</lx-main>
+    </lx-container>
+  </lx-container>
 
-  <el-container>
-    <el-header>Cabecera</el-header>
-    <el-container>
-      <el-aside width="200px">Barra lateral</el-aside>
-      <el-container>
-        <el-main>Principal</el-main>
-        <el-footer>Pie de página</el-footer>
-      </el-container>
-    </el-container>
-  </el-container>
+  <lx-container>
+    <lx-header>Cabecera</lx-header>
+    <lx-container>
+      <lx-aside width="200px">Barra lateral</lx-aside>
+      <lx-container>
+        <lx-main>Principal</lx-main>
+        <lx-footer>Pie de página</lx-footer>
+      </lx-container>
+    </lx-container>
+  </lx-container>
 
-  <el-container>
-    <el-aside width="200px">Barra lateral</el-aside>
-    <el-container>
-      <el-header>Cabecera</el-header>
-      <el-main>Principal</el-main>
-    </el-container>
-  </el-container>
+  <lx-container>
+    <lx-aside width="200px">Barra lateral</lx-aside>
+    <lx-container>
+      <lx-header>Cabecera</lx-header>
+      <lx-main>Principal</lx-main>
+    </lx-container>
+  </lx-container>
 </div>
 
 <style>
-  .el-header, .el-footer {
+  .lx-header, .lx-footer {
     background-color: #B3C0D1;
     color: var(--el-text-color-primary);
     text-align: center;
     line-height: 60px;
   }
 
-  .el-aside {
+  .lx-aside {
     background-color: #D3DCE6;
     color: var(--el-text-color-primary);
     text-align: center;
     line-height: 200px;
   }
 
-  .el-main {
+  .lx-main {
     background-color: #E9EEF3;
     color: var(--el-text-color-primary);
     text-align: center;
     line-height: 160px;
   }
 
-  body > .el-container {
+  body > .lx-container {
     margin-bottom: 40px;
   }
 
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
+  .lx-container:nth-child(5) .lx-aside,
+  .lx-container:nth-child(6) .lx-aside {
     line-height: 260px;
   }
 
-  .el-container:nth-child(7) .el-aside {
+  .lx-container:nth-child(7) .lx-aside {
     line-height: 320px;
   }
 </style>
@@ -107,93 +107,93 @@ Estos componentes utilizan flex para el diseño, así que asegúrese que el nave
 
 :::demo
 ```html
-<el-container style="height: 500px; border: 1px solid #eee">
-  <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-    <el-menu :default-openeds="['1', '3']">
-      <el-submenu index="1">
+<lx-container style="height: 500px; border: 1px solid #eee">
+  <lx-aside width="200px" style="background-color: rgb(238, 241, 246)">
+    <lx-menu :default-openeds="['1', '3']">
+      <lx-submenu index="1">
         <template #title><i class="el-icon-message"></i>Navigator One</template>
-        <el-menu-item-group>
+        <lx-menu-item-group>
           <template #title>Group 1</template>
-          <el-menu-item index="1-1">Option 1</el-menu-item>
-          <el-menu-item index="1-2">Option 2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group 2">
-          <el-menu-item index="1-3">Option 3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
+          <lx-menu-item index="1-1">Option 1</lx-menu-item>
+          <lx-menu-item index="1-2">Option 2</lx-menu-item>
+        </lx-menu-item-group>
+        <lx-menu-item-group title="Group 2">
+          <lx-menu-item index="1-3">Option 3</lx-menu-item>
+        </lx-menu-item-group>
+        <lx-submenu index="1-4">
           <template #title>Option4</template>
-          <el-menu-item index="1-4-1">Option 4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-submenu index="2">
+          <lx-menu-item index="1-4-1">Option 4-1</lx-menu-item>
+        </lx-submenu>
+      </lx-submenu>
+      <lx-submenu index="2">
         <template #title><i class="el-icon-menu"></i>Navigator Two</template>
-        <el-menu-item-group>
+        <lx-menu-item-group>
           <template #title>Group 1</template>
-          <el-menu-item index="2-1">Option 1</el-menu-item>
-          <el-menu-item index="2-2">Option 2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group 2">
-          <el-menu-item index="2-3">Option 3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="2-4">
+          <lx-menu-item index="2-1">Option 1</lx-menu-item>
+          <lx-menu-item index="2-2">Option 2</lx-menu-item>
+        </lx-menu-item-group>
+        <lx-menu-item-group title="Group 2">
+          <lx-menu-item index="2-3">Option 3</lx-menu-item>
+        </lx-menu-item-group>
+        <lx-submenu index="2-4">
           <template #title>Option 4</template>
-          <el-menu-item index="2-4-1">Option 4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-submenu index="3">
+          <lx-menu-item index="2-4-1">Option 4-1</lx-menu-item>
+        </lx-submenu>
+      </lx-submenu>
+      <lx-submenu index="3">
         <template #title><i class="el-icon-setting"></i>Navigator Three</template>
-        <el-menu-item-group>
+        <lx-menu-item-group>
           <template #title>Group 1</template>
-          <el-menu-item index="3-1">Option 1</el-menu-item>
-          <el-menu-item index="3-2">Option 2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group 2">
-          <el-menu-item index="3-3">Option 3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="3-4">
+          <lx-menu-item index="3-1">Option 1</lx-menu-item>
+          <lx-menu-item index="3-2">Option 2</lx-menu-item>
+        </lx-menu-item-group>
+        <lx-menu-item-group title="Group 2">
+          <lx-menu-item index="3-3">Option 3</lx-menu-item>
+        </lx-menu-item-group>
+        <lx-submenu index="3-4">
           <template #title>Option 4</template>
-          <el-menu-item index="3-4-1">Option 4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-    </el-menu>
-  </el-aside>
+          <lx-menu-item index="3-4-1">Option 4-1</lx-menu-item>
+        </lx-submenu>
+      </lx-submenu>
+    </lx-menu>
+  </lx-aside>
 
-  <el-container>
-    <el-header style="text-align: right; font-size: 12px">
-      <el-dropdown>
+  <lx-container>
+    <lx-header style="text-align: right; font-size: 12px">
+      <lx-dropdown>
         <i class="el-icon-setting" style="margin-right: 15px"></i>
         <template #dropdown>
-          <el-dropdown-menu>
-              <el-dropdown-item>View</el-dropdown-item>
-              <el-dropdown-item>Add</el-dropdown-item>
-              <el-dropdown-item>Delete</el-dropdown-item>
-          </el-dropdown-menu>
+          <lx-dropdown-menu>
+              <lx-dropdown-item>View</lx-dropdown-item>
+              <lx-dropdown-item>Add</lx-dropdown-item>
+              <lx-dropdown-item>Delete</lx-dropdown-item>
+          </lx-dropdown-menu>
         </template>
-      </el-dropdown>
+      </lx-dropdown>
       <span>Tom</span>
-    </el-header>
+    </lx-header>
 
-    <el-main>
-      <el-table :data="tableData">
-        <el-table-column prop="date" label="Date" width="140">
-        </el-table-column>
-        <el-table-column prop="name" label="Name" width="120">
-        </el-table-column>
-        <el-table-column prop="address" label="Address">
-        </el-table-column>
-      </el-table>
-    </el-main>
-  </el-container>
-</el-container>
+    <lx-main>
+      <lx-table :data="tableData">
+        <lx-table-column prop="date" label="Date" width="140">
+        </lx-table-column>
+        <lx-table-column prop="name" label="Name" width="120">
+        </lx-table-column>
+        <lx-table-column prop="address" label="Address">
+        </lx-table-column>
+      </lx-table>
+    </lx-main>
+  </lx-container>
+</lx-container>
 
 <style>
-  .el-header {
+  .lx-header {
     background-color: #B3C0D1;
     color: var(--el-text-color-primary);
     line-height: 60px;
   }
 
-  .el-aside {
+  .lx-aside {
     color: var(--el-text-color-primary);
   }
 </style>

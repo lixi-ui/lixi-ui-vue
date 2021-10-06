@@ -9,14 +9,14 @@ Utilisé pour donner une note sur cinq étoiles.
 ```html
 <div class="block">
   <span class="demonstration">Défaut</span>
-  <el-rate v-model="value1"></el-rate>
+  <lx-rate v-model="value1"></lx-rate>
 </div>
 <div class="block">
   <span class="demonstration">Couleurs pour chaque niveau</span>
-  <el-rate
+  <lx-rate
     v-model="value2"
     :colors="colors">
-  </el-rate>
+  </lx-rate>
 </div>
 
 <script>
@@ -55,7 +55,7 @@ Utilisé pour donner une note sur cinq étoiles.
 ```html
 
 <div class="block">
-  <el-rate  v-model="value"  allow-half />
+  <lx-rate  v-model="value"  allow-half />
 </div>
 
 
@@ -94,11 +94,11 @@ Vous pouvez ajouter du texte à chaque score.
 :::demo Ajoutez l'attribut `show-text` pour afficher du texte à droite des étoiles. Vous pouvez choisir les textes avec l'attribut `texts`. C'est un tableau dont la taille doit être égale au score max `max`.
 
 ```html
-<el-rate
+<lx-rate
   v-model="value"
   :texts="['oops', 'disappointed', 'normal', 'good', 'great']"
   show-text>
-</el-rate>
+</lx-rate>
 
 <script>
   export default {
@@ -134,12 +134,12 @@ Vous pouvez utiliser différentes icônes pour chaque
 :::demo Vous pouvez personnaliser les icônes en passant à `icon-classes` un tableau avec trois éléments ou un objet dont la clé est le seuil entre deux niveaux et la valeur la classe d'icônes correspondante. Dans cet exemple, nous utilisons aussi `void-icon-class` qui permet de choisir d'autres valeurs non sélectionnées.
 
 ```html
-<el-rate
+<lx-rate
   v-model="value"
   :icon-classes="iconClasses"
   void-icon-class="icon-rate-face-off"
   :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
-</el-rate>
+</lx-rate>
 
 <script>
   export default {
@@ -177,13 +177,13 @@ Le score peut être en lecture seule. Les demi-étoiles sont supportées.
 :::demo Utilisez `disabled` pour mettre le composant en lecture seule. Ajoutez `show-score` pour afficher le score à droite des étoiles. De plus, vous pouvez utiliser `score-template` pour déterminer un template. Il doit contenir `{value}` qui sera remplacé par la valeur du score.
 
 ```html
-<el-rate
+<lx-rate
   v-model="value"
   disabled
   show-score
   text-color="#ff9900"
   score-template="{value} points">
-</el-rate>
+</lx-rate>
 
 <script>
   export default {

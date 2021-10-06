@@ -11,20 +11,20 @@ checkbox単独で使用して2つの状態を切り替えることができま�
 ```html
 <template>
   <div>
-    <el-checkbox v-model="checked1" label="Option 1"></el-checkbox>
-    <el-checkbox v-model="checked2" label="Option 2"></el-checkbox>
+    <lx-checkbox v-model="checked1" label="Option 1"></lx-checkbox>
+    <lx-checkbox v-model="checked2" label="Option 2"></lx-checkbox>
   </div>
   <div>
-    <el-checkbox v-model="checked3" label="Option 1" size="medium"></el-checkbox>
-    <el-checkbox v-model="checked4" label="Option 2" size="medium"></el-checkbox>
+    <lx-checkbox v-model="checked3" label="Option 1" size="medium"></lx-checkbox>
+    <lx-checkbox v-model="checked4" label="Option 2" size="medium"></lx-checkbox>
   </div>
   <div>
-    <el-checkbox v-model="checked5" label="Option 1" size="small"></el-checkbox>
-    <el-checkbox v-model="checked6" label="Option 2" size="small"></el-checkbox>
+    <lx-checkbox v-model="checked5" label="Option 1" size="small"></lx-checkbox>
+    <lx-checkbox v-model="checked6" label="Option 2" size="small"></lx-checkbox>
   </div>
   <div>
-    <el-checkbox v-model="checked7" label="Option 1" size="mini"></el-checkbox>
-    <el-checkbox v-model="checked8" label="Option 2" size="mini"></el-checkbox>
+    <lx-checkbox v-model="checked7" label="Option 1" size="mini"></lx-checkbox>
+    <lx-checkbox v-model="checked8" label="Option 2" size="mini"></lx-checkbox>
   </div>
 </template>
 <script>
@@ -84,8 +84,8 @@ checkboxを無効にした状態。
 
 ```html
 <template>
-  <el-checkbox v-model="checked1" disabled>Option</el-checkbox>
-  <el-checkbox v-model="checked2" disabled>Option</el-checkbox>
+  <lx-checkbox v-model="checked1" disabled>Option</lx-checkbox>
+  <lx-checkbox v-model="checked2" disabled>Option</lx-checkbox>
 </template>
 <script>
   export default {
@@ -125,13 +125,13 @@ checkboxを無効にした状態。
 
 ```html
 <template>
-  <el-checkbox-group v-model="checkList">
-    <el-checkbox label="Option A"></el-checkbox>
-    <el-checkbox label="Option B"></el-checkbox>
-    <el-checkbox label="Option C"></el-checkbox>
-    <el-checkbox label="disabled" disabled></el-checkbox>
-    <el-checkbox label="selected and disabled" disabled></el-checkbox>
-  </el-checkbox-group>
+  <lx-checkbox-group v-model="checkList">
+    <lx-checkbox label="Option A"></lx-checkbox>
+    <lx-checkbox label="Option B"></lx-checkbox>
+    <lx-checkbox label="Option C"></lx-checkbox>
+    <lx-checkbox label="disabled" disabled></lx-checkbox>
+    <lx-checkbox label="selected and disabled" disabled></lx-checkbox>
+  </lx-checkbox-group>
 </template>
 
 <script>
@@ -170,10 +170,10 @@ checkboxを無効にした状態。
 
 ```html
 <template>
-  <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">Check all</el-checkbox>
-  <el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
-    <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
-  </el-checkbox-group>
+  <lx-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">Check all</lx-checkbox>
+  <lx-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
+    <lx-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</lx-checkbox>
+  </lx-checkbox-group>
 </template>
 <script>
   const cityOptions = ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen'];
@@ -244,12 +244,12 @@ checkboxを無効にした状態。
 
 ```html
 <template>
-  <el-checkbox-group
+  <lx-checkbox-group
     v-model="checkedCities"
     :min="1"
     :max="2">
-    <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
-  </el-checkbox-group>
+    <lx-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</lx-checkbox>
+  </lx-checkbox-group>
 </template>
 <script>
   const cityOptions = ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen'];
@@ -295,24 +295,24 @@ checkboxを無効にした状態。
 ```html
 <template>
   <div>
-    <el-checkbox-group v-model="checkboxGroup1">
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup1">
+      <lx-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</lx-checkbox-button>
+    </lx-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup2" size="medium">
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup2" size="medium">
+      <lx-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</lx-checkbox-button>
+    </lx-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup3" size="small">
-      <el-checkbox-button v-for="city in cities" :label="city" :disabled="city === 'Beijing'" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup3" size="small">
+      <lx-checkbox-button v-for="city in cities" :label="city" :disabled="city === 'Beijing'" :key="city">{{city}}</lx-checkbox-button>
+    </lx-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
-      <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
+      <lx-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</lx-checkbox-button>
+    </lx-checkbox-group>
   </div>
 </template>
 <script>
@@ -364,24 +364,24 @@ export default defineComponent({
 ```html
 <template>
   <div>
-    <el-checkbox v-model="checked1" label="Option1" border></el-checkbox>
-    <el-checkbox v-model="checked2" label="Option2" border></el-checkbox>
+    <lx-checkbox v-model="checked1" label="Option1" border></lx-checkbox>
+    <lx-checkbox v-model="checked2" label="Option2" border></lx-checkbox>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox v-model="checked3" label="Option1" border size="medium"></el-checkbox>
-    <el-checkbox v-model="checked4" label="Option2" border size="medium"></el-checkbox>
+    <lx-checkbox v-model="checked3" label="Option1" border size="medium"></lx-checkbox>
+    <lx-checkbox v-model="checked4" label="Option2" border size="medium"></lx-checkbox>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup1" size="small">
-      <el-checkbox label="Option1" border></el-checkbox>
-      <el-checkbox label="Option2" border disabled></el-checkbox>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup1" size="small">
+      <lx-checkbox label="Option1" border></lx-checkbox>
+      <lx-checkbox label="Option2" border disabled></lx-checkbox>
+    </lx-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <el-checkbox-group v-model="checkboxGroup2" size="mini" disabled>
-      <el-checkbox label="Option1" border></el-checkbox>
-      <el-checkbox label="Option2" border></el-checkbox>
-    </el-checkbox-group>
+    <lx-checkbox-group v-model="checkboxGroup2" size="mini" disabled>
+      <lx-checkbox label="Option1" border></lx-checkbox>
+      <lx-checkbox label="Option2" border></lx-checkbox>
+    </lx-checkbox-group>
   </div>
 </template>
 

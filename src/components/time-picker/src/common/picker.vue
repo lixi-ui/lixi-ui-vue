@@ -1,5 +1,5 @@
 <template>
-  <el-popper
+  <lx-popper
     ref="refPopper"
     v-model:visible="pickerVisible"
     manual-mode
@@ -18,7 +18,7 @@
     @after-leave="pickerActualVisible = false"
   >
     <template #trigger>
-      <el-input
+      <lx-input
         v-if="!isRangeInput"
         v-clickoutside:[popperPaneRef]="onClickOutside"
         :model-value="displayValue"
@@ -52,7 +52,7 @@
           >
           </i>
         </template>
-      </el-input>
+      </lx-input>
       <div
         v-else
         v-clickoutside:[popperPaneRef]="onClickOutside"
@@ -120,7 +120,7 @@
         @mousedown.stop
       ></slot>
     </template>
-  </el-popper>
+  </lx-popper>
 </template>
 <script lang='ts'>
 import {
@@ -137,14 +137,14 @@ import isEqual from 'lodash/isEqual'
 import { useLocaleInject } from '@element-plus/hooks'
 import { ClickOutside } from '@element-plus/directives'
 import { elFormKey, elFormItemKey } from '@element-plus/tokens'
-import ElInput from '@element-plus/components/input'
-import ElPopper, { Effect } from '@element-plus/components/popper'
+import LxInput from '@element-plus/components/input'
+import LxPopper, { Effect } from '@element-plus/components/popper'
 import { EVENT_CODE } from '@element-plus/utils/aria'
 import { useGlobalConfig, isEmpty } from '@element-plus/utils/util'
 import { timePickerDefaultProps } from './props'
 
 import type { Dayjs } from 'dayjs'
-import type { ElFormContext, ElFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
 import type { Options } from '@popperjs/core'
 
 interface PickerOptions {
@@ -200,8 +200,8 @@ const formatter = function(date: Date, format: string, lang: string) {
 export default defineComponent({
   name: 'Picker',
   components: {
-    ElInput,
-    ElPopper,
+    LxInput,
+    LxPopper,
   },
   directives: { clickoutside: ClickOutside },
   props: timePickerDefaultProps,
@@ -210,9 +210,9 @@ export default defineComponent({
     const ELEMENT = useGlobalConfig()
     const { lang } = useLocaleInject()
 
-    const elForm = inject(elFormKey, {} as ElFormContext)
-    const elFormItem = inject(elFormItemKey, {} as ElFormItemContext)
-    const elPopperOptions = inject('ElPopperOptions', {} as Options)
+    const elForm = inject(elFormKey, {} as LxFormContext)
+    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+    const elPopperOptions = inject('LxPopperOptions', {} as Options)
 
     const refPopper = ref(null)
     const pickerVisible = ref(false)
