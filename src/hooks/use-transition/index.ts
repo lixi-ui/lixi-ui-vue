@@ -29,7 +29,7 @@ export const useTransition = (
       }`
     }),
     transitionStyle: computed(() =>
-      `--el-transition-duration: ${props.transitionDuration}s`,
+      `--lx-transition-duration: ${props.transitionDuration}s`,
     ),
   }
 }

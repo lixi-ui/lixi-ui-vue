@@ -6,26 +6,26 @@
   @include set-component-css-var('popover', $--popover);
 
   &.#{$namespace}-popper {
-    background: var(--el-popover-background-color);
+    background: var(--lx-popover-background-color);
     min-width: 150px;
-    border-radius: var(--el-popover-border-radius);
-    border: 1px solid var(--el-popover-border-color);
-    padding: var(--el-popover-padding);
-    z-index: var(--el-index-popper);
-    color: var(--el-text-color-regular);
+    border-radius: var(--lx-popover-border-radius);
+    border: 1px solid var(--lx-popover-border-color);
+    padding: var(--lx-popover-padding);
+    z-index: var(--lx-index-popper);
+    color: var(--lx-text-color-regular);
     line-height: 1.4;
     text-align: justify;
-    font-size: var(--el-popover-font-size);
-    box-shadow: var(--el-box-shadow-light);
+    font-size: var(--lx-popover-font-size);
+    box-shadow: var(--lx-box-shadow-light);
     word-break: break-all;
 
     @include m(plain) {
-      padding: var(--el-popover-padding-large);
+      padding: var(--lx-popover-padding-large);
     }
 
     @include e(title) {
-      color: var(--el-popover-title-font-color);
-      font-size: var(--el-popover-title-font-size);
+      color: var(--lx-popover-title-font-color);
+      font-size: var(--lx-popover-title-font-size);
       line-height: 1;
       margin-bottom: 12px;
     }

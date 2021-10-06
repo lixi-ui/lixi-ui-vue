@@ -7,15 +7,15 @@
 @mixin menu-item {
   height: 56px;
   line-height: 56px;
-  font-size: var(--el-menu-item-font-size);
-  color: var(--el-menu-item-font-color);
+  font-size: var(--lx-menu-item-font-size);
+  color: var(--lx-menu-item-font-color);
   padding: 0 20px;
   list-style: none;
   cursor: pointer;
   position: relative;
-  transition: border-color var(--el-transition-duration),
-  background-color var(--el-transition-duration),
-  color var(--el-transition-duration);
+  transition: border-color var(--lx-transition-duration),
+  background-color var(--lx-transition-duration),
+  color var(--lx-transition-duration);
   box-sizing: border-box;
   white-space: nowrap;
 
@@ -24,7 +24,7 @@
   }
 
   i {
-    color: var(--el-text-color-secondary);
+    color: var(--lx-text-color-secondary);
   }
 
   &:hover,
@@ -33,7 +33,7 @@
   }
 
   &:hover {
-    background-color: var(--el-menu-item-hover-fill);
+    background-color: var(--lx-menu-item-hover-fill);
   }
 
   @include when(disabled) {
@@ -46,18 +46,18 @@
 @include b(menu) {
   @include set-component-css-var('menu', $--menu);
 
-  border-right: solid 1px var(--el-menu-border-color);
+  border-right: solid 1px var(--lx-menu-border-color);
   list-style: none;
   position: relative;
   margin: 0;
   padding-left: 0;
-  background-color: var(--el-menu-background-color);
+  background-color: var(--lx-menu-background-color);
   box-sizing: border-box;
   @include utils-clearfix;
   &.#{$namespace}-menu--horizontal {
     display: flex;
     flex-wrap: nowrap;
-    border-bottom: solid 1px var(--el-menu-border-color);
+    border-bottom: solid 1px var(--lx-menu-border-color);
   }
 
   @include m(horizontal) {
@@ -68,7 +68,7 @@
       line-height: 60px;
       margin: 0;
       border-bottom: 2px solid transparent;
-      color: var(--el-text-color-secondary);
+      color: var(--lx-text-color-secondary);
 
       a,
       a:hover {
@@ -90,14 +90,14 @@
 
       &:hover {
         .#{$namespace}-sub-menu__title {
-          color: var(--el-text-color-primary);
+          color: var(--lx-text-color-primary);
         }
       }
 
       &.is-active {
         .#{$namespace}-sub-menu__title {
-          border-bottom: 2px solid var(--el-color-primary);
-          color: var(--el-text-color-primary);
+          border-bottom: 2px solid var(--lx-color-primary);
+          color: var(--lx-text-color-primary);
         }
       }
 
@@ -105,7 +105,7 @@
         height: 60px;
         line-height: 60px;
         border-bottom: 2px solid transparent;
-        color: var(--el-text-color-secondary);
+        color: var(--lx-text-color-secondary);
 
         &:hover {
           background-color: #fff;
@@ -127,22 +127,22 @@
         height: 36px;
         line-height: 36px;
         padding: 0 10px;
-        color: var(--el-text-color-secondary);
+        color: var(--lx-text-color-secondary);
       }
 
       & .#{$namespace}-menu-item.is-active,
       & .#{$namespace}-sub-menu.is-active > .#{$namespace}-sub-menu__title {
-        color: var(--el-text-color-primary);
+        color: var(--lx-text-color-primary);
       }
     }
     & .#{$namespace}-menu-item:not(.is-disabled):hover,
     & .#{$namespace}-menu-item:not(.is-disabled):focus {
       outline: none;
-      color: var(--el-text-color-primary);
+      color: var(--lx-text-color-primary);
     }
     & > .#{$namespace}-menu-item.is-active {
-      border-bottom: 2px solid var(--el-color-primary);
-      color: var(--el-text-color-primary);
+      border-bottom: 2px solid var(--lx-color-primary);
+      color: var(--lx-text-color-primary);
     }
   }
   @include m(collapse) {
@@ -187,9 +187,9 @@
         top: 0;
         left: 100%;
         z-index: 10;
-        border: 1px solid var(--el-border-color-light);
-        border-radius: var(--el-border-radius-small);
-        box-shadow: var(--el-box-shadow-light);
+        border: 1px solid var(--lx-border-color-light);
+        border-radius: var(--lx-border-radius-small);
+        box-shadow: var(--lx-box-shadow-light);
       }
 
       &.is-opened {
@@ -199,7 +199,7 @@
       }
 
       &.is-active i {
-        color: var(--el-color-primary);
+        color: var(--lx-color-primary);
       }
     }
   }
@@ -208,8 +208,8 @@
     min-width: 200px;
     border: none;
     padding: 5px 0;
-    border-radius: var(--el-border-radius-small);
-    box-shadow: var(--el-box-shadow-light);
+    border-radius: var(--lx-border-radius-small);
+    box-shadow: var(--lx-box-shadow-light);
   }
 }
 
@@ -224,7 +224,7 @@
     vertical-align: middle;
   }
   @include when(active) {
-    color: var(--el-color-primary);
+    color: var(--lx-color-primary);
     i {
       color: inherit;
     }
@@ -240,7 +240,7 @@
     @include menu-item;
 
     &:hover {
-      background-color: var(--el-menu-item-hover-fill);
+      background-color: var(--lx-menu-item-hover-fill);
     }
   }
   & .#{$namespace}-menu {
@@ -265,12 +265,12 @@
     top: 50%;
     right: 20px;
     margin-top: -7px;
-    transition: transform var(--el-transition-duration);
+    transition: transform var(--lx-transition-duration);
     font-size: 12px;
   }
   @include when(active) {
     .#{$namespace}-sub-menu__title {
-      border-bottom-color: var(--el-color-primary);
+      border-bottom-color: var(--lx-color-primary);
     }
   }
   @include when(opened) {
@@ -303,13 +303,13 @@
     padding: 7px 0 7px 20px;
     line-height: normal;
     font-size: 12px;
-    color: var(--el-text-color-secondary);
+    color: var(--lx-text-color-secondary);
   }
 }
 
 .horizontal-collapse-transition
 .#{$namespace}-sub-menu__title
 .#{$namespace}-sub-menu__icon-arrow {
-  transition: var(--el-transition-duration-fast);
+  transition: var(--lx-transition-duration-fast);
   opacity: 0;
 }

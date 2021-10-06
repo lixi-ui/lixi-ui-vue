@@ -1,5 +1,5 @@
 .demo-icon .source > div > i:not(.no-inherit) {
-  color: var(--el-text-color-regular);
+  color: var(--lx-text-color-regular);
   margin: 0 20px;
   font-size: 1.5em;
   vertical-align: middle;
@@ -20,8 +20,8 @@ ul.icon-list {
   overflow: hidden;
   list-style: none;
   padding: 0 !important;
-  border-top: solid 1px var(--el-border-color-base);
-  border-left: solid 1px var(--el-border-color-base);
+  border-top: solid 1px var(--lx-border-color-base);
+  border-left: solid 1px var(--lx-border-color-base);
   border-radius: 4px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -31,10 +31,10 @@ ul.icon-list {
   text-align: center;
   height: 120px;
   line-height: 120px;
-  color: var(--el-text-color-regular);
+  color: var(--lx-text-color-regular);
   font-size: 13px;
-  border-right: solid 1px var(--el-border-color-base);
-  border-bottom: solid 1px var(--el-border-color-base);
+  border-right: solid 1px var(--lx-border-color-base);
+  border-bottom: solid 1px var(--lx-border-color-base);
 
   .demo-svg-icon {
     display: flex;
@@ -58,7 +58,7 @@ ul.icon-list {
     vertical-align: middle;
     font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', SimSun, sans-serif;
-    color: var(--el-text-color-secondary);
+    color: var(--lx-text-color-secondary);
     transition: color 0.15s linear;
   }
 
@@ -66,7 +66,7 @@ ul.icon-list {
     display: block;
     font-size: 32px;
     margin-bottom: 15px;
-    color: var(--el-text-color-regular);
+    color: var(--lx-text-color-regular);
     transition: color 0.15s linear;
   }
 
@@ -79,7 +79,7 @@ ul.icon-list {
   &:hover {
     span,
     i {
-      color: var(--el-color-primary);
+      color: var(--lx-color-primary);
     }
   }
 }

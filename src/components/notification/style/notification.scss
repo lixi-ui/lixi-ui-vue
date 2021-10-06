@@ -8,18 +8,18 @@
 
 @include b(notification) {
   display: flex;
-  width: var(--el-notification-width);
-  padding: var(--el-notification-padding);
-  border-radius: var(--el-notification-radius);
+  width: var(--lx-notification-width);
+  padding: var(--lx-notification-padding);
+  border-radius: var(--lx-notification-radius);
   box-sizing: border-box;
-  border: 1px solid var(--el-notification-border-color);
+  border: 1px solid var(--lx-notification-border-color);
   position: fixed;
-  background-color: var(--el-color-white);
-  box-shadow: var(--el-notification-shadow);
-  transition: opacity var(--el-transition-duration),
-    transform var(--el-transition-duration), left var(--el-transition-duration),
-    right var(--el-transition-duration), top 0.4s,
-    bottom var(--el-transition-duration);
+  background-color: var(--lx-color-white);
+  box-shadow: var(--lx-notification-shadow);
+  transition: opacity var(--lx-transition-duration),
+    transform var(--lx-transition-duration), left var(--lx-transition-duration),
+    right var(--lx-transition-duration), top 0.4s,
+    bottom var(--lx-transition-duration);
   overflow-wrap: anywhere;
   overflow: hidden;
   z-index: 9999;
@@ -33,23 +33,23 @@
   }
 
   @include e(group) {
-    margin-left: var(--el-notification-group-margin-left);
-    margin-right: var(--el-notification-group-margin-right);
+    margin-left: var(--lx-notification-group-margin-left);
+    margin-right: var(--lx-notification-group-margin-right);
   }
 
   @include e(title) {
     font-weight: bold;
-    font-size: var(--el-notification-title-font-size);
-    line-height: var(--el-notification-icon-size);
-    color: var(--el-notification-title-color);
+    font-size: var(--lx-notification-title-font-size);
+    line-height: var(--lx-notification-icon-size);
+    color: var(--lx-notification-title-color);
     margin: 0;
   }
 
   @include e(content) {
-    font-size: var(--el-notification-content-font-size);
+    font-size: var(--lx-notification-content-font-size);
     line-height: 24px;
     margin: 6px 0 0 0;
-    color: var(--el-notification-content-color);
+    color: var(--lx-notification-content-color);
     text-align: justify;
 
     p {
@@ -58,9 +58,9 @@
   }
 
   @include e(icon) {
-    height: var(--el-notification-icon-size);
-    width: var(--el-notification-icon-size);
-    font-size: var(--el-notification-icon-size);
+    height: var(--lx-notification-icon-size);
+    width: var(--lx-notification-icon-size);
+    font-size: var(--lx-notification-icon-size);
   }
 
   @include e(closeBtn) {
@@ -68,18 +68,18 @@
     top: 18px;
     right: 15px;
     cursor: pointer;
-    color: var(--el-notification-close-color);
-    font-size: var(--el-notification-close-font-size);
+    color: var(--lx-notification-close-color);
+    font-size: var(--lx-notification-close-font-size);
 
     &:hover {
-      color: var(--el-notification-close-hover-color);
+      color: var(--lx-notification-close-hover-color);
     }
   }
 
   @each $type in (success, info, warning, error) {
     .#{$namespace}-icon-#{$type} {
-      --el-notification-icon-color: var(--el-color-#{$type});
-      color: var(--el-notification-icon-color);
+      --lx-notification-icon-color: var(--lx-color-#{$type});
+      color: var(--lx-notification-icon-color);
     }
   }
 }

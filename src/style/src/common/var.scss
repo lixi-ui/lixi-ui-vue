@@ -99,11 +99,11 @@ $--border-radius-zero: 0 !default;
 
 /* Button
 -------------------------- */
-$--button-font-size: $--font-size-base !default;
+// $--button-font-size: $--font-size-base !default;
 $--button-font-weight: $--font-weight-primary !default;
-$--button-border-radius: $--border-radius-base !default;
-$--button-padding-vertical: 12px !default;
-$--button-padding-horizontal: 20px !default;
+// $--button-border-radius: $--border-radius-base !default;
+// $--button-padding-vertical: 12px !default;
+// $--button-padding-horizontal: 20px !default;
 
 $--button-medium-font-size: $--font-size-base !default;
 $--button-medium-border-radius: $--border-radius-base !default;
@@ -241,6 +241,24 @@ $--border-color: map.merge(
   $--border-color
 );
 
+/* Typography
+-------------------------- */
+$--font-path: 'fonts' !default;
+$--font-display: 'auto' !default;
+
+$--font-size: () !default;
+$--font-size: map.merge(
+  (
+    'extra-large': 20px,
+    'large': 18px,
+    'medium': 16px,
+    'base': 14px,
+    'small': 13px,
+    'extra-small': 12px,
+  ),
+  $--font-size
+);
+
 /* Link
 --------------------------*/
 // css3 var in packages/theme-chalk/src/link.scss
@@ -292,6 +310,211 @@ $--footer: map.merge(
     'height': 60px,
   ),
   $--footer
+);
+
+/* Input
+-------------------------- */
+// css3 var in packages/theme-chalk/src/input.scss
+$--input: () !default;
+$--input: map.merge(
+  (
+    'font-color': var(--lx-text-color-regular),
+    'border': var(--lx-border-base),
+    'border-color': var(--lx-border-color-base),
+    'border-radius': var(--lx-border-radius-base),
+    'background-color': var(--lx-color-white),
+    'icon-color': var(--lx-text-color-placeholder),
+    'placeholder-color': var(--lx-text-color-placeholder),
+    'hover-border': var(--lx-border-color-hover),
+    'clear-hover-color': var(--lx-text-color-secondary),
+    'focus-border': var(--lx-color-primary),
+  ),
+  $--input
+);
+
+$--input-disabled: () !default;
+$--input-disabled: map.merge(
+  (
+    'fill': var(--lx-disabled-fill-base),
+    'border': var(--lx-disabled-border-base),
+    'color': var(--lx-disabled-color-base),
+    'placeholder-color': var(--lx-text-color-placeholder),
+  ),
+  $--input-disabled
+);
+
+$--input-font-size: () !default;
+$--input-font-size: map.merge(
+  (
+    'default': var(--lx-font-size-base, map.get($--font-size, 'base')),
+    'medium': 14px,
+    'small': 13px,
+    'mini': 12px,
+  ),
+  $--input-font-size
+);
+
+$--input-height: () !default;
+$--input-height: map.merge(
+  (
+    'default': 40px,
+    'medium': 36px,
+    'small': 32px,
+    'mini': 28px,
+  ),
+  $--input-height
+);
+
+$--input-line-height: () !default;
+$--input-line-height: map.merge(
+  (
+    'medium': 28px,
+    'small': 24px,
+    'mini': 20px,
+  ),
+  $--input-line-height
+);
+
+$--input-number-width: () !default;
+$--input-number-width: map.merge(
+  (
+    'medium': 200px,
+    'small': 130px,
+    'mini': 130px,
+  ),
+  $--input-number-width
+);
+
+/* Button
+-------------------------- */
+// css3 var in packages/theme-chalk/src/button.scss
+$--button: () !default;
+$--button: map.merge(
+  (
+    'font-weight': var(--lx-font-weight-primary),
+    'border-color': var(--lx-border-color-base),
+    'background-color': var(--lx-color-white),
+    'font-color': var(--lx-text-color-regular),
+    'disabled-font-color': var(--lx-text-color-placeholder),
+    'disabled-background-color': var(--lx-color-white),
+    'disabled-border-color': var(--lx-border-color-light),
+    'divide-border-color': rgba($--color-white, 0.5),
+  ),
+  $--button
+);
+
+// need mix, so do not use css var
+$--button-hover-tint-percent: 20%;
+$--button-active-shade-percent: 10%;
+
+$--button-border-color: () !default;
+$--button-background-color: () !default;
+$--button-font-color: () !default;
+
+@each $type in $--types {
+  $--button-border-color: map.merge(
+    (
+      $type: map.get($--colors, $type, 'base'),
+    ),
+    $--button-border-color
+  ) !global;
+
+  $--button-background-color: map.merge(
+    (
+      $type: map.get($--colors, $type, 'base'),
+    ),
+    $--button-background-color
+  ) !global;
+
+  $--button-font-color: map.merge(
+    (
+      $type: map.get($--colors, 'white'),
+    ),
+    $--button-font-color
+  ) !global;
+}
+
+$--button-font-size: () !default;
+$--button-font-size: map.merge(
+  (
+    'default': var(--lx-font-size-base, map.get($--font-size, 'base')),
+    'medium': var(--lx-font-size-base, map.get($--font-size, 'base')),
+    'small': 12px,
+    'mini': 12px,
+  ),
+  $--button-font-size
+);
+
+$--button-border-radius: () !default;
+$--button-border-radius: map.merge(
+  (
+    'default': var(--lx-border-radius-base),
+    'medium': var(--lx-border-radius-base),
+    'small': calc(var(--lx-border-radius-base) - 1px),
+    'mini': calc(var(--lx-border-radius-base) - 1px),
+  ),
+  $--button-border-radius
+);
+
+$--button-padding-vertical: () !default;
+$--button-padding-vertical: map.merge(
+  (
+    'default': 12px,
+    'medium': 10px,
+    'small': 9px,
+    'mini': 7px,
+  ),
+  $--button-padding-vertical
+);
+
+$--button-padding-horizontal: () !default;
+$--button-padding-horizontal: map.merge(
+  (
+    'default': 20px,
+    'medium': 20px,
+    'small': 15px,
+    'mini': 15px,
+  ),
+  $--button-padding-horizontal
+);
+
+/* Checkbox
+-------------------------- */
+// css3 var in packages/theme-chalk/src/checkbox.scss
+$--checkbox: () !default;
+$--checkbox: map.merge(
+  (
+    'font-size': 14px,
+    'font-weight': var(--lx-font-weight-primary),
+    'font-color': var(--lx-text-color-regular),
+    'input-height': 14px,
+    'input-width': 14px,
+    'border-radius': var(--lx-border-radius-small),
+    'background-color': var(--lx-color-white),
+    'input-border': var(--lx-border-base),
+    'disabled-border-color': var(--lx-border-color-base),
+    'disabled-input-fill': #edf2fc,
+    'disabled-icon-color': var(--lx-text-color-placeholder),
+    'disabled-checked-input-fill': var(--lx-border-color-extra-light),
+    'disabled-checked-input-border-color': var(--lx-border-color-base),
+    'disabled-checked-icon-color': var(--lx-text-color-placeholder),
+    'checked-font-color': var(--lx-color-primary),
+    'checked-input-border-color': var(--lx-color-primary),
+    'checked-background-color': var(--lx-color-primary),
+    'checked-icon-color': var(--lx-fill-base),
+    'input-border-color-hover': var(--lx-color-primary),
+  ),
+  $--checkbox
+);
+
+$--checkbox-button: () !default;
+$--checkbox-button: map.merge(
+  (
+    'checked-background-color': var(--lx-color-primary),
+    'checked-font-color': var(--lx-color-white),
+    'checked-border-color': var(--lx-color-primary),
+  ),
+  $--checkbox-button
 );
 
 /* Break-point

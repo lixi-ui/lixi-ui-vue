@@ -9,22 +9,22 @@
 }
 
 @include b(message) {
-  min-width: var(--el-message-min-width);
+  min-width: var(--lx-message-min-width);
   box-sizing: border-box;
-  border-radius: var(--el-border-radius-base);
-  border-width: var(--el-border-width-base);
-  border-style: var(--el-border-style-base);
-  border-color: var(--el-border-color-lighter);
+  border-radius: var(--lx-border-radius-base);
+  border-width: var(--lx-border-width-base);
+  border-style: var(--lx-border-style-base);
+  border-color: var(--lx-border-color-lighter);
   position: fixed;
   left: 50%;
   top: 20px;
   transform: translateX(-50%);
-  background-color: var(--el-message-background-color);
+  background-color: var(--lx-message-background-color);
   transition: opacity 0.3s, transform 0.4s, top 0.4s;
-  background-color: var(--el-message-background-color);
-  transition: opacity var(--el-transition-duration), transform 0.4s, top 0.4s;
+  background-color: var(--lx-message-background-color);
+  transition: opacity var(--lx-transition-duration), transform 0.4s, top 0.4s;
   overflow: hidden;
-  padding: var(--el-message-padding);
+  padding: var(--lx-message-padding);
   display: flex;
   align-items: center;
 
@@ -44,7 +44,7 @@
 
   @include m(info) {
     .#{$namespace}-message__content {
-      color: var(--el-message-info-font-color);
+      color: var(--lx-message-info-font-color);
     }
   }
 
@@ -53,10 +53,10 @@
       background-color: map.get($--colors, $type, 'light-9');
       border-color: map.get($--colors, $type, 'light-8');
 
-      --el-message-font-color: var(--el-color-#{$type});
+      --lx-message-font-color: var(--lx-color-#{$type});
 
       .#{$namespace}-message__content {
-        color: var(--el-message-font-color);
+        color: var(--lx-message-font-color);
       }
     }
   }
@@ -80,21 +80,21 @@
     right: 15px;
     transform: translateY(-50%);
     cursor: pointer;
-    color: var(--el-message-close-icon-color);
-    font-size: var(--el-message-close-size, map.get($--message, 'close-size'));
+    color: var(--lx-message-close-icon-color);
+    font-size: var(--lx-message-close-size, map.get($--message, 'close-size'));
 
     &:focus {
       outline-width: 0;
     }
     &:hover {
-      color: var(--el-message-close-hover-color);
+      color: var(--lx-message-close-hover-color);
     }
   }
 
   @each $type in (success, info, warning, error) {
     & .#{$namespace}-icon-#{$type} {
-      --el-message-font-color: var(--el-color-#{$type});
-      color: var(--el-message-font-color);
+      --lx-message-font-color: var(--lx-color-#{$type});
+      color: var(--lx-message-font-color);
     }
   }
 }

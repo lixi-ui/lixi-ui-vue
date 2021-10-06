@@ -96,8 +96,8 @@
   @include e(label) {
     flex: 0 0 auto;
     text-align: right;
-    font-size: var(--el-form-label-font-size);
-    color: var(--el-text-color-regular);
+    font-size: var(--lx-form-label-font-size);
+    color: var(--lx-text-color-regular);
     line-height: 40px;
     padding: 0 12px 0 0;
     box-sizing: border-box;
@@ -114,7 +114,7 @@
     }
   }
   @include e(error) {
-    color: var(--el-color-danger);
+    color: var(--lx-color-danger);
     font-size: 12px;
     line-height: 1;
     padding-top: 4px;
@@ -137,7 +137,7 @@
       & > .#{$namespace}-form-item__label-wrap > .#{$namespace}-form-item__label:before
       {
         content: '*';
-        color: var(--el-color-danger);
+        color: var(--lx-color-danger);
         margin-right: 4px;
       }
     }
@@ -148,7 +148,7 @@
     & .#{$namespace}-textarea__inner {
       &,
       &:focus {
-        border-color: var(--el-color-danger);
+        border-color: var(--lx-color-danger);
       }
     }
     & .#{$namespace}-input-group__append,
@@ -158,7 +158,7 @@
       }
     }
     .#{$namespace}-input__validateIcon {
-      color: var(--el-color-danger);
+      color: var(--lx-color-danger);
     }
   }
 

@@ -58,7 +58,7 @@ describe('use-transition', () => {
     expect(
       getCssVariable(
         wrapper.find('.content').element,
-        '--el-transition-duration',
+        '--lx-transition-duration',
       ),
     ).toBe('0.3s')
   })
@@ -83,7 +83,7 @@ describe('use-transition', () => {
     expect(
       getCssVariable(
         wrapper.find('.content').element,
-        '--el-transition-duration',
+        '--lx-transition-duration',
       ),
     ).toBe('0.3s')
 
@@ -94,7 +94,7 @@ describe('use-transition', () => {
     expect(
       getCssVariable(
         wrapper.find('.content').element,
-        '--el-transition-duration',
+        '--lx-transition-duration',
       ),
     ).toBe('0.2s')
   })

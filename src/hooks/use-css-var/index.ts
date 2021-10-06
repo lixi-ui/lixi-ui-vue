@@ -13,7 +13,7 @@ import type { Ref, WatchStopHandle, InjectionKey } from 'vue'
 
 type VarsType = Ref<Record<string, string>> | Record<string, string>
 
-const VAR_PREFIX = '--el-'
+const VAR_PREFIX = '--lx-'
 
 const setVars = (
   target: HTMLElement,
@@ -42,8 +42,8 @@ export const themeVarsKey: InjectionKey<VarsType> = 'themeVars' as any
  *
  * ```ts
  * const themeVars = {
- *  '--el-color-primary': '#f44336',
- *  '--el-color-white': '#2196f3',
+ *  '--lx-color-primary': '#f44336',
+ *  '--lx-color-white': '#2196f3',
  * }
  * app.provide(themeVarsKey, themeVars)
  * ```
@@ -53,8 +53,8 @@ export const themeVarsKey: InjectionKey<VarsType> = 'themeVars' as any
  * ```ts
  * setup() {
  *  const themeVars = ref({
- *    '--el-button-default-background-color': '#f44336',
- *    '--el-button-default-font-color': '#2196f3',
+ *    '--lx-button-default-background-color': '#f44336',
+ *    '--lx-button-default-font-color': '#2196f3',
  *  })
  *  useCssVar(themeVars)
  * }

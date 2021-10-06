@@ -9,7 +9,7 @@
 }
 
 @include b(rate) {
-  height: var(--el-rate-height);
+  height: var(--lx-rate-height);
   line-height: 1;
 
   &:focus,
@@ -27,10 +27,10 @@
   @include e(icon) {
     position: relative;
     display: inline-block;
-    font-size: var(--el-rate-icon-size);
-    margin-right: var(--el-rate-icon-margin);
-    color: var(--el-rate-icon-color);
-    transition: var(--el-transition-duration);
+    font-size: var(--lx-rate-icon-size);
+    margin-right: var(--lx-rate-icon-margin);
+    color: var(--lx-rate-icon-color);
+    transition: var(--lx-transition-duration);
     &.hover {
       transform: scale(1.15);
     }
@@ -51,7 +51,7 @@
   }
 
   @include e(text) {
-    font-size: var(--el-rate-font-size);
+    font-size: var(--lx-rate-font-size);
     vertical-align: middle;
   }
 }

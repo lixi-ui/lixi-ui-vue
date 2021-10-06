@@ -182,7 +182,7 @@ dropdownリストを起動するには、ボタンを使用します。
   }
   .demonstration {
     display: block;
-    color: var(--el-text-color-secondary);
+    color: var(--lx-text-color-secondary);
     font-size: 14px;
     margin-bottom: 20px;
   }

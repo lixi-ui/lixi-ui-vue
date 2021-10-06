@@ -168,10 +168,10 @@
 
 <style>
   .lx-table .warning-row {
-    --el-table-tr-background-color: var(--el-color-warning-lighter);
+    --lx-table-tr-background-color: var(--lx-color-warning-lighter);
   }
   .lx-table .success-row {
-    --el-table-tr-background-color: var(--el-color-success-lighter);
+    --lx-table-tr-background-color: var(--lx-color-success-lighter);
   }
 </style>
 

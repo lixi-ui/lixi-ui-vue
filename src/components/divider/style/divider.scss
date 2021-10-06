@@ -2,7 +2,7 @@
 @import 'mixins/mixins';
 
 @include b(divider) {
-  background-color: var(--el-border-color-base);
+  background-color: var(--lx-border-color-base);
   position: relative;
 
   @include m(horizontal) {
@@ -26,7 +26,7 @@
     background-color: $--color-white;
     padding: 0 20px;
     font-weight: 500;
-    color: var(--el-text-color-primary);
+    color: var(--lx-text-color-primary);
     font-size: 14px;
 
     @include when(left) {

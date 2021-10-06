@@ -76,21 +76,21 @@
 <style>
   .lx-header, .lx-footer {
     background-color: #B3C0D1;
-    color: var(--el-text-color-primary);
+    color: var(--lx-text-color-primary);
     text-align: center;
     line-height: 60px;
   }
 
   .lx-aside {
     background-color: #D3DCE6;
-    color: var(--el-text-color-primary);
+    color: var(--lx-text-color-primary);
     text-align: center;
     line-height: 200px;
   }
 
   .lx-main {
     background-color: #E9EEF3;
-    color: var(--el-text-color-primary);
+    color: var(--lx-text-color-primary);
     text-align: center;
     line-height: 160px;
   }
@@ -197,12 +197,12 @@
 <style>
   .lx-header {
     background-color: #B3C0D1;
-    color: var(--el-text-color-primary);
+    color: var(--lx-text-color-primary);
     line-height: 60px;
   }
 
   .lx-aside {
-    color: var(--el-text-color-primary);
+    color: var(--lx-text-color-primary);
   }
 </style>
 

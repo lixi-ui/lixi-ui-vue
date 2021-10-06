@@ -17,7 +17,7 @@
     line-height: 20px;
 
     &.disabled {
-      color: var(--el-datepicker-border-color);
+      color: var(--lx-datepicker-border-color);
       cursor: not-allowed;
     }
 
@@ -29,7 +29,7 @@
   }
 
   .time-select-item.selected:not(.disabled) {
-    color: var(--el-color-primary);
+    color: var(--lx-color-primary);
     font-weight: bold;
   }
 }

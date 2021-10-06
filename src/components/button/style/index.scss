@@ -1,49 +1,73 @@
 @charset "UTF-8";
-@import "../../../style/src/common/var";
-@import "../../../style/src/mixins/mixins";
-@import "../../../style/src/mixins/utils";
+// @import "../../../style/src/common/var";
+// @import "../../../style/src/mixins/mixins";
+// @import "../../../style/src/mixins/utils";
 
-// .lx-button{
-//   background: lightblue;
-//   border: none;
-//   padding: 5px;
-//   border-radius: 4px;
-//   color: #333;
-// }
+@use "sass:map";
+
+@import '../../../style/src/common/var';
+@import '../../../style/src/mixins/mixins';
+@import '../../../style/src/mixins/utils';
+@import '../../../style/src/mixins/var';
+
+@include b(button) {
+  @include set-component-css-var('button', $--button);
+}
 
 @include b(button) {
   display: inline-block;
   line-height: 1;
+  min-height: map.get($--input-height, 'default');
   white-space: nowrap;
   cursor: pointer;
-  background: $--button-default-background-color;
-  border: $--border-base;
-  border-color: $--button-default-border-color;
-  color: $--button-default-font-color;
+  background: var(
+    --lx-button-background-color,
+    map.get($--button, 'background-color')
+  );
+  border: var(--lx-border-base);
+  border-color: var(
+    --lx-button-border-color,
+    map.get($--button, 'border-color')
+  );
+  color: var(--lx-button-font-color, map.get($--button, 'font-color'));
   -webkit-appearance: none;
   text-align: center;
   box-sizing: border-box;
   outline: none;
   margin: 0;
-  transition: .1s;
-  font-weight: $--button-font-weight;
+  transition: 0.1s;
+  font-weight: var(--lx-button-font-weight);
   @include utils-user-select(none);
   & + & {
     margin-left: 10px;
   }
 
-  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
+  @include button-size(
+    map.get($--button-padding-vertical, 'default'),
+    map.get($--button-padding-horizontal, 'default'),
+    map.get($--button-font-size, 'default'),
+    map.get($--button-border-radius, 'default')
+  );
 
   &:hover,
   &:focus {
-    color: $--color-primary;
-    border-color: $--color-primary-light-7;
-    background-color: $--color-primary-light-9;
+    color: var(--lx-color-primary);
+    border-color: var(--lx-color-primary-light-7);
+    background-color: var(--lx-color-primary-light-9);
+    outline: none;
   }
 
   &:active {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    color: mix(
+      $--color-black,
+      $--color-primary,
+      $--button-active-shade-percent
+    );
+    border-color: mix(
+      $--color-black,
+      $--color-primary,
+      $--button-active-shade-percent
+    );
     outline: none;
   }
 
@@ -51,7 +75,7 @@
     border: 0;
   }
 
-  & [class*="lx-icon-"] {
+  & [class*='#{$namespace}-icon-'] {
     & + span {
       margin-left: 5px;
     }
@@ -60,36 +84,52 @@
   @include when(plain) {
     &:hover,
     &:focus {
-      background: $--color-white;
-      border-color: $--color-primary;
-      color: $--color-primary;
+      background: var(--lx-color-white);
+      border-color: var(--lx-color-primary);
+      color: var(--lx-color-primary);
     }
 
     &:active {
-      background: $--color-white;
-      border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      background: var(--lx-color-white);
+      border-color: mix(
+        $--color-black,
+        $--color-primary,
+        $--button-active-shade-percent
+      );
+      color: mix(
+        $--color-black,
+        $--color-primary,
+        $--button-active-shade-percent
+      );
       outline: none;
     }
   }
 
   @include when(active) {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    color: mix(
+      $--color-black,
+      $--color-primary,
+      $--button-active-shade-percent
+    );
+    border-color: mix(
+      $--color-black,
+      $--color-primary,
+      $--button-active-shade-percent
+    );
   }
 
   @include when(disabled) {
     &,
     &:hover,
     &:focus {
-      color: $--button-disabled-font-color;
+      color: var(--lx-button-disabled-font-color);
       cursor: not-allowed;
       background-image: none;
-      background-color: $--button-disabled-background-color;
-      border-color: $--button-disabled-border-color;
+      background-color: var(--lx-button-disabled-background-color);
+      border-color: var(--lx-button-disabled-border-color);
     }
 
-    &.lx-button--text {
+    &.#{$namespace}-button--text {
       background-color: transparent;
     }
 
@@ -97,9 +137,9 @@
       &,
       &:hover,
       &:focus {
-        background-color: $--color-white;
-        border-color: $--button-disabled-border-color;
-        color: $--button-disabled-font-color;
+        background-color: var(--lx-color-white);
+        border-color: var(--lx-button-disabled-border-color);
+        color: var(--lx-button-disabled-font-color);
       }
     }
   }
@@ -117,65 +157,77 @@
       right: -1px;
       bottom: -1px;
       border-radius: inherit;
-      background-color: rgba(255,255,255,.35);
+      background-color: rgba(255, 255, 255, 0.35);
     }
   }
   @include when(round) {
-    border-radius: 20px;
+    border-radius: var(--lx-border-radius-round);
     padding: 12px 23px;
   }
   @include when(circle) {
     border-radius: 50%;
-    padding: $--button-padding-vertical;
+    padding: map.get($--button-padding-vertical, 'default');
   }
-  @include m(primary) {
-    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
-  }
-  @include m(success) {
-    @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
-  }
-  @include m(warning) {
-    @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
-  }
-  @include m(danger) {
-    @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
-  }
-  @include m(info) {
-    @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
-  }
-  @include m(medium) {
-    @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
-    @include when(circle) {
-      padding: $--button-medium-padding-vertical;
+
+  @each $type in (primary, success, warning, danger, info) {
+    @include m($type) {
+      --lx-button-font-color: #{map.get($--button-font-color, $type)};
+      --lx-button-background-color: #{map.get($--button-background-color, $type)};
+      --lx-button-border-color: #{map.get($--button-border-color, $type)};
+      --lx-button-hover-color: #{map.get($--colors, $type, 'light-2')};
+      --lx-button-active-font-color: #{darken(
+          map.get($--button-font-color, $type),
+          $--button-active-shade-percent
+        )};
+      --lx-button-active-background-color: #{darken(
+          map.get($--button-background-color, $type),
+          $--button-active-shade-percent
+        )};
+      --lx-button-active-border-color: #{darken(
+          map.get($--button-border-color, $type),
+          $--button-active-shade-percent
+        )};
+
+      @include button-variant($type);
     }
   }
-  @include m(small) {
-    @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius);
-    @include when(circle) {
-      padding: $--button-small-padding-vertical;
+
+  @each $size in (medium, small, mini) {
+    @include m($size) {
+      min-height: map.get($--input-height, $size);
+
+      @include button-size(
+        map.get($--button-padding-vertical, $size),
+        map.get($--button-padding-horizontal, $size),
+        map.get($--button-font-size, $size),
+        map.get($--button-border-radius, $size)
+      );
+
+      @include when(circle) {
+        padding: map.get($--button-padding-vertical, $size);
+      }
     }
   }
-  @include m(mini) {
-    @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
-    @include when(circle) {
-      padding: $--button-mini-padding-vertical;
-    }
-  }
+
   @include m(text) {
     border-color: transparent;
-    color: $--color-primary;
+    color: var(--lx-color-primary);
     background: transparent;
     padding-left: 0;
     padding-right: 0;
 
     &:hover,
     &:focus {
-      color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+      color: var(--lx-color-primary-light-2);
       border-color: transparent;
       background-color: transparent;
     }
     &:active {
-      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      color: mix(
+        $--color-black,
+        $--color-primary,
+        $--button-active-shade-percent
+      );
       border-color: transparent;
       background-color: transparent;
     }

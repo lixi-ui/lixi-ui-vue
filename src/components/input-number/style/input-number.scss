@@ -29,46 +29,46 @@
     height: auto;
     text-align: center;
     background: $--background-color-base;
-    color: var(--el-text-color-regular);
+    color: var(--lx-text-color-regular);
     cursor: pointer;
     font-size: 13px;
 
     &:hover {
-      color: var(--el-color-primary);
+      color: var(--lx-color-primary);
 
       & ~ .#{$namespace}-input:not(.is-disabled) .#{$namespace}-input__inner {
         border-color: var(
-          --el-input-focus-border,
+          --lx-input-focus-border,
           map.get($--input, 'focus-border')
         );
       }
     }
 
     &.is-disabled {
-      color: var(--el-disabled-color-base);
+      color: var(--lx-disabled-color-base);
       cursor: not-allowed;
     }
   }
 
   @include e(increase) {
     right: 1px;
-    border-radius: 0 var(--el-border-radius-base) var(--el-border-radius-base) 0;
-    border-left: var(--el-border-base);
+    border-radius: 0 var(--lx-border-radius-base) var(--lx-border-radius-base) 0;
+    border-left: var(--lx-border-base);
   }
 
   @include e(decrease) {
     left: 1px;
-    border-radius: var(--el-border-radius-base) 0 0 var(--el-border-radius-base);
-    border-right: var(--el-border-base);
+    border-radius: var(--lx-border-radius-base) 0 0 var(--lx-border-radius-base);
+    border-right: var(--lx-border-base);
   }
 
   @include when(disabled) {
     @include e((increase, decrease)) {
-      border-color: var(--el-disabled-border-base);
-      color: var(--el-disabled-border-base);
+      border-color: var(--lx-disabled-border-base);
+      color: var(--lx-disabled-border-base);
 
       &:hover {
-        color: var(--el-disabled-border-base);
+        color: var(--lx-disabled-border-base);
         cursor: not-allowed;
       }
     }
@@ -130,8 +130,8 @@
     }
 
     @include e(increase) {
-      border-radius: 0 var(--el-border-radius-base) 0 0;
-      border-bottom: var(--el-border-base);
+      border-radius: 0 var(--lx-border-radius-base) 0 0;
+      border-bottom: var(--lx-border-base);
     }
 
     @include e(decrease) {
@@ -140,8 +140,8 @@
       top: auto;
       left: auto;
       border-right: none;
-      border-left: var(--el-border-base);
-      border-radius: 0 0 var(--el-border-radius-base) 0;
+      border-left: var(--lx-border-base);
+      border-radius: 0 0 var(--lx-border-radius-base) 0;
     }
 
     @each $size in (medium, small, mini) {

@@ -7,23 +7,23 @@
   @include set-component-css-var('descriptions', $--descriptions);
 
   box-sizing: border-box;
-  font-size: var(--el-font-size-base);
-  color: var(--el-text-color-primary);
+  font-size: var(--lx-font-size-base);
+  color: var(--lx-text-color-primary);
 
   @include e(header) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--el-descriptions-header-margin-bottom);
+    margin-bottom: var(--lx-descriptions-header-margin-bottom);
 
     @include e(title) {
-      font-size: var(--el-descriptions-title-font-size);
+      font-size: var(--lx-descriptions-title-font-size);
       font-weight: bold;
     }
   }
 
   @include e(body) {
-    color: var(--el-text-color-regular);
+    color: var(--lx-text-color-regular);
     background-color: $--color-white;
 
     .#{$namespace}-descriptions__table {
@@ -53,7 +53,7 @@
 
   .is-bordered {
     .#{$namespace}-descriptions__cell {
-      border: var(--el-descriptions-table-border);
+      border: var(--lx-descriptions-table-border);
       padding: 12px 10px;
     }
   }

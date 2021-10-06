@@ -25,9 +25,9 @@ $positionMap: (
   @include e(popper) {
     position: absolute;
     border-radius: 4px;
-    padding: var(--el-tooltip-padding);
-    z-index: var(--el-index-popper);
-    font-size: var(--el-tooltip-font-size);
+    padding: var(--lx-tooltip-padding);
+    z-index: var(--lx-index-popper);
+    font-size: var(--lx-tooltip-font-size);
     line-height: 1.2;
     min-width: 10px;
     word-wrap: break-word;
@@ -43,7 +43,7 @@ $positionMap: (
     }
 
     .popper__arrow {
-      border-width: var(--el-tooltip-arrow-size);
+      border-width: var(--lx-tooltip-arrow-size);
     }
 
     .popper__arrow::after {
@@ -54,39 +54,39 @@ $positionMap: (
     @each $position in $positions {
       &[x-placement^='#{$position}'] {
         margin-#{map.get($positionMap, $position)}: calc(
-          var(--el-tooltip-arrow-size) + 6px
+          var(--lx-tooltip-arrow-size) + 6px
         );
       }
 
       &[x-placement^='#{$position}'] .popper__arrow {
         #{map.get($positionMap, $position)}: calc(
-          0px - var(--el-tooltip-arrow-size)
+          0px - var(--lx-tooltip-arrow-size)
         );
-        border-#{$position}-color: var(--el-tooltip-border-color);
+        border-#{$position}-color: var(--lx-tooltip-border-color);
         border-#{map.get($positionMap, $position)}-width: 0;
 
         &::after {
           #{map.get($positionMap, $position)}: 1px;
-          border-#{$position}-color: var(--el-tooltip-fill);
+          border-#{$position}-color: var(--lx-tooltip-fill);
           border-#{map.get($positionMap, $position)}-width: 0;
         }
       }
     }
 
     @include when(dark) {
-      background: var(--el-tooltip-fill);
-      color: var(--el-tooltip-color);
+      background: var(--lx-tooltip-fill);
+      color: var(--lx-tooltip-color);
     }
 
     @include when(light) {
-      background: var(--el-tooltip-color);
-      border: 1px solid var(--el-tooltip-fill);
+      background: var(--lx-tooltip-color);
+      border: 1px solid var(--lx-tooltip-fill);
 
       @each $position in $positions {
         &[x-placement^='#{$position}'] .popper__arrow {
-          border-top-color: var(--el-tooltip-fill);
+          border-top-color: var(--lx-tooltip-fill);
           &::after {
-            border-top-color: var(--el-tooltip-color);
+            border-top-color: var(--lx-tooltip-color);
           }
         }
       }

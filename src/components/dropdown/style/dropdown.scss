@@ -9,8 +9,8 @@
 
   display: inline-block;
   position: relative;
-  color: var(--el-text-color-regular);
-  font-size: var(--el-font-size-base);
+  color: var(--lx-text-color-regular);
+  font-size: var(--lx-font-size-base);
   line-height: 1;
 
   @include e(popper) {
@@ -20,8 +20,8 @@
 
     @include picker-popper(
       $--color-white,
-      1px solid var(--el-border-color-light),
-      var(--el-dropdown-menu-box-shadow)
+      1px solid var(--lx-border-color-light),
+      var(--lx-dropdown-menu-box-shadow)
     );
 
     .#{$namespace}-dropdown-menu {
@@ -33,7 +33,7 @@
     }
 
     @include b(scrollbar__bar) {
-      z-index: calc(var(--el-dropdown-menu-index) + 1);
+      z-index: calc(var(--lx-dropdown-menu-index) + 1);
     }
 
     @include b(dropdown__list) {
@@ -72,7 +72,7 @@
     }
 
     &.#{$namespace}-button--default::before {
-      background: var(--el-default-border-color);
+      background: var(--lx-default-border-color);
       opacity: 0.5;
     }
 
@@ -102,12 +102,12 @@
   position: relative;
   top: 0;
   left: 0;
-  z-index: var(--el-dropdown-menu-index);
+  z-index: var(--lx-dropdown-menu-index);
   padding: 10px 0;
   margin: 0;
   background-color: $--color-white;
   border: none;
-  border-radius: var(--el-border-radius-base);
+  border-radius: var(--lx-border-radius-base);
   box-shadow: none;
 
   @include e(item) {
@@ -115,14 +115,14 @@
     line-height: 36px;
     padding: 0 20px;
     margin: 0;
-    font-size: var(--el-font-size-base);
-    color: var(--el-text-color-regular);
+    font-size: var(--lx-font-size-base);
+    color: var(--lx-text-color-regular);
     cursor: pointer;
     outline: none;
     &:not(.is-disabled):hover,
     &:focus {
-      background-color: var(--el-dropdown-menuItem-hover-fill);
-      color: var(--el-dropdown-menuItem-hover-color);
+      background-color: var(--lx-dropdown-menuItem-hover-fill);
+      color: var(--lx-dropdown-menuItem-hover-color);
     }
 
     i {
@@ -134,7 +134,7 @@
 
       position: relative;
       margin-top: $divided-offset;
-      border-top: 1px solid var(--el-border-color-lighter);
+      border-top: 1px solid var(--lx-border-color-lighter);
 
       &:before {
         content: '';
@@ -147,7 +147,7 @@
 
     @include when(disabled) {
       cursor: not-allowed;
-      color: var(--el-font-color-disabled-base);
+      color: var(--lx-font-color-disabled-base);
     }
   }
 

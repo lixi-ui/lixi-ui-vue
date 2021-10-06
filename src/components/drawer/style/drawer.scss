@@ -53,14 +53,14 @@
 
 @mixin animation-in($direction) {
   &.#{$direction} {
-    animation: #{$direction}-drawer-animation var(--el-transition-duration) linear
+    animation: #{$direction}-drawer-animation var(--lx-transition-duration) linear
       reverse;
   }
 }
 
 @mixin animation-out($direction) {
   &.#{$direction} {
-    animation: #{$direction}-drawer-animation var(--el-transition-duration) linear;
+    animation: #{$direction}-drawer-animation var(--lx-transition-duration) linear;
   }
 }
 
@@ -78,7 +78,7 @@ $directions: rtl, ltr, ttb, btt;
 @include b(drawer) {
   position: absolute;
   box-sizing: border-box;
-  background-color: var(--el-drawer-background-color);
+  background-color: var(--lx-drawer-background-color);
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2),
@@ -100,7 +100,7 @@ $directions: rtl, ltr, ttb, btt;
     color: rgb(114, 118, 123);
     display: flex;
     margin-bottom: 32px;
-    padding: var(--el-drawer-padding-primary);
+    padding: var(--lx-drawer-padding-primary);
     padding-bottom: 0;
     & > :first-child {
       flex: 1;
@@ -117,13 +117,13 @@ $directions: rtl, ltr, ttb, btt;
   &__close-btn {
     border: none;
     cursor: pointer;
-    font-size: var(--el-font-size-extra-large);
+    font-size: var(--lx-font-size-extra-large);
     color: inherit;
     background-color: transparent;
     outline: none;
     &:hover {
       i {
-        color: var(--el-color-primary);
+        color: var(--lx-color-primary);
       }
     }
   }
@@ -167,11 +167,11 @@ $directions: rtl, ltr, ttb, btt;
 }
 
 .#{$namespace}-drawer-fade-enter-active {
-  animation: #{$namespace}-drawer-fade-in var(--el-transition-duration);
+  animation: #{$namespace}-drawer-fade-in var(--lx-transition-duration);
   overflow: hidden !important;
 }
 
 .#{$namespace}-drawer-fade-leave-active {
   overflow: hidden !important;
-  animation: #{$namespace}-drawer-fade-in var(--el-transition-duration) reverse;
+  animation: #{$namespace}-drawer-fade-in var(--lx-transition-duration) reverse;
 }

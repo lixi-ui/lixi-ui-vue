@@ -5,8 +5,8 @@
   @include e(label) {
       &.#{$namespace}-descriptions__cell.is-bordered-label {
         font-weight: bold;
-        color: var(--el-text-color-secondary);
-        background: var(--el-descriptions-item-bordered-label-background);
+        color: var(--lx-text-color-secondary);
+        background: var(--lx-descriptions-item-bordered-label-background);
       }
 
       &:not(.is-bordered-label) {
