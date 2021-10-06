@@ -75,8 +75,8 @@ Si se escoge el tiempo de inicio al principio, el tiempo de finalización cambia
 | size              | tamaño del input                         | string                                   | medium / small / mini                    | —                    |
 | placeholder       | placeholder en un modo fuera de rango    | string                                   | —                                        | —                    |
 | name              | como `name` en input nativo              | string                                   | —                                        | —                    |
-| prefix-icon       | Clase personalizada para el icono de prefijado | string                                   | —                                        | el-icon-time         |
-| clear-icon        | Clase personalizada para el icono `clear` | string                                   | —                                        | el-icon-circle-close |
+| prefix-icon       | Clase personalizada para el icono de prefijado | string                                   | —                                        | lx-icon-time         |
+| clear-icon        | Clase personalizada para el icono `clear` | string                                   | —                                        | lx-icon-circle-close |
 | start    | tiempo de inicio                         | string | —                 | 09:00       |
 | end      | tiempo de finalización                   | string | —                 | 18:00       |
 | step     | salto de tiempo                          | string | —                 | 00:30       |

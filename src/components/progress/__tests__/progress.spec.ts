@@ -28,7 +28,7 @@ describe('Progress.vue', () => {
         textInside: true,
       },
     })
-    expect(wrapper.classes()).toContain('el-progress--text-inside')
+    expect(wrapper.classes()).toContain('lx-progress--text-inside')
   })
 
   test('stroke width', () => {
@@ -55,7 +55,7 @@ describe('Progress.vue', () => {
         type: 'circle',
       },
     })
-    expect(wrapper.classes()).toContain('el-progress--circle')
+    expect(wrapper.classes()).toContain('lx-progress--circle')
   })
 
   test('dashboard', () => {
@@ -64,7 +64,7 @@ describe('Progress.vue', () => {
         type: 'dashboard',
       },
     })
-    expect(wrapper.classes()).toContain('el-progress--dashboard')
+    expect(wrapper.classes()).toContain('lx-progress--dashboard')
   })
 
   test('width', () => {

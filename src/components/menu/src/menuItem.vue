@@ -1,6 +1,6 @@
 <template>
   <li
-    class="el-menu-item"
+    class="lx-menu-item"
     role="menuitem"
     tabindex="-1"
     :style="[paddingStyle, itemStyle, { backgroundColor }]"
@@ -47,8 +47,8 @@ import {
   inject,
   getCurrentInstance,
 } from 'vue'
-import LxTooltip from '@element-plus/components/tooltip'
-import { Effect } from '@element-plus/components/popper'
+import LxTooltip from '@lixi/components/tooltip'
+import { Effect } from '@lixi/components/popper'
 import useMenu from './useMenu'
 
 import type { RootMenuProvider, SubMenuProvider } from './menu.type'

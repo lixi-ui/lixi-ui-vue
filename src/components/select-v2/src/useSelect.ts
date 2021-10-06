@@ -15,15 +15,15 @@ import {
 } from '@vue/shared'
 import isEqual from 'lodash/isEqual'
 import lodashDebounce from 'lodash/debounce'
-import { elFormKey, elFormItemKey } from '@element-plus/tokens'
-import { useLocaleInject } from '@element-plus/hooks'
-import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@element-plus/utils/constants'
-import { addResizeListener, removeResizeListener } from '@element-plus/utils/resize-event'
+import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { useLocaleInject } from '@lixi/hooks'
+import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@lixi/utils/constants'
+import { addResizeListener, removeResizeListener } from '@lixi/utils/resize-event'
 import {
   getValueByPath,
   useGlobalConfig,
-} from '@element-plus/utils/util'
-import { Effect } from '@element-plus/components/popper'
+} from '@lixi/utils/util'
+import { Effect } from '@lixi/components/popper'
 
 import { useAllowCreate } from './useAllowCreate'
 
@@ -32,7 +32,7 @@ import { flattenOptions } from './util'
 
 
 import type { ExtractPropTypes, CSSProperties } from 'vue'
-import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
 import type { OptionType, Option } from './select.types'
 import { useInput } from './useInput'
 
@@ -83,7 +83,7 @@ const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
 
   // DOM & Component refs
   const controlRef = ref(null)
-  const inputRef = ref(null) // el-input ref
+  const inputRef = ref(null) // lx-input ref
   const menuRef = ref(null)
   const popper = ref(null)
   const selectRef = ref(null)

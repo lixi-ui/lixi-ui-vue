@@ -1,5 +1,5 @@
 import { nextTick } from 'vue'
-import { triggerEvent } from '@element-plus/test-utils'
+import { triggerEvent } from '@lixi/test-utils'
 import LxTable from '../src/table.vue'
 import LxTableColumn from '../src/table-column/index'
 import { mount, getTestData } from './table-test-common'
@@ -666,7 +666,7 @@ describe('table column', () => {
       wrapper.unmount()
     })
 
-    it('el-table-column should callback itself', async() => {
+    it('lx-table-column should callback itself', async() => {
       const TableColumn = {
         name: 'TableColumn',
         components: {

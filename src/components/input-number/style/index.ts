@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/input-number.scss'
-import '@element-plus/components/input/style/index'
+import '@lixi/components/base/style'
+import '@lixi/theme-chalk/src/input-number.scss'
+import '@lixi/components/input/style/index'

@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 import Dialog from './src/index.vue'
 
 Dialog.install = (app: App): void => {

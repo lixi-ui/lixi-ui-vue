@@ -3,7 +3,7 @@ import RadioButton from './src/radio-button.vue'
 import RadioGroup from './src/radio-group.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 
 Radio.install = (app: App): void => {

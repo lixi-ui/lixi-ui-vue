@@ -5,7 +5,7 @@
     @mouseenter.stop="handleMouseEnter"
     @mouseleave.stop="handleMouseLeave"
   >
-    <div class="el-carousel__container" :style="{ height: height }">
+    <div class="lx-carousel__container" :style="{ height: height }">
       <transition v-if="arrowDisplay" name="carousel-arrow-left">
         <button
           v-show="
@@ -13,12 +13,12 @@
               (props.loop || data.activeIndex > 0)
           "
           type="button"
-          class="el-carousel__arrow el-carousel__arrow--left"
+          class="lx-carousel__arrow lx-carousel__arrow--left"
           @mouseenter="handleButtonEnter('left')"
           @mouseleave="handleButtonLeave"
           @click.stop="throttledArrowClick(data.activeIndex - 1)"
         >
-          <i class="el-icon-arrow-left"></i>
+          <i class="lx-icon-arrow-left"></i>
         </button>
       </transition>
       <transition v-if="arrowDisplay" name="carousel-arrow-right">
@@ -28,12 +28,12 @@
               (props.loop || data.activeIndex < items.length - 1)
           "
           type="button"
-          class="el-carousel__arrow el-carousel__arrow--right"
+          class="lx-carousel__arrow lx-carousel__arrow--right"
           @mouseenter="handleButtonEnter('right')"
           @mouseleave="handleButtonLeave"
           @click.stop="throttledArrowClick(data.activeIndex + 1)"
         >
-          <i class="el-icon-arrow-right"></i>
+          <i class="lx-icon-arrow-right"></i>
         </button>
       </transition>
       <slot></slot>
@@ -43,14 +43,14 @@
         v-for="(item, index) in items"
         :key="index"
         :class="[
-          'el-carousel__indicator',
-          'el-carousel__indicator--' + direction,
+          'lx-carousel__indicator',
+          'lx-carousel__indicator--' + direction,
           { 'is-active': index === data.activeIndex },
         ]"
         @mouseenter="throttledIndicatorHover(index)"
         @click.stop="handleIndicatorClick(index)"
       >
-        <button class="el-carousel__button">
+        <button class="lx-carousel__button">
           <span v-if="hasLabel">{{ item.label }}</span>
         </button>
       </li>
@@ -74,7 +74,7 @@ import throttle from 'lodash/throttle'
 import {
   addResizeListener,
   removeResizeListener,
-} from '@element-plus/utils/resize-event'
+} from '@lixi/utils/resize-event'
 
 import type { ICarouselProps, CarouselItem, InjectCarouselScope } from './carousel'
 
@@ -153,23 +153,23 @@ export default defineComponent({
     })
 
     const carouselClasses = computed(() => {
-      const classes = ['el-carousel', 'el-carousel--' + props.direction]
+      const classes = ['lx-carousel', 'lx-carousel--' + props.direction]
       if (props.type === 'card') {
-        classes.push('el-carousel--card')
+        classes.push('lx-carousel--card')
       }
       return classes
     })
 
     const indicatorsClasses = computed(() => {
       const classes = [
-        'el-carousel__indicators',
-        'el-carousel__indicators--' + props.direction,
+        'lx-carousel__indicators',
+        'lx-carousel__indicators--' + props.direction,
       ]
       if (hasLabel.value) {
-        classes.push('el-carousel__indicators--labels')
+        classes.push('lx-carousel__indicators--labels')
       }
       if (props.indicatorPosition === 'outside' || props.type === 'card') {
-        classes.push('el-carousel__indicators--outside')
+        classes.push('lx-carousel__indicators--outside')
       }
       return classes
     })

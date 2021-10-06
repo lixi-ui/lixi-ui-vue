@@ -999,7 +999,7 @@ Vous pouvez customiser le contenu des colonnes afin de pouvoir utiliser d'autres
   <lx-table :data="tableData" style="width: 100%">
     <lx-table-column label="Date" width="180">
       <template #default="scope">
-        <i class="el-icon-time"></i>
+        <i class="lx-icon-time"></i>
         <span style="margin-left: 10px">{{ scope.row.date }}</span>
       </template>
     </lx-table-column>

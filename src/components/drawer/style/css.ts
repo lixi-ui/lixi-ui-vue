@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style/css'
-import '@element-plus/theme-chalk/el-drawer.css'
-import '@element-plus/components/overlay/style/css'
+import '@lixi/components/base/style/css'
+import '@lixi/theme-chalk/el-drawer.css'
+import '@lixi/components/overlay/style/css'

@@ -1,7 +1,7 @@
 import { h } from 'vue'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import { EVENT_CODE } from '@lixi/utils/aria'
 
-import makeMount from '@element-plus/test-utils/make-mount'
+import makeMount from '@lixi/test-utils/make-mount'
 import UploadList from '../src/upload-list.vue'
 
 const testName = 'test name'

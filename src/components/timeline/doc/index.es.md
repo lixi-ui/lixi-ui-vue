@@ -70,7 +70,7 @@ El tamaño, el color y los iconos se pueden personalizar en el nodo.
           timestamp: '2018-04-12 20:46',
           size: 'large',
           type: 'primary',
-          icon: 'el-icon-more'
+          icon: 'lx-icon-more'
         }, {
           content: 'Custom color',
           timestamp: '2018-04-03 20:46',

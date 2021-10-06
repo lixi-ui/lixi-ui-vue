@@ -1,6 +1,6 @@
 import { cloneVNode } from 'vue'
-import throwError from '@element-plus/utils/error'
-import { getFirstValidNode } from '@element-plus/utils/vnode'
+import throwError from '@lixi/utils/error'
+import { getFirstValidNode } from '@lixi/utils/vnode'
 
 import type { VNode, Ref, ComponentPublicInstance } from 'vue'
 

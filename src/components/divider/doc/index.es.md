@@ -30,7 +30,7 @@ Puede personalizar el contenido en la línea divisoria.
     <span>What you are you do not see, what you see is your shadow. </span>
     <lx-divider content-position="left">Rabindranath Tagore</lx-divider>
     <span>I cannot choose the best. The best chooses me.</span>
-    <lx-divider><i class="el-icon-star-on"></i></lx-divider>
+    <lx-divider><i class="lx-icon-star-on"></i></lx-divider>
     <span>My wishes are fools, they shout across thy song, my Master. Let me but listen.</span>
     <lx-divider content-position="right">Rabindranath Tagore</lx-divider>
   </div>

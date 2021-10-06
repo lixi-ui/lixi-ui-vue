@@ -1,8 +1,8 @@
 import { h, nextTick } from 'vue'
-import * as domExports from '@element-plus/utils/dom'
-import makeMount from '@element-plus/test-utils/make-mount'
-import { rAF } from '@element-plus/test-utils/tick'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import * as domExports from '@lixi/utils/dom'
+import makeMount from '@lixi/test-utils/make-mount'
+import { rAF } from '@lixi/test-utils/tick'
+import { EVENT_CODE } from '@lixi/utils/aria'
 import Message from '../src/index.vue'
 
 import type { ComponentPublicInstance, CSSProperties } from 'vue'
@@ -33,7 +33,7 @@ describe('Message.vue', () => {
 
       expect(wrapper.text()).toEqual(AXIOM)
       expect(vm.visible).toBe(true)
-      expect(vm.typeClass).toBe('el-icon-info')
+      expect(vm.typeClass).toBe('lx-icon-info')
       expect(vm.customStyle).toEqual({ top: '20px', zIndex: 0 })
     })
 

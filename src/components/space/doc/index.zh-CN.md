@@ -361,7 +361,7 @@ export default {
 | alignment | 对齐的方式 | string | [align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items) | 'center' |
 | class     | 类名      | string / Array<Object \| String> / Object | - | - |
 | direction | 排列的方向 | string | vertical/horizontal | horizontal |
-| prefixCls | 给 space-items 的类名前缀 | string | el-space | - |
+| prefixCls | 给 space-items 的类名前缀 | string | lx-space | - |
 | style     | 额外样式   | string / Array<Object \| String> / Object | - | - |
 | spacer    | 间隔符     | string / number / VNode | - | - |
 | size      | 间隔大小   | string / number / [number, number] | - | 'small' |

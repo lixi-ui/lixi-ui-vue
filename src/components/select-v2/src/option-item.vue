@@ -3,7 +3,7 @@
     :aria-selected="selected"
     :style="style"
     :class="{
-      'el-select-dropdown__option-item': true,
+      'lx-select-dropdown__option-item': true,
       'is-selected': selected,
       'is-disabled': disabled,
       'is-created': created,

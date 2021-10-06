@@ -1,7 +1,7 @@
 import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
-import { rAF } from '@element-plus/test-utils/tick'
-import triggerCompositeClick from '@element-plus/test-utils/composite-click'
+import { rAF } from '@lixi/test-utils/tick'
+import triggerCompositeClick from '@lixi/test-utils/composite-click'
 import Dialog from '../'
 
 
@@ -83,7 +83,7 @@ describe('Dialog.vue', () => {
     })
     await nextTick()
     expect(
-      document.body.firstElementChild.classList.contains('el-overlay'),
+      document.body.firstElementChild.classList.contains('lx-overlay'),
     ).toBe(true)
     wrapper.unmount()
   })

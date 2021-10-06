@@ -2,7 +2,7 @@
   <ul
     v-clickOutside:[triggerElm]="innerHide"
     :class="[size && `el-dropdown-menu--${size}`]"
-    class="el-dropdown-menu"
+    class="lx-dropdown-menu"
     @mouseenter.stop="show"
     @mouseleave.stop="hide"
   >
@@ -11,7 +11,7 @@
 </template>
 <script lang='ts'>
 import { defineComponent, getCurrentInstance, onMounted } from 'vue'
-import { ClickOutside } from '@element-plus/directives'
+import { ClickOutside } from '@lixi/directives'
 import { useDropdown, initDropdownDomEvent } from './useDropdown'
 
 export default defineComponent({

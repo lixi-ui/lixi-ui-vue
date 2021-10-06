@@ -1,12 +1,12 @@
 <template>
   <div
-    class="el-progress"
+    class="lx-progress"
     :class="[
       `el-progress--${type}`,
       status ? `is-${status}` : '',
       {
-        'el-progress--without-text': !showText,
-        'el-progress--text-inside': textInside,
+        'lx-progress--without-text': !showText,
+        'lx-progress--text-inside': textInside,
       }
     ]"
     role="progressbar"
@@ -14,16 +14,16 @@
     aria-valuemin="0"
     aria-valuemax="100"
   >
-    <div v-if="type === 'line'" class="el-progress-bar">
-      <div class="el-progress-bar__outer" :style="{ height: `${strokeWidth}px` }">
+    <div v-if="type === 'line'" class="lx-progress-bar">
+      <div class="lx-progress-bar__outer" :style="{ height: `${strokeWidth}px` }">
         <div
           :class="[
-            'el-progress-bar__inner',
-            { 'el-progress-bar__inner--indeterminate': indeterminate }
+            'lx-progress-bar__inner',
+            { 'lx-progress-bar__inner--indeterminate': indeterminate }
           ]"
           :style="barStyle"
         >
-          <div v-if="(showText || $slots.default) && textInside" class="el-progress-bar__innerText">
+          <div v-if="(showText || $slots.default) && textInside" class="lx-progress-bar__innerText">
             <slot v-bind="slotData">
               <span>{{ content }}</span>
             </slot>
@@ -31,10 +31,10 @@
         </div>
       </div>
     </div>
-    <div v-else class="el-progress-circle" :style="{ height: `${width}px`, width: `${width}px` }">
+    <div v-else class="lx-progress-circle" :style="{ height: `${width}px`, width: `${width}px` }">
       <svg viewBox="0 0 100 100">
         <path
-          class="el-progress-circle__track"
+          class="lx-progress-circle__track"
           :d="trackPath"
           stroke="#e5e9f2"
           :stroke-width="relativeStrokeWidth"
@@ -42,7 +42,7 @@
           :style="trailPathStyle"
         />
         <path
-          class="el-progress-circle__path"
+          class="lx-progress-circle__path"
           :d="trackPath"
           :stroke="stroke"
           fill="none"
@@ -54,7 +54,7 @@
     </div>
     <div
       v-if="(showText || $slots.default) && !textInside"
-      class="el-progress__text"
+      class="lx-progress__text"
       :style="{ fontSize: `${progressTextSize}px` }"
     >
       <slot v-bind="slotData">
@@ -226,12 +226,12 @@ export default defineComponent({
 
     const iconClass = computed(() => {
       if (props.status === 'warning') {
-        return 'el-icon-warning'
+        return 'lx-icon-warning'
       }
       if (props.type === 'line') {
-        return props.status === 'success' ? 'el-icon-circle-check' : 'el-icon-circle-close'
+        return props.status === 'success' ? 'lx-icon-circle-check' : 'lx-icon-circle-close'
       } else {
-        return props.status === 'success' ? 'el-icon-check' : 'el-icon-close'
+        return props.status === 'success' ? 'lx-icon-check' : 'lx-icon-close'
       }
     })
 

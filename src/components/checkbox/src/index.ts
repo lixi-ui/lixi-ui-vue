@@ -1,9 +1,9 @@
-import Checkbox from './src/checkbox.vue'
-import CheckboxButton from './src/checkbox-button.vue'
-import CheckboxGroup from './src/checkbox-group.vue'
+import Checkbox from './checkbox.vue'
+import CheckboxButton from './checkbox-button.vue'
+import CheckboxGroup from './checkbox-group.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Checkbox.install = (app: App): void => {
   app.component(Checkbox.name, Checkbox)

@@ -1,2 +1,2 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/option.scss'
+import '@lixi/components/base/style'
+import '@lixi/theme-chalk/src/option.scss'

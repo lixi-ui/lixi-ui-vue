@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import { ComponentPublicInstance, defineComponent, nextTick } from 'vue'
 import ColorPicker from '../src/index.vue'
 
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 
 const _mount = (template: string, data: () => ({ [key: string]: any; })) => {
   const Component = defineComponent({
@@ -31,7 +31,7 @@ type ColorPickerVM = ComponentPublicInstance<{
 describe('Color-picker', () => {
   it('Mount Color-picker', () => {
     const wrapper = mount(ColorPicker)
-    expect(wrapper.html()).toContain('el-color-picker')
+    expect(wrapper.html()).toContain('lx-color-picker')
     wrapper.unmount()
   })
   it('should show alpha slider when show-alpha=true', async () => {

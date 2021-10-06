@@ -1,15 +1,15 @@
 import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import { EVENT_CODE } from '@lixi/utils/aria'
 import Radio from '../src/radio.vue'
 import RadioGroup from '../src/radio-group.vue'
 import RadioButton from '../src/radio-button.vue'
 
 const _mount = (template: string, data, otherObj?) => mount({
   components: {
-    'el-radio': Radio,
-    'el-radio-group': RadioGroup,
-    'el-radio-button': RadioButton,
+    'lx-radio': Radio,
+    'lx-radio-group': RadioGroup,
+    'lx-radio-button': RadioButton,
   },
   template,
   data,
@@ -20,7 +20,7 @@ describe('Radio', () => {
   test('create', async () => {
     const wrapper = _mount(`<lx-radio v-model="radio" label="a">
     </lx-radio>`, () => ({ radio: '' }))
-    expect(wrapper.classes()).toContain('el-radio')
+    expect(wrapper.classes()).toContain('lx-radio')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-checked')
   })

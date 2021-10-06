@@ -26,7 +26,7 @@ describe('Rate.vue', () => {
         }
       },
       components: {
-        'el-rate': Rate,
+        'lx-rate': Rate,
       },
     })
     const vm = wrapper.vm
@@ -75,7 +75,7 @@ describe('Rate.vue', () => {
         }
       },
       components: {
-        'el-rate': Rate,
+        'lx-rate': Rate,
       },
     })
     const vm = wrapper.vm
@@ -99,7 +99,7 @@ describe('Rate.vue', () => {
         }
       },
       components: {
-        'el-rate': Rate,
+        'lx-rate': Rate,
       },
     })
     // const vm = wrapper.vm
@@ -127,7 +127,7 @@ describe('Rate.vue', () => {
         },
       },
       components: {
-        'el-rate': Rate,
+        'lx-rate': Rate,
       },
     })
     const vm = wrapper.vm

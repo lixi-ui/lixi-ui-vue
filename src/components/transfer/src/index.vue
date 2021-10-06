@@ -1,5 +1,5 @@
 <template>
-  <div class="el-transfer">
+  <div class="lx-transfer">
     <transfer-panel
       ref="leftPanel"
       :data="sourceData"
@@ -15,24 +15,24 @@
     >
       <slot name="left-footer"></slot>
     </transfer-panel>
-    <div class="el-transfer__buttons">
+    <div class="lx-transfer__buttons">
       <lx-button
         type="primary"
-        :class="['el-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
+        :class="['lx-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
         :disabled="rightChecked.length === 0"
         @click="addToLeft"
       >
-        <i class="el-icon-arrow-left"></i>
+        <i class="lx-icon-arrow-left"></i>
         <span v-if="buttonTexts[0] !== undefined">{{ buttonTexts[0] }}</span>
       </lx-button>
       <lx-button
         type="primary"
-        :class="['el-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
+        :class="['lx-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
         :disabled="leftChecked.length === 0"
         @click="addToRight"
       >
         <span v-if="buttonTexts[1] !== undefined">{{ buttonTexts[1] }}</span>
-        <i class="el-icon-arrow-right"></i>
+        <i class="lx-icon-arrow-right"></i>
       </lx-button>
     </div>
     <transfer-panel
@@ -58,10 +58,10 @@ import {
   computed, defineComponent, inject, h,
   reactive, ref, toRefs, watch,
 } from 'vue'
-import LxButton from '@element-plus/components/button'
-import { elFormItemKey } from '@element-plus/tokens'
-import { useLocaleInject } from '@element-plus/hooks'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
+import LxButton from '@lixi/components/button'
+import { elFormItemKey } from '@lixi/tokens'
+import { useLocaleInject } from '@lixi/hooks'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import TransferPanel from './transfer-panel.vue'
 import { useComputedData } from './useComputedData'
 import { useCheckedChange } from './useCheckedChange'
@@ -71,7 +71,7 @@ import { CHANGE_EVENT } from './transfer'
 import { LEFT_CHECK_CHANGE_EVENT, RIGHT_CHECK_CHANGE_EVENT } from './useCheckedChange'
 
 import type { PropType, VNode } from 'vue'
-import type { LxFormItemContext } from '@element-plus/tokens'
+import type { LxFormItemContext } from '@lixi/tokens'
 import type {
   DataItem, Format, Key,
   Props, TargetOrder,

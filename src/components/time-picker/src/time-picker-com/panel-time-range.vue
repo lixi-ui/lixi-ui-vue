@@ -1,11 +1,11 @@
 <template>
-  <div v-if="actualVisible" class="el-time-range-picker el-picker-panel">
-    <div class="el-time-range-picker__content">
-      <div class="el-time-range-picker__cell">
-        <div class="el-time-range-picker__header">{{ t('el.datepicker.startTime') }}</div>
+  <div v-if="actualVisible" class="lx-time-range-picker lx-picker-panel">
+    <div class="lx-time-range-picker__content">
+      <div class="lx-time-range-picker__cell">
+        <div class="lx-time-range-picker__header">{{ t('el.datepicker.startTime') }}</div>
         <div
           :class="{ 'has-seconds': showSeconds, 'is-arrow': arrowControl }"
-          class="el-time-range-picker__body el-time-panel__content"
+          class="lx-time-range-picker__body lx-time-panel__content"
         >
           <time-spinner
             ref="minSpinner"
@@ -23,11 +23,11 @@
           />
         </div>
       </div>
-      <div class="el-time-range-picker__cell">
-        <div class="el-time-range-picker__header">{{ t('el.datepicker.endTime') }}</div>
+      <div class="lx-time-range-picker__cell">
+        <div class="lx-time-range-picker__header">{{ t('el.datepicker.endTime') }}</div>
         <div
           :class="{ 'has-seconds': showSeconds, 'is-arrow': arrowControl }"
-          class="el-time-range-picker__body el-time-panel__content"
+          class="lx-time-range-picker__body lx-time-panel__content"
         >
           <time-spinner
             ref="maxSpinner"
@@ -46,17 +46,17 @@
         </div>
       </div>
     </div>
-    <div class="el-time-panel__footer">
+    <div class="lx-time-panel__footer">
       <button
         type="button"
-        class="el-time-panel__btn cancel"
+        class="lx-time-panel__btn cancel"
         @click="handleCancel()"
       >
         {{ t('el.datepicker.cancel') }}
       </button>
       <button
         type="button"
-        class="el-time-panel__btn confirm"
+        class="lx-time-panel__btn confirm"
         :disabled="btnConfirmDisabled"
         @click="handleConfirm()"
       >
@@ -75,8 +75,8 @@ import {
 } from 'vue'
 import dayjs from 'dayjs'
 import union from 'lodash/union'
-import { useLocaleInject } from '@element-plus/hooks'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import { useLocaleInject } from '@lixi/hooks'
+import { EVENT_CODE } from '@lixi/utils/aria'
 import TimeSpinner from './basic-time-spinner.vue'
 import { getAvailableArrs, useOldValue } from './useTimePicker'
 

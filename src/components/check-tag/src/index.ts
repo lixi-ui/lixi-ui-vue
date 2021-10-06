@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import CheckTag from './src/index.vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 CheckTag.install = (app: App): void => {
   app.component(CheckTag.name, CheckTag)

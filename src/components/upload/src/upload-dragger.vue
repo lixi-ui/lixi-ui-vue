@@ -1,7 +1,7 @@
 <template>
   <div
     :class="{
-      'el-upload-dragger': true,
+      'lx-upload-dragger': true,
       'is-dragover': dragover
     }"
     @drop.prevent="onDrop"

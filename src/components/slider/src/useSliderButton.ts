@@ -1,7 +1,7 @@
 import { computed, CSSProperties, inject, nextTick, ref, watch } from 'vue'
 import debounce from 'lodash/debounce'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
-import { off, on } from '@element-plus/utils/dom'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
+import { off, on } from '@lixi/utils/dom'
 
 import type { ComputedRef } from 'vue'
 import type { ISliderButtonInitData, ISliderButtonProps, ISliderProvider } from './slider.type'

@@ -1,18 +1,18 @@
 <template>
-  <span class="el-breadcrumb__item">
+  <span class="lx-breadcrumb__item">
     <span
       ref="link"
-      :class="['el-breadcrumb__inner', to ? 'is-link' : '']"
+      :class="['lx-breadcrumb__inner', to ? 'is-link' : '']"
       role="link"
     >
       <slot></slot>
     </span>
     <i
       v-if="separatorClass"
-      class="el-breadcrumb__separator"
+      class="lx-breadcrumb__separator"
       :class="separatorClass"
     ></i>
-    <span v-else class="el-breadcrumb__separator" role="presentation">{{
+    <span v-else class="lx-breadcrumb__separator" role="presentation">{{
       separator
     }}</span>
   </span>

@@ -1,7 +1,7 @@
 <template>
   <div
     ref="radioGroup"
-    class="el-radio-group"
+    class="lx-radio-group"
     role="radiogroup"
     @keydown="handleKeydown"
   >
@@ -22,15 +22,15 @@ import {
   toRefs,
   watch,
 } from 'vue'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
-import { isValidComponentSize } from '@element-plus/utils/validators'
-import { elFormItemKey } from '@element-plus/tokens'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
+import { isValidComponentSize } from '@lixi/utils/validators'
+import { elFormItemKey } from '@lixi/tokens'
 import radioGroupKey from './token'
 
 import type { PropType } from 'vue'
-import type { LxFormItemContext } from '@element-plus/tokens'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { LxFormItemContext } from '@lixi/tokens'
+import type { ComponentSize } from '@lixi/utils/types'
 
 export default defineComponent({
   name: 'LxRadioGroup',

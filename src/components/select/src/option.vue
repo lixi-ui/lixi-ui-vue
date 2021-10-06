@@ -1,7 +1,7 @@
 <template>
   <li
     v-show="visible"
-    class="el-select-dropdown__item"
+    class="lx-select-dropdown__item"
     :class="{
       'selected': itemSelected,
       'is-disabled': isDisabled,

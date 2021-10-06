@@ -1,7 +1,7 @@
 import Message from './src/message'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 const _Message = Message as SFCWithInstall<typeof Message>
 

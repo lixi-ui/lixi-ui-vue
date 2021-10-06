@@ -1,10 +1,10 @@
 <template>
-  <div class="el-color-predefine">
-    <div class="el-color-predefine__colors">
+  <div class="lx-color-predefine">
+    <div class="lx-color-predefine__colors">
       <div
         v-for="(item, index) in rgbaColors"
         :key="colors[index]"
-        class="el-color-predefine__color-selector"
+        class="lx-color-predefine__color-selector"
         :class="{selected: item.selected, 'is-alpha': item._alpha < 100}"
         @click="handleSelect(index)"
       >

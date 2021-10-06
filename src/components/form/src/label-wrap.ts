@@ -10,11 +10,11 @@ import {
   ref,
   watch,
 } from 'vue'
-import { addResizeListener, removeResizeListener, ResizableElement } from '@element-plus/utils/resize-event'
-import { elFormItemKey, elFormKey } from '@element-plus/tokens'
+import { addResizeListener, removeResizeListener, ResizableElement } from '@lixi/utils/resize-event'
+import { elFormItemKey, elFormKey } from '@lixi/tokens'
 
 import type { CSSProperties } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 
 export default defineComponent({
   name: 'LxLabelWrap',
@@ -85,7 +85,7 @@ export default defineComponent({
           'div',
           {
             ref: el,
-            class: ['el-form-item__label-wrap'],
+            class: ['lx-form-item__label-wrap'],
             style,
           },
           slots.default?.(),

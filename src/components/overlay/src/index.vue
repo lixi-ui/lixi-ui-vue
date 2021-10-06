@@ -1,6 +1,6 @@
 <script lang="ts">
 import { createVNode, defineComponent, renderSlot, h } from 'vue'
-import { PatchFlags } from '@element-plus/utils/vnode'
+import { PatchFlags } from '@lixi/utils/vnode'
 
 export default defineComponent({
   name: 'LxOverlay',
@@ -42,7 +42,7 @@ export default defineComponent({
         ? createVNode(
           'div',
           {
-            class: ['el-overlay', props.overlayClass],
+            class: ['lx-overlay', props.overlayClass],
             style: {
               zIndex: props.zIndex,
             },

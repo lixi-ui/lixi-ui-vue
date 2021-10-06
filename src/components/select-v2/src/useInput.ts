@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { isKorean } from '@element-plus/utils/isDef'
+import { isKorean } from '@lixi/utils/isDef'
 import { isFunction } from '@vue/shared'
 
 export function useInput(handleInput: (event: InputEvent) => void) {

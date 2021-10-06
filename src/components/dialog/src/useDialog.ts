@@ -1,15 +1,15 @@
 import { computed, ref, watch, nextTick, onMounted } from 'vue'
 
-import { useLockScreen, useRestoreActive, useModal } from '@element-plus/hooks'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
-import isServer from '@element-plus/utils/isServer'
-import PopupManager from '@element-plus/utils/popup-manager'
-import { clearTimer, isNumber } from '@element-plus/utils/util'
-import { isValidWidthUnit } from '@element-plus/utils/validators'
+import { useLockScreen, useRestoreActive, useModal } from '@lixi/hooks'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
+import isServer from '@lixi/utils/isServer'
+import PopupManager from '@lixi/utils/popup-manager'
+import { clearTimer, isNumber } from '@lixi/utils/util'
+import { isValidWidthUnit } from '@lixi/utils/validators'
 
 
 import type { CSSProperties, ExtractPropTypes ,PropType, Ref, SetupContext } from 'vue'
-import type { TimeoutHandle } from '@element-plus/utils/types'
+import type { TimeoutHandle } from '@lixi/utils/types'
 
 export const CLOSE_EVENT = 'close'
 export const OPEN_EVENT = 'open'

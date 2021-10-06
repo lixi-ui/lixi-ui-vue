@@ -1,6 +1,6 @@
 import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
-import { IMAGE_SUCCESS, IMAGE_FAIL, mockImageEvent } from '@element-plus/test-utils'
+import { IMAGE_SUCCESS, IMAGE_FAIL, mockImageEvent } from '@lixi/test-utils'
 
 import Avatar from '../src/index.vue'
 
@@ -23,22 +23,22 @@ describe('Avatar.vue', () => {
     const wrapper = mount(Avatar, {
       props: { size: 'small' },
     })
-    expect(wrapper.classes()).toContain('el-avatar--small')
+    expect(wrapper.classes()).toContain('lx-avatar--small')
   })
 
   test('shape', () => {
     const wrapper = mount(Avatar, {
       props: { size: 'small', shape: 'square' },
     })
-    expect(wrapper.classes()).toContain('el-avatar--square')
+    expect(wrapper.classes()).toContain('lx-avatar--square')
   })
 
   test('icon avatar', () => {
     const wrapper = mount(Avatar, {
-      props: { icon: 'el-icon-user-solid' },
+      props: { icon: 'lx-icon-user-solid' },
     })
-    expect(wrapper.classes()).toContain('el-avatar--icon')
-    expect(wrapper.find('i').classes()).toContain('el-icon-user-solid')
+    expect(wrapper.classes()).toContain('lx-avatar--icon')
+    expect(wrapper.find('i').classes()).toContain('lx-icon-user-solid')
   })
 
   test('image avatar', () => {

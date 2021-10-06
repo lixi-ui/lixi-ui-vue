@@ -6,8 +6,8 @@ import {
   onUnmounted,
   onUpdated,
 } from 'vue'
-import { addClass, removeClass } from '@element-plus/utils/dom'
-import isServer from '@element-plus/utils/isServer'
+import { addClass, removeClass } from '@lixi/utils/dom'
+import isServer from '@lixi/utils/isServer'
 import { hColgroup } from '../h-helper'
 import useLayoutObserver from '../layout-observer'
 import useRender from './render-helper'
@@ -68,7 +68,7 @@ export default defineComponent({
     return h(
       'table',
       {
-        class: 'el-table__body',
+        class: 'lx-table__body',
         cellspacing: '0',
         cellpadding: '0',
         border: '0',

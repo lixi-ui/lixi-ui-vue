@@ -1,6 +1,6 @@
 import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import { EVENT_CODE } from '@lixi/utils/aria'
 import Tabs from '../src/tabs'
 import TabPane from '../src/tab-pane.vue'
 import TabNav from '../src/tab-nav.vue'
@@ -9,8 +9,8 @@ describe('Tabs.vue', () => {
   test('create', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs>
@@ -30,7 +30,7 @@ describe('Tabs.vue', () => {
     const navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
 
     expect(navItemsWrapper[0].classes('is-active')).toBe(true)
-    expect(panesWrapper[0].classes('el-tab-pane')).toBe(true)
+    expect(panesWrapper[0].classes('lx-tab-pane')).toBe(true)
     expect(panesWrapper[0].attributes('id')).toBe('pane-0')
     expect(panesWrapper[0].attributes('aria-hidden')).toEqual('false')
     expect(tabsWrapper.vm.currentName).toEqual('0')
@@ -46,8 +46,8 @@ describe('Tabs.vue', () => {
   test('active-name', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       data() {
         return {
@@ -76,7 +76,7 @@ describe('Tabs.vue', () => {
 
     const navItemsWrapper = navWrapper.findAll('.lx-tabs__item')
     expect(navItemsWrapper[1].classes('is-active')).toBe(true)
-    expect(panesWrapper[1].classes('el-tab-pane')).toBe(true)
+    expect(panesWrapper[1].classes('lx-tab-pane')).toBe(true)
     expect(panesWrapper[1].attributes('id')).toBe('pane-b')
     expect(panesWrapper[1].attributes('aria-hidden')).toEqual('false')
     expect(tabsWrapper.vm.currentName).toEqual('b')
@@ -92,8 +92,8 @@ describe('Tabs.vue', () => {
   test('card', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs type="card">
@@ -106,14 +106,14 @@ describe('Tabs.vue', () => {
     })
 
     const tabsWrapper = wrapper.findComponent(Tabs)
-    expect(tabsWrapper.classes('el-tabs--card')).toBe(true)
+    expect(tabsWrapper.classes('lx-tabs--card')).toBe(true)
   })
 
   test('border card', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs type="border-card">
@@ -126,14 +126,14 @@ describe('Tabs.vue', () => {
     })
 
     const tabsWrapper = wrapper.findComponent(Tabs)
-    expect(tabsWrapper.classes('el-tabs--border-card')).toBe(true)
+    expect(tabsWrapper.classes('lx-tabs--border-card')).toBe(true)
   })
 
   test('dynamic', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs type="card" ref="tabs">
@@ -182,8 +182,8 @@ describe('Tabs.vue', () => {
   test('editable', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs ref="tabs" v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
@@ -280,8 +280,8 @@ describe('Tabs.vue', () => {
   test('addable & closable', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs
@@ -370,8 +370,8 @@ describe('Tabs.vue', () => {
   test('closable in tab-pane', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs type="card" ref="tabs">
@@ -392,8 +392,8 @@ describe('Tabs.vue', () => {
   test('disabled', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs type="card" ref="tabs">
@@ -417,8 +417,8 @@ describe('Tabs.vue', () => {
   test('tab-position', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs ref="tabs" tab-position="left">
@@ -433,7 +433,7 @@ describe('Tabs.vue', () => {
     const tabsWrapper = wrapper.findComponent(Tabs)
     await nextTick()
 
-    expect(tabsWrapper.classes('el-tabs--left')).toBe(true)
+    expect(tabsWrapper.classes('lx-tabs--left')).toBe(true)
     expect(tabsWrapper.find('.lx-tabs__header').classes('is-left')).toBe(true)
     expect(tabsWrapper.find('.lx-tabs__nav-wrap').classes('is-left')).toBe(true)
     expect(tabsWrapper.find('.lx-tabs__nav').classes('is-left')).toBe(true)
@@ -444,8 +444,8 @@ describe('Tabs.vue', () => {
   test('stretch', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
       <lx-tabs ref="tabs" stretch :tab-position="tabPosition">
@@ -476,8 +476,8 @@ describe('Tabs.vue', () => {
   test('tab active bar offset', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
       <lx-tabs ref="tabs" stretch :tab-position="tabPosition">
@@ -527,8 +527,8 @@ describe('Tabs.vue', () => {
   test('should work with lazy', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs ref="tabs">
@@ -554,8 +554,8 @@ describe('Tabs.vue', () => {
   test('before leave', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs ref="tabs" v-model="activeName" :before-leave="beforeLeave">
@@ -596,8 +596,8 @@ describe('Tabs.vue', () => {
   test('keyboard event', async () => {
     const wrapper = mount({
       components: {
-        'el-tabs': Tabs,
-        'el-tab-pane': TabPane,
+        'lx-tabs': Tabs,
+        'lx-tab-pane': TabPane,
       },
       template: `
         <lx-tabs v-model="activeName">

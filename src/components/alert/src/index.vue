@@ -1,25 +1,25 @@
 <template>
-  <transition name="el-alert-fade">
+  <transition name="lx-alert-fade">
     <div
       v-show="visible"
-      class="el-alert"
+      class="lx-alert"
       :class="[typeClass, center ? 'is-center' : '', 'is-' + effect]"
       role="alert"
     >
-      <i v-if="showIcon" class="el-alert__icon" :class="[ iconClass, isBigIcon ]"></i>
-      <div class="el-alert__content">
-        <span v-if="title || $slots.title" class="el-alert__title" :class="[ isBoldTitle ]">
+      <i v-if="showIcon" class="lx-alert__icon" :class="[ iconClass, isBigIcon ]"></i>
+      <div class="lx-alert__content">
+        <span v-if="title || $slots.title" class="lx-alert__title" :class="[ isBoldTitle ]">
           <slot name="title">{{ title }}</slot>
         </span>
-        <p v-if="$slots.default || !!description" class="el-alert__description">
+        <p v-if="$slots.default || !!description" class="lx-alert__description">
           <slot>
             {{ description }}
           </slot>
         </p>
         <i
           v-if="closable"
-          class="el-alert__closebtn"
-          :class="{ 'is-customed': closeText !== '', 'el-icon-close': closeText === '' }"
+          class="lx-alert__closebtn"
+          :class="{ 'is-customed': closeText !== '', 'lx-icon-close': closeText === '' }"
           @click="close"
         >
           {{ closeText }}
@@ -34,9 +34,9 @@ import { defineComponent, computed, ref } from 'vue'
 import type { PropType } from 'vue'
 
 const TYPE_CLASSES_MAP = {
-  'success': 'el-icon-success',
-  'warning': 'el-icon-warning',
-  'error': 'el-icon-error',
+  'success': 'lx-icon-success',
+  'warning': 'lx-icon-warning',
+  'error': 'lx-icon-error',
 }
 
 export default defineComponent({
@@ -77,7 +77,7 @@ export default defineComponent({
 
     // computed
     const typeClass = computed(() => `el-alert--${ props.type }`)
-    const iconClass = computed(() => TYPE_CLASSES_MAP[props.type] || 'el-icon-info')
+    const iconClass = computed(() => TYPE_CLASSES_MAP[props.type] || 'lx-icon-info')
     const isBigIcon = computed(() => props.description || ctx.slots.default ? 'is-big' : '')
     const isBoldTitle = computed(() => props.description || ctx.slots.default ? 'is-bold' : '')
 

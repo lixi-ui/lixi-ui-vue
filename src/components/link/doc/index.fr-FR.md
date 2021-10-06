@@ -63,8 +63,8 @@ Lien avec icône.
 
 ```html
 <div>
-  <lx-link icon="el-icon-edit">Éditer</lx-link>
-  <lx-link>Vérifier<i class="el-icon-view el-icon--right"></i> </lx-link>
+  <lx-link icon="lx-icon-edit">Éditer</lx-link>
+  <lx-link>Vérifier<i class="lx-icon-view lx-icon--right"></i> </lx-link>
 </div>
 ```
 

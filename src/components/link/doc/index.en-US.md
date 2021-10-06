@@ -59,8 +59,8 @@ Link with icon
 
 ```html
 <div>
-  <lx-link icon="el-icon-edit">Edit</lx-link>
-  <lx-link>Check<i class="el-icon-view el-icon--right"></i> </lx-link>
+  <lx-link icon="lx-icon-edit">Edit</lx-link>
+  <lx-link>Check<i class="lx-icon-view lx-icon--right"></i> </lx-link>
 </div>
 ```
 

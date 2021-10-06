@@ -1099,7 +1099,7 @@ Personalice la columna de la tabla para que pueda integrarse con otros component
       label="Fecha"
       width="180">
       <template #default="scope">
-        <i class="el-icon-time"></i>
+        <i class="lx-icon-time"></i>
         <span style="margin-left: 10px">{{ scope.row.date }}</span>
       </template>
     </lx-table-column>

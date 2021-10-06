@@ -44,14 +44,14 @@
 
 :::demo
 ```html
-<lx-page-header icon="el-icon-arrow-left" content="详情页面"></lx-page-header>
+<lx-page-header icon="lx-icon-arrow-left" content="详情页面"></lx-page-header>
 ```
 :::
 
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |------------------------------ | ------ |
-| icon     | 图标           | string    |  —                            | el-icon-back   |
+| icon     | 图标           | string    |  —                            | lx-icon-back   |
 | title     | 标题           | string    |  —                            | 返回   |
 | content   | 内容           | string    |  —                            | —      |
 

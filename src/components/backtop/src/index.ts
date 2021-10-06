@@ -1,7 +1,7 @@
 import { App } from 'vue'
 import Backtop from './src/index.vue'
 
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Backtop.install = (app: App): void => {
   app.component(Backtop.name, Backtop)

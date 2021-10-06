@@ -111,12 +111,12 @@ Añada un icono para indicar el tipo de Input.
   <span class="demo-input-label">Using attributes</span>
   <lx-input
     placeholder="Pick a date"
-    suffix-icon="el-icon-date"
+    suffix-icon="lx-icon-date"
     v-model="input1">
   </lx-input>
   <lx-input
     placeholder="Type something"
-    prefix-icon="el-icon-search"
+    prefix-icon="lx-icon-search"
     v-model="input2">
   </lx-input>
 </div>
@@ -126,14 +126,14 @@ Añada un icono para indicar el tipo de Input.
     placeholder="Pick a date"
     v-model="input3">
     <template #suffix>
-      <i class="el-input__icon el-icon-date"></i>
+      <i class="lx-input__icon lx-icon-date"></i>
     </template>
   </lx-input>
   <lx-input
     placeholder="Type something"
     v-model="input4">
     <template #prefix>
-      <i class="el-input__icon el-icon-search"></i>
+      <i class="lx-input__icon lx-icon-search"></i>
     </template>
   </lx-input>
 </div>
@@ -253,7 +253,7 @@ Añade un elemento antes o después del input, generalmente una etiqueta o un bo
       </lx-select>
     </template>
     <template #append>
-      <lx-button icon="el-icon-search"></lx-button>
+      <lx-button icon="lx-icon-search"></lx-button>
     </template>
   </lx-input>
 </div>
@@ -425,7 +425,7 @@ Personalice cómo se muestran las sugerencias.
   @select="handleSelect"
 >
   <template #suffix>
-    <i class="el-icon-edit el-input__icon" @click="handleIconClick"></i>
+    <i class="lx-icon-edit lx-input__icon" @click="handleIconClick"></i>
   </template>
   <template #default="{ item }">
     <div class="value">{{ item.value }}</div>

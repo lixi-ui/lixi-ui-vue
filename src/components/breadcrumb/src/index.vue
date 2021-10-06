@@ -1,7 +1,7 @@
 <template>
   <div
     ref="breadcrumb"
-    class="el-breadcrumb"
+    class="lx-breadcrumb"
     aria-label="Breadcrumb"
     role="navigation"
   >

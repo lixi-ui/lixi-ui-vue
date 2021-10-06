@@ -3,10 +3,10 @@
     :id="menuId"
     tag="ul"
     role="menu"
-    class="el-cascader-menu"
-    wrap-class="el-cascader-menu__wrap"
+    class="lx-cascader-menu"
+    wrap-class="lx-cascader-menu__wrap"
     :view-class="[
-      'el-cascader-menu__list',
+      'lx-cascader-menu__list',
       isEmpty && 'is-empty'
     ]"
     @mousemove="handleMouseMove"
@@ -21,14 +21,14 @@
     />
     <div
       v-if="isEmpty"
-      class="el-cascader-menu__empty-text"
+      class="lx-cascader-menu__empty-text"
     >
       {{ t('el.cascader.noData') }}
     </div>
     <svg
       v-else-if="panel.isHoverMenu"
       ref="hoverZone"
-      class="el-cascader-menu__hover-zone"
+      class="lx-cascader-menu__hover-zone"
     />
   </lx-scrollbar>
 </template>
@@ -38,9 +38,9 @@ import {
   computed, defineComponent, getCurrentInstance,
   inject, ref,
 } from 'vue'
-import LxScrollbar from '@element-plus/components/scrollbar'
-import { useLocaleInject } from '@element-plus/hooks'
-import { generateId } from '@element-plus/utils/util'
+import LxScrollbar from '@lixi/components/scrollbar'
+import { useLocaleInject } from '@lixi/hooks'
+import { generateId } from '@lixi/utils/util'
 import LxCascaderNode from './node.vue'
 import { default as CascaderNode } from './node'
 import {
@@ -48,7 +48,7 @@ import {
 } from './types'
 
 import type { PropType } from 'vue'
-import type { TimeoutHandle, Nullable } from '@element-plus/utils/types'
+import type { TimeoutHandle, Nullable } from '@lixi/utils/types'
 
 export default defineComponent({
   name: 'LxCascaderMenu',

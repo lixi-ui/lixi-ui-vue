@@ -1,12 +1,12 @@
 <template>
-  <div class="el-badge">
+  <div class="lx-badge">
     <slot></slot>
-    <transition name="el-zoom-in-center">
+    <transition name="lx-zoom-in-center">
       <sup
         v-show="!hidden && (content || content === 0 || isDot)"
-        class="el-badge__content"
+        class="lx-badge__content"
         :class="[
-          isDot ? 'is-dot' : 'el-badge__content--' + type,
+          isDot ? 'is-dot' : 'lx-badge__content--' + type,
           {
             'is-fixed': $slots.default,
           }

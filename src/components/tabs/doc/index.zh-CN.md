@@ -124,7 +124,7 @@
 <lx-tabs type="border-card">
   <lx-tab-pane>
     <template #label>
-      <span><i class="el-icon-date"></i> 我的行程</span>
+      <span><i class="lx-icon-date"></i> 我的行程</span>
     </template>
     我的行程
   </lx-tab-pane>

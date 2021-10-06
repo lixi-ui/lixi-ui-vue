@@ -22,7 +22,7 @@
 :::demo `separator-class` を `iconfont` をセパレータとして使用するように設定します．
 
 ```html
-<lx-breadcrumb separator-class="el-icon-arrow-right">
+<lx-breadcrumb separator-class="lx-icon-arrow-right">
   <lx-breadcrumb-item :to="{ path: '/' }">homepage</lx-breadcrumb-item>
   <lx-breadcrumb-item>promotion management</lx-breadcrumb-item>
   <lx-breadcrumb-item>promotion list</lx-breadcrumb-item>

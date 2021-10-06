@@ -1,5 +1,5 @@
 <template>
-  <table class="el-month-table" @click="handleMonthTableClick" @mousemove="handleMouseMove">
+  <table class="lx-month-table" @click="handleMonthTableClick" @mousemove="handleMouseMove">
     <tbody>
       <tr v-for="(row, key) in rows" :key="key">
         <td v-for="(cell, key_) in row" :key="key_" :class="getCellStyle(cell)">
@@ -19,10 +19,10 @@ import {
   ref,
 } from 'vue'
 import dayjs from 'dayjs'
-import { useLocaleInject } from '@element-plus/hooks'
-import { rangeArr } from '@element-plus/components/time-picker'
-import { hasClass } from '@element-plus/utils/dom'
-import { coerceTruthyValueToArray } from '@element-plus/utils/util'
+import { useLocaleInject } from '@lixi/hooks'
+import { rangeArr } from '@lixi/components/time-picker'
+import { hasClass } from '@lixi/utils/dom'
+import { coerceTruthyValueToArray } from '@lixi/utils/util'
 
 import type { PropType } from 'vue'
 import type { Dayjs } from 'dayjs'

@@ -7,7 +7,7 @@ import {
   ref,
   h,
 } from 'vue'
-import LxCheckbox from '@element-plus/components/checkbox'
+import LxCheckbox from '@lixi/components/checkbox'
 import FilterPanel from '../filter-panel.vue'
 import useLayoutObserver from '../layout-observer'
 import useEvent from './event-helper'
@@ -136,7 +136,7 @@ export default defineComponent({
         border: '0',
         cellpadding: '0',
         cellspacing: '0',
-        class: 'el-table__header',
+        class: 'lx-table__header',
       },
       [
         hColgroup(this.columns, this.hasGutter),

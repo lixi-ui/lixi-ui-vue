@@ -1,7 +1,7 @@
 import Tooltip from './src/index'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Tooltip.install = (app: App): void => {
   app.component(Tooltip.name, Tooltip)

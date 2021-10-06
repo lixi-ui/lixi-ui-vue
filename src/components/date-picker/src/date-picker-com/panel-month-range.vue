@@ -1,29 +1,29 @@
 <template>
   <div
-    class="el-picker-panel el-date-range-picker"
+    class="lx-picker-panel lx-date-range-picker"
     :class="[{
       'has-sidebar': $slots.sidebar || hasShortcuts
     }]"
   >
-    <div class="el-picker-panel__body-wrapper">
-      <slot name="sidebar" class="el-picker-panel__sidebar"></slot>
-      <div v-if="hasShortcuts" class="el-picker-panel__sidebar">
+    <div class="lx-picker-panel__body-wrapper">
+      <slot name="sidebar" class="lx-picker-panel__sidebar"></slot>
+      <div v-if="hasShortcuts" class="lx-picker-panel__sidebar">
         <button
           v-for="(shortcut, key) in shortcuts"
           :key="key"
           type="button"
-          class="el-picker-panel__shortcut"
+          class="lx-picker-panel__shortcut"
           @click="handleShortcutClick(shortcut)"
         >
           {{ shortcut.text }}
         </button>
       </div>
-      <div class="el-picker-panel__body">
-        <div class="el-picker-panel__content el-date-range-picker__content is-left">
-          <div class="el-date-range-picker__header">
+      <div class="lx-picker-panel__body">
+        <div class="lx-picker-panel__content lx-date-range-picker__content is-left">
+          <div class="lx-date-range-picker__header">
             <button
               type="button"
-              class="el-picker-panel__icon-btn el-icon-d-arrow-left"
+              class="lx-picker-panel__icon-btn lx-icon-d-arrow-left"
               @click="leftPrevYear"
             ></button>
             <button
@@ -31,7 +31,7 @@
               type="button"
               :disabled="!enableYearArrow"
               :class="{ 'is-disabled': !enableYearArrow }"
-              class="el-picker-panel__icon-btn el-icon-d-arrow-right"
+              class="lx-picker-panel__icon-btn lx-icon-d-arrow-right"
               @click="leftNextYear"
             ></button>
             <div>{{ leftLabel }}</div>
@@ -48,19 +48,19 @@
             @select="onSelect"
           />
         </div>
-        <div class="el-picker-panel__content el-date-range-picker__content is-right">
-          <div class="el-date-range-picker__header">
+        <div class="lx-picker-panel__content lx-date-range-picker__content is-right">
+          <div class="lx-date-range-picker__header">
             <button
               v-if="unlinkPanels"
               type="button"
               :disabled="!enableYearArrow"
               :class="{ 'is-disabled': !enableYearArrow }"
-              class="el-picker-panel__icon-btn el-icon-d-arrow-left"
+              class="lx-picker-panel__icon-btn lx-icon-d-arrow-left"
               @click="rightPrevYear"
             ></button>
             <button
               type="button"
-              class="el-picker-panel__icon-btn el-icon-d-arrow-right"
+              class="lx-picker-panel__icon-btn lx-icon-d-arrow-right"
               @click="rightNextYear"
             ></button>
             <div>{{ rightLabel }}</div>
@@ -91,7 +91,7 @@ import {
   inject,
 } from 'vue'
 import dayjs from 'dayjs'
-import { useLocaleInject } from '@element-plus/hooks'
+import { useLocaleInject } from '@lixi/hooks'
 import MonthTable from './basic-month-table.vue'
 
 import type { PropType } from 'vue'

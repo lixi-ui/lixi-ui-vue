@@ -110,6 +110,13 @@ export const autoprefixer = function(
 
 export const kebabCase = hyphenate
 
+export const refAttacher =
+  <T extends (HTMLElement | ComponentPublicInstance)>(ref: Ref<T>) => {
+    return (val: T) => {
+      ref.value = val
+    }
+  }
+
 // reexport from lodash & vue shared
 export {
   hasOwn,

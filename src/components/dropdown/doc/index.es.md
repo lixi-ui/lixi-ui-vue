@@ -8,8 +8,8 @@ Pase el ratón por el menú desplegable para desplegarlo y obtener más acciones
 
 ```html
 <lx-dropdown>
-  <span class="el-dropdown-link">
-    Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    Dropdown List<i class="lx-icon-arrow-down lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -45,7 +45,7 @@ Utilizando un botón para activar la lista desplegable.
 ```html
 <lx-dropdown>
   <lx-button type="primary">
-    Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
+    Dropdown List<i class="lx-icon-arrow-down lx-icon--right"></i>
   </lx-button>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -123,16 +123,16 @@ Haga clic en el elemento detonante o sobre él.
   <lx-col :span="8">
     <span class="demonstration">hover to trigger</span>
     <lx-dropdown>
-      <span class="el-dropdown-link">
-        Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
+      <span class="lx-dropdown-link">
+        Dropdown List<i class="lx-icon-arrow-down lx-icon--right"></i>
       </span>
       <template #dropdown>
         <lx-dropdown-menu>
-          <lx-dropdown-item icon="el-icon-plus">Action 1</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus">Action 2</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus-outline">Action 3</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-check">Action 4</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-check">Action 5</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-plus">Action 1</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus">Action 2</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus-outline">Action 3</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-check">Action 4</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-check">Action 5</lx-dropdown-item>
         </lx-dropdown-menu>
       </template>
     </lx-dropdown>
@@ -140,16 +140,16 @@ Haga clic en el elemento detonante o sobre él.
   <lx-col :span="8">
     <span class="demonstration">click to trigger</span>
     <lx-dropdown trigger="click">
-      <span class="el-dropdown-link">
-        Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
+      <span class="lx-dropdown-link">
+        Dropdown List<i class="lx-icon-arrow-down lx-icon--right"></i>
       </span>
       <template #dropdown>
         <lx-dropdown-menu>
-          <lx-dropdown-item icon="el-icon-plus">Action 1</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus">Action 2</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus-outline">Action 3</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-check">Action 4</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-check">Action 5</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-plus">Action 1</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus">Action 2</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus-outline">Action 3</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-check">Action 4</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-check">Action 5</lx-dropdown-item>
         </lx-dropdown-menu>
       </template>
     </lx-dropdown>
@@ -157,16 +157,16 @@ Haga clic en el elemento detonante o sobre él.
   <lx-col :span="8">
     <span class="demonstration">right click to trigger</span>
     <lx-dropdown trigger="contextmenu">
-      <span class="el-dropdown-link">
-        Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
+      <span class="lx-dropdown-link">
+        Dropdown List<i class="lx-icon-arrow-down lx-icon--right"></i>
       </span>
       <template #dropdown>
         <lx-dropdown-menu>
-          <lx-dropdown-item icon="el-icon-plus">Action 1</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus">Action 2</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus-outline">Action 3</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-check">Action 4</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-check">Action 5</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-plus">Action 1</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus">Action 2</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus-outline">Action 3</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-check">Action 4</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-check">Action 5</lx-dropdown-item>
         </lx-dropdown-menu>
       </template>
     </lx-dropdown>
@@ -199,8 +199,8 @@ Use `hide-on-click` para definir si el menú se cierra al hacer clic.
 
 ```html
 <lx-dropdown :hide-on-click="false">
-  <span class="el-dropdown-link">
-    Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    Dropdown List<i class="lx-icon-arrow-down lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -232,8 +232,8 @@ Al hacer clic en cada elemento desplegable se detona un evento cuyo parámetro e
 :::demo
 ```html
 <lx-dropdown @command="handleCommand">
-  <span class="el-dropdown-link">
-    Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    Dropdown List<i class="lx-icon-arrow-down lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>

@@ -44,14 +44,14 @@ If path of the page is simple, it is recommended to use PageHeader instead of th
 
 :::demo
 ```html
-<lx-page-header icon="el-icon-arrow-left" content="detail"></lx-page-header>
+<lx-page-header icon="lx-icon-arrow-left" content="detail"></lx-page-header>
 ```
 :::
 
 ### Attributes
 | Attribute | Description   | Type      | Accepted Values               | Default |
 |---------- |-------------- |---------- |------------------------------ | ------ |
-| icon     |  icon    | string    |  —                            | el-icon-back   |
+| icon     |  icon    | string    |  —                            | lx-icon-back   |
 | title     | main title    | string    |  —                            | Back   |
 | content   | content       | string    |  —                            | —      |
 

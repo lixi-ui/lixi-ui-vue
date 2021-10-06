@@ -13,26 +13,26 @@
         :aria-label="title || 'dialog'"
         aria-modal="true"
         :class="[
-          'el-message-box',
+          'lx-message-box',
           customClass,
-          { 'el-message-box--center': center },
+          { 'lx-message-box--center': center },
         ]"
       >
         <div
           v-if="title !== null && title !== undefined"
-          class="el-message-box__header"
+          class="lx-message-box__header"
         >
-          <div class="el-message-box__title">
+          <div class="lx-message-box__title">
             <div
               v-if="icon && center"
-              :class="['el-message-box__status', icon]"
+              :class="['lx-message-box__status', icon]"
             ></div>
             <span>{{ title }}</span>
           </div>
           <button
             v-if="showClose"
             type="button"
-            class="el-message-box__headerbtn"
+            class="lx-message-box__headerbtn"
             aria-label="Close"
             @click="
               handleAction(distinguishCancelAndClose ? 'close' : 'cancel')
@@ -41,23 +41,23 @@
               handleAction(distinguishCancelAndClose ? 'close' : 'cancel')
             "
           >
-            <i class="el-message-box__close el-icon-close"></i>
+            <i class="lx-message-box__close lx-icon-close"></i>
           </button>
         </div>
-        <div class="el-message-box__content">
-          <div class="el-message-box__container">
+        <div class="lx-message-box__content">
+          <div class="lx-message-box__container">
             <div
               v-if="icon && !center && hasMessage"
-              :class="['el-message-box__status', icon]"
+              :class="['lx-message-box__status', icon]"
             ></div>
-            <div v-if="hasMessage" class="el-message-box__message">
+            <div v-if="hasMessage" class="lx-message-box__message">
               <slot>
                 <p v-if="!dangerouslyUseHTMLString">{{ message }}</p>
                 <p v-else v-html="message"></p>
               </slot>
             </div>
           </div>
-          <div v-show="showInput" class="el-message-box__input">
+          <div v-show="showInput" class="lx-message-box__input">
             <lx-input
               ref="inputRef"
               v-model="inputValue"
@@ -67,7 +67,7 @@
               @keydown.prevent.enter="handleInputEnter"
             />
             <div
-              class="el-message-box__errormsg"
+              class="lx-message-box__errormsg"
               :style="{
                 visibility: !!editorErrorMessage ? 'visible' : 'hidden',
               }"
@@ -76,7 +76,7 @@
             </div>
           </div>
         </div>
-        <div class="el-message-box__btns">
+        <div class="lx-message-box__btns">
           <lx-button
             v-if="showCancelButton"
             :loading="cancelButtonLoading"
@@ -118,24 +118,24 @@ import {
   ref,
   toRefs,
 } from 'vue'
-import LxButton from '@element-plus/components/button'
-import { TrapFocus } from '@element-plus/directives'
+import LxButton from '@lixi/components/button'
+import { TrapFocus } from '@lixi/directives'
 import {
   useModal,
   useLockScreen,
   useLocaleInject,
   useRestoreActive,
   usePreventGlobal,
-} from '@element-plus/hooks'
-import LxInput from '@element-plus/components/input'
-import { Overlay as LxOverlay } from '@element-plus/components/overlay'
-import PopupManager from '@element-plus/utils/popup-manager'
-import { on, off } from '@element-plus/utils/dom'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+} from '@lixi/hooks'
+import LxInput from '@lixi/components/input'
+import { Overlay as LxOverlay } from '@lixi/components/overlay'
+import PopupManager from '@lixi/utils/popup-manager'
+import { on, off } from '@lixi/utils/dom'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { isValidComponentSize } from '@lixi/utils/validators'
 
 import type { ComponentPublicInstance, PropType } from 'vue'
-import type { ComponentSize, Indexable } from '@element-plus/utils/types'
+import type { ComponentSize, Indexable } from '@lixi/utils/types'
 import type { Action, MessageBoxState, MessageBoxType } from './message-box.type'
 
 const TypeMap: Indexable<string> = {

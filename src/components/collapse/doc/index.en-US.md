@@ -127,7 +127,7 @@ Besides using the `title` attribute, you can customize panel title with named sl
 <lx-collapse accordion>
   <lx-collapse-item name="1">
     <template #title>
-      Consistency<i class="header-icon el-icon-info"></i>
+      Consistency<i class="header-icon lx-icon-info"></i>
     </template>
     <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
     <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>

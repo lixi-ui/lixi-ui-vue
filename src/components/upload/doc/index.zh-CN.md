@@ -19,7 +19,7 @@
 >
   <lx-button size="small" type="primary">点击上传</lx-button>
   <template #tip>
-    <div class="el-upload__tip">只能上传 jpg/png 文件，且不超过 500kb</div>
+    <div class="lx-upload__tip">只能上传 jpg/png 文件，且不超过 500kb</div>
   </template>
 </lx-upload>
 <script>
@@ -62,7 +62,7 @@
   :before-upload="beforeAvatarUpload"
 >
   <img v-if="imageUrl" :src="imageUrl" class="avatar">
-  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+  <i v-else class="lx-icon-plus avatar-uploader-icon"></i>
 </lx-upload>
 
 <style>
@@ -131,7 +131,7 @@
   list-type="picture-card"
   :on-preview="handlePictureCardPreview"
   :on-remove="handleRemove">
-  <i class="el-icon-plus"></i>
+  <i class="lx-icon-plus"></i>
 </lx-upload>
 <lx-dialog v-model="dialogVisible">
   <img width="100%" :src="dialogImageUrl" alt="">
@@ -169,31 +169,31 @@
   list-type="picture-card"
   :auto-upload="false">
     <template #default>
-      <i class="el-icon-plus"></i>
+      <i class="lx-icon-plus"></i>
     </template>
     <template #file="{file}">
       <div>
-        <img class="el-upload-list__item-thumbnail" :src="file.url" alt="" />
-        <span class="el-upload-list__item-actions">
+        <img class="lx-upload-list__item-thumbnail" :src="file.url" alt="" />
+        <span class="lx-upload-list__item-actions">
           <span
-            class="el-upload-list__item-preview"
+            class="lx-upload-list__item-preview"
             @click="handlePictureCardPreview(file)"
           >
-            <i class="el-icon-zoom-in"></i>
+            <i class="lx-icon-zoom-in"></i>
           </span>
           <span
             v-if="!disabled"
-            class="el-upload-list__item-delete"
+            class="lx-upload-list__item-delete"
             @click="handleDownload(file)"
           >
-            <i class="el-icon-download"></i>
+            <i class="lx-icon-download"></i>
           </span>
           <span
             v-if="!disabled"
-            class="el-upload-list__item-delete"
+            class="lx-upload-list__item-delete"
             @click="handleRemove(file)"
           >
-            <i class="el-icon-delete"></i>
+            <i class="lx-icon-delete"></i>
           </span>
         </span>
       </div>
@@ -241,7 +241,7 @@
   list-type="picture">
   <lx-button size="small" type="primary">点击上传</lx-button>
   <template #tip>
-    <div class="el-upload__tip">
+    <div class="lx-upload__tip">
       只能上传 jpg/png 文件，且不超过 500kb
     </div>
   </template>
@@ -279,7 +279,7 @@
   :file-list="fileList">
   <lx-button size="small" type="primary">点击上传</lx-button>
   <template #tip>
-    <div class="el-upload__tip">
+    <div class="lx-upload__tip">
       只能上传 jpg/png 文件，且不超过 500kb
     </div>
   </template>
@@ -316,10 +316,10 @@
   drag
   action="https://jsonplaceholder.typicode.com/posts/"
   multiple>
-  <i class="el-icon-upload"></i>
-  <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+  <i class="lx-icon-upload"></i>
+  <div class="lx-upload__text">将文件拖到此处，或<em>点击上传</em></div>
   <template #tip>
-    <div class="el-upload__tip">
+    <div class="lx-upload__tip">
       只能上传 jpg/png 文件，且不超过 500kb
     </div>
   </template>
@@ -344,7 +344,7 @@
   </template>
   <lx-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</lx-button>
   <template #tip>
-    <div class="el-upload__tip">
+    <div class="lx-upload__tip">
       只能上传 jpg/png 文件，且不超过 500kb
     </div>
   </template>

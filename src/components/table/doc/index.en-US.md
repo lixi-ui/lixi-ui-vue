@@ -566,7 +566,7 @@ When the the data is dynamically changed, you might want the table to have a max
 
 When the data structure is complex, you can use group header to show the data hierarchy.
 
-:::demo Only need to place el-table-column inside a el-table-column, you can achieve group header.
+:::demo Only need to place lx-table-column inside a lx-table-column, you can achieve group header.
 
 ```html
 <template>
@@ -998,7 +998,7 @@ Customize table column so it can be integrated with other components.
   <lx-table :data="tableData" style="width: 100%">
     <lx-table-column label="Date" width="180">
       <template #default="scope">
-        <i class="el-icon-time"></i>
+        <i class="lx-icon-time"></i>
         <span style="margin-left: 10px">{{ scope.row.date }}</span>
       </template>
     </lx-table-column>
@@ -1153,7 +1153,7 @@ Customize table header so it can be even more customized.
 ### Expandable row
 
 When the row content is too long and you do not want to display the horizontal scroll bar, you can use the expandable row feature.
-:::demo Activate expandable row by adding type="expand" and slot. The template for el-table-column will be rendered as the contents of the expanded row, and you can access the same attributes as when you are using `slot` in custom column templates.
+:::demo Activate expandable row by adding type="expand" and slot. The template for lx-table-column will be rendered as the contents of the expanded row, and you can access the same attributes as when you are using `slot` in custom column templates.
 
 ```html
 <template>

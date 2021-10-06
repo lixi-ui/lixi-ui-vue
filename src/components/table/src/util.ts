@@ -1,11 +1,11 @@
 import { hasOwn } from '@vue/shared'
 import { createPopper } from '@popperjs/core'
-import PopupManager from '@element-plus/utils/popup-manager'
-import { getValueByPath } from '@element-plus/utils/util'
-import { off, on } from '@element-plus/utils/dom'
+import PopupManager from '@lixi/utils/popup-manager'
+import { getValueByPath } from '@lixi/utils/util'
+import { off, on } from '@lixi/utils/dom'
 
-import type { PopperInstance, IPopperOptions } from '@element-plus/components/popper'
-import type { Indexable, Nullable } from '@element-plus/utils/types'
+import type { PopperInstance, IPopperOptions } from '@lixi/components/popper'
+import type { Indexable, Nullable } from '@lixi/utils/types'
 import type { TableColumnCtx } from './table-column/defaults'
 
 export const getCell = function(event: Event): HTMLElement {
@@ -322,7 +322,7 @@ export function createTablePopper(
   }
   function renderArrow(): HTMLDivElement {
     const arrow = document.createElement('div')
-    arrow.className = 'el-popper__arrow'
+    arrow.className = 'lx-popper__arrow'
     arrow.style.bottom = '-4px'
     return arrow
   }

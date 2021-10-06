@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import { sleep } from '@element-plus/test-utils'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import { sleep } from '@lixi/test-utils'
+import { EVENT_CODE } from '@lixi/utils/aria'
 import Dropdown from '../src/dropdown.vue'
 import DropdownItem from '../src/dropdown-item.vue'
 import DropdownMenu from '../src/dropdown-menu.vue'
@@ -44,8 +44,8 @@ describe('Dropdown', () => {
               }
             }
           >
-            <span class="el-dropdown-link" ref="a">
-              dropdown<i class="el-icon-arrow-down el-icon--right"></i>
+            <span class="lx-dropdown-link" ref="a">
+              dropdown<i class="lx-icon-arrow-down lx-icon--right"></i>
             </span>
           </Dropdown>
         )
@@ -68,8 +68,8 @@ describe('Dropdown', () => {
     const wrapper = _mount(
       `
       <lx-dropdown ref="b" @command="commandHandler" placement="right">
-        <span class="el-dropdown-link" ref="a">
-          dropdown<i class="el-icon-arrow-down el-icon--right"></i>
+        <span class="lx-dropdown-link" ref="a">
+          dropdown<i class="lx-icon-arrow-down lx-icon--right"></i>
         </span>
         <template #dropdown>
           <lx-dropdown-menu>
@@ -107,8 +107,8 @@ describe('Dropdown', () => {
     const wrapper = _mount(
       `
       <lx-dropdown trigger="click" ref="b" placement="right">
-        <span class="el-dropdown-link" ref="a">
-          dropdown<i class="el-icon-arrow-down el-icon--right"></i>
+        <span class="lx-dropdown-link" ref="a">
+          dropdown<i class="lx-icon-arrow-down lx-icon--right"></i>
         </span>
         <template #dropdown>
           <lx-dropdown-menu>
@@ -141,8 +141,8 @@ describe('Dropdown', () => {
     const wrapper = _mount(
       `
       <lx-dropdown trigger="contextmenu" ref="b" placement="right">
-        <span class="el-dropdown-link" ref="a">
-          dropdown<i class="el-icon-arrow-down el-icon--right"></i>
+        <span class="lx-dropdown-link" ref="a">
+          dropdown<i class="lx-icon-arrow-down lx-icon--right"></i>
         </span>
         <template #dropdown>
           <lx-dropdown-menu>
@@ -213,8 +213,8 @@ describe('Dropdown', () => {
     const wrapper = _mount(
       `
       <lx-dropdown ref="b" placement="right" :hide-on-click="false">
-        <span class="el-dropdown-link" ref="a">
-          dropdown<i class="el-icon-arrow-down el-icon--right"></i>
+        <span class="lx-dropdown-link" ref="a">
+          dropdown<i class="lx-icon-arrow-down lx-icon--right"></i>
         </span>
         <template #dropdown>
           <lx-dropdown-menu>
@@ -245,8 +245,8 @@ describe('Dropdown', () => {
     const wrapper = _mount(
       `
       <lx-dropdown ref="b" placement="right" :hide-on-click="false">
-        <span class="el-dropdown-link" ref="a">
-          dropdown<i class="el-icon-arrow-down el-icon--right"></i>
+        <span class="lx-dropdown-link" ref="a">
+          dropdown<i class="lx-icon-arrow-down lx-icon--right"></i>
         </span>
         <template #dropdown>
           <lx-dropdown-menu>
@@ -287,8 +287,8 @@ describe('Dropdown', () => {
     const wrapper = _mount(
       `
       <lx-dropdown ref="b" placement="right" :hide-on-click="false">
-        <span class="el-dropdown-link" ref="a">
-          dropdown<i class="el-icon-arrow-down el-icon--right"></i>
+        <span class="lx-dropdown-link" ref="a">
+          dropdown<i class="lx-icon-arrow-down lx-icon--right"></i>
         </span>
         <template #dropdown>
           <lx-dropdown-menu ref="a">
@@ -319,8 +319,8 @@ describe('Dropdown', () => {
     const wrapper = _mount(
       `
       <lx-dropdown ref="b" max-height="60px">
-        <span class="el-dropdown-link" ref="a">
-          dropdown<i class="el-icon-arrow-down el-icon--right"></i>
+        <span class="lx-dropdown-link" ref="a">
+          dropdown<i class="lx-icon-arrow-down lx-icon--right"></i>
         </span>
         <template #dropdown>
           <lx-dropdown-menu>
@@ -344,8 +344,8 @@ describe('Dropdown', () => {
     const wrapper = _mount(
       `
       <lx-dropdown ref="b">
-        <span class="el-dropdown-link">
-          dropdown<i class="el-icon-arrow-down el-icon--right"></i>
+        <span class="lx-dropdown-link">
+          dropdown<i class="lx-icon-arrow-down lx-icon--right"></i>
         </span>
         <template #dropdown>
           <lx-dropdown-menu>

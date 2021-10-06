@@ -7,8 +7,8 @@ describe('Collapse.vue', () => {
   test('create', async () => {
     const wrapper = mount({
       components: {
-        'el-collapse': Collapse,
-        'el-collapse-item': CollapseItem,
+        'lx-collapse': Collapse,
+        'lx-collapse-item': CollapseItem,
       },
       data() {
         return {
@@ -51,8 +51,8 @@ describe('Collapse.vue', () => {
   test('accordion', async () => {
     const wrapper = mount({
       components: {
-        'el-collapse': Collapse,
-        'el-collapse-item': CollapseItem,
+        'lx-collapse': Collapse,
+        'lx-collapse-item': CollapseItem,
       },
       data() {
         return {
@@ -97,8 +97,8 @@ describe('Collapse.vue', () => {
     const onChange = jest.fn()
     const wrapper = mount({
       components: {
-        'el-collapse': Collapse,
-        'el-collapse-item': CollapseItem,
+        'lx-collapse': Collapse,
+        'lx-collapse-item': CollapseItem,
       },
       data() {
         return {

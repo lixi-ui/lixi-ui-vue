@@ -7,8 +7,8 @@ import {
   getCurrentInstance,
   watch,
 } from 'vue'
-import { warn } from '@element-plus/utils/error'
-import { useLocaleInject } from '@element-plus/hooks'
+import { warn } from '@lixi/utils/error'
+import { useLocaleInject } from '@lixi/hooks'
 
 import Prev from './prev.vue'
 import Next from './next.vue'
@@ -154,7 +154,7 @@ export default defineComponent({
             }
           } else {
             // (else block just for explaination)
-            // else page size is controlled by el-pagination internally
+            // else page size is controlled by lx-pagination internally
           }
         }
       }
@@ -256,7 +256,7 @@ export default defineComponent({
       if (props.hideOnSinglePage && pageCountBridge.value <= 1) return null
       const rootChildren = []
       const rightWrapperChildren = []
-      const rightWrapperRoot = h('div', { class: 'el-pagination__rightwrapper' }, rightWrapperChildren)
+      const rightWrapperRoot = h('div', { class: 'lx-pagination__rightwrapper' }, rightWrapperChildren)
       const TEMPLATE_MAP = {
         prev: h(Prev, {
           disabled: props.disabled,
@@ -313,10 +313,10 @@ export default defineComponent({
         role: 'pagination',
         'aria-label': 'pagination',
         class: [
-          'el-pagination',
+          'lx-pagination',
           {
             'is-background': props.background,
-            'el-pagination--small': props.small,
+            'lx-pagination--small': props.small,
           },
         ],
       }, rootChildren)

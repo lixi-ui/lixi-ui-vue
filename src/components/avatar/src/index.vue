@@ -62,12 +62,12 @@ export default defineComponent({
 
     const avatarClass = computed(() => {
       const { size, icon, shape } = props
-      const classList = ['el-avatar']
+      const classList = ['lx-avatar']
       if (size && typeof size === 'string') {
         classList.push(`el-avatar--${size}`)
       }
       if (icon) {
-        classList.push('el-avatar--icon')
+        classList.push('lx-avatar--icon')
       }
       if (shape) {
         classList.push(`el-avatar--${shape}`)

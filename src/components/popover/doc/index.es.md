@@ -233,7 +233,7 @@ Por supuesto, puedes anidar otras operaciones. Es más ligero que utilizar un `d
 | disabled       | si el popover está deshabilitado         | boolean        | —                                        | false                                    |
 | visible / v-model:visible | si el popover está visible               | Boolean        | —                                        | false                                    |
 | offset         | popover offset                           | number         | —                                        | 0                                        |
-| transition     | animación de transición del popover | string         | —                                        | el-fade-in-linear                        |
+| transition     | animación de transición del popover | string         | —                                        | lx-fade-in-linear                        |
 | show-arrow  | si una flecha del tooltip es mostrada o no. Para más información, por favor refiérase a [Vue-popper](https://github.com/element-component/vue-popper) | boolean        | —                                        | true                                     |
 | popper-options | parámetros para [popper.js](https://popper.js.org/documentation.html) | object         | por favor, refiérase a [popper.js](https://popper.js.org/documentation.html) | `{ boundariesElement: 'body', gpuAcceleration: false }` |
 | popper-class   | clase propia para popover                | string         | —                                        | —                                        |

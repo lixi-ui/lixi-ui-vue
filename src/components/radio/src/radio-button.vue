@@ -1,8 +1,8 @@
 <template>
   <label
-    class="el-radio-button"
+    class="lx-radio-button"
     :class="[
-      size ? 'el-radio-button--' + size : '',
+      size ? 'lx-radio-button--' + size : '',
       { 'is-active': value === label,
         'is-disabled': isDisabled,
         'is-focus': focus,
@@ -17,7 +17,7 @@
     <input
       ref="radioRef"
       v-model="value"
-      class="el-radio-button__original-radio"
+      class="lx-radio-button__original-radio"
       :value="label"
       type="radio"
       :name="name"
@@ -27,7 +27,7 @@
       @blur="focus = false"
     >
     <span
-      class="el-radio-button__inner"
+      class="lx-radio-button__inner"
       :style="value === label ? activeStyle : null"
       @keydown.stop
     >

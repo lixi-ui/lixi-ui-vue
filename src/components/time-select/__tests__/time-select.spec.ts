@@ -1,7 +1,7 @@
 import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
-import Select from '@element-plus/components/select'
-import { sleep } from '@element-plus/test-utils'
+import Select from '@lixi/components/select'
+import { sleep } from '@lixi/test-utils'
 import TimeSelect from '../src/time-select.vue'
 
 const { Option } = Select
@@ -10,7 +10,7 @@ const _mount = (template: string, data, otherObj?) =>
   mount(
     {
       components: {
-        'el-time-select': TimeSelect,
+        'lx-time-select': TimeSelect,
       },
       template,
       data,

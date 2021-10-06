@@ -28,7 +28,7 @@ You can customise Popconfirm like:
 <lx-popconfirm
   confirmButtonText='OK'
   cancelButtonText='No, Thanks'
-  icon="el-icon-info"
+  icon="lx-icon-info"
   iconColor="red"
   title="Are you sure to delete this?"
 >
@@ -50,7 +50,7 @@ Click the button to trigger the event
   <lx-popconfirm
     confirmButtonText="Yes"
     cancelButtonText="No"
-    icon="el-icon-info"
+    icon="lx-icon-info"
     iconColor="red"
     title="Are you sure to delete this?"
     @confirm="confirmEvent"
@@ -86,7 +86,7 @@ export default {
 |  cancelButtonText              | Cancel button text | String | — | — |
 |  confirmButtonType              | Confirm button type | String | — | Primary |
 |  cancelButtonType              | Cancel button type | String | — | Text |
-|  icon              | Icon | String | — | el-icon-question |
+|  icon              | Icon | String | — | lx-icon-question |
 |  iconColor              | Icon color | String | — | #f90 |
 |  hideIcon              | is hide Icon | Boolean | — | false |
 

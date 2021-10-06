@@ -112,7 +112,7 @@ En plus des propriétés natives de img, ce composant supporte le lazy loading, 
     <lx-image>
       <template #error>
         <div class="image-slot">
-          <i class="el-icon-picture-outline"></i>
+          <i class="lx-icon-picture-outline"></i>
         </div>
       </template>
     </lx-image>

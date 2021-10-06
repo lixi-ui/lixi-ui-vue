@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/dialog.scss'
-import '@element-plus/components/overlay/style/index'
+import '@lixi/components/base/style'
+import '@lixi/theme-chalk/src/dialog.scss'
+import '@lixi/components/overlay/style/index'

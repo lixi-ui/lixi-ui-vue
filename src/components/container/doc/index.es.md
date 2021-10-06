@@ -111,7 +111,7 @@ Estos componentes utilizan flex para el diseño, así que asegúrese que el nave
   <lx-aside width="200px" style="background-color: rgb(238, 241, 246)">
     <lx-menu :default-openeds="['1', '3']">
       <lx-submenu index="1">
-        <template #title><i class="el-icon-message"></i>Navigator One</template>
+        <template #title><i class="lx-icon-message"></i>Navigator One</template>
         <lx-menu-item-group>
           <template #title>Group 1</template>
           <lx-menu-item index="1-1">Option 1</lx-menu-item>
@@ -126,7 +126,7 @@ Estos componentes utilizan flex para el diseño, así que asegúrese que el nave
         </lx-submenu>
       </lx-submenu>
       <lx-submenu index="2">
-        <template #title><i class="el-icon-menu"></i>Navigator Two</template>
+        <template #title><i class="lx-icon-menu"></i>Navigator Two</template>
         <lx-menu-item-group>
           <template #title>Group 1</template>
           <lx-menu-item index="2-1">Option 1</lx-menu-item>
@@ -141,7 +141,7 @@ Estos componentes utilizan flex para el diseño, así que asegúrese que el nave
         </lx-submenu>
       </lx-submenu>
       <lx-submenu index="3">
-        <template #title><i class="el-icon-setting"></i>Navigator Three</template>
+        <template #title><i class="lx-icon-setting"></i>Navigator Three</template>
         <lx-menu-item-group>
           <template #title>Group 1</template>
           <lx-menu-item index="3-1">Option 1</lx-menu-item>
@@ -161,7 +161,7 @@ Estos componentes utilizan flex para el diseño, así que asegúrese que el nave
   <lx-container>
     <lx-header style="text-align: right; font-size: 12px">
       <lx-dropdown>
-        <i class="el-icon-setting" style="margin-right: 15px"></i>
+        <i class="lx-icon-setting" style="margin-right: 15px"></i>
         <template #dropdown>
           <lx-dropdown-menu>
               <lx-dropdown-item>View</lx-dropdown-item>

@@ -1,6 +1,6 @@
 import { h } from 'vue'
-import LxCheckbox from '@element-plus/components/checkbox'
-import { getPropByPath } from '@element-plus/utils/util'
+import LxCheckbox from '@lixi/components/checkbox'
+import { getPropByPath } from '@lixi/utils/util'
 
 import type { TableColumnCtx } from './table-column/defaults'
 import type { Store } from './store'
@@ -15,7 +15,7 @@ export const cellStarts = {
     minWidth: 48,
     realWidth: 48,
     order: '',
-    className: 'el-table-column--selection',
+    className: 'lx-table-column--selection',
   },
   expand: {
     width: 48,
@@ -100,9 +100,9 @@ export const cellForced = {
       return column.label || ''
     },
     renderCell: function<T>({ row, store }: { row: T; store: Store<T>; }) {
-      const classes = ['el-table__expand-icon']
+      const classes = ['lx-table__expand-icon']
       if (store.states.expandRows.value.indexOf(row) > -1) {
-        classes.push('el-table__expand-icon--expanded')
+        classes.push('lx-table__expand-icon--expanded')
       }
       const callback = function(e: Event) {
         e.stopPropagation()
@@ -116,14 +116,14 @@ export const cellForced = {
         },
         [
           h('i', {
-            class: 'el-icon el-icon-arrow-right',
+            class: 'lx-icon lx-icon-arrow-right',
           }),
         ],
       )
     },
     sortable: false,
     resizable: false,
-    className: 'el-table__expand-column',
+    className: 'lx-table__expand-column',
   },
 }
 
@@ -162,19 +162,19 @@ export function treeCellPrefix<T>({
   if (treeNode.indent) {
     ele.push(
       h('span', {
-        class: 'el-table__indent',
+        class: 'lx-table__indent',
         style: { 'padding-left': treeNode.indent + 'px' },
       }),
     )
   }
   if (typeof treeNode.expanded === 'boolean' && !treeNode.noLazyChildren) {
     const expandClasses = [
-      'el-table__expand-icon',
-      treeNode.expanded ? 'el-table__expand-icon--expanded' : '',
+      'lx-table__expand-icon',
+      treeNode.expanded ? 'lx-table__expand-icon--expanded' : '',
     ]
-    let iconClasses = ['el-icon-arrow-right']
+    let iconClasses = ['lx-icon-arrow-right']
     if (treeNode.loading) {
-      iconClasses = ['el-icon-loading']
+      iconClasses = ['lx-icon-loading']
     }
 
     ele.push(
@@ -194,7 +194,7 @@ export function treeCellPrefix<T>({
   } else {
     ele.push(
       h('span', {
-        class: 'el-table__placeholder',
+        class: 'lx-table__placeholder',
       }),
     )
   }

@@ -1,7 +1,7 @@
 import Notify from './src/notify'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 const _Notify = Notify as SFCWithInstall<typeof Notify>
 

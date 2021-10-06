@@ -1,14 +1,14 @@
 import { nextTick } from 'vue'
 import { NOOP } from '@vue/shared'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { makeMountFunc } from '@element-plus/test-utils/make-mount'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { makeMountFunc } from '@lixi/test-utils/make-mount'
 import Select from '../src/select.vue'
 
 jest.useFakeTimers()
 
 const _mount = makeMountFunc({
   components: {
-    'el-select': Select,
+    'lx-select': Select,
   },
 })
 
@@ -126,10 +126,10 @@ function getOptions(): HTMLElement[] {
   ))
 }
 
-const CLASS_NAME = 'el-select-v2'
-const WRAPPER_CLASS_NAME = 'el-select-v2__wrapper'
-const OPTION_ITEM_CLASS_NAME = 'el-select-dropdown__option-item'
-const PLACEHOLDER_CLASS_NAME = 'el-select-v2__placeholder'
+const CLASS_NAME = 'lx-select-v2'
+const WRAPPER_CLASS_NAME = 'lx-select-v2__wrapper'
+const OPTION_ITEM_CLASS_NAME = 'lx-select-dropdown__option-item'
+const PLACEHOLDER_CLASS_NAME = 'lx-select-v2__placeholder'
 const DEFAULT_PLACEHOLDER = 'Select'
 
 describe('Select', () => {

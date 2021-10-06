@@ -46,7 +46,7 @@ Cuando haya muchas opciones, utilice un menú desplegable para mostrar y selecci
 ```
 :::
 
-### Disabled en el-option
+### Disabled en lx-option
 
 :::demo Establezca el valor de `disabled` en `el-option`  como `true` para deshabilitar esta opción.
 
@@ -92,7 +92,7 @@ Cuando haya muchas opciones, utilice un menú desplegable para mostrar y selecci
 ```
 :::
 
-### Disabled en el-select
+### Disabled en lx-select
 
 Desactivar todo el componente.
 
@@ -559,7 +559,7 @@ Si el valor de encuadernación de Select es un objeto, asegúrese de asignar `va
 | default-first-option | seleccione la primera opción de coincidencia en la tecla enter. Uso con `filterable` o `remote`. | boolean  | -                 | false            |
 | popper-append-to-body| si añadir o no el menu popup al body. Si el posicionamiento del popup es incorrecto, puede intentar poner este `prop` en `false`. | boolean | - | true |
 | automatic-dropdown | para non-filterable Select, este `prop` decide si el menú de opciones aparece cuando la entrada está enfocada | boolean | - | false |
-| clear-icon        | Clase personalizada para el icono `clear` | string                                   | —                                        | el-icon-circle-close |
+| clear-icon        | Clase personalizada para el icono `clear` | string                                   | —                                        | lx-icon-circle-close |
 
 ### Eventos Select
 | Nombre         | Descripción                                                  | Parametros                                |

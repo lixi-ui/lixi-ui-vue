@@ -1,4 +1,4 @@
-import '@element-plus/components/base/style/css'
-import '@element-plus/theme-chalk/el-slider.css'
-import '@element-plus/components/input-number/style/css'
-import '@element-plus/components/tooltip/style/css'
+import '@lixi/components/base/style/css'
+import '@lixi/theme-chalk/el-slider.css'
+import '@lixi/components/input-number/style/css'
+import '@lixi/components/tooltip/style/css'

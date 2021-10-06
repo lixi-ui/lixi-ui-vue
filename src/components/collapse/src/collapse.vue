@@ -1,5 +1,5 @@
 <template>
-  <div class="el-collapse" role="tablist" aria-multiselectable="true">
+  <div class="lx-collapse" role="tablist" aria-multiselectable="true">
     <slot></slot>
   </div>
 </template>
@@ -14,7 +14,7 @@ import {
 } from 'vue'
 import type { PropType, Ref } from 'vue'
 import mitt, { Emitter } from 'mitt'
-import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@element-plus/utils/constants'
+import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@lixi/utils/constants'
 
 export interface CollapseProvider {
   activeNames: Ref

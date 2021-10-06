@@ -1,13 +1,13 @@
 import { nextTick } from 'vue'
 import dayjs from 'dayjs'
 import { mount } from '@vue/test-utils'
-import { triggerEvent } from '@element-plus/test-utils'
+import { triggerEvent } from '@lixi/test-utils'
 import TimePicker from '../src/time-picker'
 import Picker from '../src/common/picker.vue'
 
 const _mount = (template: string, data, otherObj?) => mount({
   components: {
-    'el-time-picker': TimePicker,
+    'lx-time-picker': TimePicker,
   },
   template,
   data,

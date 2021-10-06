@@ -2,22 +2,22 @@
   <div
     :class="[
       {
-        'el-table--fit': fit,
-        'el-table--striped': stripe,
-        'el-table--border': border || isGroup,
-        'el-table--hidden': isHidden,
-        'el-table--group': isGroup,
-        'el-table--fluid-height': maxHeight,
-        'el-table--scrollable-x': layout.scrollX.value,
-        'el-table--scrollable-y': layout.scrollY.value,
-        'el-table--enable-row-hover': !store.states.isComplex.value,
-        'el-table--enable-row-transition':
+        'lx-table--fit': fit,
+        'lx-table--striped': stripe,
+        'lx-table--border': border || isGroup,
+        'lx-table--hidden': isHidden,
+        'lx-table--group': isGroup,
+        'lx-table--fluid-height': maxHeight,
+        'lx-table--scrollable-x': layout.scrollX.value,
+        'lx-table--scrollable-y': layout.scrollY.value,
+        'lx-table--enable-row-hover': !store.states.isComplex.value,
+        'lx-table--enable-row-transition':
           (store.states.data.value || []).length !== 0 &&
           (store.states.data.value || []).length < 100,
       },
       tableSize ? `el-table--${tableSize}` : '',
       className,
-      'el-table',
+      'lx-table',
     ]"
     :style="style"
     @mouseleave="handleMouseLeave()"
@@ -29,7 +29,7 @@
       v-if="showHeader"
       ref="headerWrapper"
       v-mousewheel="handleHeaderFooterMousewheel"
-      class="el-table__header-wrapper"
+      class="lx-table__header-wrapper"
     >
       <table-header
         ref="tableHeader"
@@ -42,7 +42,7 @@
         @set-drag-visible="setDragVisible"
       />
     </div>
-    <div ref="bodyWrapper" :style="[bodyHeight]" class="el-table__body-wrapper">
+    <div ref="bodyWrapper" :style="[bodyHeight]" class="lx-table__body-wrapper">
       <table-body
         :context="context"
         :highlight="highlightCurrentRow"
@@ -59,16 +59,16 @@
         v-if="isEmpty"
         ref="emptyBlock"
         :style="emptyBlockStyle"
-        class="el-table__empty-block"
+        class="lx-table__empty-block"
       >
-        <span class="el-table__empty-text">
+        <span class="lx-table__empty-text">
           <slot name="empty">{{ emptyText || t('el.table.emptyText') }}</slot>
         </span>
       </div>
       <div
         v-if="$slots.append"
         ref="appendWrapper"
-        class="el-table__append-wrapper"
+        class="lx-table__append-wrapper"
       >
         <slot name="append"></slot>
       </div>
@@ -78,7 +78,7 @@
       v-show="!isEmpty"
       ref="footerWrapper"
       v-mousewheel="handleHeaderFooterMousewheel"
-      class="el-table__footer-wrapper"
+      class="lx-table__footer-wrapper"
     >
       <table-footer
         :border="border"
@@ -101,12 +101,12 @@
         },
         fixedHeight,
       ]"
-      class="el-table__fixed"
+      class="lx-table__fixed"
     >
       <div
         v-if="showHeader"
         ref="fixedHeaderWrapper"
-        class="el-table__fixed-header-wrapper"
+        class="lx-table__fixed-header-wrapper"
       >
         <table-header
           ref="fixedTableHeader"
@@ -127,7 +127,7 @@
           },
           fixedBodyHeight,
         ]"
-        class="el-table__fixed-body-wrapper"
+        class="lx-table__fixed-body-wrapper"
       >
         <table-body
           :highlight="highlightCurrentRow"
@@ -144,14 +144,14 @@
         <div
           v-if="$slots.append"
           :style="{ height: layout.appendHeight.value + 'px' }"
-          class="el-table__append-gutter"
+          class="lx-table__append-gutter"
         ></div>
       </div>
       <div
         v-if="showSummary"
         v-show="!isEmpty"
         ref="fixedFooterWrapper"
-        class="el-table__fixed-footer-wrapper"
+        class="lx-table__fixed-footer-wrapper"
       >
         <table-footer
           :border="border"
@@ -180,12 +180,12 @@
         },
         fixedHeight,
       ]"
-      class="el-table__fixed-right"
+      class="lx-table__fixed-right"
     >
       <div
         v-if="showHeader"
         ref="rightFixedHeaderWrapper"
-        class="el-table__fixed-header-wrapper"
+        class="lx-table__fixed-header-wrapper"
       >
         <table-header
           ref="rightFixedTableHeader"
@@ -201,7 +201,7 @@
       <div
         ref="rightFixedBodyWrapper"
         :style="[{ top: layout.headerHeight.value + 'px' }, fixedBodyHeight]"
-        class="el-table__fixed-body-wrapper"
+        class="lx-table__fixed-body-wrapper"
       >
         <table-body
           :highlight="highlightCurrentRow"
@@ -218,14 +218,14 @@
         <div
           v-if="$slots.append"
           :style="{ height: layout.appendHeight.value + 'px' }"
-          class="el-table__append-gutter"
+          class="lx-table__append-gutter"
         ></div>
       </div>
       <div
         v-if="showSummary"
         v-show="!isEmpty"
         ref="rightFixedFooterWrapper"
-        class="el-table__fixed-footer-wrapper"
+        class="lx-table__fixed-footer-wrapper"
       >
         <table-footer
           :border="border"
@@ -246,12 +246,12 @@
         width: layout.scrollY.value ? layout.gutterWidth + 'px' : '0',
         height: layout.headerHeight.value + 'px',
       }"
-      class="el-table__fixed-right-patch"
+      class="lx-table__fixed-right-patch"
     ></div>
     <div
       v-show="resizeProxyVisible"
       ref="resizeProxy"
-      class="el-table__column-resize-proxy"
+      class="lx-table__column-resize-proxy"
     ></div>
   </div>
 </template>
@@ -259,8 +259,8 @@
 <script lang="ts">
 import { defineComponent, getCurrentInstance, computed } from 'vue'
 import debounce from 'lodash/debounce'
-import { Mousewheel } from '@element-plus/directives'
-import { useLocaleInject } from '@element-plus/hooks'
+import { Mousewheel } from '@lixi/directives'
+import { useLocaleInject } from '@lixi/hooks'
 import { createStore } from './store/helper'
 import TableLayout from './table-layout'
 import TableHeader from './table-header'
@@ -354,7 +354,7 @@ export default defineComponent({
 
     const debouncedUpdateLayout = debounce(doLayout, 50)
 
-    const tableId = 'el-table_' + tableIdSeed++
+    const tableId = 'lx-table_' + tableIdSeed++
     table.tableId = tableId
     table.state = {
       isGroup,

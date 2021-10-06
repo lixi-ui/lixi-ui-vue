@@ -1,4 +1,4 @@
-import withInstall from '@element-plus/utils/with-install'
+import withInstall from '@lixi/utils/with-install'
 import { ConfigProvider } from './config-provider'
 
 

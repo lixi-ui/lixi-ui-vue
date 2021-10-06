@@ -1,14 +1,14 @@
 <template>
-  <div ref="root" class="el-affix" :style="rootStyle">
-    <div :class="{'el-affix--fixed': state.fixed}" :style="affixStyle">
+  <div ref="root" class="lx-affix" :style="rootStyle">
+    <div :class="{'lx-affix--fixed': state.fixed}" :style="affixStyle">
       <slot></slot>
     </div>
   </div>
 </template>
 <script lang="ts">
 import { computed, defineComponent, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
-import { getScrollContainer, off, on } from '@element-plus/utils/dom'
-import { addResizeListener, removeResizeListener } from '@element-plus/utils/resize-event'
+import { getScrollContainer, off, on } from '@lixi/utils/dom'
+import { addResizeListener, removeResizeListener } from '@lixi/utils/resize-event'
 
 import type { PropType } from 'vue'
 

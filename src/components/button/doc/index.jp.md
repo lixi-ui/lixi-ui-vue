@@ -35,12 +35,12 @@
 </lx-row>
 
 <lx-row>
-  <lx-button icon="el-icon-search" circle></lx-button>
-  <lx-button type="primary" icon="el-icon-edit" circle></lx-button>
-  <lx-button type="success" icon="el-icon-check" circle></lx-button>
-  <lx-button type="info" icon="el-icon-message" circle></lx-button>
-  <lx-button type="warning" icon="el-icon-star-off" circle></lx-button>
-  <lx-button type="danger" icon="el-icon-delete" circle></lx-button>
+  <lx-button icon="lx-icon-search" circle></lx-button>
+  <lx-button type="primary" icon="lx-icon-edit" circle></lx-button>
+  <lx-button type="success" icon="lx-icon-check" circle></lx-button>
+  <lx-button type="info" icon="lx-icon-message" circle></lx-button>
+  <lx-button type="warning" icon="lx-icon-star-off" circle></lx-button>
+  <lx-button type="danger" icon="lx-icon-delete" circle></lx-button>
 </lx-row>
 ```
 
@@ -94,12 +94,12 @@
 :::demo アイコンを追加するには `icon` 属性を使います。アイコンのリストは要素のアイコンコンポーネントにあります。テキストの右側にアイコンを追加するには、`<i>` タグを使用します。カスタムアイコンも使用できます。
 
 ```html
-<lx-button type="primary" icon="el-icon-edit"></lx-button>
-<lx-button type="primary" icon="el-icon-share"></lx-button>
-<lx-button type="primary" icon="el-icon-delete"></lx-button>
-<lx-button type="primary" icon="el-icon-search">Search</lx-button>
+<lx-button type="primary" icon="lx-icon-edit"></lx-button>
+<lx-button type="primary" icon="lx-icon-share"></lx-button>
+<lx-button type="primary" icon="lx-icon-delete"></lx-button>
+<lx-button type="primary" icon="lx-icon-search">Search</lx-button>
 <lx-button type="primary"
-  >Upload<i class="el-icon-upload el-icon-right"></i
+  >Upload<i class="lx-icon-upload lx-icon-right"></i
 ></lx-button>
 ```
 
@@ -113,15 +113,15 @@ button グループとして表示され、同じよう操作をグループ化�
 
 ```html
 <lx-button-group>
-  <lx-button type="primary" icon="el-icon-arrow-left">Previous Page</lx-button>
+  <lx-button type="primary" icon="lx-icon-arrow-left">Previous Page</lx-button>
   <lx-button type="primary"
-    >Next Page<i class="el-icon-arrow-right el-icon-right"></i
+    >Next Page<i class="lx-icon-arrow-right lx-icon-right"></i
   ></lx-button>
 </lx-button-group>
 <lx-button-group>
-  <lx-button type="primary" icon="el-icon-edit"></lx-button>
-  <lx-button type="primary" icon="el-icon-share"></lx-button>
-  <lx-button type="primary" icon="el-icon-delete"></lx-button>
+  <lx-button type="primary" icon="lx-icon-edit"></lx-button>
+  <lx-button type="primary" icon="lx-icon-share"></lx-button>
+  <lx-button type="primary" icon="lx-icon-delete"></lx-button>
 </lx-button-group>
 ```
 
@@ -159,10 +159,10 @@ Button コンポーネントにはデフォルトサイズの他に、3 つの�
   <lx-button size="mini" round>Mini</lx-button>
 </lx-row>
 <lx-row>
-  <lx-button icon="el-icon-search" circle></lx-button>
-  <lx-button icon="el-icon-search" size="medium" circle></lx-button>
-  <lx-button icon="el-icon-search" size="small" circle></lx-button>
-  <lx-button icon="el-icon-search" size="mini" circle></lx-button>
+  <lx-button icon="lx-icon-search" circle></lx-button>
+  <lx-button icon="lx-icon-search" size="medium" circle></lx-button>
+  <lx-button icon="lx-icon-search" size="small" circle></lx-button>
+  <lx-button icon="lx-icon-search" size="mini" circle></lx-button>
 </lx-row>
 ```
 

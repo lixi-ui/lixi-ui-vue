@@ -27,7 +27,7 @@
 import { computed, inject, defineComponent } from 'vue'
 import { isValidComponentSize } from '../../../utils/validators'
 import { useGlobalConfig } from '../../../utils/util'
-// import { elFormKey, elFormItemKey } from '@element-plus/form'
+// import { elFormKey, elFormItemKey } from '@lixi/form'
 
 import type { PropType } from 'vue'
 import type { ButtonType, ButtonNativeType } from './types'

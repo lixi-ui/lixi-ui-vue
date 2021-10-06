@@ -1,17 +1,17 @@
 <template>
-  <div class="el-checkbox-group" role="group" aria-label="checkbox-group">
+  <div class="lx-checkbox-group" role="group" aria-label="checkbox-group">
     <slot></slot>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed, watch, provide, nextTick, toRefs } from 'vue'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
+import { isValidComponentSize } from '@lixi/utils/validators'
 import { useCheckboxGroup } from './useCheckbox'
 
 import type { PropType } from 'vue'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 
 export default defineComponent({
   name: 'LxCheckboxGroup',

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-rate"
+    class="lx-rate"
     role="slider"
     :aria-valuenow="currentValue"
     :aria-valuetext="text"
@@ -12,7 +12,7 @@
     <span
       v-for="(item, key) in max"
       :key="key"
-      class="el-rate__item"
+      class="lx-rate__item"
       :style="{ cursor: rateDisabled ? 'auto' : 'pointer' }"
       @mousemove="setCurrentValue(item, $event)"
       @mouseleave="resetCurrentValue"
@@ -20,19 +20,19 @@
     >
       <i
         :class="[classes[item - 1], { 'hover': hoverIndex === item }]"
-        class="el-rate__icon"
+        class="lx-rate__icon"
         :style="getIconStyle(item)"
       >
         <i
           v-if="showDecimalIcon(item)"
           :class="decimalIconClass"
           :style="decimalStyle"
-          class="el-rate__decimal"
+          class="lx-rate__decimal"
         >
         </i>
       </i>
     </span>
-    <span v-if="showText || showScore" class="el-rate__text" :style="{ color: textColor }">{{ text }}</span>
+    <span v-if="showText || showScore" class="lx-rate__text" :style="{ color: textColor }">{{ text }}</span>
   </div>
 </template>
 <script lang='ts'>
@@ -44,13 +44,13 @@ import {
   watch,
 } from 'vue'
 import { isObject, isArray } from '@vue/shared'
-import { elFormKey } from '@element-plus/tokens'
-import { hasClass } from '@element-plus/utils/dom'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import { elFormKey } from '@lixi/tokens'
+import { hasClass } from '@lixi/utils/dom'
+import { EVENT_CODE } from '@lixi/utils/aria'
 
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import type { PropType } from 'vue'
-import type { LxFormContext } from '@element-plus/tokens'
+import type { LxFormContext } from '@lixi/tokens'
 
 export default defineComponent({
   name: 'LxRate',
@@ -85,15 +85,15 @@ export default defineComponent({
     },
     iconClasses: {
       type: [Array, Object],
-      default: () => ['el-icon-star-on', 'el-icon-star-on', 'el-icon-star-on'],
+      default: () => ['lx-icon-star-on', 'lx-icon-star-on', 'lx-icon-star-on'],
     },
     voidIconClass: {
       type: String,
-      default: 'el-icon-star-off',
+      default: 'lx-icon-star-off',
     },
     disabledVoidIconClass: {
       type: String,
-      default: 'el-icon-star-on',
+      default: 'lx-icon-star-on',
     },
     disabled: {
       type: Boolean,
@@ -281,10 +281,10 @@ export default defineComponent({
       /* istanbul ignore if */
       if (props.allowHalf) {
         let target = event.target as HTMLElement
-        if (hasClass(target, 'el-rate__item')) {
+        if (hasClass(target, 'lx-rate__item')) {
           target = target.querySelector('.lx-rate__icon')
         }
-        if (hasClass(target, 'el-rate__decimal')) {
+        if (hasClass(target, 'lx-rate__decimal')) {
           target = target.parentNode as HTMLElement
         }
         pointerAtLeftHalf.value = event.offsetX * 2 <= target.clientWidth

@@ -1,9 +1,9 @@
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { isValidComponentSize } from '@lixi/utils/validators'
 
 import type { PropType } from 'vue'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 import type { OptionType } from './select.types'
-import type { Options } from '@element-plus/components/popper'
+import type { Options } from '@lixi/components/popper'
 
 export const SelectProps = {
   allowCreate: Boolean,
@@ -15,7 +15,7 @@ export const SelectProps = {
   clearable: Boolean,
   clearIcon: {
     type: String,
-    default: 'el-icon-circle-close',
+    default: 'lx-icon-circle-close',
   },
   collapseTags: Boolean,
   defaultFirstOption: Boolean,

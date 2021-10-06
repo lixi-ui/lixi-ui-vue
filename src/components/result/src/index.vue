@@ -1,21 +1,21 @@
 <template>
-  <div class="el-result">
-    <div class="el-result__icon">
+  <div class="lx-result">
+    <div class="lx-result__icon">
       <slot name="icon">
         <component :is="iconElement" :class="iconElement" />
       </slot>
     </div>
-    <div v-if="title || $slots.title" class="el-result__title">
+    <div v-if="title || $slots.title" class="lx-result__title">
       <slot name="title">
         <p>{{ title }}</p>
       </slot>
     </div>
-    <div v-if="subTitle || $slots.subTitle" class="el-result__subtitle">
+    <div v-if="subTitle || $slots.subTitle" class="lx-result__subtitle">
       <slot name="subTitle">
         <p>{{ subTitle }}</p>
       </slot>
     </div>
-    <div v-if="$slots.extra" class="el-result__extra">
+    <div v-if="$slots.extra" class="lx-result__extra">
       <slot name="extra"></slot>
     </div>
   </div>
@@ -27,7 +27,7 @@ import IconError from './icon-error.vue'
 import IconWarning from './icon-warning.vue'
 import IconInfo from './icon-info.vue'
 
-import type { Indexable } from '@element-plus/utils/types'
+import type { Indexable } from '@lixi/utils/types'
 
 const IconMap: Indexable<string> = {
   success: 'icon-success',

@@ -6,13 +6,13 @@ import {
   watch,
 } from 'vue'
 import { toTypeString } from '@vue/shared'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
-import { useGlobalConfig } from '@element-plus/utils/util'
-import { elFormKey, elFormItemKey } from '@element-plus/tokens'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
+import { useGlobalConfig } from '@lixi/utils/util'
+import { elFormKey, elFormItemKey } from '@lixi/tokens'
 
 import type { ExtractPropTypes } from 'vue'
-import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
-import type { PartialReturnType } from '@element-plus/utils/types'
+import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
+import type { PartialReturnType } from '@lixi/utils/types'
 import type { ICheckboxGroupInstance } from './checkbox.type'
 
 export const useCheckboxProps = {

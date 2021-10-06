@@ -1,14 +1,14 @@
 import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
 import Tree from '../src/tree.vue'
-import { sleep, defineGetter } from '@element-plus/test-utils'
+import { sleep, defineGetter } from '@lixi/test-utils'
 
 const ALL_NODE_COUNT = 9
 
 const getTreeVm = (props = '', options = {}) => {
   const wrapper = mount(Object.assign({
     components: {
-      'el-tree': Tree,
+      'lx-tree': Tree,
     },
     template: `
       <lx-tree ref="tree" :data="data" ${ props }></lx-tree>
@@ -66,7 +66,7 @@ const getTreeVm = (props = '', options = {}) => {
 const getDisableTreeVm = (props = '', options = {}) => {
   const wrapper = mount(Object.assign({
     components: {
-      'el-tree': Tree,
+      'lx-tree': Tree,
     },
     template: `
       <lx-tree ref="tree" :data="data" ${ props }></lx-tree>
@@ -648,7 +648,7 @@ describe('Tree.vue', () => {
       methods: {
         renderContent(h, node) {
           return h('div', { class: 'custom-content' }, [
-            h('button', { class: 'el-button' }, [node.node.label]),
+            h('button', { class: 'lx-button' }, [node.node.label]),
           ])
         },
       },
@@ -676,7 +676,7 @@ describe('Tree.vue', () => {
       methods: {
         renderContent(h, node) {
           return h('div', { class: 'custom-content' }, [
-            h('button', { class: 'el-button' }, [node.node.label]),
+            h('button', { class: 'lx-button' }, [node.node.label]),
           ])
         },
       },
@@ -984,7 +984,7 @@ describe('Tree.vue', () => {
         </div>
       `,
       components: {
-        'el-tree': Tree,
+        'lx-tree': Tree,
       },
       data(){
         return {
@@ -1058,7 +1058,7 @@ describe('Tree.vue', () => {
         </div>
       `,
       components: {
-        'el-tree': Tree,
+        'lx-tree': Tree,
       },
       data(){
         return {

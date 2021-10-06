@@ -1,14 +1,14 @@
 <template>
   <div
     v-resize="update"
-    :class="['el-tabs__active-bar', `is-${rootTabs.props.tabPosition}`]"
+    :class="['lx-tabs__active-bar', `is-${rootTabs.props.tabPosition}`]"
     :style="barStyle"
   ></div>
 </template>
 <script lang="ts">
 import { defineComponent, inject, getCurrentInstance, watch, nextTick, ref } from 'vue'
 import { capitalize } from '@vue/shared'
-import { Resize } from '@element-plus/directives'
+import { Resize } from '@lixi/directives'
 import { Pane, RootTabs } from './token'
 
 import type { CSSProperties, PropType } from 'vue'

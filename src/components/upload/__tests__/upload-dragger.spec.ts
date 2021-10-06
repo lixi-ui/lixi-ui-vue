@@ -1,5 +1,5 @@
 import { provide, h, defineComponent } from 'vue'
-import makeMount from '@element-plus/test-utils/make-mount'
+import makeMount from '@lixi/test-utils/make-mount'
 import UploadDragger from '../src/upload-dragger.vue'
 
 const AXIOM = 'Rem is the best girl'

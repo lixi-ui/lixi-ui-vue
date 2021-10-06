@@ -1,7 +1,8 @@
-import Tree from './src/tree.vue'
+import Tree from './tree.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+// import type { SFCWithInstall } from '@lixi/utils/types'
+import type { SFCWithInstall } from '../../../utils/utils/types'
 
 Tree.install = (app: App): void => {
   app.component(Tree.name, Tree)

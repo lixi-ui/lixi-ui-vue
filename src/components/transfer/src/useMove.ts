@@ -1,4 +1,4 @@
-import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
+import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 
 import type { ComputedRef } from 'vue'
 import type { TransferProps, TransferCheckedState, DataItem, Key } from './transfer'

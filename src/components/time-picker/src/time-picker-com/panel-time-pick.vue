@@ -1,7 +1,7 @@
 <template>
   <transition :name="transitionName">
-    <div v-if="actualVisible || visible" class="el-time-panel">
-      <div class="el-time-panel__content" :class="{ 'has-seconds': showSeconds }">
+    <div v-if="actualVisible || visible" class="lx-time-panel">
+      <div class="lx-time-panel__content" :class="{ 'has-seconds': showSeconds }">
         <time-spinner
           ref="spinner"
           :role="datetimeRole || 'start'"
@@ -17,17 +17,17 @@
           @select-range="setSelectionRange"
         />
       </div>
-      <div class="el-time-panel__footer">
+      <div class="lx-time-panel__footer">
         <button
           type="button"
-          class="el-time-panel__btn cancel"
+          class="lx-time-panel__btn cancel"
           @click="handleCancel"
         >
           {{ t('el.datepicker.cancel') }}
         </button>
         <button
           type="button"
-          class="el-time-panel__btn confirm"
+          class="lx-time-panel__btn confirm"
           @click="handleConfirm()"
         >
           {{ t('el.datepicker.confirm') }}
@@ -45,8 +45,8 @@ import {
   inject,
 } from 'vue'
 import dayjs from 'dayjs'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { useLocaleInject } from '@element-plus/hooks'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { useLocaleInject } from '@lixi/hooks'
 import TimeSpinner from './basic-time-spinner.vue'
 import { getAvailableArrs, useOldValue } from './useTimePicker'
 
@@ -85,7 +85,7 @@ export default defineComponent({
     const oldValue = useOldValue(props)
     // computed
     const transitionName = computed(() => {
-      return props.actualVisible === undefined ? 'el-zoom-in-top' : ''
+      return props.actualVisible === undefined ? 'lx-zoom-in-top' : ''
     })
     const showSeconds = computed(() => {
       return props.format.includes('ss')

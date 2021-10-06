@@ -1,8 +1,8 @@
 import { nextTick } from 'vue'
 import { hasOwn } from '@vue/shared'
-import { addClass, getStyle, removeClass } from '@element-plus/utils/dom'
-import PopupManager from '@element-plus/utils/popup-manager'
-import isServer from '@element-plus/utils/isServer'
+import { addClass, getStyle, removeClass } from '@lixi/utils/dom'
+import PopupManager from '@lixi/utils/popup-manager'
+import isServer from '@lixi/utils/isServer'
 import { createLoadingComponent } from './createLoadingComponent'
 
 import type { CSSProperties } from 'vue'
@@ -41,7 +41,7 @@ const addStyle = async (options: ILoadingOptions, parent: HTMLElement, instance:
     /**
      * await dom render when visible is true in init,
      * because some component's height maybe 0.
-     * e.g. el-table.
+     * e.g. lx-table.
      */
     await nextTick();
     ['top', 'left'].forEach(property => {
@@ -65,14 +65,14 @@ const addStyle = async (options: ILoadingOptions, parent: HTMLElement, instance:
 
 const addClassList = (options: ILoadingOptions, parent: HTMLElement, instance: ILoadingInstance) => {
   if (instance.originalPosition.value !== 'absolute' && instance.originalPosition.value !== 'fixed') {
-    addClass(parent, 'el-loading-parent--relative')
+    addClass(parent, 'lx-loading-parent--relative')
   } else {
-    removeClass(parent, 'el-loading-parent--relative')
+    removeClass(parent, 'lx-loading-parent--relative')
   }
   if (options.fullscreen && options.lock) {
-    addClass(parent, 'el-loading-parent--hidden')
+    addClass(parent, 'lx-loading-parent--hidden')
   } else {
-    removeClass(parent, 'el-loading-parent--hidden')
+    removeClass(parent, 'lx-loading-parent--hidden')
   }
 }
 
@@ -117,7 +117,7 @@ const Loading = function (options: ILoadingOptions = {}): ILoadingInstance {
    * because if a fullscreen loading is triggered when somewhere
    * a v-loading.body was triggered before and it's parent is
    * document.body which with a margin , the fullscreen loading's
-   * destroySelf function will remove 'el-loading-parent--relative',
+   * destroySelf function will remove 'lx-loading-parent--relative',
    * and then the position of v-loading.body will be error.
    */
   let loadingNumber: number | string = parent.getAttribute('loading-number')

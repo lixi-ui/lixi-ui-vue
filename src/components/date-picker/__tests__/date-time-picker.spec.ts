@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { triggerEvent } from '@element-plus/test-utils'
+import { triggerEvent } from '@lixi/test-utils'
 import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
 import DatePicker from '../src/date-picker'
@@ -14,7 +14,7 @@ const makeRange = (start, end) => {
 }
 const _mount = (template: string, data = () => ({}), otherObj?) => mount({
   components: {
-    'el-date-picker': DatePicker,
+    'lx-date-picker': DatePicker,
   },
   template,
   data,

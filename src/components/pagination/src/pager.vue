@@ -1,5 +1,5 @@
 <template>
-  <ul class="el-pager" @click="onPagerClick" @keyup.enter="onEnter">
+  <ul class="lx-pager" @click="onPagerClick" @keyup.enter="onEnter">
     <li
       v-if="pageCount > 0"
       :class="{ active: currentPage === 1, disabled }"
@@ -11,10 +11,10 @@
     </li>
     <li
       v-if="showPrevMore"
-      class="el-icon more btn-quickprev"
+      class="lx-icon more btn-quickprev"
       :class="[quickprevIconClass, { disabled }]"
       @mouseenter="onMouseenter('left')"
-      @mouseleave="quickprevIconClass = 'el-icon-more'"
+      @mouseleave="quickprevIconClass = 'lx-icon-more'"
     >
     </li>
     <li
@@ -29,10 +29,10 @@
     </li>
     <li
       v-if="showNextMore"
-      class="el-icon more btn-quicknext"
+      class="lx-icon more btn-quicknext"
       :class="[quicknextIconClass, { disabled }]"
       @mouseenter="onMouseenter('right')"
-      @mouseleave="quicknextIconClass = 'el-icon-more'"
+      @mouseleave="quicknextIconClass = 'lx-icon-more'"
     >
     </li>
     <li
@@ -74,8 +74,8 @@ export default defineComponent({
   setup(props, { emit }) {
     const showPrevMore = ref(false)
     const showNextMore = ref(false)
-    const quicknextIconClass = ref('el-icon-more')
-    const quickprevIconClass = ref('el-icon-more')
+    const quicknextIconClass = ref('lx-icon-more')
+    const quickprevIconClass = ref('lx-icon-more')
     const pagers = computed(() => {
       const pagerCount = props.pagerCount
       const halfPagerCount = (pagerCount - 1) / 2
@@ -133,18 +133,18 @@ export default defineComponent({
     })
 
     watchEffect(() => {
-      if(!showPrevMore.value) quickprevIconClass.value = 'el-icon-more'
+      if(!showPrevMore.value) quickprevIconClass.value = 'lx-icon-more'
     })
     watchEffect(() => {
-      if(!showNextMore.value) quicknextIconClass.value = 'el-icon-more'
+      if(!showNextMore.value) quicknextIconClass.value = 'lx-icon-more'
     })
 
     function onMouseenter(direction: 'left' | 'right') {
       if (props.disabled) return
       if (direction === 'left') {
-        quickprevIconClass.value = 'el-icon-d-arrow-left'
+        quickprevIconClass.value = 'lx-icon-d-arrow-left'
       } else {
-        quicknextIconClass.value = 'el-icon-d-arrow-right'
+        quicknextIconClass.value = 'lx-icon-d-arrow-right'
       }
     }
 

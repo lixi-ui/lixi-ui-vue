@@ -157,7 +157,7 @@ describe('Pagination', () => {
           </lx-pagination>
         `,
         components: {
-          'el-pagination': Pagination,
+          'lx-pagination': Pagination,
         },
       }
       const wrapper = mount(TestComponent)
@@ -175,7 +175,7 @@ describe('Pagination', () => {
           }
         },
       })
-      expect(wrapper.vm.$el.classList.contains('el-pagination--small')).toBe(true)
+      expect(wrapper.vm.$el.classList.contains('lx-pagination--small')).toBe(true)
     })
 
     test('test with background', async () => {

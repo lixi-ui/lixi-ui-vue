@@ -1,5 +1,5 @@
 <template>
-  <div :class="['el-steps', simple ? 'el-steps--simple' : `el-steps--${direction}`]">
+  <div :class="['lx-steps', simple ? 'lx-steps--simple' : `el-steps--${direction}`]">
     <slot></slot>
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent, watch, ref, provide } from 'vue'
 
-import { CHANGE_EVENT } from '@element-plus/utils/constants'
+import { CHANGE_EVENT } from '@lixi/utils/constants'
 
 export default defineComponent({
   name: 'LxSteps',

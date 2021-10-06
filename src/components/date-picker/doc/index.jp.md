@@ -647,8 +647,8 @@ Note, date time locale (month name, first day of the week ...) are also configed
 | value-format | optional, format of binding value. If not specified, the binding value will be a Date object | string | see [date formats](#/en-US/component/date-picker#date-formats) | — |
 | name | ネイティブ入力の `name` と同じ  | string | — | — |
 | unlink-panels | 範囲ピッカーで2つのデータパネルのリンクを解除する | boolean | — | false |
-| prefix-icon | カスタムプレフィックスアイコン | string | — | el-icon-date |
-| clear-icon | カスタムクリアアイコンクラス | string | — | el-icon-circle-close |
+| prefix-icon | カスタムプレフィックスアイコン | string | — | lx-icon-date |
+| clear-icon | カスタムクリアアイコンクラス | string | — | lx-icon-circle-close |
 | validate-event | フォームバリデーションをトリガするかどうか | boolean | - | true |
 | shortcuts | an object array to set shortcut options | object[{ text: string, value: date / function }] | — | — |
 | disabledDate | 日付をパラメータとして、その日付が無効化されているかどうかを判断する関数です。ブーリアンを返す必要があります。 | function | — | — |

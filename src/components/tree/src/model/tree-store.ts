@@ -1,6 +1,6 @@
 import { hasOwn } from '@vue/shared'
-import Node from './node'
-import { getNodeKey } from './util'
+import Node from './node.ts'
+import { getNodeKey } from './util.ts'
 
 import type {
   TreeKey,

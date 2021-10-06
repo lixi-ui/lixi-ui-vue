@@ -127,7 +127,7 @@ function useRender<T>(
           style: {},
         }
         if (column.showOverflowTooltip) {
-          props.class += ' el-tooltip'
+          props.class += ' lx-tooltip'
           props.style = {
             width:
               (data.column.realWidth || Number(data.column.width)) - 1 + 'px',

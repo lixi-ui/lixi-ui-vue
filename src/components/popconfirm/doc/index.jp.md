@@ -28,7 +28,7 @@ popconfirmは以下のようにカスタマイズすることができます。:
 <lx-popconfirm
   confirmButtonText='OK'
   cancelButtonText='No, Thanks'
-  icon="el-icon-info"
+  icon="lx-icon-info"
   iconColor="red"
   title="Are you sure to delete this?"
 >
@@ -51,7 +51,7 @@ popconfirmは以下のようにカスタマイズすることができます。:
   <lx-popconfirm
     confirmButtonText="Yes"
     cancelButtonText="No"
-    icon="el-icon-info"
+    icon="lx-icon-info"
     iconColor="red"
     title="Are you sure to delete this?"
     @confirm="confirmEvent"
@@ -87,7 +87,7 @@ export default {
 |  cancelButtonText              | キャンセルボタンのテキスト | String | — | — |
 |  confirmButtonType              | 確認ボタンの種類 | String | — | Primary |
 |  cancelButtonType              | キャンセルボタンの種類 | String | — | Text |
-|  icon              | アイコン | String | — | el-icon-question |
+|  icon              | アイコン | String | — | lx-icon-question |
 |  iconColor              | アイコンカラー | String | — | #f90 |
 |  hideIcon              | アイコンを隠すか | Boolean | — | false |
 

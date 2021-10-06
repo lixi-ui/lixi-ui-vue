@@ -1,5 +1,5 @@
 import { getCurrentInstance, ref, h } from 'vue'
-import { getStyle, hasClass } from '@element-plus/utils/dom'
+import { getStyle, hasClass } from '@lixi/utils/dom'
 import { createTablePopper, getCell, getColumnByCell } from '../util'
 import debounce from 'lodash/debounce'
 
@@ -73,7 +73,7 @@ function useEvents<T>(props: Partial<TableBodyProps<T>>) {
     const cellChild = (event.target as HTMLElement).querySelector(
       '.cell',
     ) as HTMLElement
-    if (!(hasClass(cellChild, 'el-tooltip') && cellChild.childNodes.length)) {
+    if (!(hasClass(cellChild, 'lx-tooltip') && cellChild.childNodes.length)) {
       return
     }
     // use range width instead of scrollWidth to determine whether the text is overflowing

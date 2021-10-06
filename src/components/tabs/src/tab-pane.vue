@@ -3,7 +3,7 @@
     v-if="shouldBeRender"
     v-show="active"
     :id="`pane-${paneName}`"
-    class="el-tab-pane"
+    class="lx-tab-pane"
     role="tabpanel"
     :aria-hidden="!active"
     :aria-labelledby="`tab-${paneName}`"

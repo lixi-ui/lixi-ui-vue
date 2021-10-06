@@ -9,14 +9,14 @@
     :effect="Effect.LIGHT"
     pure
     manual-mode
-    popper-class="el-table-filter"
+    popper-class="lx-table-filter"
     append-to-body
   >
     <template #default>
       <div v-if="multiple">
-        <div class="el-table-filter__content">
-          <lx-scrollbar wrap-class="el-table-filter__wrap">
-            <lx-checkbox-group v-model="filteredValue" class="el-table-filter__checkbox-group">
+        <div class="lx-table-filter__content">
+          <lx-scrollbar wrap-class="lx-table-filter__wrap">
+            <lx-checkbox-group v-model="filteredValue" class="lx-table-filter__checkbox-group">
               <lx-checkbox
                 v-for="filter in filters"
                 :key="filter.value"
@@ -27,7 +27,7 @@
             </lx-checkbox-group>
           </lx-scrollbar>
         </div>
-        <div class="el-table-filter__bottom">
+        <div class="lx-table-filter__bottom">
           <button
             :class="{ 'is-disabled': filteredValue.length === 0 }"
             :disabled="filteredValue.length === 0"
@@ -39,12 +39,12 @@
           <button type="button" @click="handleReset">{{ t('el.table.resetFilter') }}</button>
         </div>
       </div>
-      <ul v-else class="el-table-filter__list">
+      <ul v-else class="lx-table-filter__list">
         <li
           :class="{
             'is-active': filterValue === undefined || filterValue === null,
           }"
-          class="el-table-filter__list-item"
+          class="lx-table-filter__list-item"
           @click="handleSelect(null)"
         >
           {{ t('el.table.clearFilter') }}
@@ -54,7 +54,7 @@
           :key="filter.value"
           :class="{ 'is-active': isActive(filter) }"
           :label="filter.value"
-          class="el-table-filter__list-item"
+          class="lx-table-filter__list-item"
           @click="handleSelect(filter.value)"
         >
           {{ filter.text }}
@@ -64,13 +64,13 @@
     <template #trigger>
       <span
         v-click-outside:[popperPaneRef]="hideFilterPanel"
-        class="el-table__column-filter-trigger el-none-outline"
+        class="lx-table__column-filter-trigger lx-none-outline"
         @click="showFilterPanel"
       >
         <i
           :class="[
-            'el-icon-arrow-down',
-            column.filterOpened ? 'el-icon-arrow-up' : '',
+            'lx-icon-arrow-down',
+            column.filterOpened ? 'lx-icon-arrow-up' : '',
           ]"
         ></i>
       </span>
@@ -86,11 +86,11 @@ import {
   getCurrentInstance,
   watch,
 } from 'vue'
-import LxCheckbox from '@element-plus/components/checkbox'
-import { ClickOutside } from '@element-plus/directives'
-import { useLocaleInject } from '@element-plus/hooks'
-import LxPopper, { Effect, Placement } from '@element-plus/components/popper'
-import LxScrollbar from '@element-plus/components/scrollbar'
+import LxCheckbox from '@lixi/components/checkbox'
+import { ClickOutside } from '@lixi/directives'
+import { useLocaleInject } from '@lixi/hooks'
+import LxPopper, { Effect, Placement } from '@lixi/components/popper'
+import LxScrollbar from '@lixi/components/scrollbar'
 
 import type {
   WritableComputedRef,

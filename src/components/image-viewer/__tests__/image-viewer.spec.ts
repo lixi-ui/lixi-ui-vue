@@ -1,8 +1,8 @@
 import ImageViewer from '../src/index.vue'
 import { nextTick } from 'vue'
 
-import { IMAGE_SUCCESS } from '@element-plus/test-utils/mock'
-import makeMount from '@element-plus/test-utils/make-mount'
+import { IMAGE_SUCCESS } from '@lixi/test-utils/mock'
+import makeMount from '@lixi/test-utils/make-mount'
 
 const mount = makeMount(ImageViewer, {
   props: {

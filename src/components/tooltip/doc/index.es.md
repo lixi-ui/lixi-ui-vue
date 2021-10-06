@@ -188,7 +188,7 @@ Es necesario envolver los elementos de forma deshabilitados en un elemento conte
 | model-value / v-model | visibilidad del Tooltip                  | boolean | —                                        | false                                    |
 | disabled       | saber si el Tooltip se encuentra deshabilitado | boolean | —                                        | false                                    |
 | offset         | offset del Tooltip                       | number  | —                                        | 0                                        |
-| transition     | nombre de animación                      | string  | —                                        | el-fade-in-linear                        |
+| transition     | nombre de animación                      | string  | —                                        | lx-fade-in-linear                        |
 | visible-arrow  | si una flecha es mostrada. Para mayor información, revisar la página de [Vue-popper](https://github.com/element-component/vue-popper) | boolean | —                                        | true                                     |
 | popper-options | parámetros de [popper.js](https://popper.js.org/documentation.html) | Object  | referirse a la documentación de [popper.js](https://popper.js.org/documentation.html) | `{ boundariesElement: 'body', gpuAcceleration: false }` |
 | show-after     | retraso de la apariencia, en milisegundos | number  | —                                        | 0                                        |

@@ -107,7 +107,7 @@ You can customize loading text, loading spinner and background color.
   <lx-table
     v-loading="loading"
     element-loading-text="Loading..."
-    element-loading-spinner="el-icon-loading"
+    element-loading-spinner="lx-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="tableData"
     style="width: 100%">
@@ -273,7 +273,7 @@ Show a full screen animation while loading data.
         const loading = this.$loading({
           lock: true,
           text: 'Loading',
-          spinner: 'el-icon-loading',
+          spinner: 'lx-icon-loading',
           background: 'rgba(0, 0, 0, 0.7)'
         });
         setTimeout(() => {
@@ -303,7 +303,7 @@ Show a full screen animation while loading data.
         const loading = LxLoading.service({
           lock: true,
           text: 'Loading',
-          spinner: 'el-icon-loading',
+          spinner: 'lx-icon-loading',
           background: 'rgba(0, 0, 0, 0.7)',
         });
         setTimeout(() => {

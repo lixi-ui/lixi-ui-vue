@@ -7,7 +7,7 @@
     :aria-expanded="inExpandingPath"
     :tabindex="expandable ? -1 : null"
     :class="[
-      'el-cascader-node',
+      'lx-cascader-node',
       checkStrictly && 'is-selectable',
       inExpandingPath && 'in-active-path',
       inCheckedPath && 'in-checked-path',
@@ -41,23 +41,23 @@
       -->
       <span></span>
     </lx-radio>
-    <i v-else-if="isLeaf && node.checked" class="el-icon-check el-cascader-node__prefix"></i>
+    <i v-else-if="isLeaf && node.checked" class="lx-icon-check lx-cascader-node__prefix"></i>
 
     <!-- content -->
     <node-content />
 
     <!-- postfix -->
     <template v-if="!isLeaf">
-      <i v-if="node.loading" class="el-icon-loading el-cascader-node__postfix"></i>
-      <i v-else class="el-icon-arrow-right el-cascader-node__postfix"></i>
+      <i v-if="node.loading" class="lx-icon-loading lx-cascader-node__postfix"></i>
+      <i v-else class="lx-icon-arrow-right lx-cascader-node__postfix"></i>
     </template>
   </li>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, inject } from 'vue'
-import LxCheckbox from '@element-plus/components/checkbox'
-import LxRadio from '@element-plus/components/radio'
+import LxCheckbox from '@lixi/components/checkbox'
+import LxRadio from '@lixi/components/radio'
 import NodeContent from './node-content'
 import type { default as CascaderNode } from './node'
 import {

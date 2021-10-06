@@ -22,7 +22,7 @@
 :::demo 通过设置 `separator-class` 可使用相应的 `iconfont` 作为分隔符，注意这将使 `separator` 设置失效
 
 ```html
-<lx-breadcrumb separator-class="el-icon-arrow-right">
+<lx-breadcrumb separator-class="lx-icon-arrow-right">
   <lx-breadcrumb-item :to="{ path: '/' }">首页</lx-breadcrumb-item>
   <lx-breadcrumb-item>活动管理</lx-breadcrumb-item>
   <lx-breadcrumb-item>活动列表</lx-breadcrumb-item>

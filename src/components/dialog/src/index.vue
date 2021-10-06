@@ -17,10 +17,10 @@
           ref="dialogRef"
           v-trap-focus
           :class="[
-            'el-dialog',
+            'lx-dialog',
             {
               'is-fullscreen': fullscreen,
-              'el-dialog--center': center,
+              'lx-dialog--center': center,
             },
             customClass,
           ]"
@@ -30,28 +30,28 @@
           :style="style"
           @click.stop=""
         >
-          <div class="el-dialog__header">
+          <div class="lx-dialog__header">
             <slot name="title">
-              <span class="el-dialog__title">
+              <span class="lx-dialog__title">
                 {{ title }}
               </span>
             </slot>
             <button
               v-if="showClose"
               aria-label="close"
-              class="el-dialog__headerbtn"
+              class="lx-dialog__headerbtn"
               type="button"
               @click="handleClose"
             >
-              <i class="el-dialog__close el-icon el-icon-close"></i>
+              <i class="lx-dialog__close lx-icon lx-icon-close"></i>
             </button>
           </div>
           <template v-if="rendered">
-            <div class="el-dialog__body">
+            <div class="lx-dialog__body">
               <slot></slot>
             </div>
           </template>
-          <div v-if="$slots.footer" class="el-dialog__footer">
+          <div v-if="$slots.footer" class="lx-dialog__footer">
             <slot name="footer"></slot>
           </div>
         </div>
@@ -62,8 +62,8 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { TrapFocus } from '@element-plus/directives'
-import { Overlay } from '@element-plus/components/overlay'
+import { TrapFocus } from '@lixi/directives'
+import { Overlay } from '@lixi/components/overlay'
 
 import {
   default as useDialog,
@@ -76,7 +76,7 @@ import type { SetupContext } from 'vue'
 export default defineComponent({
   name: 'LxDialog',
   components: {
-    'el-overlay': Overlay,
+    'lx-overlay': Overlay,
   },
   directives: {
     TrapFocus,

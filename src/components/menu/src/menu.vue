@@ -15,8 +15,8 @@ import {
   nextTick,
 } from 'vue'
 import mitt from 'mitt'
-import { Resize } from '@element-plus/directives'
-import Menubar from '@element-plus/utils/menu/menu-bar'
+import { Resize } from '@lixi/directives'
+import Menubar from '@lixi/utils/menu/menu-bar'
 import LxMenuCollapseTransition from './menu-collapse-transition.vue'
 import LxSubMenu from './submenu.vue'
 import useMenuColor from './useMenuColor'
@@ -262,9 +262,9 @@ export default defineComponent({
               ...defaultSlot,
               h(ElSubMenu, {
                 index: 'sub-menu-more',
-                class: 'el-sub-menu__hide-arrow',
+                class: 'lx-sub-menu__hide-arrow',
               }, {
-                title: () => h('i', { class: ['el-icon-more', 'el-sub-menu__icon-more'] }),
+                title: () => h('i', { class: ['lx-icon-more', 'lx-sub-menu__icon-more'] }),
                 default: () => moreSlot,
               }),
             ]
@@ -368,9 +368,9 @@ export default defineComponent({
       ref: 'menu',
       style: { backgroundColor: this.backgroundColor || '' },
       class: {
-        'el-menu': true,
-        'el-menu--horizontal': this.mode === 'horizontal',
-        'el-menu--collapse': this.collapse,
+        'lx-menu': true,
+        'lx-menu--horizontal': this.mode === 'horizontal',
+        'lx-menu--collapse': this.collapse,
       },
     }, [this.filteredSlot]), directives)
 

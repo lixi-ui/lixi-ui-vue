@@ -94,7 +94,7 @@ export default defineComponent({
     return h(
       'table',
       {
-        class: 'el-table__footer',
+        class: 'lx-table__footer',
         cellspacing: '0',
         cellpadding: '0',
         border: '0',
@@ -115,7 +115,7 @@ export default defineComponent({
                     key: cellIndex,
                     colspan: column.colSpan,
                     rowspan: column.rowSpan,
-                    class: [...this.getRowClasses(column, cellIndex), 'el-table__cell'],
+                    class: [...this.getRowClasses(column, cellIndex), 'lx-table__cell'],
                   },
                   [
                     h(

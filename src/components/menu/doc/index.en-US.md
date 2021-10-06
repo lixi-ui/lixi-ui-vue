@@ -8,7 +8,7 @@ Top bar NavMenu can be used in a variety of scenarios.
 
 :::demo By default Menu is vertical, but you can change it to horizontal by setting the mode prop to 'horizontal'. In addition, you can use the sub-menu component to create a second level menu. Menu provides `background-color`, `text-color` and `active-text-color` to customize the colors.
 ```html
-<lx-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+<lx-menu :default-active="activeIndex" class="lx-menu-demo" mode="horizontal" @select="handleSelect">
   <lx-menu-item index="1">Processing Center</lx-menu-item>
   <lx-sub-menu index="2">
     <template #title>Workspace</template>
@@ -28,7 +28,7 @@ Top bar NavMenu can be used in a variety of scenarios.
 <div class="line"></div>
 <lx-menu
   :default-active="activeIndex2"
-  class="el-menu-demo"
+  class="lx-menu-demo"
   mode="horizontal"
   @select="handleSelect"
   background-color="#545c64"
@@ -95,19 +95,19 @@ Top bar NavMenu can be used in a variety of scenarios.
 
 Vertical NavMenu with sub-menus.
 
-:::demo You can use the el-menu-item-group component to create a menu group, and the name of the group is determined by the title prop or a named slot.
+:::demo You can use the lx-menu-item-group component to create a menu group, and the name of the group is determined by the title prop or a named slot.
 ```html
 <lx-row class="tac">
   <lx-col :span="12">
     <h5>Default colors</h5>
     <lx-menu
       default-active="2"
-      class="el-menu-vertical-demo"
+      class="lx-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
       <lx-sub-menu index="1">
         <template #title>
-          <i class="el-icon-location"></i>
+          <i class="lx-icon-location"></i>
           <span>Navigator One</span>
         </template>
         <lx-menu-item-group title="Group One">
@@ -123,15 +123,15 @@ Vertical NavMenu with sub-menus.
         </lx-sub-menu>
       </lx-sub-menu>
       <lx-menu-item index="2">
-        <i class="el-icon-menu"></i>
+        <i class="lx-icon-menu"></i>
         <span>Navigator Two</span>
       </lx-menu-item>
       <lx-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
+        <i class="lx-icon-document"></i>
         <span>Navigator Three</span>
       </lx-menu-item>
       <lx-menu-item index="4">
-        <i class="el-icon-setting"></i>
+        <i class="lx-icon-setting"></i>
         <span>Navigator Four</span>
       </lx-menu-item>
     </lx-menu>
@@ -140,7 +140,7 @@ Vertical NavMenu with sub-menus.
     <h5>Custom colors</h5>
     <lx-menu
       default-active="2"
-      class="el-menu-vertical-demo"
+      class="lx-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
       background-color="#545c64"
@@ -148,7 +148,7 @@ Vertical NavMenu with sub-menus.
       active-text-color="#ffd04b">
       <lx-sub-menu index="1">
         <template #title>
-          <i class="el-icon-location"></i>
+          <i class="lx-icon-location"></i>
           <span>Navigator One</span>
         </template>
         <lx-menu-item-group title="Group One">
@@ -164,15 +164,15 @@ Vertical NavMenu with sub-menus.
         </lx-sub-menu>
       </lx-sub-menu>
       <lx-menu-item index="2">
-        <i class="el-icon-menu"></i>
+        <i class="lx-icon-menu"></i>
         <span>Navigator Two</span>
       </lx-menu-item>
       <lx-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
+        <i class="lx-icon-document"></i>
         <span>Navigator Three</span>
       </lx-menu-item>
       <lx-menu-item index="4">
-        <i class="el-icon-setting"></i>
+        <i class="lx-icon-setting"></i>
         <span>Navigator Four</span>
       </lx-menu-item>
     </lx-menu>
@@ -226,10 +226,10 @@ Vertical NavMenu could be collapsed.
   <lx-radio-button :label="false">expand</lx-radio-button>
   <lx-radio-button :label="true">collapse</lx-radio-button>
 </lx-radio-group>
-<lx-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+<lx-menu default-active="2" class="lx-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
   <lx-sub-menu index="1">
     <template #title>
-      <i class="el-icon-location"></i>
+      <i class="lx-icon-location"></i>
       <span>Navigator One</span>
     </template>
     <lx-menu-item-group>
@@ -246,15 +246,15 @@ Vertical NavMenu could be collapsed.
     </lx-sub-menu>
   </lx-sub-menu>
   <lx-menu-item index="2">
-    <i class="el-icon-menu"></i>
+    <i class="lx-icon-menu"></i>
     <template #title>Navigator Two</template>
   </lx-menu-item>
   <lx-menu-item index="3" disabled>
-    <i class="el-icon-document"></i>
+    <i class="lx-icon-document"></i>
     <template #title>Navigator Three</template>
   </lx-menu-item>
   <lx-menu-item index="4">
-    <i class="el-icon-setting"></i>
+    <i class="lx-icon-setting"></i>
     <template #title>Navigator Four</template>
   </lx-menu-item>
 </lx-menu>

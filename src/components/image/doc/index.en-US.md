@@ -111,7 +111,7 @@ Besides the native features of img, support lazy load, custom placeholder and lo
     <lx-image>
       <template #error>
         <div class="image-slot">
-          <i class="el-icon-picture-outline"></i>
+          <i class="lx-icon-picture-outline"></i>
         </div>
       </template>
     </lx-image>

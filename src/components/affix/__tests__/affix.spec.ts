@@ -1,12 +1,12 @@
 import { mount } from '@vue/test-utils'
-import { defineGetter, makeScroll } from '@element-plus/test-utils'
+import { defineGetter, makeScroll } from '@lixi/test-utils'
 import Affix from '../src/index.vue'
 
 let clientHeightRestore = null
 
 const _mount = (template: string) => mount({
   components: {
-    'el-affix': Affix,
+    'lx-affix': Affix,
   },
   template,
 }, { attachTo: document.body })

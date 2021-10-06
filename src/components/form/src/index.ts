@@ -2,7 +2,7 @@ import Form from './src/form.vue'
 import FormItem from './src/form-item.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Form.install = (app: App): void => {
   app.component(Form.name, Form)

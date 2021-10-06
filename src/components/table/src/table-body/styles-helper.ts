@@ -37,7 +37,7 @@ function useStyles<T>(props: Partial<TableBodyProps<T>>) {
   }
 
   const getRowClass = (row: T, rowIndex: number) => {
-    const classes = ['el-table__row']
+    const classes = ['lx-table__row']
     if (
       parent.props.highlightCurrentRow &&
       row === props.store.states.currentRow.value
@@ -46,7 +46,7 @@ function useStyles<T>(props: Partial<TableBodyProps<T>>) {
     }
 
     if (props.stripe && rowIndex % 2 === 1) {
-      classes.push('el-table__row--striped')
+      classes.push('lx-table__row--striped')
     }
     const rowClassName = parent.props.rowClassName
     if (typeof rowClassName === 'string') {
@@ -111,7 +111,7 @@ function useStyles<T>(props: Partial<TableBodyProps<T>>) {
       )
     }
 
-    classes.push('el-table__cell')
+    classes.push('lx-table__cell')
 
     return classes.join(' ')
   }

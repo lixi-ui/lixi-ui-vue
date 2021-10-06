@@ -29,8 +29,8 @@
 
 <script lang="ts">
 import { defineComponent, computed, ref, PropType } from 'vue'
-import LxSelect from '@element-plus/components/select'
-import { ComponentSize } from '@element-plus/utils/types'
+import LxSelect from '@lixi/components/select'
+import { ComponentSize } from '@lixi/utils/types'
 
 const { Option: LxOption } = LxSelect
 
@@ -139,11 +139,11 @@ export default defineComponent({
     },
     prefixIcon: {
       type: String,
-      default: 'el-icon-time',
+      default: 'lx-icon-time',
     },
     clearIcon: {
       type: String,
-      default: 'el-icon-circle-close',
+      default: 'lx-icon-circle-close',
     },
   },
   emits: ['change', 'blur', 'focus', 'update:modelValue'],

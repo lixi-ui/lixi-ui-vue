@@ -12,7 +12,7 @@ describe('PageHeader.vue', () => {
   })
 
   test('should render icon props', () => {
-    const icon = 'el-icon-arrow-left'
+    const icon = 'lx-icon-arrow-left'
     const wrapper = mount(PageHeader, {
       props: { icon: icon },
     })

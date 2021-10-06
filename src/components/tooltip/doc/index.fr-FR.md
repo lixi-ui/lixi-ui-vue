@@ -131,7 +131,7 @@ Vous pouvez afficher plus de lignes et formater leur contenu.
 
 Vous pouvez utiliser d'autres attributs pour un usage plus poussé:
 
-`transition` permet de définir l'animation d'apparition et de disparition du tooltip, le défaut étant el-fade-in-linear.
+`transition` permet de définir l'animation d'apparition et de disparition du tooltip, le défaut étant lx-fade-in-linear.
 
 `disabled` permet de désactiver le tooltip. Mettez-le simplement à `true`.
 
@@ -189,7 +189,7 @@ Les éléments de formulaire désactivés ne sont pas supportés par Tooltip, pl
 | value / v-model | Visibilité du Tooltip. | boolean | — |  false |
 | disabled | Si le Tooltip est désactivé. | boolean | — |  false |
 | offset | Décalage du Tooltip. | number | — |  0 |
-| transition | Animation de transition. | string | — | el-fade-in-linear |
+| transition | Animation de transition. | string | — | lx-fade-in-linear |
 | visible-arrow | Si une flèche doit être affichée. Pour plus d'information, voir [Vue-popper](https://github.com/element-component/vue-popper). | boolean | — | true |
 | popper-options | Paramètres [popper.js](https://popper.js.org/documentation.html). | Object | Se référer à  [popper.js](https://popper.js.org/documentation.html). | `{ boundariesElement: 'body', gpuAcceleration: false }` |
 | show-after | Délai avant l'apparition en millisecondes. | number | — | 0 |

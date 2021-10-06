@@ -3,7 +3,7 @@ import Backtop from '../src/index.vue'
 
 const _mount = (template: string) => mount({
   components: {
-    'el-backtop': Backtop,
+    'lx-backtop': Backtop,
   },
   template,
 }, { attachTo: document.body })

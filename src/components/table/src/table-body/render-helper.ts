@@ -1,5 +1,5 @@
 import { h, getCurrentInstance, computed } from 'vue'
-import { arrayFindIndex } from '@element-plus/utils/util'
+import { arrayFindIndex } from '@lixi/utils/util'
 import useEvents from './events-helper'
 import useStyles from './styles-helper'
 import { getRowIdentity } from '../util'
@@ -49,7 +49,7 @@ function useRender<T>(props: Partial<TableBodyProps<T>>) {
     const rowClasses = getRowClass(row, $index)
     let display = true
     if (treeRowData) {
-      rowClasses.push('el-table__row--level-' + treeRowData.level)
+      rowClasses.push('lx-table__row--level-' + treeRowData.level)
       display = treeRowData.display
     }
     const displayStyle = display
@@ -155,7 +155,7 @@ function useRender<T>(props: Partial<TableBodyProps<T>>) {
               'td',
               {
                 colspan: store.states.columns.value.length,
-                class: 'el-table__cell el-table__expanded-cell',
+                class: 'lx-table__cell lx-table__expanded-cell',
               },
               [renderExpanded({ row, $index, store })],
             ),

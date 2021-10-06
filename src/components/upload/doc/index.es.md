@@ -17,7 +17,7 @@ Carga archivos haciendo clic o arrastrándolos.
   :file-list="fileList">
   <lx-button size="small" type="primary">Clic para subir archivo</lx-button>
   <template #tip>
-    <div class="el-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
+    <div class="lx-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
   </template>
 </lx-upload>
 <script>
@@ -56,7 +56,7 @@ Utilice el _hook_ `before-upload` para limitar el formato de archivo y su tamañ
   :on-success="handleAvatarSuccess"
   :before-upload="beforeAvatarUpload">
   <img v-if="imageUrl" :src="imageUrl" class="avatar">
-  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+  <i v-else class="lx-icon-plus avatar-uploader-icon"></i>
 </lx-upload>
 
 <style>
@@ -125,7 +125,7 @@ Utilice la propiedad `list-type` para cambiar el estilo a un listado de archivos
   list-type="picture-card"
   :on-preview="handlePictureCardPreview"
   :on-remove="handleRemove">
-  <i class="el-icon-plus"></i>
+  <i class="lx-icon-plus"></i>
 </lx-upload>
 <lx-dialog v-model="dialogVisible">
   <img width="100%" :src="dialogImageUrl" alt="">
@@ -163,31 +163,31 @@ Use `scoped-slot` to change default thumbnail template.
   list-type="picture-card"
   :auto-upload="false">
     <template #default>
-      <i class="el-icon-plus"></i>
+      <i class="lx-icon-plus"></i>
     </template>
     <template #file="{file}">
       <div>
-        <img class="el-upload-list__item-thumbnail" :src="file.url" alt="" />
-        <span class="el-upload-list__item-actions">
+        <img class="lx-upload-list__item-thumbnail" :src="file.url" alt="" />
+        <span class="lx-upload-list__item-actions">
           <span
-            class="el-upload-list__item-preview"
+            class="lx-upload-list__item-preview"
             @click="handlePictureCardPreview(file)"
           >
-            <i class="el-icon-zoom-in"></i>
+            <i class="lx-icon-zoom-in"></i>
           </span>
           <span
             v-if="!disabled"
-            class="el-upload-list__item-delete"
+            class="lx-upload-list__item-delete"
             @click="handleDownload(file)"
           >
-            <i class="el-icon-download"></i>
+            <i class="lx-icon-download"></i>
           </span>
           <span
             v-if="!disabled"
-            class="el-upload-list__item-delete"
+            class="lx-upload-list__item-delete"
             @click="handleRemove(file)"
           >
-            <i class="el-icon-delete"></i>
+            <i class="lx-icon-delete"></i>
           </span>
         </span>
       </div>
@@ -235,7 +235,7 @@ Use `scoped-slot` to change default thumbnail template.
   list-type="picture">
   <lx-button size="small" type="primary">Clic para subir archivo</lx-button>
   <template #tip>
-    <div class="el-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
+    <div class="lx-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
   </template>
 </lx-upload>
 <script>
@@ -271,7 +271,7 @@ Utilice el _hook_ `on-change` para controlar la funcionalidad de la lista de arc
   :file-list="fileList">
   <lx-button size="small" type="primary">Clic para subir archivo</lx-button>
   <template #tip>
-    <div class="el-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
+    <div class="lx-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
   </template>
 </lx-upload>
 <script>
@@ -311,10 +311,10 @@ Puede arrastrar el archivo dentro de un área en especifico para cargar el archi
   :on-remove="handleRemove"
   :file-list="fileList"
   multiple>
-  <i class="el-icon-upload"></i>
-  <div class="el-upload__text">Suelta tu archivo aquí o <em>haz clic para cargar</em></div>
+  <i class="lx-icon-upload"></i>
+  <div class="lx-upload__text">Suelta tu archivo aquí o <em>haz clic para cargar</em></div>
   <template #tip>
-    <div class="el-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
+    <div class="lx-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
   </template>
 </lx-upload>
 ```
@@ -334,7 +334,7 @@ Puede arrastrar el archivo dentro de un área en especifico para cargar el archi
   </template>
   <lx-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">Cargar al servidor</lx-button>
   <template #tip>
-    <div class="el-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
+    <div class="lx-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
   </template>
 </lx-upload>
 <script>

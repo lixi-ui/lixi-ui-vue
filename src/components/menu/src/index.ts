@@ -4,7 +4,7 @@ import MenuItemGroup from './src/menuItemGroup.vue'
 import SubMenu from './src/submenu.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Menu.install = (app: App): void => {
   app.component(Menu.name, Menu)

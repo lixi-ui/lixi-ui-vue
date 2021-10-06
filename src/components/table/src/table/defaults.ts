@@ -1,5 +1,5 @@
 import type { ComponentInternalInstance, CSSProperties, Ref, VNode, PropType } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 import type { Store } from '../store'
 import type { TableColumnCtx } from '../table-column/defaults'
 import type TableLayout from '../table-layout'

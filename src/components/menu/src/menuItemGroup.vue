@@ -1,7 +1,7 @@
 <template>
-  <li class="el-menu-item-group">
+  <li class="lx-menu-item-group">
     <div
-      class="el-menu-item-group__title"
+      class="lx-menu-item-group__title"
       :style="{ paddingLeft: levelPadding + 'px' }"
     >
       <template v-if="!slots.title">{{ title }}</template>

@@ -1,4 +1,4 @@
-import makeMount from '@element-plus/test-utils/make-mount'
+import makeMount from '@lixi/test-utils/make-mount'
 import Result from '../src/index.vue'
 
 const AXIOM = 'Rem is the best girl'
@@ -8,7 +8,7 @@ describe('Result.vue', () => {
   test('render test', () => {
     const wrapper = mount()
     expect(wrapper.find('.lx-result__icon').exists()).toBe(true)
-    expect(wrapper.classes()).toContain('el-result')
+    expect(wrapper.classes()).toContain('lx-result')
   })
 
   test('should render title props', () => {

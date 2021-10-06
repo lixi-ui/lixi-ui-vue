@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-collapse-item"
+    class="lx-collapse-item"
     :class="{'is-active': isActive, 'is-disabled': disabled }"
   >
     <div
@@ -11,7 +11,7 @@
     >
       <div
         :id="`el-collapse-head-${id}`"
-        class="el-collapse-item__header"
+        class="lx-collapse-item__header"
         role="button"
         :tabindex="disabled ? -1 : 0"
         :class="{
@@ -25,7 +25,7 @@
       >
         <slot name="title">{{ title }}</slot>
         <i
-          class="el-collapse-item__arrow el-icon-arrow-right"
+          class="lx-collapse-item__arrow lx-icon-arrow-right"
           :class="{'is-active': isActive}"
         >
         </i>
@@ -35,12 +35,12 @@
       <div
         v-show="isActive"
         :id="`el-collapse-content-${id}`"
-        class="el-collapse-item__wrap"
+        class="lx-collapse-item__wrap"
         role="tabpanel"
         :aria-hidden="!isActive"
         :aria-labelledby="`el-collapse-head-${id}`"
       >
-        <div class="el-collapse-item__content">
+        <div class="lx-collapse-item__content">
           <slot></slot>
         </div>
       </div>
@@ -50,8 +50,8 @@
 <script lang='ts'>
 import { defineComponent, PropType, inject, computed, ref } from 'vue'
 import { CollapseProvider } from './collapse'
-import { generateId } from '@element-plus/utils/util'
-import LxCollapseTransition from '@element-plus/components/collapse-transition'
+import { generateId } from '@lixi/utils/util'
+import LxCollapseTransition from '@lixi/components/collapse-transition'
 
 export default defineComponent({
   name: 'LxCollapseItem',

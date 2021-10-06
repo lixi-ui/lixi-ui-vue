@@ -1,4 +1,4 @@
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 
 export interface IDescriptionsInject {
   border: boolean

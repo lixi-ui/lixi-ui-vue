@@ -1,10 +1,10 @@
 <template>
   <div
     v-show="data.ready"
-    class="el-carousel__item"
+    class="lx-carousel__item"
     :class="{
       'is-active': data.active,
-      'el-carousel__item--card': type === 'card',
+      'lx-carousel__item--card': type === 'card',
       'is-in-stage': data.inStage,
       'is-hover': data.hover,
       'is-animating': data.animating,
@@ -15,7 +15,7 @@
     <div
       v-if="type === 'card'"
       v-show="!data.active"
-      class="el-carousel__mask"
+      class="lx-carousel__mask"
     ></div>
     <slot></slot>
   </div>
@@ -33,7 +33,7 @@ import {
 } from 'vue'
 import {
   autoprefixer,
-} from '@element-plus/utils/util'
+} from '@lixi/utils/util'
 import type { CSSProperties } from 'vue'
 import type { InjectCarouselScope, ICarouselItemProps } from './carousel'
 

@@ -127,7 +127,7 @@ En plus de l'utilisation de l'attribut `title`, vous pouvez configurer les titre
 <lx-collapse accordion>
   <lx-collapse-item name="1">
     <template #title>
-      Cohérence<i class="header-icon el-icon-info"></i>
+      Cohérence<i class="header-icon lx-icon-info"></i>
     </template>
     <div>Cohérence avec la vraie vie: en accord avec les processus habituels de la vie réelle, conforme aux langages et habitudes des utilisateurs;</div>
     <div>Cohérence au sein de l'interface: tout les éléments doivent être cohérents entre eux et suivre les mêmes règles, par exemple: le style global, les icônes, la position des éléments, etc.</div>

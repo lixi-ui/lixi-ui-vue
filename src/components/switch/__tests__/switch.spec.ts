@@ -27,19 +27,19 @@ describe('Switch.vue', () => {
   test('switch with icons', () => {
     const wrapper = mount(Switch, {
       props: {
-        activeIconClass: 'el-icon-check',
-        inactiveIconClass: 'el-icon-close',
+        activeIconClass: 'lx-icon-check',
+        inactiveIconClass: 'lx-icon-close',
       },
     })
 
     const iconWrapper = wrapper.find('.lx-switch__label--left i')
-    expect(iconWrapper.classes('el-icon-close')).toBe(true)
+    expect(iconWrapper.classes('lx-icon-close')).toBe(true)
   })
 
   test('value correctly update', async () => {
     const wrapper = mount({
       components: {
-        'el-switch': Switch,
+        'lx-switch': Switch,
       },
       template: `
         <div>
@@ -70,7 +70,7 @@ describe('Switch.vue', () => {
   test('change event', async () => {
     const wrapper = mount({
       components: {
-        'el-switch': Switch,
+        'lx-switch': Switch,
       },
       template: `
         <div>
@@ -105,7 +105,7 @@ describe('Switch.vue', () => {
   test('disabled switch should not respond to user click', async () => {
     const wrapper = mount({
       components: {
-        'el-switch': Switch,
+        'lx-switch': Switch,
       },
       template: `
         <div>
@@ -129,7 +129,7 @@ describe('Switch.vue', () => {
   test('expand switch value', async () => {
     const wrapper = mount({
       components: {
-        'el-switch': Switch,
+        'lx-switch': Switch,
       },
       template: `
         <div>
@@ -156,7 +156,7 @@ describe('Switch.vue', () => {
   test('value is the single source of truth', async () => {
     const wrapper = mount({
       components: {
-        'el-switch': Switch,
+        'lx-switch': Switch,
       },
       template: `
         <div>
@@ -182,7 +182,7 @@ describe('Switch.vue', () => {
   test('model-value is the single source of truth', async () => {
     const wrapper = mount({
       components: {
-        'el-switch': Switch,
+        'lx-switch': Switch,
       },
       template: `
         <div>
@@ -208,7 +208,7 @@ describe('Switch.vue', () => {
   test('sets checkbox value', async () => {
     const wrapper = mount({
       components: {
-        'el-switch': Switch,
+        'lx-switch': Switch,
       },
       template: `
         <div>
@@ -235,7 +235,7 @@ describe('Switch.vue', () => {
   test('beforeChange function return promise', async () => {
     const wrapper = mount({
       components: {
-        'el-switch': Switch,
+        'lx-switch': Switch,
       },
       template: `
         <div>
@@ -292,7 +292,7 @@ describe('Switch.vue', () => {
   test('beforeChange function return boolean', async () => {
     const wrapper = mount({
       components: {
-        'el-switch': Switch,
+        'lx-switch': Switch,
       },
       template: `
         <div>

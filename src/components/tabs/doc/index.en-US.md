@@ -126,7 +126,7 @@ You can use named slot to customize the tab label content.
 <lx-tabs type="border-card">
   <lx-tab-pane>
     <template #label>
-      <span><i class="el-icon-date"></i> Route</span>
+      <span><i class="lx-icon-date"></i> Route</span>
     </template>
     Route
   </lx-tab-pane>

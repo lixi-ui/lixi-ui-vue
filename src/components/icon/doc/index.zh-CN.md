@@ -9,23 +9,23 @@ Element Plus 团队正在将原有组件内的 **Font Icon** 向 **SVG Icon** �
 ### SvgIcon 使用方法
 - 如果你想像用例一样**直接使用**，你需要[全局注册组件](https://v3.vuejs.org/guide/component-registration.html#global-registration)，才能够直接在项目里使用。
 
-- 若想查看所有的组件，请访问 [@element-plus/icons](https://unpkg.com/browse/@element-plus/icons@latest/lib/) 和源代码 [Github/ElementPlus/icons](https://github.com/element-plus/element-plus-icons)，或者 [SVG 图标集合](/#/zh-CN/component/icon#svg-tu-biao-ji-he)
+- 若想查看所有的组件，请访问 [@lixi/icons](https://unpkg.com/browse/@lixi/icons@latest/lib/) 和源代码 [Github/ElementPlus/icons](https://github.com/element-plus/element-plus-icons)，或者 [SVG 图标集合](/#/zh-CN/component/icon#svg-tu-biao-ji-he)
 
 ### 安装图标
 当前的图标只适用于 [Vue3](https://v3.vuejs.org)。
 #### 使用 yarn
 ```shell
-$ yarn add @element-plus/icons
+$ yarn add @lixi/icons
 ```
 
 #### 使用 npm
 ```shell
-$ npm install @element-plus/icons
+$ npm install @lixi/icons
 ```
 #### 基础用法
 
 ```html
-<!-- 用 el-icon 为 SVG 提供属性 -->
+<!-- 用 lx-icon 为 SVG 提供属性 -->
 <lx-icon :size="size" :color="color">
   <edit />
 </lx-icon>
@@ -33,7 +33,7 @@ $ npm install @element-plus/icons
 <edit />
 
 <script lang="ts">
-import { Edit } from '@element-plus/icons'
+import { Edit } from '@lixi/icons'
 
 export default defineComponent({
   components: {
@@ -121,10 +121,10 @@ export default defineComponent({
 
 :::demo
 ```html
-  <i class="el-icon-edit"></i>
-  <i class="el-icon-share"></i>
-  <i class="el-icon-delete"></i>
-  <lx-button type="primary" icon="el-icon-search">搜索</lx-button>
+  <i class="lx-icon-edit"></i>
+  <i class="lx-icon-share"></i>
+  <i class="lx-icon-delete"></i>
+  <lx-button type="primary" icon="lx-icon-search">搜索</lx-button>
 ```
 :::
 
@@ -133,8 +133,8 @@ export default defineComponent({
 <ul class="icon-list">
   <li v-for="name in $icon" :key="name">
     <span>
-      <i :class="'el-icon-' + name"></i>
-      <span class="icon-name">{{'el-icon-' + name}}</span>
+      <i :class="'lx-icon-' + name"></i>
+      <span class="icon-name">{{'lx-icon-' + name}}</span>
     </span>
   </li>
 </ul>

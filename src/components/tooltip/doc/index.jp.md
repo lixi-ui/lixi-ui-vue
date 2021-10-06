@@ -131,9 +131,9 @@
 
 基本的な使い方に加えて、自分でカスタマイズできる属性がいくつかあります。:
 
-`transition` 属性はツールチップの表示・非表示のアニメーションをカスタマイズすることができ、デフォルト値は el-fade-in-linear です。
+`transition` 属性はツールチップの表示・非表示のアニメーションをカスタマイズすることができ、デフォルト値は lx-fade-in-linear です。
 
-デフォルト値は el-faade-in-linear です。 `disabled` 属性は `tooltip` を無効にします。`true`に設定すればよいだけです。
+デフォルト値は lx-faade-in-linear です。 `disabled` 属性は `tooltip` を無効にします。`true`に設定すればよいだけです。
 
 実際、ツールチップは[Vue-popper](https://github.com/element-component/vue-popper)をベースにした拡張機能なので、Vue-popperで許可されている属性なら何でも使えます。
 
@@ -188,7 +188,7 @@
 |  model-value / v-model | ツールチップの可視性 | boolean           | — |  false |
 |  disabled       |  ツールチップが無効になっているかどうか  | boolean    | — |  false |
 |  offset        |  ツールチップのオフセット   | number    | — |  0 |
-|  transition     |  アニメーション名 | string             | — | el-fade-in-linear |
+|  transition     |  アニメーション名 | string             | — | lx-fade-in-linear |
 |  visible-arrow   |  矢印が表示されているかどうかを指定します。詳しくは、[Vue-popper](https://github.com/element-component/vue-popper)のページを参照してください。 | boolean | — | true |
 |  popper-options        | [popper.js](https://popper.js.org/documentation.html) parameters | Object            | refer to [popper.js](https://popper.js.org/documentation.html) doc | `{ boundariesElement: 'body', gpuAcceleration: false }` |
 | show-after | ミリ秒単位の出現の遅延 | number | — | 0 |

@@ -9,8 +9,8 @@ const wait = (ms = 100) =>
 const _mount = (template: string, data?: () => void, methods?: any) =>
   mount({
     components: {
-      'el-carousel': Carousel,
-      'el-carousel-item': CarouselItem,
+      'lx-carousel': Carousel,
+      'lx-carousel-item': CarouselItem,
     },
     template,
     data,

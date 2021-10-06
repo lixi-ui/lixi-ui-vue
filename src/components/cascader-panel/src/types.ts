@@ -1,6 +1,6 @@
 
 import type { VNode, InjectionKey } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 import type { default as CascaderNode } from './node'
 
 export type { CascaderNode }

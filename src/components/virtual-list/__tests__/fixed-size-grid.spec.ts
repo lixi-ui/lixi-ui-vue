@@ -1,6 +1,6 @@
 import { nextTick } from 'vue'
-import makeMount from '@element-plus/test-utils/make-mount'
-import makeScroll from '@element-plus/test-utils/make-scroll'
+import makeMount from '@lixi/test-utils/make-mount'
+import makeScroll from '@lixi/test-utils/make-scroll'
 import setupMock from '../setup-mock'
 import {
   CENTERED_ALIGNMENT,

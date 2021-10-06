@@ -234,7 +234,7 @@ popoverの中には、他のコンポーネントを入れ子にすることが�
 |  disabled       |  popoverが無効になっているかどうか  | boolean    | — |  false |
 |  visible / v-model:visible  |  popoverが表示されているかどうか  | Boolean           | — |  false |
 |  offset        |  popoverオフセット  | number           | — |  0 |
-|  transition     |  popoverトランジションアニメーション      | string             | — | el-fade-in-linear |
+|  transition     |  popoverトランジションアニメーション      | string             | — | lx-fade-in-linear |
 |  show-arrow   |  ツールチップの矢印が表示されているかどうかを指定します。詳細については [Vue-popper](https://github.com/element-component/vue-popper) | boolean | — | true |
 |  popper-options        | [popper.js](https://popper.js.org/documentation.html) のためのパラメータ | object            | please refer to [popper.js](https://popper.js.org/documentation.html) | `{ boundariesElement: 'body', gpuAcceleration: false }` |
 |  popper-class        |  popover用カスタムクラス名 | string | — | — |

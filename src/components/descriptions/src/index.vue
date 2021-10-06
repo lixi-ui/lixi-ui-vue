@@ -1,16 +1,16 @@
 <template>
-  <div class="el-descriptions">
-    <div v-if="title || extra || $slots.title || $slots.extra" class="el-descriptions__header">
-      <div class="el-descriptions__title">
+  <div class="lx-descriptions">
+    <div v-if="title || extra || $slots.title || $slots.extra" class="lx-descriptions__header">
+      <div class="lx-descriptions__title">
         <slot name="title">{{ title }}</slot>
       </div>
-      <div class="el-descriptions__extra">
+      <div class="lx-descriptions__extra">
         <slot name="extra">{{ extra }}</slot>
       </div>
     </div>
 
-    <div class="el-descriptions__body">
-      <table :class="['el-descriptions__table', {'is-bordered': border}, descriptionsSize ? `el-descriptions--${descriptionsSize}` : '']">
+    <div class="lx-descriptions__body">
+      <table :class="['lx-descriptions__table', {'is-bordered': border}, descriptionsSize ? `el-descriptions--${descriptionsSize}` : '']">
         <tbody>
           <template v-for="(row, index) in getRows()" :key="index">
             <lx-descriptions-row :row="row" />
@@ -23,13 +23,13 @@
 
 <script lang="ts">
 import { computed, defineComponent, provide } from 'vue'
-import { useGlobalConfig } from '@element-plus/utils/util'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { useGlobalConfig } from '@lixi/utils/util'
+import { isValidComponentSize } from '@lixi/utils/validators'
 import DescriptionsRow from './descriptions-row.vue'
 import { elDescriptionsKey } from './token'
 
 import type { PropType } from 'vue'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 
 export default defineComponent({
   name: 'LxDescriptions',

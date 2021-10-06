@@ -1,42 +1,42 @@
 <template>
   <div
-    class="el-picker-panel el-date-range-picker"
+    class="lx-picker-panel lx-date-range-picker"
     :class="[{
       'has-sidebar': $slots.sidebar || hasShortcuts,
       'has-time': showTime
     }]"
   >
-    <div class="el-picker-panel__body-wrapper">
-      <slot name="sidebar" class="el-picker-panel__sidebar"></slot>
-      <div v-if="hasShortcuts" class="el-picker-panel__sidebar">
+    <div class="lx-picker-panel__body-wrapper">
+      <slot name="sidebar" class="lx-picker-panel__sidebar"></slot>
+      <div v-if="hasShortcuts" class="lx-picker-panel__sidebar">
         <button
           v-for="(shortcut, key) in shortcuts"
           :key="key"
           type="button"
-          class="el-picker-panel__shortcut"
+          class="lx-picker-panel__shortcut"
           @click="handleShortcutClick(shortcut)"
         >
           {{ shortcut.text }}
         </button>
       </div>
-      <div class="el-picker-panel__body">
-        <div v-if="showTime" class="el-date-range-picker__time-header">
-          <span class="el-date-range-picker__editors-wrap">
-            <span class="el-date-range-picker__time-picker-wrap">
+      <div class="lx-picker-panel__body">
+        <div v-if="showTime" class="lx-date-range-picker__time-header">
+          <span class="lx-date-range-picker__editors-wrap">
+            <span class="lx-date-range-picker__time-picker-wrap">
               <lx-input
                 size="small"
                 :disabled="rangeState.selecting"
                 :placeholder="t('el.datepicker.startDate')"
-                class="el-date-range-picker__editor"
+                class="lx-date-range-picker__editor"
                 :model-value="minVisibleDate"
                 @input="val => handleDateInput(val, 'min')"
                 @change="val => handleDateChange(val, 'min')"
               />
             </span>
-            <span v-clickoutside="handleMinTimeClose" class="el-date-range-picker__time-picker-wrap">
+            <span v-clickoutside="handleMinTimeClose" class="lx-date-range-picker__time-picker-wrap">
               <lx-input
                 size="small"
-                class="el-date-range-picker__editor"
+                class="lx-date-range-picker__editor"
                 :disabled="rangeState.selecting"
                 :placeholder="t('el.datepicker.startTime')"
                 :model-value="minVisibleTime"
@@ -54,12 +54,12 @@
               />
             </span>
           </span>
-          <span class="el-icon-arrow-right"></span>
-          <span class="el-date-range-picker__editors-wrap is-right">
-            <span class="el-date-range-picker__time-picker-wrap">
+          <span class="lx-icon-arrow-right"></span>
+          <span class="lx-date-range-picker__editors-wrap is-right">
+            <span class="lx-date-range-picker__time-picker-wrap">
               <lx-input
                 size="small"
-                class="el-date-range-picker__editor"
+                class="lx-date-range-picker__editor"
                 :disabled="rangeState.selecting"
                 :placeholder="t('el.datepicker.endDate')"
                 :model-value="maxVisibleDate"
@@ -68,10 +68,10 @@
                 @change="val => handleDateChange(val, 'max')"
               />
             </span>
-            <span v-clickoutside="handleMaxTimeClose" class="el-date-range-picker__time-picker-wrap">
+            <span v-clickoutside="handleMaxTimeClose" class="lx-date-range-picker__time-picker-wrap">
               <lx-input
                 size="small"
-                class="el-date-range-picker__editor"
+                class="lx-date-range-picker__editor"
                 :disabled="rangeState.selecting"
                 :placeholder="t('el.datepicker.endTime')"
                 :model-value="maxVisibleTime"
@@ -91,16 +91,16 @@
             </span>
           </span>
         </div>
-        <div class="el-picker-panel__content el-date-range-picker__content is-left">
-          <div class="el-date-range-picker__header">
+        <div class="lx-picker-panel__content lx-date-range-picker__content is-left">
+          <div class="lx-date-range-picker__header">
             <button
               type="button"
-              class="el-picker-panel__icon-btn el-icon-d-arrow-left"
+              class="lx-picker-panel__icon-btn lx-icon-d-arrow-left"
               @click="leftPrevYear"
             ></button>
             <button
               type="button"
-              class="el-picker-panel__icon-btn el-icon-arrow-left"
+              class="lx-picker-panel__icon-btn lx-icon-arrow-left"
               @click="leftPrevMonth"
             ></button>
             <button
@@ -108,7 +108,7 @@
               type="button"
               :disabled="!enableYearArrow"
               :class="{ 'is-disabled': !enableYearArrow }"
-              class="el-picker-panel__icon-btn el-icon-d-arrow-right"
+              class="lx-picker-panel__icon-btn lx-icon-d-arrow-right"
               @click="leftNextYear"
             ></button>
             <button
@@ -116,7 +116,7 @@
               type="button"
               :disabled="!enableMonthArrow"
               :class="{ 'is-disabled': !enableMonthArrow }"
-              class="el-picker-panel__icon-btn el-icon-arrow-right"
+              class="lx-picker-panel__icon-btn lx-icon-arrow-right"
               @click="leftNextMonth"
             ></button>
             <div>{{ leftLabel }}</div>
@@ -134,14 +134,14 @@
             @select="onSelect"
           />
         </div>
-        <div class="el-picker-panel__content el-date-range-picker__content is-right">
-          <div class="el-date-range-picker__header">
+        <div class="lx-picker-panel__content lx-date-range-picker__content is-right">
+          <div class="lx-date-range-picker__header">
             <button
               v-if="unlinkPanels"
               type="button"
               :disabled="!enableYearArrow"
               :class="{ 'is-disabled': !enableYearArrow }"
-              class="el-picker-panel__icon-btn el-icon-d-arrow-left"
+              class="lx-picker-panel__icon-btn lx-icon-d-arrow-left"
               @click="rightPrevYear"
             ></button>
             <button
@@ -149,17 +149,17 @@
               type="button"
               :disabled="!enableMonthArrow"
               :class="{ 'is-disabled': !enableMonthArrow }"
-              class="el-picker-panel__icon-btn el-icon-arrow-left"
+              class="lx-picker-panel__icon-btn lx-icon-arrow-left"
               @click="rightPrevMonth"
             ></button>
             <button
               type="button"
-              class="el-picker-panel__icon-btn el-icon-d-arrow-right"
+              class="lx-picker-panel__icon-btn lx-icon-d-arrow-right"
               @click="rightNextYear"
             ></button>
             <button
               type="button"
-              class="el-picker-panel__icon-btn el-icon-arrow-right"
+              class="lx-picker-panel__icon-btn lx-icon-arrow-right"
               @click="rightNextMonth"
             ></button>
             <div>{{ rightLabel }}</div>
@@ -179,12 +179,12 @@
         </div>
       </div>
     </div>
-    <div v-if="showTime" class="el-picker-panel__footer">
+    <div v-if="showTime" class="lx-picker-panel__footer">
       <lx-button
         v-if="clearable"
         size="mini"
         type="text"
-        class="el-picker-panel__link-btn"
+        class="lx-picker-panel__link-btn"
         @click="handleClear"
       >
         {{ t('el.datepicker.clear') }}
@@ -192,7 +192,7 @@
       <lx-button
         plain
         size="mini"
-        class="el-picker-panel__link-btn"
+        class="lx-picker-panel__link-btn"
         :disabled="btnDisabled"
         @click="handleConfirm(false)"
       >
@@ -205,12 +205,12 @@
 <script lang="ts">
 import { computed, defineComponent, inject, ref, watch } from 'vue'
 import dayjs from 'dayjs'
-import LxButton from '@element-plus/components/button'
-import { ClickOutside } from '@element-plus/directives'
-import { useLocaleInject } from '@element-plus/hooks'
-import LxInput from '@element-plus/components/input'
-import { extractDateFormat, extractTimeFormat, TimePickPanel } from '@element-plus/components/time-picker'
-import { isValidDatePickType } from '@element-plus/utils/validators'
+import LxButton from '@lixi/components/button'
+import { ClickOutside } from '@lixi/directives'
+import { useLocaleInject } from '@lixi/hooks'
+import LxInput from '@lixi/components/input'
+import { extractDateFormat, extractTimeFormat, TimePickPanel } from '@lixi/components/time-picker'
+import { isValidDatePickType } from '@lixi/utils/validators'
 import DateTable from './basic-date-table.vue'
 
 import type { PropType } from 'vue'

@@ -1,9 +1,9 @@
 <template>
-  <span class="el-pagination__jump">
+  <span class="lx-pagination__jump">
     {{ t('el.pagination.goto') }}
     <lx-input
       size="mini"
-      class="el-pagination__editor is-in-pagination"
+      class="lx-pagination__editor is-in-pagination"
       :min="1"
       :max="pageCount"
       :disabled="disabled"
@@ -22,11 +22,11 @@ import {
   defineComponent,
   ref,
 } from 'vue'
-import { useLocaleInject } from '@element-plus/hooks'
-import LxInput from '@element-plus/components/input'
+import { useLocaleInject } from '@lixi/hooks'
+import LxInput from '@lixi/components/input'
 import { usePagination } from './usePagination'
 
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 
 export default defineComponent({
   components: {

@@ -10,10 +10,10 @@ import {
   withCtx,
   withDirectives,
 } from 'vue'
-import { removeClass } from '@element-plus/utils/dom'
+import { removeClass } from '@lixi/utils/dom'
 
 import type { VNode } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 import type { ILoadingCreateComponentParams, ILoadingInstance } from './loading.type'
 
 export function createLoadingComponent({
@@ -41,12 +41,12 @@ export function createLoadingComponent({
       let loadingNumber: number | string = target.getAttribute('loading-number')
       loadingNumber = Number.parseInt(loadingNumber) - 1
       if (!loadingNumber) {
-        removeClass(target, 'el-loading-parent--relative')
+        removeClass(target, 'lx-loading-parent--relative')
         target.removeAttribute('loading-number')
       } else {
         target.setAttribute('loading-number', loadingNumber.toString())
       }
-      removeClass(target, 'el-loading-parent--hidden')
+      removeClass(target, 'lx-loading-parent--hidden')
     }
     if (vm.el && vm.el.parentNode) {
       vm.el.parentNode.removeChild(vm.el)
@@ -100,10 +100,10 @@ export function createLoadingComponent({
 
       const noSpinner = h('i', { class: this.spinner })
 
-      const spinnerText = h('p', { class: 'el-loading-text' }, [this.text])
+      const spinnerText = h('p', { class: 'lx-loading-text' }, [this.text])
 
       return h(Transition, {
-        name: 'el-loading-fade',
+        name: 'lx-loading-fade',
         onAfterLeave: this.handleAfterLeave,
       }, {
         default: withCtx(() => [withDirectives(createVNode('div', {
@@ -111,13 +111,13 @@ export function createLoadingComponent({
             backgroundColor: this.background || '',
           },
           class: [
-            'el-loading-mask',
+            'lx-loading-mask',
             this.customClass,
             this.fullscreen ? 'is-fullscreen' : '',
           ],
         }, [
           h('div', {
-            class: 'el-loading-spinner',
+            class: 'lx-loading-spinner',
           }, [
             !this.spinner ? spinner : noSpinner,
             this.text ? spinnerText : null,

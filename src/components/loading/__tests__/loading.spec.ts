@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { sleep } from '@element-plus/test-utils'
+import { sleep } from '@lixi/test-utils'
 import Loading from '../src/index'
 import LxInput from '../../input'
 import vLoading from '../src/directive'
@@ -140,7 +140,7 @@ describe('Loading', () => {
     })
     const vm = wrapper.vm
     await nextTick()
-    expect(document.body.classList.contains('el-loading-parent--hidden')).toBeTruthy()
+    expect(document.body.classList.contains('lx-loading-parent--hidden')).toBeTruthy()
     vm.loading = false
     document.body.removeChild(document.querySelector('.lx-loading-mask'))
   })
@@ -216,10 +216,10 @@ describe('Loading', () => {
     expect(mask).toBeTruthy()
     expect(mask.parentNode).toEqual(container)
 
-    expect(container.classList.contains('el-loading-parent--relative')).toBeTruthy()
+    expect(container.classList.contains('lx-loading-parent--relative')).toBeTruthy()
     loadingInstance.close()
     await sleep(500)
-    expect(container.classList.contains('el-loading-parent--relative')).toBeFalsy()
+    expect(container.classList.contains('lx-loading-parent--relative')).toBeFalsy()
   })
 
   test('body service', async () => {
@@ -255,7 +255,7 @@ describe('Loading', () => {
 
   test('lock service', async () => {
     loadingInstance = Loading({ lock: true })
-    expect(document.body.classList.contains('el-loading-parent--hidden')).toBeTruthy()
+    expect(document.body.classList.contains('lx-loading-parent--hidden')).toBeTruthy()
   })
 
   test('text service', async () => {
@@ -266,7 +266,7 @@ describe('Loading', () => {
   })
 
   test('customClass service', async () => {
-    loadingInstance = Loading({ customClass: 'el-loading-custom-class' })
+    loadingInstance = Loading({ customClass: 'lx-loading-custom-class' })
     const customClass = document.querySelector('.lx-loading-custom-class')
     expect(customClass).toBeTruthy()
   })
@@ -281,7 +281,7 @@ describe('Loading', () => {
       },
       template: `<lx-input v-loading="true">
       <template #append>
-        <i class="el-icon-question"></i>
+        <i class="lx-icon-question"></i>
       </template>
       </lx-input>`,
     })

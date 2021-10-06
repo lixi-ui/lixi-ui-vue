@@ -1,5 +1,5 @@
 <template>
-  <span class="el-pagination__total">
+  <span class="lx-pagination__total">
     {{
       t('el.pagination.total', {
         total,
@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useLocaleInject } from '@element-plus/hooks'
+import { useLocaleInject } from '@lixi/hooks'
 
 export default defineComponent({
   name: 'Total',

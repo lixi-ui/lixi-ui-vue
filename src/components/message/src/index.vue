@@ -1,10 +1,10 @@
 <template>
-  <transition name="el-message-fade" @before-leave="onClose" @after-leave="$emit('destroy')">
+  <transition name="lx-message-fade" @before-leave="onClose" @after-leave="$emit('destroy')">
     <div
       v-show="visible"
       :id="id"
       :class="[
-        'el-message',
+        'lx-message',
         type && !iconClass ? `el-message--${type}` : '',
         center ? 'is-center' : '',
         showClose ? 'is-closable' : '',
@@ -15,25 +15,25 @@
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
     >
-      <i v-if="type || iconClass" :class="['el-message__icon', typeClass, iconClass]"></i>
+      <i v-if="type || iconClass" :class="['lx-message__icon', typeClass, iconClass]"></i>
       <slot>
-        <p v-if="!dangerouslyUseHTMLString" class="el-message__content">{{ message }}</p>
+        <p v-if="!dangerouslyUseHTMLString" class="lx-message__content">{{ message }}</p>
         <!-- Caution here, message could've been compromised, never use user's input as message -->
         <!--  eslint-disable-next-line -->
-        <p v-else class="el-message__content" v-html="message"></p>
+        <p v-else class="lx-message__content" v-html="message"></p>
       </slot>
-      <div v-if="showClose" class="el-message__closeBtn el-icon-close" @click.stop="close"></div>
+      <div v-if="showClose" class="lx-message__closeBtn lx-icon-close" @click.stop="close"></div>
     </div>
   </transition>
 </template>
 <script lang="ts">
 import { defineComponent, computed, ref, onMounted, onBeforeUnmount } from 'vue'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { on, off } from '@element-plus/utils/dom'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { on, off } from '@lixi/utils/dom'
 
 // MessageVM is an alias of vue.VNode
 import type { PropType } from 'vue'
-import type { Indexable } from '@element-plus/utils/types'
+import type { Indexable } from '@lixi/utils/types'
 import type { MessageVM } from './types'
 const TypeMap: Indexable<string> = {
   success: 'success',

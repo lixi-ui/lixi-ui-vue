@@ -1030,7 +1030,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 ### Clearable
 
-Définissez l'attribut `clearable` pour` el-cascader` et une icône claire apparaîtra une fois sélectionnée et survolée
+Définissez l'attribut `clearable` pour` lx-cascader` et une icône claire apparaîtra une fois sélectionnée et survolée
 
 :::demo
 ```html
@@ -2783,7 +2783,7 @@ Charge dynamiquement ses noeuds enfants lorsque un noeud est sélectionné.
 
 Rechercher et sélectionner des options avec un mot clé.
 
-:::demo Ajouter `filterable` à` el-cascader` permet le filtrage. Cascader recherchera les noeuds dont l'étiquette ou l'étiquette du parent (selon `show-all-levels`) inclut le mot-clé input. Bien sûr, vous pouvez personnaliser la logique de recherche en utilisant `filter-method` qui accepte une fonction, le premier paramètre est `node`, le second est `keyword` et doit renvoyer une valeur booléenne indiquant si le résultat est positif.
+:::demo Ajouter `filterable` à` lx-cascader` permet le filtrage. Cascader recherchera les noeuds dont l'étiquette ou l'étiquette du parent (selon `show-all-levels`) inclut le mot-clé input. Bien sûr, vous pouvez personnaliser la logique de recherche en utilisant `filter-method` qui accepte une fonction, le premier paramètre est `node`, le second est `keyword` et doit renvoyer une valeur booléenne indiquant si le résultat est positif.
 ```html
 <div class="block">
   <span class="demonstration">Filtrable (Sélection unique)</span>

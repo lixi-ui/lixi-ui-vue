@@ -1,6 +1,6 @@
 <template>
-  <div class="el-transfer-panel">
-    <p class="el-transfer-panel__header">
+  <div class="lx-transfer-panel">
+    <p class="lx-transfer-panel__header">
       <lx-checkbox
         v-model="allChecked"
         :indeterminate="isIndeterminate"
@@ -12,12 +12,12 @@
     </p>
 
     <div
-      :class="['el-transfer-panel__body', hasFooter ? 'is-with-footer' : '']"
+      :class="['lx-transfer-panel__body', hasFooter ? 'is-with-footer' : '']"
     >
       <lx-input
         v-if="filterable"
         v-model="query"
-        class="el-transfer-panel__filter"
+        class="lx-transfer-panel__filter"
         size="small"
         :placeholder="placeholder"
         @mouseenter="inputHover = true"
@@ -25,7 +25,7 @@
       >
         <template #prefix>
           <i
-            :class="['el-input__icon', 'el-icon-' + inputIcon]"
+            :class="['lx-input__icon', 'lx-icon-' + inputIcon]"
             @click="clearQuery"
           ></i>
         </template>
@@ -34,12 +34,12 @@
         v-show="!hasNoMatch && data.length > 0"
         v-model="checked"
         :class="{ 'is-filterable': filterable }"
-        class="el-transfer-panel__list"
+        class="lx-transfer-panel__list"
       >
         <lx-checkbox
           v-for="item in filteredData"
           :key="item[keyProp]"
-          class="el-transfer-panel__item"
+          class="lx-transfer-panel__item"
           :label="item[keyProp]"
           :disabled="item[disabledProp]"
         >
@@ -48,11 +48,11 @@
           />
         </lx-checkbox>
       </lx-checkbox-group>
-      <p v-show="hasNoMatch || data.length === 0" class="el-transfer-panel__empty">
+      <p v-show="hasNoMatch || data.length === 0" class="lx-transfer-panel__empty">
         {{ hasNoMatch ? t('el.transfer.noMatch') : t('el.transfer.noData') }}
       </p>
     </div>
-    <p v-if="hasFooter" class="el-transfer-panel__footer">
+    <p v-if="hasFooter" class="lx-transfer-panel__footer">
       <slot></slot>
     </p>
   </div>
@@ -60,9 +60,9 @@
 
 <script lang="ts">
 import { computed, defineComponent, reactive, toRefs } from 'vue'
-import { useLocaleInject } from '@element-plus/hooks'
-import { LxCheckbox, LxCheckboxGroup } from '@element-plus/components/checkbox'
-import LxInput from '@element-plus/components/input'
+import { useLocaleInject } from '@lixi/hooks'
+import { LxCheckbox, LxCheckboxGroup } from '@lixi/components/checkbox'
+import LxInput from '@lixi/components/input'
 import { useCheck, useCheckProps, CHECKED_CHANGE_EVENT } from './useCheck'
 
 export default defineComponent({

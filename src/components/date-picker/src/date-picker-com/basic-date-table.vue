@@ -2,7 +2,7 @@
   <table
     cellspacing="0"
     cellpadding="0"
-    class="el-date-table"
+    class="lx-date-table"
     :class="{ 'is-week-mode': selectionMode === 'week' }"
     @click="handleClick"
     @mousemove="handleMouseMove"
@@ -15,7 +15,7 @@
       <tr
         v-for="(row, key) in rows"
         :key="key"
-        class="el-date-table__row"
+        class="lx-date-table__row"
         :class="{ current: isWeekActive(row[1]) }"
       >
         <td
@@ -41,10 +41,10 @@ import {
   ref,
 } from 'vue'
 import dayjs from 'dayjs'
-import { useLocaleInject } from '@element-plus/hooks'
+import { useLocaleInject } from '@lixi/hooks'
 import {
   coerceTruthyValueToArray,
-} from '@element-plus/utils/util'
+} from '@lixi/utils/util'
 
 import { PropType } from 'vue'
 import type { Dayjs } from 'dayjs'

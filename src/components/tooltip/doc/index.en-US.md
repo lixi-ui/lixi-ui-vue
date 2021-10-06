@@ -131,7 +131,7 @@ Display multiple lines of text and set their format.
 
 In addition to basic usages, there are some attributes that allow you to customize your own:
 
-`transition` attribute allows you to customize the animation in which the tooltip shows or hides, and the default value is el-fade-in-linear.
+`transition` attribute allows you to customize the animation in which the tooltip shows or hides, and the default value is lx-fade-in-linear.
 
 `disabled` attribute allows you to disable `tooltip`. You just need set it to `true`.
 
@@ -188,7 +188,7 @@ Disabled form elements are not supported for Tooltip, more information can be fo
 |  model-value / v-model | visibility of Tooltip | boolean           | — |  false |
 |  disabled       |  whether Tooltip is disabled  | boolean    | — |  false |
 |  offset        |  offset of the Tooltip   | number    | — |  0 |
-|  transition     |  animation name | string             | — | el-fade-in-linear |
+|  transition     |  animation name | string             | — | lx-fade-in-linear |
 |  visible-arrow   |  whether an arrow is displayed. For more information, check [Vue-popper](https://github.com/element-component/vue-popper) page | boolean | — | true |
 |  popper-options        | [popper.js](https://popper.js.org/documentation.html) parameters | Object            | refer to [popper.js](https://popper.js.org/documentation.html) doc | `{ boundariesElement: 'body', gpuAcceleration: false }` |
 | show-after | delay of appearance, in millisecond | number | — | 0 |

@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
-import { sleep } from '@element-plus/test-utils'
-import { rAF } from '@element-plus/test-utils/tick'
+import { sleep } from '@lixi/test-utils'
+import { rAF } from '@lixi/test-utils/tick'
 
 import Menu from '../src/menu.vue'
 import MenuGroup from '../src/menuItemGroup.vue'
@@ -11,10 +11,10 @@ import SubMenu from '../src/submenu.vue'
 const _mount = (template: string, options = {}) =>
   mount({
     components: {
-      'el-menu': Menu,
-      'el-menu-item-group': MenuGroup,
-      'el-menu-item': MenuItem,
-      'el-sub-menu': SubMenu,
+      'lx-menu': Menu,
+      'lx-menu-item-group': MenuGroup,
+      'lx-menu-item': MenuItem,
+      'lx-sub-menu': SubMenu,
     },
     template,
     ...options,
@@ -107,11 +107,11 @@ describe('menu', () => {
           <lx-menu
             ref="menu"
             default-active="2"
-            class="el-menu-vertical-demo"
+            class="lx-menu-vertical-demo"
           >
             <lx-sub-menu index="1">
               <template #title>
-                <i class="el-icon-location"></i>
+                <i class="lx-icon-location"></i>
                 <span>导航一</span>
               </template>
               <lx-menu-item-group>
@@ -128,7 +128,7 @@ describe('menu', () => {
               </lx-sub-menu>
             </lx-sub-menu>
             <lx-menu-item index="2">
-              <i class="el-icon-menu"></i>
+              <i class="lx-icon-menu"></i>
               <template #title>导航二</template>
             </lx-menu-item>
           </lx-menu>
@@ -389,7 +389,7 @@ describe('other', () => {
         <lx-menu-item index="3">订单管理</lx-menu-item>
       </lx-menu>`,
     )
-    expect(wrapper.classes()).toContain('el-menu--horizontal')
+    expect(wrapper.classes()).toContain('lx-menu--horizontal')
     const submenu = await wrapper.findComponent({ ref: 'submenu' })
 
     submenu.trigger('mouseenter')
@@ -404,8 +404,8 @@ describe('other', () => {
     const wrapper = _mount(
       `<lx-menu mode="vertical" default-active="1">
         <lx-menu-item-group title="分组一" ref="group1">
-          <lx-menu-item index="1"><i class="el-icon-message"></i>导航一</lx-menu-item>
-          <lx-menu-item index="2"><i class="el-icon-message"></i>导航二</lx-menu-item>
+          <lx-menu-item index="1"><i class="lx-icon-message"></i>导航一</lx-menu-item>
+          <lx-menu-item index="2"><i class="lx-icon-message"></i>导航二</lx-menu-item>
         </lx-menu-item-group>
         <lx-sub-menu index="5">
           <template slot="title">导航五</template>

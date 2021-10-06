@@ -22,7 +22,7 @@ export default defineComponent({
   },
   render() {
     return h('div', {
-      class: 'el-slider__marks-text',
+      class: 'lx-slider__marks-text',
       style: this.mark?.style,
     }, this.label)
   },

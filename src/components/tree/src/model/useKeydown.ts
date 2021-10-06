@@ -1,30 +1,33 @@
 import { onMounted, onUpdated, onBeforeUnmount, watch, shallowRef } from 'vue'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { on, off } from '@element-plus/utils/dom'
+// import { EVENT_CODE } from '@lixi/utils/aria.ts'
+import { EVENT_CODE } from '../../../../utils/aria.ts';
+// import { on, off } from '@lixi/utils/dom.ts'
+import { on, off } from '../../../../utils/dom.ts'
 import TreeStore from './tree-store'
 
 import type { Ref } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+// import type { Nullable } from '@lixi/utils/types'
+import type { Nullable } from '../../../../utils/types'
 
 interface UseKeydownOption {
-  el$: Ref<HTMLElement>
+   lx$: Ref<HTMLElement>
 }
-export function useKeydown({ el$ }: UseKeydownOption, store: Ref<TreeStore>) {
+export function useKeydown({  lx$ }: UseKeydownOption, store: Ref<TreeStore>) {
   const treeItems = shallowRef<Nullable<HTMLElement>[]>([])
   const checkboxItems = shallowRef<Nullable<HTMLElement>[]>([])
 
   onMounted(() => {
     initTabIndex()
-    on(el$.value, 'keydown', handleKeydown)
+    on( lx$.value, 'keydown', handleKeydown)
   })
 
   onBeforeUnmount(() => {
-    off(el$.value, 'keydown', handleKeydown)
+    off( lx$.value, 'keydown', handleKeydown)
   })
 
   onUpdated(() => {
-    treeItems.value = Array.from(el$.value.querySelectorAll('[role=treeitem]'))
-    checkboxItems.value = Array.from(el$.value.querySelectorAll('input[type=checkbox]'))
+    treeItems.value = Array.from( lx$.value.querySelectorAll('[role=treeitem]'))
+    checkboxItems.value = Array.from( lx$.value.querySelectorAll('input[type=checkbox]'))
   })
 
   watch(checkboxItems, val => {
@@ -35,9 +38,9 @@ export function useKeydown({ el$ }: UseKeydownOption, store: Ref<TreeStore>) {
 
   const handleKeydown = (ev: KeyboardEvent): void => {
     const currentItem = ev.target as HTMLElement
-    if (currentItem.className.indexOf('el-tree-node') === -1) return
+    if (currentItem.className.indexOf('lx-tree-node') === -1) return
     const code = ev.code
-    treeItems.value = Array.from(el$.value.querySelectorAll('.is-focusable[role=treeitem]'))
+    treeItems.value = Array.from( lx$.value.querySelectorAll('.is-focusable[role=treeitem]'))
     const currentIndex = treeItems.value.indexOf(currentItem)
     let nextIndex
     if ([EVENT_CODE.up, EVENT_CODE.down].indexOf(code) > -1) {
@@ -85,9 +88,9 @@ export function useKeydown({ el$ }: UseKeydownOption, store: Ref<TreeStore>) {
   }
 
   const initTabIndex = (): void => {
-    treeItems.value = Array.from(el$.value.querySelectorAll('.is-focusable[role=treeitem]'))
-    checkboxItems.value = Array.from(el$.value.querySelectorAll('input[type=checkbox]'))
-    const checkedItem = el$.value.querySelectorAll('.is-checked[role=treeitem]')
+    treeItems.value = Array.from( lx$.value.querySelectorAll('.is-focusable[role=treeitem]'))
+    checkboxItems.value = Array.from( lx$.value.querySelectorAll('input[type=checkbox]'))
+    const checkedItem =  lx$.value.querySelectorAll('.is-checked[role=treeitem]')
     if (checkedItem.length) {
       checkedItem[0].setAttribute('tabindex', '0')
       return

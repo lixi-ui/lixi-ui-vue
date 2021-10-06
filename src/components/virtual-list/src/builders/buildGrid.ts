@@ -12,9 +12,9 @@ import {
 import { hasOwn } from '@vue/shared'
 import memo from 'lodash/memoize'
 
-import { isNumber, isString, $ } from '@element-plus/utils/util'
-import isServer from '@element-plus/utils/isServer'
-import getScrollBarWidth from '@element-plus/utils/scrollbar-width'
+import { isNumber, isString, $ } from '@lixi/utils/util'
+import isServer from '@lixi/utils/isServer'
+import getScrollBarWidth from '@lixi/utils/scrollbar-width'
 
 import { getScrollDir, getRTLOffsetType, isRTL } from '../utils'
 import {

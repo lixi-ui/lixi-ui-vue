@@ -1,7 +1,7 @@
 <template>
   <span
     :class="{
-      'el-check-tag': true,
+      'lx-check-tag': true,
       'is-checked': checked,
     }"
     @click="onChange"

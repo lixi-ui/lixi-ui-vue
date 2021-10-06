@@ -1,6 +1,6 @@
 import type { PropType } from 'vue'
 import type { Placement, PositioningStrategy, Instance as PopperInstance, Options } from '@popperjs/core'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 
 export enum Effect {
   DARK = 'dark',
@@ -131,7 +131,7 @@ export default {
   },
   transition: {
     type: String,
-    default: 'el-fade-in-linear',
+    default: 'lx-fade-in-linear',
   },
   trigger: {
     type: [String, Array] as PropType<Trigger>,

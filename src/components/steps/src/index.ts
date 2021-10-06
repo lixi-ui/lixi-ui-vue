@@ -2,7 +2,7 @@ import Steps from './src/index.vue'
 import Step from './src/item.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Steps.install = (app: App): void => {
   app.component(Steps.name, Steps)

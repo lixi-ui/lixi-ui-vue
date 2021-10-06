@@ -123,8 +123,8 @@ Can pick an arbitrary time range.
 | format | format of the displayed value in the input box | string | see [date formats](#/en-US/component/date-picker#date-formats) | HH:mm:ss |
 | default-value | optional, default date of the calendar | Date for TimePicker, string for TimeSelect | anything accepted by `new Date()` for TimePicker, selectable value for TimeSelect | — |
 | name | same as `name` in native input | string | — | — |
-| prefix-icon | Custom prefix icon class | string | — | el-icon-time |
-| clear-icon | Custom clear icon class | string | — | el-icon-circle-close |
+| prefix-icon | Custom prefix icon class | string | — | lx-icon-time |
+| clear-icon | Custom clear icon class | string | — | lx-icon-circle-close |
 | disabledHours | To specify the array of hours that cannot be selected | function | — | — |
 | disabledMinutes | To specify the array of minutes that cannot be selected | function(selectedHour) | — | — |
 | disabledSeconds | To specify the array of seconds that cannot be selected | function(selectedHour, selectedMinute) | — | — |

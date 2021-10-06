@@ -6,7 +6,7 @@
 
 可以选择任意时间
 
-:::demo 使用 el-time-picker 标签，通过 `disabledHours` `disabledMinutes` 和 `disabledSeconds` 限制可选时间范围。提供了两种交互方式：默认情况下通过鼠标滚轮进行选择，打开`arrow-control`属性则通过界面上的箭头进行选择。
+:::demo 使用 lx-time-picker 标签，通过 `disabledHours` `disabledMinutes` 和 `disabledSeconds` 限制可选时间范围。提供了两种交互方式：默认情况下通过鼠标滚轮进行选择，打开`arrow-control`属性则通过界面上的箭头进行选择。
 ```html
 <template>
   <lx-time-picker
@@ -124,8 +124,8 @@
 | format | 显示在输入框中的格式 | string | 见[日期格式](#/zh-CN/component/date-picker#ri-qi-ge-shi) | HH:mm:ss |
 | default-value | 可选，选择器打开时默认显示的时间 | Date(TimePicker) / string(TimeSelect) | 可被`new Date()`解析(TimePicker) / 可选值(TimeSelect) | — |
 | name | 原生属性 | string | — | — |
-| prefix-icon | 自定义头部图标的类名 | string | — | el-icon-time |
-| clear-icon | 自定义清空图标的类名 | string | — | el-icon-circle-close |
+| prefix-icon | 自定义头部图标的类名 | string | — | lx-icon-time |
+| clear-icon | 自定义清空图标的类名 | string | — | lx-icon-circle-close |
 | disabled-hours | 禁止选择部分小时选项 | function | — | — |
 | disabled-minutes | 禁止选择部分分钟选项 | function(selectedHour) | — | — |
 | disabled-seconds | 禁止选择部分秒选项 | function(selectedHour, selectedMinute) | — | — |

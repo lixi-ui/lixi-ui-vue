@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-switch"
+    class="lx-switch"
     :class="{ 'is-disabled': switchDisabled, 'is-checked': checked }"
     role="switch"
     :aria-checked="checked"
@@ -10,7 +10,7 @@
     <input
       :id="id"
       ref="input"
-      class="el-switch__input"
+      class="lx-switch__input"
       type="checkbox"
       :name="name"
       :true-value="activeValue"
@@ -21,19 +21,19 @@
     >
     <span
       v-if="inactiveIconClass || inactiveText"
-      :class="['el-switch__label', 'el-switch__label--left', !checked ? 'is-active' : '']"
+      :class="['lx-switch__label', 'lx-switch__label--left', !checked ? 'is-active' : '']"
     >
       <i v-if="inactiveIconClass" :class="[inactiveIconClass]"></i>
       <span v-if="!inactiveIconClass && inactiveText" :aria-hidden="checked">{{ inactiveText }}</span>
     </span>
-    <span ref="core" class="el-switch__core" :style="{ 'width': (width || 40) + 'px' }">
-      <div class="el-switch__action">
-        <i v-if="loading" class="el-icon-loading"></i>
+    <span ref="core" class="lx-switch__core" :style="{ 'width': (width || 40) + 'px' }">
+      <div class="lx-switch__action">
+        <i v-if="loading" class="lx-icon-loading"></i>
       </div>
     </span>
     <span
       v-if="activeIconClass || activeText"
-      :class="['el-switch__label', 'el-switch__label--right', checked ? 'is-active' : '']"
+      :class="['lx-switch__label', 'lx-switch__label--right', checked ? 'is-active' : '']"
     >
       <i v-if="activeIconClass" :class="[activeIconClass]"></i>
       <span v-if="!activeIconClass && activeText" :aria-hidden="!checked">{{ activeText }}</span>
@@ -43,12 +43,12 @@
 <script lang='ts'>
 import { defineComponent, computed, onMounted, ref, inject, nextTick, watch } from 'vue'
 import { isPromise } from '@vue/shared'
-import { elFormKey, elFormItemKey } from '@element-plus/tokens'
-import { isBool } from '@element-plus/utils/util'
-import throwError, { warn } from '@element-plus/utils/error'
+import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { isBool } from '@lixi/utils/util'
+import throwError, { warn } from '@lixi/utils/error'
 
 import type { PropType } from 'vue'
-import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
 
 
 type ValueType = boolean | string | number;

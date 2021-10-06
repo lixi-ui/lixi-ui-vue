@@ -1,4 +1,4 @@
-import makeMount from '@element-plus/test-utils/make-mount'
+import makeMount from '@lixi/test-utils/make-mount'
 import Empty from '../src/index.vue'
 
 const AXIOM = 'Rem is the best girl'

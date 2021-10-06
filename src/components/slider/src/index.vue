@@ -1,8 +1,8 @@
 <template>
   <div
     ref="sliderWrapper"
-    class="el-slider"
-    :class="{ 'is-vertical': vertical, 'el-slider--with-input': showInput }"
+    class="lx-slider"
+    :class="{ 'is-vertical': vertical, 'lx-slider--with-input': showInput }"
     role="slider"
     :aria-valuemin="min"
     :aria-valuemax="max"
@@ -13,7 +13,7 @@
       v-if="showInput && !range"
       ref="input"
       v-model="firstValue"
-      class="el-slider__input"
+      class="lx-slider__input"
       :step="step"
       :disabled="sliderDisabled"
       :controls="showInputControls"
@@ -25,13 +25,13 @@
     />
     <div
       ref="slider"
-      class="el-slider__runway"
+      class="lx-slider__runway"
       :class="{ 'show-input': showInput && !range, 'disabled': sliderDisabled }"
       :style="runwayStyle"
       @click="onSliderClick"
     >
       <div
-        class="el-slider__bar"
+        class="lx-slider__bar"
         :style="barStyle"
       >
       </div>
@@ -52,7 +52,7 @@
         <div
           v-for="(item, key) in stops"
           :key="key"
-          class="el-slider__stop"
+          class="lx-slider__stop"
           :style="getStopStyle(item)"
         ></div>
       </div>
@@ -62,11 +62,11 @@
             v-for="(item, key) in markList"
             :key="key"
             :style="getStopStyle(item.position)"
-            class="el-slider__stop el-slider__marks-stop"
+            class="lx-slider__stop lx-slider__marks-stop"
           >
           </div>
         </div>
-        <div class="el-slider__marks">
+        <div class="lx-slider__marks">
           <slider-marker
             v-for="(item, key) in markList"
             :key="key"
@@ -93,10 +93,10 @@ import {
   toRefs,
   watch,
 } from 'vue'
-import LxInputNumber from '@element-plus/components/input-number'
-import { UPDATE_MODEL_EVENT, CHANGE_EVENT, INPUT_EVENT } from '@element-plus/utils/constants'
-import { off, on } from '@element-plus/utils/dom'
-import throwError from '@element-plus/utils/error'
+import LxInputNumber from '@lixi/components/input-number'
+import { UPDATE_MODEL_EVENT, CHANGE_EVENT, INPUT_EVENT } from '@lixi/utils/constants'
+import { off, on } from '@lixi/utils/dom'
+import throwError from '@lixi/utils/error'
 import SliderButton from './button.vue'
 import SliderMarker from './marker.vue'
 import { useMarks } from './useMarks'
@@ -104,7 +104,7 @@ import { useSlide } from './useSlide'
 import { useStops } from './useStops'
 
 import type { PropType } from 'vue'
-import type { ComponentSize, Nullable } from '@element-plus/utils/types'
+import type { ComponentSize, Nullable } from '@lixi/utils/types'
 
 export default defineComponent({
   name: 'LxSlider',

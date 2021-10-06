@@ -14,8 +14,8 @@ describe('Tag.vue', () => {
 
     const vm = wrapper.vm
 
-    expect(vm.$el.classList.contains('el-tag')).toEqual(true)
-    expect(vm.$el.classList.contains('el-tag__close')).toEqual(false)
+    expect(vm.$el.classList.contains('lx-tag')).toEqual(true)
+    expect(vm.$el.classList.contains('lx-tag__close')).toEqual(false)
     expect(vm.$el.classList.contains('is-hit')).toEqual(false)
     expect(vm.$el.classList.contains('md-fade-center')).toEqual(false)
   })
@@ -27,7 +27,7 @@ describe('Tag.vue', () => {
       },
     })
     const vm = wrapper.vm
-    expect(vm.$el.classList.contains('el-tag--primary')).toEqual(true)
+    expect(vm.$el.classList.contains('lx-tag--primary')).toEqual(true)
   })
 
   test('hit', () => {
@@ -81,8 +81,8 @@ describe('Tag.vue', () => {
     })
     const vm = wrapper.vm
     const el = vm.$el
-    expect(el.className.indexOf('el-tag--dark') > -1).toEqual(true)
-    expect(el.className.indexOf('el-tag--light') > -1).toEqual(false)
-    expect(el.className.indexOf('el-tag--plain') > -1).toEqual(false)
+    expect(el.className.indexOf('lx-tag--dark') > -1).toEqual(true)
+    expect(el.className.indexOf('lx-tag--light') > -1).toEqual(false)
+    expect(el.className.indexOf('lx-tag--plain') > -1).toEqual(false)
   })
 })

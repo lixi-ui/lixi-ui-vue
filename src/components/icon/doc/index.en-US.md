@@ -10,7 +10,7 @@ Element Plus team is replacing all **Font Icon** in the previously built compone
 
 - If you want to **use directly** like the example, you need to [globally register](https://v3.vuejs.org/guide/component-registration.html#global-registration) the components before using it.
 
-- If you want to see all available SVG icons please check [@element-plus/icons](https://unpkg.com/browse/@element-plus/icons@latest/lib/) and the source [Github/ElementPlus/icons](https://github.com/element-plus/element-plus-icons) out or [SVG icons](/#/en-US/component/icon#svg-tu-biao-ji-he)
+- If you want to see all available SVG icons please check [@lixi/icons](https://unpkg.com/browse/@lixi/icons@latest/lib/) and the source [Github/ElementPlus/icons](https://github.com/element-plus/element-plus-icons) out or [SVG icons](/#/en-US/component/icon#svg-tu-biao-ji-he)
 
 ## Installation
 
@@ -19,9 +19,9 @@ The current icon is only targeted to [Vue3](https://v3.vuejs.org).
 ## Using packaging manager
 
 ```shell
-$ yarn add @element-plus/icons
+$ yarn add @lixi/icons
 # or
-$ npm install @element-plus/icons
+$ npm install @lixi/icons
 ```
 
 ## Simple usage
@@ -34,7 +34,7 @@ so you need to use an alias in order to render the icon, if you register `Menu` 
 
 
 ```html
-<!-- Use el-icon to provide attributes to SVG icon -->
+<!-- Use lx-icon to provide attributes to SVG icon -->
 <lx-icon :size="size" :color="color">
   <edit />
 </lx-icon>
@@ -42,7 +42,7 @@ so you need to use an alias in order to render the icon, if you register `Menu` 
 <edit />
 
 <script lang="ts">
-import { Edit } from '@element-plus/icons'
+import { Edit } from '@lixi/icons'
 
 export default defineComponent({
   components: {
@@ -53,7 +53,7 @@ export default defineComponent({
 </script>
 ```
 
-## Combined with el-icon
+## Combined with lx-icon
 
 :::demo  `el-icon` provides extra attributes for raw SVG icon, for more detail, please read to the end.
 
@@ -133,10 +133,10 @@ Just assign the class name to `el-icon-iconName`.
 :::demo
 
 ```html
-<i class="el-icon-edit"></i>
-<i class="el-icon-share"></i>
-<i class="el-icon-delete"></i>
-<lx-button type="primary" icon="el-icon-search">Search</lx-button>
+<i class="lx-icon-edit"></i>
+<i class="lx-icon-share"></i>
+<i class="lx-icon-delete"></i>
+<lx-button type="primary" icon="lx-icon-search">Search</lx-button>
 
 ```
 
@@ -147,8 +147,8 @@ Just assign the class name to `el-icon-iconName`.
 <ul class="icon-list">
   <li v-for="name in $icon" :key="name">
     <span>
-      <i :class="'el-icon-' + name"></i>
-      <span class="icon-name">{{'el-icon-' + name}}</span>
+      <i :class="'lx-icon-' + name"></i>
+      <span class="icon-name">{{'lx-icon-' + name}}</span>
     </span>
   </li>
 </ul>

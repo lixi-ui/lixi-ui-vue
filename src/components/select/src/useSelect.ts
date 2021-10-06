@@ -7,24 +7,24 @@ import {
   reactive,
 } from 'vue'
 import mitt from 'mitt'
-import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@element-plus/utils/constants'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { useLocaleInject } from '@element-plus/hooks'
-import isServer from '@element-plus/utils/isServer'
-import scrollIntoView from '@element-plus/utils/scroll-into-view'
+import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@lixi/utils/constants'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { useLocaleInject } from '@lixi/hooks'
+import isServer from '@lixi/utils/isServer'
+import scrollIntoView from '@lixi/utils/scroll-into-view'
 import lodashDebounce from 'lodash/debounce'
-import { isKorean } from '@element-plus/utils/isDef'
+import { isKorean } from '@lixi/utils/isDef'
 import {
   getValueByPath,
   isIE,
   isEdge,
   useGlobalConfig,
-} from '@element-plus/utils/util'
-import { elFormKey, elFormItemKey } from '@element-plus/tokens'
+} from '@lixi/utils/util'
+import { elFormKey, elFormItemKey } from '@lixi/tokens'
 import isEqual from 'lodash/isEqual'
 import { isObject, toRawType } from '@vue/shared'
 
-import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
 import { SelectOptionProxy } from './token'
 
 export function useSelectStates(props) {

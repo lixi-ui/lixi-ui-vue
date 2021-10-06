@@ -123,8 +123,8 @@
 | format | format of the displayed value in the input box | string | see [date formats](#/en-US/component/date-picker#date-formats) | HH:mm:ss |
 | default-value | オプション、カレンダーのデフォルトの日付 | Date for TimePicker, string for TimeSelect | anything accepted by `new Date()` for TimePicker, selectable value for TimeSelect | — |
 | name | ネイティブ入力の `name` と同じ | string | — | — |
-| prefix-icon | カスタムプレフィックスアイコンクラス | string | — | el-icon-time |
-| clear-icon | カスタムクリアアイコンクラス | string | — | el-icon-circle-close |
+| prefix-icon | カスタムプレフィックスアイコンクラス | string | — | lx-icon-time |
+| clear-icon | カスタムクリアアイコンクラス | string | — | lx-icon-circle-close |
 | disabled-hours | To specify the array of hours that cannot be selected | function | — | — |
 | disabled-minutes | To specify the array of minutes that cannot be selected | function(selectedHour) | — | — |
 | disabled-seconds | To specify the array of seconds that cannot be selected | function(selectedHour, selectedMinute) | — | — |

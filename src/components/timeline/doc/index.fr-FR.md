@@ -70,7 +70,7 @@ Vous pouvez personnaliser la taille, la couleur et les icônes de chaque Noeud.
           timestamp: '2018-04-12 20:46',
           size: 'large',
           type: 'primary',
-          icon: 'el-icon-more'
+          icon: 'lx-icon-more'
         }, {
           content: 'Couleur',
           timestamp: '2018-04-03 20:46',

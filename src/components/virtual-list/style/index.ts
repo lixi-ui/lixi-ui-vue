@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/virtual-list.scss'
-import '@element-plus/components/scrollbar/style/index'
+import '@lixi/components/base/style'
+import '@lixi/theme-chalk/src/virtual-list.scss'
+import '@lixi/components/scrollbar/style/index'

@@ -1,6 +1,6 @@
 <template>
   <label
-    class="el-radio"
+    class="lx-radio"
     :class="{
       [`el-radio--${radioSize || ''}`]: radioSize,
       'is-disabled': isDisabled,
@@ -15,17 +15,17 @@
     @keydown.space.stop.prevent="model = isDisabled ? model : label"
   >
     <span
-      class="el-radio__input"
+      class="lx-radio__input"
       :class="{
         'is-disabled': isDisabled,
         'is-checked': model === label
       }"
     >
-      <span class="el-radio__inner"></span>
+      <span class="lx-radio__inner"></span>
       <input
         ref="radioRef"
         v-model="model"
-        class="el-radio__original"
+        class="lx-radio__original"
         :value="label"
         type="radio"
         aria-hidden="true"
@@ -37,7 +37,7 @@
         @change="handleChange"
       >
     </span>
-    <span class="el-radio__label" @keydown.stop>
+    <span class="lx-radio__label" @keydown.stop>
       <slot>
         {{ label }}
       </slot>
@@ -50,12 +50,12 @@ import {
   defineComponent,
   computed, nextTick, ref,
 } from 'vue'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
+import { isValidComponentSize } from '@lixi/utils/validators'
 import { useRadio, useRadioAttrs } from './useRadio'
 
 import type { PropType } from 'vue'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 
 export default defineComponent({
   name: 'LxRadio',

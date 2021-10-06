@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import MessageBox from '../src/messageBox'
-import { rAF } from '@element-plus/test-utils/tick'
-import { triggerNativeCompositeClick } from '@element-plus/test-utils/composite-click'
+import { rAF } from '@lixi/test-utils/tick'
+import { triggerNativeCompositeClick } from '@lixi/test-utils/composite-click'
 
 const selector = '.lx-overlay'
 
@@ -56,12 +56,12 @@ describe('MessageBox', () => {
   test('custom icon', async () => {
     MessageBox({
       type: 'warning',
-      iconClass: 'el-icon-question',
+      iconClass: 'lx-icon-question',
       message: '这是一段内容',
     })
     await rAF()
     const icon = document.querySelector('.lx-message-box__status')
-    expect(icon.classList.contains('el-icon-question')).toBe(true)
+    expect(icon.classList.contains('lx-icon-question')).toBe(true)
   })
 
   test('html string', async () => {

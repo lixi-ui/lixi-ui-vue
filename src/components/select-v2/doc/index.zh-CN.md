@@ -462,14 +462,14 @@
 | popper-append-to-body | 是否将弹出框插入至 body 元素。在弹出框的定位出现问题时，可将该属性设置为 false | boolean | - | false |
 | popper-options | 用户定制化 popper 的行为, 更多请查看文档[popper.js](https://popper.js.org/documentation.html) | object | - | - |
 | automatic-dropdown | 对于不可搜索的 Select，是否在输入框获得焦点后自动弹出选项菜单 | boolean | - | false |
-| clear-icon | 自定义清空图标的类名 | string | — | el-icon-circle-close |
+| clear-icon | 自定义清空图标的类名 | string | — | lx-icon-circle-close |
 | height | 面板的高度，每项的高度为34px | number | - | 170 |
 
 <span style="display: none;">
 <!-- | no-match-text | 搜索条件无匹配时显示的文字，也可以使用`#empty`设置 | string | — | 无匹配数据 | -->
 <!-- | reserve-keyword | 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 | boolean | — | false |
 | default-first-option | 在输入框按下回车，选择第一个匹配项。需配合 `filterable` 或 `remote` 使用 | boolean | - | false |
-| clear-icon | 自定义清空图标的类名 | string | — | el-icon-circle-close |
+| clear-icon | 自定义清空图标的类名 | string | — | lx-icon-circle-close |
 | allow-create | 是否允许用户创建新条目，需配合 `filterable` 使用 | boolean | — | false |
 | filter-method | 自定义搜索方法 | function | — | — |
 | remote | 是否为远程搜索 | boolean | — | false |

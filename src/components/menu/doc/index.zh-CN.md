@@ -9,7 +9,7 @@
 :::demo 导航菜单默认为垂直模式，通过`mode`属性可以使导航菜单变更为水平模式。另外，在菜单中通过`sub-menu`组件可以生成二级菜单。Menu 还提供了`background-color`、`text-color`和`active-text-color`，分别用于设置菜单的背景色、菜单的文字颜色和当前激活菜单的文字颜色。
 
 ```html
-<lx-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+<lx-menu :default-active="activeIndex" class="lx-menu-demo" mode="horizontal" @select="handleSelect">
   <lx-menu-item index="1">处理中心</lx-menu-item>
   <lx-sub-menu index="2">
     <template #title>我的工作台</template>
@@ -29,7 +29,7 @@
 <div class="line"></div>
 <lx-menu
   :default-active="activeIndex2"
-  class="el-menu-demo"
+  class="lx-menu-demo"
   mode="horizontal"
   @select="handleSelect"
   background-color="#545c64"
@@ -103,12 +103,12 @@
     <h5>默认颜色</h5>
     <lx-menu
       default-active="2"
-      class="el-menu-vertical-demo"
+      class="lx-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
       <lx-sub-menu index="1">
         <template #title>
-          <i class="el-icon-location"></i>
+          <i class="lx-icon-location"></i>
           <span>导航一</span>
         </template>
         <lx-menu-item-group>
@@ -125,15 +125,15 @@
         </lx-sub-menu>
       </lx-sub-menu>
       <lx-menu-item index="2">
-        <i class="el-icon-menu"></i>
+        <i class="lx-icon-menu"></i>
         <template #title>导航二</template>
       </lx-menu-item>
       <lx-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
+        <i class="lx-icon-document"></i>
         <template #title>导航三</template>
       </lx-menu-item>
       <lx-menu-item index="4">
-        <i class="el-icon-setting"></i>
+        <i class="lx-icon-setting"></i>
         <template #title>导航四</template>
       </lx-menu-item>
     </lx-menu>
@@ -143,7 +143,7 @@
     <lx-menu
       :uniqueOpened="true"
       default-active="2"
-      class="el-menu-vertical-demo"
+      class="lx-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
       background-color="#545c64"
@@ -151,7 +151,7 @@
       active-text-color="#ffd04b">
       <lx-sub-menu index="1">
         <template #title>
-          <i class="el-icon-location"></i>
+          <i class="lx-icon-location"></i>
           <span>导航一</span>
         </template>
         <lx-menu-item-group>
@@ -168,20 +168,20 @@
         </lx-sub-menu>
       </lx-sub-menu>
       <lx-menu-item index="2">
-        <i class="el-icon-menu"></i>
+        <i class="lx-icon-menu"></i>
         <template #title>导航二</template>
       </lx-menu-item>
       <lx-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
+        <i class="lx-icon-document"></i>
         <template #title>导航三</template>
       </lx-menu-item>
       <lx-menu-item index="4">
-        <i class="el-icon-setting"></i>
+        <i class="lx-icon-setting"></i>
         <template #title>导航四</template>
       </lx-menu-item>
       <lx-sub-menu index="5">
         <template #title>
-          <i class="el-icon-location"></i>
+          <i class="lx-icon-location"></i>
           <span>导航一</span>
         </template>
         <lx-menu-item-group>
@@ -242,10 +242,10 @@
   <lx-radio-button :label="false">展开</lx-radio-button>
   <lx-radio-button :label="true">收起</lx-radio-button>
 </lx-radio-group>
-<lx-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+<lx-menu default-active="1-4-1" class="lx-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
   <lx-sub-menu index="1">
     <template #title>
-      <i class="el-icon-location"></i>
+      <i class="lx-icon-location"></i>
       <span>导航一</span>
     </template>
     <lx-menu-item-group>
@@ -262,15 +262,15 @@
     </lx-sub-menu>
   </lx-sub-menu>
   <lx-menu-item index="2">
-    <i class="el-icon-menu"></i>
+    <i class="lx-icon-menu"></i>
     <template #title>导航二</template>
   </lx-menu-item>
   <lx-menu-item index="3" disabled>
-    <i class="el-icon-document"></i>
+    <i class="lx-icon-document"></i>
     <template #title>导航三</template>
   </lx-menu-item>
   <lx-menu-item index="4">
-    <i class="el-icon-setting"></i>
+    <i class="lx-icon-setting"></i>
     <template #title>导航四</template>
   </lx-menu-item>
 </lx-menu>

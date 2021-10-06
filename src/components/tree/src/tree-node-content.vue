@@ -24,7 +24,7 @@ export default defineComponent({
           ? props.renderContent(h, { _self: nodeInstance, node, data, store })
           : tree.ctx.slots.default
             ? tree.ctx.slots.default({ node, data })
-            : h('span', { class: 'el-tree-node__label' }, [node.label])
+            : h('span', { class: 'lx-tree-node__label' }, [node.label])
       )
     }
   },

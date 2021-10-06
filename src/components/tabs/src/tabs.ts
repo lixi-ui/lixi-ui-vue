@@ -11,7 +11,7 @@ import {
   watch,
 } from 'vue'
 import { isPromise } from '@vue/shared'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import { EVENT_CODE } from '@lixi/utils/aria'
 import TabNav from './tab-nav.vue'
 
 import type { Component, ComponentInternalInstance, PropType, VNode } from 'vue'
@@ -123,7 +123,7 @@ export default defineComponent({
 
         const content = Array.from(children as ArrayLike<VNode>).find(
           ({ props }) => {
-            return props.class === 'el-tabs__content'
+            return props.class === 'lx-tabs__content'
           },
         )
 
@@ -231,7 +231,7 @@ export default defineComponent({
         ? h(
           'span',
           {
-            class: 'el-tabs__new-tab',
+            class: 'lx-tabs__new-tab',
             tabindex: '0',
             onClick: handleTabAdd,
             onKeydown: ev => {
@@ -240,14 +240,14 @@ export default defineComponent({
               }
             },
           },
-          [h('i', { class: 'el-icon-plus' })],
+          [h('i', { class: 'lx-icon-plus' })],
         )
         : null
 
     const header = h(
       'div',
       {
-        class: ['el-tabs__header', `is-${tabPosition}`],
+        class: ['lx-tabs__header', `is-${tabPosition}`],
       },
       [
         newButton,
@@ -267,7 +267,7 @@ export default defineComponent({
     const panels = h(
       'div',
       {
-        class: 'el-tabs__content',
+        class: 'lx-tabs__content',
       },
       this.$slots?.default(),
     )
@@ -276,10 +276,10 @@ export default defineComponent({
       'div',
       {
         class: {
-          'el-tabs': true,
-          'el-tabs--card': type === 'card',
+          'lx-tabs': true,
+          'lx-tabs--card': type === 'card',
           [`el-tabs--${tabPosition}`]: true,
-          'el-tabs--border-card': type === 'border-card',
+          'lx-tabs--border-card': type === 'border-card',
         },
       },
       tabPosition !== 'bottom' ? [header, panels] : [panels, header],

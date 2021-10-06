@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="['el-upload', `el-upload--${listType}`]"
+    :class="['lx-upload', `el-upload--${listType}`]"
     tabindex="0"
     @click="handleClick"
     @keydown.self.enter.space="handleKeydown"
@@ -15,7 +15,7 @@
     </template>
     <input
       ref="inputRef"
-      class="el-upload__input"
+      class="lx-upload__input"
       type="file"
       :name="name"
       :multiple="multiple"
@@ -33,7 +33,7 @@ import ajax from './ajax'
 import UploadDragger from './upload-dragger.vue'
 
 import type { PropType } from 'vue'
-import type { Indexable, Nullable } from '@element-plus/utils/types'
+import type { Indexable, Nullable } from '@lixi/utils/types'
 import type { ListType, UploadFile, LxFile } from './upload.type'
 
 type IFileHanlder = (

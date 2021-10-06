@@ -111,12 +111,12 @@ export default defineComponent ({
   属性方式：
   <lx-input
     placeholder="请选择日期"
-    suffix-icon="el-icon-date"
+    suffix-icon="lx-icon-date"
     v-model="input1">
   </lx-input>
   <lx-input
     placeholder="请输入内容"
-    prefix-icon="el-icon-search"
+    prefix-icon="lx-icon-search"
     v-model="input2">
   </lx-input>
 </div>
@@ -126,14 +126,14 @@ export default defineComponent ({
     placeholder="请选择日期"
     v-model="input3">
     <template #suffix>
-      <i class="el-input__icon el-icon-date"></i>
+      <i class="lx-input__icon lx-icon-date"></i>
     </template>
   </lx-input>
   <lx-input
     placeholder="请输入内容"
     v-model="input4">
     <template #prefix>
-      <i class="el-input__icon el-icon-search"></i>
+      <i class="lx-input__icon lx-icon-search"></i>
     </template>
   </lx-input>
 </div>
@@ -255,7 +255,7 @@ export default defineComponent ({
       </lx-select>
     </template>
     <template #append>
-      <lx-button icon="el-icon-search"></lx-button>
+      <lx-button icon="lx-icon-search"></lx-button>
     </template>
   </lx-input>
 </div>
@@ -293,25 +293,25 @@ export default defineComponent ({
 <div class="demo-input-size">
   <lx-input
     placeholder="请输入内容"
-    suffix-icon="el-icon-date"
+    suffix-icon="lx-icon-date"
     v-model="input1">
   </lx-input>
   <lx-input
     size="medium"
     placeholder="请输入内容"
-    suffix-icon="el-icon-date"
+    suffix-icon="lx-icon-date"
     v-model="input2">
   </lx-input>
   <lx-input
     size="small"
     placeholder="请输入内容"
-    suffix-icon="el-icon-date"
+    suffix-icon="lx-icon-date"
     v-model="input3">
   </lx-input>
   <lx-input
     size="mini"
     placeholder="请输入内容"
-    suffix-icon="el-icon-date"
+    suffix-icon="lx-icon-date"
     v-model="input4">
   </lx-input>
 </div>
@@ -537,7 +537,7 @@ export default defineComponent({
   @select="handleSelect"
 >
   <template #suffix>
-    <i class="el-icon-edit el-input__icon" @click="handleIconClick"> </i>
+    <i class="lx-icon-edit lx-input__icon" @click="handleIconClick"> </i>
   </template>
   <template #default="{ item }">
     <div class="name">{{ item.value }}</div>

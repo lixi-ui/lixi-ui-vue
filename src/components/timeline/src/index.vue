@@ -30,7 +30,7 @@ export default defineComponent({
       return h(
         'ul',
         {
-          class: { 'el-timeline': true },
+          class: { 'lx-timeline': true },
         },
         ctx.slots.default?.(),
       )

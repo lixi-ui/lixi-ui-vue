@@ -5,7 +5,7 @@ import { ref, nextTick } from 'vue'
 const mouseup = new Event('mouseup')
 const _mount = options => mount({
   components: {
-    'el-input-number': InputNumber,
+    'lx-input-number': InputNumber,
   },
   ...options,
 })

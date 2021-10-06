@@ -1,6 +1,6 @@
 import { defineComponent, h, inject } from 'vue'
-import { addUnit } from '@element-plus/utils/util'
-import { getNormalizedProps } from '@element-plus/utils/vnode'
+import { addUnit } from '@lixi/utils/util'
+import { getNormalizedProps } from '@lixi/utils/vnode'
 import { elDescriptionsKey } from './token'
 
 import type { VNode } from 'vue'
@@ -45,26 +45,26 @@ export default defineComponent({
       case 'label':
         return h(this.tag, {
           style: style,
-          class: ['el-descriptions__cell', 'el-descriptions__label', { 'is-bordered-label': this.descriptions.border }, labelAlign, labelClassName],
+          class: ['lx-descriptions__cell', 'lx-descriptions__label', { 'is-bordered-label': this.descriptions.border }, labelAlign, labelClassName],
           colSpan: this.descriptions.direction === 'vertical' ? span : 1,
         }, label)
       case 'content':
         return h(this.tag, {
           style: style,
-          class: ['el-descriptions__cell', 'el-descriptions__content', align, className],
+          class: ['lx-descriptions__cell', 'lx-descriptions__content', align, className],
           colSpan: this.descriptions.direction === 'vertical' ? span : span * 2 - 1,
         }, content)
       default:
         return h('td', {
           style: style,
-          class: ['el-descriptions__cell', align],
+          class: ['lx-descriptions__cell', align],
           colSpan: span,
         }, [
           h('span', {
-            class: ['el-descriptions__label', labelClassName],
+            class: ['lx-descriptions__label', labelClassName],
           }, label),
           h('span', {
-            class: ['el-descriptions__content', className],
+            class: ['lx-descriptions__content', className],
           }, content)])
     }
   },

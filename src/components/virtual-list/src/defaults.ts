@@ -1,8 +1,8 @@
-import { isNumber } from '@element-plus/utils/util'
+import { isNumber } from '@lixi/utils/util'
 
 import type { PropType } from 'vue'
 import type { Direction, LayoutDirection, ItemSize } from './types'
-import type { StyleValue } from '@element-plus/utils/types'
+import type { StyleValue } from '@lixi/utils/types'
 
 
 export const DEFAULT_DYNAMIC_LIST_ITEM_SIZE = 50

@@ -29,7 +29,7 @@ Vous ajouter du contenu dans la ligne de séparation.
     <span>Vous ne voyez pas ce que vous êtes, ce que vous voyez est votre ombre.</span>
     <lx-divider content-position="left">Rabindranath Tagore</lx-divider>
     <span>Je ne peux pas choisir le meilleur. Le meilleur me choisit.</span>
-    <lx-divider><i class="el-icon-star-on"></i></lx-divider>
+    <lx-divider><i class="lx-icon-star-on"></i></lx-divider>
     <span>Mes souhaits sont des imbéciles, ils crient à travers ta chanson, mon Maître. Laisse-moi mais écoute.</span>
     <lx-divider content-position="right">Rabindranath Tagore</lx-divider>
   </div>

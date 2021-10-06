@@ -4,7 +4,7 @@ import Calendar from '../src/index.vue'
 
 const _mount = (template: string, data?, otherObj?) => mount({
   components: {
-    'el-calendar': Calendar,
+    'lx-calendar': Calendar,
   },
   template,
   data,

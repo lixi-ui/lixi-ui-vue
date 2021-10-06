@@ -1,7 +1,7 @@
 import { createVNode, render } from 'vue'
-import { isVNode } from '@element-plus/utils/util'
-import PopupManager from '@element-plus/utils/popup-manager'
-import isServer from '@element-plus/utils/isServer'
+import { isVNode } from '@lixi/utils/util'
+import PopupManager from '@lixi/utils/popup-manager'
+import isServer from '@lixi/utils/isServer'
 import MessageConstructor from './index.vue'
 
 import type { ComponentPublicInstance } from 'vue'

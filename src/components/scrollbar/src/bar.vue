@@ -1,14 +1,14 @@
 <template>
-  <transition name="el-scrollbar-fade">
+  <transition name="lx-scrollbar-fade">
     <div
       v-show="always || visible"
       ref="instance"
-      :class="['el-scrollbar__bar', 'is-' + bar.key]"
+      :class="['lx-scrollbar__bar', 'is-' + bar.key]"
       @mousedown="clickTrackHandler"
     >
       <div
         ref="thumb"
-        class="el-scrollbar__thumb"
+        class="lx-scrollbar__thumb"
         :style="thumbStyle"
         @mousedown="clickThumbHandler"
       ></div>
@@ -18,11 +18,11 @@
 
 <script lang="ts">
 import { computed, defineComponent, inject, onBeforeUnmount, onMounted, ref } from 'vue'
-import { off, on } from '@element-plus/utils/dom'
+import { off, on } from '@lixi/utils/dom'
 import { BAR_MAP, renderThumbStyle } from './util'
 
 import type { Ref } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 
 export default defineComponent({
   name: 'Bar',

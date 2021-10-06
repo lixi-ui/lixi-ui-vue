@@ -3,49 +3,49 @@
     <div
       ref="wrapper"
       :tabindex="-1"
-      class="el-image-viewer__wrapper"
+      class="lx-image-viewer__wrapper"
       :style="{ zIndex }"
     >
       <div
-        class="el-image-viewer__mask"
+        class="lx-image-viewer__mask"
         @click.self="hideOnClickModal && hide()"
       >
       </div>
       <!-- CLOSE -->
-      <span class="el-image-viewer__btn el-image-viewer__close" @click="hide">
-        <i class="el-icon-close"></i>
+      <span class="lx-image-viewer__btn lx-image-viewer__close" @click="hide">
+        <i class="lx-icon-close"></i>
       </span>
       <!-- ARROW -->
       <template v-if="!isSingle">
         <span
-          class="el-image-viewer__btn el-image-viewer__prev"
+          class="lx-image-viewer__btn lx-image-viewer__prev"
           :class="{ 'is-disabled': !infinite && isFirst }"
           @click="prev"
         >
-          <i class="el-icon-arrow-left"></i>
+          <i class="lx-icon-arrow-left"></i>
         </span>
         <span
-          class="el-image-viewer__btn el-image-viewer__next"
+          class="lx-image-viewer__btn lx-image-viewer__next"
           :class="{ 'is-disabled': !infinite && isLast }"
           @click="next"
         >
-          <i class="el-icon-arrow-right"></i>
+          <i class="lx-icon-arrow-right"></i>
         </span>
       </template>
       <!-- ACTIONS -->
-      <div class="el-image-viewer__btn el-image-viewer__actions">
-        <div class="el-image-viewer__actions__inner">
-          <i class="el-icon-zoom-out" @click="handleActions('zoomOut')"></i>
-          <i class="el-icon-zoom-in" @click="handleActions('zoomIn')"></i>
-          <i class="el-image-viewer__actions__divider"></i>
+      <div class="lx-image-viewer__btn lx-image-viewer__actions">
+        <div class="lx-image-viewer__actions__inner">
+          <i class="lx-icon-zoom-out" @click="handleActions('zoomOut')"></i>
+          <i class="lx-icon-zoom-in" @click="handleActions('zoomIn')"></i>
+          <i class="lx-image-viewer__actions__divider"></i>
           <i :class="mode.icon" @click="toggleMode"></i>
-          <i class="el-image-viewer__actions__divider"></i>
-          <i class="el-icon-refresh-left" @click="handleActions('anticlocelise')"></i>
-          <i class="el-icon-refresh-right" @click="handleActions('clocelise')"></i>
+          <i class="lx-image-viewer__actions__divider"></i>
+          <i class="lx-icon-refresh-left" @click="handleActions('anticlocelise')"></i>
+          <i class="lx-icon-refresh-right" @click="handleActions('clocelise')"></i>
         </div>
       </div>
       <!-- CANVAS -->
-      <div class="el-image-viewer__canvas">
+      <div class="lx-image-viewer__canvas">
         <img
           v-for="(url, i) in urlList"
           v-show="i === index"
@@ -53,7 +53,7 @@
           :key="url"
           :src="url"
           :style="imgStyle"
-          class="el-image-viewer__img"
+          class="lx-image-viewer__img"
           @load="handleImgLoad"
           @error="handleImgError"
           @mousedown="handleMouseDown"
@@ -66,21 +66,21 @@
 <script lang='ts'>
 
 import { defineComponent, computed, ref, onMounted, watch, nextTick } from 'vue'
-import { useLocaleInject } from '@element-plus/hooks'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { on, off } from '@element-plus/utils/dom'
-import { rafThrottle, isFirefox } from '@element-plus/utils/util'
+import { useLocaleInject } from '@lixi/hooks'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { on, off } from '@lixi/utils/dom'
+import { rafThrottle, isFirefox } from '@lixi/utils/util'
 
 import type { PropType, CSSProperties } from 'vue'
 
 const Mode = {
   CONTAIN: {
     name: 'contain',
-    icon: 'el-icon-full-screen',
+    icon: 'lx-icon-full-screen',
   },
   ORIGINAL: {
     name: 'original',
-    icon: 'el-icon-c-scale-to-original',
+    icon: 'lx-icon-c-scale-to-original',
   },
 }
 

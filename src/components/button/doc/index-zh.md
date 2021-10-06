@@ -37,12 +37,12 @@
     </div>
 
     <div class="block">
-      <lx-button icon="el-icon-search" circle></lx-button>
-      <lx-button type="primary" icon="el-icon-edit" circle></lx-button>
-      <lx-button type="success" icon="el-icon-check" circle></lx-button>
-      <lx-button type="info" icon="el-icon-message" circle></lx-button>
-      <lx-button type="warning" icon="el-icon-star-off" circle></lx-button>
-      <lx-button type="danger" icon="el-icon-delete" circle></lx-button>
+      <lx-button icon="lx-icon-search" circle></lx-button>
+      <lx-button type="primary" icon="lx-icon-edit" circle></lx-button>
+      <lx-button type="success" icon="lx-icon-check" circle></lx-button>
+      <lx-button type="info" icon="lx-icon-message" circle></lx-button>
+      <lx-button type="warning" icon="lx-icon-star-off" circle></lx-button>
+      <lx-button type="danger" icon="lx-icon-delete" circle></lx-button>
     </div>
   </div>
   <script>
@@ -106,12 +106,12 @@
 :::demo 设置`icon`属性即可，icon 的列表可以参考 Lxement Plus 的 icon 组件，也可以设置在文字右边的 icon ，只要使用`i`标签即可，可以使用自定义图标。
 
 ```html
-<lx-button type="primary" icon="el-icon-edit"></lx-button>
-<lx-button type="primary" icon="el-icon-share"></lx-button>
-<lx-button type="primary" icon="el-icon-delete"></lx-button>
-<lx-button type="primary" icon="el-icon-search">搜索</lx-button>
+<lx-button type="primary" icon="lx-icon-edit"></lx-button>
+<lx-button type="primary" icon="lx-icon-share"></lx-button>
+<lx-button type="primary" icon="lx-icon-delete"></lx-button>
+<lx-button type="primary" icon="lx-icon-search">搜索</lx-button>
 <lx-button type="primary"
-  >上传<i class="el-icon-upload el-icon--right"></i
+  >上传<i class="lx-icon-upload lx-icon--right"></i
 ></lx-button>
 ```
 
@@ -149,10 +149,10 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
   <lx-button size="mini" round>超小按钮</lx-button>
 </div>
 <div class="block">
-  <lx-button icon="el-icon-search" circle></lx-button>
-  <lx-button icon="el-icon-search" size="medium" circle></lx-button>
-  <lx-button icon="el-icon-search" size="small" circle></lx-button>
-  <lx-button icon="el-icon-search" size="mini" circle></lx-button>
+  <lx-button icon="lx-icon-search" circle></lx-button>
+  <lx-button icon="lx-icon-search" size="medium" circle></lx-button>
+  <lx-button icon="lx-icon-search" size="small" circle></lx-button>
+  <lx-button icon="lx-icon-search" size="mini" circle></lx-button>
 </div>
 ```
 

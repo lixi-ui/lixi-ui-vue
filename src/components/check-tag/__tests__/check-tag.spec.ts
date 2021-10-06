@@ -12,7 +12,7 @@ describe('CheckTag.vue', () => {
     })
     expect(wrapper.text()).toEqual(AXIOM)
 
-    expect(wrapper.classes()).toContain('el-check-tag')
+    expect(wrapper.classes()).toContain('lx-check-tag')
   })
 
 
@@ -22,7 +22,7 @@ describe('CheckTag.vue', () => {
         ${AXIOM}
       </lx-check-tag>`,
       components: {
-        'el-check-tag': CheckTag,
+        'lx-check-tag': CheckTag,
       },
       data() {
         return {

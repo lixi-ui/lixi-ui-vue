@@ -223,9 +223,9 @@
 | colors | アイコンの色を指定します。配列の場合は 3 つの要素を持ち、それぞれがスコアレベルに対応していなければなりません。 オブジェクトの場合は、キーは 2 つのレベル間のしきい値で、値は対応する色でなければなりません。 | array/object | — | ['#F7BA2A', '#F7BA2A', '#F7BA2A'] |
 | void-color | 非選択アイコンの色 | string | — | #C6D1DE |
 | disabled-void-color | 非選択時の読み取り専用アイコンの色 | string | — | #EFF2F7 |
-| icon-classes | アイコンのクラス名を指定します。arrayの場合は3つの要素を持ち、それぞれがスコアレベルに対応していなければなりませんが、objectの場合は2つのレベル間の閾値がキーとなり、その値が対応するアイコンクラスとなります。 | array/object | — | ['el-icon-star-on', 'el-icon-star-on','el-icon-star-on'] |
-| void-icon-class | 非選択アイコンのクラス名 | string | — | el-icon-starオブジェクト
-| disabled-void-icon-class | 非選択時読み取り専用アイコンのクラス名 | string | — | el-icon-star-on |
+| icon-classes | アイコンのクラス名を指定します。arrayの場合は3つの要素を持ち、それぞれがスコアレベルに対応していなければなりませんが、objectの場合は2つのレベル間の閾値がキーとなり、その値が対応するアイコンクラスとなります。 | array/object | — | ['lx-icon-star-on', 'lx-icon-star-on','lx-icon-star-on'] |
+| void-icon-class | 非選択アイコンのクラス名 | string | — | lx-icon-starオブジェクト
+| disabled-void-icon-class | 非選択時読み取り専用アイコンのクラス名 | string | — | lx-icon-star-on |
 | show-text | テキスト表示の有無 | boolean | — | false |
 | show-score | 現在のスコアを表示するかどうか。show-score と show-text は同時にtrueにすることはできません。 | boolean | — | false |
 | text-color | テキストの色 | string | — | #1F2D3D |

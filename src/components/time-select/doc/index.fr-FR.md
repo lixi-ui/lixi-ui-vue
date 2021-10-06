@@ -76,8 +76,8 @@ Vous pouvez définir un intervalle de temps. Si l'horaire de début est sélecti
 | size | Taille du champ. | string | medium / small / mini | — |
 | placeholder | Placeholder en mode non-intervalle. | string | — | — |
 | name | Attribut `name` natif de l'input. | string | — | — |
-| prefix-icon | Classe de l'icône de préfixe. | string | — | el-icon-time |
-| clear-icon | Classe de l'icône d'effacement. | string | — | el-icon-circle-close |
+| prefix-icon | Classe de l'icône de préfixe. | string | — | lx-icon-time |
+| clear-icon | Classe de l'icône d'effacement. | string | — | lx-icon-circle-close |
 | start | Horaire de début. | string | — | 09:00 |
 | end | Horaire de fin. | string | — | 18:00 |
 | step | Intervalle entre les horaires. | string | — | 00:30 |

@@ -12,7 +12,7 @@ describe('Alert.vue', () => {
       },
     })
     expect(wrapper.find('.lx-alert__title').text()).toEqual(AXIOM)
-    expect(wrapper.find('.lx-alert').classes()).toContain('el-alert--info')
+    expect(wrapper.find('.lx-alert').classes()).toContain('lx-alert--info')
   })
 
   test('type', () => {
@@ -23,8 +23,8 @@ describe('Alert.vue', () => {
         showIcon: true,
       },
     })
-    expect(wrapper.find('.lx-alert').classes()).toContain('el-alert--success')
-    expect(wrapper.find('.lx-alert__icon').classes()).toContain('el-icon-success')
+    expect(wrapper.find('.lx-alert').classes()).toContain('lx-alert--success')
+    expect(wrapper.find('.lx-alert__icon').classes()).toContain('lx-icon-success')
   })
 
   test('description', () => {

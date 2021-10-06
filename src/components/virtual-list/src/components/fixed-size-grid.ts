@@ -1,5 +1,5 @@
-import { isNumber } from '@element-plus/utils/util'
-import throwError from '@element-plus/utils/error'
+import { isNumber } from '@lixi/utils/util'
+import throwError from '@lixi/utils/error'
 import createGrid from '../builders/buildGrid'
 
 import {

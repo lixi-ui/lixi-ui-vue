@@ -10,7 +10,7 @@
     :popper-class="`el-picker__popper ${popperClass}`"
     :popper-options="elPopperOptions"
     :fallback-placements="['bottom', 'top', 'right', 'left']"
-    transition="el-zoom-in-top"
+    transition="lx-zoom-in-top"
     :gpu-acceleration="false"
     :stop-popper-mouse-event="false"
     append-to-body
@@ -26,8 +26,8 @@
         :size="pickerSize"
         :disabled="pickerDisabled"
         :placeholder="placeholder"
-        class="el-date-editor"
-        :class="'el-date-editor--' + type"
+        class="lx-date-editor"
+        :class="'lx-date-editor--' + type"
         :readonly="!editable || readonly || isDatesPicker || type === 'week'"
         @input="onUserInput"
         @focus="handleFocus"
@@ -38,7 +38,7 @@
       >
         <template #prefix>
           <i
-            class="el-input__icon"
+            class="lx-input__icon"
             :class="triggerClass"
             @click="handleFocus"
           >
@@ -46,7 +46,7 @@
         </template>
         <template #suffix>
           <i
-            class="el-input__icon"
+            class="lx-input__icon"
             :class="[showClose ? '' + clearIcon : '']"
             @click="onClearIconClick"
           >
@@ -56,9 +56,9 @@
       <div
         v-else
         v-clickoutside:[popperPaneRef]="onClickOutside"
-        class="el-date-editor el-range-editor el-input__inner"
+        class="lx-date-editor lx-range-editor lx-input__inner"
         :class="[
-          'el-date-editor--' + type,
+          'lx-date-editor--' + type,
           pickerSize ? `el-range-editor--${ pickerSize }` : '',
           pickerDisabled ? 'is-disabled' : '',
           pickerVisible ? 'is-active' : ''
@@ -68,7 +68,7 @@
         @mouseleave="onMouseLeave"
         @keydown="handleKeydown"
       >
-        <i :class="['el-input__icon', 'el-range__icon', triggerClass]"></i>
+        <i :class="['lx-input__icon', 'lx-range__icon', triggerClass]"></i>
         <input
           autocomplete="off"
           :name="name && name[0]"
@@ -76,13 +76,13 @@
           :value="displayValue && displayValue[0]"
           :disabled="pickerDisabled"
           :readonly="!editable || readonly"
-          class="el-range-input"
+          class="lx-range-input"
           @input="handleStartInput"
           @change="handleStartChange"
           @focus="handleFocus"
         >
         <slot name="range-separator">
-          <span class="el-range-separator">{{ rangeSeparator }}</span>
+          <span class="lx-range-separator">{{ rangeSeparator }}</span>
         </slot>
         <input
           autocomplete="off"
@@ -91,14 +91,14 @@
           :value="displayValue && displayValue[1]"
           :disabled="pickerDisabled"
           :readonly="!editable || readonly"
-          class="el-range-input"
+          class="lx-range-input"
           @focus="handleFocus"
           @input="handleEndInput"
           @change="handleEndChange"
         >
         <i
           :class="[showClose ? '' + clearIcon : '']"
-          class="el-input__icon el-range__close-icon"
+          class="lx-input__icon lx-range__close-icon"
           @click="onClearIconClick"
         >
         </i>
@@ -134,17 +134,17 @@ import {
 } from 'vue'
 import dayjs from 'dayjs'
 import isEqual from 'lodash/isEqual'
-import { useLocaleInject } from '@element-plus/hooks'
-import { ClickOutside } from '@element-plus/directives'
-import { elFormKey, elFormItemKey } from '@element-plus/tokens'
-import LxInput from '@element-plus/components/input'
-import LxPopper, { Effect } from '@element-plus/components/popper'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { useGlobalConfig, isEmpty } from '@element-plus/utils/util'
+import { useLocaleInject } from '@lixi/hooks'
+import { ClickOutside } from '@lixi/directives'
+import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import LxInput from '@lixi/components/input'
+import LxPopper, { Effect } from '@lixi/components/popper'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { useGlobalConfig, isEmpty } from '@lixi/utils/util'
 import { timePickerDefaultProps } from './props'
 
 import type { Dayjs } from 'dayjs'
-import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
+import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
 import type { Options } from '@popperjs/core'
 
 interface PickerOptions {
@@ -349,7 +349,7 @@ export default defineComponent({
 
     const isDatesPicker = computed(() => props.type === 'dates')
 
-    const triggerClass = computed(() => props.prefixIcon || (isTimeLikePicker.value ? 'el-icon-time' : 'el-icon-date'))
+    const triggerClass = computed(() => props.prefixIcon || (isTimeLikePicker.value ? 'lx-icon-time' : 'lx-icon-date'))
 
     const showClose = ref(false)
 

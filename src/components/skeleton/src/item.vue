@@ -1,5 +1,5 @@
 <template>
-  <div :class="['el-skeleton__item', `el-skeleton__${variant}`]">
+  <div :class="['lx-skeleton__item', `el-skeleton__${variant}`]">
     <img-placeholder v-if="variant === 'image'" />
   </div>
 </template>

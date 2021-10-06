@@ -3,7 +3,7 @@ import DropdownItem from './src/dropdown-item.vue'
 import DropdownMenu from './src/dropdown-menu.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 
 Dropdown.install = (app: App): void => {

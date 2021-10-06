@@ -17,12 +17,6 @@ var config = {
   entry: [
     './site/index.js'
   ],
-  resolve: {
-    // extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
-    alias: {
-      vue: `vue/dist/${vueBundle}`
-    },
-  },
   output: {
     // path: path.resolve(process.cwd() , './dist'),
     path: path.join(__dirname, "dist"),
@@ -33,10 +27,18 @@ var config = {
     }
   },
   resolve: {
+    extensions: ['.js', '.vue', '.json', '.ts', '.tsx'],
     alias: {
+      // vue: `vue/dist/${vueBundle}`,
       'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
-    }
+      '@lixi': path.resolve(process.cwd() , './src'),
+    },
   },
+  // resolve: {
+  //   alias: {
+  //     'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
+  //   }
+  // },
   module: {
     rules: [
       {

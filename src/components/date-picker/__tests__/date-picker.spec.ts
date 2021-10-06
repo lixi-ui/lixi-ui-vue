@@ -1,9 +1,9 @@
-import ConfigProvider from '@element-plus/components/config-provider'
-import { CommonPicker } from '@element-plus/components/time-picker'
-import Input from '@element-plus/components/input'
+import ConfigProvider from '@lixi/components/config-provider'
+import { CommonPicker } from '@lixi/components/time-picker'
+import Input from '@lixi/components/input'
 import { mount } from '@vue/test-utils'
-import zhCn from '@element-plus/locale/lang/zh-cn'
-import enUs from '@element-plus/locale/lang/en'
+import zhCn from '@lixi/locale/lang/zh-cn'
+import enUs from '@lixi/locale/lang/en'
 import dayjs from 'dayjs'
 import 'dayjs/locale/zh-cn'
 import { nextTick } from 'vue'
@@ -11,7 +11,7 @@ import DatePicker from '../src/date-picker'
 
 const _mount = (template: string, data = () => ({}), otherObj?) => mount({
   components: {
-    'el-date-picker': DatePicker,
+    'lx-date-picker': DatePicker,
   },
   template,
   data,
@@ -470,8 +470,8 @@ describe('WeekPicker', () => {
     it(`emit first day of the week, ${loObj.locale.name} locale, ${loObj.name}`, async () => {
       const wrapper = mount({
         components: {
-          'el-date-picker': DatePicker,
-          'el-config-provider': ConfigProvider,
+          'lx-date-picker': DatePicker,
+          'lx-config-provider': ConfigProvider,
         },
         template: `
           <lx-config-provider :locale="locale">

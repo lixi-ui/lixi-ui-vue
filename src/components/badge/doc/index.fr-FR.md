@@ -23,8 +23,8 @@ Affiche le nombre de nouveaux messages.
 </lx-badge>
 
 <lx-dropdown trigger="click">
-  <span class="el-dropdown-link">
-    Cliquez<i class="el-icon-caret-bottom el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    Cliquez<i class="lx-icon-caret-bottom lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu >
@@ -104,7 +104,7 @@ Utilisez un point rouge pour signaler du contenu devant être remarqué.
 ```html
 <lx-badge is-dot class="item">Requète</lx-badge>
 <lx-badge is-dot class="item">
-  <lx-button class="share-button" icon="el-icon-share" type="primary"></lx-button>
+  <lx-button class="share-button" icon="lx-icon-share" type="primary"></lx-button>
 </lx-badge>
 
 <style>

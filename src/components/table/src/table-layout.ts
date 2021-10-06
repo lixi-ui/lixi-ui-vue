@@ -1,7 +1,7 @@
 import { nextTick, ref, isRef } from 'vue'
 import { hasOwn } from '@vue/shared'
-import scrollbarWidth from '@element-plus/utils/scrollbar-width'
-import isServer from '@element-plus/utils/isServer'
+import scrollbarWidth from '@lixi/utils/scrollbar-width'
+import isServer from '@lixi/utils/isServer'
 import { parseHeight } from './util'
 
 import { Ref } from 'vue'

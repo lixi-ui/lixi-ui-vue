@@ -1,7 +1,7 @@
 <template>
   <div
     ref="button"
-    class="el-slider__button-wrapper"
+    class="lx-slider__button-wrapper"
     :class="{ hover: hovering, dragging: dragging }"
     :style="wrapperStyle"
     tabindex="0"
@@ -29,7 +29,7 @@
         <span>{{ formatValue }}</span>
       </template>
       <div
-        class="el-slider__button"
+        class="lx-slider__button"
         :class="{ hover: hovering, dragging: dragging }"
       ></div>
     </lx-tooltip>
@@ -38,8 +38,8 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
-import LxTooltip from '@element-plus/components/tooltip'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
+import LxTooltip from '@lixi/components/tooltip'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import { useSliderButton } from './useSliderButton'
 
 export default defineComponent({

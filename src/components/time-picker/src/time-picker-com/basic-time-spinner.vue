@@ -1,13 +1,13 @@
 <template>
-  <div class="el-time-spinner" :class="{ 'has-seconds': showSeconds }">
+  <div class="lx-time-spinner" :class="{ 'has-seconds': showSeconds }">
     <template v-if="!arrowControl">
       <lx-scrollbar
         v-for="item in spinnerItems"
         :key="item"
         :ref="getRefId(item)"
-        class="el-time-spinner__wrapper"
+        class="lx-time-spinner__wrapper"
         wrap-style="max-height: inherit;"
-        view-class="el-time-spinner__list"
+        view-class="lx-time-spinner__list"
         noresize
         tag="ul"
         @mouseenter="emitSelectRange(item)"
@@ -16,7 +16,7 @@
         <li
           v-for="(disabled, key) in listMap[item].value"
           :key="key"
-          class="el-time-spinner__item"
+          class="lx-time-spinner__item"
           :class="{ 'active': key === timePartsMap[item].value, disabled }"
           @click="handleClick(item, { value: key, disabled })"
         >
@@ -33,16 +33,16 @@
       <div
         v-for="item in spinnerItems"
         :key="item"
-        class="el-time-spinner__wrapper is-arrow"
+        class="lx-time-spinner__wrapper is-arrow"
         @mouseenter="emitSelectRange(item)"
       >
-        <i v-repeat-click="onDecreaseClick" class="el-time-spinner__arrow el-icon-arrow-up"></i>
-        <i v-repeat-click="onIncreaseClick" class="el-time-spinner__arrow el-icon-arrow-down"></i>
-        <ul class="el-time-spinner__list">
+        <i v-repeat-click="onDecreaseClick" class="lx-time-spinner__arrow lx-icon-arrow-up"></i>
+        <i v-repeat-click="onIncreaseClick" class="lx-time-spinner__arrow lx-icon-arrow-down"></i>
+        <ul class="lx-time-spinner__list">
           <li
             v-for="(time, key) in arrowListMap[item].value"
             :key="key"
-            class="el-time-spinner__item"
+            class="lx-time-spinner__item"
             :class="{ 'active': time === timePartsMap[item].value, 'disabled': listMap[item].value[time] }"
           >
             {{ time === undefined ? '' : ('0' + (amPmMode ? (time % 12 || 12) : time )).slice(-2) + getAmPmFlag(time) }}
@@ -63,13 +63,13 @@ import {
   watch,
 } from 'vue'
 import debounce from 'lodash/debounce'
-import { RepeatClick } from '@element-plus/directives'
-import LxScrollbar from '@element-plus/components/scrollbar'
+import { RepeatClick } from '@lixi/directives'
+import LxScrollbar from '@lixi/components/scrollbar'
 import { getTimeLists } from './useTimePicker'
 
 import type { PropType } from 'vue'
 import type { Dayjs } from 'dayjs'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 
 export default defineComponent({
 

@@ -8,8 +8,8 @@ Passez sur le menu avec la souris pour dérouler son contenu.
 
 ```html
 <lx-dropdown>
-  <span class="el-dropdown-link">
-    Menu déroulant<i class="el-icon-arrow-down el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    Menu déroulant<i class="lx-icon-arrow-down lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -44,7 +44,7 @@ Utilisez le bouton pour ouvrir le menu déroulant.
 ```html
 <lx-dropdown>
   <lx-button type="primary">
-    Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
+    Liste déroulante<i class="lx-icon-arrow-down lx-icon--right"></i>
   </lx-button>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -122,16 +122,16 @@ Vous pouvez choisir de déclencher le menu au moment du clic, ou en passant la s
   <lx-col :span="8">
     <span class="demonstration">En passant la souris</span>
     <lx-dropdown>
-      <span class="el-dropdown-link">
-        Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
+      <span class="lx-dropdown-link">
+        Liste déroulante<i class="lx-icon-arrow-down lx-icon--right"></i>
       </span>
       <template #dropdown>
         <lx-dropdown-menu>
-          <lx-dropdown-item icon="el-icon-plus">Action 1</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus">Action 2</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus-outline">Action 3</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-check">Action 4</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-check">Action 5</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-plus">Action 1</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus">Action 2</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus-outline">Action 3</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-check">Action 4</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-check">Action 5</lx-dropdown-item>
         </lx-dropdown-menu>
       </template>
     </lx-dropdown>
@@ -139,16 +139,16 @@ Vous pouvez choisir de déclencher le menu au moment du clic, ou en passant la s
   <lx-col :span="8">
     <span class="demonstration">En cliquant</span>
     <lx-dropdown trigger="click">
-      <span class="el-dropdown-link">
-        Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
+      <span class="lx-dropdown-link">
+        Liste déroulante<i class="lx-icon-arrow-down lx-icon--right"></i>
       </span>
       <template #dropdown>
         <lx-dropdown-menu>
-          <lx-dropdown-item icon="el-icon-plus">Action 1</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus">Action 2</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus-outline">Action 3</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-check">Action 4</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-check">Action 5</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-plus">Action 1</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus">Action 2</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus-outline">Action 3</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-check">Action 4</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-check">Action 5</lx-dropdown-item>
         </lx-dropdown-menu>
       </template>
     </lx-dropdown>
@@ -156,16 +156,16 @@ Vous pouvez choisir de déclencher le menu au moment du clic, ou en passant la s
   <lx-col :span="8">
     <span class="demonstration">Par clic droit</span>
     <lx-dropdown trigger="contextmenu">
-      <span class="el-dropdown-link">
-        Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
+      <span class="lx-dropdown-link">
+        Liste déroulante<i class="lx-icon-arrow-down lx-icon--right"></i>
       </span>
       <template #dropdown>
         <lx-dropdown-menu>
-          <lx-dropdown-item icon="el-icon-plus">Action 1</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus">Action 2</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus-outline">Action 3</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-check">Action 4</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-check">Action 5</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-plus">Action 1</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus">Action 2</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus-outline">Action 3</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-check">Action 4</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-check">Action 5</lx-dropdown-item>
         </lx-dropdown-menu>
       </template>
     </lx-dropdown>
@@ -197,8 +197,8 @@ Utilisez l'attribut `hide-on-click` pour déterminer si le menu se ferme après 
 :::demo Par défaut le menu se ferme après avoir cliqué dans la liste. Vous pouvez changer cette option en mettant `hide-on-click` à `false`.
 ```html
 <lx-dropdown :hide-on-click="false">
-  <span class="el-dropdown-link">
-    Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    Liste déroulante<i class="lx-icon-arrow-down lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -231,8 +231,8 @@ Le paramètre de cet évènement peut être assigné à chaque élément de la l
 :::demo
 ```html
 <lx-dropdown @command="handleCommand">
-  <span class="el-dropdown-link">
-    Liste déroulante<i class="el-icon-arrow-down el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    Liste déroulante<i class="lx-icon-arrow-down lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>

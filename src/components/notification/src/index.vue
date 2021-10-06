@@ -1,9 +1,9 @@
 <template>
-  <transition name="el-notification-fade" @before-leave="onClose" @after-leave="$emit('destroy')">
+  <transition name="lx-notification-fade" @before-leave="onClose" @after-leave="$emit('destroy')">
     <div
       v-show="visible"
       :id="id"
-      :class="['el-notification', customClass, horizontalClass]"
+      :class="['lx-notification', customClass, horizontalClass]"
       :style="positionStyle"
       role="alert"
       @mouseenter="clearTimer"
@@ -12,15 +12,15 @@
     >
       <i
         v-if="type || iconClass"
-        class="el-notification__icon"
+        class="lx-notification__icon"
         :class="[typeClass, iconClass]"
       ></i>
       <div
-        class="el-notification__group"
+        class="lx-notification__group"
         :class="{ 'is-with-icon': typeClass || iconClass }"
       >
-        <h2 class="el-notification__title" v-text="title"></h2>
-        <div v-show="message" class="el-notification__content" :style="!!title ? null : 'margin: 0'">
+        <h2 class="lx-notification__title" v-text="title"></h2>
+        <div v-show="message" class="lx-notification__content" :style="!!title ? null : 'margin: 0'">
           <slot>
             <p v-if="!dangerouslyUseHTMLString">{{ message }}</p>
             <!-- Caution here, message could've been compromized, nerver use user's input as message -->
@@ -30,7 +30,7 @@
         </div>
         <div
           v-if="showClose"
-          class="el-notification__closeBtn el-icon-close"
+          class="lx-notification__closeBtn lx-icon-close"
           @click.stop="close"
         ></div>
       </div>
@@ -40,11 +40,11 @@
 <script lang="ts">
 import { defineComponent, computed, ref, onMounted, onBeforeUnmount } from 'vue'
 // notificationVM is an alias of vue.VNode
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { on, off } from '@element-plus/utils/dom'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { on, off } from '@lixi/utils/dom'
 
 import type { CSSProperties, PropType } from 'vue'
-import type { Indexable } from '@element-plus/utils/types'
+import type { Indexable } from '@lixi/utils/types'
 import type { NotificationVM, Position } from './notification.type'
 
 const TypeMap: Indexable<string> = {

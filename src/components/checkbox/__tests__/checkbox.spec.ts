@@ -6,9 +6,9 @@ import CheckboxGroup from '../src/checkbox-group.vue'
 
 const _mount = <D>(template: string, data: () => D, otherObj?: Record<string, unknown>) => mount<D>({
   components: {
-    'el-checkbox': Checkbox,
-    'el-checkbox-group': CheckboxGroup,
-    'el-checkbox-button': CheckboxButton,
+    'lx-checkbox': Checkbox,
+    'lx-checkbox-group': CheckboxGroup,
+    'lx-checkbox-button': CheckboxButton,
   },
   template,
   data,
@@ -18,7 +18,7 @@ const _mount = <D>(template: string, data: () => D, otherObj?: Record<string, un
 describe('Checkbox', () => {
   test('create', async () => {
     const wrapper = _mount('<lx-checkbox v-model="checkbox" label="a"/>', () => ({ checkbox: false }))
-    expect(wrapper.classes()).toContain('el-checkbox')
+    expect(wrapper.classes()).toContain('lx-checkbox')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-checked')
     await wrapper.trigger('click')
@@ -181,7 +181,7 @@ describe('Checkbox', () => {
 describe('check-button', () => {
   test('create', async () => {
     const wrapper = _mount('<lx-checkbox-button v-model="checkbox" label="a"/>', () => ({ checkbox: false }))
-    expect(wrapper.classes()).toContain('el-checkbox-button')
+    expect(wrapper.classes()).toContain('lx-checkbox-button')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-checked')
     await wrapper.trigger('click')

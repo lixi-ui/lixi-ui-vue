@@ -1,4 +1,4 @@
-import defineGetter from '@element-plus/test-utils/define-getter'
+import defineGetter from '@lixi/test-utils/define-getter'
 
 export default () => {
   const clientWidth = defineGetter(

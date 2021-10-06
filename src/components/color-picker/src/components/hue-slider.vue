@@ -1,9 +1,9 @@
 <template>
-  <div class="el-color-hue-slider" :class="{ 'is-vertical': vertical }">
-    <div ref="bar" class="el-color-hue-slider__bar" @click="handleClick"></div>
+  <div class="lx-color-hue-slider" :class="{ 'is-vertical': vertical }">
+    <div ref="bar" class="lx-color-hue-slider__bar" @click="handleClick"></div>
     <div
       ref="thumb"
-      class="el-color-hue-slider__thumb"
+      class="lx-color-hue-slider__thumb"
       :style="{
         left: thumbLeft + 'px',
         top: thumbTop + 'px'

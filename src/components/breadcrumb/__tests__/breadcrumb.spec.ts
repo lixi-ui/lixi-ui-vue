@@ -4,8 +4,8 @@ import BreadcrumbItem from '../src/item.vue'
 
 const _mount = (template: string) => mount({
   components: {
-    'el-breadcrumb': Breadcrumb,
-    'el-breadcrumb-item': BreadcrumbItem,
+    'lx-breadcrumb': Breadcrumb,
+    'lx-breadcrumb-item': BreadcrumbItem,
   },
   template,
 }, {

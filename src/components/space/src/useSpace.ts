@@ -1,9 +1,9 @@
 import { ref, computed, watch, isVNode } from 'vue'
-import { isValidComponentSize } from '@element-plus/utils/validators'
-import { isNumber, isArray, isString } from '@element-plus/utils/util'
+import { isValidComponentSize } from '@lixi/utils/validators'
+import { isNumber, isArray, isString } from '@lixi/utils/util'
 
 import type { PropType, ExtractPropTypes, CSSProperties, VNodeChild } from 'vue'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 
 const SizeMap: Record<ComponentSize, number> = {
   mini: 4,
@@ -75,7 +75,7 @@ export const defaultProps = {
 
 export function useSpace(props: ExtractPropTypes<typeof defaultProps>) {
   const classes = computed(() => [
-    'el-space',
+    'lx-space',
     `el-space--${props.direction}`,
     props.class,
   ])

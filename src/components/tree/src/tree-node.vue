@@ -2,7 +2,7 @@
   <div
     v-show="node.visible"
     ref="node$"
-    class="el-tree-node"
+    class="lx-tree-node"
     :class="{
       'is-expanded': expanded,
       'is-current': node.isCurrent,
@@ -25,7 +25,7 @@
     @drop.stop="handleDrop"
   >
     <div
-      class="el-tree-node__content"
+      class="lx-tree-node__content"
       :style="{ paddingLeft: (node.level - 1) * tree.props.indent + 'px' }"
     >
       <span
@@ -34,8 +34,8 @@
             'is-leaf': node.isLeaf,
             expanded: !node.isLeaf && expanded,
           },
-          'el-tree-node__expand-icon',
-          tree.props.iconClass ? tree.props.iconClass : 'el-icon-caret-right',
+          'lx-tree-node__expand-icon',
+          tree.props.iconClass ? tree.props.iconClass : 'lx-icon-caret-right',
         ]"
         @click.stop="handleExpandIconClick"
       >
@@ -50,7 +50,7 @@
       />
       <span
         v-if="node.loading"
-        class="el-tree-node__loading-icon el-icon-loading"
+        class="lx-tree-node__loading-icon lx-icon-loading"
       >
       </span>
       <node-content :node="node" :render-content="renderContent" />
@@ -59,7 +59,7 @@
       <div
         v-if="!renderAfterExpand || childNodeRendered"
         v-show="expanded"
-        class="el-tree-node__children"
+        class="lx-tree-node__children"
         role="group"
         :aria-expanded="expanded"
       >
@@ -78,8 +78,8 @@
 </template>
 <script lang='ts'>
 import { defineComponent, getCurrentInstance, ref, watch, nextTick, inject, provide } from 'vue'
-import LxCollapseTransition from '@element-plus/components/collapse-transition'
-import LxCheckbox from '@element-plus/components/checkbox'
+import LxCollapseTransition from '@lixi/components/collapse-transition/src'
+import LxCheckbox from '@lixi/components/checkbox/src/checkbox.vue'
 import NodeContent from './tree-node-content.vue'
 import { getNodeKey as getNodeKeyUtil } from './model/util'
 import { useNodeExpandEventBroadcast } from './model/useNodeExpandEventBroadcast'
@@ -87,7 +87,7 @@ import { useDragNodeEmitter } from './model/useDragNode'
 import Node from './model/node'
 
 import type { ComponentInternalInstance, PropType } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 import type { TreeOptionProps, TreeNodeData, RootTreeType } from './tree.type'
 
 export default defineComponent({

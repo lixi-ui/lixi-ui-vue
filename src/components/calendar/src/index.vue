@@ -1,8 +1,8 @@
 <template>
-  <div class="el-calendar">
-    <div class="el-calendar__header">
-      <div class="el-calendar__title">{{ i18nDate }}</div>
-      <div v-if="validatedRange.length === 0" class="el-calendar__button-group">
+  <div class="lx-calendar">
+    <div class="lx-calendar__header">
+      <div class="lx-calendar__title">{{ i18nDate }}</div>
+      <div v-if="validatedRange.length === 0" class="lx-calendar__button-group">
         <lx-button-group>
           <lx-button
             size="mini"
@@ -24,7 +24,7 @@
         </lx-button-group>
       </div>
     </div>
-    <div v-if="validatedRange.length === 0" class="el-calendar__body">
+    <div v-if="validatedRange.length === 0" class="lx-calendar__body">
       <date-table
         :date="date"
         :selected-day="realSelectedDay"
@@ -35,7 +35,7 @@
         </template>
       </date-table>
     </div>
-    <div v-else class="el-calendar__body">
+    <div v-else class="lx-calendar__body">
       <date-table
         v-for="(range_, index) in validatedRange"
         :key="index"
@@ -62,9 +62,9 @@ import {
 import type { PropType, ComputedRef } from 'vue'
 import dayjs from 'dayjs'
 
-import LxButton from '@element-plus/components/button'
-import { useLocaleInject } from '@element-plus/hooks'
-import { warn } from '@element-plus/utils/error'
+import LxButton from '@lixi/components/button'
+import { useLocaleInject } from '@lixi/hooks'
+import { warn } from '@lixi/utils/error'
 import DateTable from './date-table.vue'
 
 import type { Dayjs } from 'dayjs'

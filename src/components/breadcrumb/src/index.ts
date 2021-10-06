@@ -2,7 +2,7 @@ import Breadcrumb from './src/index.vue'
 import BreadcrumbItem from './src/item.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Breadcrumb.install = (app: App): void => {
   app.component(Breadcrumb.name, Breadcrumb)

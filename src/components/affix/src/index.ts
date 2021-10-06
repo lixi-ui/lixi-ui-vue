@@ -1,7 +1,7 @@
 import Affix from './src/index.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Affix.install = (app: App): void => {
 

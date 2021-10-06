@@ -1,9 +1,9 @@
 import { nextTick } from 'vue'
 import { mount, VueWrapper } from '@vue/test-utils'
-import installStyle from '@element-plus/test-utils/style-plugin'
-import Checkbox from '@element-plus/components/checkbox/src/checkbox.vue'
-import CheckboxGroup from '@element-plus/components/checkbox/src/checkbox-group.vue'
-import Input from '@element-plus/components/input/src/index.vue'
+import installStyle from '@lixi/test-utils/style-plugin'
+import Checkbox from '@lixi/components/checkbox/src/checkbox.vue'
+import CheckboxGroup from '@lixi/components/checkbox/src/checkbox-group.vue'
+import Input from '@lixi/components/input/src/index.vue'
 import Form from '../src/form.vue'
 import FormItem from '../src/form-item.vue'
 
@@ -154,7 +154,7 @@ describe('Form', () => {
         }
       },
     })
-    expect(wrapper.classes()).toContain('el-form--inline')
+    expect(wrapper.classes()).toContain('lx-form--inline')
   })
 
   test('label position', () => {
@@ -188,8 +188,8 @@ describe('Form', () => {
         }
       },
     })
-    expect(wrapper.findComponent({ ref: 'labelTop' }).classes()).toContain('el-form--label-top')
-    expect(wrapper.findComponent({ ref: 'labelLeft' }).classes()).toContain('el-form--label-left')
+    expect(wrapper.findComponent({ ref: 'labelTop' }).classes()).toContain('lx-form--label-top')
+    expect(wrapper.findComponent({ ref: 'labelLeft' }).classes()).toContain('lx-form--label-left')
   })
 
   test('label size', () => {
@@ -211,7 +211,7 @@ describe('Form', () => {
         }
       },
     })
-    expect(wrapper.findComponent(FormItem).classes()).toContain('el-form-item--mini')
+    expect(wrapper.findComponent(FormItem).classes()).toContain('lx-form-item--mini')
   })
 
   test('show message', done => {

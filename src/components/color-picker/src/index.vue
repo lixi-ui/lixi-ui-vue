@@ -8,14 +8,14 @@
     :show-arrow="false"
     :fallback-placements="['bottom', 'top', 'right', 'left']"
     :offset="0"
-    transition="el-zoom-in-top"
+    transition="lx-zoom-in-top"
     :gpu-acceleration="false"
-    :popper-class="`el-color-picker__panel el-color-dropdown ${popperClass}`"
+    :popper-class="`el-color-picker__panel lx-color-dropdown ${popperClass}`"
     :stop-popper-mouse-event="false"
   >
     <template #default>
       <div v-click-outside="hide">
-        <div class="el-color-dropdown__main-wrapper">
+        <div class="lx-color-dropdown__main-wrapper">
           <hue-slider
             ref="hue"
             class="hue-slider"
@@ -31,8 +31,8 @@
           :color="color"
           :colors="predefine"
         />
-        <div class="el-color-dropdown__btns">
-          <span class="el-color-dropdown__value">
+        <div class="lx-color-dropdown__btns">
+          <span class="lx-color-dropdown__value">
             <lx-input
               v-model="customInput"
               :validate-event="false"
@@ -44,7 +44,7 @@
           <lx-button
             size="mini"
             type="text"
-            class="el-color-dropdown__link-btn"
+            class="lx-color-dropdown__link-btn"
             @click="clear"
           >
             {{ t('el.colorpicker.clear') }}
@@ -52,7 +52,7 @@
           <lx-button
             plain
             size="mini"
-            class="el-color-dropdown__btn"
+            class="lx-color-dropdown__btn"
             @click="confirmValue"
           >
             {{ t('el.colorpicker.confirm') }}
@@ -63,23 +63,23 @@
     <template #trigger>
       <div
         :class="[
-          'el-color-picker',
+          'lx-color-picker',
           colorDisabled ? 'is-disabled' : '',
           colorSize ? `el-color-picker--${ colorSize }` : ''
         ]"
       >
-        <div v-if="colorDisabled" class="el-color-picker__mask"></div>
-        <div class="el-color-picker__trigger" @click="handleTrigger">
-          <span class="el-color-picker__color" :class="{ 'is-alpha': showAlpha }">
+        <div v-if="colorDisabled" class="lx-color-picker__mask"></div>
+        <div class="lx-color-picker__trigger" @click="handleTrigger">
+          <span class="lx-color-picker__color" :class="{ 'is-alpha': showAlpha }">
             <span
-              class="el-color-picker__color-inner"
+              class="lx-color-picker__color-inner"
               :style="{
                 backgroundColor: displayedColor
               }"
             ></span>
-            <span v-if="!modelValue && !showPanelColor" class="el-color-picker__empty el-icon-close"></span>
+            <span v-if="!modelValue && !showPanelColor" class="lx-color-picker__empty lx-icon-close"></span>
           </span>
-          <span v-show="modelValue || showPanelColor" class="el-color-picker__icon el-icon-arrow-down"></span>
+          <span v-show="modelValue || showPanelColor" class="lx-color-picker__icon lx-icon-arrow-down"></span>
         </div>
       </div>
     </template>
@@ -89,15 +89,15 @@
 <script lang="ts">
 import { computed, defineComponent, inject, nextTick, onMounted, provide, reactive, ref, watch } from 'vue'
 import debounce from 'lodash/debounce'
-import LxButton from '@element-plus/components/button'
-import { ClickOutside } from '@element-plus/directives'
-import { elFormItemKey, elFormKey } from '@element-plus/tokens'
-import { useLocaleInject } from '@element-plus/hooks'
-import LxPopper, { Effect } from '@element-plus/components/popper'
-import LxInput from '@element-plus/components/input'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
-import { useGlobalConfig } from '@element-plus/utils/util'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import LxButton from '@lixi/components/button'
+import { ClickOutside } from '@lixi/directives'
+import { elFormItemKey, elFormKey } from '@lixi/tokens'
+import { useLocaleInject } from '@lixi/hooks'
+import LxPopper, { Effect } from '@lixi/components/popper'
+import LxInput from '@lixi/components/input'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
+import { useGlobalConfig } from '@lixi/utils/util'
+import { isValidComponentSize } from '@lixi/utils/validators'
 import AlphaSlider from './components/alpha-slider.vue'
 import HueSlider from './components/hue-slider.vue'
 import Predefine from './components/predefine.vue'
@@ -106,8 +106,8 @@ import Color from './color'
 import { OPTIONS_KEY } from './useOption'
 
 import type { PropType } from 'vue'
-import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
+import type { ComponentSize } from '@lixi/utils/types'
 import type { IUseOptions } from './useOption'
 
 export default defineComponent({

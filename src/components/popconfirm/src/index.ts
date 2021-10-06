@@ -1,7 +1,7 @@
 import Popconfirm from './src/index.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Popconfirm.install = (app: App): void => {
   app.component(Popconfirm.name, Popconfirm)

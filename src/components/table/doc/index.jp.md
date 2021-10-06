@@ -648,7 +648,7 @@
 
 データ構造が複雑な場合は、グループヘッダーを使用してデータ階層を表示することができます。
 
-:::demo el-table-columnの中にel-table-columnを配置するだけで、グループヘッダーを実現することができます。
+:::demo lx-table-columnの中にel-table-columnを配置するだけで、グループヘッダーを実現することができます。
 ```html
 <template>
   <lx-table
@@ -1097,7 +1097,7 @@
       label="Date"
       width="180">
       <template #default="scope">
-        <i class="el-icon-time"></i>
+        <i class="lx-icon-time"></i>
         <span style="margin-left: 10px">{{ scope.row.date }}</span>
       </template>
     </lx-table-column>

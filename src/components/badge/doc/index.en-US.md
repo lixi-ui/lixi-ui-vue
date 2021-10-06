@@ -23,8 +23,8 @@ Displays the amount of new messages.
 </lx-badge>
 
 <lx-dropdown trigger="click">
-  <span class="el-dropdown-link">
-    Click Me<i class="el-icon-caret-bottom el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    Click Me<i class="lx-icon-caret-bottom lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -104,7 +104,7 @@ Use a red dot to mark content that needs to be noticed.
 ```html
 <lx-badge is-dot class="item">query</lx-badge>
 <lx-badge is-dot class="item">
-  <lx-button class="share-button" icon="el-icon-share" type="primary"></lx-button>
+  <lx-button class="share-button" icon="lx-icon-share" type="primary"></lx-button>
 </lx-badge>
 
 <style>

@@ -1,8 +1,8 @@
 <template>
   <label
-    class="el-checkbox-button"
+    class="lx-checkbox-button"
     :class="[
-      size ? 'el-checkbox-button--' + size : '',
+      size ? 'lx-checkbox-button--' + size : '',
       { 'is-disabled': isDisabled },
       { 'is-checked': isChecked },
       { 'is-focus': focus },
@@ -14,7 +14,7 @@
     <input
       v-if="trueLabel || falseLabel"
       v-model="model"
-      class="el-checkbox-button__original"
+      class="lx-checkbox-button__original"
       type="checkbox"
       :name="name"
       :disabled="isDisabled"
@@ -27,7 +27,7 @@
     <input
       v-else
       v-model="model"
-      class="el-checkbox-button__original"
+      class="lx-checkbox-button__original"
       type="checkbox"
       :name="name"
       :disabled="isDisabled"
@@ -39,7 +39,7 @@
 
     <span
       v-if="$slots.default || label"
-      class="el-checkbox-button__inner"
+      class="lx-checkbox-button__inner"
       :style="isChecked ? activeStyle : null"
     >
       <slot>{{ label }}</slot>
@@ -52,7 +52,7 @@ import {
   defineComponent,
   computed,
 } from 'vue'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import { useCheckbox, useCheckboxGroup, useCheckboxProps } from './useCheckbox'
 
 export default defineComponent({

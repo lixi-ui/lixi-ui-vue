@@ -1,11 +1,11 @@
 import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
-import { defineGetter, makeScroll } from '@element-plus/test-utils'
+import { defineGetter, makeScroll } from '@lixi/test-utils'
 import Scrollbar from '../src/index.vue'
 
 const _mount = (template: string) => mount({
   components: {
-    'el-scrollbar': Scrollbar,
+    'lx-scrollbar': Scrollbar,
   },
   template,
 })

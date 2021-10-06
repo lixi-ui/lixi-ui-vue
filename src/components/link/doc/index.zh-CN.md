@@ -49,8 +49,8 @@
 :::demo
 ```html
 <div>
-  <lx-link icon="el-icon-edit">编辑</lx-link>
-  <lx-link>查看<i class="el-icon-view el-icon--right"></i> </lx-link>
+  <lx-link icon="lx-icon-edit">编辑</lx-link>
+  <lx-link>查看<i class="lx-icon-view lx-icon--right"></i> </lx-link>
 </div>
 ```
 :::

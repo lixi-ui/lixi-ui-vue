@@ -75,8 +75,8 @@
 | size | 入力のサイズ | string | medium / small / mini | — |
 | placeholder | 非範囲モード時のプレースホルダ | string | — | — |
 | name | ネイティブ入力の `name` と同じ | string | — | — |
-| prefix-icon | カスタムプレフィックスアイコンクラス | string | — | el-icon-time |
-| clear-icon | カスタムクリアアイコンクラス | string | — | el-icon-circle-close |
+| prefix-icon | カスタムプレフィックスアイコンクラス | string | — | lx-icon-time |
+| clear-icon | カスタムクリアアイコンクラス | string | — | lx-icon-circle-close |
 | start | 開始時刻 | string | — | 09:00 |
 | end | 終了時刻 | string | — | 18:00 |
 | step | タイムステップ | string | — | 00:30 |

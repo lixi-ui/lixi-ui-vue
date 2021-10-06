@@ -3,21 +3,21 @@
     v-model:visible="visible"
     trigger="click"
     :effect="Effect.LIGHT"
-    popper-class="el-popover"
+    popper-class="lx-popover"
     append-to-body
     :fallback-placements="['bottom' ,'top', 'right', 'left']"
   >
-    <div class="el-popconfirm">
-      <p class="el-popconfirm__main">
+    <div class="lx-popconfirm">
+      <p class="lx-popconfirm__main">
         <i
           v-if="!hideIcon"
           :class="icon"
-          class="el-popconfirm__icon"
+          class="lx-popconfirm__icon"
           :style="{color: iconColor}"
         ></i>
         {{ title }}
       </p>
-      <div class="el-popconfirm__action">
+      <div class="lx-popconfirm__action">
         <lx-button
           size="mini"
           :type="cancelButtonType"
@@ -42,12 +42,12 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue'
-import LxButton from '@element-plus/components/button'
-import LxPopper, { Effect } from '@element-plus/components/popper'
-import { useLocaleInject } from '@element-plus/hooks'
+import LxButton from '@lixi/components/button'
+import LxPopper, { Effect } from '@lixi/components/popper'
+import { useLocaleInject } from '@lixi/hooks'
 
 import type { PropType } from 'vue'
-import type { ButtonType } from '@element-plus/components/button/src/types'
+import type { ButtonType } from '@lixi/components/button/src/types'
 
 export default defineComponent({
   name: 'LxPopconfirm',
@@ -77,7 +77,7 @@ export default defineComponent({
     },
     icon: {
       type: String,
-      default: 'el-icon-question',
+      default: 'lx-icon-question',
     },
     iconColor: {
       type: String,

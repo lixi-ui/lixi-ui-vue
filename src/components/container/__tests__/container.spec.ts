@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { getCssVariable } from '@element-plus/test-utils'
+import { getCssVariable } from '@lixi/test-utils'
 
 import Container from '../src/container.vue'
 import Header from '../src/header.vue'

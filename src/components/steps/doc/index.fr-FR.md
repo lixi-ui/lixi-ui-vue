@@ -87,9 +87,9 @@ Une grande variété d'icônes peut être utilisée dans la barre d'étapes.
 
 ```html
 <lx-steps :active="1">
-  <lx-step title="Étape 1" icon="el-icon-edit"></lx-step>
-  <lx-step title="Étape 2" icon="el-icon-upload"></lx-step>
-  <lx-step title="Étape 3" icon="el-icon-picture"></lx-step>
+  <lx-step title="Étape 1" icon="lx-icon-edit"></lx-step>
+  <lx-step title="Étape 2" icon="lx-icon-upload"></lx-step>
+  <lx-step title="Étape 3" icon="lx-icon-picture"></lx-step>
 </lx-steps>
 ```
 :::
@@ -119,9 +119,9 @@ La barre peut être simplifiée de manière à ce que `align-center`, `descripti
 ```html
 
 <lx-steps :space="200" :active="1" simple>
-  <lx-step title="Étape 1" icon="el-icon-edit"></lx-step>
-  <lx-step title="Étape 2" icon="el-icon-upload"></lx-step>
-  <lx-step title="Étape 3" icon="el-icon-picture"></lx-step>
+  <lx-step title="Étape 1" icon="lx-icon-edit"></lx-step>
+  <lx-step title="Étape 2" icon="lx-icon-upload"></lx-step>
+  <lx-step title="Étape 3" icon="lx-icon-picture"></lx-step>
 </lx-steps>
 
 <lx-steps :active="1" finish-status="success" simple style="margin-top: 20px">

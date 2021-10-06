@@ -1,9 +1,9 @@
 <template>
   <div
-    ref="el$"
-    class="el-tree"
+    ref="lx$"
+    class="lx-tree"
     :class="{
-      'el-tree--highlight-current': highlightCurrent,
+      'lx-tree--highlight-current': highlightCurrent,
       'is-dragging': !!dragState.draggingNode,
       'is-drop-not-allow': !dragState.allowDrop,
       'is-drop-inner': dragState.dropType === 'inner'
@@ -21,30 +21,31 @@
       :render-content="renderContent"
       @node-expand="handleNodeExpand"
     />
-    <div v-if="isEmpty" class="el-tree__empty-block">
-      <span class="el-tree__empty-text">{{ emptyText || t('el.tree.emptyText') }}</span>
+    <div v-if="isEmpty" class="lx-tree__empty-block">
+      <span class="lx-tree__empty-text">{{ emptyText || t('el.tree.emptyText') }}</span>
     </div>
     <div
       v-show="dragState.showDropIndicator"
       ref="dropIndicator$"
-      class="el-tree__drop-indicator"
+      class="lx-tree__drop-indicator"
     >
     </div>
   </div>
 </template>
 <script lang='ts'>
 import { defineComponent, ref, provide, computed, watch, getCurrentInstance } from 'vue'
-import { useLocaleInject } from '@element-plus/hooks'
-import TreeStore from './model/tree-store'
-import { getNodeKey as getNodeKeyUtil } from './model/util'
+// import { useLocaleInject } from '@lixi/hooks'
+import { useLocaleInject } from '../../../hooks/index.ts'
+import TreeStore from './model/tree-store.ts'
+import { getNodeKey as getNodeKeyUtil } from './model/util.ts'
 import LxTreeNode from './tree-node.vue'
-import { useNodeExpandEventBroadcast } from './model/useNodeExpandEventBroadcast'
-import { useDragNodeHandler } from './model/useDragNode'
-import { useKeydown } from './model/useKeydown'
-import Node from './model/node'
+import { useNodeExpandEventBroadcast } from './model/useNodeExpandEventBroadcast.ts'
+import { useDragNodeHandler } from './model/useDragNode.ts'
+import { useKeydown } from './model/useKeydown.ts'
+import Node from './model/node.ts'
 
 import type { ComponentInternalInstance, PropType } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 import type {
   TreeComponentProps,
   TreeNodeData,
@@ -157,16 +158,16 @@ export default defineComponent({
 
     const root = ref<Node>(store.value.root)
     const currentNode = ref<Node>(null)
-    const el$ = ref<Nullable<HTMLElement>>(null)
+    const lx$ = ref<Nullable<HTMLElement>>(null)
     const dropIndicator$ = ref<Nullable<HTMLElement>>(null)
 
     const { broadcastExpanded } = useNodeExpandEventBroadcast(props)
 
     const { dragState } = useDragNodeHandler({
-      props, ctx, el$, dropIndicator$, store,
+      props, ctx, lx$, dropIndicator$, store,
     })
 
-    useKeydown({ el$ }, store)
+    useKeydown({ lx$ }, store)
 
     const isEmpty = computed(() => {
       const { childNodes } = root.value
@@ -308,7 +309,7 @@ export default defineComponent({
       root,
       currentNode,
       dragState,
-      el$,
+      lx$,
       dropIndicator$,
 
       // computed

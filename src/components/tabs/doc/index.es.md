@@ -126,7 +126,7 @@ Es posible usar slots con nombre para personalizar el contenido de la etiqueta d
 <lx-tabs type="border-card">
   <lx-tab-pane>
     <template #label>
-      <span><i class="el-icon-date"></i> Route</span>
+      <span><i class="lx-icon-date"></i> Route</span>
     </template>
     Route
   </lx-tab-pane>

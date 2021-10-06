@@ -10,15 +10,15 @@ import {
   withKeys,
   withModifiers,
 } from 'vue'
-import { getValueByPath, isUndefined, isObject } from '@element-plus/utils/util'
-// import { addResizeListener, removeResizeListener, ResizableElement } from '@element-plus/utils/resize-event'
-import { FixedSizeList, DynamicSizeList } from '@element-plus/components/virtual-list'
+import { getValueByPath, isUndefined, isObject } from '@lixi/utils/util'
+// import { addResizeListener, removeResizeListener, ResizableElement } from '@lixi/utils/resize-event'
+import { FixedSizeList, DynamicSizeList } from '@lixi/components/virtual-list'
 import GroupItem from './group-item.vue'
 import OptionItem from './option-item.vue'
 
 import { selectV2InjectionKey } from './token'
 
-import type { ItemProps } from '@element-plus/components/virtual-list'
+import type { ItemProps } from '@lixi/components/virtual-list'
 import type { OptionItemProps, Option } from './select.types'
 
 export default defineComponent({
@@ -144,7 +144,7 @@ export default defineComponent({
 
     if (data.length === 0) {
       return h('div', {
-        class: 'el-select-dropdown',
+        class: 'lx-select-dropdown',
         style: {
           width: `${width}px`,
         },
@@ -193,7 +193,7 @@ export default defineComponent({
       Comp,
       {
         ref: 'listRef', // forwarded ref so that select can access the list directly
-        className: 'el-select-dropdown__list',
+        className: 'lx-select-dropdown__list',
         data,
         height,
         width,
@@ -232,7 +232,7 @@ export default defineComponent({
     return h('div', {
       class: {
         'is-multiple': multiple,
-        'el-select-dropdown': true,
+        'lx-select-dropdown': true,
       },
     }, [List])
   },

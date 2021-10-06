@@ -2,13 +2,13 @@ import { onMounted, onUnmounted, computed, ref, watchEffect, watch, unref, nextT
 import {
   addResizeListener,
   removeResizeListener,
-} from '@element-plus/utils/resize-event'
+} from '@lixi/utils/resize-event'
 import throttle from 'lodash/throttle'
 import { parseHeight } from '../util'
-import { useGlobalConfig } from '@element-plus/utils/util'
-import { on, off } from '@element-plus/utils/dom'
+import { useGlobalConfig } from '@lixi/utils/util'
+import { on, off } from '@lixi/utils/dom'
 
-import type { ResizableElement } from '@element-plus/utils/resize-event'
+import type { ResizableElement } from '@lixi/utils/resize-event'
 import type { Table, TableProps } from './defaults'
 import type { Store } from '../store'
 import type TableLayout from '../table-layout'

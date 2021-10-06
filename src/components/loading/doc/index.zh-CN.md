@@ -106,7 +106,7 @@
   <lx-table
     v-loading="loading"
     element-loading-text="拼命加载中"
-    element-loading-spinner="el-icon-loading"
+    element-loading-spinner="lx-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="tableData"
     style="width: 100%;margin-bottom: 10px">
@@ -278,7 +278,7 @@
         const loading = this.$loading({
           lock: true,
           text: 'Loading',
-          spinner: 'el-icon-loading',
+          spinner: 'lx-icon-loading',
           background: 'rgba(0, 0, 0, 0.7)'
         });
         setTimeout(() => {
@@ -308,7 +308,7 @@
         const loading = LxLoading.service({
           lock: true,
           text: 'Loading',
-          spinner: 'el-icon-loading',
+          spinner: 'lx-icon-loading',
           background: 'rgba(0, 0, 0, 0.7)',
         });
         setTimeout(() => {

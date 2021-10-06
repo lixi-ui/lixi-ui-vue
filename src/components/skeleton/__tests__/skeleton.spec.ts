@@ -1,5 +1,5 @@
 import { nextTick } from 'vue'
-import makeMount from '@element-plus/test-utils/make-mount'
+import makeMount from '@lixi/test-utils/make-mount'
 import Skeleton from '../src/index.vue'
 const AXIOM = 'AXIOM is the best girl'
 
@@ -10,7 +10,7 @@ describe('Skeleton.vue', () => {
   test('render test', () => {
     const wrapper = mount()
     expect(wrapper.findAll('.lx-skeleton__p')).toHaveLength(4)
-    expect(wrapper.classes()).toContain('el-skeleton')
+    expect(wrapper.classes()).toContain('lx-skeleton')
 
   })
 

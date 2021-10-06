@@ -10,26 +10,26 @@ import {
   Teleport,
   h,
 } from 'vue'
-import { ClickOutside } from '@element-plus/directives'
-import LxPopper from '@element-plus/components/popper'
+import { ClickOutside } from '@lixi/directives'
+import LxPopper from '@lixi/components/popper'
 import {
   popperDefaultProps,
   Effect,
   renderArrow,
   renderPopper,
   renderTrigger,
-} from '@element-plus/components/popper'
-import { warn } from '@element-plus/utils/error'
-import { renderIf, PatchFlags } from '@element-plus/utils/vnode'
+} from '@lixi/components/popper'
+import { warn } from '@lixi/utils/error'
+import { renderIf, PatchFlags } from '@lixi/utils/vnode'
 import usePopover, { SHOW_EVENT, HIDE_EVENT } from './usePopover'
 
 import type { PropType } from 'vue'
-import type { TriggerType } from '@element-plus/components/popper'
+import type { TriggerType } from '@lixi/components/popper'
 
 const emits = ['update:visible', 'after-enter', 'after-leave', SHOW_EVENT, HIDE_EVENT]
 const NAME = 'LxPopover'
 
-const _hoist = { key: 0, class: 'el-popover__title', role: 'title' }
+const _hoist = { key: 0, class: 'lx-popover__title', role: 'title' }
 
 export default defineComponent({
   name: NAME,
@@ -98,8 +98,8 @@ export default defineComponent({
     } = this
 
     const kls = [
-      this.content ? 'el-popover--plain' : '',
-      'el-popover',
+      this.content ? 'lx-popover--plain' : '',
+      'lx-popover',
       popperClass,
     ].join(' ')
 

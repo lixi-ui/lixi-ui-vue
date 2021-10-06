@@ -2,8 +2,8 @@
   <div
     ref="selectWrapper"
     v-click-outside:[popperPaneRef]="handleClose"
-    class="el-select"
-    :class="[selectSize ? 'el-select--' + selectSize : '']"
+    class="lx-select"
+    :class="[selectSize ? 'lx-select--' + selectSize : '']"
     @click.stop="toggleMenu"
   >
     <lx-popper
@@ -17,7 +17,7 @@
       :effect="Effect.LIGHT"
       pure
       trigger="click"
-      transition="el-zoom-in-top"
+      transition="lx-zoom-in-top"
       :stop-popper-mouse-event="false"
       :gpu-acceleration="false"
       @before-enter="handleMenuEnter"
@@ -27,7 +27,7 @@
           <div
             v-if="multiple"
             ref="tags"
-            class="el-select__tags"
+            class="lx-select__tags"
             :style="{ maxWidth: inputWidth - 32 + 'px', width: '100%' }"
           >
             <span v-if="collapseTags && selected.length">
@@ -39,7 +39,7 @@
                 disable-transitions
                 @close="deleteTag($event, selected[0])"
               >
-                <span class="el-select__tags-text" :style="{ maxWidth: inputWidth - 123 + 'px' }">{{ selected[0].currentLabel }}</span>
+                <span class="lx-select__tags-text" :style="{ maxWidth: inputWidth - 123 + 'px' }">{{ selected[0].currentLabel }}</span>
               </lx-tag>
               <lx-tag
                 v-if="selected.length > 1"
@@ -48,7 +48,7 @@
                 type="info"
                 disable-transitions
               >
-                <span class="el-select__tags-text">+ {{ selected.length - 1 }}</span>
+                <span class="lx-select__tags-text">+ {{ selected.length - 1 }}</span>
               </lx-tag>
             </span>
             <!-- <div> -->
@@ -64,7 +64,7 @@
                   disable-transitions
                   @close="deleteTag($event, item)"
                 >
-                  <span class="el-select__tags-text" :style="{ maxWidth: inputWidth - 75 + 'px' }">{{ item.currentLabel }}</span>
+                  <span class="lx-select__tags-text" :style="{ maxWidth: inputWidth - 75 + 'px' }">{{ item.currentLabel }}</span>
                 </lx-tag>
               </span>
             </transition>
@@ -74,7 +74,7 @@
               ref="input"
               v-model="query"
               type="text"
-              class="el-select__input"
+              class="lx-select__input"
               :class="[selectSize ? `is-${ selectSize }` : '']"
               :disabled="selectDisabled"
               :autocomplete="autocomplete"
@@ -127,10 +127,10 @@
               </div>
             </template>
             <template #suffix>
-              <i v-show="!showClose" :class="['el-select__caret', 'el-input__icon', 'el-icon-' + iconClass]"></i>
+              <i v-show="!showClose" :class="['lx-select__caret', 'lx-input__icon', 'lx-icon-' + iconClass]"></i>
               <i
                 v-if="showClose"
-                :class="`el-select__caret el-input__icon ${clearIcon}`"
+                :class="`el-select__caret lx-input__icon ${clearIcon}`"
                 @click="handleClearClick"
               ></i>
             </template>
@@ -143,8 +143,8 @@
             v-show="options.size > 0 && !loading"
             ref="scrollbar"
             tag="ul"
-            wrap-class="el-select-dropdown__wrap"
-            view-class="el-select-dropdown__list"
+            wrap-class="lx-select-dropdown__wrap"
+            view-class="lx-select-dropdown__list"
             :class="{ 'is-empty': !allowCreate && query && filteredOptionsCount === 0 }"
           >
             <lx-option
@@ -156,7 +156,7 @@
           </lx-scrollbar>
           <template v-if="emptyText && (!allowCreate || loading || (allowCreate && options.size === 0 ))">
             <slot v-if="$slots.empty" name="empty"></slot>
-            <p v-else class="el-select-dropdown__empty">
+            <p v-else class="lx-select-dropdown__empty">
               {{ emptyText }}
             </p>
           </template>
@@ -177,22 +177,22 @@ import {
   provide,
   computed,
 } from 'vue'
-import { ClickOutside } from '@element-plus/directives'
-import { useFocus, useLocaleInject } from '@element-plus/hooks'
-import LxInput from '@element-plus/components/input'
-import LxPopper, { Effect } from '@element-plus/components/popper'
-import LxScrollbar from '@element-plus/components/scrollbar'
-import LxTag from '@element-plus/components/tag'
-import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@element-plus/utils/constants'
-import { addResizeListener, removeResizeListener } from '@element-plus/utils/resize-event'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { ClickOutside } from '@lixi/directives'
+import { useFocus, useLocaleInject } from '@lixi/hooks'
+import LxInput from '@lixi/components/input'
+import LxPopper, { Effect } from '@lixi/components/popper'
+import LxScrollbar from '@lixi/components/scrollbar'
+import LxTag from '@lixi/components/tag'
+import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@lixi/utils/constants'
+import { addResizeListener, removeResizeListener } from '@lixi/utils/resize-event'
+import { isValidComponentSize } from '@lixi/utils/validators'
 import LxOption from './option.vue'
 import LxSelectMenu from './select-dropdown.vue'
 import { useSelect, useSelectStates } from './useSelect'
 import { selectKey } from './token'
 
 import type { PropType } from 'vue'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 import type { SelectContext } from './token'
 
 export default defineComponent({
@@ -256,7 +256,7 @@ export default defineComponent({
     },
     clearIcon: {
       type: String,
-      default: 'el-icon-circle-close',
+      default: 'lx-icon-circle-close',
     },
   },
   emits: [UPDATE_MODEL_EVENT, CHANGE_EVENT, 'remove-tag', 'clear', 'visible-change', 'focus', 'blur'],

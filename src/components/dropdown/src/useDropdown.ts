@@ -1,9 +1,9 @@
 import { inject, computed, ref } from 'vue'
-import { generateId, useGlobalConfig } from '@element-plus/utils/util'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { on, addClass } from '@element-plus/utils/dom'
+import { generateId, useGlobalConfig } from '@lixi/utils/util'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { on, addClass } from '@lixi/utils/dom'
 
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 import type { IElDropdownInstance } from './dropdown'
 
 
@@ -89,7 +89,7 @@ export const initDropdownDomEvent = (dropdownChildren, triggerElm, _instance) =>
     if (!_instance.props.splitButton) {
       triggerElm.setAttribute('role', 'button')
       triggerElm.setAttribute('tabindex', _instance.props.tabindex)
-      addClass(triggerElm, 'el-dropdown-selfdefine')
+      addClass(triggerElm, 'lx-dropdown-selfdefine')
     }
   }
 

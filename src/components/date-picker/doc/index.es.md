@@ -654,8 +654,8 @@ Note, date time locale (month name, first day of the week ...) are also configed
 | value-format | opcional, formato del valor enlazado. Si no esta especificado, el valor enlazado será un objeto Date. | string | ver [date formats](#/es/component/date-picker#date-formats) | — |
 | name              | igual que `name` en el input nativo      | string            | —                                        | —                    |
 | unlink-panels     | desvincular los dos paneles de fecha en el range-picker | boolean           | —                                        | false                |
-| prefix-icon       | Clase personalizada para el icono prefijado | string            | —                                        | el-icon-date         |
-| clear-icon        | Clase personalizada para el icono `clear` | string            | —                                        | el-icon-circle-close |
+| prefix-icon       | Clase personalizada para el icono prefijado | string            | —                                        | lx-icon-date         |
+| clear-icon        | Clase personalizada para el icono `clear` | string            | —                                        | lx-icon-circle-close |
 | disabledDate   | una función que determina si una fecha está desactivada con esa fecha como parámetro. Debería devolver un valor booleano | function                       | —                 | —           |
 | shortcuts | un array de objetos para establecer opciones de acceso directo | object[{ text: string, value: date / function }] | — | — |
 

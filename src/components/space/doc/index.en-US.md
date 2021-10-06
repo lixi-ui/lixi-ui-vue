@@ -361,7 +361,7 @@ export default {
 | alignment | Controls the alignment of items | string | [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)| 'center' |
 | class     | Classname | string / Array<Object \| String> / Object | - | - |
 | direction | Placement direction | string | vertical/horizontal | horizontal |
-| prefixCls | Prefix for space-items | string | el-space | - |
+| prefixCls | Prefix for space-items | string | lx-space | - |
 | style     | Extra style rules  | string / Array<Object \| String> / Object | - | - |
 | spacer    | Spacer    | string / number / VNode | - | - |
 | size      | Spacing size   | string / number / [number, number] | - | 'small' |

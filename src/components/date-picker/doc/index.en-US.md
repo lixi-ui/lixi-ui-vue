@@ -651,8 +651,8 @@ Note, date time locale (month name, first day of the week ...) are also configed
 | value-format | optional, format of binding value. If not specified, the binding value will be a Date object | string | see [date formats](#/en-US/component/date-picker#date-formats) | — |
 | name | same as `name` in native input | string | — | — |
 | unlink-panels | unlink two date-panels in range-picker | boolean | — | false |
-| prefix-icon | Custom prefix icon class | string | — | el-icon-date |
-| clear-icon | Custom clear icon class | string | — | el-icon-circle-close |
+| prefix-icon | Custom prefix icon class | string | — | lx-icon-date |
+| clear-icon | Custom clear icon class | string | — | lx-icon-circle-close |
 | validate-event | whether to trigger form validation | boolean | - | true |
 | disabledDate | a function determining if a date is disabled with that date as its parameter. Should return a Boolean | function | — | — |
 | shortcuts | an object array to set shortcut options | object[{ text: string, value: date / function }] | — | — |

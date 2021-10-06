@@ -16,8 +16,8 @@ import {
   vShow,
   h,
 } from 'vue'
-import LxCollapseTransition from '@element-plus/components/collapse-transition'
-import LxPopper from '@element-plus/components/popper'
+import LxCollapseTransition from '@lixi/components/collapse-transition'
+import LxPopper from '@lixi/components/popper'
 import useMenu from './useMenu'
 
 import type { ISubMenuProps, RootMenuProvider, SubMenuProvider } from './menu.type'
@@ -86,8 +86,8 @@ export default defineComponent({
     const submenuTitleIcon = computed(() => {
       return (mode.value === 'horizontal' && isFirstLevel.value) ||
       (mode.value === 'vertical' && !rootProps.collapse)
-        ? 'el-icon-arrow-down'
-        : 'el-icon-arrow-right'
+        ? 'lx-icon-arrow-down'
+        : 'lx-icon-arrow-right'
     })
     const isFirstLevel = computed(() => {
       let isFirstLevel = true
@@ -108,7 +108,7 @@ export default defineComponent({
         : Boolean(props.popperAppendToBody)
     })
     const menuTransitionName = computed(() => {
-      return rootProps.collapse ? 'el-zoom-in-left' : 'el-zoom-in-top'
+      return rootProps.collapse ? 'lx-zoom-in-left' : 'lx-zoom-in-top'
     })
     const fallbackPlacements = computed(() =>
       mode.value === 'horizontal' && isFirstLevel.value
@@ -354,7 +354,7 @@ export default defineComponent({
     const titleTag = [
       this.$slots.title?.(),
       h('i', {
-        class: ['el-sub-menu__icon-arrow', this.submenuTitleIcon],
+        class: ['lx-sub-menu__icon-arrow', this.submenuTitleIcon],
       }, null)]
     const ulStyle = {
       backgroundColor: this.rootProps.backgroundColor || '',
@@ -391,14 +391,14 @@ export default defineComponent({
         }, [
           h('ul', {
             class: [
-              'el-menu el-menu--popup',
+              'lx-menu lx-menu--popup',
               `el-menu--popup-${this.data.currentPlacement}`,
             ],
             style: ulStyle,
           }, [this.$slots.default?.()]),
         ]),
         trigger: () => h('div', {
-          class: 'el-sub-menu__title',
+          class: 'lx-sub-menu__title',
           style: [this.paddingStyle, this.titleStyle, { backgroundColor: this.backgroundColor }],
           onClick: this.handleClick,
           onMouseenter: this.handleTitleMouseenter,
@@ -407,7 +407,7 @@ export default defineComponent({
       })
       : h(Fragment, {}, [
         h('div', {
-          class: 'el-sub-menu__title',
+          class: 'lx-sub-menu__title',
           style: [this.paddingStyle, this.titleStyle, { backgroundColor: this.backgroundColor }],
           ref: 'verticalTitleRef',
           onClick: this.handleClick,
@@ -418,7 +418,7 @@ export default defineComponent({
           default: () => withDirectives(
             h('ul', {
               role: 'menu',
-              class: 'el-menu el-menu--inline',
+              class: 'lx-menu lx-menu--inline',
               style: ulStyle,
             }, [this.$slots.default?.()]),
             [[vShow, this.opened]]),
@@ -427,7 +427,7 @@ export default defineComponent({
 
     return h('li', {
       class: [
-        'el-sub-menu',
+        'lx-sub-menu',
         {
           'is-active': this.active,
           'is-opened': this.opened,

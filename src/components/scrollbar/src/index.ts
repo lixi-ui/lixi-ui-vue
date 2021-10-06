@@ -1,7 +1,7 @@
 import Scrollbar from './src/index.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Scrollbar.install = (app: App): void => {
   app.component(Scrollbar.name, Scrollbar)

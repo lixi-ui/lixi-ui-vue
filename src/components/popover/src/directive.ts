@@ -1,4 +1,4 @@
-import { on } from '@element-plus/utils/dom'
+import { on } from '@lixi/utils/dom'
 
 import type { DirectiveBinding, VNode, ObjectDirective } from 'vue'
 

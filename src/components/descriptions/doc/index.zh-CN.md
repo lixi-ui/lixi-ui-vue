@@ -38,35 +38,35 @@
     </template>
     <lx-descriptions-item>
       <template #label>
-        <i class="el-icon-user"></i>
+        <i class="lx-icon-user"></i>
         用户名
       </template>
       kooriookami
     </lx-descriptions-item>
     <lx-descriptions-item>
       <template #label>
-        <i class="el-icon-mobile-phone"></i>
+        <i class="lx-icon-mobile-phone"></i>
         手机号
       </template>
       18100000000
     </lx-descriptions-item>
     <lx-descriptions-item>
       <template #label>
-        <i class="el-icon-location-outline"></i>
+        <i class="lx-icon-location-outline"></i>
         居住地
       </template>
       苏州市
     </lx-descriptions-item>
     <lx-descriptions-item>
       <template #label>
-        <i class="el-icon-tickets"></i>
+        <i class="lx-icon-tickets"></i>
         备注
       </template>
       <lx-tag size="small">学校</lx-tag>
     </lx-descriptions-item>
     <lx-descriptions-item>
       <template #label>
-        <i class="el-icon-office-building"></i>
+        <i class="lx-icon-office-building"></i>
         联系地址
       </template>
       江苏省苏州市吴中区吴中大道 1188 号

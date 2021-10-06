@@ -6,8 +6,8 @@ import { nextTick } from 'vue'
 const _mount = (template: string, data?: () => void, methods?: any) =>
   mount({
     components: {
-      'el-descriptions': Descriptions,
-      'el-descriptions-item': DescriptionsItem,
+      'lx-descriptions': Descriptions,
+      'lx-descriptions-item': DescriptionsItem,
     },
     template,
     data,
@@ -162,6 +162,6 @@ describe('Descriptions.vue', () => {
     })
     wrapper.find('button').trigger('click')
     await nextTick()
-    expect(wrapper.find('el-tag').text()).toBe(CHANGE_VALUE)
+    expect(wrapper.find('lx-tag').text()).toBe(CHANGE_VALUE)
   })
 })

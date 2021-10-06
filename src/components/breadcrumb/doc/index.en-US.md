@@ -22,7 +22,7 @@ Displays the location of the current page, making it easier to browser back.
 :::demo Set `separator-class` to use `iconfont` as the separator，it will cover `separator`
 
 ```html
-<lx-breadcrumb separator-class="el-icon-arrow-right">
+<lx-breadcrumb separator-class="lx-icon-arrow-right">
   <lx-breadcrumb-item :to="{ path: '/' }">homepage</lx-breadcrumb-item>
   <lx-breadcrumb-item>promotion management</lx-breadcrumb-item>
   <lx-breadcrumb-item>promotion list</lx-breadcrumb-item>

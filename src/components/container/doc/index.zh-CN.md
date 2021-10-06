@@ -119,7 +119,7 @@
   <lx-aside width="200px" style="background-color: rgb(238, 241, 246)">
     <lx-menu :default-openeds="['1', '3']">
       <lx-sub-menu index="1">
-        <template #title><i class="el-icon-message"></i>导航一</template>
+        <template #title><i class="lx-icon-message"></i>导航一</template>
         <lx-menu-item-group>
           <template #title>分组一</template>
           <lx-menu-item index="1-1">选项1</lx-menu-item>
@@ -134,7 +134,7 @@
         </lx-sub-menu>
       </lx-sub-menu>
       <lx-sub-menu index="2">
-        <template #title><i class="el-icon-menu"></i>导航二</template>
+        <template #title><i class="lx-icon-menu"></i>导航二</template>
         <lx-menu-item-group>
           <template #title>分组一</template>
           <lx-menu-item index="2-1">选项1</lx-menu-item>
@@ -149,7 +149,7 @@
         </lx-sub-menu>
       </lx-sub-menu>
       <lx-sub-menu index="3">
-        <template #title><i class="el-icon-setting"></i>导航三</template>
+        <template #title><i class="lx-icon-setting"></i>导航三</template>
         <lx-menu-item-group>
           <template #title>分组一</template>
           <lx-menu-item index="3-1">选项1</lx-menu-item>
@@ -169,7 +169,7 @@
   <lx-container>
     <lx-header style="text-align: right; font-size: 12px">
       <lx-dropdown>
-        <i class="el-icon-setting" style="margin-right: 15px"></i>
+        <i class="lx-icon-setting" style="margin-right: 15px"></i>
         <template #dropdown>
           <lx-dropdown-menu>
               <lx-dropdown-item>查看</lx-dropdown-item>

@@ -1,27 +1,27 @@
 <template>
   <div
-    class="el-picker-panel el-date-picker"
+    class="lx-picker-panel lx-date-picker"
     :class="[{
       'has-sidebar': $slots.sidebar || hasShortcuts,
       'has-time': showTime
     }]"
   >
-    <div class="el-picker-panel__body-wrapper">
-      <slot name="sidebar" class="el-picker-panel__sidebar"></slot>
-      <div v-if="hasShortcuts" class="el-picker-panel__sidebar">
+    <div class="lx-picker-panel__body-wrapper">
+      <slot name="sidebar" class="lx-picker-panel__sidebar"></slot>
+      <div v-if="hasShortcuts" class="lx-picker-panel__sidebar">
         <button
           v-for="(shortcut, key) in shortcuts"
           :key="key"
           type="button"
-          class="el-picker-panel__shortcut"
+          class="lx-picker-panel__shortcut"
           @click="handleShortcutClick(shortcut)"
         >
           {{ shortcut.text }}
         </button>
       </div>
-      <div class="el-picker-panel__body">
-        <div v-if="showTime" class="el-date-picker__time-header">
-          <span class="el-date-picker__editor-wrap">
+      <div class="lx-picker-panel__body">
+        <div v-if="showTime" class="lx-date-picker__time-header">
+          <span class="lx-date-picker__editor-wrap">
             <lx-input
               :placeholder="t('el.datepicker.selectDate')"
               :model-value="visibleDate"
@@ -32,7 +32,7 @@
           </span>
           <span
             v-clickoutside="handleTimePickClose"
-            class="el-date-picker__editor-wrap"
+            class="lx-date-picker__editor-wrap"
           >
             <lx-input
               :placeholder="t('el.datepicker.selectTime')"
@@ -53,13 +53,13 @@
         </div>
         <div
           v-show="currentView !== 'time'"
-          class="el-date-picker__header"
-          :class="{ 'el-date-picker__header--bordered': currentView === 'year' || currentView === 'month' }"
+          class="lx-date-picker__header"
+          :class="{ 'lx-date-picker__header--bordered': currentView === 'year' || currentView === 'month' }"
         >
           <button
             type="button"
             :aria-label="t(`el.datepicker.prevYear`)"
-            class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-d-arrow-left"
+            class="lx-picker-panel__icon-btn lx-date-picker__prev-btn lx-icon-d-arrow-left"
             @click="prevYear_"
           >
           </button>
@@ -67,26 +67,26 @@
             v-show="currentView === 'date'"
             type="button"
             :aria-label="t(`el.datepicker.prevMonth`)"
-            class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-arrow-left"
+            class="lx-picker-panel__icon-btn lx-date-picker__prev-btn lx-icon-arrow-left"
             @click="prevMonth_"
           >
           </button>
           <span
             role="button"
-            class="el-date-picker__header-label"
+            class="lx-date-picker__header-label"
             @click="showYearPicker"
           >{{ yearLabel }}</span>
           <span
             v-show="currentView === 'date'"
             role="button"
-            class="el-date-picker__header-label"
+            class="lx-date-picker__header-label"
             :class="{ active: currentView === 'month' }"
             @click="showMonthPicker"
           >{{ t(`el.datepicker.month${ month + 1 }`) }}</span>
           <button
             type="button"
             :aria-label="t(`el.datepicker.nextYear`)"
-            class="el-picker-panel__icon-btn el-date-picker__next-btn el-icon-d-arrow-right"
+            class="lx-picker-panel__icon-btn lx-date-picker__next-btn lx-icon-d-arrow-right"
             @click="nextYear_"
           >
           </button>
@@ -94,12 +94,12 @@
             v-show="currentView === 'date'"
             type="button"
             :aria-label="t(`el.datepicker.nextMonth`)"
-            class="el-picker-panel__icon-btn el-date-picker__next-btn el-icon-arrow-right"
+            class="lx-picker-panel__icon-btn lx-date-picker__next-btn lx-icon-arrow-right"
             @click="nextMonth_"
           >
           </button>
         </div>
-        <div class="el-picker-panel__content">
+        <div class="lx-picker-panel__content">
           <date-table
             v-if="currentView === 'date'"
             :selection-mode="selectionMode"
@@ -127,13 +127,13 @@
     </div>
     <div
       v-show="footerVisible && currentView === 'date'"
-      class="el-picker-panel__footer"
+      class="lx-picker-panel__footer"
     >
       <lx-button
         v-show="selectionMode !== 'dates'"
         size="mini"
         type="text"
-        class="el-picker-panel__link-btn"
+        class="lx-picker-panel__link-btn"
         @click="changeToNow"
       >
         {{ t('el.datepicker.now') }}
@@ -141,7 +141,7 @@
       <lx-button
         plain
         size="mini"
-        class="el-picker-panel__link-btn"
+        class="lx-picker-panel__link-btn"
         @click="onConfirm"
       >
         {{ t('el.datepicker.confirm') }}
@@ -153,13 +153,13 @@
 <script lang="ts">
 import { computed, defineComponent, inject, ref, watch } from 'vue'
 import dayjs from 'dayjs'
-import LxButton from '@element-plus/components/button'
-import { ClickOutside } from '@element-plus/directives'
-import { useLocaleInject } from '@element-plus/hooks'
-import LxInput from '@element-plus/components/input'
-import { extractDateFormat, extractTimeFormat, TimePickPanel } from '@element-plus/components/time-picker'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { isValidDatePickType } from '@element-plus/utils/validators'
+import LxButton from '@lixi/components/button'
+import { ClickOutside } from '@lixi/directives'
+import { useLocaleInject } from '@lixi/hooks'
+import LxInput from '@lixi/components/input'
+import { extractDateFormat, extractTimeFormat, TimePickPanel } from '@lixi/components/time-picker'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { isValidDatePickType } from '@lixi/utils/validators'
 import DateTable from './basic-date-table.vue'
 import MonthTable from './basic-month-table.vue'
 import YearTable from './basic-year-table.vue'

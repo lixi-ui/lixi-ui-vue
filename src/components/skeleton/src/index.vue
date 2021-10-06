@@ -1,6 +1,6 @@
 <template>
   <template v-if="uiLoading">
-    <div :class="['el-skeleton', animated ? 'is-animated' : '', ]" v-bind="$attrs">
+    <div :class="['lx-skeleton', animated ? 'is-animated' : '', ]" v-bind="$attrs">
       <template v-for="i in count" :key="i">
         <slot v-if="loading" :key="i" name="template">
           <lx-skeleton-item class="is-first" variant="p" />
@@ -8,7 +8,7 @@
             v-for="item in rows"
             :key="item"
             :class="{
-              'el-skeleton__paragraph': true,
+              'lx-skeleton__paragraph': true,
               'is-last': item === rows && rows > 1,
             }"
             variant="p"
@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { useThrottleRender } from '@element-plus/hooks'
+import { useThrottleRender } from '@lixi/hooks'
 import SkeletonItem from './item.vue'
 
 export default defineComponent({

@@ -1,8 +1,8 @@
 <template>
   <div
     :class="[
-      'el-input-number',
-      inputNumberSize ? 'el-input-number--' + inputNumberSize : '',
+      'lx-input-number',
+      inputNumberSize ? 'lx-input-number--' + inputNumberSize : '',
       { 'is-disabled': inputNumberDisabled },
       { 'is-without-controls': !controls },
       { 'is-controls-right': controlsAtRight },
@@ -12,7 +12,7 @@
     <span
       v-if="controls"
       v-repeat-click="decrease"
-      class="el-input-number__decrease"
+      class="lx-input-number__decrease"
       role="button"
       :class="{ 'is-disabled': minDisabled }"
       @keydown.enter="decrease"
@@ -22,7 +22,7 @@
     <span
       v-if="controls"
       v-repeat-click="increase"
-      class="el-input-number__increase"
+      class="lx-input-number__increase"
       role="button"
       :class="{ 'is-disabled': maxDisabled }"
       @keydown.enter="increase"
@@ -60,15 +60,15 @@ import {
   onUpdated,
 } from 'vue'
 import { toRawType } from '@vue/shared'
-import { RepeatClick } from '@element-plus/directives'
-import { elFormKey, elFormItemKey } from '@element-plus/tokens'
-import LxInput from '@element-plus/components/input'
-import { useGlobalConfig } from '@element-plus/utils/util'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { RepeatClick } from '@lixi/directives'
+import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import LxInput from '@lixi/components/input'
+import { useGlobalConfig } from '@lixi/utils/util'
+import { isValidComponentSize } from '@lixi/utils/validators'
 
 import type { PropType } from 'vue'
-import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
+import type { ComponentSize } from '@lixi/utils/types'
 
 interface IData {
   currentValue: number | string

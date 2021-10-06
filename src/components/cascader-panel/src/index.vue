@@ -1,7 +1,7 @@
 <template>
   <div
     :class="[
-      'el-cascader-panel',
+      'lx-cascader-panel',
       border && 'is-bordered'
     ]"
     @keydown="handleKeyDown"
@@ -24,16 +24,16 @@ import {
   Ref, ref, watch,
 } from 'vue'
 import isEqual from 'lodash/isEqual'
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@element-plus/utils/constants'
-import isServer from '@element-plus/utils/isServer'
-import scrollIntoView from '@element-plus/utils/scroll-into-view'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@lixi/utils/constants'
+import isServer from '@lixi/utils/isServer'
+import scrollIntoView from '@lixi/utils/scroll-into-view'
 import {
   arrayFlat,
   coerceTruthyValueToArray,
   deduplicate,
   isEmpty,
-} from '@element-plus/utils/util'
+} from '@lixi/utils/util'
 
 import LxCascaderMenu from './menu.vue'
 import Store from './store'
@@ -50,7 +50,7 @@ import { default as CascaderNode, ExpandTrigger } from './node'
 import { CASCADER_PANEL_INJECTION_KEY } from './types'
 
 import type { PropType } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 import type {
   CascaderValue,
   CascaderNodeValue,

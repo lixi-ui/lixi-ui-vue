@@ -5,8 +5,8 @@ import Step from '../src/item.vue'
 
 const _mount = (template: string) => mount({
   components: {
-    'el-steps': Steps,
-    'el-step': Step,
+    'lx-steps': Steps,
+    'lx-step': Step,
   },
   template,
 }, {
@@ -28,7 +28,7 @@ describe('Steps.vue', () => {
       </lx-steps>
     `)
     expect(wrapper.findAll('.lx-step').length).toBe(3)
-    expect(wrapper.classes()).toContain('el-steps--horizontal')
+    expect(wrapper.classes()).toContain('lx-steps--horizontal')
     expect(wrapper.find('.lx-step').classes()).toContain('is-horizontal')
   })
 
@@ -56,7 +56,7 @@ describe('Steps.vue', () => {
         <lx-step />
       </lx-steps>
     `)
-    expect(wrapper.classes()).toContain('el-steps--vertical')
+    expect(wrapper.classes()).toContain('lx-steps--vertical')
     expect(wrapper.find('.lx-step').classes()).toContain('is-vertical')
   })
 
@@ -66,7 +66,7 @@ describe('Steps.vue', () => {
         <lx-step />
       </lx-steps>
     `)
-    expect(wrapper.classes()).toContain('el-steps--simple')
+    expect(wrapper.classes()).toContain('lx-steps--simple')
     expect(wrapper.find('is-center').exists()).toBe(false)
     expect(wrapper.find('is-vertical').exists()).toBe(false)
   })
@@ -126,7 +126,7 @@ describe('Steps.vue', () => {
   test('step attribute', () => {
     const wrapper = _mount(`
       <lx-steps :active="0">
-        <lx-step icon="el-icon-edit" title="title" description="description" status="wait" />
+        <lx-step icon="lx-icon-edit" title="title" description="description" status="wait" />
       </lx-steps>
     `)
     expect(wrapper.find('.lx-step__head').classes()).toContain('is-wait')

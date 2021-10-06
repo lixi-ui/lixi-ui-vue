@@ -8,9 +8,9 @@
     pure
     :manual-mode="true"
     :trigger="[trigger]"
-    popper-class="el-dropdown__popper"
+    popper-class="lx-dropdown__popper"
     append-to-body
-    transition="el-zoom-in-top"
+    transition="lx-zoom-in-top"
     :stop-popper-mouse-event="false"
     :gpu-acceleration="false"
   >
@@ -19,13 +19,13 @@
         ref="scrollbar"
         tag="ul"
         :wrap-style="wrapStyle"
-        view-class="el-dropdown__list"
+        view-class="lx-dropdown__list"
       >
         <slot name="dropdown"></slot>
       </lx-scrollbar>
     </template>
     <template #trigger>
-      <div :class="['el-dropdown', dropdownSize ? 'el-dropdown--' + dropdownSize : '']">
+      <div :class="['lx-dropdown', dropdownSize ? 'lx-dropdown--' + dropdownSize : '']">
         <slot v-if="!splitButton" name="default"></slot>
         <template v-else>
           <lx-button-group>
@@ -39,9 +39,9 @@
             <lx-button
               :size="dropdownSize"
               :type="type"
-              class="el-dropdown__caret-button"
+              class="lx-dropdown__caret-button"
             >
-              <i class="el-dropdown__icon el-icon-arrow-down"></i>
+              <i class="lx-dropdown__icon lx-icon-arrow-down"></i>
             </lx-button>
           </lx-button-group>
         </template>
@@ -60,16 +60,16 @@ import {
   onMounted,
 } from 'vue'
 import type { PropType } from 'vue'
-import LxButton from '@element-plus/components/button'
-import LxPopper, { Effect, Placement } from '@element-plus/components/popper'
-import LxScrollbar from '@element-plus/components/scrollbar'
-import { on, addClass, removeClass } from '@element-plus/utils/dom'
-import { addUnit } from '@element-plus/utils/util'
+import LxButton from '@lixi/components/button'
+import LxPopper, { Effect, Placement } from '@lixi/components/popper'
+import LxScrollbar from '@lixi/components/scrollbar'
+import { on, addClass, removeClass } from '@lixi/utils/dom'
+import { addUnit } from '@lixi/utils/util'
 import { useDropdown } from './useDropdown'
 
 import type { ComponentPublicInstance } from 'vue'
-import type { TriggerType } from '@element-plus/hooks/use-popper/use-target-events'
-import type { ButtonType } from '@element-plus/components/button/src/types'
+import type { TriggerType } from '@lixi/hooks/use-popper/use-target-events'
+import type { ButtonType } from '@lixi/components/button/src/types'
 
 type Nullable<T> = null | T
 const { ButtonGroup: LxButtonGroup } = LxButton

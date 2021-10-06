@@ -9,13 +9,13 @@
     manual-mode
     :effect="Effect.LIGHT"
     trigger="click"
-    transition="el-zoom-in-top"
+    transition="lx-zoom-in-top"
     :gpu-acceleration="false"
   >
     <template #trigger>
       <div
         v-clickoutside="close"
-        :class="['el-autocomplete', $attrs.class]"
+        :class="['lx-autocomplete', $attrs.class]"
         :style="$attrs.style"
         role="combobox"
         aria-haspopup="listbox"
@@ -54,17 +54,17 @@
     <template #default>
       <div
         ref="regionRef"
-        :class="['el-autocomplete-suggestion', suggestionLoading && 'is-loading']"
+        :class="['lx-autocomplete-suggestion', suggestionLoading && 'is-loading']"
         :style="{ width: dropdownWidth, outline: 'none' }"
         role="region"
       >
         <lx-scrollbar
           tag="ul"
-          wrap-class="el-autocomplete-suggestion__wrap"
-          view-class="el-autocomplete-suggestion__list"
+          wrap-class="lx-autocomplete-suggestion__wrap"
+          view-class="lx-autocomplete-suggestion__list"
         >
           <li v-if="suggestionLoading">
-            <i class="el-icon-loading"></i>
+            <i class="lx-icon-loading"></i>
           </li>
           <template v-else>
             <li
@@ -93,14 +93,14 @@ import {
 } from 'vue'
 import { NOOP } from '@vue/shared'
 import debounce from 'lodash/debounce'
-import { useAttrs } from '@element-plus/hooks'
-import { ClickOutside } from '@element-plus/directives'
-import { generateId, isArray } from '@element-plus/utils/util'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
-import throwError from '@element-plus/utils/error'
-import LxInput from '@element-plus/components/input'
-import LxScrollbar from '@element-plus/components/scrollbar'
-import LxPopper, { Effect, Placement } from '@element-plus/components/popper'
+import { useAttrs } from '@lixi/hooks'
+import { ClickOutside } from '@lixi/directives'
+import { generateId, isArray } from '@lixi/utils/util'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
+import throwError from '@lixi/utils/error'
+import LxInput from '@lixi/components/input'
+import LxScrollbar from '@lixi/components/scrollbar'
+import LxPopper, { Effect, Placement } from '@lixi/components/popper'
 
 import type { PropType } from 'vue'
 

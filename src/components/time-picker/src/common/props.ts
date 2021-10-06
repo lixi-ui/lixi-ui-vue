@@ -1,8 +1,8 @@
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { isValidComponentSize } from '@lixi/utils/validators'
 
 import type { PropType } from 'vue'
 import type { Options } from '@popperjs/core'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 
 export const timePickerDefaultProps = {
   name: {
@@ -29,7 +29,7 @@ export const timePickerDefaultProps = {
   },
   clearIcon: {
     type: String,
-    default: 'el-icon-circle-close',
+    default: 'lx-icon-circle-close',
   },
   editable: {
     type: Boolean,

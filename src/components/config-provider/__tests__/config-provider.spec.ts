@@ -1,11 +1,11 @@
 import { h, ref, inject } from 'vue'
 import { mount } from '@vue/test-utils'
-import { LocaleInjectionKey } from '@element-plus/hooks'
-import Chinese from '@element-plus/locale/lang/zh-cn'
-import English from '@element-plus/locale/lang/en'
+import { LocaleInjectionKey } from '@lixi/hooks'
+import Chinese from '@lixi/locale/lang/zh-cn'
+import English from '@lixi/locale/lang/en'
 import { ConfigProvider } from '../config-provider'
 
-import type { Language } from '@element-plus/locale'
+import type { Language } from '@lixi/locale'
 
 const TestComp = {
   setup() {
@@ -23,7 +23,7 @@ describe('config-provider', () => {
     beforeEach(() => {
       wrapper = mount({
         components: {
-          'el-test': TestComp,
+          'lx-test': TestComp,
           [ConfigProvider.name]: ConfigProvider,
         },
         setup() {

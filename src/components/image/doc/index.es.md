@@ -112,7 +112,7 @@ Además de las características nativas de img, soporte de carga perezosa, marca
     <lx-image>
       <template #error>
         <div class="image-slot">
-          <i class="el-icon-picture-outline"></i>
+          <i class="lx-icon-picture-outline"></i>
         </div>
       </template>
     </lx-image>

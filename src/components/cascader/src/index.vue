@@ -9,7 +9,7 @@
     :popper-options="popperOptions"
     :fallback-placements="['bottom-start', 'top-start', 'right', 'left']"
     :stop-popper-mouse-event="false"
-    transition="el-zoom-in-top"
+    transition="lx-zoom-in-top"
     :gpu-acceleration="false"
     :effect="Effect.LIGHT"
     pure
@@ -19,7 +19,7 @@
       <div
         v-clickoutside:[popperPaneRef]="() => togglePopperVisible(false)"
         :class="[
-          'el-cascader',
+          'lx-cascader',
           realSize && `el-cascader--${realSize}`,
           { 'is-disabled': isDisabled }
         ]"
@@ -45,15 +45,15 @@
             <i
               v-if="clearBtnVisible"
               key="clear"
-              class="el-input__icon el-icon-circle-close"
+              class="lx-input__icon lx-icon-circle-close"
               @click.stop="handleClear"
             ></i>
             <i
               v-else
               key="arrow-down"
               :class="[
-                'el-input__icon',
-                'el-icon-arrow-down',
+                'lx-input__icon',
+                'lx-icon-arrow-down',
                 popperVisible && 'is-reverse'
               ]"
               @click.stop="togglePopperVisible()"
@@ -61,7 +61,7 @@
           </template>
         </lx-input>
 
-        <div v-if="multiple" ref="tagWrapper" class="el-cascader__tags">
+        <div v-if="multiple" ref="tagWrapper" class="lx-cascader__tags">
           <lx-tag
             v-for="tag in presentTags"
             :key="tag.key"
@@ -78,7 +78,7 @@
             v-if="filterable && !isDisabled"
             v-model.trim="searchInputValue"
             type="text"
-            class="el-cascader__search-input"
+            class="lx-cascader__search-input"
             :placeholder="presentText ? '' : inputPlaceholder"
             @input="e => handleInput(searchInputValue, e)"
             @click.stop="togglePopperVisible(true)"
@@ -105,26 +105,26 @@
         v-show="filtering"
         ref="suggestionPanel"
         tag="ul"
-        class="el-cascader__suggestion-panel"
-        view-class="el-cascader__suggestion-list"
+        class="lx-cascader__suggestion-panel"
+        view-class="lx-cascader__suggestion-list"
       >
         <template v-if="suggestions.length">
           <li
             v-for="item in suggestions"
             :key="item.uid"
             :class="[
-              'el-cascader__suggestion-item',
+              'lx-cascader__suggestion-item',
               item.checked && 'is-checked'
             ]"
             :tabindex="-1"
             @click="handleSuggestionClick(item)"
           >
             <span>{{ item.text }}</span>
-            <i v-if="item.checked" class="el-icon-check"></i>
+            <i v-if="item.checked" class="lx-icon-check"></i>
           </li>
         </template>
         <slot v-else name="empty">
-          <li class="el-cascader__empty-text">{{ t('el.cascader.noMatch') }}</li>
+          <li class="lx-cascader__empty-text">{{ t('el.cascader.noMatch') }}</li>
         </slot>
       </lx-scrollbar>
     </template>
@@ -141,28 +141,28 @@ import {
 import { isPromise } from '@vue/shared'
 import debounce from 'lodash/debounce'
 
-import LxCascaderPanel, { CommonProps } from '@element-plus/components/cascader-panel'
-import LxInput from '@element-plus/components/input'
-import LxPopper from '@element-plus/components/popper'
-import LxScrollbar from '@element-plus/components/scrollbar'
-import LxTag from '@element-plus/components/tag'
-import { elFormKey, elFormItemKey } from '@element-plus/tokens'
+import LxCascaderPanel, { CommonProps } from '@lixi/components/cascader-panel'
+import LxInput from '@lixi/components/input'
+import LxPopper from '@lixi/components/popper'
+import LxScrollbar from '@lixi/components/scrollbar'
+import LxTag from '@lixi/components/tag'
+import { elFormKey, elFormItemKey } from '@lixi/tokens'
 
-import { ClickOutside as Clickoutside } from '@element-plus/directives'
-import { useLocaleInject } from '@element-plus/hooks'
+import { ClickOutside as Clickoutside } from '@lixi/directives'
+import { useLocaleInject } from '@lixi/hooks'
 
-import { EVENT_CODE } from '@element-plus/utils/aria'
-import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@element-plus/utils/constants'
-import isServer from '@element-plus/utils/isServer'
-import { useGlobalConfig } from '@element-plus/utils/util'
-import { addResizeListener, removeResizeListener } from '@element-plus/utils/resize-event'
-import { isValidComponentSize } from '@element-plus/utils/validators'
-import { Effect, Options } from '@element-plus/components/popper'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@lixi/utils/constants'
+import isServer from '@lixi/utils/isServer'
+import { useGlobalConfig } from '@lixi/utils/util'
+import { addResizeListener, removeResizeListener } from '@lixi/utils/resize-event'
+import { isValidComponentSize } from '@lixi/utils/validators'
+import { Effect, Options } from '@lixi/components/popper'
 
 import type { ComputedRef, PropType } from 'vue'
-import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
-import type { CascaderValue, CascaderNode, Tag } from '@element-plus/components/cascader-panel'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
+import type { CascaderValue, CascaderNode, Tag } from '@lixi/components/cascader-panel'
+import type { ComponentSize } from '@lixi/utils/types'
 
 const DEFAULT_INPUT_HEIGHT = 40
 

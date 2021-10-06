@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style/css'
-import '@element-plus/theme-chalk/el-popconfirm.css'
-import '@element-plus/components/popover/style/css'
+import '@lixi/components/base/style/css'
+import '@lixi/theme-chalk/el-popconfirm.css'
+import '@lixi/components/popover/style/css'

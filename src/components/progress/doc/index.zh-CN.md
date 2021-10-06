@@ -73,8 +73,8 @@
 <lx-progress :percentage="percentage2" :color="customColors"></lx-progress>
 <div>
   <lx-button-group>
-    <lx-button icon="el-icon-minus" @click="decrease"></lx-button>
-    <lx-button icon="el-icon-plus" @click="increase"></lx-button>
+    <lx-button icon="lx-icon-minus" @click="decrease"></lx-button>
+    <lx-button icon="lx-icon-plus" @click="increase"></lx-button>
   </lx-button-group>
 </div>
 
@@ -202,8 +202,8 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
 <lx-progress type="dashboard" :percentage="percentage2" :color="colors"></lx-progress>
 <div>
   <lx-button-group>
-    <lx-button icon="el-icon-minus" @click="decrease"></lx-button>
-    <lx-button icon="el-icon-plus" @click="increase"></lx-button>
+    <lx-button icon="lx-icon-minus" @click="decrease"></lx-button>
+    <lx-button icon="lx-icon-plus" @click="increase"></lx-button>
   </lx-button-group>
 </div>
 
@@ -304,7 +304,7 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
   <span>自定义内容</span>
 </lx-progress>
 <lx-progress type="circle" :percentage="100" status="success">
-  <lx-button type="success" icon="el-icon-check" circle></lx-button>
+  <lx-button type="success" icon="lx-icon-check" circle></lx-button>
 </lx-progress>
 <lx-progress type="dashboard" :percentage="80">
   <template #default="{ percentage }">

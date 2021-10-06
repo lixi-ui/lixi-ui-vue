@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style/css'
-import '@element-plus/theme-chalk/el-image.css'
-import '@element-plus/components/image-viewer/style/css'
+import '@lixi/components/base/style/css'
+import '@lixi/theme-chalk/el-image.css'
+import '@lixi/components/image-viewer/style/css'

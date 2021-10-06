@@ -1,7 +1,7 @@
 import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
-import { sleep } from '@element-plus/test-utils'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import { sleep } from '@lixi/test-utils'
+import { EVENT_CODE } from '@lixi/utils/aria'
 import Select from '../src/select.vue'
 import Group from '../src/option-group.vue'
 import Option from '../src/option.vue'
@@ -25,9 +25,9 @@ interface SelectProps {
 
 const _mount = (template: string, data: any = () => ({}), otherObj?) => mount({
   components: {
-    'el-select': Select,
-    'el-option': Option,
-    'el-group-option': Group,
+    'lx-select': Select,
+    'lx-option': Option,
+    'lx-group-option': Group,
   },
   template,
   data,
@@ -227,7 +227,7 @@ describe('Select', () => {
 
   test('create', async () => {
     const wrapper = _mount(`<lx-select v-model="value"></lx-select>`, () => ({ value: '' }))
-    expect(wrapper.classes()).toContain('el-select')
+    expect(wrapper.classes()).toContain('lx-select')
     expect(wrapper.find('.lx-input__inner').element.placeholder).toBe('Select')
     const select = wrapper.findComponent({ name: 'LxSelect' })
     wrapper.trigger('click')

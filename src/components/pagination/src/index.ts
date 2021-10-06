@@ -1,7 +1,7 @@
 import Pagination from './src'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 const _Pagination = Pagination as SFCWithInstall<typeof Pagination>
 

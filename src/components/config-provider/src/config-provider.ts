@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue'
 
-import { useLocaleProps, useLocale } from '@element-plus/hooks'
+import { useLocaleProps, useLocale } from '@lixi/hooks'
 
 export const ConfigProvider = defineComponent({
   name: 'LxConfigProvider',

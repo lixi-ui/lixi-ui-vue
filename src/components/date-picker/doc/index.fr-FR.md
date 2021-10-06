@@ -651,8 +651,8 @@ Note, date time locale (month name, first day of the week ...) are also configed
 | value-format | Format de la variable stockée, optionnel. Si non spécifié, la valeur sera un objet Date. | string | Voir [formats de date](#/fr-FR/component/date-picker#formats-de-date). | — |
 | name | Identique au `name` de l'input natif | string | — | — |
 | unlink-panels | Rend indépendants les deux panneaux de plage de dates. | boolean | — | false |
-| prefix-icon | Icône de préfixe. | string | — | el-icon-date |
-| clear-icon | Icône de reset. | string | — | el-icon-circle-close |
+| prefix-icon | Icône de préfixe. | string | — | lx-icon-date |
+| clear-icon | Icône de reset. | string | — | lx-icon-circle-close |
 | validate-event | Si la validation doit être déclenchée. | boolean | - | true |
 | disabledDate | Une fonction qui détermine si une date est désactivée ou pas, avec cette date en paramètre. Doit retourner un booléen. | function | — | — |
 | shortcuts | Un tableau d'objets pour configurer les raccourcis | object[{ text: string, value: date / function }] | — | — |

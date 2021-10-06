@@ -10,18 +10,18 @@ import {
   onBeforeUnmount,
 } from 'vue'
 import { NOOP, capitalize } from '@vue/shared'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import { EVENT_CODE } from '@lixi/utils/aria'
 import {
   addResizeListener,
   removeResizeListener,
   ResizableElement,
-} from '@element-plus/utils/resize-event'
-import { on, off } from '@element-plus/utils/dom'
-import throwError from '@element-plus/utils/error'
+} from '@lixi/utils/resize-event'
+import { on, off } from '@lixi/utils/dom'
+import throwError from '@lixi/utils/error'
 import TabBar from './tab-bar.vue'
 
 import type { PropType } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 import type { RootTabs, Pane, ITabType } from './token'
 
 type RefElement = Nullable<HTMLElement>
@@ -75,7 +75,7 @@ export default defineComponent({
 
     const navScroll$ = ref<RefElement>(null)
     const nav$ = ref<RefElement>(null)
-    const el$ = ref<RefElement>(null)
+    const  lx$ = ref<RefElement>(null)
 
     const sizeName = computed(() => {
       return ['top', 'bottom'].includes(rootTabs.props.tabPosition)
@@ -121,7 +121,7 @@ export default defineComponent({
     const scrollToActiveTab = () => {
       if (!scrollable.value) return
       const nav = nav$.value
-      const activeTab = el$.value.querySelector('.is-active')
+      const activeTab =  lx$.value.querySelector('.is-active')
       if (!activeTab) return
       const navScroll = navScroll$.value
       const isHorizontal = ['top', 'bottom'].includes(
@@ -253,7 +253,7 @@ export default defineComponent({
     })
 
     onMounted(() => {
-      addResizeListener(el$.value as ResizableElement, update)
+      addResizeListener( lx$.value as ResizableElement, update)
       on(document, 'visibilitychange', visibilityChangeHandler)
       on(window, 'blur', windowBlurHandler)
       on(window, 'focus', windowFocusHandler)
@@ -263,8 +263,8 @@ export default defineComponent({
     })
 
     onBeforeUnmount(() => {
-      if (el$.value) {
-        removeResizeListener(el$.value as ResizableElement, update)
+      if ( lx$.value) {
+        removeResizeListener( lx$.value as ResizableElement, update)
       }
       off(document, 'visibilitychange', visibilityChangeHandler)
       off(window, 'blur', windowBlurHandler)
@@ -281,7 +281,7 @@ export default defineComponent({
 
       navScroll$,
       nav$,
-      el$,
+       lx$,
 
       sizeName,
       navStyle,
@@ -323,23 +323,23 @@ export default defineComponent({
           'span',
           {
             class: [
-              'el-tabs__nav-prev',
+              'lx-tabs__nav-prev',
               scrollable.prev ? '' : 'is-disabled',
             ],
             onClick: scrollPrev,
           },
-          [h('i', { class: 'el-icon-arrow-left' })],
+          [h('i', { class: 'lx-icon-arrow-left' })],
         ),
         h(
           'span',
           {
             class: [
-              'el-tabs__nav-next',
+              'lx-tabs__nav-next',
               scrollable.next ? '' : 'is-disabled',
             ],
             onClick: scrollNext,
           },
-          [h('i', { class: 'el-icon-arrow-right' })],
+          [h('i', { class: 'lx-icon-arrow-right' })],
         ),
       ]
       : null
@@ -352,7 +352,7 @@ export default defineComponent({
 
       const btnClose = closable
         ? h('span', {
-          class: 'el-icon-close',
+          class: 'lx-icon-close',
           onClick: ev => {
             onTabRemove(pane, ev)
           },
@@ -366,7 +366,7 @@ export default defineComponent({
         'div',
         {
           class: {
-            'el-tabs__item': true,
+            'lx-tabs__item': true,
             [`is-${rootTabs.props.tabPosition}`]: true,
             'is-active': pane.active,
             'is-disabled': pane.props.disabled,
@@ -407,9 +407,9 @@ export default defineComponent({
     return h(
       'div',
       {
-        ref: 'el$',
+        ref: ' lx$',
         class: [
-          'el-tabs__nav-wrap',
+          'lx-tabs__nav-wrap',
           scrollable ? 'is-scrollable' : '',
           `is-${rootTabs.props.tabPosition}`,
         ],
@@ -419,7 +419,7 @@ export default defineComponent({
         h(
           'div',
           {
-            class: 'el-tabs__nav-scroll',
+            class: 'lx-tabs__nav-scroll',
             ref: 'navScroll$',
           },
           [
@@ -427,7 +427,7 @@ export default defineComponent({
               'div',
               {
                 class: [
-                  'el-tabs__nav',
+                  'lx-tabs__nav',
                   `is-${rootTabs.props.tabPosition}`,
                   stretch &&
                   ['top', 'bottom'].includes(rootTabs.props.tabPosition)

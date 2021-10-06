@@ -5,7 +5,7 @@ import {
   watch,
   onBeforeUnmount,
 } from 'vue'
-import { getValueByPath, escapeRegexpString } from '@element-plus/utils/util'
+import { getValueByPath, escapeRegexpString } from '@lixi/utils/util'
 import {
   selectKey, selectGroupKey,
   selectEvents,

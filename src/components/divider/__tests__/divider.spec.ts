@@ -19,7 +19,7 @@ describe('Divider.vue', () => {
         direction: 'vertical',
       },
     })
-    expect(wrapper.classes()).toContain('el-divider--vertical')
+    expect(wrapper.classes()).toContain('lx-divider--vertical')
   })
 
   test('contentPosition', () => {

@@ -1,5 +1,5 @@
 import { nextTick, h } from 'vue'
-import { rAF } from '@element-plus/test-utils/tick'
+import { rAF } from '@lixi/test-utils/tick'
 import Notification, { closeAll } from '../src/notify'
 
 import type { INotificationHandle } from '../src/notification.type'

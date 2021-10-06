@@ -22,8 +22,8 @@
 </lx-badge>
 
 <lx-dropdown trigger="click">
-  <span class="el-dropdown-link">
-    点我查看<i class="el-icon-caret-bottom el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    点我查看<i class="lx-icon-caret-bottom lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -100,7 +100,7 @@
 ```html
 <lx-badge is-dot class="item">数据查询</lx-badge>
 <lx-badge is-dot class="item">
-  <lx-button class="share-button" icon="el-icon-share" type="primary"></lx-button>
+  <lx-button class="share-button" icon="lx-icon-share" type="primary"></lx-button>
 </lx-badge>
 
 <style>

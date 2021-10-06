@@ -1,16 +1,16 @@
 <template>
-  <transition name="el-fade-in">
+  <transition name="lx-fade-in">
     <div
       v-if="visible"
       :style="{
         'right': styleRight,
         'bottom': styleBottom
       }"
-      class="el-backtop"
+      class="lx-backtop"
       @click.stop="handleClick"
     >
       <slot>
-        <i class="el-icon-caret-top"></i>
+        <i class="lx-icon-caret-top"></i>
       </slot>
     </div>
   </transition>
@@ -19,9 +19,9 @@
 <script lang="ts">
 import { defineComponent, ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import throttle from 'lodash/throttle'
-import { on, off } from '@element-plus/utils/dom'
-import { easeInOutCubic } from '@element-plus/utils/animation'
-import throwError from '@element-plus/utils/error'
+import { on, off } from '@lixi/utils/dom'
+import { easeInOutCubic } from '@lixi/utils/animation'
+import throwError from '@lixi/utils/error'
 
 interface IElBacktopProps {
   visibilityHeight: number

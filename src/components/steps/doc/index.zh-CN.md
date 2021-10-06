@@ -83,9 +83,9 @@
 ```html
 
 <lx-steps :active="1">
-  <lx-step title="步骤 1" icon="el-icon-edit"></lx-step>
-  <lx-step title="步骤 2" icon="el-icon-upload"></lx-step>
-  <lx-step title="步骤 3" icon="el-icon-picture"></lx-step>
+  <lx-step title="步骤 1" icon="lx-icon-edit"></lx-step>
+  <lx-step title="步骤 2" icon="lx-icon-upload"></lx-step>
+  <lx-step title="步骤 3" icon="lx-icon-picture"></lx-step>
 </lx-steps>
 ```
 :::
@@ -113,9 +113,9 @@
 ```html
 
 <lx-steps :active="1" simple>
-  <lx-step title="步骤 1" icon="el-icon-edit"></lx-step>
-  <lx-step title="步骤 2" icon="el-icon-upload"></lx-step>
-  <lx-step title="步骤 3" icon="el-icon-picture"></lx-step>
+  <lx-step title="步骤 1" icon="lx-icon-edit"></lx-step>
+  <lx-step title="步骤 2" icon="lx-icon-upload"></lx-step>
+  <lx-step title="步骤 3" icon="lx-icon-picture"></lx-step>
 </lx-steps>
 
 <lx-steps :active="1" finish-status="success" simple style="margin-top: 20px">

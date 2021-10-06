@@ -8,11 +8,11 @@
     <slot></slot>
     <i
       v-if="closable"
-      class="el-tag__close el-icon-close"
+      class="lx-tag__close lx-icon-close"
       @click="handleClose"
     ></i>
   </span>
-  <transition v-else name="el-zoom-in-center">
+  <transition v-else name="lx-zoom-in-center">
     <span
       :class="classes"
       :style="{ backgroundColor: color }"
@@ -21,7 +21,7 @@
       <slot></slot>
       <i
         v-if="closable"
-        class="el-tag__close el-icon-close"
+        class="lx-tag__close lx-icon-close"
         @click="handleClose"
       ></i>
     </span>
@@ -30,11 +30,11 @@
 
 <script lang='ts'>
 import { computed, defineComponent } from 'vue'
-import { useGlobalConfig } from '@element-plus/utils/util'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { useGlobalConfig } from '@lixi/utils/util'
+import { isValidComponentSize } from '@lixi/utils/validators'
 
 import type { PropType } from 'vue'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 
 export default defineComponent({
   name: 'LxTag',
@@ -72,7 +72,7 @@ export default defineComponent({
     const classes = computed(() => {
       const { type, hit, effect } = props
       return [
-        'el-tag',
+        'lx-tag',
         type ? `el-tag--${type}` : '',
         tagSize.value ? `el-tag--${tagSize.value}` : '',
         effect ? `el-tag--${effect}` : '',

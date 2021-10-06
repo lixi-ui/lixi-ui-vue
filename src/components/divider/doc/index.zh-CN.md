@@ -30,7 +30,7 @@
     <span>头上一片晴天，心中一个想念</span>
     <lx-divider content-position="left">少年包青天</lx-divider>
     <span>饿了别叫妈, 叫饿了么</span>
-    <lx-divider><i class="el-icon-mobile-phone"></i></lx-divider>
+    <lx-divider><i class="lx-icon-mobile-phone"></i></lx-divider>
     <span>为了无法计算的价值</span>
     <lx-divider content-position="right">阿里云</lx-divider>
   </div>

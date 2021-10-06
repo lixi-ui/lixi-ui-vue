@@ -1,11 +1,11 @@
 <template>
-  <div ref="scrollbar" class="el-scrollbar">
+  <div ref="scrollbar" class="lx-scrollbar">
     <div
       ref="wrap"
       :class="[
         wrapClass,
-        'el-scrollbar__wrap',
-        native ? '' : 'el-scrollbar__wrap--hidden-default',
+        'lx-scrollbar__wrap',
+        native ? '' : 'lx-scrollbar__wrap--hidden-default',
       ]"
       :style="style"
       @scroll="handleScroll"
@@ -13,7 +13,7 @@
       <component
         :is="tag"
         ref="resize"
-        :class="['el-scrollbar__view', viewClass]"
+        :class="['lx-scrollbar__view', viewClass]"
         :style="viewStyle"
       >
         <slot></slot>
@@ -38,9 +38,9 @@
 </template>
 <script lang="ts">
 import { computed, defineComponent, nextTick, onBeforeUnmount, onMounted, provide, ref } from 'vue'
-import { addResizeListener, removeResizeListener } from '@element-plus/utils/resize-event'
-import { addUnit, isArray, isNumber, isString, toObject } from '@element-plus/utils/util'
-import { warn } from '@element-plus/utils/error'
+import { addResizeListener, removeResizeListener } from '@lixi/utils/resize-event'
+import { addUnit, isArray, isNumber, isString, toObject } from '@lixi/utils/util'
+import { warn } from '@lixi/utils/error'
 import Bar from './bar.vue'
 
 import type { CSSProperties, PropType } from 'vue'

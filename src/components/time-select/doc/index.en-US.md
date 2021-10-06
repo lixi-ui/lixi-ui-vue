@@ -76,8 +76,8 @@ If start time is picked at first, then the end time will change accordingly.
 | size | size of Input | string | medium / small / mini | — |
 | placeholder | placeholder in non-range mode | string | — | — |
 | name | same as `name` in native input | string | — | — |
-| prefix-icon | Custom prefix icon class | string | — | el-icon-time |
-| clear-icon | Custom clear icon class | string | — | el-icon-circle-close |
+| prefix-icon | Custom prefix icon class | string | — | lx-icon-time |
+| clear-icon | Custom clear icon class | string | — | lx-icon-circle-close |
 | start | start time | string | — | 09:00 |
 | end | end time | string | — | 18:00 |
 | step | time step | string | — | 00:30 |

@@ -1,5 +1,5 @@
 
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 import type { default as CascaderNode } from './node'
 
 export const isLeaf = (el: HTMLElement) => !el.getAttribute('aria-owns')

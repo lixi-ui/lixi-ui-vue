@@ -1,5 +1,5 @@
 import { nextTick } from 'vue'
-import makeMount from '@element-plus/test-utils/make-mount'
+import makeMount from '@lixi/test-utils/make-mount'
 import setupMock from '../setup-mock'
 import {
   HORIZONTAL,

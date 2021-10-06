@@ -12,8 +12,8 @@ import {
 import { hasOwn } from '@vue/shared'
 import memo from 'lodash/memoize'
 
-import { isNumber, isString, $ } from '@element-plus/utils/util'
-import isServer from '@element-plus/utils/isServer'
+import { isNumber, isString, $ } from '@lixi/utils/util'
+import isServer from '@lixi/utils/isServer'
 
 import useWheel from '../hooks/useWheel'
 import Scrollbar from '../components/scrollbar'
@@ -498,7 +498,7 @@ const createList = ({
 
       return h('div', {
         key: 0,
-        class: 'el-vl__wrapper',
+        class: 'lx-vl__wrapper',
       }, [
         listContainer,
         scrollbar,

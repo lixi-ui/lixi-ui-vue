@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-select-dropdown"
+    class="lx-select-dropdown"
     :class="[{ 'is-multiple': isMultiple }, popperClass]"
     :style="{ minWidth: minWidth }"
   >
@@ -17,7 +17,7 @@ import {
   inject,
   ref,
 } from 'vue'
-import { addResizeListener, removeResizeListener, ResizableElement } from '@element-plus/utils/resize-event'
+import { addResizeListener, removeResizeListener, ResizableElement } from '@lixi/utils/resize-event'
 import {
   selectKey,
 } from './token'

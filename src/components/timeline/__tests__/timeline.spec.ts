@@ -5,8 +5,8 @@ import TimeLineItem from '../src/item.vue'
 
 const Component = defineComponent({
   components: {
-    'el-timeline': TimeLine,
-    'el-timeline-item': TimeLineItem,
+    'lx-timeline': TimeLine,
+    'lx-timeline-item': TimeLineItem,
   },
   props: [],
   data() {
@@ -151,7 +151,7 @@ describe('TimeLine.vue', () => {
       `,
     })
     const nodeWrapper = wrapper.find('.lx-timeline-item__node')
-    expect(nodeWrapper.classes('el-timeline-item__node--primary')).toBe(true)
+    expect(nodeWrapper.classes('lx-timeline-item__node--primary')).toBe(true)
   })
 
   test('size', () => {
@@ -168,7 +168,7 @@ describe('TimeLine.vue', () => {
       `,
     })
     const nodeWrapper = wrapper.find('.lx-timeline-item__node')
-    expect(nodeWrapper.classes('el-timeline-item__node--large')).toBe(true)
+    expect(nodeWrapper.classes('lx-timeline-item__node--large')).toBe(true)
   })
 
   test('icon', () => {
@@ -178,14 +178,14 @@ describe('TimeLine.vue', () => {
         <lx-timeline>
           <lx-timeline-item
             timestamp="2018-04-11"
-            icon="el-icon-more">
+            icon="lx-icon-more">
             Step 1: xxxxxx
           </lx-timeline-item>
         </lx-timeline>
       `,
     })
     const nodeWrapper = wrapper.find('.lx-timeline-item__icon')
-    expect(nodeWrapper.classes('el-icon-more')).toBe(true)
+    expect(nodeWrapper.classes('lx-icon-more')).toBe(true)
   })
 
   test('dot', () => {

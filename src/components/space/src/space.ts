@@ -9,8 +9,8 @@ import {
   PatchFlags,
   isFragment,
   isValidElementNode,
-} from '@element-plus/utils/vnode'
-import { isArray } from '@element-plus/utils/util'
+} from '@lixi/utils/vnode'
+import { isArray } from '@lixi/utils/util'
 import Item from './item.vue'
 import { useSpace, defaultProps } from './useSpace'
 

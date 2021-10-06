@@ -10,8 +10,8 @@
 
 ```html
 <lx-dropdown>
-  <span class="el-dropdown-link">
-    下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    下拉菜单<i class="lx-icon-arrow-down lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -45,7 +45,7 @@
 ```html
 <lx-dropdown>
   <lx-button type="primary">
-    更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
+    更多菜单<i class="lx-icon-arrow-down lx-icon--right"></i>
   </lx-button>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -122,16 +122,16 @@
   <lx-col :span="8">
     <span class="demonstration">hover 激活</span>
     <lx-dropdown>
-      <span class="el-dropdown-link">
-        下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+      <span class="lx-dropdown-link">
+        下拉菜单<i class="lx-icon-arrow-down lx-icon--right"></i>
       </span>
       <template #dropdown>
         <lx-dropdown-menu>
-          <lx-dropdown-item icon="el-icon-plus">黄金糕</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus">狮子头</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-check">双皮奶</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-check">蚵仔煎</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-plus">黄金糕</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus">狮子头</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus-outline">螺蛳粉</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-check">双皮奶</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-check">蚵仔煎</lx-dropdown-item>
         </lx-dropdown-menu>
       </template>
     </lx-dropdown>
@@ -139,16 +139,16 @@
   <lx-col :span="8">
     <span class="demonstration">click 激活</span>
     <lx-dropdown trigger="click">
-      <span class="el-dropdown-link">
-        下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+      <span class="lx-dropdown-link">
+        下拉菜单<i class="lx-icon-arrow-down lx-icon--right"></i>
       </span>
       <template #dropdown>
         <lx-dropdown-menu>
-          <lx-dropdown-item icon="el-icon-plus">黄金糕</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus">狮子头</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-check">双皮奶</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-check">蚵仔煎</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-plus">黄金糕</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus">狮子头</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus-outline">螺蛳粉</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-check">双皮奶</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-check">蚵仔煎</lx-dropdown-item>
         </lx-dropdown-menu>
       </template>
     </lx-dropdown>
@@ -156,16 +156,16 @@
   <lx-col :span="8">
     <span class="demonstration">右键(contextmenu) 激活</span>
     <lx-dropdown trigger="contextmenu">
-      <span class="el-dropdown-link">
-        下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+      <span class="lx-dropdown-link">
+        下拉菜单<i class="lx-icon-arrow-down lx-icon--right"></i>
       </span>
       <template #dropdown>
         <lx-dropdown-menu>
-          <lx-dropdown-item icon="el-icon-plus">黄金糕</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus">狮子头</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-check">双皮奶</lx-dropdown-item>
-          <lx-dropdown-item icon="el-icon-circle-check">蚵仔煎</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-plus">黄金糕</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus">狮子头</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-plus-outline">螺蛳粉</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-check">双皮奶</lx-dropdown-item>
+          <lx-dropdown-item icon="lx-icon-circle-check">蚵仔煎</lx-dropdown-item>
         </lx-dropdown-menu>
       </template>
     </lx-dropdown>
@@ -197,8 +197,8 @@
 :::demo 下拉菜单默认在点击菜单项后会被隐藏，将`hide-on-click`属性默认为`false`可以关闭此功能。
 ```html
 <lx-dropdown :hide-on-click="false">
-  <span class="el-dropdown-link">
-    下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    下拉菜单<i class="lx-icon-arrow-down lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>
@@ -230,8 +230,8 @@
 :::demo
 ```html
 <lx-dropdown @command="handleCommand">
-  <span class="el-dropdown-link">
-    下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+  <span class="lx-dropdown-link">
+    下拉菜单<i class="lx-icon-arrow-down lx-icon--right"></i>
   </span>
   <template #dropdown>
     <lx-dropdown-menu>

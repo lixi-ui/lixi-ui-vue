@@ -1,17 +1,17 @@
 <template>
   <div
     :class="[
-      type === 'textarea' ? 'el-textarea' : 'el-input',
-      inputSize ? 'el-input--' + inputSize : '',
+      type === 'textarea' ? 'lx-textarea' : 'lx-input',
+      inputSize ? 'lx-input--' + inputSize : '',
       {
         'is-disabled': inputDisabled,
         'is-exceed': inputExceed,
-        'el-input-group': $slots.prepend || $slots.append,
-        'el-input-group--append': $slots.append,
-        'el-input-group--prepend': $slots.prepend,
-        'el-input--prefix': $slots.prefix || prefixIcon,
-        'el-input--suffix': $slots.suffix || suffixIcon || clearable || showPassword,
-        'el-input--suffix--password-clear': clearable && showPassword
+        'lx-input-group': $slots.prepend || $slots.append,
+        'lx-input-group--append': $slots.append,
+        'lx-input-group--prepend': $slots.prepend,
+        'lx-input--prefix': $slots.prefix || prefixIcon,
+        'lx-input--suffix': $slots.suffix || suffixIcon || clearable || showPassword,
+        'lx-input--suffix--password-clear': clearable && showPassword
       },
       $attrs.class
     ]"
@@ -21,13 +21,13 @@
   >
     <template v-if="type !== 'textarea'">
       <!-- 前置元素 -->
-      <div v-if="$slots.prepend" class="el-input-group__prepend">
+      <div v-if="$slots.prepend" class="lx-input-group__prepend">
         <slot name="prepend"></slot>
       </div>
       <input
         v-if="type !== 'textarea'"
         ref="input"
-        class="el-input__inner"
+        class="lx-input__inner"
         v-bind="attrs"
         :type="showPassword ? (passwordVisible ? 'text': 'password') : type"
         :disabled="inputDisabled"
@@ -47,44 +47,44 @@
         @keydown="handleKeydown"
       >
       <!-- 前置内容 -->
-      <span v-if="$slots.prefix || prefixIcon" class="el-input__prefix">
+      <span v-if="$slots.prefix || prefixIcon" class="lx-input__prefix">
         <slot name="prefix"></slot>
         <i
           v-if="prefixIcon"
-          :class="['el-input__icon', prefixIcon]"
+          :class="['lx-input__icon', prefixIcon]"
         ></i>
       </span>
       <!-- 后置内容 -->
-      <span v-if="getSuffixVisible()" class="el-input__suffix">
-        <span class="el-input__suffix-inner">
+      <span v-if="getSuffixVisible()" class="lx-input__suffix">
+        <span class="lx-input__suffix-inner">
           <template v-if="!showClear || !showPwdVisible || !isWordLimitVisible">
             <slot name="suffix"></slot>
-            <i v-if="suffixIcon" :class="['el-input__icon', suffixIcon]"></i>
+            <i v-if="suffixIcon" :class="['lx-input__icon', suffixIcon]"></i>
           </template>
           <i
             v-if="showClear"
-            class="el-input__icon el-icon-circle-close el-input__clear"
+            class="lx-input__icon lx-icon-circle-close lx-input__clear"
             @mousedown.prevent
             @click="clear"
           ></i>
-          <i v-if="showPwdVisible" class="el-input__icon el-icon-view el-input__clear" @click="handlePasswordVisible"></i>
-          <span v-if="isWordLimitVisible" class="el-input__count">
-            <span class="el-input__count-inner">
+          <i v-if="showPwdVisible" class="lx-input__icon lx-icon-view lx-input__clear" @click="handlePasswordVisible"></i>
+          <span v-if="isWordLimitVisible" class="lx-input__count">
+            <span class="lx-input__count-inner">
               {{ textLength }}/{{ maxlength }}
             </span>
           </span>
         </span>
-        <i v-if="validateState" :class="['el-input__icon', 'el-input__validateIcon', validateIcon]"></i>
+        <i v-if="validateState" :class="['lx-input__icon', 'lx-input__validateIcon', validateIcon]"></i>
       </span>
       <!-- 后置元素 -->
-      <div v-if="$slots.append" class="el-input-group__append">
+      <div v-if="$slots.append" class="lx-input-group__append">
         <slot name="append"></slot>
       </div>
     </template>
     <textarea
       v-else
       ref="textarea"
-      class="el-textarea__inner"
+      class="lx-textarea__inner"
       v-bind="attrs"
       :tabindex="tabindex"
       :disabled="inputDisabled"
@@ -103,7 +103,7 @@
       @keydown="handleKeydown"
     >
     </textarea>
-    <span v-if="isWordLimitVisible && type === 'textarea'" class="el-input__count">{{ textLength }}/{{ maxlength }}</span>
+    <span v-if="isWordLimitVisible && type === 'textarea'" class="lx-input__count">{{ textLength }}/{{ maxlength }}</span>
   </div>
 </template>
 
@@ -120,18 +120,18 @@ import {
   onMounted,
   onUpdated,
 } from 'vue'
-import { elFormKey, elFormItemKey } from '@element-plus/tokens'
-import { useAttrs } from '@element-plus/hooks'
-import { UPDATE_MODEL_EVENT, VALIDATE_STATE_MAP } from '@element-plus/utils/constants'
-import { isObject, useGlobalConfig } from '@element-plus/utils/util'
-import isServer from '@element-plus/utils/isServer'
-import { isKorean } from '@element-plus/utils/isDef'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { useAttrs } from '@lixi/hooks'
+import { UPDATE_MODEL_EVENT, VALIDATE_STATE_MAP } from '@lixi/utils/constants'
+import { isObject, useGlobalConfig } from '@lixi/utils/util'
+import isServer from '@lixi/utils/isServer'
+import { isKorean } from '@lixi/utils/isDef'
+import { isValidComponentSize } from '@lixi/utils/validators'
 import calcTextareaHeight from './calcTextareaHeight'
 
 import type { PropType } from 'vue'
-import type { LxFormContext, LxFormItemContext } from '@element-plus/tokens'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
+import type { ComponentSize } from '@lixi/utils/types'
 
 type AutosizeProp = {
   minRows?: number

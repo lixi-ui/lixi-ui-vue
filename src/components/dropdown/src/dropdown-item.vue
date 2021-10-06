@@ -1,9 +1,9 @@
 <template>
   <li
-    class="el-dropdown-menu__item"
+    class="lx-dropdown-menu__item"
     :class="{
       'is-disabled': disabled,
-      'el-dropdown-menu__item--divided': divided
+      'lx-dropdown-menu__item--divided': divided
     }"
     :aria-disabled="disabled"
     :tabindex="disabled ? null : -1"

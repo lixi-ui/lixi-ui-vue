@@ -3,7 +3,7 @@ import Option from './src/option.vue'
 import OptionGroup from './src/option-group.vue'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 Select.install = (app: App): void => {
   app.component(Select.name, Select)

@@ -124,8 +124,8 @@ Vous pouvez également définir un intervalle libre.
 | format | format of the displayed value in the input box | string | see [date formats](#/en-US/component/date-picker#date-formats) | HH:mm:ss |
 | default-value | Optionnel, date d'aujourd'hui par défaut. | `Date` pour le TimePicker, `string` pour le TimeSelect | Toute valeur acceptée par `new Date()` pour le TimePicker, une valeur sélectionnable pour TimeSelect. | — |
 | name | Attribut `name` natif de l'input. | string | — | — |
-| prefix-icon | Classe de l'icône de préfixe. | string | — | el-icon-time |
-| clear-icon | Classe de l'icône d'effacement. | string | — | el-icon-circle-close |
+| prefix-icon | Classe de l'icône de préfixe. | string | — | lx-icon-time |
+| clear-icon | Classe de l'icône d'effacement. | string | — | lx-icon-circle-close |
 | disabled-hours | To specify the array of hours that cannot be selected | function | — | — |
 | disabled-minutes | To specify the array of minutes that cannot be selected | function(selectedHour) | — | — |
 | disabled-seconds | To specify the array of seconds that cannot be selected | function(selectedHour, selectedMinute) | — | — |

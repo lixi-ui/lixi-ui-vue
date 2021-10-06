@@ -2,8 +2,8 @@ import { VueWrapper } from '@vue/test-utils'
 import { ComponentPublicInstance, nextTick } from 'vue'
 import LxTable from '../src/table.vue'
 import LxTableColumn from '../src/table-column/index'
-import LxCheckbox from '@element-plus/components/checkbox'
-import { triggerEvent } from '@element-plus/test-utils'
+import LxCheckbox from '@lixi/components/checkbox'
+import { triggerEvent } from '@lixi/test-utils'
 import { mount, getTestData } from './table-test-common'
 
 const { CheckboxGroup: LxCheckboxGroup } = LxCheckbox
@@ -164,21 +164,21 @@ describe('Table.vue', () => {
     it('stripe', async () => {
       const wrapper = createTable('stripe')
       await nextTick()
-      expect(wrapper.classes()).toContain('el-table--striped')
+      expect(wrapper.classes()).toContain('lx-table--striped')
       wrapper.unmount()
     })
 
     it('border', async () => {
       const wrapper = createTable('border')
       await nextTick()
-      expect(wrapper.classes()).toContain('el-table--border')
+      expect(wrapper.classes()).toContain('lx-table--border')
       wrapper.unmount()
     })
 
     it('fit', async () => {
       const wrapper = createTable(':fit="false"')
       await nextTick()
-      expect(wrapper.classes()).not.toContain('el-table--fit')
+      expect(wrapper.classes()).not.toContain('lx-table--fit')
       wrapper.unmount()
     })
 
@@ -1177,7 +1177,7 @@ describe('Table.vue', () => {
       expandIcon.trigger('click')
 
       await nextTick()
-      expect(expandIcon.classes()).toContain('el-table__expand-icon--expanded')
+      expect(expandIcon.classes()).toContain('lx-table__expand-icon--expanded')
       expect(wrapper.findAll('.lx-table__row').length).toEqual(8)
     })
 
@@ -1242,7 +1242,7 @@ describe('Table.vue', () => {
       expandIcon.trigger('click')
       await nextTick()
       expect(
-        expandIcon.classes().includes('el-table__expand-icon--expanded'),
+        expandIcon.classes().includes('lx-table__expand-icon--expanded'),
       ).toBeTruthy()
       expect(wrapper.findAll('.lx-table__row').length).toEqual(8)
       expect(spy.mock.calls[0][0]).toBeInstanceOf(Object)
@@ -1304,15 +1304,15 @@ describe('Table.vue', () => {
       const expandIcon = childRows[0].find('.lx-table__expand-icon')
       expandIcon.trigger('click')
       await nextTick()
-      expect(expandIcon.classes()).toContain('el-table__expand-icon--expanded')
+      expect(expandIcon.classes()).toContain('lx-table__expand-icon--expanded')
       ;(wrapper.vm as any).closeExpandRow()
       await nextTick()
       expect(expandIcon.classes()).not.toContain(
-        'el-table__expand-icon--expanded',
+        'lx-table__expand-icon--expanded',
       )
     })
 
-    it('v-if on el-table-column should patch correctly', async () => {
+    it('v-if on lx-table-column should patch correctly', async () => {
       wrapper = mount({
         components: {
           LxTable,

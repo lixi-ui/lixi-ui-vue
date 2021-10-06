@@ -2,7 +2,7 @@ import Descriptions from './src/index.vue'
 import DescriptionsItem from './src/description-item'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 
 
 Descriptions.install = (app: App): void => {

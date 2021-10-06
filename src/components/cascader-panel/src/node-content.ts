@@ -8,7 +8,7 @@ export default defineComponent({
     const { renderLabelFn } = panel
     return h(
       'span',
-      { class: 'el-cascader-node__label' },
+      { class: 'lx-cascader-node__label' },
       renderLabelFn ? renderLabelFn({ node, data }) : label,
     )
   },

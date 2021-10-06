@@ -1,7 +1,7 @@
 <template>
   <div
     ref="formItemRef"
-    class="el-form-item"
+    class="lx-form-item"
     :class="formItemClass"
   >
     <LabelWrap
@@ -11,7 +11,7 @@
       <label
         v-if="label || $slots.label"
         :for="labelFor"
-        class="el-form-item__label"
+        class="lx-form-item__label"
         :style="labelStyle"
       >
         <slot name="label" :label="label + elForm.labelSuffix">
@@ -19,18 +19,18 @@
         </slot>
       </label>
     </LabelWrap>
-    <div class="el-form-item__content" :style="contentStyle">
+    <div class="lx-form-item__content" :style="contentStyle">
       <slot></slot>
-      <transition name="el-zoom-in-top">
+      <transition name="lx-zoom-in-top">
         <slot
           v-if="shouldShowError"
           name="error"
           :error="validateMessage"
         >
           <div
-            class="el-form-item__error"
+            class="lx-form-item__error"
             :class="{
-              'el-form-item__error--inline':
+              'lx-form-item__error--inline':
                 typeof inlineMessage === 'boolean'
                   ? inlineMessage
                   : elForm.inlineMessage || false
@@ -62,14 +62,14 @@ import {
 import AsyncValidator from 'async-validator'
 import mitt from 'mitt'
 import { NOOP } from '@vue/shared'
-import { addUnit, getPropByPath, useGlobalConfig } from '@element-plus/utils/util'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { addUnit, getPropByPath, useGlobalConfig } from '@lixi/utils/util'
+import { isValidComponentSize } from '@lixi/utils/validators'
 import LabelWrap from './label-wrap'
-import { elFormEvents, elFormItemKey, elFormKey } from '@element-plus/tokens'
+import { elFormEvents, elFormItemKey, elFormKey } from '@lixi/tokens'
 
 import type { PropType, CSSProperties } from 'vue'
-import type { ComponentSize } from '@element-plus/utils/types'
-import type { LxFormContext, ValidateFieldCallback } from '@element-plus/tokens'
+import type { ComponentSize } from '@lixi/utils/types'
+import type { LxFormContext, ValidateFieldCallback } from '@lixi/tokens'
 import type { FormItemRule } from './form.type'
 
 export default defineComponent({
@@ -359,14 +359,14 @@ export default defineComponent({
 
     const formItemClass = computed(() => [
       {
-        'el-form-item--feedback': elForm.statusIcon,
+        'lx-form-item--feedback': elForm.statusIcon,
         'is-error': validateState.value === 'error',
         'is-validating': validateState.value === 'validating',
         'is-success': validateState.value === 'success',
         'is-required': isRequired.value || props.required,
         'is-no-asterisk': elForm.hideRequiredAsterisk,
       },
-      sizeClass.value ? 'el-form-item--' + sizeClass.value : '',
+      sizeClass.value ? 'lx-form-item--' + sizeClass.value : '',
     ])
 
     const shouldShowError = computed(() => {

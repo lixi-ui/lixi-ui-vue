@@ -1,5 +1,5 @@
 import { ref, getCurrentInstance, unref } from 'vue'
-import { arrayFind } from '@element-plus/utils/util'
+import { arrayFind } from '@lixi/utils/util'
 import { getRowIdentity } from '../util'
 
 import type { Ref } from 'vue'

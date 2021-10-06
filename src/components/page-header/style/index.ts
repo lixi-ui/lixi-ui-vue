@@ -1,2 +1,2 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/page-header.scss'
+import '@lixi/components/base/style'
+import '@lixi/theme-chalk/src/page-header.scss'

@@ -1,5 +1,5 @@
 <template>
-  <span class="el-pagination__sizes">
+  <span class="lx-pagination__sizes">
     <lx-select
       :model-value="innerPageSize"
       :disabled="disabled"
@@ -20,12 +20,12 @@
 <script lang="ts">
 import { defineComponent, watch, computed, ref } from 'vue'
 import isEqual from 'lodash/isEqual'
-import LxSelect from '@element-plus/components/select'
-import { useLocaleInject } from '@element-plus/hooks'
+import LxSelect from '@lixi/components/select'
+import { useLocaleInject } from '@lixi/hooks'
 import { usePagination } from './usePagination'
 
 import type { PropType } from 'vue'
-import type { Nullable } from '@element-plus/utils/types'
+import type { Nullable } from '@lixi/utils/types'
 
 const { Option: LxOption } = LxSelect
 

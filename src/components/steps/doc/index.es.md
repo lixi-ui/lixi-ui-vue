@@ -87,9 +87,9 @@ En la barra de pasos se pueden utilizar diversos iconos personalizados.
 
 ```html
 <lx-steps :active="1">
-  <lx-step title="Step 1" icon="el-icon-edit"></lx-step>
-  <lx-step title="Step 2" icon="el-icon-upload"></lx-step>
-  <lx-step title="Step 3" icon="el-icon-picture"></lx-step>
+  <lx-step title="Step 1" icon="lx-icon-edit"></lx-step>
+  <lx-step title="Step 2" icon="lx-icon-upload"></lx-step>
+  <lx-step title="Step 3" icon="lx-icon-picture"></lx-step>
 </lx-steps>
 ```
 :::
@@ -118,9 +118,9 @@ Step bar simple, donde se ignorará `align-center`, `description`, `direction` y
 ```html
 
 <lx-steps :space="200" :active="1" simple>
-  <lx-step title="Step 1" icon="el-icon-edit"></lx-step>
-  <lx-step title="Step 2" icon="el-icon-upload"></lx-step>
-  <lx-step title="Step 3" icon="el-icon-picture"></lx-step>
+  <lx-step title="Step 1" icon="lx-icon-edit"></lx-step>
+  <lx-step title="Step 2" icon="lx-icon-upload"></lx-step>
+  <lx-step title="Step 3" icon="lx-icon-picture"></lx-step>
 </lx-steps>
 
 <lx-steps :active="1" finish-status="success" simple style="margin-top: 20px">

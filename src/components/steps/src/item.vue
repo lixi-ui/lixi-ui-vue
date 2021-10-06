@@ -2,40 +2,40 @@
   <div
     :style="style"
     :class="[
-      'el-step',
+      'lx-step',
       isSimple ? 'is-simple' : `is-${parent.props.direction}`,
       isLast && !space && !isCenter && 'is-flex',
       isCenter && !isVertical && !isSimple && 'is-center'
     ]"
   >
     <!-- icon & line -->
-    <div :class="['el-step__head', `is-${currentStatus}`]">
-      <div class="el-step__line">
-        <i class="el-step__line-inner" :style="lineStyle"></i>
+    <div :class="['lx-step__head', `is-${currentStatus}`]">
+      <div class="lx-step__line">
+        <i class="lx-step__line-inner" :style="lineStyle"></i>
       </div>
 
-      <div :class="['el-step__icon', `is-${icon ? 'icon' : 'text'}`]">
+      <div :class="['lx-step__icon', `is-${icon ? 'icon' : 'text'}`]">
         <slot
           v-if="currentStatus !== 'success' && currentStatus !== 'error'"
           name="icon"
         >
-          <i v-if="icon" :class="['el-step__icon-inner', icon]"></i>
-          <div v-if="!icon && !isSimple" class="el-step__icon-inner">{{ index + 1 }}</div>
+          <i v-if="icon" :class="['lx-step__icon-inner', icon]"></i>
+          <div v-if="!icon && !isSimple" class="lx-step__icon-inner">{{ index + 1 }}</div>
         </slot>
         <i
           v-else
-          :class="['el-step__icon-inner', 'is-status', `el-icon-${currentStatus === 'success' ? 'check' : 'close'}`]"
+          :class="['lx-step__icon-inner', 'is-status', `el-icon-${currentStatus === 'success' ? 'check' : 'close'}`]"
         >
         </i>
       </div>
     </div>
     <!-- title & description -->
-    <div class="el-step__main">
-      <div :class="['el-step__title', `is-${currentStatus}`]">
+    <div class="lx-step__main">
+      <div :class="['lx-step__title', `is-${currentStatus}`]">
         <slot name="title">{{ title }}</slot>
       </div>
-      <div v-if="isSimple" class="el-step__arrow"></div>
-      <div v-else :class="['el-step__description', `is-${currentStatus}`]">
+      <div v-if="isSimple" class="lx-step__arrow"></div>
+      <div v-else :class="['lx-step__description', `is-${currentStatus}`]">
         <slot name="description">{{ description }}</slot>
       </div>
     </div>

@@ -1,22 +1,22 @@
 <template>
   <div
     ref="container"
-    :class="['el-image', $attrs.class]"
+    :class="['lx-image', $attrs.class]"
     :style="$attrs.style"
   >
     <slot v-if="loading" name="placeholder">
-      <div class="el-image__placeholder"></div>
+      <div class="lx-image__placeholder"></div>
     </slot>
     <slot v-else-if="hasLoadError" name="error">
-      <div class="el-image__error">{{ t('el.image.error') }}</div>
+      <div class="lx-image__error">{{ t('el.image.error') }}</div>
     </slot>
     <img
       v-else
-      class="el-image__inner"
+      class="lx-image__inner"
       v-bind="attrs"
       :src="src"
       :style="imageStyle"
-      :class="{ 'el-image__inner--center': alignCenter, 'el-image__preview': preview }"
+      :class="{ 'lx-image__inner--center': alignCenter, 'lx-image__preview': preview }"
       @click="clickHandler"
     >
     <teleport to="body" :disabled="!appendToBody">
@@ -40,10 +40,10 @@
 import { defineComponent, computed, ref, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
 import { isString } from '@vue/shared'
 import throttle from 'lodash/throttle'
-import { useAttrs, useLocaleInject } from '@element-plus/hooks'
-import ImageViewer from '@element-plus/components/image-viewer'
-import isServer from '@element-plus/utils/isServer'
-import { on, off, getScrollContainer, isInContainer } from '@element-plus/utils/dom'
+import { useAttrs, useLocaleInject } from '@lixi/hooks'
+import ImageViewer from '@lixi/components/image-viewer'
+import isServer from '@lixi/utils/isServer'
+import { on, off, getScrollContainer, isInContainer } from '@lixi/utils/dom'
 
 import type { CSSProperties, PropType } from 'vue'
 

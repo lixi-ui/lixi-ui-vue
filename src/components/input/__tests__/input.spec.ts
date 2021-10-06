@@ -1,11 +1,11 @@
 import { nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
-import { sleep, defineGetter } from '@element-plus/test-utils'
+import { sleep, defineGetter } from '@lixi/test-utils'
 import Input from '../src/index.vue'
 
 const _mount = options => mount({
   components: {
-    'el-input': Input,
+    'lx-input': Input,
   },
   ...options,
 })
@@ -69,7 +69,7 @@ describe('Input.vue', () => {
   })
 
   describe('test emoji',()=>{
-    test('el-input should minimize value between emoji length and maxLength', async () => {
+    test('lx-input should minimize value between emoji length and maxLength', async () => {
       const wrapper = _mount({
         template: `<lx-input class="test-exceed" maxlength="4" show-word-limit v-model="inputVal" />`,
         setup() {
@@ -143,14 +143,14 @@ describe('Input.vue', () => {
     const wrapper = _mount({
       template: `<lx-input size="large" />`,
     })
-    expect(wrapper.classes('el-input--large')).toBe(true)
+    expect(wrapper.classes('lx-input--large')).toBe(true)
   })
 
   test('type', () => {
     const wrapper = _mount({
       template: `<lx-input type="textarea" />`,
     })
-    expect(wrapper.classes('el-textarea')).toBe(true)
+    expect(wrapper.classes('lx-textarea')).toBe(true)
   })
 
   test('rows', () => {

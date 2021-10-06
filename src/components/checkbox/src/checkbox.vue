@@ -1,9 +1,9 @@
 <template>
   <label
     :id="id"
-    class="el-checkbox"
+    class="lx-checkbox"
     :class="[
-      checkboxSize ? 'el-checkbox--' + checkboxSize : '',
+      checkboxSize ? 'lx-checkbox--' + checkboxSize : '',
       { 'is-disabled': isDisabled },
       { 'is-bordered': border },
       { 'is-checked': isChecked }
@@ -11,7 +11,7 @@
     :aria-controls="indeterminate ? controls : null"
   >
     <span
-      class="el-checkbox__input"
+      class="lx-checkbox__input"
       :class="{
         'is-disabled': isDisabled,
         'is-checked': isChecked,
@@ -22,11 +22,11 @@
       :role="indeterminate ? 'checkbox' : undefined"
       :aria-checked="indeterminate ? 'mixed' : false"
     >
-      <span class="el-checkbox__inner"></span>
+      <span class="lx-checkbox__inner"></span>
       <input
         v-if="trueLabel || falseLabel"
         v-model="model"
-        class="el-checkbox__original"
+        class="lx-checkbox__original"
         type="checkbox"
         :aria-hidden="indeterminate ? 'true' : 'false'"
         :name="name"
@@ -40,7 +40,7 @@
       <input
         v-else
         v-model="model"
-        class="el-checkbox__original"
+        class="lx-checkbox__original"
         type="checkbox"
         :aria-hidden="indeterminate ? 'true' : 'false'"
         :disabled="isDisabled"
@@ -51,7 +51,7 @@
         @blur="focus = false"
       >
     </span>
-    <span v-if="$slots.default || label" class="el-checkbox__label">
+    <span v-if="$slots.default || label" class="lx-checkbox__label">
       <slot></slot>
       <template v-if="!$slots.default">{{ label }}</template>
     </span>
@@ -61,12 +61,12 @@
 import {
   defineComponent,
 } from 'vue'
-import { UPDATE_MODEL_EVENT } from '@element-plus/utils/constants'
-import { isValidComponentSize } from '@element-plus/utils/validators'
+import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
+import { isValidComponentSize } from '@lixi/utils/validators'
 import { useCheckbox } from './useCheckbox'
 
 import type { PropType } from 'vue'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 
 export default defineComponent({
   name: 'LxCheckbox',

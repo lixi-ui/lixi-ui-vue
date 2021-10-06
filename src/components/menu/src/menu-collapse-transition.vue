@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { addClass, removeClass, hasClass } from '@element-plus/utils/dom'
+import { addClass, removeClass, hasClass } from '@lixi/utils/dom'
 
 export default defineComponent({
   name: 'LxMenuCollapseTransition',
@@ -17,13 +17,13 @@ export default defineComponent({
         },
 
         enter(el: HTMLElement, done) {
-          addClass(el, 'el-opacity-transition')
+          addClass(el, 'lx-opacity-transition')
           el.style.opacity = '1'
           done()
         },
 
         afterEnter(el: HTMLElement) {
-          removeClass(el, 'el-opacity-transition')
+          removeClass(el, 'lx-opacity-transition')
           el.style.opacity = ''
         },
 
@@ -32,16 +32,16 @@ export default defineComponent({
             (el as any).dataset = {}
           }
 
-          if (hasClass(el, 'el-menu--collapse')) {
-            removeClass(el, 'el-menu--collapse')
+          if (hasClass(el, 'lx-menu--collapse')) {
+            removeClass(el, 'lx-menu--collapse')
             el.dataset.oldOverflow = el.style.overflow
             el.dataset.scrollWidth = el.clientWidth.toString()
-            addClass(el, 'el-menu--collapse')
+            addClass(el, 'lx-menu--collapse')
           } else {
-            addClass(el, 'el-menu--collapse')
+            addClass(el, 'lx-menu--collapse')
             el.dataset.oldOverflow = el.style.overflow
             el.dataset.scrollWidth = el.clientWidth.toString()
-            removeClass(el, 'el-menu--collapse')
+            removeClass(el, 'lx-menu--collapse')
           }
 
           el.style.width = el.scrollWidth + 'px'

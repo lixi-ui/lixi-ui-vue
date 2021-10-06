@@ -1,4 +1,4 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/table-column.scss'
-import '@element-plus/components/checkbox/style/index'
-import '@element-plus/components/tag/style/index'
+import '@lixi/components/base/style'
+import '@lixi/theme-chalk/src/table-column.scss'
+import '@lixi/components/checkbox/style/index'
+import '@lixi/components/tag/style/index'

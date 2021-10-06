@@ -1,7 +1,7 @@
 <template>
   <table
     :class="{
-      'el-calendar-table': true,
+      'lx-calendar-table': true,
       'is-range': isInRange
     }"
     cellspacing="0"
@@ -15,8 +15,8 @@
         v-for="(row, index) in rows"
         :key="index"
         :class="{
-          'el-calendar-table__row': true,
-          'el-calendar-table__row--hide-border': index === 0 && hideHeader
+          'lx-calendar-table__row': true,
+          'lx-calendar-table__row--hide-border': index === 0 && hideHeader
         }"
       >
         <td
@@ -25,7 +25,7 @@
           :class="getCellClass(cell)"
           @click="pickDay(cell)"
         >
-          <div class="el-calendar-day">
+          <div class="lx-calendar-day">
             <slot
               name="dateCell"
               :data="getSlotData(cell)"
@@ -48,8 +48,8 @@ import {
 import { PropType } from 'vue'
 import dayjs, { Dayjs } from 'dayjs'
 import localeData from 'dayjs/plugin/localeData'
-import { useLocaleInject } from '@element-plus/hooks'
-import { rangeArr } from '@element-plus/components/time-picker'
+import { useLocaleInject } from '@lixi/hooks'
+import { rangeArr } from '@lixi/components/time-picker'
 dayjs.extend(localeData)
 
 export const getPrevMonthLastDays = (date: Dayjs, amount) => {

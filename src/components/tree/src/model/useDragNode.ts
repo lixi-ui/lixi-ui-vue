@@ -1,6 +1,7 @@
 import { inject, provide, ref } from 'vue'
 import mitt, { Emitter } from 'mitt'
-import { addClass, removeClass } from '@element-plus/utils/dom'
+// import { addClass, removeClass } from '@lixi/utils/dom'
+import { addClass, removeClass } from '../../../../utils/dom.ts'
 import Node from './node'
 
 interface TreeNode {
@@ -13,7 +14,7 @@ interface DragOptions {
   treeNode: TreeNode
 }
 
-export function useDragNodeHandler({ props, ctx, el$, dropIndicator$, store }) {
+export function useDragNodeHandler({ props, ctx,  lx$, dropIndicator$, store }) {
   const emitter = mitt()
   provide('DragNodeEmitter', emitter)
 
@@ -88,7 +89,7 @@ export function useDragNodeHandler({ props, ctx, el$, dropIndicator$, store }) {
     }
 
     const targetPosition = dropNode.$el.getBoundingClientRect()
-    const treePosition = el$.value.getBoundingClientRect()
+    const treePosition =  lx$.value.getBoundingClientRect()
 
     let dropType
     const prevPercent = dropPrev ? (dropInner ? 0.25 : (dropNext ? 0.45 : 1)) : -1

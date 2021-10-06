@@ -123,8 +123,8 @@ Es posible escoger un rango de tiempo arbitrario.
 | format | format of the displayed value in the input box | string | see [date formats](#/en-US/component/date-picker#date-formats) | HH:mm:ss |
 | default-value     | opcional, fecha por defecto del calendario | Fecha para Selector de Tiempo, string para el Seleccionador de Tiempo | cualquier cosa aceptada por `new Date()` para el Selector de Tiempo,  Selector de Tiempo, valor seleccionable para el Seleccionador de Tiempo | —                    |
 | name              | como `name` en input nativo              | string                                   | —                                        | —                    |
-| prefix-icon       | Clase personalizada para el icono de prefijado | string                                   | —                                        | el-icon-time         |
-| clear-icon        | Clase personalizada para el icono `clear` | string                                   | —                                        | el-icon-circle-close |
+| prefix-icon       | Clase personalizada para el icono de prefijado | string                                   | —                                        | lx-icon-time         |
+| clear-icon        | Clase personalizada para el icono `clear` | string                                   | —                                        | lx-icon-circle-close |
 | disabled-hours | To specify the array of hours that cannot be selected | function | — | — |
 | disabled-minutes | To specify the array of minutes that cannot be selected | function(selectedHour) | — | — |
 | disabled-seconds | To specify the array of seconds that cannot be selected | function(selectedHour, selectedMinute) | — | — |

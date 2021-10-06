@@ -38,35 +38,35 @@ Display multiple fields in list form.
     </template>
     <lx-descriptions-item>
       <template #label>
-        <i class="el-icon-user"></i>
+        <i class="lx-icon-user"></i>
         Username
       </template>
       kooriookami
     </lx-descriptions-item>
     <lx-descriptions-item>
       <template #label>
-        <i class="el-icon-mobile-phone"></i>
+        <i class="lx-icon-mobile-phone"></i>
         Telephone
       </template>
       18100000000
     </lx-descriptions-item>
     <lx-descriptions-item>
       <template #label>
-        <i class="el-icon-location-outline"></i>
+        <i class="lx-icon-location-outline"></i>
         Place
       </template>
       Suzhou
     </lx-descriptions-item>
     <lx-descriptions-item>
       <template #label>
-        <i class="el-icon-tickets"></i>
+        <i class="lx-icon-tickets"></i>
         Remarks
       </template>
       <lx-tag size="small">School</lx-tag>
     </lx-descriptions-item>
     <lx-descriptions-item>
       <template #label>
-        <i class="el-icon-office-building"></i>
+        <i class="lx-icon-office-building"></i>
         Address
       </template>
       No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province

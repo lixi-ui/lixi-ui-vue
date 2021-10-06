@@ -1,14 +1,14 @@
 <template>
   <div
-    class="el-color-svpanel"
+    class="lx-color-svpanel"
     :style="{
       backgroundColor: background
     }"
   >
-    <div class="el-color-svpanel__white"></div>
-    <div class="el-color-svpanel__black"></div>
+    <div class="lx-color-svpanel__white"></div>
+    <div class="lx-color-svpanel__black"></div>
     <div
-      class="el-color-svpanel__cursor"
+      class="lx-color-svpanel__cursor"
       :style="{
         top: cursorTop + 'px',
         left: cursorLeft + 'px'

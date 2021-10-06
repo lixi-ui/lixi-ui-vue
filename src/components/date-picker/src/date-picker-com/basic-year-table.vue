@@ -1,5 +1,5 @@
 <template>
-  <table class="el-year-table" @click="handleYearTableClick">
+  <table class="lx-year-table" @click="handleYearTableClick">
     <tbody>
       <tr>
         <td class="available" :class="getCellStyle(startYear + 0)">
@@ -49,10 +49,10 @@ import {
   computed,
 } from 'vue'
 import dayjs from 'dayjs'
-import { useLocaleInject } from '@element-plus/hooks'
-import { rangeArr } from '@element-plus/components/time-picker'
-import { hasClass } from '@element-plus/utils/dom'
-import { coerceTruthyValueToArray } from '@element-plus/utils/util'
+import { useLocaleInject } from '@lixi/hooks'
+import { rangeArr } from '@lixi/components/time-picker'
+import { hasClass } from '@lixi/utils/dom'
+import { coerceTruthyValueToArray } from '@lixi/utils/util'
 
 import type { PropType } from 'vue'
 import type { Dayjs } from 'dayjs'

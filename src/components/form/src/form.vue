@@ -1,9 +1,9 @@
 <template>
   <form
-    class="el-form"
+    class="lx-form"
     :class="[
-      labelPosition ? 'el-form--label-' + labelPosition : '',
-      { 'el-form--inline': inline }
+      labelPosition ? 'lx-form--label-' + labelPosition : '',
+      { 'lx-form--inline': inline }
     ]"
   >
     <slot></slot>
@@ -14,12 +14,12 @@
 import { computed, defineComponent, provide, reactive, ref, toRefs, watch } from 'vue'
 import { FieldErrorList } from 'async-validator'
 import mitt from 'mitt'
-import { elFormEvents, elFormKey } from '@element-plus/tokens'
+import { elFormEvents, elFormKey } from '@lixi/tokens'
 
 import type { PropType } from 'vue'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 import type { FormRulesMap } from './form.type'
-import type { LxFormItemContext as FormItemCtx, ValidateFieldCallback } from '@element-plus/tokens'
+import type { LxFormItemContext as FormItemCtx, ValidateFieldCallback } from '@lixi/tokens'
 
 function useFormLabelWidth() {
   const potentialLabelWidthArr = ref([])

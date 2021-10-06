@@ -1,7 +1,7 @@
 import { nextTick } from 'vue'
-import makeMount from '@element-plus/test-utils/make-mount'
-import { on } from '@element-plus/utils/dom'
-import { EVENT_CODE } from '@element-plus/utils/aria'
+import makeMount from '@lixi/test-utils/make-mount'
+import { on } from '@lixi/utils/dom'
+import { EVENT_CODE } from '@lixi/utils/aria'
 
 import Upload from '../src/upload.vue'
 
