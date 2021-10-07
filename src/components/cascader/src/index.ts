@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
-import Cascader from './src/index.vue'
+import Cascader from './index.vue'
 
 Cascader.install = (app: App): void => {
   app.component(Cascader.name, Cascader)

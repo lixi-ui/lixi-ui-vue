@@ -1,5 +1,5 @@
-import Descriptions from './src/index.vue'
-import DescriptionsItem from './src/description-item'
+import Descriptions from './index.vue'
+import DescriptionsItem from './description-item'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

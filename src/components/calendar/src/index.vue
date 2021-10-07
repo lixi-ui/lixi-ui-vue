@@ -62,7 +62,7 @@ import {
 import type { PropType, ComputedRef } from 'vue'
 import dayjs from 'dayjs'
 
-import LxButton from '@lixi/components/button'
+import LxButton from '@lixi/components/button/src'
 import { useLocaleInject } from '@lixi/hooks'
 import { warn } from '@lixi/utils/error'
 import DateTable from './date-table.vue'

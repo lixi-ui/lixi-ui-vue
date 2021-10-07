@@ -62,7 +62,7 @@ import {
 import { toRawType } from '@vue/shared'
 import { RepeatClick } from '@lixi/directives'
 import { elFormKey, elFormItemKey } from '@lixi/tokens'
-import LxInput from '@lixi/components/input'
+import LxInput from '@lixi/components/input/src'
 import { useGlobalConfig } from '@lixi/utils/util'
 import { isValidComponentSize } from '@lixi/utils/validators'
 

@@ -1,5 +1,5 @@
-import Steps from './src/index.vue'
-import Step from './src/item.vue'
+import Steps from './index.vue'
+import Step from './item.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

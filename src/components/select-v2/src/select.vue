@@ -239,8 +239,8 @@ import {
   vModelText,
 } from 'vue'
 import { ClickOutside } from '@lixi/directives'
-import LxPopper from '@lixi/components/popper'
-import LxTag from '@lixi/components/tag'
+import LxPopper from '@lixi/components/popper/src'
+import LxTag from '@lixi/components/tag/src'
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@lixi/utils/constants'
 import LxSelectMenu from './select-dropdown.vue'
 import useSelect from './useSelect'

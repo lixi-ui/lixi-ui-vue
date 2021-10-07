@@ -72,7 +72,7 @@ import { defineComponent, ref } from 'vue'
 import { NOOP } from '@vue/shared'
 
 import { useLocaleInject } from '@lixi/hooks'
-import LxProgress from '@lixi/components/progress'
+import LxProgress from '@lixi/components/progress/src'
 
 import type { PropType } from 'vue'
 import type { UploadFile } from './upload.type'

@@ -1,5 +1,5 @@
-import Timeline from './src/index.vue'
-import TimelineItem from './src/item.vue'
+import Timeline from './index.vue'
+import TimelineItem from './item.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

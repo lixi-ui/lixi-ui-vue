@@ -58,7 +58,7 @@ import {
   computed, defineComponent, inject, h,
   reactive, ref, toRefs, watch,
 } from 'vue'
-import LxButton from '@lixi/components/button'
+import LxButton from '@lixi/components/button/src'
 import { elFormItemKey } from '@lixi/tokens'
 import { useLocaleInject } from '@lixi/hooks'
 import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'

@@ -1,6 +1,6 @@
-import Dropdown from './src/dropdown.vue'
-import DropdownItem from './src/dropdown-item.vue'
-import DropdownMenu from './src/dropdown-menu.vue'
+import Dropdown from './dropdown.vue'
+import DropdownItem from './dropdown-item.vue'
+import DropdownMenu from './dropdown-menu.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

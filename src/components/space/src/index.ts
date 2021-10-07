@@ -1,4 +1,4 @@
-import Space from './src/index'
+import Space from './index'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

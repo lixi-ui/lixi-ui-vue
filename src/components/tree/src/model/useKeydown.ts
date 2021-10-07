@@ -1,13 +1,10 @@
 import { onMounted, onUpdated, onBeforeUnmount, watch, shallowRef } from 'vue'
-// import { EVENT_CODE } from '@lixi/utils/aria.ts'
-import { EVENT_CODE } from '../../../../utils/aria.ts';
-// import { on, off } from '@lixi/utils/dom.ts'
-import { on, off } from '../../../../utils/dom.ts'
+import { EVENT_CODE } from '@lixi/utils/aria.ts'
+import { on, off } from '@lixi/utils/dom.ts'
 import TreeStore from './tree-store'
 
 import type { Ref } from 'vue'
-// import type { Nullable } from '@lixi/utils/types'
-import type { Nullable } from '../../../../utils/types'
+import type { Nullable } from '@lixi/utils/types'
 
 interface UseKeydownOption {
    lx$: Ref<HTMLElement>

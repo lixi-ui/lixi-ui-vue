@@ -221,3 +221,15 @@ export function deduplicate(arr) {
 export function $(ref)  {
   return ref.value
 }
+
+export function addUnit(value: string | number) {
+  if (isString(value)) {
+    return value
+  } else if (isNumber(value)) {
+    return value + 'px'
+  }
+  if (process.env.NODE_ENV === 'development') {
+    warn(SCOPE, 'binding value must be a string or number')
+  }
+  return ''
+}

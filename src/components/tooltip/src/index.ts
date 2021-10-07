@@ -1,4 +1,4 @@
-import Tooltip from './src/index'
+import Tooltip from './tooptip'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

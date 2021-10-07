@@ -1,4 +1,4 @@
-import InputNumber from './src/index.vue'
+import InputNumber from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

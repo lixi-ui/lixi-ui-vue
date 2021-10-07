@@ -61,8 +61,8 @@
 <script lang="ts">
 import { computed, defineComponent, reactive, toRefs } from 'vue'
 import { useLocaleInject } from '@lixi/hooks'
-import { LxCheckbox, LxCheckboxGroup } from '@lixi/components/checkbox'
-import LxInput from '@lixi/components/input'
+import { LxCheckbox, LxCheckboxGroup } from '@lixi/components/checkbox/src'
+import LxInput from '@lixi/components/input/src'
 import { useCheck, useCheckProps, CHECKED_CHANGE_EVENT } from './useCheck'
 
 export default defineComponent({

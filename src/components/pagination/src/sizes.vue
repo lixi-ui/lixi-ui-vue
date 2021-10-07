@@ -20,7 +20,7 @@
 <script lang="ts">
 import { defineComponent, watch, computed, ref } from 'vue'
 import isEqual from 'lodash/isEqual'
-import LxSelect from '@lixi/components/select'
+import LxSelect from '@lixi/components/select/src'
 import { useLocaleInject } from '@lixi/hooks'
 import { usePagination } from './usePagination'
 

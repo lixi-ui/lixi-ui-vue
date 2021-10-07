@@ -98,9 +98,9 @@ import { ClickOutside } from '@lixi/directives'
 import { generateId, isArray } from '@lixi/utils/util'
 import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import throwError from '@lixi/utils/error'
-import LxInput from '@lixi/components/input'
-import LxScrollbar from '@lixi/components/scrollbar'
-import LxPopper, { Effect, Placement } from '@lixi/components/popper'
+import LxInput from '@lixi/components/input/src'
+import LxScrollbar from '@lixi/components/scrollbar/src'
+import LxPopper, { Effect, Placement } from '@lixi/components/popper/src'
 
 import type { PropType } from 'vue'
 

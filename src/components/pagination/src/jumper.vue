@@ -23,7 +23,7 @@ import {
   ref,
 } from 'vue'
 import { useLocaleInject } from '@lixi/hooks'
-import LxInput from '@lixi/components/input'
+import LxInput from '@lixi/components/input/src'
 import { usePagination } from './usePagination'
 
 import type { Nullable } from '@lixi/utils/types'

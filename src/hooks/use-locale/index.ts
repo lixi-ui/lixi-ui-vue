@@ -24,7 +24,7 @@ export type LocaleContext = {
   t: Translator
 }
 
-export const LocaleInjectionKey = 'ElLocaleInjection' as unknown as InjectionKey<LocaleContext>
+export const LocaleInjectionKey = 'LxLocaleInjection' as unknown as InjectionKey<LocaleContext>
 
 // this is meant to fix global methods like `ElMessage(opts)`, this way we can inject current locale
 // into the component as default injection value.

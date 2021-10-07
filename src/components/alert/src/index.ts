@@ -1,4 +1,4 @@
-import Alert from './src/index.vue'
+import Alert from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

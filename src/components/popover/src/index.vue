@@ -11,20 +11,20 @@ import {
   h,
 } from 'vue'
 import { ClickOutside } from '@lixi/directives'
-import LxPopper from '@lixi/components/popper'
+import LxPopper from '@lixi/components/popper/src'
 import {
   popperDefaultProps,
   Effect,
   renderArrow,
   renderPopper,
   renderTrigger,
-} from '@lixi/components/popper'
+} from '@lixi/components/popper/src'
 import { warn } from '@lixi/utils/error'
 import { renderIf, PatchFlags } from '@lixi/utils/vnode'
 import usePopover, { SHOW_EVENT, HIDE_EVENT } from './usePopover'
 
 import type { PropType } from 'vue'
-import type { TriggerType } from '@lixi/components/popper'
+import type { TriggerType } from '@lixi/components/popper/src'
 
 const emits = ['update:visible', 'after-enter', 'after-leave', SHOW_EVENT, HIDE_EVENT]
 const NAME = 'LxPopover'

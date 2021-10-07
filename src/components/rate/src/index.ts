@@ -1,4 +1,4 @@
-import Rate from './src/index.vue'
+import Rate from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

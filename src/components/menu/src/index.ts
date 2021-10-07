@@ -1,7 +1,7 @@
-import Menu from './src/menu.vue'
-import MenuItem from './src/menuItem.vue'
-import MenuItemGroup from './src/menuItemGroup.vue'
-import SubMenu from './src/submenu.vue'
+import Menu from './menu.vue'
+import MenuItem from './menuItem.vue'
+import MenuItemGroup from './menuItemGroup.vue'
+import SubMenu from './submenu.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
@@ -29,5 +29,5 @@ export const LxMenuItem = MenuItem
 export const LxMenuItemGroup = MenuItemGroup
 export const LxSubMenu = SubMenu
 
-export * from './src/menu.type'
+export * from './menu.type'
 

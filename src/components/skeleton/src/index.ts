@@ -1,5 +1,5 @@
-import Skeleton from './src/index.vue'
-import SkeletonItem from './src/item.vue'
+import Skeleton from './index.vue'
+import SkeletonItem from './item.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
@@ -19,4 +19,4 @@ export default _Skeleton
 export const LxSkeleton = _Skeleton
 export const LxSkeletonItem = SkeletonItem
 
-export * from './src/types'
+export * from './types'

@@ -50,7 +50,7 @@ import {
 } from 'vue'
 import dayjs from 'dayjs'
 import { useLocaleInject } from '@lixi/hooks'
-import { rangeArr } from '@lixi/components/time-picker'
+import { rangeArr } from '@lixi/components/time-picker/src'
 import { hasClass } from '@lixi/utils/dom'
 import { coerceTruthyValueToArray } from '@lixi/utils/util'
 

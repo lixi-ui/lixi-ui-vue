@@ -141,11 +141,11 @@ import {
 import { isPromise } from '@vue/shared'
 import debounce from 'lodash/debounce'
 
-import LxCascaderPanel, { CommonProps } from '@lixi/components/cascader-panel'
-import LxInput from '@lixi/components/input'
-import LxPopper from '@lixi/components/popper'
-import LxScrollbar from '@lixi/components/scrollbar'
-import LxTag from '@lixi/components/tag'
+import LxCascaderPanel, { CommonProps } from '@lixi/components/cascader-panel/src'
+import LxInput from '@lixi/components/input/src'
+import LxPopper from '@lixi/components/popper/src'
+import LxScrollbar from '@lixi/components/scrollbar/src'
+import LxTag from '@lixi/components/tag/src'
 import { elFormKey, elFormItemKey } from '@lixi/tokens'
 
 import { ClickOutside as Clickoutside } from '@lixi/directives'
@@ -157,11 +157,11 @@ import isServer from '@lixi/utils/isServer'
 import { useGlobalConfig } from '@lixi/utils/util'
 import { addResizeListener, removeResizeListener } from '@lixi/utils/resize-event'
 import { isValidComponentSize } from '@lixi/utils/validators'
-import { Effect, Options } from '@lixi/components/popper'
+import { Effect, Options } from '@lixi/components/popper/src'
 
 import type { ComputedRef, PropType } from 'vue'
 import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
-import type { CascaderValue, CascaderNode, Tag } from '@lixi/components/cascader-panel'
+import type { CascaderValue, CascaderNode, Tag } from '@lixi/components/cascader-panel/src'
 import type { ComponentSize } from '@lixi/utils/types'
 
 const DEFAULT_INPUT_HEIGHT = 40

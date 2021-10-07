@@ -86,11 +86,11 @@ import {
   getCurrentInstance,
   watch,
 } from 'vue'
-import LxCheckbox from '@lixi/components/checkbox'
+import LxCheckbox from '@lixi/components/checkbox/src'
 import { ClickOutside } from '@lixi/directives'
 import { useLocaleInject } from '@lixi/hooks'
-import LxPopper, { Effect, Placement } from '@lixi/components/popper'
-import LxScrollbar from '@lixi/components/scrollbar'
+import LxPopper, { Effect, Placement } from '@lixi/components/popper/src'
+import LxScrollbar from '@lixi/components/scrollbar/src'
 
 import type {
   WritableComputedRef,

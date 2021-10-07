@@ -1,7 +1,7 @@
 import { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
-import Carousel from './src/main.vue'
-import CarouselItem from './src/item.vue'
+import Carousel from './main.vue'
+import CarouselItem from './item.vue'
 
 Carousel.install = (app: App): void => {
   app.component(Carousel.name, Carousel)

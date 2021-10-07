@@ -12,7 +12,7 @@ import {
 } from 'vue'
 import { getValueByPath, isUndefined, isObject } from '@lixi/utils/util'
 // import { addResizeListener, removeResizeListener, ResizableElement } from '@lixi/utils/resize-event'
-import { FixedSizeList, DynamicSizeList } from '@lixi/components/virtual-list'
+import { FixedSizeList, DynamicSizeList } from '@lixi/components/virtual-list/src'
 import GroupItem from './group-item.vue'
 import OptionItem from './option-item.vue'
 

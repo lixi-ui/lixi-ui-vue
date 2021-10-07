@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
-import Avatar from './src/index.vue'
+import Avatar from './index.vue'
 
 Avatar.install = (app: App): void => {
   app.component(Avatar.name, Avatar)

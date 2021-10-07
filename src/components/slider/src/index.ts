@@ -1,4 +1,4 @@
-import Slider from './src/index.vue'
+import Slider from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
@@ -12,4 +12,4 @@ const _Slider = Slider as SFCWithInstall<typeof Slider>
 export default _Slider
 export const LxSlider = _Slider
 
-export * from './src/slider.type'
+export * from './slider.type'

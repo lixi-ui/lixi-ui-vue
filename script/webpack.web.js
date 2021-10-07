@@ -27,18 +27,13 @@ var config = {
     }
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json', '.ts', '.tsx'],
+    extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
       // vue: `vue/dist/${vueBundle}`,
       'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
       '@lixi': path.resolve(process.cwd() , './src'),
     },
   },
-  // resolve: {
-  //   alias: {
-  //     'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
-  //   }
-  // },
   module: {
     rules: [
       {

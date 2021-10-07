@@ -1,5 +1,5 @@
-import Table from './src/table.vue'
-import TableColumn from './src/tableColumn'
+import Table from './table.vue'
+import TableColumn from './tableColumn'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

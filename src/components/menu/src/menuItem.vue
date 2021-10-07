@@ -47,8 +47,8 @@ import {
   inject,
   getCurrentInstance,
 } from 'vue'
-import LxTooltip from '@lixi/components/tooltip'
-import { Effect } from '@lixi/components/popper'
+import LxTooltip from '@lixi/components/tooltip/src'
+import { Effect } from '@lixi/components/popper/src'
 import useMenu from './useMenu'
 
 import type { RootMenuProvider, SubMenuProvider } from './menu.type'

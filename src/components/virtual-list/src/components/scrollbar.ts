@@ -1,6 +1,6 @@
 import { computed, defineComponent, ref, reactive, onMounted, onBeforeUnmount, watch, h, withModifiers } from 'vue'
 import { NOOP } from '@vue/shared'
-import { BAR_MAP } from '@lixi/components/scrollbar'
+import { BAR_MAP } from '@lixi/components/scrollbar/src/index.ts'
 import { on, off } from '@lixi/utils/dom'
 import { rAF, cAF } from '@lixi/utils/raf'
 import isServer from '@lixi/utils/isServer'

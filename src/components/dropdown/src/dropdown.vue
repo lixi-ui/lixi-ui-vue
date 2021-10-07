@@ -60,16 +60,16 @@ import {
   onMounted,
 } from 'vue'
 import type { PropType } from 'vue'
-import LxButton from '@lixi/components/button'
-import LxPopper, { Effect, Placement } from '@lixi/components/popper'
-import LxScrollbar from '@lixi/components/scrollbar'
+import LxButton from '@lixi/components/button/src'
+import LxPopper, { Effect, Placement } from '@lixi/components/popper/src'
+import LxScrollbar from '@lixi/components/scrollbar/src'
 import { on, addClass, removeClass } from '@lixi/utils/dom'
 import { addUnit } from '@lixi/utils/util'
 import { useDropdown } from './useDropdown'
 
 import type { ComponentPublicInstance } from 'vue'
 import type { TriggerType } from '@lixi/hooks/use-popper/use-target-events'
-import type { ButtonType } from '@lixi/components/button/src/types'
+import type { ButtonType } from '@lixi/components/button/src/types/src'
 
 type Nullable<T> = null | T
 const { ButtonGroup: LxButtonGroup } = LxButton

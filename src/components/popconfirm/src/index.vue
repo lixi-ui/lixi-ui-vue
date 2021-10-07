@@ -42,12 +42,12 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue'
-import LxButton from '@lixi/components/button'
-import LxPopper, { Effect } from '@lixi/components/popper'
+import LxButton from '@lixi/components/button/src'
+import LxPopper, { Effect } from '@lixi/components/popper/src'
 import { useLocaleInject } from '@lixi/hooks'
 
 import type { PropType } from 'vue'
-import type { ButtonType } from '@lixi/components/button/src/types'
+import type { ButtonType } from '@lixi/components/button/src/types/src'
 
 export default defineComponent({
   name: 'LxPopconfirm',

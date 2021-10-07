@@ -1,4 +1,4 @@
-import Progress from './src/index.vue'
+import Progress from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

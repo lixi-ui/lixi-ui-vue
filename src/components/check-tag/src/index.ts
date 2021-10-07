@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import CheckTag from './src/index.vue'
+import CheckTag from './index.vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
 
 CheckTag.install = (app: App): void => {

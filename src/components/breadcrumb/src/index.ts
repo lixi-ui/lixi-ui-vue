@@ -1,5 +1,5 @@
-import Breadcrumb from './src/index.vue'
-import BreadcrumbItem from './src/item.vue'
+import Breadcrumb from './index.vue'
+import BreadcrumbItem from './item.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

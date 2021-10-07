@@ -38,7 +38,7 @@ import {
   computed, defineComponent, getCurrentInstance,
   inject, ref,
 } from 'vue'
-import LxScrollbar from '@lixi/components/scrollbar'
+import LxScrollbar from '@lixi/components/scrollbar/src'
 import { useLocaleInject } from '@lixi/hooks'
 import { generateId } from '@lixi/utils/util'
 import LxCascaderNode from './node.vue'

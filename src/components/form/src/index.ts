@@ -1,5 +1,5 @@
-import Form from './src/form.vue'
-import FormItem from './src/form-item.vue'
+import Form from './form.vue'
+import FormItem from './form-item.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

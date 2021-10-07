@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
-import Calendar from './src/index.vue'
+import Calendar from './index.vue'
 
 Calendar.install = (app: App): void => {
   app.component(Calendar.name, Calendar)

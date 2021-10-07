@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import Backtop from './src/index.vue'
+import Backtop from './index.vue'
 
 import type { SFCWithInstall } from '@lixi/utils/types'
 

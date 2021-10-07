@@ -9,7 +9,7 @@ import {
   onBeforeUnmount,
   Fragment,
 } from 'vue'
-import LxCheckbox from '@lixi/components/checkbox'
+import LxCheckbox from '@lixi/components/checkbox/src'
 import { cellStarts } from '../config'
 import { mergeOptions, compose } from '../util'
 import useWatcher from './watcher-helper'

@@ -1,4 +1,4 @@
-import Popper from './src/index.vue'
+import Popper from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
@@ -12,9 +12,9 @@ const _Popper = Popper as SFCWithInstall<typeof Popper>
 export default _Popper
 export const LxPopper = _Popper
 
-export { default as popperDefaultProps, Effect } from './src/use-popper/defaults'
-export * from './src/renderers'
-export { default as usePopper } from './src/use-popper'
+export { default as popperDefaultProps, Effect } from './use-popper/defaults'
+export * from './renderers'
+export { default as usePopper } from './use-popper'
 export type { Placement, Options } from '@popperjs/core'
-export type { EmitType } from './src/use-popper'
-export type { TriggerType, IPopperOptions, PopperInstance } from './src/use-popper/defaults'
+export type { EmitType } from './use-popper'
+export type { TriggerType, IPopperOptions, PopperInstance } from './use-popper/defaults'

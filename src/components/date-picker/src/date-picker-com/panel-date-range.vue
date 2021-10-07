@@ -205,11 +205,11 @@
 <script lang="ts">
 import { computed, defineComponent, inject, ref, watch } from 'vue'
 import dayjs from 'dayjs'
-import LxButton from '@lixi/components/button'
+import LxButton from '@lixi/components/button/src'
 import { ClickOutside } from '@lixi/directives'
 import { useLocaleInject } from '@lixi/hooks'
-import LxInput from '@lixi/components/input'
-import { extractDateFormat, extractTimeFormat, TimePickPanel } from '@lixi/components/time-picker'
+import LxInput from '@lixi/components/input/src'
+import { extractDateFormat, extractTimeFormat, TimePickPanel } from '@lixi/components/time-picker/src'
 import { isValidDatePickType } from '@lixi/utils/validators'
 import DateTable from './basic-date-table.vue'
 

@@ -1,7 +1,7 @@
 import { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
-import Collapse from './src/collapse.vue'
-import CollapseItem from './src/collapse-item.vue'
+import Collapse from './collapse.vue'
+import CollapseItem from './collapse-item.vue'
 
 Collapse.install = (app: App): void => {
   app.component(Collapse.name, Collapse)

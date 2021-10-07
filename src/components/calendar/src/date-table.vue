@@ -49,7 +49,7 @@ import { PropType } from 'vue'
 import dayjs, { Dayjs } from 'dayjs'
 import localeData from 'dayjs/plugin/localeData'
 import { useLocaleInject } from '@lixi/hooks'
-import { rangeArr } from '@lixi/components/time-picker'
+import { rangeArr } from '@lixi/components/time-picker/src'
 dayjs.extend(localeData)
 
 export const getPrevMonthLastDays = (date: Dayjs, amount) => {

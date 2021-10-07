@@ -6,3 +6,4 @@ Row.install = (app) => {
 
 
 export default Row;
+export const LxRow = Row;

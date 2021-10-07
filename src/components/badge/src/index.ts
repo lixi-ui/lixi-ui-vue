@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import Badge from './src/index.vue'
+import Badge from './index.vue'
 
 import type { SFCWithInstall } from '@lixi/utils/types'
 

@@ -1,6 +1,6 @@
-import Radio from './src/radio.vue'
-import RadioButton from './src/radio-button.vue'
-import RadioGroup from './src/radio-group.vue'
+import Radio from './radio.vue'
+import RadioButton from './radio-button.vue'
+import RadioGroup from './radio-group.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
@@ -25,4 +25,4 @@ export const LxRadio = _Radio
 export const LxRadioGroup = RadioGroup
 export const LxRadioButton = RadioButton
 
-export * from './src/token'
+export * from './token'

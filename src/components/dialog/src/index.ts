@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
-import Dialog from './src/index.vue'
+import Dialog from './index.vue'
 
 Dialog.install = (app: App): void => {
   app.component(Dialog.name, Dialog)
@@ -13,6 +13,6 @@ export {
   default as useDialog,
   useDialogProps,
   useDialogEmits,
-} from './src/useDialog'
+} from './useDialog'
 
 export const LxDialog = _Dialog

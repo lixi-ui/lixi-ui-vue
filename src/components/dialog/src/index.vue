@@ -63,7 +63,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { TrapFocus } from '@lixi/directives'
-import { Overlay } from '@lixi/components/overlay'
+import { Overlay } from '@lixi/components/overlay/src'
 
 import {
   default as useDialog,

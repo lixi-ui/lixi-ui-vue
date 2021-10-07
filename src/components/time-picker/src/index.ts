@@ -1,13 +1,13 @@
-import TimePicker from './src/time-picker'
-import CommonPicker from './src/common/picker.vue'
-import TimePickPanel from './src/time-picker-com/panel-time-pick.vue'
+import TimePicker from './time-picker'
+import CommonPicker from './common/picker.vue'
+import TimePickPanel from './time-picker-com/panel-time-pick.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
 
-export * from './src/common/date-utils'
-export * from './src/common/constant'
-export * from './src/common/props'
+export * from './common/date-utils'
+export * from './common/constant'
+export * from './common/props'
 
 const _TimePicker = TimePicker as SFCWithInstall<typeof TimePicker>
 

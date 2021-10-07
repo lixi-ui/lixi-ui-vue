@@ -1,7 +1,6 @@
 import { inject, provide, ref } from 'vue'
 import mitt, { Emitter } from 'mitt'
-// import { addClass, removeClass } from '@lixi/utils/dom'
-import { addClass, removeClass } from '../../../../utils/dom.ts'
+import { addClass, removeClass } from '@lixi/utils/dom'
 import Node from './node'
 
 interface TreeNode {

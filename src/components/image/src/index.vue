@@ -41,7 +41,7 @@ import { defineComponent, computed, ref, onMounted, onBeforeUnmount, watch, next
 import { isString } from '@vue/shared'
 import throttle from 'lodash/throttle'
 import { useAttrs, useLocaleInject } from '@lixi/hooks'
-import ImageViewer from '@lixi/components/image-viewer'
+import ImageViewer from '@lixi/components/image-viewer/src'
 import isServer from '@lixi/utils/isServer'
 import { on, off, getScrollContainer, isInContainer } from '@lixi/utils/dom'
 

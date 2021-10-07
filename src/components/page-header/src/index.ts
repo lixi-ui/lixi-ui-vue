@@ -1,4 +1,4 @@
-import PageHeader from './src/index.vue'
+import PageHeader from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

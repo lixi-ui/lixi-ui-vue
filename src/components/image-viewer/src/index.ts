@@ -1,4 +1,4 @@
-import ImageViewer from './src/index.vue'
+import ImageViewer from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

@@ -56,8 +56,8 @@
 
 <script lang="ts">
 import { computed, defineComponent, inject } from 'vue'
-import LxCheckbox from '@lixi/components/checkbox'
-import LxRadio from '@lixi/components/radio'
+import LxCheckbox from '@lixi/components/checkbox/src'
+import LxRadio from '@lixi/components/radio/src'
 import NodeContent from './node-content'
 import type { default as CascaderNode } from './node'
 import {

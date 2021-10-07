@@ -1,4 +1,4 @@
-import Pagination from './src'
+import Pagination from './indexjs'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
@@ -12,4 +12,4 @@ _Pagination.install = (app: App) => {
 export default _Pagination
 export const LxPagination = _Pagination
 
-export * from './src/pagination'
+export * from './pagination'

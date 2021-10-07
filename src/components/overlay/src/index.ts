@@ -1,3 +1,3 @@
-import Overlay from './src/index.vue'
+import Overlay from './index.vue'
 
 export { Overlay }

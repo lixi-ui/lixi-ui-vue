@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
-import CascaderPanel from './src/index.vue'
+import CascaderPanel from './index.vue'
 
 
 CascaderPanel.install = (app: App): void => {
@@ -11,5 +11,5 @@ const _CascaderPanel = CascaderPanel as SFCWithInstall<typeof CascaderPanel>
 
 export default _CascaderPanel
 export const LxCascaderPanel = _CascaderPanel
-export * from './src/types'
-export * from './src/config'
+export * from './types'
+export * from './config'

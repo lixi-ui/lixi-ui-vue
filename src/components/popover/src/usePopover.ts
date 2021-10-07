@@ -1,10 +1,10 @@
 import { computed, ref, watch } from 'vue'
 import { isString } from '@lixi/utils/util'
-import { usePopper } from '@lixi/components/popper'
+import { usePopper } from '@lixi/components/popper/src/index.ts'
 import PopupManager from '@lixi/utils/popup-manager'
 
 import type { SetupContext } from 'vue'
-import type { IPopperOptions, EmitType } from '@lixi/components/popper'
+import type { IPopperOptions, EmitType } from '@lixi/components/popper/src/index.ts'
 export interface IUsePopover extends IPopperOptions {
   width: number | string
 }

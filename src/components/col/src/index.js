@@ -6,3 +6,4 @@ Col.install = (app) => {
 
 
 export default Col;
+export const LxCol = Col;

@@ -23,7 +23,7 @@ import {
   getValueByPath,
   useGlobalConfig,
 } from '@lixi/utils/util'
-import { Effect } from '@lixi/components/popper'
+import { Effect } from '@lixi/components/popper/src/index.ts'
 
 import { useAllowCreate } from './useAllowCreate'
 

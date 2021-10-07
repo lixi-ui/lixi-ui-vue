@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
-import Card from './src/index.vue'
+import Card from './index.vue'
 
 Card.install = (app: App): void => {
   app.component(Card.name, Card)

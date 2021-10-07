@@ -1,4 +1,4 @@
-import ColorPicker from './src/index.vue'
+import ColorPicker from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

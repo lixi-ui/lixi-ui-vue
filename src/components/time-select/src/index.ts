@@ -1,4 +1,4 @@
-import TimeSelect from './src/time-select.vue'
+import TimeSelect from './time-select.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

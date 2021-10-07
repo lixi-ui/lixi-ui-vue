@@ -1,4 +1,4 @@
-import DatePicker from './src/date-picker'
+import DatePicker from './date-picker'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

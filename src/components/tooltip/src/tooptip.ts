@@ -1,5 +1,5 @@
 import { defineComponent, h, ref, cloneVNode } from 'vue'
-import { default as LxPopper, popperDefaultProps } from '@lixi/components/popper'
+import { default as LxPopper, popperDefaultProps } from '@lixi/components/popper/src/index.ts'
 import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import throwError from '@lixi/utils/error'
 import { getFirstValidNode } from '@lixi/utils/vnode'

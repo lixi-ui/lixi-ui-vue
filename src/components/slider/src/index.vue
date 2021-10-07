@@ -93,7 +93,7 @@ import {
   toRefs,
   watch,
 } from 'vue'
-import LxInputNumber from '@lixi/components/input-number'
+import LxInputNumber from '@lixi/components/input-number/src'
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT, INPUT_EVENT } from '@lixi/utils/constants'
 import { off, on } from '@lixi/utils/dom'
 import throwError from '@lixi/utils/error'

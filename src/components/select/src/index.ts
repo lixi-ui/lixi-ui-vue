@@ -1,6 +1,6 @@
-import Select from './src/select.vue'
-import Option from './src/option.vue'
-import OptionGroup from './src/option-group.vue'
+import Select from './select.vue'
+import Option from './option.vue'
+import OptionGroup from './option-group.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
@@ -24,4 +24,4 @@ export const LxSelect = _Select
 export const LxOption = Option
 export const LxOptionGroup = OptionGroup
 
-export * from './src/token'
+export * from './token'

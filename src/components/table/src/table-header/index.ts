@@ -7,7 +7,7 @@ import {
   ref,
   h,
 } from 'vue'
-import LxCheckbox from '@lixi/components/checkbox'
+import LxCheckbox from '@lixi/components/checkbox/src'
 import FilterPanel from '../filter-panel.vue'
 import useLayoutObserver from '../layout-observer'
 import useEvent from './event-helper'

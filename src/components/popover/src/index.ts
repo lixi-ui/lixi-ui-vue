@@ -1,5 +1,5 @@
-import Popover from './src/index.vue'
-import PopoverDirective, { VPopover } from './src/directive'
+import Popover from './index.vue'
+import PopoverDirective, { VPopover } from './directive'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

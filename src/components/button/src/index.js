@@ -6,3 +6,5 @@ Button.install = (app) => {
 }
 
 export default Button;
+export const LxButton = Button;
+

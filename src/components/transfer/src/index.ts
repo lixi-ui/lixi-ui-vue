@@ -1,4 +1,4 @@
-import Transfer from './src/index.vue'
+import Transfer from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
@@ -12,4 +12,4 @@ const _Transfer = Transfer as SFCWithInstall<typeof Transfer>
 export default _Transfer
 export const LxTransfer = _Transfer
 
-export * from './src/transfer'
+export * from './transfer'

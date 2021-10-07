@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
-import Autocomplete from './src/index.vue'
+import Autocomplete from './index.vue'
 
 Autocomplete.install = (app: App): void => {
   app.component(Autocomplete.name, Autocomplete)

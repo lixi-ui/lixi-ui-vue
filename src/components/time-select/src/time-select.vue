@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, ref, PropType } from 'vue'
-import LxSelect from '@lixi/components/select'
+import LxSelect from '@lixi/components/select/src'
 import { ComponentSize } from '@lixi/utils/types'
 
 const { Option: LxOption } = LxSelect

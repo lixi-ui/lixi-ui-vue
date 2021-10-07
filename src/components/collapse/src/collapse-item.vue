@@ -51,7 +51,7 @@
 import { defineComponent, PropType, inject, computed, ref } from 'vue'
 import { CollapseProvider } from './collapse'
 import { generateId } from '@lixi/utils/util'
-import LxCollapseTransition from '@lixi/components/collapse-transition'
+import LxCollapseTransition from '@lixi/components/collapse-transition/src'
 
 export default defineComponent({
   name: 'LxCollapseItem',

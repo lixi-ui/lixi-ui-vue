@@ -1,4 +1,4 @@
-import Drawer from './src/index.vue'
+import Drawer from './index.vue'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

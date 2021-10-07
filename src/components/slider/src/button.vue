@@ -38,7 +38,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
-import LxTooltip from '@lixi/components/tooltip'
+import LxTooltip from '@lixi/components/tooltip/src'
 import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import { useSliderButton } from './useSliderButton'
 

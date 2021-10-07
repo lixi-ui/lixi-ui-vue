@@ -64,7 +64,7 @@ import {
 } from 'vue'
 import debounce from 'lodash/debounce'
 import { RepeatClick } from '@lixi/directives'
-import LxScrollbar from '@lixi/components/scrollbar'
+import LxScrollbar from '@lixi/components/scrollbar/src'
 import { getTimeLists } from './useTimePicker'
 
 import type { PropType } from 'vue'

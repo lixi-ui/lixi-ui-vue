@@ -34,8 +34,7 @@
 </template>
 <script lang='ts'>
 import { defineComponent, ref, provide, computed, watch, getCurrentInstance } from 'vue'
-// import { useLocaleInject } from '@lixi/hooks'
-import { useLocaleInject } from '../../../hooks/index.ts'
+import { useLocaleInject } from '@lixi/hooks'
 import TreeStore from './model/tree-store.ts'
 import { getNodeKey as getNodeKeyUtil } from './model/util.ts'
 import LxTreeNode from './tree-node.vue'

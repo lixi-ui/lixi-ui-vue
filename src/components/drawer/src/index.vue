@@ -61,8 +61,8 @@ import {
   computed,
   ref,
 } from 'vue'
-import { Overlay } from '@lixi/components/overlay'
-import { useDialog, useDialogProps, useDialogEmits } from '@lixi/components/dialog'
+import { Overlay } from '@lixi/components/overlay/src'
+import { useDialog, useDialogProps, useDialogEmits } from '@lixi/components/dialog/src'
 import { TrapFocus } from '@lixi/directives'
 
 import type { PropType, SetupContext } from 'vue'
