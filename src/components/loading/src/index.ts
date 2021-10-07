@@ -1,5 +1,5 @@
-import Loading from './src'
-import vLoading from './src/directive'
+import Loading from './loading.ts'
+import vLoading from './directive'
 
 import type { App } from 'vue'
 
@@ -22,4 +22,4 @@ export {
 export const LxLoadingDirective = vLoading
 export const LxLoadingService = Loading
 
-export * from './src/loading.type'
+export * from './loading.type'

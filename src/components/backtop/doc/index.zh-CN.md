@@ -10,7 +10,8 @@
 ```html
 <template>
   Scroll down to see the bottom-right button.
-  <lx-backtop target=".page-component__scroll .lx-scrollbar__wrap"></lx-backtop>
+  <!-- target=".page-component__scroll .lx-scrollbar__wrap" -->
+  <lx-backtop></lx-backtop>
 </template>
 ```
 
@@ -24,7 +25,8 @@
 ```html
 <template>
   Scroll down to see the bottom-right button.
-  <lx-backtop target=".page-component__scroll .lx-scrollbar__wrap" :bottom="100">
+  <!-- target=".page-component__scroll .lx-scrollbar__wrap" -->
+  <lx-backtop :bottom="100">
     <div
       style="{
         height: 100%;

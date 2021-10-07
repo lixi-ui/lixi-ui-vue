@@ -22,21 +22,22 @@
     <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
-<script lang="ts">
 
+<script lang='ts'>
 import { computed, inject, defineComponent } from 'vue'
-import { isValidComponentSize } from '../../../utils/validators'
-import { useGlobalConfig } from '../../../utils/util'
-// import { lxFormKey, lxFormItemKey } from '@lixi/form'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
+import { useGlobalConfig } from '@lixi/utils/util'
+import { isValidComponentSize } from '@lixi/utils/validators'
+import { lxButtonGroupKey } from '@lixi/tokens'
 
 import type { PropType } from 'vue'
-import type { ButtonType, ButtonNativeType } from './types'
+import type { ComponentSize } from '@lixi/utils/types'
+import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
+import type { ButtonNativeType, ButtonType } from './types'
 
-var lxFormKey = 'lxForm'
-var lxFormItemKey = 'lxFormItem'
-
-export default defineComponent ({
+export default defineComponent({
   name: 'LxButton',
+
   props: {
     type: {
       type: String as PropType<ButtonType>,
@@ -54,7 +55,7 @@ export default defineComponent ({
       },
     },
     size: {
-      type: String,
+      type: String as PropType<ComponentSize>,
       validator: isValidComponentSize,
     },
     icon: {
@@ -62,9 +63,9 @@ export default defineComponent ({
       default: '',
     },
     nativeType: {
-      type: String,
+      type: String as PropType<ButtonNativeType>,
       default: 'button',
-      validator: (val) => {
+      validator: (val: string) => {
         return ['button', 'submit', 'reset'].includes(val)
       },
     },
@@ -78,22 +79,23 @@ export default defineComponent ({
 
   emits: ['click'],
 
-  setup(props, ctx) {
+  setup(props, { emit }) {
     const $ELEMENT = useGlobalConfig()
 
-    const lxForm = inject(lxFormKey, {} )
-    const lxFormItem = inject(lxFormItemKey, {})
+    const lxForm = inject(lxFormKey, {} as LxFormContext)
+    const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
+    const lxBtnGroup = inject(lxButtonGroupKey, {})
 
     const buttonSize = computed(() => {
-      return props.size || lxFormItem.size || $ELEMENT.size
+      return props.size || lxBtnGroup.size || lxFormItem.size || $ELEMENT.size
     })
     const buttonDisabled = computed(() => {
       return props.disabled || lxForm.disabled
     })
 
     //methods
-    const handleClick = evt => {
-      ctx.emit('click', evt)
+    const handleClick = (evt: MouseEvent) => {
+      emit('click', evt)
     }
 
     return {

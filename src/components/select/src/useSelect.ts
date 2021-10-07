@@ -20,7 +20,7 @@ import {
   isEdge,
   useGlobalConfig,
 } from '@lixi/utils/util'
-import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
 import isEqual from 'lodash/isEqual'
 import { isObject, toRawType } from '@vue/shared'
 
@@ -75,12 +75,12 @@ export const useSelect = (props, states: States, ctx) => {
   const hoverOption = ref(-1)
 
   // inject
-  const elForm = inject(elFormKey, {} as LxFormContext)
-  const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+  const lxForm = inject(lxFormKey, {} as LxFormContext)
+  const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
   const readonly = computed(() => !props.filterable || props.multiple || (!isIE() && !isEdge() && !states.visible))
 
-  const selectDisabled = computed(() => props.disabled || elForm.disabled)
+  const selectDisabled = computed(() => props.disabled || lxForm.disabled)
 
   const showClose = computed(() => {
     const hasValue = props.multiple
@@ -126,7 +126,7 @@ export const useSelect = (props, states: States, ctx) => {
     return props.filterable && props.allowCreate && states.query !== '' && !hasExistingOption
   })
 
-  const selectSize = computed(() => props.size || elFormItem.size || ELEMENT.size)
+  const selectSize = computed(() => props.size || lxFormItem.size || ELEMENT.size)
 
   const collapseTagSize = computed(() => ['small', 'mini'].indexOf(selectSize.value) > -1 ? 'mini' : 'small')
 
@@ -161,7 +161,7 @@ export const useSelect = (props, states: States, ctx) => {
       states.inputLength = 20
     }
     if (!isEqual(val, oldVal)) {
-      elFormItem.formItemMitt?.emit('el.form.change', val)
+      lxFormItem.formItemMitt?.emit('el.form.change', val)
     }
   }, {
     flush: 'post',

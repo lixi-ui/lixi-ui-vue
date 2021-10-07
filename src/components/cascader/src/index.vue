@@ -146,7 +146,7 @@ import LxInput from '@lixi/components/input/src'
 import LxPopper from '@lixi/components/popper/src'
 import LxScrollbar from '@lixi/components/scrollbar/src'
 import LxTag from '@lixi/components/tag/src'
-import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
 
 import { ClickOutside as Clickoutside } from '@lixi/directives'
 import { useLocaleInject } from '@lixi/hooks'
@@ -262,8 +262,8 @@ export default defineComponent({
 
     const { t } = useLocaleInject()
     const $ELEMENT = useGlobalConfig()
-    const elForm = inject(elFormKey, {} as LxFormContext)
-    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+    const lxForm = inject(lxFormKey, {} as LxFormContext)
+    const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
     const popper = ref(null)
     const input = ref(null)
@@ -278,9 +278,9 @@ export default defineComponent({
     const presentTags: Ref<Tag[]> = ref([])
     const suggestions: Ref<CascaderNode[]> = ref([])
 
-    const isDisabled = computed(() => props.disabled || elForm.disabled)
+    const isDisabled = computed(() => props.disabled || lxForm.disabled)
     const inputPlaceholder = computed(() => props.placeholder || t('el.cascader.placeholder'))
-    const realSize: ComputedRef<ComponentSize> = computed(() => props.size || elFormItem.size || $ELEMENT.size)
+    const realSize: ComputedRef<ComponentSize> = computed(() => props.size || lxFormItem.size || $ELEMENT.size)
     const tagSize = computed(() => ['small', 'mini'].includes(realSize.value) ? 'mini' : 'small')
     const multiple = computed(() => !!props.props.multiple)
     const readonly = computed(() => !props.filterable || multiple.value)
@@ -311,7 +311,7 @@ export default defineComponent({
       set (val) {
         emit(UPDATE_MODEL_EVENT, val)
         emit(CHANGE_EVENT, val)
-        elFormItem.formItemMitt?.emit('el.form.change', [val])
+        lxFormItem.formItemMitt?.emit('el.form.change', [val])
       },
     })
 

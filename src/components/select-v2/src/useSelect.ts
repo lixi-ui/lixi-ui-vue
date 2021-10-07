@@ -15,7 +15,7 @@ import {
 } from '@vue/shared'
 import isEqual from 'lodash/isEqual'
 import lodashDebounce from 'lodash/debounce'
-import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
 import { useLocaleInject } from '@lixi/hooks'
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '@lixi/utils/constants'
 import { addResizeListener, removeResizeListener } from '@lixi/utils/resize-event'
@@ -47,8 +47,8 @@ const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
 
   // inject
   const { t } = useLocaleInject()
-  const elForm = inject(elFormKey, {} as LxFormContext)
-  const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+  const lxForm = inject(lxFormKey, {} as LxFormContext)
+  const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
   const $ELEMENT = useGlobalConfig()
 
   const states = reactive({
@@ -93,7 +93,7 @@ const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
   // the controller of the expanded popup
   const expanded = ref(false)
 
-  const selectDisabled = computed(() => props.disabled || elForm.disabled)
+  const selectDisabled = computed(() => props.disabled || lxForm.disabled)
 
   const popupHeight = computed(() => {
     const totalHeight = filteredOptions.value.length * 34
@@ -165,7 +165,7 @@ const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
 
   const optionsAllDisabled = computed(() => filteredOptions.value.every(option => option.disabled))
 
-  const selectSize = computed(() => props.size || elFormItem.size || $ELEMENT.size)
+  const selectSize = computed(() => props.size || lxFormItem.size || $ELEMENT.size)
 
   const collapseTagSize = computed(() => ['small', 'mini'].indexOf(selectSize.value) > -1 ? 'mini' : 'small')
 

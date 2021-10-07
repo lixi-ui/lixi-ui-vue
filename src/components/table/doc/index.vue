@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import Md from './index.md'
+  import Md from './index.zh-CN.md'
 
   export default {
     name : 'TreeMd',

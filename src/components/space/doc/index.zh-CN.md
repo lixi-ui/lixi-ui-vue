@@ -200,12 +200,12 @@ export default {
 
 <script>
 import { h, resolveComponent } from 'vue'
-import { LxDivider } from 'element-plus'
+// import { LxDivider } from 'element-plus'
 export default {
   data() {
     return {
       size: 10,
-      spacer: h(ElDivider, { direction: 'vertical' }),
+      // spacer: h(lxDivider, { direction: 'vertical' }),
     }
   },
 }

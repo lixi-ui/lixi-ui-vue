@@ -120,7 +120,7 @@ import {
   onMounted,
   onUpdated,
 } from 'vue'
-import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
 import { useAttrs } from '@lixi/hooks'
 import { UPDATE_MODEL_EVENT, VALIDATE_STATE_MAP } from '@lixi/utils/constants'
 import { isObject, useGlobalConfig } from '@lixi/utils/util'
@@ -235,8 +235,8 @@ export default defineComponent({
     const attrs = useAttrs()
     const $ELEMENT = useGlobalConfig()
 
-    const elForm = inject(elFormKey, {} as LxFormContext)
-    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+    const lxForm = inject(lxFormKey, {} as LxFormContext)
+    const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
     const input = ref(null)
     const textarea = ref (null)
@@ -247,16 +247,16 @@ export default defineComponent({
     const _textareaCalcStyle = shallowRef(props.inputStyle)
 
     const inputOrTextarea = computed(() => input.value || textarea.value)
-    const inputSize = computed(() => props.size || elFormItem.size || $ELEMENT.size)
-    const needStatusIcon = computed(() => elForm.statusIcon)
-    const validateState = computed(() => elFormItem.validateState || '')
+    const inputSize = computed(() => props.size || lxFormItem.size || $ELEMENT.size)
+    const needStatusIcon = computed(() => lxForm.statusIcon)
+    const validateState = computed(() => lxFormItem.validateState || '')
     const validateIcon = computed(() => VALIDATE_STATE_MAP[validateState.value])
     const computedTextareaStyle = computed(() => ({
       ...props.inputStyle,
       ..._textareaCalcStyle.value,
       resize: props.resize,
     }))
-    const inputDisabled = computed(() => props.disabled || elForm.disabled)
+    const inputDisabled = computed(() => props.disabled || lxForm.disabled)
     const nativeInputValue = computed(() => (props.modelValue === null || props.modelValue === undefined) ? '' : String(props.modelValue))
     const showClear = computed(() => {
       return props.clearable &&
@@ -382,7 +382,7 @@ export default defineComponent({
       focused.value = false
       ctx.emit('blur', event)
       if (props.validateEvent) {
-        elFormItem.formItemMitt?.emit('el.form.blur', [props.modelValue])
+        lxFormItem.formItemMitt?.emit('el.form.blur', [props.modelValue])
       }
     }
 
@@ -431,7 +431,7 @@ export default defineComponent({
     watch(() => props.modelValue, val => {
       nextTick(resizeTextarea)
       if (props.validateEvent) {
-        elFormItem.formItemMitt?.emit('el.form.change', [val])
+        lxFormItem.formItemMitt?.emit('el.form.change', [val])
       }
     })
 

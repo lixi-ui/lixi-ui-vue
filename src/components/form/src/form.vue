@@ -14,7 +14,7 @@
 import { computed, defineComponent, provide, reactive, ref, toRefs, watch } from 'vue'
 import { FieldErrorList } from 'async-validator'
 import mitt from 'mitt'
-import { elFormEvents, elFormKey } from '@lixi/tokens'
+import { lxFormEvents, lxFormKey } from '@lixi/tokens'
 
 import type { PropType } from 'vue'
 import type { ComponentSize } from '@lixi/utils/types'
@@ -115,13 +115,13 @@ export default defineComponent({
       },
     )
 
-    formMitt.on<FormItemCtx>(elFormEvents.addField, field => {
+    formMitt.on<FormItemCtx>(lxFormEvents.addField, field => {
       if (field) {
         fields.push(field)
       }
     })
 
-    formMitt.on<FormItemCtx>(elFormEvents.removeField, field => {
+    formMitt.on<FormItemCtx>(lxFormEvents.removeField, field => {
       if (field.prop) {
         fields.splice(fields.indexOf(field), 1)
       }
@@ -218,7 +218,7 @@ export default defineComponent({
       })
     }
 
-    const elForm = reactive({
+    const lxForm = reactive({
       formMitt,
       ...toRefs(props),
       resetFields,
@@ -228,7 +228,7 @@ export default defineComponent({
       ...useFormLabelWidth(),
     })
 
-    provide(elFormKey, elForm)
+    provide(lxFormKey, lxForm)
 
     return {
       validate, // export

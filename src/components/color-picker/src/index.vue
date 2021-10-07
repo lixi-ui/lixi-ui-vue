@@ -91,7 +91,7 @@ import { computed, defineComponent, inject, nextTick, onMounted, provide, reacti
 import debounce from 'lodash/debounce'
 import LxButton from '@lixi/components/button/src'
 import { ClickOutside } from '@lixi/directives'
-import { elFormItemKey, elFormKey } from '@lixi/tokens'
+import { lxFormItemKey, lxFormKey } from '@lixi/tokens'
 import { useLocaleInject } from '@lixi/hooks'
 import LxPopper, { Effect } from '@lixi/components/popper/src'
 import LxInput from '@lixi/components/input/src'
@@ -140,8 +140,8 @@ export default defineComponent({
   setup(props, { emit }) {
     const ELEMENT = useGlobalConfig()
     const { t } = useLocaleInject()
-    const elForm = inject(elFormKey, {} as LxFormContext)
-    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+    const lxForm = inject(lxFormKey, {} as LxFormContext)
+    const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
     const hue = ref(null)
     const svPanel = ref(null)
@@ -163,10 +163,10 @@ export default defineComponent({
       return displayedRgb(color, props.showAlpha)
     })
     const colorSize = computed(() => {
-      return props.size || elFormItem.size || ELEMENT.size
+      return props.size || lxFormItem.size || ELEMENT.size
     })
     const colorDisabled = computed(() => {
-      return props.disabled || elForm.disabled
+      return props.disabled || lxForm.disabled
     })
 
     const currentColor = computed(() => {
@@ -238,7 +238,7 @@ export default defineComponent({
       const value = color.value
       emit(UPDATE_MODEL_EVENT, value)
       emit('change', value)
-      elFormItem.formItemMitt?.emit('el.form.change', value)
+      lxFormItem.formItemMitt?.emit('el.form.change', value)
       debounceSetShowPicker(false)
       // check if modelValue change, if not change, then reset color.
       nextTick(() => {
@@ -258,7 +258,7 @@ export default defineComponent({
       emit(UPDATE_MODEL_EVENT, null)
       emit('change', null)
       if (props.modelValue !== null) {
-        elFormItem.formItemMitt?.emit('el.form.change', null)
+        lxFormItem.formItemMitt?.emit('el.form.change', null)
       }
       resetColor()
     }

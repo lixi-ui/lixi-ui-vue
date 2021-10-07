@@ -1,14 +1,14 @@
 import { computed, CSSProperties, inject, nextTick, ref, shallowRef } from 'vue'
 import { CHANGE_EVENT } from '@lixi/utils/constants'
-import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
 import type { ButtonRefs, ISliderInitData, ISliderProps } from './slider.type'
 
 import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
 import type { Nullable } from '@lixi/utils/types'
 
 export const useSlide = (props: ISliderProps, initData: ISliderInitData, emit) => {
-  const elForm = inject(elFormKey, {} as LxFormContext)
-  const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+  const lxForm = inject(lxFormKey, {} as LxFormContext)
+  const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
   const slider = shallowRef<Nullable<HTMLElement>>(null)
 
@@ -22,7 +22,7 @@ export const useSlide = (props: ISliderProps, initData: ISliderInitData, emit) =
   }
 
   const sliderDisabled = computed(() => {
-    return props.disabled || (elForm.disabled || false)
+    return props.disabled || (lxForm.disabled || false)
   })
 
   const minValue = computed(() => {
@@ -100,7 +100,7 @@ export const useSlide = (props: ISliderProps, initData: ISliderInitData, emit) =
   }
 
   return {
-    elFormItem,
+    lxFormItem,
     slider,
     firstButton,
     secondButton,

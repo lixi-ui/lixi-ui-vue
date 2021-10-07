@@ -6,7 +6,7 @@
   >
     <LabelWrap
       :is-auto-width="labelStyle.width === 'auto'"
-      :update-all="elForm.labelWidth === 'auto'"
+      :update-all="lxForm.labelWidth === 'auto'"
     >
       <label
         v-if="label || $slots.label"
@@ -14,8 +14,8 @@
         class="lx-form-item__label"
         :style="labelStyle"
       >
-        <slot name="label" :label="label + elForm.labelSuffix">
-          {{ label + elForm.labelSuffix }}
+        <slot name="label" :label="label + lxForm.labelSuffix">
+          {{ label + lxForm.labelSuffix }}
         </slot>
       </label>
     </LabelWrap>
@@ -33,7 +33,7 @@
               'lx-form-item__error--inline':
                 typeof inlineMessage === 'boolean'
                   ? inlineMessage
-                  : elForm.inlineMessage || false
+                  : lxForm.inlineMessage || false
             }"
           >
             {{ validateMessage }}
@@ -65,7 +65,7 @@ import { NOOP } from '@vue/shared'
 import { addUnit, getPropByPath, useGlobalConfig } from '@lixi/utils/util'
 import { isValidComponentSize } from '@lixi/utils/validators'
 import LabelWrap from './label-wrap'
-import { elFormEvents, elFormItemKey, elFormKey } from '@lixi/tokens'
+import { lxFormEvents, lxFormItemKey, lxFormKey } from '@lixi/tokens'
 
 import type { PropType, CSSProperties } from 'vue'
 import type { ComponentSize } from '@lixi/utils/types'
@@ -110,7 +110,7 @@ export default defineComponent({
     const formItemMitt = mitt()
     const $ELEMENT = useGlobalConfig()
 
-    const elForm = inject(elFormKey, {} as LxFormContext)
+    const lxForm = inject(lxFormKey, {} as LxFormContext)
     const validateState = ref('')
     const validateMessage = ref('')
     const validateDisabled = ref(false)
@@ -153,8 +153,8 @@ export default defineComponent({
     const labelFor = computed(() => props.for || props.prop)
     const labelStyle = computed(() => {
       const ret: CSSProperties = {}
-      if (elForm.labelPosition === 'top') return ret
-      const labelWidth = addUnit(props.labelWidth) || addUnit(elForm.labelWidth)
+      if (lxForm.labelPosition === 'top') return ret
+      const labelWidth = addUnit(props.labelWidth) || addUnit(lxForm.labelWidth)
       if (labelWidth) {
         ret.width = labelWidth
       }
@@ -162,20 +162,20 @@ export default defineComponent({
     })
     const contentStyle = computed(() => {
       const ret: CSSProperties = {}
-      if (elForm.labelPosition === 'top' || elForm.inline) {
+      if (lxForm.labelPosition === 'top' || lxForm.inline) {
         return ret
       }
       if (!props.label && !props.labelWidth && isNested.value) {
         return ret
       }
-      const labelWidth = addUnit(props.labelWidth) || addUnit(elForm.labelWidth)
+      const labelWidth = addUnit(props.labelWidth) || addUnit(lxForm.labelWidth)
       if (!props.label && !slots.label) {
         ret.marginLeft = labelWidth
       }
       return ret
     })
     const fieldValue = computed(() => {
-      const model = elForm.model
+      const model = lxForm.model
       if (!model || !props.prop) {
         return
       }
@@ -202,9 +202,9 @@ export default defineComponent({
       }
       return required
     })
-    const elFormItemSize = computed(() => props.size || elForm.size)
+    const lxFormItemSize = computed(() => props.size || lxForm.size)
     const sizeClass = computed<ComponentSize>(() => {
-      return elFormItemSize.value || $ELEMENT.size
+      return lxFormItemSize.value || $ELEMENT.size
     })
 
     const validate = (trigger: string, callback: ValidateFieldCallback = NOOP) => {
@@ -232,7 +232,7 @@ export default defineComponent({
           validateState.value = !errors ? 'success' : 'error'
           validateMessage.value = errors ? errors[0].message : ''
           callback(validateMessage.value, invalidFields)
-          elForm.emit?.(
+          lxForm.emit?.(
             'validate',
             props.prop,
             !errors,
@@ -250,7 +250,7 @@ export default defineComponent({
     const resetField = () => {
       validateState.value = ''
       validateMessage.value = ''
-      let model = elForm.model
+      let model = lxForm.model
       let value = fieldValue.value
       let path = props.prop
       if (path.indexOf(':') !== -1) {
@@ -270,7 +270,7 @@ export default defineComponent({
     }
 
     const getRules = () => {
-      const formRules = elForm.rules
+      const formRules = lxForm.rules
       const selfRules = props.rules
       const requiredRule =
         props.required !== undefined ? { required: !!props.required } : []
@@ -326,7 +326,7 @@ export default defineComponent({
       formItemMitt.off('el.form.change', onFieldChange)
     }
 
-    const elFormItem = reactive({
+    const lxFormItem = reactive({
       ...toRefs(props),
       size: sizeClass,
       validateState,
@@ -342,7 +342,7 @@ export default defineComponent({
 
     onMounted(() => {
       if (props.prop) {
-        elForm.formMitt?.emit(elFormEvents.addField, elFormItem)
+        lxForm.formMitt?.emit(lxFormEvents.addField, lxFormItem)
 
         let value = fieldValue.value
         initialValue = Array.isArray(value)
@@ -352,32 +352,32 @@ export default defineComponent({
       }
     })
     onBeforeUnmount(() => {
-      elForm.formMitt?.emit(elFormEvents.removeField, elFormItem)
+      lxForm.formMitt?.emit(lxFormEvents.removeField, lxFormItem)
     })
 
-    provide(elFormItemKey, elFormItem)
+    provide(lxFormItemKey, lxFormItem)
 
     const formItemClass = computed(() => [
       {
-        'lx-form-item--feedback': elForm.statusIcon,
+        'lx-form-item--feedback': lxForm.statusIcon,
         'is-error': validateState.value === 'error',
         'is-validating': validateState.value === 'validating',
         'is-success': validateState.value === 'success',
         'is-required': isRequired.value || props.required,
-        'is-no-asterisk': elForm.hideRequiredAsterisk,
+        'is-no-asterisk': lxForm.hideRequiredAsterisk,
       },
       sizeClass.value ? 'lx-form-item--' + sizeClass.value : '',
     ])
 
     const shouldShowError = computed(() => {
-      return validateState.value === 'error' && props.showMessage && elForm.showMessage
+      return validateState.value === 'error' && props.showMessage && lxForm.showMessage
     })
 
     return {
       formItemRef,
       formItemClass,
       shouldShowError,
-      elForm,
+      lxForm,
       labelStyle,
       contentStyle,
       validateMessage,

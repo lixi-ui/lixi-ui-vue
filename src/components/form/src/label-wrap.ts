@@ -11,7 +11,7 @@ import {
   watch,
 } from 'vue'
 import { addResizeListener, removeResizeListener, ResizableElement } from '@lixi/utils/resize-event'
-import { elFormItemKey, elFormKey } from '@lixi/tokens'
+import { lxFormItemKey, lxFormKey } from '@lixi/tokens'
 
 import type { CSSProperties } from 'vue'
 import type { Nullable } from '@lixi/utils/types'
@@ -24,14 +24,14 @@ export default defineComponent({
   },
   setup(props, { slots }) {
     const el = ref<Nullable<HTMLElement>>(null)
-    const elForm = inject(elFormKey)
-    const elFormItem = inject(elFormItemKey)
+    const lxForm = inject(lxFormKey)
+    const lxFormItem = inject(lxFormItemKey)
 
     const computedWidth = ref(0)
     watch(computedWidth, (val, oldVal) => {
       if (props.updateAll) {
-        elForm.registerLabelWidth(val, oldVal)
-        elFormItem.updateComputedLabelWidth(val)
+        lxForm.registerLabelWidth(val, oldVal)
+        lxFormItem.updateComputedLabelWidth(val)
       }
     })
 
@@ -50,7 +50,7 @@ export default defineComponent({
           if (action === 'update') {
             computedWidth.value = getLabelWidth()
           } else if (action === 'remove') {
-            elForm.deregisterLabelWidth(computedWidth.value)
+            lxForm.deregisterLabelWidth(computedWidth.value)
           }
         }
       })
@@ -72,11 +72,11 @@ export default defineComponent({
     function render() {
       if (!slots) return null
       if (props.isAutoWidth) {
-        const autoLabelWidth = elForm.autoLabelWidth
+        const autoLabelWidth = lxForm.autoLabelWidth
         const style = {} as CSSProperties
         if (autoLabelWidth && autoLabelWidth !== 'auto') {
           const marginWidth = Math.max(0, parseInt(autoLabelWidth, 10) - computedWidth.value)
-          const marginPosition = elForm.labelPosition === 'left' ? 'marginRight' : 'marginLeft'
+          const marginPosition = lxForm.labelPosition === 'left' ? 'marginRight' : 'marginLeft'
           if (marginWidth) {
             style[marginPosition] = marginWidth + 'px'
           }

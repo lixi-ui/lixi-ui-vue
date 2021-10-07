@@ -61,7 +61,7 @@ import {
 } from 'vue'
 import { toRawType } from '@vue/shared'
 import { RepeatClick } from '@lixi/directives'
-import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
 import LxInput from '@lixi/components/input/src'
 import { useGlobalConfig } from '@lixi/utils/util'
 import { isValidComponentSize } from '@lixi/utils/validators'
@@ -130,8 +130,8 @@ export default defineComponent({
   emits: ['update:modelValue', 'change', 'input', 'blur', 'focus'],
   setup(props, { emit }) {
     const ELEMENT = useGlobalConfig()
-    const elForm = inject(elFormKey, {} as LxFormContext)
-    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+    const lxForm = inject(lxFormKey, {} as LxFormContext)
+    const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
     const input = ref(null)
     const data = reactive<IData>({
@@ -162,10 +162,10 @@ export default defineComponent({
       return props.controls && props.controlsPosition === 'right'
     })
     const inputNumberSize = computed(() => {
-      return props.size || elFormItem.size || ELEMENT.size
+      return props.size || lxFormItem.size || ELEMENT.size
     })
     const inputNumberDisabled = computed(() => {
-      return props.disabled || elForm.disabled
+      return props.disabled || lxForm.disabled
     })
     const displayValue = computed(() => {
       if (data.userInput !== null) {

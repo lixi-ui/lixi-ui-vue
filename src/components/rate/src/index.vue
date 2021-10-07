@@ -44,7 +44,7 @@ import {
   watch,
 } from 'vue'
 import { isObject, isArray } from '@vue/shared'
-import { elFormKey } from '@lixi/tokens'
+import { lxFormKey } from '@lixi/tokens'
 import { hasClass } from '@lixi/utils/dom'
 import { EVENT_CODE } from '@lixi/utils/aria'
 
@@ -126,11 +126,11 @@ export default defineComponent({
   },
   emits: [UPDATE_MODEL_EVENT, 'change'],
   setup(props, { emit }) {
-    const elForm = inject(elFormKey, {} as LxFormContext)
+    const lxForm = inject(lxFormKey, {} as LxFormContext)
 
     const currentValue = ref(props.modelValue)
 
-    const rateDisabled = computed(() => props.disabled || elForm.disabled)
+    const rateDisabled = computed(() => props.disabled || lxForm.disabled)
 
     const text = computed(() => {
       let result = ''

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import Md from './index.md'
+  import Md from './index.zh-CN.md'
 
   export default {
     name : 'TreeMd',
@@ -22,7 +22,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
  .lx-button{
    margin-right: 5px;
  }

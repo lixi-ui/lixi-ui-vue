@@ -170,7 +170,7 @@
       </lx-form-item>
     </lx-form>
     <div class="demo-drawer__footer">
-      <lx-button @click="cancelForm">取 消</lx-button>
+      <lx-button @click="canclxForm">取 消</lx-button>
       <lx-button type="primary" @click="$refs.drawer.closeDrawer()" :loading="loading">{{ loading ? '提交中 ...' : '确 定' }}</lx-button>
     </div>
   </div>
@@ -232,7 +232,7 @@ export default {
         })
         .catch(_ => {});
     },
-    cancelForm() {
+    canclxForm() {
       this.loading = false;
       this.dialog = false;
       clearTimeout(this.timer);
@@ -306,7 +306,7 @@ export default {
           .catch((_) => {});
       };
 
-      const cancelForm = () => {
+      const canclxForm = () => {
         state.loading = false;
         state.dialog = false;
         clearTimeout(state.timer);
@@ -315,7 +315,7 @@ export default {
       return {
         ...toRefs(state),
         handleClose,
-        cancelForm,
+        canclxForm,
       };
     },
   });

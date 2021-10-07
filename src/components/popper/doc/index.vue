@@ -1,17 +1,17 @@
 <template>
   <div>
     {{ pageName }}
-    <Md/>
+    <!-- <Md/> -->
   </div>
 </template>
 
 <script>
-  import Md from './index.md'
+  // import Md from './index.zh-CN.md'
 
   export default {
     name : 'TreeMd',
     components: {
-      Md
+      // Md
     },
     data () {
       return {

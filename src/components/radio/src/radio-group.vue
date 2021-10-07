@@ -25,7 +25,7 @@ import {
 import { EVENT_CODE } from '@lixi/utils/aria'
 import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import { isValidComponentSize } from '@lixi/utils/validators'
-import { elFormItemKey } from '@lixi/tokens'
+import { lxFormItemKey } from '@lixi/tokens'
 import radioGroupKey from './token'
 
 import type { PropType } from 'vue'
@@ -62,10 +62,10 @@ export default defineComponent({
   setup(props, ctx) {
     const radioGroup = ref(null)
 
-    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+    const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
     const radioGroupSize = computed<ComponentSize>(() => {
-      return props.size || elFormItem.size
+      return props.size || lxFormItem.size
     })
 
     // methods
@@ -84,7 +84,7 @@ export default defineComponent({
     } as any))
 
     watch(() => props.modelValue, val => {
-      elFormItem.formItemMitt?.emit('el.form.change', [val])
+      lxFormItem.formItemMitt?.emit('el.form.change', [val])
     })
 
     const handleKeydown = e => { // 左右上下按键 可以在radio组内切换不同选项

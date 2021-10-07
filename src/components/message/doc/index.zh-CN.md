@@ -16,20 +16,20 @@
 
 <script>
   import { defineComponent, h } from 'vue'
-  import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'element-plus'
   export default defineComponent ({
     setup() {
       return {
         open() {
-          LxMessage('只是一条消息提示')
+          // LxMessage('只是一条消息提示')
         },
         openVn() {
-          LxMessage({
-            message: h('p', null, [
-              h('span', null, '内容可以是 '),
-              h('i', { style: 'color: teal' }, 'VNode')
-            ])
-          });
+          // LxMessage({
+          //   message: h('p', null, [
+          //     h('span', null, '内容可以是 '),
+          //     h('i', { style: 'color: teal' }, 'VNode')
+          //   ])
+          // });
         }
       }
     }
@@ -78,21 +78,21 @@
 
 <script>
   import { defineComponent } from 'vue'
-  import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'element-plus'
   export default defineComponent({
     setup() {
       return {
         open1() {
-          LxMessage.success({
-            message: '恭喜你，这是一条成功消息',
-            type: 'success'
-          });
+          // LxMessage.success({
+          //   message: '恭喜你，这是一条成功消息',
+          //   type: 'success'
+          // });
         },
         open2() {
-          LxMessage.warning({
-            message: '警告哦，这是一条警告消息',
-            type: 'warning'
-          });
+          // LxMessage.warning({
+          //   message: '警告哦，这是一条警告消息',
+          //   type: 'warning'
+          // });
         },
         open3() {
           LxMessage('这是一条消息提示');
@@ -154,40 +154,40 @@
 
 <script>
   import { defineComponent } from 'vue'
-  import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'element-plus'
 
   export default defineComponent({
     setup() {
       return {
         open1() {
-          LxMessage({
-            showClose: true,
-            message: '这是一条消息提示'
-          });
+          // LxMessage({
+          //   showClose: true,
+          //   message: '这是一条消息提示'
+          // });
         },
 
         open2() {
-          LxMessage({
-            showClose: true,
-            message: '恭喜你，这是一条成功消息',
-            type: 'success'
-          });
+          // LxMessage({
+          //   showClose: true,
+          //   message: '恭喜你，这是一条成功消息',
+          //   type: 'success'
+          // });
         },
 
         open3() {
-          LxMessage({
-            showClose: true,
-            message: '警告哦，这是一条警告消息',
-            type: 'warning'
-          });
+          // LxMessage({
+          //   showClose: true,
+          //   message: '警告哦，这是一条警告消息',
+          //   type: 'warning'
+          // });
         },
 
         open4() {
-          LxMessage({
-            showClose: true,
-            message: '错了哦，这是一条错误消息',
-            type: 'error'
-          });
+          // LxMessage({
+          //   showClose: true,
+          //   message: '错了哦，这是一条错误消息',
+          //   type: 'error'
+          // });
         }
       }
     }
@@ -253,15 +253,15 @@
 
 <script>
   import { defineComponent } from 'vue'
-  import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'element-plus'
   export default defineComponent({
     setup() {
       return {
         openCenter() {
-          LxMessage({
-            message: '居中的文字',
-            center: true
-          });
+          // LxMessage({
+          //   message: '居中的文字',
+          //   center: true
+          // });
         }
       }
     }
@@ -302,15 +302,15 @@
 
 <script>
   import { defineComponent } from 'vue'
-  import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'element-plus'
   export default defineComponent({
     setup() {
       return {
         openHTML() {
-          LxMessage({
-            dangerouslyUseHTMLString: true,
-            message: '<strong>这是 <i>HTML</i> 片段</strong>'
-          });
+          // LxMessage({
+          //   dangerouslyUseHTMLString: true,
+          //   message: '<strong>这是 <i>HTML</i> 片段</strong>'
+          // });
         }
       }
     }
@@ -350,10 +350,10 @@ Element Plus 为 `app.config.globalProperties` 添加了全局方法 $message。
 ### 单独引用
 
 ```javascript
-import { LxMessage } from 'element-plus';
+// import { LxMessage } from 'element-plus';
 ```
 
-此时调用方法为 `ElMessage(options)`。我们也为每个 type 定义了各自的方法，如 `ElMessage.success(options)`。并且可以调用 `ElMessage.closeAll()` 手动关闭所有实例。
+此时调用方法为 `LxMessage(options)`。我们也为每个 type 定义了各自的方法，如 `LxMessage.success(options)`。并且可以调用 `LxMessage.closeAll()` 手动关闭所有实例。
 
 ### Options
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |

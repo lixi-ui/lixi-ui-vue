@@ -1,5 +1,5 @@
 import { ref, computed, inject } from 'vue'
-import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
 import { useGlobalConfig } from '@lixi/utils/util'
 import radioGroupKey from './token'
 
@@ -10,20 +10,20 @@ import type { RadioGroupContext } from './token'
 export const useRadio = () => {
 
   const ELEMENT = useGlobalConfig()
-  const elForm = inject(elFormKey, {} as LxFormContext)
-  const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+  const lxForm = inject(lxFormKey, {} as LxFormContext)
+  const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
   const radioGroup = inject(radioGroupKey, {} as RadioGroupContext)
   const focus = ref(false)
   const isGroup = computed(() => radioGroup?.name === 'LxRadioGroup')
-  const elFormItemSize = computed(() => elFormItem.size || ELEMENT.size)
+  const lxFormItemSize = computed(() => lxFormItem.size || ELEMENT.size)
 
   return {
     isGroup,
     focus,
     radioGroup,
-    elForm,
+    lxForm,
     ELEMENT,
-    elFormItemSize,
+    lxFormItemSize,
   }
 }
 
@@ -35,20 +35,20 @@ interface IUseRadioAttrsProps {
 interface IUseRadioAttrsState {
   isGroup: ComputedRef<boolean>
   radioGroup: RadioGroupContext
-  elForm: LxFormContext
+  lxForm: LxFormContext
   model: WritableComputedRef<string | number | boolean>
 }
 
 export const useRadioAttrs = (props: IUseRadioAttrsProps, {
   isGroup,
   radioGroup,
-  elForm,
+  lxForm,
   model,
 }: IUseRadioAttrsState) => {
   const isDisabled = computed(() => {
     return isGroup.value
-      ? radioGroup.disabled || props.disabled || elForm.disabled
-      : props.disabled || elForm.disabled
+      ? radioGroup.disabled || props.disabled || lxForm.disabled
+      : props.disabled || lxForm.disabled
   })
 
   const tabIndex = computed(() => {

@@ -49,7 +49,7 @@ import { LxSelect } from '@lixi/components/select/src'
 import { LxSelectV2 } from '@lixi/components/select-v2/src'
 import { LxSkeleton } from '@lixi/components/skeleton/src'
 import { LxSlider } from '@lixi/components/slider/src'
-import { LxSpace } from '@lixi/components/space/src'
+// import { LxSpace } from '@lixi/components/space/src'
 import { LxSteps } from '@lixi/components/steps/src'
 import { LxSwitch } from '@lixi/components/switch/src'
 import { LxTable } from '@lixi/components/table/src'
@@ -115,7 +115,7 @@ export default [
   LxSelectV2,
   LxSkeleton,
   LxSlider,
-  LxSpace,
+  // LxSpace,
   LxSteps,
   LxSwitch,
   LxTable,

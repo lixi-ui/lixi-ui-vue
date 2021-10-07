@@ -136,7 +136,7 @@ import dayjs from 'dayjs'
 import isEqual from 'lodash/isEqual'
 import { useLocaleInject } from '@lixi/hooks'
 import { ClickOutside } from '@lixi/directives'
-import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
 import LxInput from '@lixi/components/input/src'
 import LxPopper, { Effect } from '@lixi/components/popper/src'
 import { EVENT_CODE } from '@lixi/utils/aria'
@@ -210,8 +210,8 @@ export default defineComponent({
     const ELEMENT = useGlobalConfig()
     const { lang } = useLocaleInject()
 
-    const elForm = inject(elFormKey, {} as LxFormContext)
-    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+    const lxForm = inject(lxFormKey, {} as LxFormContext)
+    const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
     const elPopperOptions = inject('LxPopperOptions', {} as Options)
 
     const refPopper = ref(null)
@@ -227,7 +227,7 @@ export default defineComponent({
         })
         ctx.emit('blur')
         blurInput()
-        props.validateEvent && elFormItem.formItemMitt?.emit('el.form.blur')
+        props.validateEvent && lxFormItem.formItemMitt?.emit('el.form.blur')
       } else {
         valueOnOpen.value = props.modelValue
       }
@@ -236,7 +236,7 @@ export default defineComponent({
       // determine user real change only
       if (isClear || !valueEquals(val, valueOnOpen.value)) {
         ctx.emit('change', val)
-        props.validateEvent && elFormItem.formItemMitt?.emit('el.form.change', val)
+        props.validateEvent && lxFormItem.formItemMitt?.emit('el.form.change', val)
       }
     }
     const emitInput = val => {
@@ -292,7 +292,7 @@ export default defineComponent({
     }
 
     const pickerDisabled = computed(() => {
-      return props.disabled || elForm.disabled
+      return props.disabled || lxForm.disabled
     })
 
     const parsedValue = computed(() => {
@@ -381,7 +381,7 @@ export default defineComponent({
     })
 
     const pickerSize = computed(() => {
-      return props.size || elFormItem.size || ELEMENT.size
+      return props.size || lxFormItem.size || ELEMENT.size
     })
 
     const popperPaneRef = computed(() => {

@@ -5,7 +5,7 @@ import type {
 import type { Emitter } from 'mitt'
 import type { ComponentSize } from '@element-plus/utils/types'
 
-export interface ElFormContext {
+export interface LxFormContext {
   registerLabelWidth(width: number, oldWidth: number): void
   deregisterLabelWidth(width: number): void
   autoLabelWidth: string | undefined
@@ -29,7 +29,7 @@ export interface ValidateFieldCallback {
   (isValid?: string, invalidFields?: FieldErrorList): void
 }
 
-export interface ElFormItemContext {
+export interface LxFormItemContext {
   prop?: string
   formItemMitt: Emitter
   size?: ComponentSize
@@ -44,11 +44,11 @@ export interface ElFormItemContext {
 }
 
 // TODO: change it to symbol
-export const elFormKey: InjectionKey<ElFormContext> = 'elForm' as any
+export const lxFormKey: InjectionKey<LxFormContext> = 'lxForm' as any
 
-export const elFormItemKey: InjectionKey<ElFormItemContext> = 'elFormItem' as any
+export const lxFormItemKey: InjectionKey<LxFormItemContext> = 'lxFormItem' as any
 
-export const elFormEvents = {
+export const lxFormEvents = {
   addField: 'el.form.addField',
   removeField: 'el.form.removeField',
 } as const

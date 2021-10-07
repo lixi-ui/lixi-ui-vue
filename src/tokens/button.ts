@@ -6,4 +6,4 @@ export interface ElButtonGruopContext {
   size?: ComponentSize
 }
 
-export const elButtonGroupKey: InjectionKey<ElButtonGruopContext> = Symbol()
+export const lxButtonGroupKey: InjectionKey<ElButtonGruopContext> = Symbol()

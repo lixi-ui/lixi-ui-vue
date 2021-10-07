@@ -7,7 +7,7 @@ import type { SFCWithInstall } from '@lixi/utils/types'
 
 Descriptions.install = (app: App): void => {
   app.component(Descriptions.name, Descriptions)
-  app.component(ElDescriptionsItem.name, LxDescriptionsItem)
+  app.component(DescriptionsItem.name, DescriptionsItem)
 }
 
 Descriptions.DescriptionsItem = DescriptionsItem

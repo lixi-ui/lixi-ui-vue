@@ -59,7 +59,7 @@ import {
   reactive, ref, toRefs, watch,
 } from 'vue'
 import LxButton from '@lixi/components/button/src'
-import { elFormItemKey } from '@lixi/tokens'
+import { lxFormItemKey } from '@lixi/tokens'
 import { useLocaleInject } from '@lixi/hooks'
 import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import TransferPanel from './transfer-panel.vue'
@@ -151,7 +151,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const { t } = useLocaleInject()
-    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+    const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
     const checkedState = reactive({
       leftChecked: [],
@@ -194,7 +194,7 @@ export default defineComponent({
     const panelFilterPlaceholder = computed(() => props.filterPlaceholder || t('el.transfer.filterPlaceholder'))
 
     watch(() => props.modelValue, val => {
-      elFormItem.formItemMitt?.emit('el.form.change', val)
+      lxFormItem.formItemMitt?.emit('el.form.change', val)
     })
 
     const optionRender = computed(() => option => {

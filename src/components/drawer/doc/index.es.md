@@ -171,7 +171,7 @@ Al igual que `Dialog`, `Drawer` puede hacer muchas interacciones diversas.
       </lx-form-item>
     </lx-form>
     <div class="demo-drawer__footer">
-      <lx-button @click="cancelForm">Cancel</lx-button>
+      <lx-button @click="canclxForm">Cancel</lx-button>
       <lx-button type="primary" @click="$refs.drawer.closeDrawer()" :loading="loading">{{ loading ? 'Submitting ...' : 'Submit' }}</lx-button>
     </div>
   </div>
@@ -233,7 +233,7 @@ export default {
         })
         .catch(_ => {});
     },
-    cancelForm() {
+    canclxForm() {
       this.loading = false;
       this.dialog = false;
       clearTimeout(this.timer);
@@ -309,7 +309,7 @@ import { LxMessageBox } from 'element-plus';
           .catch((_) => {});
       };
 
-      const cancelForm = () => {
+      const canclxForm = () => {
         state.loading = false;
         state.dialog = false;
         clearTimeout(state.timer);
@@ -318,7 +318,7 @@ import { LxMessageBox } from 'element-plus';
       return {
         ...toRefs(state),
         handleClose,
-        cancelForm,
+        canclxForm,
       };
     },
   });

@@ -43,7 +43,7 @@
 <script lang='ts'>
 import { defineComponent, computed, onMounted, ref, inject, nextTick, watch } from 'vue'
 import { isPromise } from '@vue/shared'
-import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
 import { isBool } from '@lixi/utils/util'
 import throwError, { warn } from '@lixi/utils/error'
 
@@ -146,8 +146,8 @@ export default defineComponent({
   },
   emits: ['update:modelValue', 'change', 'input'],
   setup(props: ISwitchProps, ctx) {
-    const elForm = inject(elFormKey, {} as LxFormContext)
-    const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+    const lxForm = inject(lxFormKey, {} as LxFormContext)
+    const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
     const isModelValue = ref(props.modelValue !== false)
     const input = ref(null)
@@ -185,12 +185,12 @@ export default defineComponent({
       }
 
       if (props.validateEvent) {
-        elFormItem.formItemMitt?.emit('el.form.change', [actualValue.value])
+        lxFormItem.formItemMitt?.emit('el.form.change', [actualValue.value])
       }
     })
 
     const switchDisabled = computed((): boolean => {
-      return props.disabled || props.loading || (elForm || {}).disabled
+      return props.disabled || props.loading || (lxForm || {}).disabled
     })
 
     const handleChange = (): void => {

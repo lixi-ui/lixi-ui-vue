@@ -8,7 +8,7 @@ import {
 import { toTypeString } from '@vue/shared'
 import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import { useGlobalConfig } from '@lixi/utils/util'
-import { elFormKey, elFormItemKey } from '@lixi/tokens'
+import { lxFormKey, lxFormItemKey } from '@lixi/tokens'
 
 import type { ExtractPropTypes } from 'vue'
 import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
@@ -45,20 +45,20 @@ export type IUseCheckboxProps = ExtractPropTypes<typeof useCheckboxProps>
 
 export const useCheckboxGroup = () => {
   const ELEMENT = useGlobalConfig()
-  const elForm = inject(elFormKey, {} as LxFormContext)
-  const elFormItem = inject(elFormItemKey, {} as LxFormItemContext)
+  const lxForm = inject(lxFormKey, {} as LxFormContext)
+  const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
   const checkboxGroup = inject<ICheckboxGroupInstance>('CheckboxGroup', {})
   const isGroup = computed(() => checkboxGroup && checkboxGroup?.name === 'LxCheckboxGroup')
-  const elFormItemSize = computed(() => {
-    return elFormItem.size
+  const lxFormItemSize = computed(() => {
+    return lxFormItem.size
   })
   return {
     isGroup,
     checkboxGroup,
-    elForm,
+    lxForm,
     ELEMENT,
-    elFormItemSize,
-    elFormItem,
+    lxFormItemSize,
+    lxFormItem,
   }
 }
 
@@ -101,9 +101,9 @@ const useModel = (props: IUseCheckboxProps) => {
 }
 
 const useCheckboxStatus = (props: IUseCheckboxProps, { model }: PartialReturnType<typeof useModel>) => {
-  const { isGroup, checkboxGroup, elFormItemSize, ELEMENT } = useCheckboxGroup()
+  const { isGroup, checkboxGroup, lxFormItemSize, ELEMENT } = useCheckboxGroup()
   const focus = ref(false)
-  const size = computed<string | undefined>(() => checkboxGroup?.checkboxGroupSize?.value || elFormItemSize.value || ELEMENT.size)
+  const size = computed<string | undefined>(() => checkboxGroup?.checkboxGroupSize?.value || lxFormItemSize.value || ELEMENT.size)
   const isChecked = computed<boolean>(() => {
     const value = model.value
     if (toTypeString(value) === '[object Boolean]') {
@@ -117,7 +117,7 @@ const useCheckboxStatus = (props: IUseCheckboxProps, { model }: PartialReturnTyp
     }
   })
   const checkboxSize = computed(() => {
-    const temCheckboxSize = props.size || elFormItemSize.value || ELEMENT.size
+    const temCheckboxSize = props.size || lxFormItemSize.value || ELEMENT.size
     return isGroup.value
       ? checkboxGroup?.checkboxGroupSize?.value || temCheckboxSize
       : temCheckboxSize
@@ -135,7 +135,7 @@ const useDisabled = (
   props: IUseCheckboxProps,
   { model, isChecked }: PartialReturnType<typeof useModel> & PartialReturnType<typeof useCheckboxStatus>,
 ) => {
-  const { elForm, isGroup, checkboxGroup } = useCheckboxGroup()
+  const { lxForm, isGroup, checkboxGroup } = useCheckboxGroup()
   const isLimitDisabled = computed(() => {
     const max = checkboxGroup.max?.value
     const min = checkboxGroup.min?.value
@@ -143,10 +143,10 @@ const useDisabled = (
       (model.value.length <= min && isChecked.value)
   })
   const isDisabled = computed(() => {
-    const disabled = props.disabled || elForm.disabled
+    const disabled = props.disabled || lxForm.disabled
     return isGroup.value
       ? checkboxGroup.disabled?.value || disabled || isLimitDisabled.value
-      : props.disabled || elForm.disabled
+      : props.disabled || lxForm.disabled
   })
 
   return {
@@ -170,7 +170,7 @@ const setStoreValue = (props: IUseCheckboxProps, { model }: PartialReturnType<ty
 }
 
 const useEvent = (props: IUseCheckboxProps, { isLimitExceeded }: PartialReturnType<typeof useModel>) => {
-  const { elFormItem } = useCheckboxGroup()
+  const { lxFormItem } = useCheckboxGroup()
   const { emit } = getCurrentInstance()
   function handleChange(e: InputEvent) {
     if (isLimitExceeded.value) return
@@ -183,7 +183,7 @@ const useEvent = (props: IUseCheckboxProps, { isLimitExceeded }: PartialReturnTy
   }
 
   watch(() => props.modelValue, val => {
-    elFormItem.formItemMitt?.emit('el.form.change', [val])
+    lxFormItem.formItemMitt?.emit('el.form.change', [val])
   })
 
   return {

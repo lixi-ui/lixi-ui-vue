@@ -57,7 +57,7 @@ export default defineComponent({
     const visible = ref(false)
     const styleBottom = computed(() => `${props.bottom}px`)
     const styleRight = computed(() => `${props.right}px`)
-    const scope = 'LxBackTop'
+    const scope = 'LxBacktop'
 
     const scrollToTop = () => {
       const beginTime = Date.now()

@@ -136,7 +136,7 @@
 </lx-switch>
 <script>
   import { reactive, toRefs } from 'vue'
-  import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'element-plus'
 
   export default {
     setup() {
@@ -150,7 +150,7 @@
         return new Promise(resolve => {
           setTimeout(() => {
             status1.loading1 = false
-            LxMessage.success('切换成功')
+            // LxMessage.success('切换成功')
             return resolve(true)
           }, 1000)
         })
@@ -166,7 +166,7 @@
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             status2.loading2 = false
-            LxMessage.error('切换失败')
+            // LxMessage.error('切换失败')
             return reject(new Error('error'))
           }, 1000)
         })
