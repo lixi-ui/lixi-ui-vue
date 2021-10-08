@@ -11,7 +11,7 @@
       v-model:visible="dropMenuVisible"
       placement="bottom-start"
       :append-to-body="popperAppendToBody"
-      :popper-class="`el-select__popper ${popperClass}`"
+      :popper-class="`lx-select__popper ${popperClass}`"
       :fallback-placements="['bottom-start', 'top-start', 'right', 'left']"
       manual-mode
       :effect="Effect.LIGHT"
@@ -130,7 +130,7 @@
               <i v-show="!showClose" :class="['lx-select__caret', 'lx-input__icon', 'lx-icon-' + iconClass]"></i>
               <i
                 v-if="showClose"
-                :class="`el-select__caret lx-input__icon ${clearIcon}`"
+                :class="`lx-select__caret lx-input__icon ${clearIcon}`"
                 @click="handleClearClick"
               ></i>
             </template>

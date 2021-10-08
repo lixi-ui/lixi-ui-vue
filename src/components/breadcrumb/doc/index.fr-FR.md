@@ -5,7 +5,7 @@ Affiche le chemin de la page actuelle, afin de pouvoir naviguer plus facilement.
 ### Usage
 
 
-:::demo Dans `el-breadcrumb`, chaque `el-breadcrumb-item` est un tag représentant chaque niveau depuis la page d'accueil. Ce Composant possède un attribut de type `String` appelé `separator` qui détermine le séparateur. Sa valeur par défaut est '/'.
+:::demo Dans `lx-breadcrumb`, chaque `lx-breadcrumb-item` est un tag représentant chaque niveau depuis la page d'accueil. Ce Composant possède un attribut de type `String` appelé `separator` qui détermine le séparateur. Sa valeur par défaut est '/'.
 
 ```html
 <lx-breadcrumb separator="/">

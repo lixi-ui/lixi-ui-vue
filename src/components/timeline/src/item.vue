@@ -6,8 +6,8 @@
       v-if="!$slots.dot"
       class="lx-timeline-item__node"
       :class="[
-        `el-timeline-item__node--${size || ''}`,
-        `el-timeline-item__node--${type || ''}`
+        `lx-timeline-item__node--${size || ''}`,
+        `lx-timeline-item__node--${type || ''}`
       ]"
       :style="{
         backgroundColor: color

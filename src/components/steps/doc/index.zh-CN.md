@@ -94,7 +94,7 @@
 
 竖直方向的步骤条。
 
-:::demo 只需要在`el-steps`元素中设置`direction`属性为`vertical`即可。
+:::demo 只需要在`lx-steps`元素中设置`direction`属性为`vertical`即可。
 ```html
 <div style="height: 300px;">
   <lx-steps direction="vertical" :active="1">

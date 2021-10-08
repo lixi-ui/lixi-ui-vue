@@ -6,7 +6,7 @@
 
 基本テーブルはデータを表示するためだけのものです。
 
-:::demo オブジェクトの配列で `el-table` の属性 `data` を設定した後、`el-table-column` の `prop` (配列 `data` に含まれるオブジェクトのキーに対応) を用いてテーブルのカラムにデータを挿入し、属性 `label` を用いてカラム名を定義することができます。また、属性 `width` を用いて列の幅を定義することもできる。
+:::demo オブジェクトの配列で `lx-table` の属性 `data` を設定した後、`lx-table-column` の `prop` (配列 `data` に含まれるオブジェクトのキーに対応) を用いてテーブルのカラムにデータを挿入し、属性 `label` を用いてカラム名を定義することができます。また、属性 `width` を用いて列の幅を定義することもできる。
 
 ```html
   <template>
@@ -173,7 +173,7 @@
 
 テーブルの内容を"成功、情報、警告、危険” などの状態に区別して強調できます。
 
-:::demo 特定の行にカスタムクラスを追加するには、`el-table` の `row-class-name` を使います。そうすれば、カスタムクラスを使ってスタイルを設定することができます。
+:::demo 特定の行にカスタムクラスを追加するには、`lx-table` の `row-class-name` を使います。そうすれば、カスタムクラスを使ってスタイルを設定することができます。
 ```html
 <template>
   <lx-table
@@ -248,7 +248,7 @@
 
 行数が多い場合は固定ヘッダーを使用します。
 
-:::demo `el-table` の `height` 属性を設定することで、他のコードを使わずにテーブルのヘッダを固定することができる。
+:::demo `lx-table` の `height` 属性を設定することで、他のコードを使わずにテーブルのヘッダを固定することができる。
 ```html
 <template>
   <lx-table
@@ -316,7 +316,7 @@
 
 カラムが多すぎる場合は、いくつかの列を固定することができます。
 
-:::demo 属性 `fixed` は `el-table-column` で用いられる。 `true` の場合、列は左に固定される。また、'left' と 'right' の2つの文字列リテラルを受け取ることができ、どちらも対応する方向に固定されることを示す。
+:::demo 属性 `fixed` は `lx-table-column` で用いられる。 `true` の場合、列は左に固定される。また、'left' と 'right' の2つの文字列リテラルを受け取ることができ、どちらも対応する方向に固定されることを示す。
 ```html
 <template>
   <lx-table
@@ -524,7 +524,7 @@
 
 データが動的に変更された場合、テーブルの高さを固定ではなく最大にして、必要に応じてスクロールバーを表示したい場合があります。
 
-:::demo  `el-table`の属性 `max-height` を設定することで、テーブルのヘッダを固定することができる。テーブル本体は行の高さが最大の高さを超えた場合のみスクロールする。
+:::demo  `lx-table`の属性 `max-height` を設定することで、テーブルのヘッダを固定することができる。テーブル本体は行の高さが最大の高さを超えた場合のみスクロールする。
 ```html
 <template>
   <lx-table
@@ -755,7 +755,7 @@
 
 1行選択に対応しています。
 
-:::demo テーブルは1行選択をサポートしています。これを有効にするには、`highlight-current-row` 属性を追加します。行の選択が変更されると `current-change` というイベントがトリガされ、そのパラメータは変更後の行と変更前の行である `currentRow` と `oldCurrentRow` である。行のインデックスを表示したい場合は、新しい `el-table-column` を追加して `type` 属性を `index` に代入すると、1から始まるインデックスが表示されます。
+:::demo テーブルは1行選択をサポートしています。これを有効にするには、`highlight-current-row` 属性を追加します。行の選択が変更されると `current-change` というイベントがトリガされ、そのパラメータは変更後の行と変更前の行である `currentRow` と `oldCurrentRow` である。行のインデックスを表示したい場合は、新しい `lx-table-column` を追加して `type` 属性を `index` に代入すると、1から始まるインデックスが表示されます。
 ```html
 <template>
   <lx-table
@@ -831,7 +831,7 @@
 
 複数の行を選択することもできます。
 
-:::demo 複数選択を有効にするのは簡単です: `el-table-column` に `type` を `selection` に設定して追加するだけです。複数選択とは別に、この例では `show-overflow-tooltip` を利用しています: デフォルトでは、内容が長すぎると複数行に分割されます。1行にまとめたい場合は、`show-overflow-tooltip` 属性を利用します。`true` を設定すると、セル上にカーソルを置いたときに追加内容がツールチップに表示されます。
+:::demo 複数選択を有効にするのは簡単です: `lx-table-column` に `type` を `selection` に設定して追加するだけです。複数選択とは別に、この例では `show-overflow-tooltip` を利用しています: デフォルトでは、内容が長すぎると複数行に分割されます。1行にまとめたい場合は、`show-overflow-tooltip` 属性を利用します。`true` を設定すると、セル上にカーソルを置いたときに追加内容がツールチップに表示されます。
 ```html
 <template>
   <lx-table
@@ -988,7 +988,7 @@
 
 テーブルをフィルタリングして、目的のデータを見つけます。
 
-:::demo `el-table-column` に `filters` と `filter-method` という属性を設定すると、この列をフィルタリング可能な状態にする。`filters` は配列であり、`filter-method` はどの行を表示するかを決定する関数である。パラメータは3つある。`value`, `row`, `column` の3つのパラメータを持つ。
+:::demo `lx-table-column` に `filters` と `filter-method` という属性を設定すると、この列をフィルタリング可能な状態にする。`filters` は配列であり、`filter-method` はどの行を表示するかを決定する関数である。パラメータは3つある。`value`, `row`, `column` の3つのパラメータを持つ。
 ```html
 <template>
   <lx-button @click="resetDateFilter">reset date filter</lx-button>
@@ -1731,7 +1731,7 @@ rowspan と colspan を設定すると、セルをマージすることができ
 ### Custom index
 
 `type=index` カラムで行のインデックスをカスタマイズすることができる。
-:::demo 行のインデックスをカスタマイズするには、`el-table-column` の `type=index` で `index` 属性を用いる。これが数値に代入されている場合、すべてのインデックスはその数値のオフセットを持つことになる。また、各インデックス（`0`から始まる）をパラメータに持つメソッドも受け付けており、戻り値はインデックスとして表示される。
+:::demo 行のインデックスをカスタマイズするには、`lx-table-column` の `type=index` で `index` 属性を用いる。これが数値に代入されている場合、すべてのインデックスはその数値のオフセットを持つことになる。また、各インデックス（`0`から始まる）をパラメータに持つメソッドも受け付けており、戻り値はインデックスとして表示される。
 
 ```html
 <template>
@@ -1901,7 +1901,7 @@ rowspan と colspan を設定すると、セルをマージすることができ
 | sort-method | sorting method, works when `sortable` is `true`. Should return a number, just like Array.sort | function(a, b) | — | — |
 | sort-by | specify which property to sort by, works when `sortable` is `true` and `sort-method` is `undefined`. If set to an Array, the column will sequentially sort by the next property if the previous one is equal | function(row, index) / string / array | — | — |
 | sort-orders | the order of the sorting strategies used when sorting the data, works when `sortable` is `true`. Accepts an array, as the user clicks on the header, the column is sorted in order of the elements in the array | array | the elements in the array need to be one of the following: `ascending`, `descending` and `null` (restores to the original order) | ['ascending', 'descending', null] |
-| resizable | whether column width can be resized, works when `border` of `el-table` is `true` | boolean | — | false |
+| resizable | whether column width can be resized, works when `border` of `lx-table` is `true` | boolean | — | false |
 | formatter | function that formats cell content | function(row, column, cellValue, index) | — | — |
 | show-overflow-tooltip | whether to hide extra content and show them in a tooltip when hovering on the cell | boolean | — | false |
 | align | alignment | string | left / center / right | left |

@@ -10,7 +10,7 @@
     :offset="0"
     transition="lx-zoom-in-top"
     :gpu-acceleration="false"
-    :popper-class="`el-color-picker__panel lx-color-dropdown ${popperClass}`"
+    :popper-class="`lx-color-picker__panel lx-color-dropdown ${popperClass}`"
     :stop-popper-mouse-event="false"
   >
     <template #default>
@@ -65,7 +65,7 @@
         :class="[
           'lx-color-picker',
           colorDisabled ? 'is-disabled' : '',
-          colorSize ? `el-color-picker--${ colorSize }` : ''
+          colorSize ? `lx-color-picker--${ colorSize }` : ''
         ]"
       >
         <div v-if="colorDisabled" class="lx-color-picker__mask"></div>

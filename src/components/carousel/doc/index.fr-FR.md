@@ -4,7 +4,7 @@ Affiche en boucle une série d'images ou de textes dans un espace limité.
 
 ### Usage
 
-:::demo Utilisez `el-carousel` avec `el-carousel-item`, et vous obtiendrez un carrousel. Le contenu de chaque slide est complètement personnalisable, il vous suffit juste de le placer à l'intérieur de la balise `el-carousel-item`. Par défaut le carrousel défile quand la souris passe sur un indicateur. Réglez `trigger` sur `click` et le carrousel défilera uniquement quand vous cliquerez sur l'indicateur.
+:::demo Utilisez `lx-carousel` avec `lx-carousel-item`, et vous obtiendrez un carrousel. Le contenu de chaque slide est complètement personnalisable, il vous suffit juste de le placer à l'intérieur de la balise `lx-carousel-item`. Par défaut le carrousel défile quand la souris passe sur un indicateur. Réglez `trigger` sur `click` et le carrousel défilera uniquement quand vous cliquerez sur l'indicateur.
 ```html
 <template>
   <div class="block">
@@ -202,7 +202,7 @@ Par défaut, `direction` est `horizontal`. Vous pouvez faire en sorte que le dé
 ### Méthodes du Carrousel
 | Mathode | Description | Paramètres |
 |---------- |-------------- | -- |
-| setActiveItem | Défile manuellement vers une slide. | index de la slide d'arrivée, à partir de 0; ou bien le `name` du `el-carousel-item` correspondant|
+| setActiveItem | Défile manuellement vers une slide. | index de la slide d'arrivée, à partir de 0; ou bien le `name` du `lx-carousel-item` correspondant|
 | prev | Défile vers la slide précédente. | — |
 | next | Défile vers la slide suivante. | — |
 

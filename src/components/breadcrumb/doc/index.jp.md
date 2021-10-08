@@ -5,7 +5,7 @@
 ### 基本的な使い方
 
 
-:::demo `el-breadcrumb` では、`el-breadcrumb-item` はホームページから始まる各レベルを表すタグである。このコンポーネントは `String` 属性 `separator` を持ち、セパレータを決定する。デフォルト値は'/'である。
+:::demo `lx-breadcrumb` では、`lx-breadcrumb-item` はホームページから始まる各レベルを表すタグである。このコンポーネントは `String` 属性 `separator` を持ち、セパレータを決定する。デフォルト値は'/'である。
 
 ```html
 <lx-breadcrumb separator="/">

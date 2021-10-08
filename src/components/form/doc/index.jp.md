@@ -621,7 +621,7 @@ The component has been upgraded with a flex layout to replace the old float layo
 :::
 
 :::tip
-`el-form-item` が別の `el-form-item` に入れ子になっている場合、そのラベルの幅は `0` になります。必要であれば、その `el-form-item` に `label-width` を設定することもできる。
+`lx-form-item` が別の `lx-form-item` に入れ子になっている場合、そのラベルの幅は `0` になります。必要であれば、その `lx-form-item` に `label-width` を設定することもできる。
 :::
 
 ### サイズコントロール

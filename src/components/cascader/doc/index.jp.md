@@ -1030,7 +1030,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 ### クリア可能
 
-`el-cascader` に `clearable` 属性を設定すると、選択してホバリングしたときにクリアアイコンが表示されるようになります。
+`lx-cascader` に `clearable` 属性を設定すると、選択してホバリングしたときにクリアアイコンが表示されるようになります。
 
 :::demo
 ```html
@@ -2817,7 +2817,7 @@ export default defineComponent({
 
 キーワードで検索してオプションを選択します。
 
-:::demo `el-cascader` に `filterable` を追加することでフィルタリングが可能になる。cascaderは、ラベルまたは親のラベル(`show-all-levels`による)に入力キーワードが含まれているノードにマッチするようになります。もちろん、`filter-method`で検索ロジックをカスタマイズすることもできます。
+:::demo `lx-cascader` に `filterable` を追加することでフィルタリングが可能になる。cascaderは、ラベルまたは親のラベル(`show-all-levels`による)に入力キーワードが含まれているノードにマッチするようになります。もちろん、`filter-method`で検索ロジックをカスタマイズすることもできます。
 ```html
 <div class="block">
   <span class="demonstration">Filterable (Single selection)</span>
@@ -3834,7 +3834,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 `CascaderPanel` は `Cascader` のコアコンポーネントであり、単一選択、複数選択、動的読み込みなど様々な機能を持っています。
 
-:::demo `el-cascader` と同様に、`options` で代替オプションを設定したり、`props` で他の機能を有効にしたりすることができます。
+:::demo `lx-cascader` と同様に、`options` で代替オプションを設定したり、`props` で他の機能を有効にしたりすることができます。
 ```html
 <lx-cascader-panel :options="options"></lx-cascader-panel>
 

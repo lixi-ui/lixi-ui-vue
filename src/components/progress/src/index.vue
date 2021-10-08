@@ -2,7 +2,7 @@
   <div
     class="lx-progress"
     :class="[
-      `el-progress--${type}`,
+      `lx-progress--${type}`,
       status ? `is-${status}` : '',
       {
         'lx-progress--without-text': !showText,

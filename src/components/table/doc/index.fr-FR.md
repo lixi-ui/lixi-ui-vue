@@ -6,7 +6,7 @@ Permet d'afficher de nombreuses données possédant un format similaire. Vous po
 
 Un tableau de base pour afficher seulement.
 
-:::demo Après avoir configuré l'attribut `data` de `el-table` avec un tableau d'objets, vous pouvez utiliser `prop` (correspondant à une clé dans chaque objet du tableau `data`) dans `el-table-column` pour insérer des données dans les colonnes, ainsi que l'attribut `label` pour définir le nom de la colonne. L'attribut `width` définit si besoin la largeur de la colonne.
+:::demo Après avoir configuré l'attribut `data` de `lx-table` avec un tableau d'objets, vous pouvez utiliser `prop` (correspondant à une clé dans chaque objet du tableau `data`) dans `lx-table-column` pour insérer des données dans les colonnes, ainsi que l'attribut `label` pour définir le nom de la colonne. L'attribut `width` définit si besoin la largeur de la colonne.
 
 ```html
 <template>
@@ -151,7 +151,7 @@ Ajouter des couleurs différentes pour les lignes paires et impaires permet de l
 
 Vous pouvez mettre en valeur certaines lignes du tableau suivant leur état, comme "success", "information", "warning", "danger" et d'autres.
 
-:::demo Utilisez `row-class-name` dans `el-table` pour utiliser une fonction qui permettra ajouter des classes à certaines lignes. Vous pouvez ensuite définir les classes en question dans votre CSS.
+:::demo Utilisez `row-class-name` dans `lx-table` pour utiliser une fonction qui permettra ajouter des classes à certaines lignes. Vous pouvez ensuite définir les classes en question dans votre CSS.
 
 ```html
 <template>
@@ -223,7 +223,7 @@ Vous pouvez mettre en valeur certaines lignes du tableau suivant leur état, com
 
 Lorsqu'il y a beaucoup de lignes, il peut être utile d'avoir un header fixe afin de ne pas perdre le nom de colonnes à mesure que l'utilisateur défile vers le bas.
 
-:::demo En réglant l'attribut `height` de `el-table`, vous pouvez fixer le header sans avoir besoin de plus de code.
+:::demo En réglant l'attribut `height` de `lx-table`, vous pouvez fixer le header sans avoir besoin de plus de code.
 
 ```html
 <template>
@@ -287,7 +287,7 @@ Lorsqu'il y a beaucoup de lignes, il peut être utile d'avoir un header fixe afi
 
 Lorsque qu'il y a beaucoup de colonnes, il peut être utile d'en fixer certaines afin de ne pas perdre de vue leurs informations à mesure que l'utilisateur défile sur les cotés.
 
-:::demo Utilisez l'attribut `fixed` de `el-table-column` qui accepte un `Boolean`. Si `true`, la colonne sera fixée à gauche. Il accepte aussi les valeurs 'left' et 'right', indiquant de quel coté la colonne doit être fixée.
+:::demo Utilisez l'attribut `fixed` de `lx-table-column` qui accepte un `Boolean`. Si `true`, la colonne sera fixée à gauche. Il accepte aussi les valeurs 'left' et 'right', indiquant de quel coté la colonne doit être fixée.
 
 ```html
 <template>
@@ -460,7 +460,7 @@ Si vous avez un gros volume de données à afficher, vous pouvez fixer le header
 
 Quand les données changent dynamiquement, vous pouvez avoir besoin d'une hauteur maximale et d'afficher une barre de défilement si besoin.
 
-:::demo En utilisant l'attribut `max-height` de `el-table`, vous fixez le header. Le tableau ne défilera que si la hauteur des lignes dépasse cette hauteur maximale.
+:::demo En utilisant l'attribut `max-height` de `lx-table`, vous fixez le header. Le tableau ne défilera que si la hauteur des lignes dépasse cette hauteur maximale.
 
 ```html
 <template>
@@ -566,7 +566,7 @@ Quand les données changent dynamiquement, vous pouvez avoir besoin d'une hauteu
 
 Quand la structure du tableau est complexe, vous pouvez grouper les headers afin de montrer une hiérarchie.
 
-:::demo Placez simplement `el-table-column` dans une autre `el-table-column`, et vous grouperez ainsi les headers.
+:::demo Placez simplement `lx-table-column` dans une autre `lx-table-column`, et vous grouperez ainsi les headers.
 
 ```html
 <template>
@@ -660,7 +660,7 @@ Quand la structure du tableau est complexe, vous pouvez grouper les headers afin
 
 Vous pouvez activer la sélection d'une ligne.
 
-:::demo Activez la sélection en ajoutant l'attribut `highlight-current-row`. L'évènement `current-change` se déclenchera à chaque changement de sélection, ses paramètres étant les deux lignes avant et après le changement: `currentRow` et `oldCurrentRow`. Si vous avez besoin d'afficher l'index des lignes, ajoutez une `el-table-column` avec pour `type` la valeur `index`, qui commencera à 1.
+:::demo Activez la sélection en ajoutant l'attribut `highlight-current-row`. L'évènement `current-change` se déclenchera à chaque changement de sélection, ses paramètres étant les deux lignes avant et après le changement: `currentRow` et `oldCurrentRow`. Si vous avez besoin d'afficher l'index des lignes, ajoutez une `lx-table-column` avec pour `type` la valeur `index`, qui commencera à 1.
 
 ```html
 <template>
@@ -733,7 +733,7 @@ Vous pouvez activer la sélection d'une ligne.
 
 Vous pouvez aussi sélectionner plusieurs lignes.
 
-:::demo Ajoutez une `el-table-column` avec son `type` à `selection`. Cet exemple utilise aussi `show-overflow-tooltip`: par défaut, si le contenu est trop long, il se séparera en plusieurs lignes. Si vous souhaitez conserver une seule ligne, utilisez `show-overflow-tooltip`, qui accepte un `Boolean`. Si `true`, le contenu non affiché s'affichera dans le tooltip lorsque la souris passera sur la case.
+:::demo Ajoutez une `lx-table-column` avec son `type` à `selection`. Cet exemple utilise aussi `show-overflow-tooltip`: par défaut, si le contenu est trop long, il se séparera en plusieurs lignes. Si vous souhaitez conserver une seule ligne, utilisez `show-overflow-tooltip`, qui accepte un `Boolean`. Si `true`, le contenu non affiché s'affichera dans le tooltip lorsque la souris passera sur la case.
 
 ```html
 <template>
@@ -888,7 +888,7 @@ Il est possible de trier les données afin de trouver plus facilement ce qu'on c
 
 Vous pouvez filtrer la table pour obtenir rapidement les lignes désirées.
 
-:::demo Réglez `filters` et `filter-method` dans `el-table-column` pour rendre la colonne filtrable. `filters` prends un tableau, et `filter-method` est une fonction déterminant comment les lignes s'affichent. Lxle prend trois paramètres: `value`, `row` et `column`.
+:::demo Réglez `filters` et `filter-method` dans `lx-table-column` pour rendre la colonne filtrable. `filters` prends un tableau, et `filter-method` est une fonction déterminant comment les lignes s'affichent. Lxle prend trois paramètres: `value`, `row` et `column`.
 
 ```html
 <template>
@@ -1156,7 +1156,7 @@ Vous pouvez également personnaliser le header de la table.
 
 Lorsque le contenu d'une ligne est trop long et que vous ne souhaitez pas afficher de scrollbar, vous pouvez utiliser une ligne extensible.
 
-:::demo Activer la ligne extensible en mettant `type` à `expand` et en utilisant un slot. Le contenu de `el-table-column` sera généré quand l'extension aura lieu, et vous avez aux même attributs que pour le slot des templates de colonnes.
+:::demo Activer la ligne extensible en mettant `type` à `expand` et en utilisant un slot. Le contenu de `lx-table-column` sera généré quand l'extension aura lieu, et vous avez aux même attributs que pour le slot des templates de colonnes.
 
 ```html
 <template>
@@ -1369,7 +1369,7 @@ Lorsque le contenu d'une ligne est trop long et que vous ne souhaitez pas affich
 
 Pour les tableaux de nombres, vous pouvez ajouter une ligne en plus pour afficher la somme de chaque colonne.
 
-:::demo Mettez l'attribut `show-summary` à `true` dans `el-table`. Par défaut, la première colonne n'affiche que 'Sum' (vous pouvez configurer ce label avec `sum-text`), alors que les autres affichent la somme de chaque colonne. Vous pouvez choisir comment effectuer l'opération grâce à `summary-method`, qui doit retourner un tableau, cahque élément correspondant à la somme de chaque colonne. La deuxième table de cet exemple montre tout cela en pratique.
+:::demo Mettez l'attribut `show-summary` à `true` dans `lx-table`. Par défaut, la première colonne n'affiche que 'Sum' (vous pouvez configurer ce label avec `sum-text`), alors que les autres affichent la somme de chaque colonne. Vous pouvez choisir comment effectuer l'opération grâce à `summary-method`, qui doit retourner un tableau, cahque élément correspondant à la somme de chaque colonne. La deuxième table de cet exemple montre tout cela en pratique.
 
 ```html
 <template>
@@ -1598,7 +1598,7 @@ Vous pouvez configurer l'étendue des lignes et colonnes afin de fusionner des c
 
 Vous pouvez personnaliser les indices des colonnes de type `index`.
 
-:::demo Utilisez l'attribut `index` sur une `el-table-column` avec `type=index`. Si un nombre est assigné, tout les indices auront un décalage égal à ce nombre. Il peut aussi prendre une fonction avec chaque indice (commençant à `0`) comme paramètre, et la valeur de retour sera affichée en tant qu'indice.
+:::demo Utilisez l'attribut `index` sur une `lx-table-column` avec `type=index`. Si un nombre est assigné, tout les indices auront un décalage égal à ce nombre. Il peut aussi prendre une fonction avec chaque indice (commençant à `0`) comme paramètre, et la valeur de retour sera affichée en tant qu'indice.
 
 ```html
 <template>
@@ -1763,7 +1763,7 @@ Vous pouvez personnaliser les indices des colonnes de type `index`.
 | sort-method           | Méthode de tri, marche quand `sortable` est `true`. Doit retourner un nombre, tout comme Array.sort.                                                                                                            | function(a, b)                          | —                                                                                                                      | —                                 |
 | sort-by               | Détermine par quelle propriété effectuer le tri, marche quand `sortable` est `true` et `sort-method` est `undefined`. Si c'est un Array, sera triée par la propriété suivante si la précédente est équivalente. | function(row, index) / string / array   | —                                                                                                                      | —                                 |
 | sort-orders           | Liste des stratégies de tri, marche quand `sortable` est `true`. Accepte un tableau. Lorsque l'utilisateur clique plusieurs fois sur le header, la colonne est triée dans l'ordre des stratégies indiquée.      | array                                   | Les élements du tableau doivent être parmi: `ascending`, `descending` et `null` (restaure l'état originel du tableau). | ['ascending', 'descending', null] |
-| resizable             | Si la largeur de la colonne peut être modifiée, marche quand `border` de `el-table` est `true`.                                                                                                                 | boolean                                 | —                                                                                                                      | false                             |
+| resizable             | Si la largeur de la colonne peut être modifiée, marche quand `border` de `lx-table` est `true`.                                                                                                                 | boolean                                 | —                                                                                                                      | false                             |
 | formatter             | Fonction pour formater le contenu des cellules.                                                                                                                                                                 | function(row, column, cellValue, index) | —                                                                                                                      | —                                 |
 | show-overflow-tooltip | Si du contenu trop long doit être caché et affiché dans une tooltip quand la souris passe sur la cellule.                                                                                                       | boolean                                 | —                                                                                                                      | false                             |
 | align                 | Alignement.                                                                                                                                                                                                     | string                                  | left / center / right                                                                                                  | left                              |

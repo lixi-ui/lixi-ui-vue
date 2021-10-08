@@ -241,12 +241,12 @@ export default defineComponent({
       validateError: false,
       zIndex: PopupManager.nextZIndex(),
     })
-    const icon = computed(() => state.iconClass || (state.type && TypeMap[state.type] ? `el-icon-${TypeMap[state.type]}` : ''))
+    const icon = computed(() => state.iconClass || (state.type && TypeMap[state.type] ? `lx-icon-${TypeMap[state.type]}` : ''))
     const hasMessage = computed(() => !!state.message)
     const inputRef = ref<ComponentPublicInstance>(null)
     const confirmRef = ref<ComponentPublicInstance>(null)
 
-    const confirmButtonClasses = computed(() => `el-button--primary ${state.confirmButtonClass}`)
+    const confirmButtonClasses = computed(() => `lx-button--primary ${state.confirmButtonClass}`)
 
     watch(() => state.inputValue, async val => {
       await nextTick()

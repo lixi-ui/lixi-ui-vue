@@ -6,7 +6,7 @@ Un groupe d'options à choix multiples.
 
 Checkbox peut être utilisé seul pour switcher entre deux états.
 
-:::demo Définissez `v-model` (variable liée) dans `el-checkbox`. La valeur par défaut est un `Boolean` pour une seule `checkbox` et devient `true` quand elle est sélectionnée. Le contenu à l'intérieur de la balise `el-checkbox` deviendra le label du bouton de la checkbox.
+:::demo Définissez `v-model` (variable liée) dans `lx-checkbox`. La valeur par défaut est un `Boolean` pour une seule `checkbox` et devient `true` quand elle est sélectionnée. Le contenu à l'intérieur de la balise `lx-checkbox` deviendra le label du bouton de la checkbox.
 
 ```html
 <template>
@@ -121,7 +121,7 @@ La checkbox peut être désactivée.
 
 Utile pour grouper des checkbox, indiquant si une option est sélectionnée en vérifiant la case en question.
 
-:::demo L'élément `checkbox-group` peut gérer plusieurs checkbox d'un groupe en utilisant `v-model`, qui sera un `Array`. Dans l'élément `el-checkbox`, `label` est la valeur de la checkbox. S'il n'y a aucun contenu dans la balise, `label` sera également la description de la checkbox. `label` correspond aussi aux valeurs des éléments dans le tableau. Il est sélectionné si la valeur spécifiée existe dans le tableau, et vice-versa.
+:::demo L'élément `checkbox-group` peut gérer plusieurs checkbox d'un groupe en utilisant `v-model`, qui sera un `Array`. Dans l'élément `lx-checkbox`, `label` est la valeur de la checkbox. S'il n'y a aucun contenu dans la balise, `label` sera également la description de la checkbox. `label` correspond aussi aux valeurs des éléments dans le tableau. Il est sélectionné si la valeur spécifiée existe dans le tableau, et vice-versa.
 
 ```html
 <template>
@@ -291,7 +291,7 @@ Les propriétés `min` et `max` permettent de limiter la quantité d'éléments 
 
 Des checkbox avec une apparence de bouton.
 
-:::demo Il vous suffit de changer `el-checkbox` en `el-checkbox-button`. Il existe aussi un attribut `size`.
+:::demo Il vous suffit de changer `lx-checkbox` en `lx-checkbox-button`. Il existe aussi un attribut `size`.
 ```html
 <template>
   <div>

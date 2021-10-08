@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="['lx-upload', `el-upload--${listType}`]"
+    :class="['lx-upload', `lx-upload--${listType}`]"
     tabindex="0"
     @click="handleClick"
     @keydown.self.enter.space="handleKeydown"

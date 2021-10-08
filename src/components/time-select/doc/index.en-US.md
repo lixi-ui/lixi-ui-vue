@@ -6,7 +6,7 @@ Use Time Select for time input.
 
 Provide a list of fixed time for users to choose.
 
-:::demo Use `el-time-select` label, then assign start time, end time and time step with `start`, `end` and `step`.
+:::demo Use `lx-time-select` label, then assign start time, end time and time step with `start`, `end` and `step`.
 ```html
 <lx-time-select
   v-model="value"

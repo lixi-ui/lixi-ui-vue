@@ -250,7 +250,7 @@ Ces composants utilisent flexbox, assurez vous que le navigateur supporte cette 
 ### Attributs de Container
 | Attribut      | Description          | Type      | Valeurs acceptées       | Défaut  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| direction | Direction d'affichage pour les éléments enfants. | string | horizontal / vertical | vertical quand dans `el-header` ou `el-footer`; horizontal sinon |
+| direction | Direction d'affichage pour les éléments enfants. | string | horizontal / vertical | vertical quand dans `lx-header` ou `lx-footer`; horizontal sinon |
 
 ### Attributs de Header
 | Attribut      | Description          | Type      | Valeurs acceptées       | Défaut  |

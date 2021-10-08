@@ -12,7 +12,7 @@
       ref="popper"
       v-model:visible="dropdownMenuVisible"
       :append-to-body="popperAppendToBody"
-      :popper-class="`el-select-v2__popper ${popperClass}`"
+      :popper-class="`lx-select-v2__popper ${popperClass}`"
       :gpu-acceleration="false"
       :stop-popper-mouse-event="false"
       :popper-options="popperOptions"
@@ -203,7 +203,7 @@
             <i v-show="!showClearBtn" :class="['lx-select-v2__caret', 'lx-input__icon', 'lx-icon-' + iconClass]"></i>
             <i
               v-if="showClearBtn"
-              :class="`el-select-v2__caret lx-input__icon ${clearIcon}`"
+              :class="`lx-select-v2__caret lx-input__icon ${clearIcon}`"
               @click.prevent.stop="handleClear"
             ></i>
           </span>

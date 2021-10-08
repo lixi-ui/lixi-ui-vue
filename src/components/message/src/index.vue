@@ -5,7 +5,7 @@
       :id="id"
       :class="[
         'lx-message',
-        type && !iconClass ? `el-message--${type}` : '',
+        type && !iconClass ? `lx-message--${type}` : '',
         center ? 'is-center' : '',
         showClose ? 'is-closable' : '',
         customClass,
@@ -68,7 +68,7 @@ export default defineComponent({
     const typeClass = computed(() => {
       const type = !props.iconClass && props.type
       return type && TypeMap[type]
-        ? `el-icon-${TypeMap[type]}`
+        ? `lx-icon-${TypeMap[type]}`
         : ''
     })
     const customStyle = computed(() => {

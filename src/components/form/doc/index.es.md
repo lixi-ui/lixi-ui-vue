@@ -622,7 +622,7 @@ Se debe llamar a la función de validación de llamada de retorno personalizada.
 
 :::tip
 
-Cuando un `el-form-item` está anidado en otro `el-form-item`, su ancho de etiqueta será 0. Si es necesario, puede establecer el ancho de etiqueta en ese `el-form-item`.
+Cuando un `lx-form-item` está anidado en otro `lx-form-item`, su ancho de etiqueta será 0. Si es necesario, puede establecer el ancho de etiqueta en ese `lx-form-item`.
 
 :::
 

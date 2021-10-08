@@ -4,7 +4,7 @@
 
 ### 基本的な使い方
 
-:::demo `v-model` は現在セレクトされている `el-option` の値である。
+:::demo `v-model` は現在セレクトされている `lx-option` の値である。
 
 ```html
 <template>
@@ -48,7 +48,7 @@
 
 ### オプションの無効化
 
-:::demo オプションを無効にするには、`el-option` の `disabled` の値を `true` に設定する。
+:::demo オプションを無効にするには、`lx-option` の `disabled` の値を `true` に設定する。
 
 ```html
 <template>
@@ -96,7 +96,7 @@
 
 コンポーネント全体を無効にします。
 
-:::demo `el-select` の `disabled` を設定すると無効になります。
+:::demo `lx-select` の `disabled` を設定すると無効になります。
 ```html
 <template>
   <lx-select v-model="value" disabled placeholder="Select">
@@ -141,7 +141,7 @@
 
 セレクトはクリアアイコンでクリアできます。
 
-:::demo `el-select` に `clearable` 属性を設定すると、クリアアイコンが表示されるようになる。なお、`clearable`はシングルセレクトの場合のみ有効である。
+:::demo `lx-select` に `clearable` 属性を設定すると、クリアアイコンが表示されるようになる。なお、`clearable`はシングルセレクトの場合のみ有効である。
 ```html
 <template>
   <lx-select v-model="value" clearable placeholder="Select">
@@ -186,7 +186,7 @@
 
 複数セレクトは、セレクトされたオプションを表示するためにタグを使用します。
 
-:::demo 複数モードを有効にするには、`el-select` に `multiple` 属性を設定する。この場合、`v-model` の値はセレクトされたオプションの配列となる。デフォルトでは、セレクトされたオプションはタグとして表示される。collapse-tags` 属性を用いることで、それらをテキストに折りたたむことができる。
+:::demo 複数モードを有効にするには、`lx-select` に `multiple` 属性を設定する。この場合、`v-model` の値はセレクトされたオプションの配列となる。デフォルトでは、セレクトされたオプションはタグとして表示される。collapse-tags` 属性を用いることで、それらをテキストに折りたたむことができる。
 ```html
 <template>
   <lx-select v-model="value1" multiple placeholder="Select">
@@ -246,7 +246,7 @@
 
 オプションのHTMLテンプレートをカスタマイズすることができます。
 
-:::demo カスタマイズしたHTMLテンプレートを `el-option` のスロットに挿入します。
+:::demo カスタマイズしたHTMLテンプレートを `lx-option` のスロットに挿入します。
 
 ```html
 <template>
@@ -297,7 +297,7 @@
 
 グループのオプションを表示します。
 
-:::demo オプションをグループ化するには `el-option-group` を用い、その `label` 属性はグループ名を表す。
+:::demo オプションをグループ化するには `lx-option-group` を用い、その `label` 属性はグループ名を表す。
 
 ```html
 <template>
@@ -357,7 +357,7 @@
 
 ご希望のオプションをフィルタリングすることができます。
 
-:::demo `el-select` に `filterable` を追加すると、フィルタリングが可能になる。デフォルトでは、セレクト肢は `label` 属性に入力値が含まれるすべてのオプションを検索する。他のフィルタリング方法を使いたい場合は、`filter-method`を渡すことができる。`filter-method` は入力値が変更されたときに呼び出される `Function` であり、そのパラメータは現在の入力値である。
+:::demo `lx-select` に `filterable` を追加すると、フィルタリングが可能になる。デフォルトでは、セレクト肢は `label` 属性に入力値が含まれるすべてのオプションを検索する。他のフィルタリング方法を使いたい場合は、`filter-method`を渡すことができる。`filter-method` は入力値が変更されたときに呼び出される `Function` であり、そのパラメータは現在の入力値である。
 ```html
 <template>
   <lx-select v-model="value" filterable placeholder="Select">
@@ -402,7 +402,7 @@
 
 サーバーからキーワードや検索データを入力します。
 
-:::demo リモート検索を有効にするには `filterable` と `remote` を `true` を設定し、`remote-method` を渡す必要がある。`remote-method`は入力値が変化したときに呼び出される `Function` であり、そのパラメータは現在の入力値である。もし `el-option` が `v-for` ディレクティブでレンダリングされている場合は、`el-option` に `key` 属性を追加しなければならないことに注意してください。その値は、以下の例の `item.value` のように一意である必要があります。
+:::demo リモート検索を有効にするには `filterable` と `remote` を `true` を設定し、`remote-method` を渡す必要がある。`remote-method`は入力値が変化したときに呼び出される `Function` であり、そのパラメータは現在の入力値である。もし `lx-option` が `v-for` ディレクティブでレンダリングされている場合は、`lx-option` に `key` 属性を追加しなければならないことに注意してください。その値は、以下の例の `item.value` のように一意である必要があります。
 
 ```html
 <template>

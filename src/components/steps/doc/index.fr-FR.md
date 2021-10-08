@@ -98,7 +98,7 @@ Une grande variété d'icônes peut être utilisée dans la barre d'étapes.
 
 La barre d'étape peut être affichée de manière verticale.
 
-:::demo Mettez simplement l'attribut `direction` à ` vertical` dans l'élément `el-steps`.
+:::demo Mettez simplement l'attribut `direction` à ` vertical` dans l'élément `lx-steps`.
 
 ```html
 <div style="height: 300px;">

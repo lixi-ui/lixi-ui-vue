@@ -3800,7 +3800,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 `CascaderPanel` est le composant principal de` Cascader`. Il comporte diverses fonctionnalités telles que la sélection unique, la sélection multiple, le chargement dynamique, etc.
 
-:::demo Tout comme `el-cascader`, vous pouvez définir des options alternatives par `options`, et activer d'autres fonctionnalités par `props`, voir le formulaire d'API ci-dessous pour plus de détails.
+:::demo Tout comme `lx-cascader`, vous pouvez définir des options alternatives par `options`, et activer d'autres fonctionnalités par `props`, voir le formulaire d'API ci-dessous pour plus de détails.
 ```html
 <lx-cascader-panel :options="options"></lx-cascader-panel>
 

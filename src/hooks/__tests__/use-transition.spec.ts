@@ -53,7 +53,7 @@ describe('use-transition', () => {
 
   it('should render correctly', async () => {
     expect(wrapper.find('.content').text()).toBe(
-      `el-transition--${transitionHide}`,
+      `lx-transition--${transitionHide}`,
     )
     expect(
       getCssVariable(
@@ -65,20 +65,20 @@ describe('use-transition', () => {
 
   it('should be able to update transition class', async () => {
     expect(wrapper.find('.content').text()).toBe(
-      `el-transition--${transitionHide}`,
+      `lx-transition--${transitionHide}`,
     )
 
     await wrapper.find('.toggle').trigger('click') // this tick indicator gets changed
     await nextTick() // this tick the inner value transitionState gets changed
     await nextTick() // this tick the computed value gets updated
     expect(wrapper.find('.content').text()).toBe(
-      `el-transition--${transitionShow}`,
+      `lx-transition--${transitionShow}`,
     )
   })
 
   it('should be able to change the transition duration via props', async () => {
     expect(wrapper.find('.content').text()).toBe(
-      `el-transition--${transitionHide}`,
+      `lx-transition--${transitionHide}`,
     )
     expect(
       getCssVariable(

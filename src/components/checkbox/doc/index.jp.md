@@ -6,7 +6,7 @@
 
 checkbox単独で使用して2つの状態を切り替えることができます。
 
-:::demo `el-checkbox` の `v-model` バインド変数)を定義する。デフォルト値は単一の `checkbox` の場合、 `Boolean` で、チェックを選択した場合は `true` になります。el-checkbox`タグ内の内容は、checkboxのボタンに続く説明文になります。
+:::demo `lx-checkbox` の `v-model` バインド変数)を定義する。デフォルト値は単一の `checkbox` の場合、 `Boolean` で、チェックを選択した場合は `true` になります。el-checkbox`タグ内の内容は、checkboxのボタンに続く説明文になります。
 
 ```html
 <template>
@@ -121,7 +121,7 @@ checkboxを無効にした状態。
 
 1つのグループに固定された複数のcheckboxに使用され、選択肢が選択されているかどうかをチェックして表示します。
 
-:::demo `checkbox-group` 要素は `Array` としてバインドされた `v-model` を用いて複数のcheckboxを一つのグループにまとめて管理することができる。`el-checkbox` 要素の内部では、`label` がcheckboxの値である。このタグにコンテンツが入れ子になっていない場合、`label` はcheckboxのボタンに続く説明文としてレンダリングされます。`label` は配列の要素の値にも対応する。 指定された値が配列に存在する場合は選択され、その逆(指定されていない値は選択されない)も同様である。
+:::demo `checkbox-group` 要素は `Array` としてバインドされた `v-model` を用いて複数のcheckboxを一つのグループにまとめて管理することができる。`lx-checkbox` 要素の内部では、`label` がcheckboxの値である。このタグにコンテンツが入れ子になっていない場合、`label` はcheckboxのボタンに続く説明文としてレンダリングされます。`label` は配列の要素の値にも対応する。 指定された値が配列に存在する場合は選択され、その逆(指定されていない値は選択されない)も同様である。
 
 ```html
 <template>

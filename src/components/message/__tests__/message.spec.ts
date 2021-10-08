@@ -92,7 +92,7 @@ describe('Message.vue', () => {
         const wrapper = _mount({ props: { type } })
 
         const renderedClasses = wrapper.find('.lx-message__icon').classes()
-        expect(renderedClasses).toContain(`el-icon-${type}`)
+        expect(renderedClasses).toContain(`lx-icon-${type}`)
       }
     })
 
@@ -100,7 +100,7 @@ describe('Message.vue', () => {
       const type = 'some-type'
       const wrapper = _mount({ props: { type } })
 
-      expect(wrapper.find(`el-icon-${type}`).exists()).toBe(false)
+      expect(wrapper.find(`lx-icon-${type}`).exists()).toBe(false)
     })
   })
 

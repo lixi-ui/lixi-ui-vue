@@ -73,9 +73,9 @@ export default defineComponent({
       const { type, hit, effect } = props
       return [
         'lx-tag',
-        type ? `el-tag--${type}` : '',
-        tagSize.value ? `el-tag--${tagSize.value}` : '',
-        effect ? `el-tag--${effect}` : '',
+        type ? `lx-tag--${type}` : '',
+        tagSize.value ? `lx-tag--${tagSize.value}` : '',
+        effect ? `lx-tag--${effect}` : '',
         hit && 'is-hit',
       ]
     })

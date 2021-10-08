@@ -4,7 +4,7 @@ Presenta una serie de imágenes o textos en un espacio limitado
 
 ### Uso básico
 
-:::demo Combine `el-carousel`  con `el-carousel-item`, para conseguir el carrusel. Lx contenido de cada diapositiva es completamente personalizable, y sólo tiene que colocarla dentro de la etiqueta  `el-carousel-item` . Por defecto, el carrusel cambia cuando el ratón pasa por encima de un indicador. Fije  `trigger`  para  `click`, si lo que se desea es que el carrusel cambie sólo cuando se haga clic en un indicador.
+:::demo Combine `lx-carousel`  con `lx-carousel-item`, para conseguir el carrusel. Lx contenido de cada diapositiva es completamente personalizable, y sólo tiene que colocarla dentro de la etiqueta  `lx-carousel-item` . Por defecto, el carrusel cambia cuando el ratón pasa por encima de un indicador. Fije  `trigger`  para  `click`, si lo que se desea es que el carrusel cambie sólo cuando se haga clic en un indicador.
 
 ```html
 <template>
@@ -206,7 +206,7 @@ Por defecto, `direction` es `horizontal`. Lx carousel puede ser mostrado de form
 ### Metodos de Carousel
 | Metodos       | Descripción                | Parámetros                                                   |
 | ------------- | -------------------------- | ------------------------------------------------------------ |
-| setActiveItem | Cambio manual de slider    | indice del slider al que se va a cambiar, empezando por 0; o el `name` del `el-carousel-item` correspondiente |
+| setActiveItem | Cambio manual de slider    | indice del slider al que se va a cambiar, empezando por 0; o el `name` del `lx-carousel-item` correspondiente |
 | prev          | Cambia al slider anterior  | —                                                            |
 | next          | Cambia al slider siguiente | —                                                            |
 

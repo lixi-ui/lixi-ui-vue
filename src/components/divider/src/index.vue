@@ -1,5 +1,5 @@
 <template>
-  <div :class="['lx-divider', `el-divider--${direction}`]">
+  <div :class="['lx-divider', `lx-divider--${direction}`]">
     <div
       v-if="$slots.default && direction !== 'vertical'"
       :class="['lx-divider__text', `is-${contentPosition}`]"

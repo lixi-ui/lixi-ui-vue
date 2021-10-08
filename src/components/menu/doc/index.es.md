@@ -96,7 +96,7 @@ Top bar NavMenu puede ser usado en distinto escenarios.
 
 NavMenu vertical con sub-menús.
 
-:::demo Puede utilizar el componente `el-menu-item-group` para crear un grupo de menú, y el nombre del grupo estará determinado por la propiedad `title` o la propiedad `slot`.
+:::demo Puede utilizar el componente `lx-menu-item-group` para crear un grupo de menú, y el nombre del grupo estará determinado por la propiedad `title` o la propiedad `slot`.
 
 ```html
 <lx-row class="tac">

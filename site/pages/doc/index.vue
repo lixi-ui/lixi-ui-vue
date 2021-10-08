@@ -12,7 +12,7 @@
       </div> 
       <ul>
         <li class="doc-li" v-for="(item, index) in docRouter" :key="index">
-          <router-link :to="item.path" activeClass='active-menu'>{{ item.name }}</router-link>
+          <router-link :to="item.path" activeClass='active-menu'>{{ item.title }}</router-link>
         </li>
         <!-- <li class="doc-li">
           <router-link to="/doc/button" activeClass='active-menu'>button</router-link>

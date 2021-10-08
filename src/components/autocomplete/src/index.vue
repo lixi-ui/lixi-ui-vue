@@ -3,7 +3,7 @@
     ref="popper"
     v-model:visible="suggestionVisible"
     :placement="placement"
-    :popper-class="`el-autocomplete__popper ${popperClass}`"
+    :popper-class="`lx-autocomplete__popper ${popperClass}`"
     :append-to-body="popperAppendToBody"
     pure
     manual-mode
@@ -178,7 +178,7 @@ export default defineComponent({
     const popper = ref(null)
 
     const id = computed(() => {
-      return `el-autocomplete-${generateId()}`
+      return `lx-autocomplete-${generateId()}`
     })
     const suggestionVisible = computed(() => {
       const isValidData = isArray(suggestions.value) && suggestions.value.length > 0

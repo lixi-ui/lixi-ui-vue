@@ -6,11 +6,11 @@
     <div
       role="tab"
       :aria-expanded="isActive"
-      :aria-controls="`el-collapse-content-${id}`"
-      :aria-describedby="`el-collapse-content-${id}`"
+      :aria-controls="`lx-collapse-content-${id}`"
+      :aria-describedby="`lx-collapse-content-${id}`"
     >
       <div
-        :id="`el-collapse-head-${id}`"
+        :id="`lx-collapse-head-${id}`"
         class="lx-collapse-item__header"
         role="button"
         :tabindex="disabled ? -1 : 0"
@@ -34,11 +34,11 @@
     <lx-collapse-transition>
       <div
         v-show="isActive"
-        :id="`el-collapse-content-${id}`"
+        :id="`lx-collapse-content-${id}`"
         class="lx-collapse-item__wrap"
         role="tabpanel"
         :aria-hidden="!isActive"
-        :aria-labelledby="`el-collapse-head-${id}`"
+        :aria-labelledby="`lx-collapse-head-${id}`"
       >
         <div class="lx-collapse-item__content">
           <slot></slot>

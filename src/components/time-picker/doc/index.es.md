@@ -6,7 +6,7 @@ Use el Time Picker para input de tipo time.
 
 Un tiempo arbitrario puede ser escogido.
 
-:::demo Al usar el tag `el-time-picker`, es posible limitar el rango de tiempo al especificar `disabledHours` `disabledMinutes` `disabledSeconds`. Por defecto, es posible hacer scroll con la rueda del mouse para escoger el tiempo, alternativamente se pueden utilizar las flechas de control cuando el atributo `arrow-control` esté establecido.
+:::demo Al usar el tag `lx-time-picker`, es posible limitar el rango de tiempo al especificar `disabledHours` `disabledMinutes` `disabledSeconds`. Por defecto, es posible hacer scroll con la rueda del mouse para escoger el tiempo, alternativamente se pueden utilizar las flechas de control cuando el atributo `arrow-control` esté establecido.
 
 ```html
 <template>

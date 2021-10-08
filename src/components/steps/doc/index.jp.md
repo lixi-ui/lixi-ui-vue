@@ -98,7 +98,7 @@
 
 垂直方向のステップバー
 
-:::demo `el-steps` 要素で `direction` 属性を` vertical` に設定するだけです。
+:::demo `lx-steps` 要素で `direction` 属性を` vertical` に設定するだけです。
 
 ```html
 <div style="height: 300px;">

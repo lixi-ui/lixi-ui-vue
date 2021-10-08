@@ -22,7 +22,7 @@
       :disabled="item.disabled"
     />
     <template #prefix>
-      <i :class="`el-input__icon ${prefixIcon}`"></i>
+      <i :class="`lx-input__icon ${prefixIcon}`"></i>
     </template>
   </lx-select>
 </template>

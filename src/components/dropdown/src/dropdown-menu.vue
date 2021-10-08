@@ -1,7 +1,7 @@
 <template>
   <ul
     v-clickOutside:[triggerElm]="innerHide"
-    :class="[size && `el-dropdown-menu--${size}`]"
+    :class="[size && `lx-dropdown-menu--${size}`]"
     class="lx-dropdown-menu"
     @mouseenter.stop="show"
     @mouseleave.stop="hide"

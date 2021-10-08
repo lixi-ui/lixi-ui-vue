@@ -5,7 +5,7 @@
     manual-mode
     :append-to-body="popperAppendToBody"
     placement="bottom-start"
-    :popper-class="`el-cascader__dropdown ${popperClass}`"
+    :popper-class="`lx-cascader__dropdown ${popperClass}`"
     :popper-options="popperOptions"
     :fallback-placements="['bottom-start', 'top-start', 'right', 'left']"
     :stop-popper-mouse-event="false"
@@ -20,7 +20,7 @@
         v-clickoutside:[popperPaneRef]="() => togglePopperVisible(false)"
         :class="[
           'lx-cascader',
-          realSize && `el-cascader--${realSize}`,
+          realSize && `lx-cascader--${realSize}`,
           { 'is-disabled': isDisabled }
         ]"
         @click="() => togglePopperVisible(readonly ? undefined : true)"

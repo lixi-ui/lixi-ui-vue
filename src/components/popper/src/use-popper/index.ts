@@ -41,7 +41,7 @@ export default function(
   const triggerRef = ref(null) as Ref<ElementType>
   const popperRef = ref<RefElement>(null)
 
-  const popperId = `el-popper-${generateId()}`
+  const popperId = `lx-popper-${generateId()}`
   let popperInstance: Nullable<PopperInstance> = null
   let showTimer: Nullable<TimeoutHandle> = null
   let hideTimer: Nullable<TimeoutHandle> = null

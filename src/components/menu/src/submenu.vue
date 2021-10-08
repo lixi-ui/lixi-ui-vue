@@ -382,7 +382,7 @@ export default defineComponent({
         default: () => h('div', {
           ref: 'menu',
           class: [
-            `el-menu--${this.mode}`,
+            `lx-menu--${this.mode}`,
             this.popperClass,
           ],
           onMouseenter: ($event: Event) => this.handleMouseenter($event, 100),
@@ -392,7 +392,7 @@ export default defineComponent({
           h('ul', {
             class: [
               'lx-menu lx-menu--popup',
-              `el-menu--popup-${this.data.currentPlacement}`,
+              `lx-menu--popup-${this.data.currentPlacement}`,
             ],
             style: ulStyle,
           }, [this.$slots.default?.()]),

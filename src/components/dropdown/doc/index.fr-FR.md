@@ -364,7 +364,7 @@ En plus de la taille par défaut, le composant Dropdown propose trois autres tai
 
 | Nom | Description |
 |------|--------|
-| — | Contenu du Dropdown. Note: doit être un élément du DOM valide (ex. `<span>, <button> etc.`) ou `el-component`, pour y attacher un évènement.  |
+| — | Contenu du Dropdown. Note: doit être un élément du DOM valide (ex. `<span>, <button> etc.`) ou `lx-component`, pour y attacher un évènement.  |
 | dropdown | Contenu du menu du Dropdown, en général un élément `<lx-dropdown-menu>`. |
 
 ### Évènements du Dropdown

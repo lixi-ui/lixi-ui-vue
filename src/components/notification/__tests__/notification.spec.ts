@@ -137,7 +137,7 @@ describe('Notification.vue', () => {
           },
         })
         expect(wrapper.find('.lx-notification__icon').classes()).toContain(
-          `el-icon-${type}`,
+          `lx-icon-${type}`,
         )
       }
     })
@@ -151,7 +151,7 @@ describe('Notification.vue', () => {
       })
 
       expect(wrapper.find('.lx-notification__icon').classes()).not.toContain(
-        `el-icon-${type}`,
+        `lx-icon-${type}`,
       )
     })
   })

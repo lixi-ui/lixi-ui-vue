@@ -1031,7 +1031,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 ### Limpiable
 
-Establezca el atributo `clearable` para `el-cascader` y aparecerá un icono de borrado cuando se seleccione y se pase el ratón por encima.
+Establezca el atributo `clearable` para `lx-cascader` y aparecerá un icono de borrado cuando se seleccione y se pase el ratón por encima.
 
 :::demo
 ```html
@@ -2819,7 +2819,7 @@ export default defineComponent({
 
 Buscar y seleccionar opciones con una palabra clave.
 
-:::demo Añadir `filtrable` a `el-cascader` permite el filtrado. Cascader hará coincidir los nodos cuya etiqueta o etiqueta de padre (de acuerdo con `show-all-levels`) incluya una palabra clave de entrada. Por supuesto, puedes personalizar la lógica de búsqueda mediante el `filter-method` que acepta una función, el primer parámetro es `nodo`, el segundo es `keyword`, y necesitas devolver un valor booleano que indique si da en el blanco.
+:::demo Añadir `filtrable` a `lx-cascader` permite el filtrado. Cascader hará coincidir los nodos cuya etiqueta o etiqueta de padre (de acuerdo con `show-all-levels`) incluya una palabra clave de entrada. Por supuesto, puedes personalizar la lógica de búsqueda mediante el `filter-method` que acepta una función, el primer parámetro es `nodo`, el segundo es `keyword`, y necesitas devolver un valor booleano que indique si da en el blanco.
 
 ```html
 <div class="block">
@@ -3837,7 +3837,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 `CascaderPanel` es el componente central de `Cascader` que tiene varias características como selección única, selección múltiple, carga dinámica, etc.
 
-:::demo Al igual que `el-cascader`, puede establecer opciones alternativas mediante `options`, y habilitar otras características mediante `props`, consulte el formulario de la API a continuación para obtener más detalles.
+:::demo Al igual que `lx-cascader`, puede establecer opciones alternativas mediante `options`, y habilitar otras características mediante `props`, consulte el formulario de la API a continuación para obtener más detalles.
 ```html
 <lx-cascader-panel :options="options"></lx-cascader-panel>
 

@@ -116,7 +116,7 @@
 
 複数行のテキストを表示し、そのフォーマットを設定します。
 
-:::demo `el-tooltip` の `content` という名前のスロットを追加して `el-tooltip` の `content` 属性をオーバーライドします。
+:::demo `lx-tooltip` の `content` という名前のスロットを追加して `lx-tooltip` の `content` 属性をオーバーライドします。
 ```html
 <lx-tooltip placement="top">
   <template #content>

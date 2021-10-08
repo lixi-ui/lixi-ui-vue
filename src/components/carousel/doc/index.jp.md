@@ -4,7 +4,7 @@
 
 ### 基本的な使い方
 
-:::demo `el-carousel` と `el-carousel-item` を組み合わせれば、carouselができあがります。各スライドの内容は完全にカスタマイズ可能で、`el-carousel-item`タグの中に配置するだけです。デフォルトでは、マウスがインジケータの上にカーソルを置くとcarouselが切り替わります。`trigger`を`click`に設定すると、インジケータがクリックされたときだけcarouselが切り替わります。
+:::demo `lx-carousel` と `lx-carousel-item` を組み合わせれば、carouselができあがります。各スライドの内容は完全にカスタマイズ可能で、`lx-carousel-item`タグの中に配置するだけです。デフォルトでは、マウスがインジケータの上にカーソルを置くとcarouselが切り替わります。`trigger`を`click`に設定すると、インジケータがクリックされたときだけcarouselが切り替わります。
 ```html
 <template>
   <div class="block">
@@ -202,7 +202,7 @@
 ### carouselメソッド
 | Method | Description | Parameters |
 |---------- |-------------- | -- |
-| setActiveItem | 手動でスライドを切り替える | index of the slide to be switched to, starting from 0; or the `name` of corresponding `el-carousel-item` |
+| setActiveItem | 手動でスライドを切り替える | index of the slide to be switched to, starting from 0; or the `name` of corresponding `lx-carousel-item` |
 | prev | 前のスライドに切り替える | — |
 | next | 次のスライドに移る | — |
 

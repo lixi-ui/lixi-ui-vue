@@ -5,7 +5,7 @@
 ### 基础用法
 
 适用广泛的基础单选
-:::demo `v-model`的值为当前被选中的`el-option`的 value 属性值
+:::demo `v-model`的值为当前被选中的`lx-option`的 value 属性值
 ```html
 <template>
   <lx-select v-model="value" placeholder="请选择">
@@ -48,7 +48,7 @@
 
 ### 有禁用选项
 
-:::demo 在`el-option`中，设定`disabled`值为 true，即可禁用该选项
+:::demo 在`lx-option`中，设定`disabled`值为 true，即可禁用该选项
 ```html
 <template>
   <lx-select v-model="value" placeholder="请选择">
@@ -95,7 +95,7 @@
 
 选择器不可用状态
 
-:::demo 为`el-select`设置`disabled`属性，则整个选择器不可用
+:::demo 为`lx-select`设置`disabled`属性，则整个选择器不可用
 ```html
 <template>
   <lx-select v-model="value" disabled placeholder="请选择">
@@ -140,7 +140,7 @@
 
 包含清空按钮，可将选择器清空为初始状态
 
-:::demo 为`el-select`设置`clearable`属性，则可将选择器清空。需要注意的是，`clearable`属性仅适用于单选。
+:::demo 为`lx-select`设置`clearable`属性，则可将选择器清空。需要注意的是，`clearable`属性仅适用于单选。
 ```html
 <template>
   <lx-select v-model="value" clearable placeholder="请选择">
@@ -185,7 +185,7 @@
 
 适用性较广的基础多选，用 Tag 展示已选项
 
-:::demo 为`el-select`设置`multiple`属性即可启用多选，此时`v-model`的值为当前选中值所组成的数组。默认情况下选中值会以 Tag 的形式展现，你也可以设置`collapse-tags`属性将它们合并为一段文字。
+:::demo 为`lx-select`设置`multiple`属性即可启用多选，此时`v-model`的值为当前选中值所组成的数组。默认情况下选中值会以 Tag 的形式展现，你也可以设置`collapse-tags`属性将它们合并为一段文字。
 ```html
 <template>
   <lx-select v-model="value1" multiple placeholder="请选择">
@@ -245,7 +245,7 @@
 
 可以自定义备选项
 
-:::demo 将自定义的 HTML 模板插入`el-option`的 slot 中即可。
+:::demo 将自定义的 HTML 模板插入`lx-option`的 slot 中即可。
 ```html
 <template>
   <lx-select v-model="value" placeholder="请选择">
@@ -295,7 +295,7 @@
 
 备选项进行分组展示
 
-:::demo 使用`el-option-group`对备选项进行分组，它的`label`属性为分组名
+:::demo 使用`lx-option-group`对备选项进行分组，它的`label`属性为分组名
 ```html
 <template>
   <lx-select v-model="value" placeholder="请选择">
@@ -354,7 +354,7 @@
 
 可以利用搜索功能快速查找选项
 
-:::demo 为`el-select`添加`filterable`属性即可启用搜索功能。默认情况下，Select 会找出所有`label`属性包含输入值的选项。如果希望使用其他的搜索逻辑，可以通过传入一个`filter-method`来实现。`filter-method`为一个`Function`，它会在输入值发生变化时调用，参数为当前输入值。
+:::demo 为`lx-select`添加`filterable`属性即可启用搜索功能。默认情况下，Select 会找出所有`label`属性包含输入值的选项。如果希望使用其他的搜索逻辑，可以通过传入一个`filter-method`来实现。`filter-method`为一个`Function`，它会在输入值发生变化时调用，参数为当前输入值。
 ```html
 <template>
   <lx-select v-model="value" filterable placeholder="请选择">
@@ -398,7 +398,7 @@
 ### 远程搜索
 
 从服务器搜索数据，输入关键字进行查找
-:::demo 为了启用远程搜索，需要将`filterable`和`remote`设置为`true`，同时传入一个`remote-method`。`remote-method`为一个`Function`，它会在输入值发生变化时调用，参数为当前输入值。需要注意的是，如果`el-option`是通过`v-for`指令渲染出来的，此时需要为`el-option`添加`key`属性，且其值需具有唯一性，比如此例中的`item.value`。
+:::demo 为了启用远程搜索，需要将`filterable`和`remote`设置为`true`，同时传入一个`remote-method`。`remote-method`为一个`Function`，它会在输入值发生变化时调用，参数为当前输入值。需要注意的是，如果`lx-option`是通过`v-for`指令渲染出来的，此时需要为`lx-option`添加`key`属性，且其值需具有唯一性，比如此例中的`item.value`。
 ```html
 <template>
   <lx-select

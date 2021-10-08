@@ -1,5 +1,5 @@
 <template>
-  <div :class="['lx-steps', simple ? 'lx-steps--simple' : `el-steps--${direction}`]">
+  <div :class="['lx-steps', simple ? 'lx-steps--simple' : `lx-steps--${direction}`]">
     <slot></slot>
   </div>
 </template>

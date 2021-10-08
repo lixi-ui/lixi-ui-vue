@@ -4,7 +4,7 @@ Utile lorsqu'il faut sélectionner des options parmi un large choix, affiché gr
 
 ### Usage
 
-:::demo `v-model` est la valeur du `el-option` sélectionné.
+:::demo `v-model` est la valeur du `lx-option` sélectionné.
 
 ```html
 <template>
@@ -48,7 +48,7 @@ Utile lorsqu'il faut sélectionner des options parmi un large choix, affiché gr
 
 ### Option désactivée
 
-:::demo Mettez l'attribut `disabled` dans `el-option` à `true` pour désactiver cette option.
+:::demo Mettez l'attribut `disabled` dans `lx-option` à `true` pour désactiver cette option.
 
 ```html
 <template>
@@ -96,7 +96,7 @@ Utile lorsqu'il faut sélectionner des options parmi un large choix, affiché gr
 
 Vous pouvez désactiver le composant lui-même.
 
-:::demo Ajoutez `disabled` à `el-select` pour le désactiver.
+:::demo Ajoutez `disabled` à `lx-select` pour le désactiver.
 ```html
 <template>
   <lx-select v-model="value" disabled placeholder="Select">
@@ -141,7 +141,7 @@ Vous pouvez désactiver le composant lui-même.
 
 Vous pouvez ajouter un bouton pour effacer la sélection.
 
-:::demo Ajoutez l'attribut `clearable` à `el-select` et l'icône de fermeture s'affichera après une sélection. Notez que `clearable` ne marche qu'avec les sélecteurs à choix unique.
+:::demo Ajoutez l'attribut `clearable` à `lx-select` et l'icône de fermeture s'affichera après une sélection. Notez que `clearable` ne marche qu'avec les sélecteurs à choix unique.
 ```html
 <template>
   <lx-select v-model="value" clearable placeholder="Select">
@@ -186,7 +186,7 @@ Vous pouvez ajouter un bouton pour effacer la sélection.
 
 Les sélecteurs multiples utilisent des tags pour afficher les différentes options choisies.
 
-:::demo Ajoutez `multiple` à `el-select` pour le changer en sélecteur multiple. La valeur de `v-model` devient un tableau contenant toutes les options. Par défaut les différents choix sont affichés sous forme de tags. Vous pouvez réduire leur nombre en utilisant l'attribut `collapse-tags`.
+:::demo Ajoutez `multiple` à `lx-select` pour le changer en sélecteur multiple. La valeur de `v-model` devient un tableau contenant toutes les options. Par défaut les différents choix sont affichés sous forme de tags. Vous pouvez réduire leur nombre en utilisant l'attribut `collapse-tags`.
 ```html
 <template>
   <lx-select v-model="value1" multiple placeholder="Select">
@@ -246,7 +246,7 @@ Les sélecteurs multiples utilisent des tags pour afficher les différentes opti
 
 Vous pouvez définir un template HTML pour l'affichage des options.
 
-:::demo Insérez votre template dans le slot de `el-option`.
+:::demo Insérez votre template dans le slot de `lx-option`.
 
 ```html
 <template>
@@ -297,7 +297,7 @@ Vous pouvez définir un template HTML pour l'affichage des options.
 
 Vous pouvez définir des groupes pour les options du menu.
 
-:::demo Utilisez `el-option-group` pour grouper les options. L'attribut `label` définit le nom du groupe.
+:::demo Utilisez `lx-option-group` pour grouper les options. L'attribut `label` définit le nom du groupe.
 
 ```html
 <template>
@@ -357,7 +357,7 @@ Vous pouvez définir des groupes pour les options du menu.
 
 Vous pouvez ajouter un mode de filtrage pour trouver les options désirées plus rapidement.
 
-:::demo Ajoutez `filterable` à `el-select` pour activer le filtrage. Par défaut, Select cherchera les options dont le `label` contient la valeur du filtre. Si vous préférez une autre stratégie de filtrage, utilisez `filter-method`. C'est une `Function` qui est appelée quand la valeur change, avec pour paramètre la valeur courante.
+:::demo Ajoutez `filterable` à `lx-select` pour activer le filtrage. Par défaut, Select cherchera les options dont le `label` contient la valeur du filtre. Si vous préférez une autre stratégie de filtrage, utilisez `filter-method`. C'est une `Function` qui est appelée quand la valeur change, avec pour paramètre la valeur courante.
 ```html
 <template>
   <lx-select v-model="value" filterable placeholder="Select">
@@ -402,7 +402,7 @@ Vous pouvez ajouter un mode de filtrage pour trouver les options désirées plus
 
 Vous pouvez aller chercher les options sur le serveur de manière dynamique.
 
-:::demo Ajoutez `filterable` et `remote` pour activer la recherche distante, ainsi que `remote-method`. Cette dernière est une `Function` qui est appelée lorsque la valeur change, avec pour paramètre la valeur courante. Notes que si `el-option` est rendu dans une directive `v-for`, vous devriez ajouter l'attribut `key` aux `el-option`. Cette valeur doit unique, comme `item.value` dans l'exemple suivant.
+:::demo Ajoutez `filterable` et `remote` pour activer la recherche distante, ainsi que `remote-method`. Cette dernière est une `Function` qui est appelée lorsque la valeur change, avec pour paramètre la valeur courante. Notes que si `lx-option` est rendu dans une directive `v-for`, vous devriez ajouter l'attribut `key` aux `lx-option`. Cette valeur doit unique, comme `item.value` dans l'exemple suivant.
 
 ```html
 <template>

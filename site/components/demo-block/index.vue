@@ -1,5 +1,8 @@
 <template>
-  <div class="demo-block">
+  <div 
+    class="demo-block"
+    :class="[blockClass]"
+  >
     <div class="source">
       <slot name="source"></slot>
     </div>
@@ -28,11 +31,20 @@ export default {
     handleExpandFn() {
       this.isExpanded = !this.isExpanded
     }
+  },
+  computed: {
+    blockClass() {
+      return `demo-${ this.$router.currentRoute.value.path.split('/').pop() }`
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
   .demo-block{
+    border: 1px solid var(--lx-border-color-base);
+    border-radius: 3px;
+    transition: .2s;
+    margin-top: 10px;
     .expanded-wrap{
       position: relative;
       padding: 8px 10px;

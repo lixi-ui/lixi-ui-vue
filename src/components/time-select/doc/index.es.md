@@ -6,7 +6,7 @@ Use el Time Select para input de tipo time.
 
 Provee una lista de tiempo fijo para que los usuarios escojan.
 
-:::demo Use el tag `el-time-select`, se pueden asignar tiempo de inicio, tiempo de finalización y salto de tiempo con `start`, `end` y `step`.
+:::demo Use el tag `lx-time-select`, se pueden asignar tiempo de inicio, tiempo de finalización y salto de tiempo con `start`, `end` y `step`.
 ```html
 <lx-time-select
   v-model="value"

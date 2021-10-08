@@ -98,7 +98,7 @@ L'attribut `disabled` désactive le radio.
 
 Utile pour choisir entre plusieurs groupes d'options mutuellement exclusives.
 
-:::demo Combinez `el-radio-group` avec `el-radio` pour afficher un groupe de radios. Liez une variable au `v-model` de `el-radio-group` et configurez le label dans `el-radio`. Cet élément fournit aussi l'évènement `change` qui a en paramètre la valeur courante.
+:::demo Combinez `lx-radio-group` avec `lx-radio` pour afficher un groupe de radios. Liez une variable au `v-model` de `lx-radio-group` et configurez le label dans `lx-radio`. Cet élément fournit aussi l'évènement `change` qui a en paramètre la valeur courante.
 
 ```html
 <lx-radio-group v-model="radio">
@@ -136,7 +136,7 @@ Utile pour choisir entre plusieurs groupes d'options mutuellement exclusives.
 
 Des radios affichés comme des boutons standards.
 
-:::demo Changez simplement `el-radio` pour `el-radio-button`. L'attribut `size` permet de régler la taille.
+:::demo Changez simplement `lx-radio` pour `lx-radio-button`. L'attribut `size` permet de régler la taille.
 ```html
 <template>
   <div>

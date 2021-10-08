@@ -12,7 +12,7 @@
 `<lx-footer>`: フッター用のコンテナ。
 
 :::tip
-これらのコンポーネントはレイアウトにフレックスを使用していますので、ブラウザがフレックスをサポートしていることを確認してください。また、`<lx-container>`の直接の子要素は`el-container` 以下の4つのコンポーネントのうちの1つ以上でなければなりません。また、4つの要素の親要素は `<lx-container>` でなければなりません。
+これらのコンポーネントはレイアウトにフレックスを使用していますので、ブラウザがフレックスをサポートしていることを確認してください。また、`<lx-container>`の直接の子要素は`lx-container` 以下の4つのコンポーネントのうちの1つ以上でなければなりません。また、4つの要素の親要素は `<lx-container>` でなければなりません。
 :::
 
 ### 共通レイアウト
@@ -250,7 +250,7 @@
 ### コンテナ属性
 | Attribute      | Description          | Type      | Accepted Values       | Default  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| direction | 子要素のレイアウト方向 | string | horizontal / vertical | vertical when nested with `el-header` or `el-footer`; horizontal otherwise |
+| direction | 子要素のレイアウト方向 | string | horizontal / vertical | vertical when nested with `lx-header` or `lx-footer`; horizontal otherwise |
 
 ### ヘッダー属性
 | Attribute      | Description          | Type      | Accepted Values       | Default  |

@@ -10,7 +10,7 @@
     </div>
 
     <div class="lx-descriptions__body">
-      <table :class="['lx-descriptions__table', {'is-bordered': border}, descriptionsSize ? `el-descriptions--${descriptionsSize}` : '']">
+      <table :class="['lx-descriptions__table', {'is-bordered': border}, descriptionsSize ? `lx-descriptions--${descriptionsSize}` : '']">
         <tbody>
           <template v-for="(row, index) in getRows()" :key="index">
             <lx-descriptions-row :row="row" />

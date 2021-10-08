@@ -2,7 +2,7 @@
   <label
     class="lx-radio"
     :class="{
-      [`el-radio--${radioSize || ''}`]: radioSize,
+      [`lx-radio--${radioSize || ''}`]: radioSize,
       'is-disabled': isDisabled,
       'is-focus': focus,
       'is-bordered': border,

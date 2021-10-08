@@ -6,7 +6,7 @@
 
 任意の時間を選ぶことができます。
 
-:::demo ラベルに `el-time-picker` を用い、`disabledHours` `disabledMinutes` and `disabledSeconds` を指定することで時間範囲を制限することができます。デフォルトでは、マウスホイールをスクロールして時間を選ぶことができますが、代わりに `arrow-control` 属性が設定されている場合は矢印を使って時間を選ぶこともできます。
+:::demo ラベルに `lx-time-picker` を用い、`disabledHours` `disabledMinutes` and `disabledSeconds` を指定することで時間範囲を制限することができます。デフォルトでは、マウスホイールをスクロールして時間を選ぶことができますが、代わりに `arrow-control` 属性が設定されている場合は矢印を使って時間を選ぶこともできます。
 
 ```html
 <template>

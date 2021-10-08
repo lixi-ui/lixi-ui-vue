@@ -148,7 +148,7 @@ export const usePopperHook = () => {
   const visible = ref(false)
   const isManual = computed(() => props.manualMode || props.trigger === 'manual')
 
-  const popperId = `el-popper-${generateId()}`
+  const popperId = `lx-popper-${generateId()}`
   let popperInstance: Nullable<PopperInstance> = null
 
   const {

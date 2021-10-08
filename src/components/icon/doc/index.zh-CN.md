@@ -47,8 +47,8 @@ export default defineComponent({
 
 ```
 
-#### 结合 `el-icon` 使用
-:::demo  `el-icon` 为 raw SVG 图标提供额外的属性, 提供的详细属性请继续阅读
+#### 结合 `lx-icon` 使用
+:::demo  `lx-icon` 为 raw SVG 图标提供额外的属性, 提供的详细属性请继续阅读
 ```html
   <p>
     通过添加额外的类名 <b>is-loading</b>，你的图标就可以在 2 秒内旋转 360 度，但让你也可以自己改写想要的动画。
@@ -92,7 +92,7 @@ export default defineComponent({
 
 ### SVG 图标集合
 :::tip
-`el-icon (包裹组件)` 更新于 **ElementPlus@1.0.2-beta.66**，适用于 **1.0.2-beta.66(包含66)** 以后的版本，你只能在该版本之后的版本使用 `el-icon`。
+`lx-icon (包裹组件)` 更新于 **ElementPlus@1.0.2-beta.66**，适用于 **1.0.2-beta.66(包含66)** 以后的版本，你只能在该版本之后的版本使用 `lx-icon`。
 
 **SVG 图标可以在任意版本使用。**
 
@@ -117,7 +117,7 @@ export default defineComponent({
 
 ### Font Icon 使用方法
 
-直接通过设置类名为 `el-icon-iconName` 来使用即可。例如：
+直接通过设置类名为 `lx-icon-iconName` 来使用即可。例如：
 
 :::demo
 ```html

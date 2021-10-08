@@ -4,7 +4,7 @@ When there are plenty of options, use a drop-down menu to display and select des
 
 ### Basic usage
 
-:::demo `v-model` is the value of `el-option` that is currently selected.
+:::demo `v-model` is the value of `lx-option` that is currently selected.
 
 ```html
 <template>
@@ -48,7 +48,7 @@ When there are plenty of options, use a drop-down menu to display and select des
 
 ### Disabled option
 
-:::demo Set the value of `disabled` in `el-option` to `true` to disable this option.
+:::demo Set the value of `disabled` in `lx-option` to `true` to disable this option.
 
 ```html
 <template>
@@ -96,7 +96,7 @@ When there are plenty of options, use a drop-down menu to display and select des
 
 Disable the whole component.
 
-:::demo Set `disabled` of `el-select` to make it disabled.
+:::demo Set `disabled` of `lx-select` to make it disabled.
 ```html
 <template>
   <lx-select v-model="value" disabled placeholder="Select">
@@ -141,7 +141,7 @@ Disable the whole component.
 
 You can clear Select using a clear icon.
 
-:::demo Set `clearable` attribute for `el-select` and a clear icon will appear. Note that `clearable` is only for single select.
+:::demo Set `clearable` attribute for `lx-select` and a clear icon will appear. Note that `clearable` is only for single select.
 ```html
 <template>
   <lx-select v-model="value" clearable placeholder="Select">
@@ -186,7 +186,7 @@ You can clear Select using a clear icon.
 
 Multiple select uses tags to display selected options.
 
-:::demo Set `multiple` attribute for `el-select` to enable multiple mode. In this case, the value of `v-model` will be an array of selected options. By default the selected options will be displayed as Tags. You can collapse them to a text by using `collapse-tags` attribute.
+:::demo Set `multiple` attribute for `lx-select` to enable multiple mode. In this case, the value of `v-model` will be an array of selected options. By default the selected options will be displayed as Tags. You can collapse them to a text by using `collapse-tags` attribute.
 ```html
 <template>
   <lx-select v-model="value1" multiple placeholder="Select">
@@ -246,7 +246,7 @@ Multiple select uses tags to display selected options.
 
 You can customize HTML templates for options.
 
-:::demo Insert customized HTML templates into the slot of `el-option`.
+:::demo Insert customized HTML templates into the slot of `lx-option`.
 
 ```html
 <template>
@@ -297,7 +297,7 @@ You can customize HTML templates for options.
 
 Display options in groups.
 
-:::demo Use `el-option-group` to group the options, and its `label` attribute stands for the name of the group.
+:::demo Use `lx-option-group` to group the options, and its `label` attribute stands for the name of the group.
 
 ```html
 <template>
@@ -357,7 +357,7 @@ Display options in groups.
 
 You can filter options for your desired ones.
 
-:::demo Adding `filterable` to `el-select` enables filtering. By default, Select will find all the options whose `label` attribute contains the input value. If you prefer other filtering strategies, you can pass the `filter-method`. `filter-method` is a `Function` that gets called when the input value changes, and its parameter is the current input value.
+:::demo Adding `filterable` to `lx-select` enables filtering. By default, Select will find all the options whose `label` attribute contains the input value. If you prefer other filtering strategies, you can pass the `filter-method`. `filter-method` is a `Function` that gets called when the input value changes, and its parameter is the current input value.
 ```html
 <template>
   <lx-select v-model="value" filterable placeholder="Select">
@@ -402,7 +402,7 @@ You can filter options for your desired ones.
 
 Enter keywords and search data from server.
 
-:::demo Set the value of `filterable` and `remote` with `true` to enable remote search, and you should pass the `remote-method`. `remote-method` is a `Function` that gets called when the input value changes, and its parameter is the current input value. Note that if `el-option` is rendered with the `v-for` directive, you should add the `key` attribute for `el-option`. Its value needs to be unique, such as `item.value` in the following example.
+:::demo Set the value of `filterable` and `remote` with `true` to enable remote search, and you should pass the `remote-method`. `remote-method` is a `Function` that gets called when the input value changes, and its parameter is the current input value. Note that if `lx-option` is rendered with the `v-for` directive, you should add the `key` attribute for `lx-option`. Its value needs to be unique, such as `item.value` in the following example.
 
 ```html
 <template>

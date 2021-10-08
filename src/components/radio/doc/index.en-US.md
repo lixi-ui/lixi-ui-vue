@@ -98,7 +98,7 @@ Radio should not have too many options. Otherwise, use the Select component inst
 
 Suitable for choosing from some mutually exclusive options.
 
-:::demo Combine `el-radio-group` with `el-radio` to display a radio group. Bind a variable with `v-model` of `el-radio-group` element and set label value in `el-radio`. It also provides `change` event with the current value as its parameter.
+:::demo Combine `lx-radio-group` with `lx-radio` to display a radio group. Bind a variable with `v-model` of `lx-radio-group` element and set label value in `lx-radio`. It also provides `change` event with the current value as its parameter.
 
 ```html
 <lx-radio-group v-model="radio">
@@ -136,7 +136,7 @@ Suitable for choosing from some mutually exclusive options.
 
 Radio with button styles.
 
-:::demo You just need to change `el-radio` element into `el-radio-button` element. We also provide `size` attribute.
+:::demo You just need to change `lx-radio` element into `lx-radio-button` element. We also provide `size` attribute.
 ```html
 <template>
   <div>

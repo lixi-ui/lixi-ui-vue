@@ -116,7 +116,7 @@ Tooltip tiene dos temas: `dark` y `light`.
 
 Despliegue múltiples líneas de texto y establezca su formato.
 
-:::demo Sobrecriba el atributo `content` del `el-tooltip` añadiendo un slot llamado `content`.
+:::demo Sobrecriba el atributo `content` del `lx-tooltip` añadiendo un slot llamado `content`.
 ```html
 <lx-tooltip placement="top">
   <template #content>
@@ -131,7 +131,7 @@ Despliegue múltiples líneas de texto y establezca su formato.
 
 Adicional a los usos básicos, existen algunos atributos que permiten la personalización:
 
-el atributo `transition` permite personalizar la animación con la que el Tooltip se muestra o se esconda, el valor por defecto es `el-fade-in-linear`.
+el atributo `transition` permite personalizar la animación con la que el Tooltip se muestra o se esconda, el valor por defecto es `lx-fade-in-linear`.
 
 el atributo `disabled` permite deshabilitar `tooltip`. Solo es necesario definirlo como `true`.
 

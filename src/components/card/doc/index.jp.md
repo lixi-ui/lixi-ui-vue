@@ -73,7 +73,7 @@ cardはタイトル、内容、操作を含む。
 
 設定を追加することで、よりリッチなコンテンツを表示することができます。
 
-:::demo `body-style` 属性は、カスタム `body` の CSS スタイルを定義します。この例ではレイアウトにも `el-col` を用いています。
+:::demo `body-style` 属性は、カスタム `body` の CSS スタイルを定義します。この例ではレイアウトにも `lx-col` を用いています。
 ```html
 <lx-row>
   <lx-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">

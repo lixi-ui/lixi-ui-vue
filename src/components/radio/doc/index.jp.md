@@ -98,7 +98,7 @@
 
 相互に関連し、排他的なオプションから一つのボタンを選択するのに適しています。
 
-:::demo `el-radio-group` と `el-radio` を組み合わせてラジオグループを表示する。`el-radio-group` 要素の `v-model` を変数にバインドし、ラベルの値を `el-radio` に設定する。また、現在の値をパラメータとした `change` イベントも提供する。
+:::demo `lx-radio-group` と `lx-radio` を組み合わせてラジオグループを表示する。`lx-radio-group` 要素の `v-model` を変数にバインドし、ラベルの値を `lx-radio` に設定する。また、現在の値をパラメータとした `change` イベントも提供する。
 
 ```html
 <lx-radio-group v-model="radio">
@@ -136,7 +136,7 @@
 
 ボタンスタイルのラジオ。
 
-:::demo `el-radio` 要素を `el-radio-button` 要素に変更すればよい。また、`size`属性も用意している。
+:::demo `lx-radio` 要素を `lx-radio-button` 要素に変更すればよい。また、`size`属性も用意している。
 ```html
 <template>
   <div>

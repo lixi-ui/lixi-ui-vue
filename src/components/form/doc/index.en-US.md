@@ -621,7 +621,7 @@ Custom validate callback function must be called. See more advanced usage at [as
 :::
 
 :::tip
-When an `el-form-item` is nested in another `el-form-item`, its label width will be `0`. You can set `label-width` on that `el-form-item` if needed.
+When an `lx-form-item` is nested in another `lx-form-item`, its label width will be `0`. You can set `label-width` on that `lx-form-item` if needed.
 :::
 
 ### Size control

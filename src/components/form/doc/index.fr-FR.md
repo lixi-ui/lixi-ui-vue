@@ -625,7 +625,7 @@ Les callback de validations personnalisées doivent être appelées. Un usage pl
 :::
 
 :::tip
-Lorsqu'un `el-form-item` est imbriqué dans un autre `el-form-item`, la largeur de son label sera `0`. Utilisez `label-width` sur ce `el-form-item` si besoin.
+Lorsqu'un `lx-form-item` est imbriqué dans un autre `lx-form-item`, la largeur de son label sera `0`. Utilisez `label-width` sur ce `lx-form-item` si besoin.
 :::
 
 ### Taille

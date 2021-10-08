@@ -96,7 +96,7 @@ El atributo `disabled` es utilizado para deshabilitar un Radio.
 
 Recomendado para seleccionar opciones que se excluyen mutuamente.
 
-:::demo Combine `el-radio-group` con `el-radio` para mostrar un grupo de Radios. Enlace la variable con `v-model` del elemento `el-radio-group` y asigne el valor del `label` en `el-radio`. Se provee el evento `change` con el valor actual como parámetro.
+:::demo Combine `lx-radio-group` con `lx-radio` para mostrar un grupo de Radios. Enlace la variable con `v-model` del elemento `lx-radio-group` y asigne el valor del `label` en `lx-radio`. Se provee el evento `change` con el valor actual como parámetro.
 
 ```html
 <lx-radio-group v-model="radio">
@@ -134,7 +134,7 @@ Recomendado para seleccionar opciones que se excluyen mutuamente.
 
 Radio con estilo de botón.
 
-:::demo Solo necesita cambiar el elemento `el-radio` a `el-radio-button`. Se provee el atributo `size`.
+:::demo Solo necesita cambiar el elemento `lx-radio` a `lx-radio-button`. Se provee el atributo `size`.
 ```html
 <template>
   <div>

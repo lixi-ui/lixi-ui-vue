@@ -6,7 +6,7 @@ A group of options for multiple choices.
 
 Checkbox can be used alone to switch between two states.
 
-:::demo Define `v-model`(bind variable) in `el-checkbox`. The default value is a `Boolean` for single `checkbox`, and it becomes `true` when selected. Content inside the `el-checkbox` tag will become the description following the button of the checkbox.
+:::demo Define `v-model`(bind variable) in `lx-checkbox`. The default value is a `Boolean` for single `checkbox`, and it becomes `true` when selected. Content inside the `lx-checkbox` tag will become the description following the button of the checkbox.
 
 ```html
 <template>
@@ -121,7 +121,7 @@ Disabled state for checkbox.
 
 It is used for multiple checkboxes which are bound in one group, and indicates whether one option is selected by checking if it is checked.
 
-:::demo `checkbox-group` element can manage multiple checkboxes in one group by using `v-model` which is bound as an `Array`. Inside the `el-checkbox` element, `label` is the value of the checkbox. If no content is nested in that tag, `label` will be rendered as the description following the button of the checkbox. `label` also corresponds with the element values in the array. It is selected if the specified value exists in the array, and vice versa.
+:::demo `checkbox-group` element can manage multiple checkboxes in one group by using `v-model` which is bound as an `Array`. Inside the `lx-checkbox` element, `label` is the value of the checkbox. If no content is nested in that tag, `label` will be rendered as the description following the button of the checkbox. `label` also corresponds with the element values in the array. It is selected if the specified value exists in the array, and vice versa.
 
 ```html
 <template>
@@ -292,7 +292,7 @@ The `min` and `max` properties can help you to limit the number of checked items
 
 Checkbox with button styles.
 
-:::demo You just need to change `el-checkbox` element into `el-checkbox-button` element. We also provide `size` attribute.
+:::demo You just need to change `lx-checkbox` element into `lx-checkbox-button` element. We also provide `size` attribute.
 ```html
 <template>
   <div>

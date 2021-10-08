@@ -15,7 +15,7 @@
           (store.states.data.value || []).length !== 0 &&
           (store.states.data.value || []).length < 100,
       },
-      tableSize ? `el-table--${tableSize}` : '',
+      tableSize ? `lx-table--${tableSize}` : '',
       className,
       'lx-table',
     ]"

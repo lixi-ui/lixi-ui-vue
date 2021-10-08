@@ -4,7 +4,7 @@ Cuando haya muchas opciones, utilice un menú desplegable para mostrar y selecci
 
 ### Uso básico
 
-:::demo `v-model` es el valor de  `el-option` que está seleccionado actualmente.
+:::demo `v-model` es el valor de  `lx-option` que está seleccionado actualmente.
 
 ```html
 <template>
@@ -48,7 +48,7 @@ Cuando haya muchas opciones, utilice un menú desplegable para mostrar y selecci
 
 ### Disabled en lx-option
 
-:::demo Establezca el valor de `disabled` en `el-option`  como `true` para deshabilitar esta opción.
+:::demo Establezca el valor de `disabled` en `lx-option`  como `true` para deshabilitar esta opción.
 
 ```html
 <template>
@@ -96,7 +96,7 @@ Cuando haya muchas opciones, utilice un menú desplegable para mostrar y selecci
 
 Desactivar todo el componente.
 
-:::demo Configure `disabled` de `el-select` para deshabilitarla.
+:::demo Configure `disabled` de `lx-select` para deshabilitarla.
 
 ```html
 <template>
@@ -142,7 +142,7 @@ Desactivar todo el componente.
 
 Puede limpiar un Select con un icono.
 
-:::demo Establezca el atributo `clearable` para `el-select`  y aparecerá un icono. Tenga en cuenta que la opción `clearable` es sólo para una selección individual.
+:::demo Establezca el atributo `clearable` para `lx-select`  y aparecerá un icono. Tenga en cuenta que la opción `clearable` es sólo para una selección individual.
 
 ```html
 <template>
@@ -188,7 +188,7 @@ Puede limpiar un Select con un icono.
 
 Selección multiple utiliza tags para mostrar las opciones seleccionadas.
 
-:::demo Configure el atributo `multiple` para `el-select` para habilitar el modo múltiple. En este caso, el valor del `v-model` será un array de opciones seleccionadas. De forma predeterminada, las opciones seleccionadas se mostrarán como tags. Se pueden contraer a un texto utilizando el atributo  `collapse-tags`.
+:::demo Configure el atributo `multiple` para `lx-select` para habilitar el modo múltiple. En este caso, el valor del `v-model` será un array de opciones seleccionadas. De forma predeterminada, las opciones seleccionadas se mostrarán como tags. Se pueden contraer a un texto utilizando el atributo  `collapse-tags`.
 
 ```html
 <template>
@@ -249,7 +249,7 @@ Selección multiple utiliza tags para mostrar las opciones seleccionadas.
 
 Puede personalizar templates HTML para las opciones.
 
-:::demo Inserte templates HTML personalizados en el slot de `el-option`.
+:::demo Inserte templates HTML personalizados en el slot de `lx-option`.
 
 ```html
 <template>
@@ -300,7 +300,7 @@ Puede personalizar templates HTML para las opciones.
 
 Mostrar opciones en grupos.
 
-:::demo Utilice `el-option-group` para agrupar las opciones, y su atributo `label` representa el nombre del grupo.
+:::demo Utilice `lx-option-group` para agrupar las opciones, y su atributo `label` representa el nombre del grupo.
 
 ```html
 <template>
@@ -360,7 +360,7 @@ Mostrar opciones en grupos.
 
 Puede filtrar opciones como lo desee.
 
-:::demo Añadir `filterable` a `el-select` permite filtrar. Por defecto, Select buscará todas las opciones cuyo atributo`label` contenga el valor del input. Si prefiere otras estrategias de filtrado, puede pasar el `filter-method`. `filter-method` es una función que se llama cuando el valor del input cambia, y su parámetro es el valor del input actual.
+:::demo Añadir `filterable` a `lx-select` permite filtrar. Por defecto, Select buscará todas las opciones cuyo atributo`label` contenga el valor del input. Si prefiere otras estrategias de filtrado, puede pasar el `filter-method`. `filter-method` es una función que se llama cuando el valor del input cambia, y su parámetro es el valor del input actual.
 
 ```html
 <template>
@@ -406,7 +406,7 @@ Puede filtrar opciones como lo desee.
 
 Introduzca palabras y datos para buscar desde el servidor.
 
-:::demo Configure el valor de `filterable` y `remote` con `true` para habilitar la búsqueda remota, y debería pasar el método `remote-method`. `remote-method` es una función que se llama cuando el valor del input cambia, y su parámetro es el valor del input actual. Tenga en cuenta que si `el-option` se presenta con la directiva `v-for`, debe agregar el atributo `key` para `el-option`. Su valor tiene que ser unívoco, como el valor de `item.value` en el ejemplo siguiente.
+:::demo Configure el valor de `filterable` y `remote` con `true` para habilitar la búsqueda remota, y debería pasar el método `remote-method`. `remote-method` es una función que se llama cuando el valor del input cambia, y su parámetro es el valor del input actual. Tenga en cuenta que si `lx-option` se presenta con la directiva `v-for`, debe agregar el atributo `key` para `lx-option`. Su valor tiene que ser unívoco, como el valor de `item.value` en el ejemplo siguiente.
 
 ```html
 <template>

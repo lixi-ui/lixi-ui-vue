@@ -6,7 +6,7 @@
 
 基础的表格展示用法。
 
-:::demo 当 `el-table` 元素中注入 `data` 对象数组后，在 `el-table-column` 中用 `prop` 属性来对应对象中的键名即可填入数据，用 `label` 属性来定义表格的列名。可以使用 `width` 属性来定义列宽。
+:::demo 当 `lx-table` 元素中注入 `data` 对象数组后，在 `lx-table-column` 中用 `prop` 属性来对应对象中的键名即可填入数据，用 `label` 属性来定义表格的列名。可以使用 `width` 属性来定义列宽。
 
 ```html
 <template>
@@ -223,7 +223,7 @@
 
 纵向内容过多时，可选择固定表头。
 
-:::demo 只要在 `el-table` 元素中定义了 `height` 属性，即可实现固定表头的表格，而不需要额外的代码。
+:::demo 只要在 `lx-table` 元素中定义了 `height` 属性，即可实现固定表头的表格，而不需要额外的代码。
 
 ```html
 <template>
@@ -563,7 +563,7 @@
 
 数据结构比较复杂的时候，可使用多级表头来展现数据的层次关系。
 
-:::demo 只需要在 `el-table-column` 里面嵌套 `el-table-column`，就可以实现多级表头。
+:::demo 只需要在 `lx-table-column` 里面嵌套 `lx-table-column`，就可以实现多级表头。
 
 ```html
 <template>
@@ -657,7 +657,7 @@
 
 选择单行数据时使用色块表示。
 
-:::demo Table 组件提供了单选的支持，只需要配置 `highlight-current-row` 属性即可实现单选。之后由 `current-change` 事件来管理选中时触发的事件，它会传入 `currentRow`，`oldCurrentRow`。如果需要显示索引，可以增加一列 `el-table-column`，设置 `type` 属性为 `index` 即可显示从 1 开始的索引号。
+:::demo Table 组件提供了单选的支持，只需要配置 `highlight-current-row` 属性即可实现单选。之后由 `current-change` 事件来管理选中时触发的事件，它会传入 `currentRow`，`oldCurrentRow`。如果需要显示索引，可以增加一列 `lx-table-column`，设置 `type` 属性为 `index` 即可显示从 1 开始的索引号。
 
 ```html
 <template>
@@ -729,7 +729,7 @@
 
 选择多行数据时使用 Checkbox。
 
-:::demo 实现多选非常简单: 手动添加一个 `el-table-column`，设 `type` 属性为 `selection` 即可；默认情况下若内容过多会折行显示，若需要单行显示可以使用 `show-overflow-tooltip` 属性，它接受一个 `Boolean`，为 `true` 时多余的内容会在 hover 时以 tooltip 的形式显示出来。
+:::demo 实现多选非常简单: 手动添加一个 `lx-table-column`，设 `type` 属性为 `selection` 即可；默认情况下若内容过多会折行显示，若需要单行显示可以使用 `show-overflow-tooltip` 属性，它接受一个 `Boolean`，为 `true` 时多余的内容会在 hover 时以 tooltip 的形式显示出来。
 
 ```html
 <template>
@@ -1076,7 +1076,7 @@
 ### 展开行
 
 当行内容过多并且不想显示横向滚动条时，可以使用 Table 展开行功能。
-:::demo 通过设置 `type="expand"` 和 `slot` 可以开启展开行功能，`el-table-column` 的模板会被渲染成为展开行的内容，展开行可访问的属性与使用自定义列模板时的 `slot` 相同。
+:::demo 通过设置 `type="expand"` 和 `slot` 可以开启展开行功能，`lx-table-column` 的模板会被渲染成为展开行的内容，展开行可访问的属性与使用自定义列模板时的 `slot` 相同。
 
 ```html
 <template>

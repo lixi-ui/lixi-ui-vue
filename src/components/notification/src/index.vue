@@ -92,7 +92,7 @@ export default defineComponent({
 
     const typeClass = computed(() => {
       const type = props.type
-      return type && TypeMap[type] ? `el-icon-${TypeMap[type]}` : ''
+      return type && TypeMap[type] ? `lx-icon-${TypeMap[type]}` : ''
     })
 
     const horizontalClass = computed(() => {

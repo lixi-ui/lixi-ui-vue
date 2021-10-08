@@ -24,7 +24,7 @@
         </slot>
         <i
           v-else
-          :class="['lx-step__icon-inner', 'is-status', `el-icon-${currentStatus === 'success' ? 'check' : 'close'}`]"
+          :class="['lx-step__icon-inner', 'is-status', `lx-icon-${currentStatus === 'success' ? 'check' : 'close'}`]"
         >
         </i>
       </div>

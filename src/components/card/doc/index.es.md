@@ -74,7 +74,7 @@ La parte de la cabecera puede omitirse.
 
 Muestre un contenido más rico añadiendo algunas configuraciones.
 
-:::demo Lx atributo `body-style` define el estilo CSS del `body` personalizado. Este ejemplo también utiliza  `el-col` para el layout.
+:::demo Lx atributo `body-style` define el estilo CSS del `body` personalizado. Este ejemplo también utiliza  `lx-col` para el layout.
 
 ```html
 <lx-row>

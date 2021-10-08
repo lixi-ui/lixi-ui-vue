@@ -362,7 +362,7 @@ dropdownリストを起動するには、ボタンを使用します。
 
 | Name | Description |
 |------|--------|
-| — | dropdownの内容 Notice: トリガーリスナーをアタッチするには、有効な html dom 要素 (例: `<span>, <button> etc.`) または `el-component` でなければなりません。  |
+| — | dropdownの内容 Notice: トリガーリスナーをアタッチするには、有効な html dom 要素 (例: `<span>, <button> etc.`) または `lx-component` でなければなりません。  |
 | dropdown | dropdownメニューの内容、通常は `<lx-dropdown-menu>` 要素 |
 
 ### dropdownイベント

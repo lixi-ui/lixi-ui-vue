@@ -33,9 +33,10 @@ var componentsRouters = []
 
 components.forEach(item => { // ./pages/${item}.vue
   var routerObj = {
-    path: '/doc/' + item,
-    name: item,
-    component: () => import(/* webpackChunkName: "doc" */ `../../../src/components/${item}/doc/index.vue`)
+    path: '/doc/' + item.name,
+    name: item.name,
+    title: item.title || item.name,
+    component: () => import(/* webpackChunkName: "doc" */ `../../../src/components/${item.name}/doc/index.vue`)
   }
   componentsRouters.push(routerObj)
 })

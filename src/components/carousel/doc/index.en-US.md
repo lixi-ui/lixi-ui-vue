@@ -4,7 +4,7 @@ Loop a series of images or texts in a limited space
 
 ### Basic usage
 
-:::demo Combine `el-carousel` with `el-carousel-item`, and you'll get a carousel. Content of each slide is completely customizable, and you just need to place it inside  `el-carousel-item` tag. By default the carousel switches when mouse hovers over an indicator. Set `trigger` to `click`, and the carousel switches only when an indicator is clicked.
+:::demo Combine `lx-carousel` with `lx-carousel-item`, and you'll get a carousel. Content of each slide is completely customizable, and you just need to place it inside  `lx-carousel-item` tag. By default the carousel switches when mouse hovers over an indicator. Set `trigger` to `click`, and the carousel switches only when an indicator is clicked.
 ```html
 <template>
   <div class="block">
@@ -202,7 +202,7 @@ By default, `direction` is `horizontal`. Let carousel be displayed in the vertic
 ### Carousel Methods
 | Method | Description | Parameters |
 |---------- |-------------- | -- |
-| setActiveItem | manually switch slide | index of the slide to be switched to, starting from 0; or the `name` of corresponding `el-carousel-item` |
+| setActiveItem | manually switch slide | index of the slide to be switched to, starting from 0; or the `name` of corresponding `lx-carousel-item` |
 | prev | switch to the previous slide | — |
 | next | switch to the next slide | — |
 

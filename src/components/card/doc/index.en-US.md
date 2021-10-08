@@ -73,7 +73,7 @@ The header part can be omitted.
 
 Display richer content by adding some configs.
 
-:::demo The `body-style` attribute defines CSS style of custom `body`. This example also uses `el-col` for layout.
+:::demo The `body-style` attribute defines CSS style of custom `body`. This example also uses `lx-col` for layout.
 ```html
 <lx-row>
   <lx-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">

@@ -1030,7 +1030,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 ### Clearable
 
-Set `clearable` attribute for `el-cascader` and a clear icon will appear when selected and hovered
+Set `clearable` attribute for `lx-cascader` and a clear icon will appear when selected and hovered
 
 :::demo
 ```html
@@ -2817,7 +2817,7 @@ export default defineComponent({
 
 Search and select options with a keyword.
 
-:::demo Adding `filterable` to `el-cascader` enables filtering. Cascader will match nodes whose label or parent's label (according to `show-all-levels`) includes input keyword. Of course, you can customize search logic by `filter-method` which accepts a function, the first parameter is `node`, the second is `keyword`, and need return a boolean value indicating whether it hits.
+:::demo Adding `filterable` to `lx-cascader` enables filtering. Cascader will match nodes whose label or parent's label (according to `show-all-levels`) includes input keyword. Of course, you can customize search logic by `filter-method` which accepts a function, the first parameter is `node`, the second is `keyword`, and need return a boolean value indicating whether it hits.
 ```html
 <div class="block">
   <span class="demonstration">Filterable (Single selection)</span>
@@ -3834,7 +3834,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 
 `CascaderPanel` is the core component of `Cascader` which has various of features such as single selection, multiple selection, dynamic loading and so on.
 
-:::demo Just like `el-cascader`, you can set alternative options by `options`, and enable other features by `props`, see the API form below for details.
+:::demo Just like `lx-cascader`, you can set alternative options by `options`, and enable other features by `props`, see the API form below for details.
 ```html
 <lx-cascader-panel :options="options"></lx-cascader-panel>
 

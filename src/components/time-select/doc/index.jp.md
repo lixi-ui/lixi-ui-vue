@@ -6,7 +6,7 @@
 
 ユーザーが選択できる固定時間のリストを提供する。
 
-:::demo `el-time-select` ラベルを使用し、開始時刻、終了時刻、タイムステップを `start`, `end`, `step` で指定します。`
+:::demo `lx-time-select` ラベルを使用し、開始時刻、終了時刻、タイムステップを `start`, `end`, `step` で指定します。`
 ```html
 <lx-time-select
   v-model="value"

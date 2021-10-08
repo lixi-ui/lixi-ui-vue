@@ -46,8 +46,8 @@ export default defineComponent({
 })
 </script>
 ```
-#### Combined with `el-icon`
-:::demo  `el-icon` provides extra attributes for raw SVG icon, for more detail, please read to the end.
+#### Combined with `lx-icon`
+:::demo  `lx-icon` provides extra attributes for raw SVG icon, for more detail, please read to the end.
 ```html
   <p>
     with extra class <b>is-loading</b>, your icon is able to rotate 360 deg in 2 seconds, you can also override this
@@ -92,7 +92,7 @@ export default defineComponent({
 
 ### SVG Icons collection
 :::tip
-This collection is updated after LxementPlus@1.0.2-beta.66(included), you can only use `el-icon` to wrap it after LxementPlus@1.0.2-beta.66(included), or directly use it without version constrains
+This collection is updated after LxementPlus@1.0.2-beta.66(included), you can only use `lx-icon` to wrap it after LxementPlus@1.0.2-beta.66(included), or directly use it without version constrains
 
 **You can use SVG icon in any version as long as you install it**
 
@@ -115,7 +115,7 @@ This collection is updated after LxementPlus@1.0.2-beta.66(included), you can on
 
 ### Font アイコン 基本的な使い方
 
-クラス名に `el-icon-iconName` を代入するだけで使えます。
+クラス名に `lx-icon-iconName` を代入するだけで使えます。
 
 :::demo
 

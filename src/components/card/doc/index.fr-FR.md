@@ -74,7 +74,7 @@ Le header peut être omis.
 
 Affichez un contenu plus riche grâce à la configuration.
 
-:::demo L'attribut `body-style` définit le style CSS du `body`. Cet exemple utilise aussi `el-col` pour la mise en page.
+:::demo L'attribut `body-style` définit le style CSS du `body`. Cet exemple utilise aussi `lx-col` pour la mise en page.
 ```html
 <lx-row>
   <lx-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">

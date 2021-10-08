@@ -116,7 +116,7 @@ Tooltip has two themes: `dark` and `light`。
 
 Display multiple lines of text and set their format.
 
-:::demo Override attribute `content` of `el-tooltip` by adding a slot named `content`.
+:::demo Override attribute `content` of `lx-tooltip` by adding a slot named `content`.
 ```html
 <lx-tooltip placement="top">
   <template #content>

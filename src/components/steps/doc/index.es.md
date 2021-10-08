@@ -98,7 +98,7 @@ En la barra de pasos se pueden utilizar diversos iconos personalizados.
 
 Step bar vertical.
 
-:::demo Sólo tiene que fijar el atributo `direction`  a ` vertical` en el elemento `el-steps`.
+:::demo Sólo tiene que fijar el atributo `direction`  a ` vertical` en el elemento `lx-steps`.
 
 ```html
 <div style="height: 300px;">

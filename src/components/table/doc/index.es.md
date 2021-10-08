@@ -6,7 +6,7 @@ Visualiza múltiples datos con un formato en particular. Podrá ordenar, filtrar
 
 La tabla básica es solo para mostrar datos.
 
-:::demo Después de haber establecido el atributo `data` de `el-table` con un arreglo de objetos, puede usar la propiedad `prop` (el correspondiente a la clave de un objeto dentro del arreglo `data`) en `el-table-column` para insertar datos a las columnas de la tabla, y establecer el atributo `label` para definir el nombre de la columna. También puede usar el atributo `width` para establecer el ancho de las columnas.
+:::demo Después de haber establecido el atributo `data` de `lx-table` con un arreglo de objetos, puede usar la propiedad `prop` (el correspondiente a la clave de un objeto dentro del arreglo `data`) en `lx-table-column` para insertar datos a las columnas de la tabla, y establecer el atributo `label` para definir el nombre de la columna. También puede usar el atributo `width` para establecer el ancho de las columnas.
 
 ```html
   <template>
@@ -173,7 +173,7 @@ La tabla con franjas hace más fácil distinguir filas diferentes.
 
 Puede destacar el contenido de la tabla para distinguir entre "success, information, warning, danger" y otros estados.
 
-:::demo Utilice `row-class-name` en `el-table` para agregar clases personalizadas a una fila en específico. Y entonces, podrá darle diseño con estas clases.
+:::demo Utilice `row-class-name` en `lx-table` para agregar clases personalizadas a una fila en específico. Y entonces, podrá darle diseño con estas clases.
 ```html
 <template>
   <lx-table
@@ -249,7 +249,7 @@ Puede destacar el contenido de la tabla para distinguir entre "success, informat
 
 Cuando esta tiene demasiadas filas, puede utilizar una cabecera fija.
 
-:::demo Al configurar el atributo `height` de `el-table`, puede fijar la cabecera de la tabla sin agregar otro código.
+:::demo Al configurar el atributo `height` de `lx-table`, puede fijar la cabecera de la tabla sin agregar otro código.
 ```html
 <template>
   <lx-table
@@ -317,7 +317,7 @@ Cuando esta tiene demasiadas filas, puede utilizar una cabecera fija.
 
 Cuando se tienen demasiadas columnas, puede fijar alguna de estas.
 
-:::demo Lx atributo `fixed` es utilizado en `el-table-column`, este acepta un `Boolean`. Si es `true`, la columna será fijada a la izquierda. También acepta dos tipos: `left` y `right`, ambos indican donde debe ser fijada la columna.
+:::demo Lx atributo `fixed` es utilizado en `lx-table-column`, este acepta un `Boolean`. Si es `true`, la columna será fijada a la izquierda. También acepta dos tipos: `left` y `right`, ambos indican donde debe ser fijada la columna.
 ```html
 <template>
   <lx-table
@@ -525,7 +525,7 @@ Cuando tienes grandes cantidades de datos para colocar en una tabla, puede fijar
 
 Cuando los datos se modifican dinámicamente, es posible que necesite que la tabla tenga una altura máxima en lugar de una altura fija, y además, que se muestre la barra de desplazamiento si es necesario.
 
-:::demo Al configurar el atributo `max-height` de `el-table`, tu puedes fijar la cabecera de la tabla. La barra de desplazamiento únicamente se mostrará si la altura sobrepasa el valor de la altura máxima.
+:::demo Al configurar el atributo `max-height` de `lx-table`, tu puedes fijar la cabecera de la tabla. La barra de desplazamiento únicamente se mostrará si la altura sobrepasa el valor de la altura máxima.
 ```html
 <template>
   <lx-table
@@ -649,7 +649,7 @@ Cuando los datos se modifican dinámicamente, es posible que necesite que la tab
 
 Cuando la estructura de datos es compleja, tu puedes hacer uso de cabeceras agrupadas para mostrar datos por jerarquía.
 
-:::demo Solo necesitas colocar `el-table-column` dentro de un `el-table-column`, de esta forma lograrás agruparlas.
+:::demo Solo necesitas colocar `lx-table-column` dentro de un `lx-table-column`, de esta forma lograrás agruparlas.
 ```html
 <template>
   <lx-table
@@ -756,7 +756,7 @@ Cuando la estructura de datos es compleja, tu puedes hacer uso de cabeceras agru
 
 La selección de una fila esta soportada.
 
-:::demo La tabla permite la selección de una sola fila. Puede activarlo agregando el atributo `highlight-current-row`. Un evento llamado `current-change` será disparado cuando la selección de la fila cambie, sus parámetros son la fila antes y después de que ocurre el cambio: `currentRow` y `oldCurrentRow`. Si necesita mostrar el índice de la fila, puede agregar un nuevo `el-table-column` con el atributo `type` asignado al `index` y podrá ver el índice iniciando desde 1.
+:::demo La tabla permite la selección de una sola fila. Puede activarlo agregando el atributo `highlight-current-row`. Un evento llamado `current-change` será disparado cuando la selección de la fila cambie, sus parámetros son la fila antes y después de que ocurre el cambio: `currentRow` y `oldCurrentRow`. Si necesita mostrar el índice de la fila, puede agregar un nuevo `lx-table-column` con el atributo `type` asignado al `index` y podrá ver el índice iniciando desde 1.
 ```html
 <template>
   <lx-table
@@ -832,7 +832,7 @@ La selección de una fila esta soportada.
 
 También puede seleccionar múltiples filas.
 
-:::demo Activar la selección múltiple es sencillo: Solo debe agregar a `el-table-column` con su `type` establecido en `selection`. Además de la selección múltiple, este ejemplo también utiliza `show-overflow-tooltip`: por defecto, si el contenido es demasiado largo, este permite córtalo dentro de múltiples líneas. Si lo que busca es mantener una línea, utilice el atributo `show-overflow-tooltip`, que acepta un valor `Boolean`. Cuando este está establecido en `true`, el contenido extra puede mostrar un _tooltip_ cuando se hace _hover_ sobre la celda.
+:::demo Activar la selección múltiple es sencillo: Solo debe agregar a `lx-table-column` con su `type` establecido en `selection`. Además de la selección múltiple, este ejemplo también utiliza `show-overflow-tooltip`: por defecto, si el contenido es demasiado largo, este permite córtalo dentro de múltiples líneas. Si lo que busca es mantener una línea, utilice el atributo `show-overflow-tooltip`, que acepta un valor `Boolean`. Cuando este está establecido en `true`, el contenido extra puede mostrar un _tooltip_ cuando se hace _hover_ sobre la celda.
 ```html
 <template>
   <lx-table
@@ -989,7 +989,7 @@ Ordena los datos para encontrar o comparar información rápidamente.
 
 Filtra la tabla para encontrar la información que necesita.
 
-:::demo Establezca el atributo `filters` y `filter-method` en `el-table-column` haciendo esta columna filtrable. `filters` es un arreglo, y `filter-method` es una función que decide que filas se muestra. Esta tiene tres parámetros: `value`, `row` y `column`.
+:::demo Establezca el atributo `filters` y `filter-method` en `lx-table-column` haciendo esta columna filtrable. `filters` es un arreglo, y `filter-method` es una función que decide que filas se muestra. Esta tiene tres parámetros: `value`, `row` y `column`.
 ```html
 <template>
   <lx-button @click="resetDateFilter">清除日期过滤器</lx-button>
@@ -1250,7 +1250,7 @@ Se puede personalizar el encabezado de la tabla para que se pueda adaptar aún m
 
 Cuando el contenido de la fila es demasiado largo y busca no mostrar la barra de desplazamiento horizontal, puede utilizar la característica de fila expandible.
 
-:::demo Puede activar la fila expandible estableciendo la propiedad `type` a `expand` y Slots. La plantilla para `el-table-column` se representará como el contenido de la fila expandible, y puede acceder a algunos atributos cuando está usando `Slots` en plantillas de columna personalizadas.
+:::demo Puede activar la fila expandible estableciendo la propiedad `type` a `expand` y Slots. La plantilla para `lx-table-column` se representará como el contenido de la fila expandible, y puede acceder a algunos atributos cuando está usando `Slots` en plantillas de columna personalizadas.
 ```html
 <template>
   <lx-table
@@ -1907,7 +1907,7 @@ Puede personalizar el índice de la fila con la propiedad `type=index` de las co
 | sort-method           | método de ordenamiento, funciona cuando `sortable` está en `true`. Debería devolver un número, al igual que Array.sort | function(a, b)                    | —                             | —           |
 | sort-by               | especifica por cual propiedad de va a ordenar, funciona cuando `sortable` es `true` y `sort-method` es `undefined`. Si se establece a un arreglo, la columna ordenara secuencialmente por la siguiente propiedad si la anterior es igual | function(row, index) / string / array | —                             | —           |
 | sort-orders           | el orden de las estrategias de ordenación utilizadas al ordenar los datos, funciona cuando `sortable` es `true`. Acepta un array, a medida que el usuario hace clic en el encabezado, la columna se ordena en el orden de los elementos del array. | array | los elementos en el arreglo necesitan ser uno de los siguientes: `ascending`, `descending` y `null` (restaura el orden original) | ['ascending', 'descending', null] |
-| resizable             | especifica si el ancho de la columna puede ser redimensionado, funciona cuando `border` de `el-table` está en `true` | boolean                           | —                             | false       |
+| resizable             | especifica si el ancho de la columna puede ser redimensionado, funciona cuando `border` de `lx-table` está en `true` | boolean                           | —                             | false       |
 | formatter             | función que formatea el contenido de la celda | function(row, column, cellValue, index)  | —                             | —           |
 | show-overflow-tooltip | especifica si el _tooltip_ debe ocultarse o mostrarse al hacer _hover_ en la celda | boolean                           | —                             | false       |
 | align                 | alineación                               | string                            | left / center / right             | left        |

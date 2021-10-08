@@ -17,7 +17,7 @@
       :class="{ 'is-disabled': minDisabled }"
       @keydown.enter="decrease"
     >
-      <i :class="`el-icon-${controlsAtRight ? 'arrow-down' : 'minus'}`"></i>
+      <i :class="`lx-icon-${controlsAtRight ? 'arrow-down' : 'minus'}`"></i>
     </span>
     <span
       v-if="controls"
@@ -27,7 +27,7 @@
       :class="{ 'is-disabled': maxDisabled }"
       @keydown.enter="increase"
     >
-      <i :class="`el-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
+      <i :class="`lx-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
     </span>
     <lx-input
       ref="input"

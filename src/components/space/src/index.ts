@@ -1,9 +1,10 @@
 import Space from './index'
 
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@lixi/utils/types'
+// import type { SFCWithInstall } from '@lixi/utils/types'
 
-const _Space = Space as SFCWithInstall<typeof Space>
+const _Space = Space 
+// as SFCWithInstall<typeof Space>
 
 _Space.install = (app: App) => {
   app.component(_Space.name, _Space)

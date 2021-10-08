@@ -364,7 +364,7 @@ Además del tamaño predeterminado, el componente Dropdown proporciona tres tama
 
 | Nombre | Descripción |
 |------|--------|
-| — | contenido del Dropdown. Aviso: Debe ser un elemento html dom válido (ej. `<span>, <button>` etc.) o `el-component`, para adjuntar el listener trigger |
+| — | contenido del Dropdown. Aviso: Debe ser un elemento html dom válido (ej. `<span>, <button>` etc.) o `lx-component`, para adjuntar el listener trigger |
 | dropdown | contenido del menu Dropdown, normalmente es un elemento `<lx-dropdown-menu>` |
 
 ### Dropdown Eventos

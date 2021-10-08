@@ -96,7 +96,7 @@
 
 垂直菜单，可内嵌子菜单。
 
-:::demo 通过`el-menu-item-group`组件可以实现菜单进行分组，分组名可以通过`title`属性直接设定，也可以通过具名 slot 来设定。
+:::demo 通过`lx-menu-item-group`组件可以实现菜单进行分组，分组名可以通过`title`属性直接设定，也可以通过具名 slot 来设定。
 ```html
 <lx-row class="tac">
   <lx-col :span="12">

@@ -55,7 +55,7 @@ export default defineComponent({
 
 ## Combined with lx-icon
 
-:::demo  `el-icon` provides extra attributes for raw SVG icon, for more detail, please read to the end.
+:::demo  `lx-icon` provides extra attributes for raw SVG icon, for more detail, please read to the end.
 
 ```html
   <p>
@@ -105,7 +105,7 @@ export default defineComponent({
 ### SVG Icons collection
 
 :::tip
-This collection is updated after LxementPlus@1.0.2-beta.66(included), you can only use `el-icon` to wrap it after LxementPlus@1.0.2-beta.66(included), or directly use it without version constrains
+This collection is updated after LxementPlus@1.0.2-beta.66(included), you can only use `lx-icon` to wrap it after LxementPlus@1.0.2-beta.66(included), or directly use it without version constrains
 
 **You can use SVG icon in any version** as long as you install it
 
@@ -128,7 +128,7 @@ This collection is updated after LxementPlus@1.0.2-beta.66(included), you can on
 
 ### Font Icon Basic usage
 
-Just assign the class name to `el-icon-iconName`.
+Just assign the class name to `lx-icon-iconName`.
 
 :::demo
 

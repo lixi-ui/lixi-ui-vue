@@ -250,7 +250,7 @@ These components use flex for layout, so please make sure your browser supports 
 ### Container Attributes
 | Attribute      | Description          | Type      | Accepted Values       | Default  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| direction | layout direction for child elements | string | horizontal / vertical | vertical when nested with `el-header` or `el-footer`; horizontal otherwise |
+| direction | layout direction for child elements | string | horizontal / vertical | vertical when nested with `lx-header` or `lx-footer`; horizontal otherwise |
 
 ### Header Attributes
 | Attribute      | Description          | Type      | Accepted Values       | Default  |

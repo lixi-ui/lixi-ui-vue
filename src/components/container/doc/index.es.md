@@ -242,7 +242,7 @@ Estos componentes utilizan flex para el diseño, así que asegúrese que el nave
 ### Atributos de contenedor
 | Atributo  | Descripción                              | Tipo   | Valores aceptados     | Por defecto                              |
 | --------- | ---------------------------------------- | ------ | --------------------- | ---------------------------------------- |
-| direction | dirección de diseño para elementos secundarios | string | horizontal / vertical | vertical cuando el elemento está anidado con `el-header`, de lo contrario, horizontal |
+| direction | dirección de diseño para elementos secundarios | string | horizontal / vertical | vertical cuando el elemento está anidado con `lx-header`, de lo contrario, horizontal |
 
 ### Atributos de cabecera
 | Atributo | Descripción           | Tipo   | Valores aceptados | Por defecto |

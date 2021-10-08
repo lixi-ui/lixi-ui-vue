@@ -363,7 +363,7 @@ Besides default size, Dropdown component provides three additional sizes for you
 
 | Name | Description |
 |------|--------|
-| — | content of Dropdown. Notice: Must be a valid html dom element (ex. `<span>, <button> etc.`) or `el-component`, to attach the trigger listener  |
+| — | content of Dropdown. Notice: Must be a valid html dom element (ex. `<span>, <button> etc.`) or `lx-component`, to attach the trigger listener  |
 | dropdown | content of the Dropdown Menu, usually a `<lx-dropdown-menu>` element |
 
 ### Dropdown Events

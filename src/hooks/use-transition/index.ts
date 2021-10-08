@@ -22,7 +22,7 @@ export const useTransition = (
 
   return {
     transition: computed(() => {
-      return `el-transition--${
+      return `lx-transition--${
         transitionState.value
           ? props.transitionShow
           : props.transitionHide

@@ -29,7 +29,7 @@ You can configure the row numbers yourself, for more precise rendering effect, t
 :::
 
 ### Animation
-We have provided a switch flag indicating whether showing the loading animation, called `animated` when this is true, all children of `el-skeleton` will show animation
+We have provided a switch flag indicating whether showing the loading animation, called `animated` when this is true, all children of `lx-skeleton` will show animation
 
 :::demo
 

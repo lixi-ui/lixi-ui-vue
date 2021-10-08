@@ -278,7 +278,7 @@ export default defineComponent({
         class: {
           'lx-tabs': true,
           'lx-tabs--card': type === 'card',
-          [`el-tabs--${tabPosition}`]: true,
+          [`lx-tabs--${tabPosition}`]: true,
           'lx-tabs--border-card': type === 'border-card',
         },
       },

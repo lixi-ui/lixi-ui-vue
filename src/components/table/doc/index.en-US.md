@@ -6,7 +6,7 @@ Display multiple data with similar format. You can sort, filter, compare your da
 
 Basic table is just for data display.
 
-:::demo After setting attribute `data` of `el-table` with an object array, you can use `prop` (corresponding to a key of the object in `data` array) in `el-table-column` to insert data to table columns, and set the attribute `label` to define the column name. You can also use the attribute `width` to define the width of columns.
+:::demo After setting attribute `data` of `lx-table` with an object array, you can use `prop` (corresponding to a key of the object in `data` array) in `lx-table-column` to insert data to table columns, and set the attribute `label` to define the column name. You can also use the attribute `width` to define the width of columns.
 
 ```html
 <template>
@@ -151,7 +151,7 @@ Striped table makes it easier to distinguish different rows.
 
 You can highlight your table content to distinguish between "success, information, warning, danger" and other states.
 
-:::demo Use `row-class-name` in `el-table` to add custom classes to a certain row. Then you can style it with custom classes.
+:::demo Use `row-class-name` in `lx-table` to add custom classes to a certain row. Then you can style it with custom classes.
 
 ```html
 <template>
@@ -223,7 +223,7 @@ You can highlight your table content to distinguish between "success, informatio
 
 When there are too many rows, you can use a fixed header.
 
-:::demo By setting the attribute `height` of `el-table`, you can fix the table header without any other codes.
+:::demo By setting the attribute `height` of `lx-table`, you can fix the table header without any other codes.
 
 ```html
 <template>
@@ -287,7 +287,7 @@ When there are too many rows, you can use a fixed header.
 
 When there are too many columns, you can fix some of them.
 
-:::demo Attribute `fixed` is used in `el-table-column`, it accepts a `Boolean`. If `true`, the column will be fixed at left. It also accepts two string literals: 'left' and 'right', both indicating that the column will be fixed at corresponding direction.
+:::demo Attribute `fixed` is used in `lx-table-column`, it accepts a `Boolean`. If `true`, the column will be fixed at left. It also accepts two string literals: 'left' and 'right', both indicating that the column will be fixed at corresponding direction.
 
 ```html
 <template>
@@ -460,7 +460,7 @@ When you have huge chunks of data to put in a table, you can fix the header and 
 
 When the the data is dynamically changed, you might want the table to have a maximum height rather than a fixed height and to show the scroll bar if needed.
 
-:::demo By setting the attribute `max-height` of `el-table`, you can fix the table header. The table body scrolls only if the height of the rows exceeds the max height value.
+:::demo By setting the attribute `max-height` of `lx-table`, you can fix the table header. The table body scrolls only if the height of the rows exceeds the max height value.
 
 ```html
 <template>
@@ -660,7 +660,7 @@ When the data structure is complex, you can use group header to show the data hi
 
 Single row selection is supported.
 
-:::demo Table supports single row selection. You can activate it by adding the `highlight-current-row` attribute. An event called `current-change` will be triggered when row selection changes, and its parameters are the rows after and before this change: `currentRow` and `oldCurrentRow`. If you need to display row index, you can add a new `el-table-column` with its `type` attribute assigned to `index`, and you will see the index starting from 1.
+:::demo Table supports single row selection. You can activate it by adding the `highlight-current-row` attribute. An event called `current-change` will be triggered when row selection changes, and its parameters are the rows after and before this change: `currentRow` and `oldCurrentRow`. If you need to display row index, you can add a new `lx-table-column` with its `type` attribute assigned to `index`, and you will see the index starting from 1.
 
 ```html
 <template>
@@ -732,7 +732,7 @@ Single row selection is supported.
 
 You can also select multiple rows.
 
-:::demo Activating multiple selection is easy: simply add an `el-table-column` with its `type` set to `selection`. Apart from multiple selection, this example also uses `show-overflow-tooltip`: by default, if the content is too long, it will break into multiple lines. If you want to keep it in one line, use attribute `show-overflow-tooltip`, which accepts a `Boolean` value. When set `true`, the extra content will show in tooltip when hover on the cell.
+:::demo Activating multiple selection is easy: simply add an `lx-table-column` with its `type` set to `selection`. Apart from multiple selection, this example also uses `show-overflow-tooltip`: by default, if the content is too long, it will break into multiple lines. If you want to keep it in one line, use attribute `show-overflow-tooltip`, which accepts a `Boolean` value. When set `true`, the extra content will show in tooltip when hover on the cell.
 
 ```html
 <template>
@@ -888,7 +888,7 @@ Sort the data to find or compare data quickly.
 
 Filter the table to find desired data.
 
-:::demo Set attribute `filters` and `filter-method` in `el-table-column` makes this column filterable. `filters` is an array, and `filter-method` is a function deciding which rows are displayed. It has three parameters: `value`, `row` and `column`.
+:::demo Set attribute `filters` and `filter-method` in `lx-table-column` makes this column filterable. `filters` is an array, and `filter-method` is a function deciding which rows are displayed. It has three parameters: `value`, `row` and `column`.
 
 ```html
 <template>
@@ -1592,7 +1592,7 @@ Configuring rowspan and colspan allows you to merge cells
 ### Custom index
 
 You can customize row index in `type=index` columns.
-:::demo To customize row indices, use `index` attribute on `el-table-column` with `type=index`. If it is assigned to a number, all indices will have an offset of that number. It also accepts a method with each index (starting from `0`) as parameter, and the returned value will be displayed as index.
+:::demo To customize row indices, use `index` attribute on `lx-table-column` with `type=index`. If it is assigned to a number, all indices will have an offset of that number. It also accepts a method with each index (starting from `0`) as parameter, and the returned value will be displayed as index.
 
 ```html
 <template>
@@ -1757,7 +1757,7 @@ You can customize row index in `type=index` columns.
 | sort-method           | sorting method, works when `sortable` is `true`. Should return a number, just like Array.sort                                                                                                                       | function(a, b)                          | —                                                                                                                                | —                                 |
 | sort-by               | specify which property to sort by, works when `sortable` is `true` and `sort-method` is `undefined`. If set to an Array, the column will sequentially sort by the next property if the previous one is equal        | function(row, index) / string / array   | —                                                                                                                                | —                                 |
 | sort-orders           | the order of the sorting strategies used when sorting the data, works when `sortable` is `true`. Accepts an array, as the user clicks on the header, the column is sorted in order of the elements in the array     | array                                   | the elements in the array need to be one of the following: `ascending`, `descending` and `null` (restores to the original order) | ['ascending', 'descending', null] |
-| resizable             | whether column width can be resized, works when `border` of `el-table` is `true`                                                                                                                                    | boolean                                 | —                                                                                                                                | false                             |
+| resizable             | whether column width can be resized, works when `border` of `lx-table` is `true`                                                                                                                                    | boolean                                 | —                                                                                                                                | false                             |
 | formatter             | function that formats cell content                                                                                                                                                                                  | function(row, column, cellValue, index) | —                                                                                                                                | —                                 |
 | show-overflow-tooltip | whether to hide extra content and show them in a tooltip when hovering on the cell                                                                                                                                  | boolean                                 | —                                                                                                                                | false                             |
 | align                 | alignment                                                                                                                                                                                                           | string                                  | left / center / right                                                                                                            | left                              |

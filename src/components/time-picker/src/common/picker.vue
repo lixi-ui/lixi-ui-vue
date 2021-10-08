@@ -7,7 +7,7 @@
     pure
     trigger="click"
     v-bind="$attrs"
-    :popper-class="`el-picker__popper ${popperClass}`"
+    :popper-class="`lx-picker__popper ${popperClass}`"
     :popper-options="elPopperOptions"
     :fallback-placements="['bottom', 'top', 'right', 'left']"
     transition="lx-zoom-in-top"
@@ -59,7 +59,7 @@
         class="lx-date-editor lx-range-editor lx-input__inner"
         :class="[
           'lx-date-editor--' + type,
-          pickerSize ? `el-range-editor--${ pickerSize }` : '',
+          pickerSize ? `lx-range-editor--${ pickerSize }` : '',
           pickerDisabled ? 'is-disabled' : '',
           pickerVisible ? 'is-active' : ''
         ]"
