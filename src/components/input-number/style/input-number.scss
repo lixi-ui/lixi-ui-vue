@@ -1,8 +1,8 @@
 @use "sass:math";
 @use "sass:map";
 
-@import 'mixins/mixins';
-@import 'common/var';
+@import '@lixi/style/src/mixins/mixins';
+@import '@lixi/style/src/common/var';
 
 @include b(input-number) {
   position: relative;

@@ -1,6 +1,6 @@
-@import 'common/var';
-@import './date-picker/picker.scss';
-@import './date-picker/date-picker.scss';
+@import '@lixi/style/src/common/var';
+@import '@lixi/style/src/date-picker/picker.scss';
+@import '@lixi/style/src/date-picker/date-picker.scss';
 
 .time-select {
   margin: 5px 0;

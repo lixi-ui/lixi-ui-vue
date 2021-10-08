@@ -1,6 +1,5 @@
 <template>
-  <div>
-    
+  <div class="demo-block demo-avatar">
     <Md/>
   </div>
 </template>

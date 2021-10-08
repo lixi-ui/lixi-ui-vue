@@ -1,5 +1,5 @@
-@import 'common/var';
-@import 'mixins/mixins';
+@import '@lixi/style/src/common/var';
+@import '@lixi/style/src/mixins/mixins';
 
 @include b(divider) {
   background-color: var(--lx-border-color-base);

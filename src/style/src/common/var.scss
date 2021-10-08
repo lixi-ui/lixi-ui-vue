@@ -1,148 +1,12 @@
-@use "sass:map";
+/* Element Chalk Variables */
 @use "sass:math";
+@use "sass:map";
 
-/* Color
--------------------------- */
-$--color-primary: #409EFF !default;
-$--color-white: #FFFFFF !default;
-$--color-black: #000000 !default;
-$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
-$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
-$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
-$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 8cc5ff */
-$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* a0cfff */
-$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* b3d8ff */
-$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
-$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
-$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
-$--color-success: #67C23A !default;
-$--color-warning: #E6A23C !default;
-$--color-danger: #F56C6C !default;
-$--color-info: #909399 !default;
-$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
-$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
-$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
-$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
-$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
-$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
-$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
-$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
-$--color-text-primary: #303133 !default;
-$--color-text-regular: #606266 !default;
-$--color-text-secondary: #909399 !default;
-$--color-text-placeholder: #C0C4CC !default;
-$--border-color-base: #DCDFE6 !default;
-$--border-color-light: #E4E7ED !default;
-$--border-color-lighter: #EBEEF5 !default;
-$--border-color-extra-light: #F2F6FC !default;
+@import '../mixins/config';
 
-// Background
-$--background-color-base: #F5F7FA !default;
-
-/* Link
--------------------------- */
-$--link-color: $--color-primary-light-2 !default;
-$--link-hover-color: $--color-primary !default;
-
-// Box-shadow
-$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
-$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
-$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
-
-/* Typography
--------------------------- */
-$--font-path: 'fonts' !default;
-$--font-display: 'auto' !default;
-$--font-size-extra-large: 20px !default;
-$--font-size-large: 18px !default;
-$--font-size-medium: 16px !default;
-$--font-size-base: 14px !default;
-$--font-size-small: 13px !default;
-$--font-size-extra-small: 12px !default;
-$--font-weight-primary: 500 !default;
-$--font-weight-secondary: 100 !default;
-$--font-line-height-primary: 24px !default;
-$--font-line-height-secondary: 16px !default;
-$--font-color-disabled-base: #bbb !default;
-
-/* Size
--------------------------- */
-$--size-base: 14px !default;
-
-/* z-index
--------------------------- */
-$--index-normal: 1 !default;
-$--index-top: 1000 !default;
-$--index-popper: 2000 !default;
-
-/* Disable base
--------------------------- */
-$--disabled-fill-base: $--background-color-base !default;
-$--disabled-color-base: $--color-text-placeholder !default;
-$--disabled-border-base: $--border-color-light !default;
-
-/* Icon
--------------------------- */
-$--icon-color: #666 !default;
-$--icon-color-base: $--color-info !default;
-
-/* Border
--------------------------- */
-$--border-width-base: 1px !default;
-$--border-style-base: solid !default;
-$--border-color-hover: $--color-text-placeholder !default;
-$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
-$--border-radius-base: 4px !default;
-$--border-radius-small: 2px !default;
-$--border-radius-circle: 100% !default;
-$--border-radius-zero: 0 !default;
-
-/* Button
--------------------------- */
-// $--button-font-size: $--font-size-base !default;
-$--button-font-weight: $--font-weight-primary !default;
-// $--button-border-radius: $--border-radius-base !default;
-// $--button-padding-vertical: 12px !default;
-// $--button-padding-horizontal: 20px !default;
-
-$--button-medium-font-size: $--font-size-base !default;
-$--button-medium-border-radius: $--border-radius-base !default;
-$--button-medium-padding-vertical: 10px !default;
-$--button-medium-padding-horizontal: 20px !default;
-
-$--button-small-font-size: 12px !default;
-$--button-small-border-radius: #{$--border-radius-base - 1} !default;
-$--button-small-padding-vertical: 9px !default;
-$--button-small-padding-horizontal: 15px !default;
-$--button-mini-font-size: 12px !default;
-$--button-mini-border-radius: #{$--border-radius-base - 1} !default;
-$--button-mini-padding-vertical: 7px !default;
-$--button-mini-padding-horizontal: 15px !default;
-
-$--button-default-font-color: $--color-text-regular !default;
-$--button-default-background-color: $--color-white !default;
-$--button-default-border-color: $--border-color-base !default;
-$--button-disabled-font-color: $--color-text-placeholder !default;
-$--button-disabled-background-color: $--color-white !default;
-$--button-disabled-border-color: $--border-color-lighter !default;
-$--button-primary-border-color: $--color-primary !default;
-$--button-primary-font-color: $--color-white !default;
-$--button-primary-background-color: $--color-primary !default;
-$--button-success-border-color: $--color-success !default;
-$--button-success-font-color: $--color-white !default;
-$--button-success-background-color: $--color-success !default;
-$--button-warning-border-color: $--color-warning !default;
-$--button-warning-font-color: $--color-white !default;
-$--button-warning-background-color: $--color-warning !default;
-$--button-danger-border-color: $--color-danger !default;
-$--button-danger-font-color: $--color-white !default;
-$--button-danger-background-color: $--color-danger !default;
-$--button-info-border-color: $--color-info !default;
-$--button-info-font-color: $--color-white !default;
-$--button-info-background-color: $--color-info !default;
-
-$--button-hover-tint-percent: 20% !default;
-$--button-active-shade-percent: 10% !default;
+// Special comment for theme configurator
+// type|skipAutoTranslation|Category|Order
+// skipAutoTranslation 1
 
 // types
 $--types: primary, success, warning, danger, error, info;
@@ -203,7 +67,7 @@ $--color-info: map.get($--colors, 'info', 'base') !default;
 }
 
 // $--colors.primary.light-i
-// --lx-color-primary-light-i
+// --el-color-primary-light-i
 // 10% 53a8ff
 // 20% 66b1ff
 // 30% 79bbff
@@ -217,7 +81,7 @@ $--color-info: map.get($--colors, 'info', 'base') !default;
   @each $type in $--types {
     @include set-color-type-light($type, $i);
   }
-};
+}
 
 $--text-color: () !default;
 $--text-color: map.merge(
@@ -241,6 +105,43 @@ $--border-color: map.merge(
   $--border-color
 );
 
+// Background
+/// color|1|Background Color|4
+$--background-color-base: #f5f7fa !default;
+
+/* Border
+-------------------------- */
+$--border-width-base: 1px !default;
+$--border-style-base: solid !default;
+$--border-color-hover: var(--el-text-color-placeholder) !default;
+$--border-base: $--border-width-base $--border-style-base
+  map.get($--border-color, 'base') !default;
+/// borderRadius|1|Radius|0
+
+$--border-radius: () !default;
+$--border-radius: map.merge(
+  (
+    'base': 4px,
+    'small': 2px,
+    'round': 20px,
+    'circle': 100%,
+  ),
+  $--border-radius
+);
+
+// Box-shadow
+$--box-shadow: () !default;
+$--box-shadow: map.merge(
+  (
+    'base': (
+      0 2px 4px rgba(0, 0, 0, 0.12),
+      0 0 6px rgba(0, 0, 0, 0.04),
+    ),
+    'light': 0 2px 12px 0 rgba(0, 0, 0, 0.1),
+  ),
+  $--box-shadow
+);
+
 /* Typography
 -------------------------- */
 $--font-path: 'fonts' !default;
@@ -259,57 +160,277 @@ $--font-size: map.merge(
   $--font-size
 );
 
-/* Link
---------------------------*/
-// css3 var in packages/theme-chalk/src/link.scss
-$--link: () !default;
-$--link: map.merge(
+/* Disable base
+-------------------------- */
+$--disabled-fill-base: var(--el-background-color-base) !default;
+$--disabled-color-base: var(--el-text-color-placeholder) !default;
+$--disabled-border-base: var(--el-border-color-light) !default;
+
+/* Checkbox
+-------------------------- */
+// css3 var in packages/theme-chalk/src/checkbox.scss
+$--checkbox: () !default;
+$--checkbox: map.merge(
   (
-    'font-size': var(--lx-font-size-base),
-    'font-weight': var(--lx-font-weight-primary),
-    'default-font-color': var(--lx-text-color-regular),
-    'default-active-color': var(--lx-color-primary),
-    'disabled-font-color': var(--lx-text-color-placeholder),
+    'font-size': 14px,
+    'font-weight': var(--el-font-weight-primary),
+    'font-color': var(--el-text-color-regular),
+    'input-height': 14px,
+    'input-width': 14px,
+    'border-radius': var(--el-border-radius-small),
+    'background-color': var(--el-color-white),
+    'input-border': var(--el-border-base),
+    'disabled-border-color': var(--el-border-color-base),
+    'disabled-input-fill': #edf2fc,
+    'disabled-icon-color': var(--el-text-color-placeholder),
+    'disabled-checked-input-fill': var(--el-border-color-extra-light),
+    'disabled-checked-input-border-color': var(--el-border-color-base),
+    'disabled-checked-icon-color': var(--el-text-color-placeholder),
+    'checked-font-color': var(--el-color-primary),
+    'checked-input-border-color': var(--el-color-primary),
+    'checked-background-color': var(--el-color-primary),
+    'checked-icon-color': var(--el-fill-base),
+    'input-border-color-hover': var(--el-color-primary),
   ),
-  $--link
+  $--checkbox
 );
 
-$--link-font-color: () !default;
-
-@each $type in $--types {
-  $--link-font-color: map.merge(
-    $--link-font-color,
-    (
-      $type: map.get($--colors, $type, 'base'),
-    )
-  ) !global;
-}
-
-// header
-$--header: () !default;
-$--header: map.merge(
+$--checkbox-button: () !default;
+$--checkbox-button: map.merge(
   (
-    'padding': 0 20px,
-    'height': 60px,
+    'checked-background-color': var(--el-color-primary),
+    'checked-font-color': var(--el-color-white),
+    'checked-border-color': var(--el-color-primary),
   ),
-  $--header
+  $--checkbox-button
 );
-// main
-$--main: () !default;
-$--main: map.merge(
+
+/* Radio
+-------------------------- */
+/// fontSize||Font|1
+$--radio: () !default;
+$--radio: map.merge(
   (
-    'padding': 20px,
+    'font-size': var(--el-font-size-base),
+    'font-color': var(--el-text-color-regular),
+    'font-weight': var(--el-font-weight-primary),
+    'input-height': 14px,
+    'input-width': 14px,
+    'input-border-radius': var(--el-border-radius-circle),
+    'input-background-color': var(--el-color-white),
+    'input-border': var(--el-border-base),
+    'input-border-color': var(--el-border-color-base),
   ),
-  $--main
+  $--radio
 );
-// footer
-$--footer: () !default;
-$--footer: map.merge(
+
+$--radio-height: () !default;
+$--radio-height: map.merge(
   (
-    'padding': 0 20px,
-    'height': 60px,
+    'default': 40px,
+    'medium': 36px,
+    'small': 32px,
+    'mini': 28px,
   ),
-  $--footer
+  $--radio-height
+);
+
+$--radio-button: () !default;
+$--radio-button: map.merge(
+  (
+    'checked-background-color': var(--el-color-primary),
+    'checked-font-color': var(--el-color-white),
+    'checked-border-color': var(--el-color-primary),
+    'disabled-checked-fill': var(--el-border-color-extra-light),
+  ),
+  $--radio-button
+);
+
+$--radio-disabled: () !default;
+$--radio-disabled: map.merge(
+  (
+    'input-border-color': var(--el-disabled-border-base),
+    'input-fill': var(--el-disabled-fill-base),
+    'icon-color': var(--el-disabled-fill-base),
+    'checked-input-border-color': var(--el-disabled-border-base),
+    'checked-input-fill': var(--el-disabled-fill-base),
+    'checked-icon-color': var(--el-text-color-placeholder),
+  ),
+  $--radio-disabled
+);
+
+$--radio-checked: () !default;
+$--radio-checked: map.merge(
+  (
+    'font-color': var(--el-color-primary),
+    'input-border-color': var(--el-color-primary),
+    'icon-color': var(--el-color-primary),
+  ),
+  $--radio-checked
+);
+
+$--radio-input-border-color-hover: var(--el-color-primary) !default;
+
+$--radio-bordered-padding: () !default;
+$--radio-bordered-padding: map.merge(
+  (
+    'default': 0 20px 0 10px,
+    'medium': 0 20px 0 10px,
+    'small': 0 15px 0 10px,
+    'mini': 0 15px 0 10px,
+  ),
+  $--radio-bordered-padding
+);
+
+$--radio-bordered-input-height: () !default;
+$--radio-bordered-input-height: map.merge(
+  (
+    'medium': 14px,
+    'small': 12px,
+    'mini': 12px,
+  ),
+  $--radio-bordered-input-height
+);
+
+$--radio-bordered-input-width: () !default;
+$--radio-bordered-input-width: map.merge(
+  (
+    'medium': 14px,
+    'small': 12px,
+    'mini': 12px,
+  ),
+  $--radio-bordered-input-width
+);
+
+/* Select
+-------------------------- */
+$--select: () !default;
+$--select: map.merge(
+  (
+    'border-color-hover': var(--el-border-color-hover),
+    'disabled-border': var(--el-disabled-border-base),
+    'font-size': var(--el-font-size-base),
+    'close-hover-color': var(--el-text-color-secondary),
+    'input-color': var(--el-text-color-placeholder),
+    'multiple-input-color': var(--el-text-color-regular),
+    'input-focus-border-color': var(--el-color-primary),
+    'input-font-size': 14px,
+  ),
+  $--select
+);
+
+$--select-option: () !default;
+$--select-option: map.merge(
+  (
+    'color': var(--el-text-color-regular),
+    'disabled-color': var(--el-text-color-placeholder),
+    'height': 34px,
+    'hover-background': var(--el-background-color-base),
+    'selected-font-color': var(--el-color-primary),
+  ),
+  $--select-option
+);
+
+$--select-group: () !default;
+$--select-group: map.merge(
+  (
+    'color': var(--el-color-info),
+    'height': 30px,
+    'font-size': 12px,
+  ),
+  $--select-group
+);
+
+$--select-dropdown: () !default;
+$--select-dropdown: map.merge(
+  (
+    'background': var(--el-color-white),
+    'shadow': var(--el-box-shadow-light),
+    'empty-color': var(--el-text-color-secondary),
+    'max-height': 274px,
+    'padding': 6px 0,
+    'empty-padding': 10px 0,
+    'border': 1px solid var(--el-border-color-light),
+  ),
+  $--select-dropdown
+);
+
+/* Alert
+-------------------------- */
+// css3 var in packages/theme-chalk/src/alert.scss
+$--alert: () !default;
+$--alert: map.merge(
+  (
+    'padding': 8px 16px,
+    'border-radius-base': var(--el-border-radius-base),
+    'title-font-size': 13px,
+    'description-font-size': 12px,
+    'close-font-size': 12px,
+    'close-customed-font-size': 13px,
+    'icon-size': 16px,
+    'icon-large-size': 28px,
+  ),
+  $--alert
+);
+
+/* MessageBox
+-------------------------- */
+// css3 var in packages/theme-chalk/src/message-box.scss
+$--messagebox: () !default;
+$--messagebox: map.merge(
+  (
+    'title-color': var(--el-text-color-primary),
+    'width': 420px,
+    'border-radius': 4px,
+    'font-size': var(--el-font-size-large),
+    'content-font-size': var(--el-font-size-base),
+    'content-color': var(--el-text-color-regular),
+    'error-font-size': 12px,
+    'padding-primary': 15px,
+  ),
+  $--messagebox
+);
+
+/* Message
+-------------------------- */
+// css3 var in packages/theme-chalk/src/message.scss
+$--message: () !default;
+$--message: map.merge(
+  (
+    'min-width': 380px,
+    'background-color': #edf2fc,
+    'padding': 15px 15px 15px 20px,
+    'close-size': 16px,
+    'close-icon-color': var(--el-text-color-placeholder),
+    'close-hover-color': var(--el-text-color-secondary),
+  ),
+  $--message
+);
+
+/* Notification
+-------------------------- */
+// css3 var in packages/theme-chalk/src/notification.scss
+$--notification: () !default;
+$--notification: map.merge(
+  (
+    'width': 330px,
+    'padding': 14px 26px 14px 13px,
+    'radius': 8px,
+    'shadow': var(--el-box-shadow-light),
+    'border-color': var(--el-border-color-lighter),
+    'icon-size': 24px,
+    'close-font-size':
+      var(--el-message-close-size, map.get($--message, 'close-size')),
+    'group-margin-left': 13px,
+    'group-margin-right': 8px,
+    'content-font-size': var(--el-font-size-base),
+    'content-color': var(--el-text-color-regular),
+    'title-font-size': 16px,
+    'title-color': var(--el-text-color-primary),
+    'close-color': var(--el-text-color-secondary),
+    'close-hover-color': var(--el-text-color-regular),
+  ),
+  $--notification
 );
 
 /* Input
@@ -318,16 +439,16 @@ $--footer: map.merge(
 $--input: () !default;
 $--input: map.merge(
   (
-    'font-color': var(--lx-text-color-regular),
-    'border': var(--lx-border-base),
-    'border-color': var(--lx-border-color-base),
-    'border-radius': var(--lx-border-radius-base),
-    'background-color': var(--lx-color-white),
-    'icon-color': var(--lx-text-color-placeholder),
-    'placeholder-color': var(--lx-text-color-placeholder),
-    'hover-border': var(--lx-border-color-hover),
-    'clear-hover-color': var(--lx-text-color-secondary),
-    'focus-border': var(--lx-color-primary),
+    'font-color': var(--el-text-color-regular),
+    'border': var(--el-border-base),
+    'border-color': var(--el-border-color-base),
+    'border-radius': var(--el-border-radius-base),
+    'background-color': var(--el-color-white),
+    'icon-color': var(--el-text-color-placeholder),
+    'placeholder-color': var(--el-text-color-placeholder),
+    'hover-border': var(--el-border-color-hover),
+    'clear-hover-color': var(--el-text-color-secondary),
+    'focus-border': var(--el-color-primary),
   ),
   $--input
 );
@@ -335,10 +456,10 @@ $--input: map.merge(
 $--input-disabled: () !default;
 $--input-disabled: map.merge(
   (
-    'fill': var(--lx-disabled-fill-base),
-    'border': var(--lx-disabled-border-base),
-    'color': var(--lx-disabled-color-base),
-    'placeholder-color': var(--lx-text-color-placeholder),
+    'fill': var(--el-disabled-fill-base),
+    'border': var(--el-disabled-border-base),
+    'color': var(--el-disabled-color-base),
+    'placeholder-color': var(--el-text-color-placeholder),
   ),
   $--input-disabled
 );
@@ -346,7 +467,7 @@ $--input-disabled: map.merge(
 $--input-font-size: () !default;
 $--input-font-size: map.merge(
   (
-    'default': var(--lx-font-size-base, map.get($--font-size, 'base')),
+    'default': var(--el-font-size-base, map.get($--font-size, 'base')),
     'medium': 14px,
     'small': 13px,
     'mini': 12px,
@@ -385,19 +506,40 @@ $--input-number-width: map.merge(
   $--input-number-width
 );
 
+/* Cascader
+-------------------------- */
+// css3 var in packages/theme-chalk/src/cascader.scss
+$--cascader: () !default;
+$--cascader: map.merge(
+  (
+    'menu-font-color': var(--el-text-color-regular),
+    'menu-selected-font-color': var(--el-color-primary),
+    'menu-fill': var(--el-fill-base),
+    'menu-font-size': var(--el-font-size-base),
+    'menu-radius': var(--el-border-radius-base),
+    'menu-border': solid 1px var(--el-border-color-light),
+    'menu-shadow': var(--el-box-shadow-light),
+    'node-background-hover': var(--el-background-color-base),
+    'node-color-disabled': var(--el-text-color-placeholder),
+    'color-empty': var(--el-text-color-placeholder),
+    'tag-background': #f0f2f5,
+  ),
+  $--cascader
+);
+
 /* Button
 -------------------------- */
 // css3 var in packages/theme-chalk/src/button.scss
 $--button: () !default;
 $--button: map.merge(
   (
-    'font-weight': var(--lx-font-weight-primary),
-    'border-color': var(--lx-border-color-base),
-    'background-color': var(--lx-color-white),
-    'font-color': var(--lx-text-color-regular),
-    'disabled-font-color': var(--lx-text-color-placeholder),
-    'disabled-background-color': var(--lx-color-white),
-    'disabled-border-color': var(--lx-border-color-light),
+    'font-weight': var(--el-font-weight-primary),
+    'border-color': var(--el-border-color-base),
+    'background-color': var(--el-color-white),
+    'font-color': var(--el-text-color-regular),
+    'disabled-font-color': var(--el-text-color-placeholder),
+    'disabled-background-color': var(--el-color-white),
+    'disabled-border-color': var(--el-border-color-light),
     'divide-border-color': rgba($--color-white, 0.5),
   ),
   $--button
@@ -437,8 +579,8 @@ $--button-font-color: () !default;
 $--button-font-size: () !default;
 $--button-font-size: map.merge(
   (
-    'default': var(--lx-font-size-base, map.get($--font-size, 'base')),
-    'medium': var(--lx-font-size-base, map.get($--font-size, 'base')),
+    'default': var(--el-font-size-base, map.get($--font-size, 'base')),
+    'medium': var(--el-font-size-base, map.get($--font-size, 'base')),
     'small': 12px,
     'mini': 12px,
   ),
@@ -448,10 +590,10 @@ $--button-font-size: map.merge(
 $--button-border-radius: () !default;
 $--button-border-radius: map.merge(
   (
-    'default': var(--lx-border-radius-base),
-    'medium': var(--lx-border-radius-base),
-    'small': calc(var(--lx-border-radius-base) - 1px),
-    'mini': calc(var(--lx-border-radius-base) - 1px),
+    'default': var(--el-border-radius-base),
+    'medium': var(--el-border-radius-base),
+    'small': calc(var(--el-border-radius-base) - 1px),
+    'mini': calc(var(--el-border-radius-base) - 1px),
   ),
   $--button-border-radius
 );
@@ -478,74 +620,622 @@ $--button-padding-horizontal: map.merge(
   $--button-padding-horizontal
 );
 
+/* Switch
+-------------------------- */
+// css3 var in packages/theme-chalk/src/switch.scss
+$--switch: () !default;
+$--switch: map.merge(
+  (
+    'on-color': var(--el-color-primary),
+    'off-color': var(--el-border-color-base),
+    'font-size': var(--el-font-size-base),
+    'core-border-radius': 10px,
+    'width': 40px,
+    'height': 20px,
+    'button-size': 16px,
+  ),
+  $--switch
+);
+
+/* Dialog
+-------------------------- */
+// css3 var in packages/theme-chalk/src/dialog.scss
+$--dialog: () !default;
+$--dialog: map.merge(
+  (
+    'background-color': var(--el-color-white),
+    'box-shadow': 0 1px 3px rgba(0, 0, 0, 0.3),
+    'title-font-size': var(--el-font-size-large),
+    'content-font-size': 14px,
+    'font-line-height': var(--el-font-line-height-primary),
+    'padding-primary': 20px,
+  ),
+  $--dialog
+);
+
+/* Table
+-------------------------- */
+// css3 var in packages/theme-chalk/src/table.scss
+$--table: () !default;
+$--table: map.merge(
+  (
+    'border-color': var(--el-border-color-lighter),
+    'border': 1px solid var(--el-table-border-color),
+    'font-color': var(--el-text-color-regular),
+    'header-font-color': var(--el-text-color-secondary),
+    'row-hover-background-color': var(--el-background-color-base),
+    'current-row-background-color': var(--el-color-primary-light-9),
+    'header-background-color': var(--el-color-white),
+    'fixed-box-shadow': 0 0 10px rgba(0, 0, 0, 0.12),
+    'background-color': var(--el-color-white),
+    'tr-background-color': var(--el-color-white),
+    'expanded-cell-background-color': var(--el-color-white),
+  ),
+  $--table
+);
+
+/* Pagination
+-------------------------- */
+// css3 var in packages/theme-chalk/src/pagination.scss
+$--pagination: () !default;
+$--pagination: map.merge(
+  (
+    'font-size': 13px,
+    'background-color': var(--el-color-white),
+    'font-color': var(--el-text-color-primary),
+    'border-radius': 3px,
+    'button-color': var(--el-text-color-primary),
+    'button-width': 35.5px,
+    'button-height': 28px,
+    'button-disabled-color': var(--el-text-color-placeholder),
+    'button-disabled-background-color': var(--el-color-white),
+    'hover-color': var(--el-color-primary),
+    'height-extra-small': 22px,
+    'line-height-extra-small': var(--el-pagination-height-extra-small),
+  ),
+  $--pagination
+);
+
+/* Popup
+-------------------------- */
+// css3 var in packages/theme-chalk/src/popup.scss
+$--popup: () !default;
+$--popup: map.merge(
+  (
+    'modal-background-color': var(--el-color-black),
+    'modal-opacity': 0.5,
+  ),
+  $--popup
+);
+
+/* Popover
+-------------------------- */
+// css3 var in packages/theme-chalk/src/popover.scss
+$--popover: () !default;
+$--popover: map.merge(
+  (
+    'background-color': var(--el-color-white),
+    'font-size': var(--el-font-size-base),
+    'border-color': var(--el-border-color-lighter),
+    'padding': 12px,
+    'padding-large': 18px 20px,
+    'title-font-size': 16px,
+    'title-font-color': var(--el-text-color-primary),
+    'border-radius': 4px,
+  ),
+  $--popover
+);
+
+// popper
+$--popper: () !default;
+$--popper: map.merge(
+  (
+    'border-radius': var(--el-popover-border-radius, 4px),
+  ),
+  $--popper
+);
+
+// skeleton
+$--skeleton: () !default;
+$--skeleton: map.merge(
+  (
+    'color': #f2f2f2,
+    'to-color': #e6e6e6,
+  ),
+  $--skeleton
+);
+
+/* Tooltip
+-------------------------- */
+// css3 var in packages/theme-chalk/src/tooltip.scss
+$--tooltip: () !default;
+$--tooltip: map.merge(
+  (
+    'fill': var(--el-text-color-primary),
+    'color': var(--el-color-white),
+    'font-size': 12px,
+    'border-color': var(--el-text-color-primary),
+    'arrow-size': 6px,
+    'padding': 10px,
+  ),
+  $--tooltip
+);
+
+/* Tag
+-------------------------- */
+// css3 var in packages/theme-chalk/src/tag.scss
+$--tag: () !default;
+$--tag: map.merge(
+  (
+    'font-size': 12px,
+    'border-radius': 4px,
+    'padding': 0 10px,
+  ),
+  $--tag
+);
+
+$--tag-color: () !default;
+
+$--tag-height: () !default;
+$--tag-height: map.merge(
+  (
+    'default': 32px,
+    'medium': 28px,
+    'small': 24px,
+    'mini': 20px,
+  ),
+  $--tag-height
+);
+
+@each $type in $--types {
+  $--tag-color: map.merge(
+    (
+      $type: map.get($--colors, $type, 'base'),
+    ),
+    $--tag-color
+  ) !global;
+}
+
 /* Tree
 -------------------------- */
 // css3 var in packages/theme-chalk/src/tree.scss
 $--tree: () !default;
 $--tree: map.merge(
   (
-    'node-hover-background-color': var(--lx-background-color-base),
-    'font-color': var(--lx-text-color-regular),
-    'expand-icon-color': var(--lx-text-color-placeholder),
+    'node-hover-background-color': var(--el-background-color-base),
+    'font-color': var(--el-text-color-regular),
+    'expand-icon-color': var(--el-text-color-placeholder),
   ),
   $--tree
 );
 
-/* Alert
+/* Dropdown
 -------------------------- */
-// css3 var in packages/theme-chalk/src/alert.scss
-$--alert: () !default;
-$--alert: map.merge(
+$--dropdown: () !default;
+$--dropdown: map.merge(
   (
-    'padding': 8px 16px,
-    'border-radius-base': var(--lx-border-radius-base),
-    'title-font-size': 13px,
-    'description-font-size': 12px,
-    'close-font-size': 12px,
-    'close-customed-font-size': 13px,
-    'icon-size': 16px,
-    'icon-large-size': 28px,
+    'menu-box-shadow': var(--el-box-shadow-light),
+    'menuItem-hover-fill': var(--el-color-primary-light-9),
+    'menuItem-hover-color': var(--el-color-primary-light-2),
+    'menu-index': 10,
   ),
-  $--alert
+  $--dropdown
 );
 
-/* Checkbox
--------------------------- */
-// css3 var in packages/theme-chalk/src/checkbox.scss
-$--checkbox: () !default;
-$--checkbox: map.merge(
+// drawer
+$--drawer: () !default;
+$--drawer: map.merge(
   (
-    'font-size': 14px,
-    'font-weight': var(--lx-font-weight-primary),
-    'font-color': var(--lx-text-color-regular),
-    'input-height': 14px,
-    'input-width': 14px,
-    'border-radius': var(--lx-border-radius-small),
-    'background-color': var(--lx-color-white),
-    'input-border': var(--lx-border-base),
-    'disabled-border-color': var(--lx-border-color-base),
-    'disabled-input-fill': #edf2fc,
-    'disabled-icon-color': var(--lx-text-color-placeholder),
-    'disabled-checked-input-fill': var(--lx-border-color-extra-light),
-    'disabled-checked-input-border-color': var(--lx-border-color-base),
-    'disabled-checked-icon-color': var(--lx-text-color-placeholder),
-    'checked-font-color': var(--lx-color-primary),
-    'checked-input-border-color': var(--lx-color-primary),
-    'checked-background-color': var(--lx-color-primary),
-    'checked-icon-color': var(--lx-fill-base),
-    'input-border-color-hover': var(--lx-color-primary),
+    'background-color': var(--el-dialog-background-color, var(--el-color-white)),
+    'padding-primary': var(--el-dialog-padding-primary, 20px),
   ),
-  $--checkbox
+  $--drawer
 );
 
-$--checkbox-button: () !default;
-$--checkbox-button: map.merge(
+/* Badge
+-------------------------- */
+// css3 var in packages/theme-chalk/src/badge.scss
+$--badge: () !default;
+$--badge: map.merge(
   (
-    'checked-background-color': var(--lx-color-primary),
-    'checked-font-color': var(--lx-color-white),
-    'checked-border-color': var(--lx-color-primary),
+    'background-color': var(--el-color-danger),
+    'radius': 10px,
+    'font-size': 12px,
+    'padding': 6px,
+    'size': 18px,
   ),
-  $--checkbox-button
+  $--badge
+);
+
+/* Card
+--------------------------*/
+$--card: () !default;
+$--card: map.merge(
+  (
+    'border-color':
+      var(--el-border-color-light, map.get($--border-color, 'lighter')),
+    'border-radius': 4px,
+    'padding': 20px,
+    'background-color': var(--el-color-white),
+  ),
+  $--card
+);
+
+$--dark-card: () !default;
+$--dark-card: map.merge(
+  (
+    'background-color': var(--el-color-black),
+  ),
+  $--dark-card
+);
+
+/* Slider
+--------------------------*/
+// css3 var in packages/theme-chalk/src/slider.scss
+$--slider: () !default;
+$--slider: map.merge(
+  (
+    'main-background-color': var(--el-color-primary),
+    'runway-background-color': var(--el-border-color-light),
+    'stop-background-color': var(--el-color-white),
+    'disable-color': var(--el-text-color-placeholder),
+    'margin': 16px 0,
+    'border-radius': 3px,
+    'height': 6px,
+    'button-size': 20px,
+    'button-wrapper-size': 36px,
+    'button-wrapper-offset': -15px,
+  ),
+  $--slider
+);
+
+/* Menu
+--------------------------*/
+// css3 var in packages/theme-chalk/src/menu.scss
+$--menu: () !default;
+$--menu: map.merge(
+  (
+    'item-font-size': var(--el-font-size-base),
+    'item-font-color': var(--el-text-color-primary),
+    'item-hover-fill': var(--el-color-primary-light-9),
+    'background-color': var(--el-color-white),
+    'border-color': #e6e6e6,
+  ),
+  $--menu
+);
+
+/* Rate
+--------------------------*/
+$--rate: () !default;
+$--rate: map.merge(
+  (
+    'height': 20px,
+    'font-size': var(--el-font-size-base),
+    'icon-size': 18px,
+    'icon-margin': 6px,
+    'icon-color': var(--el-text-color-placeholder),
+  ),
+  $--rate
+);
+
+/* DatePicker
+--------------------------*/
+// css3 var packages/theme-chalk/src/date-picker/var.scss
+$--datepicker: () !default;
+$--datepicker: map.merge(
+  (
+    'font-color': var(--el-text-color-regular),
+    'off-font-color': var(--el-text-color-placeholder),
+    'header-font-color': var(--el-text-color-regular),
+    'icon-color': var(--el-text-color-primary),
+    'border-color': var(--el-disabled-border-base),
+    'inner-border-color': var(--el-border-color-light),
+    'inrange-background-color': var(--el-border-color-extra-light),
+    'inrange-hover-background-color': var(--el-border-color-extra-light),
+    'active-color': var(--el-color-primary),
+    'hover-font-color': var(--el-color-primary),
+  ),
+  $--datepicker
+);
+
+$--date-editor: () !default;
+$--date-editor: map.merge(
+  (
+    'width': 220px,
+    'monthrange-width': 300px,
+    'daterange-width': 350px,
+    'datetimerange-width': 400px,
+  ),
+  $--date-editor
+);
+
+/* Loading
+--------------------------*/
+// css3 var in packages/theme-chalk/src/loading.scss
+$--loading: () !default;
+$--loading: map.merge(
+  (
+    'spinner-size': 42px,
+    'fullscreen-spinner-size': 50px,
+  ),
+  $--loading
+);
+
+/* Scrollbar
+--------------------------*/
+// css3 var in packages/theme-chalk/src/scrollbar.scss
+$--scrollbar: () !default;
+$--scrollbar: map.merge(
+  (
+    'opacity': 0.3,
+    'background-color': var(--el-text-color-secondary),
+    'hover-opacity': 0.5,
+    'hover-background-color': var(--el-text-color-secondary),
+  ),
+  $--scrollbar
+);
+
+/* Carousel
+--------------------------*/
+// css3 var in packages/theme-chalk/src/carousel.scss
+$--carousel: () !default;
+$--carousel: map.merge(
+  (
+    'arrow-font-size': 12px,
+    'arrow-size': 36px,
+    'arrow-background': rgba(31, 45, 61, 0.11),
+    'arrow-hover-background': rgba(31, 45, 61, 0.23),
+    'indicator-width': 30px,
+    'indicator-height': 2px,
+    'indicator-padding-horizontal': 4px,
+    'indicator-padding-vertical': 12px,
+    'indicator-out-color': var(--el-border-color-hover),
+  ),
+  $--carousel
+);
+
+/* Collapse
+--------------------------*/
+// css3 var in packages/theme-chalk/src/collapse.scss
+$--collapse: () !default;
+$--collapse: map.merge(
+  (
+    'border-color': var(--el-border-color-lighter),
+    'header-height': 48px,
+    'header-background-color': var(--el-color-white),
+    'header-font-color': var(--el-text-color-primary),
+    'header-font-size': 13px,
+    'content-background-color': var(--el-color-white),
+    'content-font-size': 13px,
+    'content-font-color': var(--el-text-color-primary),
+  ),
+  $--collapse
+);
+
+/* Transfer
+--------------------------*/
+// css3 var in packages/theme-chalk/src/transfer.scss
+$--transfer: () !default;
+$--transfer: map.merge(
+  (
+    'border-color': var(--el-border-color-lighter),
+    'border-radius': var(--el-border-radius-base),
+    'panel-width': 200px,
+    'panel-header-height': 40px,
+    'panel-header-background-color': var(--el-background-color-base),
+    'panel-footer-height': 40px,
+    'panel-body-height': 246px,
+    'item-height': 30px,
+    'filter-height': 32px,
+  ),
+  $--transfer
+);
+
+/* Timeline
+--------------------------*/
+// css3 var in packages/theme-chalk/src/timeline-item.scss
+$--timeline: () !default;
+$--timeline: map.merge(
+  (
+    'node-size-normal': 12px,
+    'node-size-large': 14px,
+    'node-color': var(--el-border-color-light),
+  ),
+  $--timeline
+);
+
+/* Backtop
+--------------------------*/
+// css3 var in packages/theme-chalk/src/backtop.scss
+$--backtop: () !default;
+$--backtop: map.merge(
+  (
+    'background-color': var(--el-color-white),
+    'font-color': var(--el-color-primary),
+    'hover-background-color': var(--el-border-color-extra-light),
+  ),
+  $--backtop
+);
+
+/* Link
+--------------------------*/
+// css3 var in packages/theme-chalk/src/link.scss
+$--link: () !default;
+$--link: map.merge(
+  (
+    'font-size': var(--el-font-size-base),
+    'font-weight': var(--el-font-weight-primary),
+    'default-font-color': var(--el-text-color-regular),
+    'default-active-color': var(--el-color-primary),
+    'disabled-font-color': var(--el-text-color-placeholder),
+  ),
+  $--link
+);
+
+$--link-font-color: () !default;
+
+@each $type in $--types {
+  $--link-font-color: map.merge(
+    $--link-font-color,
+    (
+      $type: map.get($--colors, $type, 'base'),
+    )
+  ) !global;
+}
+
+/* Calendar
+--------------------------*/
+// css3 var in packages/theme-chalk/src/calendar.scss
+$--calendar: () !default;
+$--calendar: map.merge(
+  (
+    'border': var(--el-table-border, 1px solid var(--el-border-color-lighter)),
+    'header-border-bottom': var(--el-calendar-border),
+    'selected-background-color': #f2f8fe,
+    'cell-width': 85px,
+  ),
+  $--calendar
+);
+
+/* Form
+-------------------------- */
+// css3 var in packages/theme-chalk/src/form.scss
+$--form: () !default;
+$--form: map.merge(
+  (
+    'label-font-size': var(--el-font-size-base),
+  ),
+  $--form
+);
+
+/* Avatar
+--------------------------*/
+// css3 var in packages/theme-chalk/src/avatar.scss
+$--avatar: () !default;
+$--avatar: map.merge(
+  (
+    'font-color': #fff,
+    'background-color': #c0c4cc,
+    'text-font-size': 14px,
+    'icon-font-size': 18px,
+    'border-radius': var(--el-border-radius-base),
+    'large-size': 40px,
+    'medium-size': 36px,
+    'small-size': 28px,
+  ),
+  $--avatar
+);
+
+/* Empty
+-------------------------- */
+// css3 var in packages/theme-chalk/src/empty.scss
+$--empty: () !default;
+$--empty: map.merge(
+  (
+    'padding': 40px 0,
+    'image-width': 160px,
+    'description-margin-top': 20px,
+    'bottom-margin-top': 20px,
+  ),
+  $--empty
+);
+
+/* Descriptions
+-------------------------- */
+// css3 var in packages/theme-chalk/src/descriptions.scss
+$--descriptions: () !default;
+$--descriptions: map.merge(
+  (
+    'header-margin-bottom': 20px,
+    'title-font-size': 16px,
+    'table-border': 1px solid var(--el-border-color-lighter),
+    'item-bordered-label-background': #fafafa,
+  ),
+  $--descriptions
+);
+
+/* Result
+-------------------------- */
+// css3 var in packages/theme-chalk/src/result.scss
+$--result: () !default;
+$--result: map.merge(
+  (
+    'padding': 40px 30px,
+    'icon-font-size': 64px,
+    'title-font-size': 20px,
+    'title-margin-top': 20px,
+    'subtitle-margin-top': 10px,
+    'extra-margin-top': 30px,
+  ),
+  $--result
+);
+
+// transition
+$--transition: () !default;
+$--transition: map.merge(
+  (
+    'all': all var(--el-transition-duration)
+      var(--el-transition-function-ease-in-out-bezier),
+    'fade': opacity var(--el-transition-duration)
+      var(--el-transition-function-fast-bezier),
+    'md-fade': (
+      transform var(--el-transition-duration)
+        var(--el-transition-function-fast-bezier),
+      opacity var(--el-transition-duration)
+        var(--el-transition-function-fast-bezier),
+    ),
+    'fade-linear': opacity var(--el-transition-duration-fast) linear,
+    'border': border-color var(--el-transition-duration-fast)
+      var(--el-transition-function-ease-in-out-bezier),
+    'color': color var(--el-transition-duration-fast)
+      var(--el-transition-function-ease-in-out-bezier),
+  ),
+  $--transition
+);
+
+$--transition-duration: () !default;
+$--transition-duration: map.merge(
+  (
+    'default': 0.3s,
+    'fast': 0.2s,
+  ),
+  $--transition-duration
+);
+
+$--transition-function: () !default;
+$--transition-function: map.merge(
+  (
+    'ease-in-out-bezier': cubic-bezier(0.645, 0.045, 0.355, 1),
+    'fast-bezier': cubic-bezier(0.23, 1, 0.32, 1),
+  ),
+  $--transition-function
+);
+
+// header
+$--header: () !default;
+$--header: map.merge(
+  (
+    'padding': 0 20px,
+    'height': 60px,
+  ),
+  $--header
+);
+// main
+$--main: () !default;
+$--main: map.merge(
+  (
+    'padding': 20px,
+  ),
+  $--main
+);
+// footer
+$--footer: () !default;
+$--footer: map.merge(
+  (
+    'padding': 0 20px,
+    'height': 60px,
+  ),
+  $--footer
 );
 
 /* Break-point
@@ -556,23 +1246,23 @@ $--lg: 1200px !default;
 $--xl: 1920px !default;
 
 $--breakpoints: (
-  'xs' : (max-width: $--sm - 1),
-  'sm' : (min-width: $--sm),
-  'md' : (min-width: $--md),
-  'lg' : (min-width: $--lg),
-  'xl' : (min-width: $--xl)
-);
+  'xs': '(max-width: #{$--sm})',
+  'sm': '(min-width: #{$--sm})',
+  'md': '(min-width: #{$--md})',
+  'lg': '(min-width: #{$--lg})',
+  'xl': '(min-width: #{$--xl})',
+) !default;
 
 $--breakpoints-spec: (
-  'xs-only' : (max-width: $--sm - 1),
-  'sm-and-up' : (min-width: $--sm),
-  'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
-  'sm-and-down': (max-width: $--md - 1),
-  'md-and-up' : (min-width: $--md),
-  'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
-  'md-and-down': (max-width: $--lg - 1),
-  'lg-and-up' : (min-width: $--lg),
-  'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
-  'lg-and-down': (max-width: $--xl - 1),
-  'xl-only' : (min-width: $--xl),
-);
+  'xs-only': '(max-width: #{$--sm})',
+  'sm-and-up': '(min-width: #{$--sm})',
+  'sm-only': '(min-width: #{$--sm}) and (max-width: #{$--md})',
+  'sm-and-down': '(max-width: #{$--md})',
+  'md-and-up': '(min-width: #{$--md})',
+  'md-only': '(min-width: #{$--md}) and (max-width: #{$--lg})',
+  'md-and-down': '(max-width: #{$--lg})',
+  'lg-and-up': '(min-width: #{$--lg})',
+  'lg-only': '(min-width: #{$--lg}) and (max-width: #{$--xl})',
+  'lg-and-down': '(max-width: #{$--xl})',
+  'xl-only': '(min-width: #{$--xl})',
+) !default;

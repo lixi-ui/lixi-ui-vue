@@ -64,13 +64,13 @@ export default defineComponent({
       const { size, icon, shape } = props
       const classList = ['lx-avatar']
       if (size && typeof size === 'string') {
-        classList.push(`el-avatar--${size}`)
+        classList.push(`lx-avatar--${size}`)
       }
       if (icon) {
         classList.push('lx-avatar--icon')
       }
       if (shape) {
-        classList.push(`el-avatar--${shape}`)
+        classList.push(`lx-avatar--${shape}`)
       }
       return classList
     })

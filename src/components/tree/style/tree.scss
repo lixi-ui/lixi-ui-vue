@@ -1,7 +1,7 @@
 @import '@lixi/style/src/mixins/mixins';
 @import '@lixi/style/src/mixins/var';
 @import '@lixi/style/src/common/var';
-// @import '@lixi/style/src/common/transition';
+// @import '@lixi/style/src/'@lixi/style/src/common/transition';';
 
 @include b(tree) {
   @include set-component-css-var('tree', $--tree);

@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <Md/>
   </div>
 </template>

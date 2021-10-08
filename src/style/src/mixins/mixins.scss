@@ -1,8 +1,75 @@
-@import "function";
+@import 'function';
+@import '../common/var';
+
+/* Break-points
+ -------------------------- */
+@mixin res($key, $map: $--breakpoints) {
+  // 循环断点Map，如果存在则返回
+  @if map-has-key($map, $key) {
+    @media only screen and #{unquote(map-get($map, $key))} {
+      @content;
+    }
+  } @else {
+    @warn "Undefeined points: `#{$map}`";
+  }
+}
+
+/* Scrollbar
+ -------------------------- */
+@mixin scroll-bar {
+  $--scrollbar-thumb-background: #b4bccc;
+  $--scrollbar-track-background: #fff;
+
+  &::-webkit-scrollbar {
+    z-index: 11;
+    width: 6px;
+
+    &:horizontal {
+      height: 6px;
+    }
+
+    &-thumb {
+      border-radius: 5px;
+      width: 6px;
+      background: $--scrollbar-thumb-background;
+    }
+
+    &-corner {
+      background: $--scrollbar-track-background;
+    }
+
+    &-track {
+      background: $--scrollbar-track-background;
+
+      &-piece {
+        background: $--scrollbar-track-background;
+        width: 6px;
+      }
+    }
+  }
+}
+
+/* Placeholder
+ -------------------------- */
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
 /* BEM
  -------------------------- */
 @mixin b($block) {
-  $B: $namespace+'-'+$block !global;
+  $B: $namespace + '-' + $block !global;
+
   .#{$B} {
     @content;
   }
@@ -11,9 +78,14 @@
 @mixin e($element) {
   $E: $element !global;
   $selector: &;
-  $currentSelector: "";
+  $currentSelector: '';
   @each $unit in $element {
-    $currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+    $currentSelector: #{$currentSelector +
+      '.' +
+      $B +
+      $element-separator +
+      $unit +
+      ','};
   }
 
   @if hitAllSpecialNestRule($selector) {
@@ -35,14 +107,74 @@
 
 @mixin m($modifier) {
   $selector: &;
-  $currentSelector: "";
+  $currentSelector: '';
   @each $unit in $modifier {
-    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+    $currentSelector: #{$currentSelector +
+      $selector +
+      $modifier-separator +
+      $unit +
+      ','};
   }
 
   @at-root {
     #{$currentSelector} {
       @content;
+    }
+  }
+}
+
+@mixin configurable-m($modifier, $E-flag: false) {
+  $selector: &;
+  $interpolation: '';
+
+  @if $E-flag {
+    $interpolation: $element-separator + $E-flag;
+  }
+
+  @at-root {
+    #{$selector} {
+      .#{$B + $interpolation + $modifier-separator + $modifier} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin spec-selector(
+  $specSelector: '',
+  $element: $E,
+  $modifier: false,
+  $block: $B
+) {
+  $modifierCombo: '';
+
+  @if $modifier {
+    $modifierCombo: $modifier-separator + $modifier;
+  }
+
+  @at-root {
+    #{&}#{$specSelector}.#{$block
+      + $element-separator
+      + $element
+      + $modifierCombo} {
+      @content;
+    }
+  }
+}
+
+@mixin meb($modifier: false, $element: $E, $block: $B) {
+  $selector: &;
+  $modifierCombo: '';
+
+  @if $modifier {
+    $modifierCombo: $modifier-separator + $modifier;
+  }
+
+  @at-root {
+    #{$selector} {
+      .#{$block + $element-separator + $element + $modifierCombo} {
+        @content;
+      }
     }
   }
 }
@@ -55,7 +187,60 @@
   }
 }
 
-// button
+@mixin extend-rule($name) {
+  @extend #{'%shared-' + $name};
+}
+
+@mixin share-rule($name) {
+  $rule-name: '%shared-' + $name;
+
+  @at-root #{$rule-name} {
+    @content;
+  }
+}
+
+@mixin pseudo($pseudo) {
+  @at-root #{&}#{':#{$pseudo}'} {
+    @content;
+  }
+}
+
+@mixin picker-popper($background, $border, $box-shadow) {
+  &.#{$namespace}-popper[role='tooltip'] {
+    background: $background;
+    border: $border;
+    box-shadow: $box-shadow;
+
+    .#{$namespace}-popper__arrow {
+      &::before {
+        border: $border;
+      }
+    }
+
+    @each $placement,
+      $adjacency
+        in ('top': 'left', 'bottom': 'right', 'left': 'bottom', 'right': 'top')
+    {
+      &[data-popper-placement^='#{$placement}'] {
+        .#{$namespace}-popper__arrow::before {
+          border-#{$placement}-color: transparent;
+          border-#{$adjacency}-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+// dark
+@mixin dark($block) {
+  .dark {
+    @include b($block) {
+      @content;
+    }
+  }
+}
+
+
 @mixin button-plain($color, $type) {
   color: $color;
   background-color: map.get($--colors, $type, 'light-9');
@@ -65,13 +250,13 @@
   &:focus {
     background: $color;
     border-color: $color;
-    color: var(--lx-color-white);
+    color: var(--el-color-white);
   }
 
   &:active {
-    background: var(--lx-button-active-background-color);
-    border-color: var(--lx-button-active-border-color);
-    color: var(--lx-color-white);
+    background: var(--el-button-active-background-color);
+    border-color: var(--el-button-active-border-color);
+    color: var(--el-color-white);
     outline: none;
   }
 
@@ -90,22 +275,22 @@
 @mixin button-variant($type) {
   &:hover,
   &:focus {
-    background: var(--lx-button-hover-color);
-    border-color: var(--lx-button-hover-color);
-    color: var(--lx-button-font-color);
+    background: var(--el-button-hover-color);
+    border-color: var(--el-button-hover-color);
+    color: var(--el-button-font-color);
   }
 
   &:active {
-    background: var(--lx-button-active-background-color);
-    border-color: var(--lx-button-active-border-color);
-    color: var(--lx-button-active-font-color);
+    background: var(--el-button-active-background-color);
+    border-color: var(--el-button-active-border-color);
+    color: var(--el-button-active-font-color);
     outline: none;
   }
 
   &.is-active {
-    background: var(--lx-button-active-background-color);
-    border-color: var(--lx-button-active-border-color);
-    color: var(--lx-button-active-font-color);
+    background: var(--el-button-active-background-color);
+    border-color: var(--el-button-active-border-color);
+    color: var(--el-button-active-font-color);
   }
 
   &.is-disabled {
@@ -120,7 +305,7 @@
   }
 
   &.is-plain {
-    @include button-plain(var(--lx-button-background-color), $type);
+    @include button-plain(var(--el-button-background-color), $type);
   }
 }
 
@@ -135,18 +320,5 @@
   border-radius: $border-radius;
   &.is-round {
     padding: $padding-vertical $padding-horizontal;
-  }
-}
-
-/* Break-points
- -------------------------- */
- @mixin res($key, $map: $--breakpoints) {
-  // 循环断点Map，如果存在则返回
-  @if map-has-key($map, $key) {
-    @media only screen and #{inspect(map-get($map, $key))} {
-      @content;
-    }
-  } @else {
-    @warn "Undefeined points: `#{$map}`";
   }
 }

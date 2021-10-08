@@ -2,15 +2,8 @@
 @import "../../../style/src/mixins/mixins";
 @import "../../../style/src/mixins/_var";
 
-@include b(container) {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  flex-basis: auto;
-  box-sizing: border-box;
-  min-width: 0;
-
-  @include when(vertical) {
-    flex-direction: column;
-  }
-}
+@import './container$.scss';
+@import './aside.scss';
+@import './footer.scss';
+@import './header.scss';
+@import './main.scss';

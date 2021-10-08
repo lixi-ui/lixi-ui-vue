@@ -1,8 +1,8 @@
-@import 'mixins/mixins';
-@import 'mixins/var';
-@import 'mixins/utils';
-@import 'common/var';
-@import 'common/transition';
+@import '@lixi/style/src/mixins/mixins';
+@import '@lixi/style/src/mixins/var';
+@import '@lixi/style/src/mixins/utils';
+@import '@lixi/style/src/common/var';
+@import '@lixi/style/src/common/transition';
 
 @mixin menu-item {
   height: 56px;

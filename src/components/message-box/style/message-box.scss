@@ -1,9 +1,9 @@
 @use "sass:map";
 
-@import 'mixins/mixins';
-@import 'mixins/var';
-@import 'common/var';
-@import 'common/popup';
+@import '@lixi/style/src/mixins/mixins';
+@import '@lixi/style/src/mixins/var';
+@import '@lixi/style/src/common/var';
+@import '@lixi/style/src/common/popup';
 
 @include b(message-box) {
   @include set-component-css-var('messagebox', $--messagebox);
