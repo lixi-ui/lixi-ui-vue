@@ -21,6 +21,14 @@ var config = {
   externals: {
     vue: 'Vue'
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
+    alias: {
+      // vue: `vue/dist/${vueBundle}`,
+      // 'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
+      '@lixi': path.resolve(process.cwd() , './src'),
+    },
+  },
   module: {
     rules: [
       {

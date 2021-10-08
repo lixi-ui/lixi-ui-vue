@@ -1,8 +1,8 @@
 @use "sass:map";
 
-@import 'mixins/mixins';
-@import 'mixins/var';
-@import 'common/var';
+@import '@lixi/style/src/mixins/mixins';
+@import '@lixi/style/src/mixins/var';
+@import '@lixi/style/src/common/var';
 
 @include b(alert) {
   @include set-component-css-var('alert', $--alert);

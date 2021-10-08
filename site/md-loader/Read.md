@@ -1,13 +1,13 @@
 ### 解析 md-loader 的函数
 ### 主要的作用就是将 md 里面的文件中 ::: demo 中的文件转换为 可运行的 的 veu 组件。
 
-1. 第一步 使用的是 markdown-it-chain 将 md 转为 html. 将 :::demo 的文件转换为 `<!--element-demo: ${content} :element-demo-->`
+1. 第一步 使用的是 markdown-it-chain 将 md 转为 html. 将 :::demo 的文件转换为 `<!--lixi-demo: ${content} :lixi-demo-->`
 
 2. 获取里面的文件 fance 将 dome 里面的 html 包裹 一成代码 `<template v-pre><template>`
 
 > v-pre 不会被解析为vue的代码.
 
-3. 使用的是 compileTemplate 将 <!--element-demo: ${content} :element-demo--> 的代码转换为可 运行的 vue 代码
+3. 使用的是 compileTemplate 将 <!--lixi-demo: ${content} :lixi-demo--> 的代码转换为可 运行的 vue 代码
 
 4. 最后 被 转到 vue-loader 上进行解析。
 
@@ -15,7 +15,7 @@
 ```html
   <h2 id="aa" tabindex="-1"><a class="header-anchor" href="#aa">¶</a> aa</h2>
   <demo-block>
-    <template #source><element-demo0 /></template>
+    <template #source><lixi-demo0 /></template>
     <template v-pre>
       <pre>
         <code class="html">
@@ -50,7 +50,7 @@
     export default {
       name: 'component-doc',
       components: {
-        "element-demo0": (function() {
+        "lixi-demo0": (function() {
           const {
             createElementVNode: _createElementVNode,
             toDisplayString: _toDisplayString,

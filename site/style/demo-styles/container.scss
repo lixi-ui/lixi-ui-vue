@@ -1,0 +1,43 @@
+.lx-header,
+.lx-footer {
+  background-color: #b3c0d1;
+  color: #333;
+  line-height: 60px;
+}
+
+.lx-aside {
+  color: #333;
+}
+
+#chang-jian-ye-mian-bu-ju + .demo-container {
+  .lx-header,
+  .lx-footer {
+    text-align: center;
+  }
+
+  .lx-aside {
+    background-color: #d3dce6;
+    text-align: center;
+    line-height: 200px;
+  }
+
+  .lx-main {
+    background-color: #e9eef3;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
+  }
+
+  & > .source > .lx-container {
+    margin-bottom: 40px;
+
+    &:nth-child(5) .lx-aside,
+    &:nth-child(6) .lx-aside {
+      line-height: 260px;
+    }
+
+    &:nth-child(7) .lx-aside {
+      line-height: 320px;
+    }
+  }
+}

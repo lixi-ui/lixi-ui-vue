@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ pageName }}
+    
     <Md v-if="lang === 'zh'"/>
     <MdEs v-if="lang === 'es'"/>
   </div>

@@ -491,6 +491,24 @@ $--tree: map.merge(
   $--tree
 );
 
+/* Alert
+-------------------------- */
+// css3 var in packages/theme-chalk/src/alert.scss
+$--alert: () !default;
+$--alert: map.merge(
+  (
+    'padding': 8px 16px,
+    'border-radius-base': var(--lx-border-radius-base),
+    'title-font-size': 13px,
+    'description-font-size': 12px,
+    'close-font-size': 12px,
+    'close-customed-font-size': 13px,
+    'icon-size': 16px,
+    'icon-large-size': 28px,
+  ),
+  $--alert
+);
+
 /* Checkbox
 -------------------------- */
 // css3 var in packages/theme-chalk/src/checkbox.scss

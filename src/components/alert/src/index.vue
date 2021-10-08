@@ -76,7 +76,7 @@ export default defineComponent({
     const visible = ref(true)
 
     // computed
-    const typeClass = computed(() => `el-alert--${ props.type }`)
+    const typeClass = computed(() => `lx-alert--${ props.type }`)
     const iconClass = computed(() => TYPE_CLASSES_MAP[props.type] || 'lx-icon-info')
     const isBigIcon = computed(() => props.description || ctx.slots.default ? 'is-big' : '')
     const isBoldTitle = computed(() => props.description || ctx.slots.default ? 'is-bold' : '')

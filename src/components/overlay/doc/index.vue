@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ pageName }}
+    
     <!-- <Md/> -->
   </div>
 </template>

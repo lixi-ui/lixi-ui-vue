@@ -10,9 +10,9 @@ module.exports = function(source) {
 
   const content = md.render(source);
 
-  const startTag = '<!--element-demo:'
+  const startTag = '<!--lixi-demo:'
   const startTagLen = startTag.length
-  const endTag = ':element-demo-->'
+  const endTag = ':lixi-demo-->'
   const endTagLen = endTag.length
 
   let componenetsString = ''
@@ -29,7 +29,7 @@ module.exports = function(source) {
     const html = stripTemplate(commentContent)
     const script = stripScript(commentContent)
     let demoComponentContent = genInlineComponentText(html, script)
-    const demoComponentName = `element-demo${id}`
+    const demoComponentName = `lixi-demo${id}`
     output.push(`<template #source><${demoComponentName} /></template>`)
     componenetsString += `${JSON.stringify(demoComponentName)}: ${demoComponentContent},`
 

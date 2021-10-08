@@ -1,6 +1,6 @@
 <template>
-  <div>
-    {{ pageName }}
+  <div class="demo-block demo-affix">
+    
     <Md/>
   </div>
 </template>
