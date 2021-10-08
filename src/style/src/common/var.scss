@@ -67,7 +67,7 @@ $--color-info: map.get($--colors, 'info', 'base') !default;
 }
 
 // $--colors.primary.light-i
-// --el-color-primary-light-i
+// --lx-color-primary-light-i
 // 10% 53a8ff
 // 20% 66b1ff
 // 30% 79bbff
@@ -113,7 +113,7 @@ $--background-color-base: #f5f7fa !default;
 -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
-$--border-color-hover: var(--el-text-color-placeholder) !default;
+$--border-color-hover: var(--lx-text-color-placeholder) !default;
 $--border-base: $--border-width-base $--border-style-base
   map.get($--border-color, 'base') !default;
 /// borderRadius|1|Radius|0
@@ -162,9 +162,9 @@ $--font-size: map.merge(
 
 /* Disable base
 -------------------------- */
-$--disabled-fill-base: var(--el-background-color-base) !default;
-$--disabled-color-base: var(--el-text-color-placeholder) !default;
-$--disabled-border-base: var(--el-border-color-light) !default;
+$--disabled-fill-base: var(--lx-background-color-base) !default;
+$--disabled-color-base: var(--lx-text-color-placeholder) !default;
+$--disabled-border-base: var(--lx-border-color-light) !default;
 
 /* Checkbox
 -------------------------- */
@@ -173,24 +173,24 @@ $--checkbox: () !default;
 $--checkbox: map.merge(
   (
     'font-size': 14px,
-    'font-weight': var(--el-font-weight-primary),
-    'font-color': var(--el-text-color-regular),
+    'font-weight': var(--lx-font-weight-primary),
+    'font-color': var(--lx-text-color-regular),
     'input-height': 14px,
     'input-width': 14px,
-    'border-radius': var(--el-border-radius-small),
-    'background-color': var(--el-color-white),
-    'input-border': var(--el-border-base),
-    'disabled-border-color': var(--el-border-color-base),
+    'border-radius': var(--lx-border-radius-small),
+    'background-color': var(--lx-color-white),
+    'input-border': var(--lx-border-base),
+    'disabled-border-color': var(--lx-border-color-base),
     'disabled-input-fill': #edf2fc,
-    'disabled-icon-color': var(--el-text-color-placeholder),
-    'disabled-checked-input-fill': var(--el-border-color-extra-light),
-    'disabled-checked-input-border-color': var(--el-border-color-base),
-    'disabled-checked-icon-color': var(--el-text-color-placeholder),
-    'checked-font-color': var(--el-color-primary),
-    'checked-input-border-color': var(--el-color-primary),
-    'checked-background-color': var(--el-color-primary),
-    'checked-icon-color': var(--el-fill-base),
-    'input-border-color-hover': var(--el-color-primary),
+    'disabled-icon-color': var(--lx-text-color-placeholder),
+    'disabled-checked-input-fill': var(--lx-border-color-extra-light),
+    'disabled-checked-input-border-color': var(--lx-border-color-base),
+    'disabled-checked-icon-color': var(--lx-text-color-placeholder),
+    'checked-font-color': var(--lx-color-primary),
+    'checked-input-border-color': var(--lx-color-primary),
+    'checked-background-color': var(--lx-color-primary),
+    'checked-icon-color': var(--lx-fill-base),
+    'input-border-color-hover': var(--lx-color-primary),
   ),
   $--checkbox
 );
@@ -198,9 +198,9 @@ $--checkbox: map.merge(
 $--checkbox-button: () !default;
 $--checkbox-button: map.merge(
   (
-    'checked-background-color': var(--el-color-primary),
-    'checked-font-color': var(--el-color-white),
-    'checked-border-color': var(--el-color-primary),
+    'checked-background-color': var(--lx-color-primary),
+    'checked-font-color': var(--lx-color-white),
+    'checked-border-color': var(--lx-color-primary),
   ),
   $--checkbox-button
 );
@@ -211,15 +211,15 @@ $--checkbox-button: map.merge(
 $--radio: () !default;
 $--radio: map.merge(
   (
-    'font-size': var(--el-font-size-base),
-    'font-color': var(--el-text-color-regular),
-    'font-weight': var(--el-font-weight-primary),
+    'font-size': var(--lx-font-size-base),
+    'font-color': var(--lx-text-color-regular),
+    'font-weight': var(--lx-font-weight-primary),
     'input-height': 14px,
     'input-width': 14px,
-    'input-border-radius': var(--el-border-radius-circle),
-    'input-background-color': var(--el-color-white),
-    'input-border': var(--el-border-base),
-    'input-border-color': var(--el-border-color-base),
+    'input-border-radius': var(--lx-border-radius-circle),
+    'input-background-color': var(--lx-color-white),
+    'input-border': var(--lx-border-base),
+    'input-border-color': var(--lx-border-color-base),
   ),
   $--radio
 );
@@ -238,10 +238,10 @@ $--radio-height: map.merge(
 $--radio-button: () !default;
 $--radio-button: map.merge(
   (
-    'checked-background-color': var(--el-color-primary),
-    'checked-font-color': var(--el-color-white),
-    'checked-border-color': var(--el-color-primary),
-    'disabled-checked-fill': var(--el-border-color-extra-light),
+    'checked-background-color': var(--lx-color-primary),
+    'checked-font-color': var(--lx-color-white),
+    'checked-border-color': var(--lx-color-primary),
+    'disabled-checked-fill': var(--lx-border-color-extra-light),
   ),
   $--radio-button
 );
@@ -249,12 +249,12 @@ $--radio-button: map.merge(
 $--radio-disabled: () !default;
 $--radio-disabled: map.merge(
   (
-    'input-border-color': var(--el-disabled-border-base),
-    'input-fill': var(--el-disabled-fill-base),
-    'icon-color': var(--el-disabled-fill-base),
-    'checked-input-border-color': var(--el-disabled-border-base),
-    'checked-input-fill': var(--el-disabled-fill-base),
-    'checked-icon-color': var(--el-text-color-placeholder),
+    'input-border-color': var(--lx-disabled-border-base),
+    'input-fill': var(--lx-disabled-fill-base),
+    'icon-color': var(--lx-disabled-fill-base),
+    'checked-input-border-color': var(--lx-disabled-border-base),
+    'checked-input-fill': var(--lx-disabled-fill-base),
+    'checked-icon-color': var(--lx-text-color-placeholder),
   ),
   $--radio-disabled
 );
@@ -262,14 +262,14 @@ $--radio-disabled: map.merge(
 $--radio-checked: () !default;
 $--radio-checked: map.merge(
   (
-    'font-color': var(--el-color-primary),
-    'input-border-color': var(--el-color-primary),
-    'icon-color': var(--el-color-primary),
+    'font-color': var(--lx-color-primary),
+    'input-border-color': var(--lx-color-primary),
+    'icon-color': var(--lx-color-primary),
   ),
   $--radio-checked
 );
 
-$--radio-input-border-color-hover: var(--el-color-primary) !default;
+$--radio-input-border-color-hover: var(--lx-color-primary) !default;
 
 $--radio-bordered-padding: () !default;
 $--radio-bordered-padding: map.merge(
@@ -307,13 +307,13 @@ $--radio-bordered-input-width: map.merge(
 $--select: () !default;
 $--select: map.merge(
   (
-    'border-color-hover': var(--el-border-color-hover),
-    'disabled-border': var(--el-disabled-border-base),
-    'font-size': var(--el-font-size-base),
-    'close-hover-color': var(--el-text-color-secondary),
-    'input-color': var(--el-text-color-placeholder),
-    'multiple-input-color': var(--el-text-color-regular),
-    'input-focus-border-color': var(--el-color-primary),
+    'border-color-hover': var(--lx-border-color-hover),
+    'disabled-border': var(--lx-disabled-border-base),
+    'font-size': var(--lx-font-size-base),
+    'close-hover-color': var(--lx-text-color-secondary),
+    'input-color': var(--lx-text-color-placeholder),
+    'multiple-input-color': var(--lx-text-color-regular),
+    'input-focus-border-color': var(--lx-color-primary),
     'input-font-size': 14px,
   ),
   $--select
@@ -322,11 +322,11 @@ $--select: map.merge(
 $--select-option: () !default;
 $--select-option: map.merge(
   (
-    'color': var(--el-text-color-regular),
-    'disabled-color': var(--el-text-color-placeholder),
+    'color': var(--lx-text-color-regular),
+    'disabled-color': var(--lx-text-color-placeholder),
     'height': 34px,
-    'hover-background': var(--el-background-color-base),
-    'selected-font-color': var(--el-color-primary),
+    'hover-background': var(--lx-background-color-base),
+    'selected-font-color': var(--lx-color-primary),
   ),
   $--select-option
 );
@@ -334,7 +334,7 @@ $--select-option: map.merge(
 $--select-group: () !default;
 $--select-group: map.merge(
   (
-    'color': var(--el-color-info),
+    'color': var(--lx-color-info),
     'height': 30px,
     'font-size': 12px,
   ),
@@ -344,13 +344,13 @@ $--select-group: map.merge(
 $--select-dropdown: () !default;
 $--select-dropdown: map.merge(
   (
-    'background': var(--el-color-white),
-    'shadow': var(--el-box-shadow-light),
-    'empty-color': var(--el-text-color-secondary),
+    'background': var(--lx-color-white),
+    'shadow': var(--lx-box-shadow-light),
+    'empty-color': var(--lx-text-color-secondary),
     'max-height': 274px,
     'padding': 6px 0,
     'empty-padding': 10px 0,
-    'border': 1px solid var(--el-border-color-light),
+    'border': 1px solid var(--lx-border-color-light),
   ),
   $--select-dropdown
 );
@@ -362,7 +362,7 @@ $--alert: () !default;
 $--alert: map.merge(
   (
     'padding': 8px 16px,
-    'border-radius-base': var(--el-border-radius-base),
+    'border-radius-base': var(--lx-border-radius-base),
     'title-font-size': 13px,
     'description-font-size': 12px,
     'close-font-size': 12px,
@@ -379,12 +379,12 @@ $--alert: map.merge(
 $--messagebox: () !default;
 $--messagebox: map.merge(
   (
-    'title-color': var(--el-text-color-primary),
+    'title-color': var(--lx-text-color-primary),
     'width': 420px,
     'border-radius': 4px,
-    'font-size': var(--el-font-size-large),
-    'content-font-size': var(--el-font-size-base),
-    'content-color': var(--el-text-color-regular),
+    'font-size': var(--lx-font-size-large),
+    'content-font-size': var(--lx-font-size-base),
+    'content-color': var(--lx-text-color-regular),
     'error-font-size': 12px,
     'padding-primary': 15px,
   ),
@@ -401,8 +401,8 @@ $--message: map.merge(
     'background-color': #edf2fc,
     'padding': 15px 15px 15px 20px,
     'close-size': 16px,
-    'close-icon-color': var(--el-text-color-placeholder),
-    'close-hover-color': var(--el-text-color-secondary),
+    'close-icon-color': var(--lx-text-color-placeholder),
+    'close-hover-color': var(--lx-text-color-secondary),
   ),
   $--message
 );
@@ -416,19 +416,19 @@ $--notification: map.merge(
     'width': 330px,
     'padding': 14px 26px 14px 13px,
     'radius': 8px,
-    'shadow': var(--el-box-shadow-light),
-    'border-color': var(--el-border-color-lighter),
+    'shadow': var(--lx-box-shadow-light),
+    'border-color': var(--lx-border-color-lighter),
     'icon-size': 24px,
     'close-font-size':
-      var(--el-message-close-size, map.get($--message, 'close-size')),
+      var(--lx-message-close-size, map.get($--message, 'close-size')),
     'group-margin-left': 13px,
     'group-margin-right': 8px,
-    'content-font-size': var(--el-font-size-base),
-    'content-color': var(--el-text-color-regular),
+    'content-font-size': var(--lx-font-size-base),
+    'content-color': var(--lx-text-color-regular),
     'title-font-size': 16px,
-    'title-color': var(--el-text-color-primary),
-    'close-color': var(--el-text-color-secondary),
-    'close-hover-color': var(--el-text-color-regular),
+    'title-color': var(--lx-text-color-primary),
+    'close-color': var(--lx-text-color-secondary),
+    'close-hover-color': var(--lx-text-color-regular),
   ),
   $--notification
 );
@@ -439,16 +439,16 @@ $--notification: map.merge(
 $--input: () !default;
 $--input: map.merge(
   (
-    'font-color': var(--el-text-color-regular),
-    'border': var(--el-border-base),
-    'border-color': var(--el-border-color-base),
-    'border-radius': var(--el-border-radius-base),
-    'background-color': var(--el-color-white),
-    'icon-color': var(--el-text-color-placeholder),
-    'placeholder-color': var(--el-text-color-placeholder),
-    'hover-border': var(--el-border-color-hover),
-    'clear-hover-color': var(--el-text-color-secondary),
-    'focus-border': var(--el-color-primary),
+    'font-color': var(--lx-text-color-regular),
+    'border': var(--lx-border-base),
+    'border-color': var(--lx-border-color-base),
+    'border-radius': var(--lx-border-radius-base),
+    'background-color': var(--lx-color-white),
+    'icon-color': var(--lx-text-color-placeholder),
+    'placeholder-color': var(--lx-text-color-placeholder),
+    'hover-border': var(--lx-border-color-hover),
+    'clear-hover-color': var(--lx-text-color-secondary),
+    'focus-border': var(--lx-color-primary),
   ),
   $--input
 );
@@ -456,10 +456,10 @@ $--input: map.merge(
 $--input-disabled: () !default;
 $--input-disabled: map.merge(
   (
-    'fill': var(--el-disabled-fill-base),
-    'border': var(--el-disabled-border-base),
-    'color': var(--el-disabled-color-base),
-    'placeholder-color': var(--el-text-color-placeholder),
+    'fill': var(--lx-disabled-fill-base),
+    'border': var(--lx-disabled-border-base),
+    'color': var(--lx-disabled-color-base),
+    'placeholder-color': var(--lx-text-color-placeholder),
   ),
   $--input-disabled
 );
@@ -467,7 +467,7 @@ $--input-disabled: map.merge(
 $--input-font-size: () !default;
 $--input-font-size: map.merge(
   (
-    'default': var(--el-font-size-base, map.get($--font-size, 'base')),
+    'default': var(--lx-font-size-base, map.get($--font-size, 'base')),
     'medium': 14px,
     'small': 13px,
     'mini': 12px,
@@ -512,16 +512,16 @@ $--input-number-width: map.merge(
 $--cascader: () !default;
 $--cascader: map.merge(
   (
-    'menu-font-color': var(--el-text-color-regular),
-    'menu-selected-font-color': var(--el-color-primary),
-    'menu-fill': var(--el-fill-base),
-    'menu-font-size': var(--el-font-size-base),
-    'menu-radius': var(--el-border-radius-base),
-    'menu-border': solid 1px var(--el-border-color-light),
-    'menu-shadow': var(--el-box-shadow-light),
-    'node-background-hover': var(--el-background-color-base),
-    'node-color-disabled': var(--el-text-color-placeholder),
-    'color-empty': var(--el-text-color-placeholder),
+    'menu-font-color': var(--lx-text-color-regular),
+    'menu-selected-font-color': var(--lx-color-primary),
+    'menu-fill': var(--lx-fill-base),
+    'menu-font-size': var(--lx-font-size-base),
+    'menu-radius': var(--lx-border-radius-base),
+    'menu-border': solid 1px var(--lx-border-color-light),
+    'menu-shadow': var(--lx-box-shadow-light),
+    'node-background-hover': var(--lx-background-color-base),
+    'node-color-disabled': var(--lx-text-color-placeholder),
+    'color-empty': var(--lx-text-color-placeholder),
     'tag-background': #f0f2f5,
   ),
   $--cascader
@@ -533,13 +533,13 @@ $--cascader: map.merge(
 $--button: () !default;
 $--button: map.merge(
   (
-    'font-weight': var(--el-font-weight-primary),
-    'border-color': var(--el-border-color-base),
-    'background-color': var(--el-color-white),
-    'font-color': var(--el-text-color-regular),
-    'disabled-font-color': var(--el-text-color-placeholder),
-    'disabled-background-color': var(--el-color-white),
-    'disabled-border-color': var(--el-border-color-light),
+    'font-weight': var(--lx-font-weight-primary),
+    'border-color': var(--lx-border-color-base),
+    'background-color': var(--lx-color-white),
+    'font-color': var(--lx-text-color-regular),
+    'disabled-font-color': var(--lx-text-color-placeholder),
+    'disabled-background-color': var(--lx-color-white),
+    'disabled-border-color': var(--lx-border-color-light),
     'divide-border-color': rgba($--color-white, 0.5),
   ),
   $--button
@@ -579,8 +579,8 @@ $--button-font-color: () !default;
 $--button-font-size: () !default;
 $--button-font-size: map.merge(
   (
-    'default': var(--el-font-size-base, map.get($--font-size, 'base')),
-    'medium': var(--el-font-size-base, map.get($--font-size, 'base')),
+    'default': var(--lx-font-size-base, map.get($--font-size, 'base')),
+    'medium': var(--lx-font-size-base, map.get($--font-size, 'base')),
     'small': 12px,
     'mini': 12px,
   ),
@@ -590,10 +590,10 @@ $--button-font-size: map.merge(
 $--button-border-radius: () !default;
 $--button-border-radius: map.merge(
   (
-    'default': var(--el-border-radius-base),
-    'medium': var(--el-border-radius-base),
-    'small': calc(var(--el-border-radius-base) - 1px),
-    'mini': calc(var(--el-border-radius-base) - 1px),
+    'default': var(--lx-border-radius-base),
+    'medium': var(--lx-border-radius-base),
+    'small': calc(var(--lx-border-radius-base) - 1px),
+    'mini': calc(var(--lx-border-radius-base) - 1px),
   ),
   $--button-border-radius
 );
@@ -626,9 +626,9 @@ $--button-padding-horizontal: map.merge(
 $--switch: () !default;
 $--switch: map.merge(
   (
-    'on-color': var(--el-color-primary),
-    'off-color': var(--el-border-color-base),
-    'font-size': var(--el-font-size-base),
+    'on-color': var(--lx-color-primary),
+    'off-color': var(--lx-border-color-base),
+    'font-size': var(--lx-font-size-base),
     'core-border-radius': 10px,
     'width': 40px,
     'height': 20px,
@@ -643,11 +643,11 @@ $--switch: map.merge(
 $--dialog: () !default;
 $--dialog: map.merge(
   (
-    'background-color': var(--el-color-white),
+    'background-color': var(--lx-color-white),
     'box-shadow': 0 1px 3px rgba(0, 0, 0, 0.3),
-    'title-font-size': var(--el-font-size-large),
+    'title-font-size': var(--lx-font-size-large),
     'content-font-size': 14px,
-    'font-line-height': var(--el-font-line-height-primary),
+    'font-line-height': var(--lx-font-line-height-primary),
     'padding-primary': 20px,
   ),
   $--dialog
@@ -659,17 +659,17 @@ $--dialog: map.merge(
 $--table: () !default;
 $--table: map.merge(
   (
-    'border-color': var(--el-border-color-lighter),
-    'border': 1px solid var(--el-table-border-color),
-    'font-color': var(--el-text-color-regular),
-    'header-font-color': var(--el-text-color-secondary),
-    'row-hover-background-color': var(--el-background-color-base),
-    'current-row-background-color': var(--el-color-primary-light-9),
-    'header-background-color': var(--el-color-white),
+    'border-color': var(--lx-border-color-lighter),
+    'border': 1px solid var(--lx-table-border-color),
+    'font-color': var(--lx-text-color-regular),
+    'header-font-color': var(--lx-text-color-secondary),
+    'row-hover-background-color': var(--lx-background-color-base),
+    'current-row-background-color': var(--lx-color-primary-light-9),
+    'header-background-color': var(--lx-color-white),
     'fixed-box-shadow': 0 0 10px rgba(0, 0, 0, 0.12),
-    'background-color': var(--el-color-white),
-    'tr-background-color': var(--el-color-white),
-    'expanded-cell-background-color': var(--el-color-white),
+    'background-color': var(--lx-color-white),
+    'tr-background-color': var(--lx-color-white),
+    'expanded-cell-background-color': var(--lx-color-white),
   ),
   $--table
 );
@@ -681,17 +681,17 @@ $--pagination: () !default;
 $--pagination: map.merge(
   (
     'font-size': 13px,
-    'background-color': var(--el-color-white),
-    'font-color': var(--el-text-color-primary),
+    'background-color': var(--lx-color-white),
+    'font-color': var(--lx-text-color-primary),
     'border-radius': 3px,
-    'button-color': var(--el-text-color-primary),
+    'button-color': var(--lx-text-color-primary),
     'button-width': 35.5px,
     'button-height': 28px,
-    'button-disabled-color': var(--el-text-color-placeholder),
-    'button-disabled-background-color': var(--el-color-white),
-    'hover-color': var(--el-color-primary),
+    'button-disabled-color': var(--lx-text-color-placeholder),
+    'button-disabled-background-color': var(--lx-color-white),
+    'hover-color': var(--lx-color-primary),
     'height-extra-small': 22px,
-    'line-height-extra-small': var(--el-pagination-height-extra-small),
+    'line-height-extra-small': var(--lx-pagination-height-extra-small),
   ),
   $--pagination
 );
@@ -702,7 +702,7 @@ $--pagination: map.merge(
 $--popup: () !default;
 $--popup: map.merge(
   (
-    'modal-background-color': var(--el-color-black),
+    'modal-background-color': var(--lx-color-black),
     'modal-opacity': 0.5,
   ),
   $--popup
@@ -714,13 +714,13 @@ $--popup: map.merge(
 $--popover: () !default;
 $--popover: map.merge(
   (
-    'background-color': var(--el-color-white),
-    'font-size': var(--el-font-size-base),
-    'border-color': var(--el-border-color-lighter),
+    'background-color': var(--lx-color-white),
+    'font-size': var(--lx-font-size-base),
+    'border-color': var(--lx-border-color-lighter),
     'padding': 12px,
     'padding-large': 18px 20px,
     'title-font-size': 16px,
-    'title-font-color': var(--el-text-color-primary),
+    'title-font-color': var(--lx-text-color-primary),
     'border-radius': 4px,
   ),
   $--popover
@@ -730,7 +730,7 @@ $--popover: map.merge(
 $--popper: () !default;
 $--popper: map.merge(
   (
-    'border-radius': var(--el-popover-border-radius, 4px),
+    'border-radius': var(--lx-popover-border-radius, 4px),
   ),
   $--popper
 );
@@ -751,10 +751,10 @@ $--skeleton: map.merge(
 $--tooltip: () !default;
 $--tooltip: map.merge(
   (
-    'fill': var(--el-text-color-primary),
-    'color': var(--el-color-white),
+    'fill': var(--lx-text-color-primary),
+    'color': var(--lx-color-white),
     'font-size': 12px,
-    'border-color': var(--el-text-color-primary),
+    'border-color': var(--lx-text-color-primary),
     'arrow-size': 6px,
     'padding': 10px,
   ),
@@ -802,9 +802,9 @@ $--tag-height: map.merge(
 $--tree: () !default;
 $--tree: map.merge(
   (
-    'node-hover-background-color': var(--el-background-color-base),
-    'font-color': var(--el-text-color-regular),
-    'expand-icon-color': var(--el-text-color-placeholder),
+    'node-hover-background-color': var(--lx-background-color-base),
+    'font-color': var(--lx-text-color-regular),
+    'expand-icon-color': var(--lx-text-color-placeholder),
   ),
   $--tree
 );
@@ -814,9 +814,9 @@ $--tree: map.merge(
 $--dropdown: () !default;
 $--dropdown: map.merge(
   (
-    'menu-box-shadow': var(--el-box-shadow-light),
-    'menuItem-hover-fill': var(--el-color-primary-light-9),
-    'menuItem-hover-color': var(--el-color-primary-light-2),
+    'menu-box-shadow': var(--lx-box-shadow-light),
+    'menuItem-hover-fill': var(--lx-color-primary-light-9),
+    'menuItem-hover-color': var(--lx-color-primary-light-2),
     'menu-index': 10,
   ),
   $--dropdown
@@ -826,8 +826,8 @@ $--dropdown: map.merge(
 $--drawer: () !default;
 $--drawer: map.merge(
   (
-    'background-color': var(--el-dialog-background-color, var(--el-color-white)),
-    'padding-primary': var(--el-dialog-padding-primary, 20px),
+    'background-color': var(--lx-dialog-background-color, var(--lx-color-white)),
+    'padding-primary': var(--lx-dialog-padding-primary, 20px),
   ),
   $--drawer
 );
@@ -838,7 +838,7 @@ $--drawer: map.merge(
 $--badge: () !default;
 $--badge: map.merge(
   (
-    'background-color': var(--el-color-danger),
+    'background-color': var(--lx-color-danger),
     'radius': 10px,
     'font-size': 12px,
     'padding': 6px,
@@ -853,10 +853,10 @@ $--card: () !default;
 $--card: map.merge(
   (
     'border-color':
-      var(--el-border-color-light, map.get($--border-color, 'lighter')),
+      var(--lx-border-color-light, map.get($--border-color, 'lighter')),
     'border-radius': 4px,
     'padding': 20px,
-    'background-color': var(--el-color-white),
+    'background-color': var(--lx-color-white),
   ),
   $--card
 );
@@ -864,7 +864,7 @@ $--card: map.merge(
 $--dark-card: () !default;
 $--dark-card: map.merge(
   (
-    'background-color': var(--el-color-black),
+    'background-color': var(--lx-color-black),
   ),
   $--dark-card
 );
@@ -875,10 +875,10 @@ $--dark-card: map.merge(
 $--slider: () !default;
 $--slider: map.merge(
   (
-    'main-background-color': var(--el-color-primary),
-    'runway-background-color': var(--el-border-color-light),
-    'stop-background-color': var(--el-color-white),
-    'disable-color': var(--el-text-color-placeholder),
+    'main-background-color': var(--lx-color-primary),
+    'runway-background-color': var(--lx-border-color-light),
+    'stop-background-color': var(--lx-color-white),
+    'disable-color': var(--lx-text-color-placeholder),
     'margin': 16px 0,
     'border-radius': 3px,
     'height': 6px,
@@ -895,10 +895,10 @@ $--slider: map.merge(
 $--menu: () !default;
 $--menu: map.merge(
   (
-    'item-font-size': var(--el-font-size-base),
-    'item-font-color': var(--el-text-color-primary),
-    'item-hover-fill': var(--el-color-primary-light-9),
-    'background-color': var(--el-color-white),
+    'item-font-size': var(--lx-font-size-base),
+    'item-font-color': var(--lx-text-color-primary),
+    'item-hover-fill': var(--lx-color-primary-light-9),
+    'background-color': var(--lx-color-white),
     'border-color': #e6e6e6,
   ),
   $--menu
@@ -910,10 +910,10 @@ $--rate: () !default;
 $--rate: map.merge(
   (
     'height': 20px,
-    'font-size': var(--el-font-size-base),
+    'font-size': var(--lx-font-size-base),
     'icon-size': 18px,
     'icon-margin': 6px,
-    'icon-color': var(--el-text-color-placeholder),
+    'icon-color': var(--lx-text-color-placeholder),
   ),
   $--rate
 );
@@ -924,16 +924,16 @@ $--rate: map.merge(
 $--datepicker: () !default;
 $--datepicker: map.merge(
   (
-    'font-color': var(--el-text-color-regular),
-    'off-font-color': var(--el-text-color-placeholder),
-    'header-font-color': var(--el-text-color-regular),
-    'icon-color': var(--el-text-color-primary),
-    'border-color': var(--el-disabled-border-base),
-    'inner-border-color': var(--el-border-color-light),
-    'inrange-background-color': var(--el-border-color-extra-light),
-    'inrange-hover-background-color': var(--el-border-color-extra-light),
-    'active-color': var(--el-color-primary),
-    'hover-font-color': var(--el-color-primary),
+    'font-color': var(--lx-text-color-regular),
+    'off-font-color': var(--lx-text-color-placeholder),
+    'header-font-color': var(--lx-text-color-regular),
+    'icon-color': var(--lx-text-color-primary),
+    'border-color': var(--lx-disabled-border-base),
+    'inner-border-color': var(--lx-border-color-light),
+    'inrange-background-color': var(--lx-border-color-extra-light),
+    'inrange-hover-background-color': var(--lx-border-color-extra-light),
+    'active-color': var(--lx-color-primary),
+    'hover-font-color': var(--lx-color-primary),
   ),
   $--datepicker
 );
@@ -968,9 +968,9 @@ $--scrollbar: () !default;
 $--scrollbar: map.merge(
   (
     'opacity': 0.3,
-    'background-color': var(--el-text-color-secondary),
+    'background-color': var(--lx-text-color-secondary),
     'hover-opacity': 0.5,
-    'hover-background-color': var(--el-text-color-secondary),
+    'hover-background-color': var(--lx-text-color-secondary),
   ),
   $--scrollbar
 );
@@ -989,7 +989,7 @@ $--carousel: map.merge(
     'indicator-height': 2px,
     'indicator-padding-horizontal': 4px,
     'indicator-padding-vertical': 12px,
-    'indicator-out-color': var(--el-border-color-hover),
+    'indicator-out-color': var(--lx-border-color-hover),
   ),
   $--carousel
 );
@@ -1000,14 +1000,14 @@ $--carousel: map.merge(
 $--collapse: () !default;
 $--collapse: map.merge(
   (
-    'border-color': var(--el-border-color-lighter),
+    'border-color': var(--lx-border-color-lighter),
     'header-height': 48px,
-    'header-background-color': var(--el-color-white),
-    'header-font-color': var(--el-text-color-primary),
+    'header-background-color': var(--lx-color-white),
+    'header-font-color': var(--lx-text-color-primary),
     'header-font-size': 13px,
-    'content-background-color': var(--el-color-white),
+    'content-background-color': var(--lx-color-white),
     'content-font-size': 13px,
-    'content-font-color': var(--el-text-color-primary),
+    'content-font-color': var(--lx-text-color-primary),
   ),
   $--collapse
 );
@@ -1018,11 +1018,11 @@ $--collapse: map.merge(
 $--transfer: () !default;
 $--transfer: map.merge(
   (
-    'border-color': var(--el-border-color-lighter),
-    'border-radius': var(--el-border-radius-base),
+    'border-color': var(--lx-border-color-lighter),
+    'border-radius': var(--lx-border-radius-base),
     'panel-width': 200px,
     'panel-header-height': 40px,
-    'panel-header-background-color': var(--el-background-color-base),
+    'panel-header-background-color': var(--lx-background-color-base),
     'panel-footer-height': 40px,
     'panel-body-height': 246px,
     'item-height': 30px,
@@ -1039,7 +1039,7 @@ $--timeline: map.merge(
   (
     'node-size-normal': 12px,
     'node-size-large': 14px,
-    'node-color': var(--el-border-color-light),
+    'node-color': var(--lx-border-color-light),
   ),
   $--timeline
 );
@@ -1050,9 +1050,9 @@ $--timeline: map.merge(
 $--backtop: () !default;
 $--backtop: map.merge(
   (
-    'background-color': var(--el-color-white),
-    'font-color': var(--el-color-primary),
-    'hover-background-color': var(--el-border-color-extra-light),
+    'background-color': var(--lx-color-white),
+    'font-color': var(--lx-color-primary),
+    'hover-background-color': var(--lx-border-color-extra-light),
   ),
   $--backtop
 );
@@ -1063,11 +1063,11 @@ $--backtop: map.merge(
 $--link: () !default;
 $--link: map.merge(
   (
-    'font-size': var(--el-font-size-base),
-    'font-weight': var(--el-font-weight-primary),
-    'default-font-color': var(--el-text-color-regular),
-    'default-active-color': var(--el-color-primary),
-    'disabled-font-color': var(--el-text-color-placeholder),
+    'font-size': var(--lx-font-size-base),
+    'font-weight': var(--lx-font-weight-primary),
+    'default-font-color': var(--lx-text-color-regular),
+    'default-active-color': var(--lx-color-primary),
+    'disabled-font-color': var(--lx-text-color-placeholder),
   ),
   $--link
 );
@@ -1089,8 +1089,8 @@ $--link-font-color: () !default;
 $--calendar: () !default;
 $--calendar: map.merge(
   (
-    'border': var(--el-table-border, 1px solid var(--el-border-color-lighter)),
-    'header-border-bottom': var(--el-calendar-border),
+    'border': var(--lx-table-border, 1px solid var(--lx-border-color-lighter)),
+    'header-border-bottom': var(--lx-calendar-border),
     'selected-background-color': #f2f8fe,
     'cell-width': 85px,
   ),
@@ -1103,7 +1103,7 @@ $--calendar: map.merge(
 $--form: () !default;
 $--form: map.merge(
   (
-    'label-font-size': var(--el-font-size-base),
+    'label-font-size': var(--lx-font-size-base),
   ),
   $--form
 );
@@ -1118,7 +1118,7 @@ $--avatar: map.merge(
     'background-color': #c0c4cc,
     'text-font-size': 14px,
     'icon-font-size': 18px,
-    'border-radius': var(--el-border-radius-base),
+    'border-radius': var(--lx-border-radius-base),
     'large-size': 40px,
     'medium-size': 36px,
     'small-size': 28px,
@@ -1148,7 +1148,7 @@ $--descriptions: map.merge(
   (
     'header-margin-bottom': 20px,
     'title-font-size': 16px,
-    'table-border': 1px solid var(--el-border-color-lighter),
+    'table-border': 1px solid var(--lx-border-color-lighter),
     'item-bordered-label-background': #fafafa,
   ),
   $--descriptions
@@ -1174,21 +1174,21 @@ $--result: map.merge(
 $--transition: () !default;
 $--transition: map.merge(
   (
-    'all': all var(--el-transition-duration)
-      var(--el-transition-function-ease-in-out-bezier),
-    'fade': opacity var(--el-transition-duration)
-      var(--el-transition-function-fast-bezier),
+    'all': all var(--lx-transition-duration)
+      var(--lx-transition-function-ease-in-out-bezier),
+    'fade': opacity var(--lx-transition-duration)
+      var(--lx-transition-function-fast-bezier),
     'md-fade': (
-      transform var(--el-transition-duration)
-        var(--el-transition-function-fast-bezier),
-      opacity var(--el-transition-duration)
-        var(--el-transition-function-fast-bezier),
+      transform var(--lx-transition-duration)
+        var(--lx-transition-function-fast-bezier),
+      opacity var(--lx-transition-duration)
+        var(--lx-transition-function-fast-bezier),
     ),
-    'fade-linear': opacity var(--el-transition-duration-fast) linear,
-    'border': border-color var(--el-transition-duration-fast)
-      var(--el-transition-function-ease-in-out-bezier),
-    'color': color var(--el-transition-duration-fast)
-      var(--el-transition-function-ease-in-out-bezier),
+    'fade-linear': opacity var(--lx-transition-duration-fast) linear,
+    'border': border-color var(--lx-transition-duration-fast)
+      var(--lx-transition-function-ease-in-out-bezier),
+    'color': color var(--lx-transition-duration-fast)
+      var(--lx-transition-function-ease-in-out-bezier),
   ),
   $--transition
 );

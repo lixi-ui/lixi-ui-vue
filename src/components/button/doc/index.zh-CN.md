@@ -120,11 +120,11 @@
     >下一页<i class="lx-icon-arrow-right lx-icon--right"></i
   ></lx-button>
 </lx-button-group>
-<lx-button-group>
+<!-- <lx-button-group>
   <lx-button type="primary" icon="lx-icon-edit"></lx-button>
   <lx-button type="primary" icon="lx-icon-share"></lx-button>
   <lx-button type="primary" icon="lx-icon-delete"></lx-button>
-</lx-button-group>
+</lx-button-group> -->
 ```
 
 :::
@@ -161,10 +161,10 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
   <lx-button size="mini" round>超小按钮</lx-button>
 </lx-row>
 <lx-row>
-  <lx-button icon="lx-icon-search" circle></lx-button>
+  <!-- <lx-button icon="lx-icon-search" circle></lx-button>
   <lx-button icon="lx-icon-search" size="medium" circle></lx-button>
   <lx-button icon="lx-icon-search" size="small" circle></lx-button>
-  <lx-button icon="lx-icon-search" size="mini" circle></lx-button>
+  <lx-button icon="lx-icon-search" size="mini" circle></lx-button> -->
 </lx-row>
 ```
 

@@ -6,7 +6,7 @@
   border-collapse: collapse;
 
   .#{$namespace}-icon {
-    color: var(--el-datepicker-icon-color);
+    color: var(--lx-datepicker-icon-color);
   }
 
   td {
@@ -16,18 +16,18 @@
 
     &.today {
       .cell {
-        color: var(--el-color-primary);
+        color: var(--lx-color-primary);
         font-weight: bold;
       }
     }
 
     &.disabled .cell {
-      background-color: var(--el-background-color-base);
+      background-color: var(--lx-background-color-base);
       cursor: not-allowed;
-      color: var(--el-text-color-placeholder);
+      color: var(--lx-text-color-placeholder);
 
       &:hover {
-        color: var(--el-text-color-placeholder);
+        color: var(--lx-text-color-placeholder);
       }
     }
 
@@ -36,16 +36,16 @@
       height: 32px;
       display: block;
       line-height: 32px;
-      color: var(--el-datepicker-font-color);
+      color: var(--lx-datepicker-font-color);
       margin: 0 auto;
 
       &:hover {
-        color: var(--el-datepicker-hover-font-color);
+        color: var(--lx-datepicker-hover-font-color);
       }
     }
 
     &.current:not(.disabled) .cell {
-      color: var(--el-datepicker-active-color);
+      color: var(--lx-datepicker-active-color);
     }
   }
 }

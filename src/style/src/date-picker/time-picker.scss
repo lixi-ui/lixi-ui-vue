@@ -5,7 +5,7 @@
   position: relative;
   width: 180px;
   left: 0;
-  z-index: var(--el-index-top);
+  z-index: var(--lx-index-top);
   user-select: none;
   box-sizing: content-box;
 
@@ -27,8 +27,8 @@
       box-sizing: border-box;
       padding-top: 6px;
       text-align: left;
-      border-top: 1px solid var(--el-border-color-light);
-      border-bottom: 1px solid var(--el-border-color-light);
+      border-top: 1px solid var(--lx-border-color-light);
+      border-bottom: 1px solid var(--lx-border-color-light);
     }
 
     &::after {
@@ -56,7 +56,7 @@
 
   @include e(footer) {
     border-top: 1px solid
-      var(--el-timepicker-inner-border-color, var(--el-border-color-light));
+      var(--lx-timepicker-inner-border-color, var(--lx-border-color-light));
     padding: 4px;
     height: 36px;
     line-height: 25px;
@@ -73,11 +73,11 @@
     background-color: transparent;
     outline: none;
     font-size: 12px;
-    color: var(--el-text-color-primary);
+    color: var(--lx-text-color-primary);
 
     &.confirm {
       font-weight: 800;
-      color: var(--el-timepicker-active-color, var(--el-color-primary));
+      color: var(--lx-timepicker-active-color, var(--lx-color-primary));
     }
   }
 }

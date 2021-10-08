@@ -250,13 +250,13 @@
   &:focus {
     background: $color;
     border-color: $color;
-    color: var(--el-color-white);
+    color: var(--lx-color-white);
   }
 
   &:active {
-    background: var(--el-button-active-background-color);
-    border-color: var(--el-button-active-border-color);
-    color: var(--el-color-white);
+    background: var(--lx-button-active-background-color);
+    border-color: var(--lx-button-active-border-color);
+    color: var(--lx-color-white);
     outline: none;
   }
 
@@ -275,22 +275,22 @@
 @mixin button-variant($type) {
   &:hover,
   &:focus {
-    background: var(--el-button-hover-color);
-    border-color: var(--el-button-hover-color);
-    color: var(--el-button-font-color);
+    background: var(--lx-button-hover-color);
+    border-color: var(--lx-button-hover-color);
+    color: var(--lx-button-font-color);
   }
 
   &:active {
-    background: var(--el-button-active-background-color);
-    border-color: var(--el-button-active-border-color);
-    color: var(--el-button-active-font-color);
+    background: var(--lx-button-active-background-color);
+    border-color: var(--lx-button-active-border-color);
+    color: var(--lx-button-active-font-color);
     outline: none;
   }
 
   &.is-active {
-    background: var(--el-button-active-background-color);
-    border-color: var(--el-button-active-border-color);
-    color: var(--el-button-active-font-color);
+    background: var(--lx-button-active-background-color);
+    border-color: var(--lx-button-active-border-color);
+    color: var(--lx-button-active-font-color);
   }
 
   &.is-disabled {
@@ -305,7 +305,7 @@
   }
 
   &.is-plain {
-    @include button-plain(var(--el-button-background-color), $type);
+    @include button-plain(var(--lx-button-background-color), $type);
   }
 }
 

@@ -1,22 +1,16 @@
 <template>
-  <div>
-    
-    <Md v-if="lang === 'zh'"/>
-    <MdEs v-if="lang === 'es'"/>
+  <div class="demo-block demo-button">
+    <Md/>
   </div>
 </template>
 
 <script>
-  import Md from './index.md'
-  import MdEs from './index-es.md'
-  import MdZh from './index-zh.md'
+  import Md from './index.zh-CN.md'
 
   export default {
     name : 'ButtonMd',
     components: {
-      Md,
-      MdEs,
-      MdZh
+      Md
     },
     data () {
       return {

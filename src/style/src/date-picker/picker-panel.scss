@@ -1,16 +1,16 @@
 @import '../common/var';
 
 @include b(picker-panel) {
-  color: var(--el-text-color-regular);
+  color: var(--lx-text-color-regular);
   background: $--color-white;
-  border-radius: var(--el-border-radius-base);
+  border-radius: var(--lx-border-radius-base);
   line-height: 30px;
 
   .#{$namespace}-time-panel {
     margin: 5px 0;
-    border: solid 1px var(--el-datepicker-border-color);
+    border: solid 1px var(--lx-datepicker-border-color);
     background-color: $--color-white;
-    box-shadow: var(--el-box-shadow-light);
+    box-shadow: var(--lx-box-shadow-light);
   }
 
   @include e((body, body-wrapper)) {
@@ -27,7 +27,7 @@
   }
 
   @include e(footer) {
-    border-top: 1px solid var(--el-datepicker-inner-border-color);
+    border-top: 1px solid var(--lx-datepicker-inner-border-color);
     padding: 4px;
     text-align: right;
     background-color: $--color-white;
@@ -42,25 +42,25 @@
     background-color: transparent;
     line-height: 28px;
     font-size: 14px;
-    color: var(--el-datepicker-font-color);
+    color: var(--lx-datepicker-font-color);
     padding-left: 12px;
     text-align: left;
     outline: none;
     cursor: pointer;
 
     &:hover {
-      color: var(--el-datepicker-hover-font-color);
+      color: var(--lx-datepicker-hover-font-color);
     }
 
     &.active {
       background-color: #e6f1fe;
-      color: var(--el-datepicker-active-color);
+      color: var(--lx-datepicker-active-color);
     }
   }
 
   @include e(btn) {
     border: 1px solid #dcdcdc;
-    color: var(--el-text-color-primary);
+    color: var(--lx-text-color-primary);
     line-height: 24px;
     border-radius: 2px;
     padding: 0 20px;
@@ -77,7 +77,7 @@
 
   @include e(icon-btn) {
     font-size: 12px;
-    color: var(--el-datepicker-icon-color);
+    color: var(--lx-datepicker-icon-color);
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -85,11 +85,11 @@
     margin-top: 8px;
 
     &:hover {
-      color: var(--el-datepicker-hover-font-color);
+      color: var(--lx-datepicker-hover-font-color);
     }
 
     @include when(disabled) {
-      color: var(--el-font-color-disabled-base);
+      color: var(--lx-font-color-disabled-base);
 
       &:hover {
         cursor: not-allowed;
@@ -108,7 +108,7 @@
   top: 0;
   bottom: 0;
   width: 110px;
-  border-right: 1px solid var(--el-datepicker-inner-border-color);
+  border-right: 1px solid var(--lx-datepicker-inner-border-color);
   box-sizing: border-box;
   padding-top: 6px;
   background-color: $--color-white;
