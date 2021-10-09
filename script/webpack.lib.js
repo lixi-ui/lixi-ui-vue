@@ -3,7 +3,6 @@ var webpack = require("webpack");
 
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
 
-
 var config = {
   mode:"production",
   entry: path.resolve(process.cwd() , './src/index.js'),
@@ -15,6 +14,14 @@ var config = {
     library: 'LixiUiVue',
     umdNamedDefine: true,
     globalObject: 'typeof self !== \'undefined\' ? self : this',
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
+    alias: {
+      // vue: `vue/dist/${vueBundle}`,
+      'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
+      '@lixi': path.resolve(process.cwd() , './src'),
+    },
   },
   module: {
     rules: [
@@ -48,22 +55,6 @@ var config = {
       {
         test: /\.vue$/,
         use: 'vue-loader',
-      },
-      {
-        test: /\.md$/,
-        use: [
-          {
-            loader: 'vue-loader',
-            options: {
-              compilerOptions: {
-                preserveWhitespace: false,
-              },
-            },
-          },
-          {
-            loader: path.resolve(__dirname, '../site/md-loader/index.js'),
-          },
-        ],
       },
       {
         test: /\.(scss|css)$/,

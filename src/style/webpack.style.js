@@ -13,6 +13,12 @@ var config = {
   optimization: {
     minimize: false
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
+    alias: {
+      '@lixi': path.resolve(process.cwd() , './src'),
+    }
+  },
   module: {
     rules: [
       {
