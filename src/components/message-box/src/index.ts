@@ -1,4 +1,4 @@
-import MessageBox from './src/messageBox'
+import MessageBox from './messageBox'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
@@ -16,4 +16,4 @@ _MessageBox.install = (app: App) => {
 export default _MessageBox
 export const LxMessageBox = _MessageBox
 
-export * from './src/message-box.type'
+export * from './message-box.type'

@@ -1,9 +1,9 @@
 ## Icônes
 
-Element Plus fournit un ensemble d'icônes basiques.
+Lixi fournit un ensemble d'icônes basiques.
 
 :::warning
-Element Plus team is replacing all **Font Icon** in the previously built components to **SVG Icon**, please keep you eyes on [ChangeLog](/#/fr/component/changelog), for getting latest updates, **Font Icon** will be deprecated after the first stable release.
+Lixi team is replacing all **Font Icon** in the previously built components to **SVG Icon**, please keep you eyes on [ChangeLog](/#/fr/component/changelog), for getting latest updates, **Font Icon** will be deprecated after the first stable release.
 :::
 
 ### SVG Icon Usage

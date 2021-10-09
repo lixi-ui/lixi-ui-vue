@@ -8,7 +8,12 @@
     </div>
     <div class="expanded-wrap">
       <div v-if='isExpanded'>
-        <slot/>
+        <div  v-if="$slots.default" class="description">
+          <slot/>
+        </div>
+        <div>
+          <slot name="highlight"/>
+        </div>
       </div>
       <div class="expanded-bottom">
         <div class="expanded-btn" @click="handleExpandFn">
@@ -50,6 +55,7 @@ export default {
       padding: 8px 10px;
       border: 1px solid #fafafa;
       box-shadow: 0px 0px 8px #fafafa;
+      background: #fafafa;
       &:hover{
         box-shadow: 0px 0px 8px #eee;
       }

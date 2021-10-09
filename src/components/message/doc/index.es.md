@@ -349,7 +349,7 @@ Aunque la propiedad `message` soporta cadenas HTML, realizar arbitrariamente ren
 
 ### Métodos Globales
 
-Element Plus ha agregado un método global llamado `$message` para `app.config.globalProperties`. Entonces en una instancia de vue puede llamar a `Message` como lo hicimos en esta pagina.
+Lixi ha agregado un método global llamado `$message` para `app.config.globalProperties`. Entonces en una instancia de vue puede llamar a `Message` como lo hicimos en esta pagina.
 
 ### Importación local
 

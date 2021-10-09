@@ -1,6 +1,6 @@
 {
   "name": "@lixi/directives",
-  "description": "Element Plus directives",
+  "description": "Lixi directives",
   "version": "0.0.5",
   "main": "index.js",
   "module": "index.js",

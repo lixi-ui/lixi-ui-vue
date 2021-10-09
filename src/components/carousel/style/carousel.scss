@@ -1,7 +1,7 @@
 @use "sass:math";
 
 @import '@lixi/style/src/mixins/mixins';
-@import '@lixi/style/src/mixins/var';
+@import '@lixi/style/src/mixins/_var';
 @import '@lixi/style/src/common/var';
 
 @include b(carousel) {

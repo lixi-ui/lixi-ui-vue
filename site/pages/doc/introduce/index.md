@@ -4,12 +4,12 @@
 
 ```sh 
   # 安装
-  npm install lixi-ui-lixi
+  npm install lixi-ui-vue
 ```
 
 ```js
   // 代码中使用 例子
-  import { Button } from 'lixi-ui-lixi';
+  import { Button } from 'lixi-ui-vue';
 ```
 
 ### 项目的设计介绍

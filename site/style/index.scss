@@ -55,7 +55,7 @@ a {
 }
 
 code {
-  background-color: #f9fafc;
+  // background-color: #f9fafc;
   padding: 0 4px;
   border: 1px solid var(--lx-border-color-base);
   border-radius: 4px;
@@ -75,12 +75,21 @@ textarea {
   line-height: 1.8;
   font-family: Menlo, Monaco, Consolas, Courier, monospace;
   font-size: 12px;
-  padding: 18px 24px;
-  background-color: #fafafa;
-  border: solid 1px var(--lx-border-color-base);
-  margin-bottom: 25px;
-  border-radius: 4px;
-  -webkit-font-smoothing: auto;
+  padding: 0px;
+  // background-color: #fafafa;
+  // border: solid 1px var(--lx-border-color-base);
+  // margin-bottom: 25px;
+  // border-radius: 4px;
+  // -webkit-font-smoothing: auto;
+  margin: 0;
+  border: none;
+  max-height: none;
+  border-radius: 0;
+}
+.per {
+  padding: 10px;
+  margin-top: 10px;
+  background: #fafafa;
 }
 
 .main-cnt {
@@ -283,5 +292,60 @@ textarea {
 }
 
 .source {
+  padding: 20px 10px;
+  border-bottom: 1px solid var(--lx-border-color-base);
+}
+
+.demo-block .description {
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid var(--lx-border-color-base);
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--lx-text-color-regular);
+  word-break: break-word;
+  margin: 10px 0px;
+  background-color: #fff;
+  code {
+    color: #5e6d82;
+    background-color: #e6effb;
+    margin: 0 4px;
+    display: inline-block;
+    padding: 1px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 18px;
+    line-height: 18px;
+  }
+  p {
+    line-height: 26px;
+  }
+}
+
+.lx-scroll-doc{
+  &::-webkit-scrollbar {
+    width : 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background   : #fafafa;
+  }
+  &::-webkit-scrollbar-track {
+    // box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background: #fff;
+  }
+}
+
+.doc-right pre {
+  background: #fafafa;
+  font-family: Menlo, Monaco, Consolas, Courier, monospace;
   padding: 10px;
+  code{
+    padding: 0px;
+    border: none
+  }
 }

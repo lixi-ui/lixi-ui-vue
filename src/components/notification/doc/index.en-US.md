@@ -481,7 +481,7 @@ It is possible to hide the close button
 
 ### Global method
 
-Element Plus has added a global method `$notify` for `app.config.globalProperties`. So in a vue instance you can call `Notification` like what we did in this page.
+Lixi has added a global method `$notify` for `app.config.globalProperties`. So in a vue instance you can call `Notification` like what we did in this page.
 
 ### Local import
 

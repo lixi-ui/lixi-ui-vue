@@ -189,7 +189,8 @@ export default {
 :::demo
 ```html
 <template>
- <lx-space :size="size" :spacer="spacer">
+  <!-- :spacer="spacer" -->
+ <lx-space :size="size">
     <div v-for="i in 2" :key="i">
       <lx-button>
         button {{ i }}
@@ -200,7 +201,7 @@ export default {
 
 <script>
 import { h, resolveComponent } from 'vue'
-// import { LxDivider } from 'element-plus'
+// import { LxDivider } from 'Lixi'
 export default {
   data() {
     return {

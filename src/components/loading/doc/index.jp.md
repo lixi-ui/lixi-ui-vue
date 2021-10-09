@@ -354,7 +354,7 @@ console.log(loadingInstance1 === loadingInstance2); // true
 ```
 これらのいずれかで`close` メソッドを呼び出すことで、このフルスクリーンの読み込みを閉じることができる。
 
-Element Plusを完全にインポートしている場合は、Vue.prototypeにグローバルメソッド `$loading` が登録されます。このように呼び出すことができます。このメソッドは、`this.$loading(options)`のように呼び出すことができます。
+Lixiを完全にインポートしている場合は、Vue.prototypeにグローバルメソッド `$loading` が登録されます。このように呼び出すことができます。このメソッドは、`this.$loading(options)`のように呼び出すことができます。
 
 ### Options
 | Attribute      | Description          | Type      | Accepted Values       | Default  |

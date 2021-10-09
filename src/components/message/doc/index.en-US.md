@@ -349,7 +349,7 @@ Although `message` property supports HTML strings, dynamically rendering arbitra
 
 ### Global method
 
-Element Plus has added a global method `$message` for `app.config.globalProperties`. So in a vue instance you can call `Message` like what we did in this page.
+Lixi has added a global method `$message` for `app.config.globalProperties`. So in a vue instance you can call `Message` like what we did in this page.
 
 ### Local import
 

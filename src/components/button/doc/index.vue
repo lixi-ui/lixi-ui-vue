@@ -1,5 +1,6 @@
 <template>
   <div class="demo-block demo-button">
+    <button @click="message">button</button>
     <Md/>
   </div>
 </template>
@@ -24,6 +25,12 @@
         this.lang = lang
       } else {
         this.lang = 'zh'
+      }
+    },
+    methods: {
+      message(){
+        console.log(this.$message)
+        this.$message
       }
     }
   }

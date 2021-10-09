@@ -1,4 +1,4 @@
-import Notify from './src/notify'
+import Notify from './notify'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'
@@ -12,4 +12,4 @@ _Notify.install = (app: App) => {
 export default _Notify
 export const LxNotification = _Notify
 
-export * from './src/notification.type'
+export * from './notification.type'

@@ -1,6 +1,6 @@
 <template>
   <div class = "doc div page-container">
-    <div class = "doc-left" >
+    <div class = "doc-left">
       <div class = "logo" >
       </div> 
       <ul>

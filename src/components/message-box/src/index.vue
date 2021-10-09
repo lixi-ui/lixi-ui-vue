@@ -118,7 +118,7 @@ import {
   ref,
   toRefs,
 } from 'vue'
-import LxButton from '@lixi/components/button'
+import LxButton from '@lixi/components/button/src/'
 import { TrapFocus } from '@lixi/directives'
 import {
   useModal,
@@ -127,8 +127,8 @@ import {
   useRestoreActive,
   usePreventGlobal,
 } from '@lixi/hooks'
-import LxInput from '@lixi/components/input'
-import { Overlay as LxOverlay } from '@lixi/components/overlay'
+import LxInput from '@lixi/components/input/src'
+import { Overlay as LxOverlay } from '@lixi/components/overlay/src'
 import PopupManager from '@lixi/utils/popup-manager'
 import { on, off } from '@lixi/utils/dom'
 import { EVENT_CODE } from '@lixi/utils/aria'

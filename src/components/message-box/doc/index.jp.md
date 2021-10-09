@@ -532,7 +532,7 @@ import { LxMessage } from 'element-plus';
 
 ### グローバルメソッド
 
-Element Plusが完全にインポートされている場合、Vue.prototypeに以下のグローバルメソッドが追加されます。Vue.prototypeには、`$msgbox`, `$alert`, `$confirm`, `$prompt` というグローバルメソッドが追加されます。そのため、Vueのインスタンスでは、このページで行ったように `MessageBox` を呼び出すことができます。パラメータは以下の通りです。
+Lixiが完全にインポートされている場合、Vue.prototypeに以下のグローバルメソッドが追加されます。Vue.prototypeには、`$msgbox`, `$alert`, `$confirm`, `$prompt` というグローバルメソッドが追加されます。そのため、Vueのインスタンスでは、このページで行ったように `MessageBox` を呼び出すことができます。パラメータは以下の通りです。
 - `$msgbox(options)`
 - `$alert(message, title, options)` もしくは `$alert(message, options)`
 - `$confirm(message, title, options)` もしくは `$confirm(message, options)`

@@ -1,9 +1,9 @@
 ## アイコン
 
-Element Plusは、共通のアイコンのセットを提供します。
+Lixiは、共通のアイコンのセットを提供します。
 
 :::warning
-Element Plus team is replacing all **Font Icon** in the previously built components to **SVG Icon**, please keep you eyes on [ChangeLog](/#/jp/component/changelog), for getting latest updates, **Font Icon** will be deprecated after the first stable release.
+Lixi team is replacing all **Font Icon** in the previously built components to **SVG Icon**, please keep you eyes on [ChangeLog](/#/jp/component/changelog), for getting latest updates, **Font Icon** will be deprecated after the first stable release.
 :::
 
 ### SvgIcon Usage

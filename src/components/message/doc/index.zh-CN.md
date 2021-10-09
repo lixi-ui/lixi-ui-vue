@@ -6,7 +6,7 @@
 
 从顶部出现，3 秒后自动消失。
 
-:::demo Message 在配置上与 Notification 非常类似，所以部分 options 在此不做详尽解释，文末有 options 列表，可以结合 Notification 的文档理解它们。Element Plus 注册了一个`$message`方法用于调用，Message 可以接收一个字符串或一个 VNode 作为参数，它会被显示为正文内容。
+:::demo Message 在配置上与 Notification 非常类似，所以部分 options 在此不做详尽解释，文末有 options 列表，可以结合 Notification 的文档理解它们。Lixi 注册了一个`$message`方法用于调用，Message 可以接收一个字符串或一个 VNode 作为参数，它会被显示为正文内容。
 
 ```html
 <template>
@@ -345,7 +345,7 @@
 
 ### 全局方法
 
-Element Plus 为 `app.config.globalProperties` 添加了全局方法 $message。因此在 vue instance 中可以采用在 method 中调用 `this.$message` 方法唤起 `ElMessage`。
+Lixi 为 `app.config.globalProperties` 添加了全局方法 $message。因此在 vue instance 中可以采用在 method 中调用 `this.$message` 方法唤起 `ElMessage`。
 
 ### 单独引用
 

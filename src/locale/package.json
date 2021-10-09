@@ -1,6 +1,6 @@
 {
   "name": "@lixi/locale",
-  "description": "Element Plus locale",
+  "description": "Lixi locale",
   "version": "0.0.5",
   "main": "index.js",
   "module": "index.js",

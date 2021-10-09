@@ -485,7 +485,7 @@ Il est possible de cacher le bouton de fermeture.
 
 ### Méthode globale
 
-Element Plus ajoute la méthode `$notify` à `app.config.globalProperties`. Vous pouvez donc appeler `Notification` dans l'instance de Vue comme nous avons fait dans cette page.
+Lixi ajoute la méthode `$notify` à `app.config.globalProperties`. Vous pouvez donc appeler `Notification` dans l'instance de Vue comme nous avons fait dans cette page.
 
 ### Import à la demande
 

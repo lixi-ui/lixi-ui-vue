@@ -1,12 +1,3 @@
-// @import '../../components/button/style/button.scss';
-// @import '../../components/row/style/row.scss';
-// @import '../../components/col/style/col.scss';
-// @import '../../components/container/style/container.scss';
-// @import '../../components/link/style/link.scss';
-// @import '../../components/checkbox/style/checkbox.scss';
-// @import '../../components/checkbox-button/style/checkbox-button.scss';
-// @import '../../components/tree/style/tree.scss';
-
 @import '../../components/affix/style/affix.scss';
 @import '../../components/alert/style/alert.scss';
 
@@ -19,10 +10,13 @@
 @import '../../components/calendar/style/calendar.scss';
 @import '../../components/card/style/card.scss';
 @import '../../components/carousel/style/carousel.scss';
+@import '../../components/carousel-item/style/carousel-item.scss';
 @import '../../components/cascader/style/cascader.scss';
 @import '../../components/cascader-panel/style/cascader-panel.scss';
 @import '../../components/check-tag/style/check-tag.scss';
 @import '../../components/checkbox/style/checkbox.scss';
+@import '../../components/checkbox-button/style/checkbox-button.scss';
+@import '../../components/checkbox-group/style/checkbox-group.scss';
 @import '../../components/col/style/col.scss';
 @import '../../components/collapse/style/collapse.scss';
 @import '../../components/collapse-transition/style/collapse-transition.scss';
@@ -78,79 +72,6 @@
 @import '../../components/notification/style/notification.scss';
 @import '../../components/popover/style/popover.scss';
 
-
-
-// module.exports = [
-//   'affix',
-//   'alert',
-//   'autocomplete',
-//   'avatar',
-//   'backtop',
-//   'badge',
-//   'breadcrumb',
-//   'button',
-//   'calendar',
-//   'card',
-//   'carousel',
-//   'cascader',
-//   'cascader-panel',
-//   'check-tag',
-//   'checkbox',
-//   'col',
-//   'collapse',
-//   'collapse-transition',
-//   'color-picker',
-//   'config-provider',
-//   'container',
-//   'date-picker',
-//   'descriptions',
-//   'dialog',
-//   'divider',
-//   'drawer',
-//   'dropdown',
-//   'empty',
-//   'form',
-//   'icon',
-//   'image',
-//   'image-viewer',
-//   'input',
-//   'input-number',
-//   'link',
-//   'menu',
-//   'overlay',
-//   'page-header',
-//   'pagination',
-//   'popconfirm',
-//   'popper',
-//   'progress',
-//   'radio',
-//   'rate',
-//   'result',
-//   'row',
-//   'scrollbar',
-//   'select',
-//   'select-v2',
-//   'skeleton',
-//   'slider',
-//   'steps',
-//   'switch',
-//   'table',
-//   'tabs',
-//   'tag',
-//   'time-picker',
-//   'time-select',
-//   'timeline',
-//   'tooltip',
-//   'transfer',
-//   'tree',
-//   'upload',
-//   'infinite-scroll',
-//   'loading',
-//   'message',
-//   'message-box',
-//   'notification',
-//   'popover'
-// ]
 
 @import 'icon.scss';
 @import 'var.scss';

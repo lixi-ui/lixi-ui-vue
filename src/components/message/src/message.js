@@ -4,24 +4,24 @@ import PopupManager from '@lixi/utils/popup-manager'
 import isServer from '@lixi/utils/isServer'
 import MessageConstructor from './index.vue'
 
-import type { ComponentPublicInstance } from 'vue'
-import type {
-  IMessage,
-  MessageQueue,
-  IMessageOptions,
-  MessageVM,
-  IMessageHandle,
-  MessageParams,
-} from './types'
+// import type { ComponentPublicInstance } from 'vue'
+// import type {
+//   IMessage,
+//   MessageQueue,
+//   IMessageOptions,
+//   MessageVM,
+//   IMessageHandle,
+//   MessageParams,
+// } from './types'
 
-const instances: MessageQueue = []
+const instances= []
 let seed = 1
 
 // TODO: Since Notify.ts is basically the same like this file. So we could do some encapsulation against them to
 // reduce code duplication.
-const Message: IMessage = function(
-  opts: MessageParams = {} as MessageParams,
-): IMessageHandle {
+const Message= function(
+  opts
+) {
   if (isServer) return
 
   if (typeof opts === 'string') {
@@ -30,7 +30,7 @@ const Message: IMessage = function(
     }
   }
 
-  let options: IMessageOptions = <IMessageOptions>opts
+  let options = opts
 
   let verticalOffset = opts.offset || 20
   instances.forEach(({ vm }) => {
@@ -78,11 +78,11 @@ const Message: IMessage = function(
   return {
     // instead of calling the onClose function directly, setting this value so that we can have the full lifecycle
     // for out component, so that all closing steps will not be skipped.
-    close: () => (vm.component.proxy as ComponentPublicInstance<{ visible: boolean; }>).visible = false,
+    close: () => (vm.component.proxy).visible = false,
   }
-} as any
+}
 
-export function close(id: string, userOnClose?: (vm: MessageVM) => void): void {
+export function close(id, userOnClose) {
   const idx = instances.findIndex(({ vm }) => {
     const { id: _id } = vm.component.props
     return id === _id
@@ -109,14 +109,14 @@ export function close(id: string, userOnClose?: (vm: MessageVM) => void): void {
   }
 }
 
-export function closeAll(): void {
+export function closeAll() {
   for (let i = instances.length - 1; i >= 0; i--) {
-    const instance = instances[i].vm.component as any
+    const instance = instances[i].vm.component
     instance.ctx.close()
   }
 }
 
-(['success', 'warning', 'info', 'error'] as const).forEach(type => {
+(['success', 'warning', 'info', 'error']).forEach(type => {
   Message[type] = options => {
     if (typeof options === 'string') {
       options = {

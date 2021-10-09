@@ -488,7 +488,7 @@ Es posible ocultar el botón de cerrar
 
 ### Método global
 
-Element Plus ha añadido un método global `$notify` para `app.config.globalProperties`. Así que en una instancia de vue se puede llamar `Notification` como lo hacemos en esta página.
+Lixi ha añadido un método global `$notify` para `app.config.globalProperties`. Así que en una instancia de vue se puede llamar `Notification` como lo hacemos en esta página.
 
 ### Importar localmente
 

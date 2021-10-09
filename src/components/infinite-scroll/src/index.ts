@@ -1,4 +1,4 @@
-import InfiniteScroll from './src/index'
+import InfiniteScroll from './infinite-scroll'
 
 import type { App } from 'vue'
 import type { SFCWithInstall } from '@lixi/utils/types'

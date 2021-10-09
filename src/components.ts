@@ -49,7 +49,7 @@ import { LxSelect } from '@lixi/components/select/src'
 import { LxSelectV2 } from '@lixi/components/select-v2/src'
 import { LxSkeleton } from '@lixi/components/skeleton/src'
 import { LxSlider } from '@lixi/components/slider/src'
-// import { LxSpace } from '@lixi/components/space/src'
+import { LxSpace } from '@lixi/components/space/src'
 import { LxSteps } from '@lixi/components/steps/src'
 import { LxSwitch } from '@lixi/components/switch/src'
 import { LxTable } from '@lixi/components/table/src'
@@ -62,6 +62,15 @@ import { LxTooltip } from '@lixi/components/tooltip/src'
 import { LxTransfer } from '@lixi/components/transfer/src/index.ts'
 import { LxTree } from '@lixi/components/tree/src'
 import { LxUpload } from '@lixi/components/upload/src/index.ts'
+
+// plugin
+import { LxInfiniteScroll } from '@lixi/components/infinite-scroll/src/index.ts'
+import { LxLoading } from '@lixi/components/loading/src/index.ts'
+import { LxMessage } from '@lixi/components/message/src/index.ts'
+import { LxMessageBox } from '@lixi/components/message-box/src/index.ts'
+import { LxNotification } from '@lixi/components/notification/src/index.ts'
+import { LxPopoverDirective } from '@lixi/components/popover/src/index.ts'
+
 
 export default [
   LxAffix,
@@ -115,7 +124,7 @@ export default [
   LxSelectV2,
   LxSkeleton,
   LxSlider,
-  // LxSpace,
+  LxSpace,
   LxSteps,
   LxSwitch,
   LxTable,
@@ -128,4 +137,11 @@ export default [
   LxTransfer,
   LxTree,
   LxUpload,
+  // plugin
+  LxInfiniteScroll,
+  LxLoading,
+  LxMessage,
+  LxMessageBox,
+  LxNotification,
+  LxPopoverDirective,
 ]

@@ -3,7 +3,7 @@
 提供了一套常用的图标集合。
 
 :::warning
-Element Plus 团队正在将原有组件内的 **Font Icon** 向 **SVG Icon** 迁移，请多多留意 [ChangeLog](/#/zh-CN/component/changelog), 及时获取到更新信息，**Font Icon** 将会在第一个正式发布被废弃，请尽快迁移
+Lixi 团队正在将原有组件内的 **Font Icon** 向 **SVG Icon** 迁移，请多多留意 [ChangeLog](/#/zh-CN/component/changelog), 及时获取到更新信息，**Font Icon** 将会在第一个正式发布被废弃，请尽快迁移
 :::
 
 ### SvgIcon 使用方法

@@ -357,7 +357,7 @@ Bien que la propriété `message` supporte le HTML, générer du contenu HTML dy
 
 ### Méthode globale
 
-Element Plus ajoute une méthode `$message` à `app.config.globalProperties`. Vous pouvez donc appeler `Message` dans l'instance de Vue comme dans cette page.
+Lixi ajoute une méthode `$message` à `app.config.globalProperties`. Vous pouvez donc appeler `Message` dans l'instance de Vue comme dans cette page.
 
 ### Import à la demande
 

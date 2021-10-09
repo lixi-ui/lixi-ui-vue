@@ -6,8 +6,8 @@
     <div class="content">
     </div>
   </div> -->
-  <div class = "doc div page-container">
-    <div class = "doc-left" >
+  <div class="doc div page-container">
+    <div class="doc-left lx-scroll-doc">
       <div class = "logo" >
       </div> 
       <ul>
@@ -31,7 +31,7 @@
         </li>
       </ul>
     </div> 
-    <div class = "doc-right div content">
+    <div class = "doc-right div content lx-scroll-doc">
       <router-view></router-view>
     </div> 
   </div>
