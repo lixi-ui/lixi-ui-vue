@@ -9,7 +9,7 @@
           lixi
         </div>
         <div className="home-inner-content">
-          ui 框架
+          Vue3.0 ui 框架
         </div>
         <div className="home-inner-bottom">
           <span className="home-inner-quick">快速开始</span>
