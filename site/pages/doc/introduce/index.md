@@ -8,9 +8,16 @@
 ```
 
 ```js
-  // 代码中使用 例子
-  import { Button } from 'lixi-ui-vue';
+  // 引入
+  import lixiUiVue from 'lixi-ui-vue';
+  var app = createApp(App).use(lixiUiVue);
 ```
+
+```html
+  <!-- 项目中使用 -->
+  <lx-button></li-button>
+```
+
 
 ### 项目的设计介绍
 
@@ -23,12 +30,10 @@
 
 #### ui的介绍
 ```js
-  // 提供一个 ui 库, 主流框架上的组件都会有. 
-  // 单元测试 以及 ts.目录结构清晰简单.
+  // 简单的组件库
 ```
 
 #### material的介绍
 ```js
-  // 不会像 ui 库严格. 也是 一个组件库. 
-  // 大家可以随意发挥. 随都可以写组件.有好的点子都可以提交上来. 
+  // 复杂的组件,业务开发中通用的组件
 ```
