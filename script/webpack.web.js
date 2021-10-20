@@ -47,21 +47,25 @@ var config = {
       },
       {
         test: /\.(tsx?)$/,
-        loader: 'babel-loader',
-        options:{
-          presets: [
-            [
-              "@babel/preset-typescript",
-              {
-                allExtensions: true,
-                isTSX: true
-              }
-            ]
-          ],
-          plugins: [
-            "@vue/babel-plugin-jsx"
-          ]
-        }
+        use: [
+          {
+            loader: 'babel-loader',
+            options:{
+              presets: [
+                [
+                  "@babel/preset-typescript",
+                  {
+                    allExtensions: true,
+                    isTSX: true
+                  }
+                ]
+              ],
+              plugins: [
+                "@vue/babel-plugin-jsx"
+              ]
+            }
+          }
+        ],
       },
       {
         test: /\.vue$/,

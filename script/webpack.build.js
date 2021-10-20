@@ -1,32 +1,25 @@
-var path = require("path");
-var webpack = require("webpack");
+var path = require('path');
+var webpack = require('webpack');
+var WebpackDevServer = require("webpack-dev-server");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
 
+console.log('ĺŻĺ¨')
+
 var config = {
-  mode:"production",
-  entry: [
-    './site/index.js'
-  ],
+  mode:"development",
+  entry: ['./site/index.js'],
   output: {
-    path: path.resolve(process.cwd() , './dist'),
-    // path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "../dist"),
     filename: 'index.js',
-    publicPath: '/vue/',
-    environment: {
-      arrowFunction: false
-    }
-  },
-  externals: {
-    vue: 'Vue'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
       // vue: `vue/dist/${vueBundle}`,
-      // 'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
-      '@lixi': path.resolve(process.cwd() , './src'),
+      'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
+      '@lixi': path.join(__dirname , '../src'),
+      '@site': path.join(__dirname , '../site')
     },
   },
   module: {
@@ -42,39 +35,56 @@ var config = {
       },
       {
         test: /\.(tsx?)$/,
-        loader: 'babel-loader',
-        options:{
-          presets: [
-            [
-              "@babel/preset-typescript",
-              {
-                allExtensions: true,
-                isTSX: true
-              }
-            ]
-          ],
-          plugins: [
-            "@vue/babel-plugin-jsx"
-          ]
-        }
-      },
-      {
-        test: /\.vue$/,
-        use: 'vue-loader',
-      },
-      {
-        test: /\.md$/,
         use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: [
+                "@vue/babel-plugin-jsx"
+              ]
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              appendTsSuffixTo: [/\.vue$/],
+            }
+          }
+        ]
+      },
+      {
+        test: /\.d\.md$/,
+        use: [
+          path.resolve(__dirname, '../site/md-loader/vueLoader.js'),
           {
             loader: 'vue-loader',
             options: {
               compilerOptions: {
                 preserveWhitespace: false,
-              },
+              }
             },
           },
           {
             loader: path.resolve(__dirname, '../site/md-loader/index.js'),
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false,
+              }
+            }
+          }
+        ],
+      },
+      {
+        test: /\.vue$/,
+        use: [
+          // path.resolve(__dirname, '../site/md-loader/vueLoader.js'),
+          {
+            loader: 'vue-loader',
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false,
+              }
+            },
           },
         ],
       },
@@ -101,39 +111,23 @@ var config = {
               name: path.posix.join("static", 'img/[name].[ext]'),
               esModule: false
             }
-          },
-          // {
-          //   loader: 'file-loader',
-          //   options: {
-          //     limit: 10,
-          //     name: path.posix.join("static", 'img/[name].[hash:7].[ext]'),
-          //     esModule: false
-          //   }
-          // },
+          }
         ]
       }
     ]
   },
-  plugins:[
+  plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
       favicon: './public/lixi-logo.png'
     }),
-    new webpack.DefinePlugin({
-      __VUE_OPTIONS_API__: JSON.stringify(true),
-      __VUE_PROD_DEVTOOLS__: JSON.stringify(false),
-    }),
-    new VueLoaderPlugin(),
-    // new BundleAnalyzerPlugin()
+    new VueLoaderPlugin()
   ]
 }
 
-
-webpack(config, function(err) {
-  if(err){
-    console.log(err)
-  } else {
-    console.log('build ok')
-  }
+var server = new WebpackDevServer(webpack(config),{
+  port: 8099
 })
+
+server.start()

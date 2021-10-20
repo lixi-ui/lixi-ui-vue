@@ -4,7 +4,6 @@ import router from './router/index.js';
 // import Antd from 'ant-design-vue';
 import App from "./app.vue";
 // import 'ant-design-vue/dist/antd.css';
-// import Button from '../src/components/button/package/index.js';
 import LixiUiVue from '../src/index.js'
 import demoBlock from './components/demo-block/index.vue'
 import icon from './icon.json'
