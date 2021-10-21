@@ -35,10 +35,10 @@ export default defineComponent({
     },
   },
   emits: ['scroll', 'change'],
-  setup(props, { emit }) {
-    const target = ref(null)
-    const root = ref(null)
-    const scrollContainer = ref(null)
+  setup(props:any, { emit }) {
+    const target:any = ref(null)
+    const root:any = ref(null)
+    const scrollContainer:any = ref(null)
 
     const state = reactive({
       fixed: false,

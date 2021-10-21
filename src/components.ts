@@ -1,6 +1,6 @@
-// import { LxAffix } from '@lixi/components/affix/src'
+import { LxAffix } from '@lixi/components/affix/src'
 import { LxAlert } from '@lixi/components/alert/src'
-// import { LxAutocomplete } from '@lixi/components/autocomplete/src'
+import { LxAutocomplete } from '@lixi/components/autocomplete/src'
 import { LxAvatar } from '@lixi/components/avatar/src'
 // import { LxBacktop } from '@lixi/components/backtop/src'
 import { LxBadge } from '@lixi/components/badge/src'
@@ -73,9 +73,9 @@ import { LxPopoverDirective } from '@lixi/components/popover/src/index'
 
 
 export default [
-  // LxAffix,
+  LxAffix,
   LxAlert,
-  // LxAutocomplete,
+  LxAutocomplete,
   LxAvatar,
   // LxBacktop,
   LxBadge,

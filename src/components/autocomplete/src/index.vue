@@ -167,15 +167,15 @@ export default defineComponent({
   emits: [UPDATE_MODEL_EVENT, 'input', 'change', 'focus', 'blur', 'clear', 'select'],
   setup(props, ctx) {
     const attrs = useAttrs()
-    const suggestions = ref([])
+    const suggestions:any = ref([])
     const highlightedIndex = ref(-1)
     const dropdownWidth = ref('')
     const activated = ref(false)
     const suggestionDisabled = ref(false)
     const loading = ref(false)
-    const inputRef = ref(null)
-    const regionRef = ref(null)
-    const popper = ref(null)
+    const inputRef:any = ref(null)
+    const regionRef:any = ref(null)
+    const popper:any = ref(null)
 
     const id = computed(() => {
       return `lx-autocomplete-${generateId()}`

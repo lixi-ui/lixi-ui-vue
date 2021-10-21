@@ -1,5 +1,5 @@
 module.exports = [
-  // { name: 'affix', title: 'affix 固钉'},
+  { name: 'affix', title: 'affix 固钉'},
   { name: 'alert', title: 'alert 警告'},
   // { name: 'autocomplete', title: ''},
   { name: 'avatar', title: 'avatar 头像'},
@@ -10,14 +10,14 @@ module.exports = [
   { name: 'calendar', title: 'calendar 日历'},
   { name: 'card', title: 'card 卡片'},
   { name: 'carousel', title: 'carousel 走马灯'},
-  // { name: 'cascader', title: 'cascader 级联选择器'},
+  { name: 'cascader', title: 'cascader 级联选择器'},
   // { name: 'cascader-panel', title: 'cascader-panel'},
   // { name: 'check-tag', title: 'check-tag'},
   { name: 'checkbox', title: 'checkbox 多选框'},
   // // { name: 'col', title: 'col'},
   { name: 'collapse', title: 'cllapse 折叠面板'},
   // { name: 'collapse-transition', title: 'collapse-transition'},
-  // { name: 'color-picker', title: 'color-picker 颜色选择器'},
+  { name: 'color-picker', title: 'color-picker 颜色选择器'},
   // { name: 'config-provider', title: 'config-provider'},
   { name: 'container', title: 'container 布局容器'},
   { name: 'date-picker', title: 'date-picker 日期选择器'},
@@ -68,7 +68,7 @@ module.exports = [
   { name: 'message-box', title: 'message-box 弹框'},
   { name: 'notification', title: 'notification 通知'},
   { name: 'popover', title: 'popover 弹出框'},
-  // { name: 'space', title: 'space 间距'}
+  { name: 'space', title: 'space 间距'}
 ]
 
 // 'space',

@@ -17,7 +17,8 @@
       background-size: 120px 120px;
     }
     .doc-li {
-      padding: 5px 15px;
+      padding: 8px 15px;
+      cursor: pointer;
       a {
         text-decoration: none;
         font-size: 14px;
@@ -26,6 +27,9 @@
         display: inline-block;
       }
       .activeClass {
+        color: #fb6638;
+      }
+      &:hover a{
         color: #fb6638;
       }
     }
