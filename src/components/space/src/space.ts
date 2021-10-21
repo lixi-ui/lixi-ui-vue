@@ -37,7 +37,7 @@ export default defineComponent({
       direction,
     } = ctx
 
-    const children = renderSlot($slots, 'default', { key: 0 }, () => [])
+    const children:any = renderSlot($slots, 'default', { key: 0 }, () => [])
     // retrieve the children out via a simple for loop
     // the edge case here is that when users uses directives like <v-for>, <v-if>
     // we need to go one layer deeper
@@ -46,7 +46,7 @@ export default defineComponent({
 
     // loop the children, if current children is rendered via `renderList` or `<v-for>`
     if (isArray(children.children)) {
-      let extractedChildren = []
+      let extractedChildren:any = []
       children.children.forEach((child: VNode, loopKey) => {
         if (isFragment(child)) {
           if (isArray(child.children)) {

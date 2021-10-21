@@ -43,9 +43,9 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const instance = getCurrentInstance()
+    const instance:any = getCurrentInstance()
     // ref
-    const thumb = shallowRef<Nullable<HTMLElement>>(null)
+    const thumb:any = shallowRef<Nullable<HTMLElement>>(null)
     const bar = shallowRef<Nullable<HTMLElement>>(null)
 
     // data

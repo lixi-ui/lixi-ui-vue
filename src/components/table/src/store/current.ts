@@ -8,8 +8,8 @@ import type { WatcherPropsData } from './index'
 
 function useCurrent<T>(watcherData: WatcherPropsData<T>) {
   const instance = getCurrentInstance() as Table<T>
-  const _currentRowKey = ref<string>(null)
-  const currentRow: Ref<T> = ref(null)
+  const _currentRowKey:any = ref(null)
+  const currentRow: any = ref(null)
 
   const setCurrentRowKey = (key: string) => {
     instance.store.assertRowKey()

@@ -88,12 +88,12 @@ export default defineComponent({
 
   emits: ['changerange', 'pick', 'select'],
 
-  setup(props, ctx) {
+  setup(props:any, ctx) {
     const { t, lang } = useLocaleInject()
     // data
-    const lastRow = ref(null)
+    const lastRow:any = ref(null)
     const lastColumn = ref(null)
-    const tableRows = ref([[], [], [], [], [], []])
+    const tableRows:any = ref([[], [], [], [], [], []])
 
     // todo better way to get Day.js locale object
     const firstDayOfWeek = (props.date as any).$locale().weekStart || 7
@@ -233,7 +233,7 @@ export default defineComponent({
     }
 
     const getCellClasses = cell => {
-      let classes = []
+      let classes:any = []
       if ((cell.type === 'normal' || cell.type === 'today') && !cell.disabled) {
         classes.push('available')
         if (cell.type === 'today') {

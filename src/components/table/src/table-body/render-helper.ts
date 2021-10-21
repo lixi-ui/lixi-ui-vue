@@ -8,8 +8,8 @@ import type { TableBodyProps } from './defaults'
 import type { RenderRowData, Table, TreeNode } from '../table/defaults'
 import type { TableProps } from '../table/defaults'
 
-function useRender<T>(props: Partial<TableBodyProps<T>>) {
-  const instance = getCurrentInstance()
+function useRender<T>(props: any) {
+  const instance:any = getCurrentInstance()
   const parent = instance.parent as Table<T>
   const {
     handleDoubleClick,
@@ -43,8 +43,8 @@ function useRender<T>(props: Partial<TableBodyProps<T>>) {
     }
     return index
   }
-  const rowRender = (row: T, $index: number, treeRowData?: TreeNode) => {
-    const { tooltipEffect, store } = props
+  const rowRender = (row: T, $index: number, treeRowData?: any) => {
+    const { tooltipEffect, store }:any = props
     const { indent, columns } = store.states
     const rowClasses = getRowClass(row, $index)
     let display = true
@@ -80,7 +80,7 @@ function useRender<T>(props: Partial<TableBodyProps<T>>) {
           colspan,
           cellIndex,
         )
-        const data: RenderRowData<T> = {
+        const data: any = {
           store: props.store,
           _self: props.context || parent,
           column: columnData,
@@ -123,7 +123,7 @@ function useRender<T>(props: Partial<TableBodyProps<T>>) {
     )
   }
   const wrappedRowRender = (row: T, $index: number) => {
-    const store = props.store
+    const store:any = props.store
     const { isRowExpanded, assertRowKey } = store
     const {
       treeData,
@@ -135,7 +135,7 @@ function useRender<T>(props: Partial<TableBodyProps<T>>) {
       ({ type }) => type === 'expand',
     )
     if (hasExpandColumn && isRowExpanded(row)) {
-      const renderExpanded = parent.renderExpanded
+      const renderExpanded:any = parent.renderExpanded
       const tr = rowRender(row, $index, undefined)
       if (!renderExpanded) {
         console.error('[Element Error]renderExpanded is required.')
@@ -168,7 +168,7 @@ function useRender<T>(props: Partial<TableBodyProps<T>>) {
       // 在调用 rowRender 函数时，仍然会计算 rowKey，不太好的操作
       const key = getRowIdentity(row, rowKey.value)
       let cur = treeData.value[key]
-      let treeRowData = null
+      let treeRowData:any = null
       if (cur) {
         treeRowData = {
           expanded: cur.expanded,

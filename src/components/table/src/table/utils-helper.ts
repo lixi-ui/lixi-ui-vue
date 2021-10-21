@@ -4,7 +4,7 @@ function useUtils<T>(store: Store<T>) {
   const setCurrentRow = (row: T) => {
     store.commit('setCurrentRow', row)
   }
-  const toggleRowSelection = (row: T, selected: boolean) => {
+  const toggleRowSelection = (row: T, selected: any) => {
     store.toggleRowSelection(row, selected, false)
     store.updateAllSelected()
   }

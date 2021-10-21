@@ -29,7 +29,7 @@ export default defineComponent({
     const uploader = inject('uploader', {} as LxUpload)
     const dragover = ref(false)
 
-    function onDrop(e: DragEvent) {
+    function onDrop(e: any) {
       if (props.disabled || !uploader) return
       const accept = uploader.accept
       dragover.value = false
@@ -39,8 +39,8 @@ export default defineComponent({
       }
       emit(
         'file',
-        Array.from(e.dataTransfer.files).filter(file => {
-          const { type, name } = file
+        Array.from(e.dataTransfer.files).filter((file) => {
+          const { type, name }:any = file
           const extension =
             name.indexOf('.') > -1 ? `.${name.split('.').pop()}` : ''
           const baseType = type.replace(/\/.*$/, '')

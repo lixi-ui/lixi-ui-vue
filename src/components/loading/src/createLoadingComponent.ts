@@ -19,9 +19,9 @@ import type { ILoadingCreateComponentParams, ILoadingInstance } from './loading.
 export function createLoadingComponent({
   options,
   globalLoadingOption,
-}: ILoadingCreateComponentParams): ILoadingInstance {
-  let vm: VNode = null
-  let afterLeaveTimer: Nullable<number> = null
+}: any): any {
+  let vm: any = null
+  let afterLeaveTimer: any = null
 
   const afterLeaveFlag = ref(false)
   const data = reactive({
@@ -38,7 +38,7 @@ export function createLoadingComponent({
   function destroySelf() {
     const target = data.parent
     if (!target.vLoadingAddClassList) {
-      let loadingNumber: number | string = target.getAttribute('loading-number')
+      let loadingNumber: any = target.getAttribute('loading-number')
       loadingNumber = Number.parseInt(loadingNumber) - 1
       if (!loadingNumber) {
         removeClass(target, 'lx-loading-parent--relative')

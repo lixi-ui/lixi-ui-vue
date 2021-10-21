@@ -126,15 +126,15 @@ export default defineComponent({
       type: Function,
     },
   },
-  setup(props) {
-    const instance = getCurrentInstance()
+  setup(props:any) {
+    const instance:any = getCurrentInstance()
     const { t } = useLocaleInject()
-    const parent = instance.parent as TableHeader
+    const parent:any = instance.parent as TableHeader
     if (!parent.filterPanels.value[props.column.id]) {
       parent.filterPanels.value[props.column.id] = instance
     }
     const tooltipVisible = ref(false)
-    const tooltip = ref(null)
+    const tooltip:any = ref(null)
     const filters = computed(() => {
       return props.column && props.column.filters
     })
@@ -191,7 +191,7 @@ export default defineComponent({
       confirmFilter(filteredValue.value)
       hidden()
     }
-    const handleSelect = (_filterValue?: string) => {
+    const handleSelect = (_filterValue?: any) => {
       filterValue.value = _filterValue
       if (typeof _filterValue !== 'undefined' && _filterValue !== null) {
         confirmFilter(filteredValue.value)

@@ -11,8 +11,8 @@ import type { Table } from './table/defaults'
 import type { Store } from './store'
 class TableLayout<T> {
   observers: TableHeader[]
-  table: Table<T>
-  store: Store<T>
+  table: any
+  store: any
   columns: TableColumnCtx<T>[]
   fit: boolean
   showHeader: boolean
@@ -28,7 +28,7 @@ class TableLayout<T> {
   appendHeight: Ref<null | number> // Append Slot Height
   footerHeight: Ref<null | number> // Table Footer Height
   viewportHeight: Ref<null | number> // Table Height - Scroll Bar Height
-  bodyHeight: Ref<null | number> // Table Height - Table Header Height
+  bodyHeight: any // Table Height - Table Header Height
   fixedBodyHeight: Ref<null | number> // Table Height - Table Header Height - Scroll Bar Height
   gutterWidth: number
   constructor(options: Record<string, any>) {
@@ -97,7 +97,7 @@ class TableLayout<T> {
     return false
   }
 
-  setHeight(value: string | number, prop = 'height') {
+  setHeight(value: any | number, prop = 'height') {
     if (isServer) return
     const el = this.table.vnode.el
     value = parseHeight(value)
@@ -120,9 +120,9 @@ class TableLayout<T> {
   }
 
   getFlattenColumns(): TableColumnCtx<T>[] {
-    const flattenColumns = []
+    const flattenColumns:any = []
     const columns = this.table.store.states.columns.value
-    columns.forEach(column => {
+    columns.forEach((column) => {
       if (column.isColumnGroup) {
         // eslint-disable-next-line prefer-spread
         flattenColumns.push.apply(flattenColumns, column.columns)
@@ -179,7 +179,7 @@ class TableLayout<T> {
 
   headerDisplayNone(elm: HTMLElement) {
     if (!elm) return true
-    let headerChild = elm
+    let headerChild:any = elm
     while (headerChild.tagName !== 'DIV') {
       if (getComputedStyle(headerChild).display === 'none') {
         return true
@@ -199,7 +199,7 @@ class TableLayout<T> {
     const flexColumns = flattenColumns.filter(
       column => typeof column.width !== 'number',
     )
-    flattenColumns.forEach(column => {
+    flattenColumns.forEach((column:any) => {
       // Clean those columns whose width changed from flex to unflex
       if (typeof column.width === 'number' && column.realWidth)
         column.realWidth = null

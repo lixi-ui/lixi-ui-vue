@@ -18,18 +18,20 @@ export const useLocaleProps = {
 
 type Translator = (...args: any[]) => string
 
-export type LocaleContext = {
-  locale: Ref<Language>
-  lang: Ref<string>
-  t: Translator
-}
+// export type LocaleContext = {
+//   locale: Ref<Language>
+//   lang: Ref<string>
+//   t: Translator
+// }
 
-export const LocaleInjectionKey = 'LxLocaleInjection' as unknown as InjectionKey<LocaleContext>
+// export const LocaleInjectionKey = 'LxLocaleInjection' as unknown as InjectionKey<LocaleContext>
+export const LocaleInjectionKey = 'LxLocaleInjection' as any
 
 // this is meant to fix global methods like `ElMessage(opts)`, this way we can inject current locale
 // into the component as default injection value.
-// refer to: https://github.com/element-plus/element-plus/issues/2610#issuecomment-887965266
-let localeObjCache: LocaleContext
+// refer to: https://github.com/lixi-ui-vue/lixi-ui-vue/issues/2610#issuecomment-887965266
+// let localeObjCache: LocaleContext
+let localeObjCache: any
 
 function translate(path, option, current) {
   const paths = path.split('.')
@@ -44,7 +46,7 @@ function translate(path, option, current) {
 }
 
 export const useLocale = () => {
-  const vm = getCurrentInstance()
+  const vm:any = getCurrentInstance()
   const props = vm.props as {
     locale: Language
   }

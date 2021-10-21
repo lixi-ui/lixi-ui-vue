@@ -20,7 +20,7 @@ export default defineComponent({
   },
   emits: ['update:modelValue'],
   setup(props, ctx) {
-    const commonPicker = ref(null)
+    const commonPicker:any = ref(null)
     const type = props.isRange ? 'timerange' : 'time'
     const panel = props.isRange ? TimeRangePanel : TimePickPanel
     const refProps = {

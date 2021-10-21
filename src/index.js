@@ -12,4 +12,3 @@ export default {
   install,
   version: '0.0.4'
 }
-

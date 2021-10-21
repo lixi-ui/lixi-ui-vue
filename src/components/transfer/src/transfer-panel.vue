@@ -79,7 +79,7 @@ export default defineComponent({
 
   emits: [CHECKED_CHANGE_EVENT],
 
-  setup(props, { slots }) {
+  setup(props, { slots }:any) {
     const { t } = useLocaleInject()
 
     const panelState = reactive({

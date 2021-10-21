@@ -83,8 +83,8 @@ import { getAvailableArrs, useOldValue } from './useTimePicker'
 import type { PropType } from 'vue'
 import type { Dayjs } from 'dayjs'
 
-const makeSelectRange = (start: number, end: number) => {
-  const result = []
+const makeSelectRange = (start: any, end: any) => {
+  const result:any = []
   for (let i = start; i <= end; i++) {
     result.push(i)
   }
@@ -108,7 +108,7 @@ export default defineComponent({
 
   emits: ['pick', 'select-range', 'set-picker-option'],
 
-  setup(props, ctx) {
+  setup(props: any, ctx) {
     const { t, lang } = useLocaleInject()
     const minDate = computed(() => props.parsedValue[0])
     const maxDate = computed(() => props.parsedValue[1])
@@ -125,8 +125,8 @@ export default defineComponent({
       return ''
     })
 
-    const minSelectableRange = ref([])
-    const maxSelectableRange = ref([])
+    const minSelectableRange: any = ref([])
+    const maxSelectableRange: any = ref([])
 
     const handleConfirm = (visible = false) => {
       ctx.emit('pick', [minDate.value, maxDate.value], visible)
@@ -153,7 +153,7 @@ export default defineComponent({
       return minDate.value > maxDate.value
     })
 
-    const selectionRange = ref([0,2])
+    const selectionRange:any = ref([0,2])
     const setMinSelectionRange = (start, end) => {
       ctx.emit('select-range', start, end, 'min')
       selectionRange.value = [start, end]
@@ -201,7 +201,7 @@ export default defineComponent({
       const defaultDisable = disabledHours ? disabledHours(role) : []
       const isStart = role === 'start'
       const compareDate = compare || (isStart ? maxDate.value : minDate.value)
-      const compareHour = compareDate.hour()
+      const compareHour:any = compareDate.hour()
       const nextDisable = isStart ? makeSelectRange(compareHour + 1, 23) : makeSelectRange(0, compareHour - 1)
       return union(defaultDisable, nextDisable)
     }

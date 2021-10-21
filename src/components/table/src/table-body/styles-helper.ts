@@ -4,8 +4,8 @@ import type { TableColumnCtx } from '../table-column/defaults'
 import type { Table } from '../table/defaults'
 import type { TableBodyProps } from './defaults'
 
-function useStyles<T>(props: Partial<TableBodyProps<T>>) {
-  const instance = getCurrentInstance()
+function useStyles<T>(props: any) {
+  const instance:any = getCurrentInstance()
   const parent = instance.parent as Table<T>
   const isColumnHidden = index => {
     if (props.fixed === 'left') {

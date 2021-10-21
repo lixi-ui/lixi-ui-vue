@@ -116,7 +116,7 @@ export function useSpace(props: ExtractPropTypes<typeof defaultProps>) {
   )
 
   const containerStyle = computed(() => {
-    const wrapKls: CSSProperties =
+    const wrapKls: any =
       props.wrap || props.fill
         ? { flexWrap: 'wrap', marginBottom: `-${verticalSize.value}px` }
         : null

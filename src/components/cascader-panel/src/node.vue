@@ -85,15 +85,15 @@ export default defineComponent({
 
   emits: ['expand'],
 
-  setup (props, { emit }) {
-    const panel = inject(CASCADER_PANEL_INJECTION_KEY)
+  setup (props:any, { emit }) {
+    const panel:any = inject(CASCADER_PANEL_INJECTION_KEY)
 
     const isHoverMenu = computed(() => panel.isHoverMenu)
     const multiple = computed(() => panel.config.multiple)
     const checkStrictly = computed(() => panel.config.checkStrictly)
     const checkedNodeId = computed(() => panel.checkedNodes[0]?.uid)
     const isDisabled = computed(() => props.node.isDisabled)
-    const isLeaf = computed(() => props.node.isLeaf)
+    const isLeaf= computed(() => props.node.isLeaf)
     const expandable = computed(() => checkStrictly.value && !isLeaf.value || !isDisabled.value)
     const inExpandingPath = computed(() => isInPath(panel.expandingNode))
     // only useful in check-strictly mode

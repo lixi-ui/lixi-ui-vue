@@ -12,7 +12,8 @@ export type Language = {
 
 let lang: Language = defaultLang as Language
 
-let i18nHandler: null | ((...args: any[]) => string) = null
+// let i18nHandler: null | ((...args: any[]) => string) = null
+let i18nHandler: any
 
 export const i18n = (fn: (...args: any[]) => string) => {
   i18nHandler = fn
@@ -42,7 +43,7 @@ const defaultTranslator = (...args: any[]) => {
   }
 }
 
-export const t = (...args: any[]): string => {
+export const t = (...args: any[]): string | undefined => {
   if (i18nHandler) {
     const translation = i18nHandler(...args)
     return translation || defaultTranslator(...args)
@@ -56,7 +57,7 @@ export const use = (l: Language): void => {
     console.warn(`[deprecation]:
       The previous i18n usage is deprecated please update to
       the new one to get reactive i18n translations, refer to:
-      https://element-plus.org/#/en-US/component/i18n
+      https://lixi-ui-vue.org/#/en-US/component/i18n
     `)
   }
 

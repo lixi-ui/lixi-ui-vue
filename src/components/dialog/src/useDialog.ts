@@ -106,11 +106,11 @@ export default function(
   const visible = ref(false)
   const closed = ref(false)
   const dialogRef = ref(null)
-  const openTimer = ref<TimeoutHandle>(null)
-  const closeTimer = ref<TimeoutHandle>(null)
+  const openTimer:any = ref(null)
+  const closeTimer:any = ref(null)
   const rendered = ref(false) // when desctroyOnClose is true, we initialize it as false vise versa
   const zIndex = ref(props.zIndex || PopupManager.nextZIndex())
-  const modalRef = ref<HTMLElement>(null)
+  const modalRef:any = ref(null)
 
   const normalizeWidth = () => {
     if(isNumber(props.width))

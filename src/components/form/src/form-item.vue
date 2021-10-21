@@ -106,20 +106,20 @@ export default defineComponent({
       validator: isValidComponentSize,
     },
   },
-  setup(props, { slots }) {
+  setup(props:any, { slots }) {
     const formItemMitt = mitt()
     const $ELEMENT = useGlobalConfig()
 
-    const lxForm = inject(lxFormKey, {} as LxFormContext)
-    const validateState = ref('')
-    const validateMessage = ref('')
-    const validateDisabled = ref(false)
+    const lxForm:any = inject(lxFormKey, {} as LxFormContext)
+    const validateState:any = ref('')
+    const validateMessage:any = ref('')
+    const validateDisabled:any = ref(false)
 
     const computedLabelWidth = ref('')
 
     const formItemRef = ref<HTMLDivElement>()
 
-    const vm = getCurrentInstance()
+    const vm:any = getCurrentInstance()
     const isNested = computed(() => {
       let parent = vm.parent
       while (parent && parent.type.name !== 'LxForm') {
@@ -132,7 +132,7 @@ export default defineComponent({
     })
 
 
-    let initialValue = undefined
+    let initialValue:any = undefined
 
     watch(
       () => props.error,
@@ -192,7 +192,7 @@ export default defineComponent({
       let required = false
 
       if (rules && rules.length) {
-        rules.every(rule => {
+        rules.every((rule:any) => {
           if (rule.required) {
             required = true
             return false
@@ -270,21 +270,19 @@ export default defineComponent({
     }
 
     const getRules = () => {
-      const formRules = lxForm.rules
+      const formRules  = lxForm.rules
       const selfRules = props.rules
-      const requiredRule =
+      const requiredRule:any =
         props.required !== undefined ? { required: !!props.required } : []
 
       const prop = getPropByPath(formRules, props.prop || '', false)
       const normalizedRule = formRules
         ? (prop.o[props.prop || ''] || prop.v)
         : []
-
       return [].concat(selfRules || normalizedRule || []).concat(requiredRule)
     }
     const getFilteredRule = trigger => {
-      const rules = getRules()
-
+      const rules:any = getRules()
       return rules
         .filter(rule => {
           if (!rule.trigger || trigger === '') return true

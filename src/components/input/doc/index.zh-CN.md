@@ -342,24 +342,24 @@ export default defineComponent ({
 <lx-row class="demo-autocomplete">
   <lx-col :span="12">
     <div class="sub-title">激活即列出输入建议</div>
-    <lx-autocomplete
+    <!-- <lx-autocomplete
       class="inline-input"
       v-model="state1"
       :fetch-suggestions="querySearch"
       placeholder="请输入内容"
       @select="handleSelect"
-    ></lx-autocomplete>
+    ></lx-autocomplete> -->
   </lx-col>
   <lx-col :span="12">
     <div class="sub-title">输入后匹配输入建议</div>
-    <lx-autocomplete
+    <!-- <lx-autocomplete
       class="inline-input"
       v-model="state2"
       :fetch-suggestions="querySearch"
       placeholder="请输入内容"
       :trigger-on-focus="false"
       @select="handleSelect"
-    ></lx-autocomplete>
+    ></lx-autocomplete> -->
   </lx-col>
 </lx-row>
 <script>
@@ -529,7 +529,7 @@ export default defineComponent({
 
 :::demo 使用`#default`自定义输入建议的模板。该 scope 的参数为`item`，表示当前输入建议对象。
 ```html
-<lx-autocomplete
+<!-- <lx-autocomplete
   popper-class="my-autocomplete"
   v-model="state"
   :fetch-suggestions="querySearch"
@@ -543,7 +543,7 @@ export default defineComponent({
     <div class="name">{{ item.value }}</div>
     <span class="addr">{{ item.address }}</span>
   </template>
-</lx-autocomplete>
+</lx-autocomplete> -->
 
 <style>
 .my-autocomplete li {
@@ -737,12 +737,12 @@ export default defineComponent({
 
 :::demo
 ```html
-<lx-autocomplete
+<!-- <lx-autocomplete
   v-model="state"
   :fetch-suggestions="querySearchAsync"
   placeholder="请输入内容"
   @select="handleSelect"
-></lx-autocomplete>
+></lx-autocomplete> -->
 <script>
 import { defineComponent, ref, onMounted } from 'vue'
 

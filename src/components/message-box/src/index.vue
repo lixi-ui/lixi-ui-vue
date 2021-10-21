@@ -205,7 +205,7 @@ export default defineComponent({
     const { t } = useLocaleInject()
     const visible = ref(false)
     // s represents state
-    const state = reactive<MessageBoxState>({
+    const state:any = reactive({
       beforeClose: null,
       callback: null,
       cancelButtonText: '',
@@ -243,8 +243,8 @@ export default defineComponent({
     })
     const icon = computed(() => state.iconClass || (state.type && TypeMap[state.type] ? `lx-icon-${TypeMap[state.type]}` : ''))
     const hasMessage = computed(() => !!state.message)
-    const inputRef = ref<ComponentPublicInstance>(null)
-    const confirmRef = ref<ComponentPublicInstance>(null)
+    const inputRef:any = ref(null)
+    const confirmRef:any = ref(null)
 
     const confirmButtonClasses = computed(() => `lx-button--primary ${state.confirmButtonClass}`)
 
@@ -370,7 +370,7 @@ export default defineComponent({
         handleClose,
       }, visible)
     } else {
-      usePreventGlobal(visible, 'keydown', (e: KeyboardEvent) => e.code === EVENT_CODE.esc)
+      usePreventGlobal(visible, 'keydown', (e: any) => e.code === EVENT_CODE.esc)
     }
 
     // locks the screen to prevent scroll

@@ -25,13 +25,13 @@ const notifications: Record<Position, NotificationQueue> = {
 const GAP_SIZE = 16
 let seed = 1
 
-const Notification: INotification = function (options = {}) {
+const Notification: any = function (options:any = {}) {
   if (isServer) return
   const position = options.position || 'top-right'
 
   let verticalOffset = options.offset || 0
   notifications[position]
-    .forEach(({ vm }) => {
+    .forEach(({ vm }:any) => {
       verticalOffset += (vm.el.offsetHeight || 0) + GAP_SIZE
     })
   verticalOffset += GAP_SIZE
@@ -49,9 +49,9 @@ const Notification: INotification = function (options = {}) {
     zIndex: PopupManager.nextZIndex(),
   }
 
-  const container = document.createElement('div')
+  const container:any = document.createElement('div')
 
-  const vm = createVNode(
+  const vm:any = createVNode(
     NotificationConstructor,
     options,
     isVNode(options.message)
@@ -109,9 +109,9 @@ export function close(
 ): void {
   // maybe we can store the index when inserting the vm to notification list.
   const orientedNotifications = notifications[position]
-  const idx = orientedNotifications.findIndex(({ vm }) => vm.component.props.id === id)
+  const idx = orientedNotifications.findIndex(({ vm }:any) => vm.component.props.id === id)
   if (idx === -1) return
-  const { vm } = orientedNotifications[idx]
+  const { vm }:any = orientedNotifications[idx]
   if (!vm) return
   // calling user's on close function before notification gets removed from DOM.
   userOnClose?.(vm)
@@ -125,7 +125,7 @@ export function close(
   // starting from the removing item.
   for (let i = idx; i < len; i++) {
     // new position equals the current offsetTop minus removed height plus 16px(the gap size between each item)
-    const { el, component } = orientedNotifications[i].vm
+    const { el, component }:any = orientedNotifications[i].vm
     const pos = parseInt(el.style[verticalPos], 10) - removedHeight - GAP_SIZE
     component.props.offset = pos
   }
@@ -135,7 +135,7 @@ export function closeAll(): void {
   // loop through all directions, close them at once.
   for (const key in notifications) {
     const orientedNotifications = notifications[key as Position]
-    orientedNotifications.forEach(({ vm }) => {
+    orientedNotifications.forEach(({ vm }:any) => {
       // same as the previous close method, we'd like to make sure lifecycle gets handle properly.
       (vm.component.proxy as ComponentPublicInstance<{ visible: boolean; }>).visible = false
     })

@@ -55,16 +55,16 @@ const createGrid = ({
     name: name ?? 'LxVirtualList',
     props: DefaultGridProps,
     emits: [ITEM_RENDER_EVT, SCROLL_EVT],
-    setup(props, { emit, expose }) {
+    setup(props:any, { emit, expose }) {
 
       validateProps(props)
-      const instance = getCurrentInstance()
+      const instance:any = getCurrentInstance()
       const cache = ref(initCache(props, instance))
       // refs
       // here windowRef and innerRef can be type of HTMLElement
       // or user defined component type, depends on the type passed
       // by user
-      const windowRef = ref<HTMLElement>(null)
+      const windowRef:any = ref(null)
       // innerRef is the actual container element which contains all the elements
       const innerRef = ref(null)
       const states = ref({
@@ -456,7 +456,7 @@ const createGrid = ({
         windowStyle,
         totalColumn,
         totalRow,
-      } = ctx
+      }:any = ctx
 
       const [columnStart, columnEnd] = columnsToRender
       const [rowStart, rowEnd] = rowsToRender
@@ -464,7 +464,7 @@ const createGrid = ({
       const Container = resolveDynamicComponent(containerElement)
       const Inner = resolveDynamicComponent(innerElement)
 
-      const children = []
+      const children:any = []
       if (totalRow > 0 && totalColumn > 0) {
         for (let row = rowStart; row <= rowEnd; row ++) {
           for (let column = columnStart; column <= columnEnd; column ++) {

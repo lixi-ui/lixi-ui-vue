@@ -9,7 +9,7 @@ Lixi team is replacing all **Font Icon** in the previously built components to *
 ### SvgIcon Usage
 - If you want to **use directly** like the example, you need to [globally register](https://v3.vuejs.org/guide/component-registration.html#global-registration) the components before using it.
 
-- If you want to see all available SVG icons please check [@lixi/icons](https://unpkg.com/browse/@lixi/icons@latest/lib/) and the source [Github/ElementPlus/icons](https://github.com/element-plus/element-plus-icons) out or [SVG icons](/#/en-US/component/icon#svg-tu-biao-ji-he)
+- If you want to see all available SVG icons please check [@lixi/icons](https://unpkg.com/browse/@lixi/icons@latest/lib/) and the source [Github/ElementPlus/icons](https://github.com/lixi-ui-vue/lixi-ui-vue-icons) out or [SVG icons](/#/en-US/component/icon#svg-tu-biao-ji-he)
 
 ### Installation
 The current icon is only targeted to [Vue3](https://v3.vuejs.org).

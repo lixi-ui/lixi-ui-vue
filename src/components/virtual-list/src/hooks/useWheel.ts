@@ -24,7 +24,7 @@ const useWheel = ({
   layout,
 }: IWheelState, onWheelDelta: IWheelHandler) => {
 
-  let frameHandle: number | null = null
+  let frameHandle: any = null
   let offset = 0
 
   // let scrollLock = false

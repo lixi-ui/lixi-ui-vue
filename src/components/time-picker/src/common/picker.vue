@@ -1,127 +1,3 @@
-<template>
-  <lx-popper
-    ref="refPopper"
-    v-model:visible="pickerVisible"
-    manual-mode
-    :effect="Effect.LIGHT"
-    pure
-    trigger="click"
-    v-bind="$attrs"
-    :popper-class="`lx-picker__popper ${popperClass}`"
-    :popper-options="elPopperOptions"
-    :fallback-placements="['bottom', 'top', 'right', 'left']"
-    transition="lx-zoom-in-top"
-    :gpu-acceleration="false"
-    :stop-popper-mouse-event="false"
-    append-to-body
-    @before-enter="pickerActualVisible = true"
-    @after-leave="pickerActualVisible = false"
-  >
-    <template #trigger>
-      <lx-input
-        v-if="!isRangeInput"
-        v-clickoutside:[popperPaneRef]="onClickOutside"
-        :model-value="displayValue"
-        :name="name"
-        :size="pickerSize"
-        :disabled="pickerDisabled"
-        :placeholder="placeholder"
-        class="lx-date-editor"
-        :class="'lx-date-editor--' + type"
-        :readonly="!editable || readonly || isDatesPicker || type === 'week'"
-        @input="onUserInput"
-        @focus="handleFocus"
-        @keydown="handleKeydown"
-        @change="handleChange"
-        @mouseenter="onMouseEnter"
-        @mouseleave="onMouseLeave"
-      >
-        <template #prefix>
-          <i
-            class="lx-input__icon"
-            :class="triggerClass"
-            @click="handleFocus"
-          >
-          </i>
-        </template>
-        <template #suffix>
-          <i
-            class="lx-input__icon"
-            :class="[showClose ? '' + clearIcon : '']"
-            @click="onClearIconClick"
-          >
-          </i>
-        </template>
-      </lx-input>
-      <div
-        v-else
-        v-clickoutside:[popperPaneRef]="onClickOutside"
-        class="lx-date-editor lx-range-editor lx-input__inner"
-        :class="[
-          'lx-date-editor--' + type,
-          pickerSize ? `lx-range-editor--${ pickerSize }` : '',
-          pickerDisabled ? 'is-disabled' : '',
-          pickerVisible ? 'is-active' : ''
-        ]"
-        @click="handleFocus"
-        @mouseenter="onMouseEnter"
-        @mouseleave="onMouseLeave"
-        @keydown="handleKeydown"
-      >
-        <i :class="['lx-input__icon', 'lx-range__icon', triggerClass]"></i>
-        <input
-          autocomplete="off"
-          :name="name && name[0]"
-          :placeholder="startPlaceholder"
-          :value="displayValue && displayValue[0]"
-          :disabled="pickerDisabled"
-          :readonly="!editable || readonly"
-          class="lx-range-input"
-          @input="handleStartInput"
-          @change="handleStartChange"
-          @focus="handleFocus"
-        >
-        <slot name="range-separator">
-          <span class="lx-range-separator">{{ rangeSeparator }}</span>
-        </slot>
-        <input
-          autocomplete="off"
-          :name="name && name[1]"
-          :placeholder="endPlaceholder"
-          :value="displayValue && displayValue[1]"
-          :disabled="pickerDisabled"
-          :readonly="!editable || readonly"
-          class="lx-range-input"
-          @focus="handleFocus"
-          @input="handleEndInput"
-          @change="handleEndChange"
-        >
-        <i
-          :class="[showClose ? '' + clearIcon : '']"
-          class="lx-input__icon lx-range__close-icon"
-          @click="onClearIconClick"
-        >
-        </i>
-      </div>
-    </template>
-    <template #default>
-      <slot
-        :visible="pickerVisible"
-        :actual-visible="pickerActualVisible"
-        :parsed-value="parsedValue"
-        :format="format"
-        :unlink-panels="unlinkPanels"
-        :type="type"
-        :default-value="defaultValue"
-        @pick="onPick"
-        @select-range="setSelectionRange"
-        @set-picker-option="onSetPickerOption"
-        @calendar-change="onCalendarChange"
-        @mousedown.stop
-      ></slot>
-    </template>
-  </lx-popper>
-</template>
 <script lang='ts'>
 import {
   defineComponent,
@@ -186,7 +62,7 @@ const valueEquals = function(a: Array<Date> | any, b: Array<Date> | any) {
   return false
 }
 
-const parser = function(date: Date | string, format: string, lang: string): Dayjs {
+const parser = function(date: Date | string, format: string, lang: string): any {
   const day = isEmpty(format)
     ? dayjs(date).locale(lang)
     : dayjs(date, format).locale(lang)
@@ -206,18 +82,18 @@ export default defineComponent({
   directives: { clickoutside: ClickOutside },
   props: timePickerDefaultProps,
   emits: ['update:modelValue', 'change', 'focus', 'blur', 'calendar-change'],
-  setup(props, ctx) {
+  setup(props: any, ctx) {
     const ELEMENT = useGlobalConfig()
     const { lang } = useLocaleInject()
 
     const lxForm = inject(lxFormKey, {} as LxFormContext)
     const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
-    const elPopperOptions = inject('LxPopperOptions', {} as Options)
+    const LxPopperOptions = inject('LxPopperOptions', {} as Options)
 
-    const refPopper = ref(null)
-    const pickerVisible = ref(false)
-    const pickerActualVisible = ref(false)
-    const valueOnOpen = ref(null)
+    const refPopper:any = ref(null)
+    const pickerVisible:any = ref(false)
+    const pickerActualVisible:any = ref(false)
+    const valueOnOpen:any = ref(null)
 
     watch(pickerVisible, val => {
       if (!val) {
@@ -250,7 +126,7 @@ export default defineComponent({
         ctx.emit('update:modelValue', val ? formatValue : val, lang.value)
       }
     }
-    const refInput = computed(() => {
+    const refInput:any = computed(() => {
       if (refPopper.value.triggerRef) {
         const _r = isRangeInput.value ? refPopper.value.triggerRef : refPopper.value.triggerRef.$el
         return [].slice.call(_r.querySelectorAll('input'))
@@ -351,7 +227,7 @@ export default defineComponent({
 
     const triggerClass = computed(() => props.prefixIcon || (isTimeLikePicker.value ? 'lx-icon-time' : 'lx-icon-date'))
 
-    const showClose = ref(false)
+    const showClose:any = ref(false)
 
     const onClearIconClick = event => {
       if (props.readonly || pickerDisabled.value) return
@@ -393,7 +269,7 @@ export default defineComponent({
       pickerVisible.value = false
     }
 
-    const userInput = ref(null)
+    const userInput:any = ref(null)
 
     const handleChange = () => {
       if (userInput.value) {
@@ -519,7 +395,8 @@ export default defineComponent({
       }
     }
 
-    const pickerOptions = ref<Partial<PickerOptions>>({})
+    // const pickerOptions:any = ref<Partial<PickerOptions>>({})
+    const pickerOptions:any = ref({})
     const onSetPickerOption = <T extends keyof PickerOptions>(e: [T, PickerOptions[T]]) => {
       pickerOptions.value[e[0]] = e[1]
       pickerOptions.value.panelReady = true
@@ -537,7 +414,7 @@ export default defineComponent({
       Effect,
 
       // injected popper options
-      elPopperOptions,
+      LxPopperOptions,
 
       isDatesPicker,
       handleEndChange,
@@ -572,3 +449,129 @@ export default defineComponent({
   },
 })
 </script>
+
+
+<template>
+  <lx-popper
+    ref="refPopper"
+    v-model:visible="pickerVisible"
+    manual-mode
+    :effect="Effect.LIGHT"
+    pure
+    trigger="click"
+    v-bind="$attrs"
+    :popper-class="`lx-picker__popper ${popperClass}`"
+    :popper-options="LxPopperOptions"
+    :fallback-placements="['bottom', 'top', 'right', 'left']"
+    transition="lx-zoom-in-top"
+    :gpu-acceleration="false"
+    :stop-popper-mouse-event="false"
+    append-to-body
+    @before-enter="pickerActualVisible = true"
+    @after-leave="pickerActualVisible = false"
+  >
+    <template #trigger>
+      <lx-input
+        v-if="!isRangeInput"
+        v-clickoutside:[popperPaneRef]="onClickOutside"
+        :model-value="displayValue"
+        :name="name"
+        :size="pickerSize"
+        :disabled="pickerDisabled"
+        :placeholder="placeholder"
+        class="lx-date-editor"
+        :class="'lx-date-editor--' + type"
+        :readonly="!editable || readonly || isDatesPicker || type === 'week'"
+        @input="onUserInput"
+        @focus="handleFocus"
+        @keydown="handleKeydown"
+        @change="handleChange"
+        @mouseenter="onMouseEnter"
+        @mouseleave="onMouseLeave"
+      >
+        <template #prefix>
+          <i
+            class="lx-input__icon"
+            :class="triggerClass"
+            @click="handleFocus"
+          >
+          </i>
+        </template>
+        <template #suffix>
+          <i
+            class="lx-input__icon"
+            :class="[showClose ? '' + clearIcon : '']"
+            @click="onClearIconClick"
+          >
+          </i>
+        </template>
+      </lx-input>
+      <div
+        v-else
+        v-clickoutside:[popperPaneRef]="onClickOutside"
+        class="lx-date-editor lx-range-editor lx-input__inner"
+        :class="[
+          'lx-date-editor--' + type,
+          pickerSize ? `lx-range-editor--${ pickerSize }` : '',
+          pickerDisabled ? 'is-disabled' : '',
+          pickerVisible ? 'is-active' : ''
+        ]"
+        @click="handleFocus"
+        @mouseenter="onMouseEnter"
+        @mouseleave="onMouseLeave"
+        @keydown="handleKeydown"
+      >
+        <i :class="['lx-input__icon', 'lx-range__icon', triggerClass]"></i>
+        <input
+          autocomplete="off"
+          :name="name && name[0]"
+          :placeholder="startPlaceholder"
+          :value="displayValue && displayValue[0]"
+          :disabled="pickerDisabled"
+          :readonly="!editable || readonly"
+          class="lx-range-input"
+          @input="handleStartInput"
+          @change="handleStartChange"
+          @focus="handleFocus"
+        >
+        <slot name="range-separator">
+          <span class="lx-range-separator">{{ rangeSeparator }}</span>
+        </slot>
+        <input
+          autocomplete="off"
+          :name="name && name[1]"
+          :placeholder="endPlaceholder"
+          :value="displayValue && displayValue[1]"
+          :disabled="pickerDisabled"
+          :readonly="!editable || readonly"
+          class="lx-range-input"
+          @focus="handleFocus"
+          @input="handleEndInput"
+          @change="handleEndChange"
+        >
+        <i
+          :class="[showClose ? '' + clearIcon : '']"
+          class="lx-input__icon lx-range__close-icon"
+          @click="onClearIconClick"
+        >
+        </i>
+      </div>
+    </template>
+    <template #default>
+      <slot
+        :visible="pickerVisible"
+        :actual-visible="pickerActualVisible"
+        :parsed-value="parsedValue"
+        :format="format"
+        :unlink-panels="unlinkPanels"
+        :type="type"
+        :default-value="defaultValue"
+        @pick="onPick"
+        @select-range="setSelectionRange"
+        @set-picker-option="onSetPickerOption"
+        @calendar-change="onCalendarChange"
+        @mousedown.stop
+      ></slot>
+    </template>
+  </lx-popper>
+</template>

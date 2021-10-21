@@ -12,7 +12,6 @@
       {{ name }}
     </div>
     <lx-button/>
-    <lx-tree/>
   </div>
   <script>
     export default {

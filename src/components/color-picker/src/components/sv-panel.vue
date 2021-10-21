@@ -37,7 +37,7 @@ export default defineComponent({
   },
   setup(props) {
     // instance
-    const instance = getCurrentInstance()
+    const instance:any = getCurrentInstance()
     // data
     const cursorTop = ref(0)
     const cursorLeft = ref(0)

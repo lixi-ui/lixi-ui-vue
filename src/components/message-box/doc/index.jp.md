@@ -36,7 +36,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -102,8 +102,8 @@
 <setup>
 
 import { defineComponent } from 'vue';
-import { LxMessageBox } from 'element-plus';
-import { LxMessage } from 'element-plus';
+import { LxMessageBox } from 'lixi-ui-vue';
+import { LxMessage } from 'lixi-ui-vue';
 
 export default defineComponent({
   setup() {
@@ -178,8 +178,8 @@ export default defineComponent({
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -270,7 +270,7 @@ export default defineComponent({
 <setup>
 
 import { defineComponent, h } from 'vue';
-import { LxMessage } from 'element-plus';
+import { LxMessage } from 'lixi-ui-vue';
 
 export default defineComponent({
   setup() {
@@ -349,7 +349,7 @@ MessageBoxの内容は `VNode` にすることができ、カスタムコンポ�
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -417,8 +417,8 @@ MessageBoxの内容は `VNode` にすることができ、カスタムコンポ�
 <setup>
 
 import { defineComponent } from 'vue';
-import { LxMessageBox } from 'element-plus';
-import { LxMessage } from 'element-plus';
+import { LxMessageBox } from 'lixi-ui-vue';
+import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -494,8 +494,8 @@ import { LxMessage } from 'element-plus';
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -543,7 +543,7 @@ Lixiが完全にインポートされている場合、Vue.prototypeに以下の
 オンデマンドで `MessageBox` をインポートしたい場合:
 
 ```javascript
-import { LxMessageBox } from 'element-plus';
+import { LxMessageBox } from 'lixi-ui-vue';
 ```
 
 対応するメソッドは以下の通り: 対応するメソッドは `ElMessageBox`, `ElMessageBox.alert`, `ElMessageBox.confirm`, `ElMessageBox.prompt` である。パラメータは上記と同じである。

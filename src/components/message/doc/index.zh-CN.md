@@ -16,7 +16,7 @@
 
 <script>
   import { defineComponent, h } from 'vue'
-  // import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'lixi-ui-vue'
   export default defineComponent ({
     setup() {
       return {
@@ -39,7 +39,7 @@
 <setup>
 
   import { defineComponent, h } from 'vue'
-  import { LxMessage } from 'element-plus'
+  import { LxMessage } from 'lixi-ui-vue'
   export default defineComponent ({
     setup() {
       return {
@@ -78,7 +78,7 @@
 
 <script>
   import { defineComponent } from 'vue'
-  // import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'lixi-ui-vue'
   export default defineComponent({
     setup() {
       return {
@@ -108,7 +108,7 @@
 <setup>
 
   import { defineComponent } from 'vue'
-  import { LxMessage } from 'element-plus'
+  import { LxMessage } from 'lixi-ui-vue'
   export default defineComponent({
     setup() {
       return {
@@ -154,7 +154,7 @@
 
 <script>
   import { defineComponent } from 'vue'
-  // import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'lixi-ui-vue'
 
   export default defineComponent({
     setup() {
@@ -197,7 +197,7 @@
 <setup>
 
   import { defineComponent } from 'vue'
-  import { LxMessage } from 'element-plus'
+  import { LxMessage } from 'lixi-ui-vue'
 
   export default defineComponent({
     setup() {
@@ -253,7 +253,7 @@
 
 <script>
   import { defineComponent } from 'vue'
-  // import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'lixi-ui-vue'
   export default defineComponent({
     setup() {
       return {
@@ -271,7 +271,7 @@
 <setup>
 
   import { defineComponent } from 'vue'
-  import { LxMessage } from 'element-plus'
+  import { LxMessage } from 'lixi-ui-vue'
   export default defineComponent({
     setup() {
       return {
@@ -302,7 +302,7 @@
 
 <script>
   import { defineComponent } from 'vue'
-  // import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'lixi-ui-vue'
   export default defineComponent({
     setup() {
       return {
@@ -320,7 +320,7 @@
 <setup>
 
   import { defineComponent } from 'vue'
-  import { LxMessage } from 'element-plus'
+  import { LxMessage } from 'lixi-ui-vue'
   export default defineComponent({
     setup() {
       return {
@@ -350,7 +350,7 @@ Lixi 为 `app.config.globalProperties` 添加了全局方法 $message。因此�
 ### 单独引用
 
 ```javascript
-// import { LxMessage } from 'element-plus';
+// import { LxMessage } from 'lixi-ui-vue';
 ```
 
 此时调用方法为 `LxMessage(options)`。我们也为每个 type 定义了各自的方法，如 `LxMessage.success(options)`。并且可以调用 `LxMessage.closeAll()` 手动关闭所有实例。

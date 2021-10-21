@@ -4,25 +4,25 @@ import { EVENT_CODE } from '@lixi/utils/aria'
 import { on, addClass } from '@lixi/utils/dom'
 
 import type { Nullable } from '@lixi/utils/types'
-import type { IElDropdownInstance } from './dropdown'
+import type { ILxDropdownInstance } from './dropdown'
 
 
 export const useDropdown = () => {
   const ELEMENT = useGlobalConfig()
-  const elDropdown = inject<IElDropdownInstance>('elDropdown', {})
-  const _elDropdownSize = computed(() => elDropdown?.dropdownSize)
+  const lxDropdown = inject<ILxDropdownInstance>('lxDropdown', {})
+  const _lxDropdownSize = computed(() => lxDropdown?.dropdownSize)
 
   return {
     ELEMENT,
-    elDropdown,
-    _elDropdownSize,
+    lxDropdown,
+    _lxDropdownSize,
   }
 }
 
 export const initDropdownDomEvent = (dropdownChildren, triggerElm, _instance) => {
-  const menuItems = ref<Nullable<HTMLButtonElement[]>>(null)
-  const menuItemsArray = ref<Nullable<HTMLElement[]>>(null)
-  const dropdownElm = ref<Nullable<HTMLElement>>(null)
+  const menuItems:any = ref<Nullable<HTMLButtonElement[]>>(null)
+  const menuItemsArray:any = ref<Nullable<HTMLElement[]>>(null)
+  const dropdownElm:any = ref<Nullable<HTMLElement>>(null)
   const listId = ref(`dropdown-menu-${generateId()}`)
   dropdownElm.value = dropdownChildren?.subTree.el
 
@@ -38,7 +38,7 @@ export const initDropdownDomEvent = (dropdownChildren, triggerElm, _instance) =>
     ele?.setAttribute('tabindex', '0')
   }
 
-  function handleTriggerKeyDown(ev: KeyboardEvent) {
+  function handleTriggerKeyDown(ev: any) {
     const code = ev.code
     if ([EVENT_CODE.up, EVENT_CODE.down].includes(code)) {
       removeTabindex()

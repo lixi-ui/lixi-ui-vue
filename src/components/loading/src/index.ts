@@ -1,10 +1,10 @@
-import Loading from './loading.ts'
+import Loading from './loading'
 import vLoading from './directive'
 
 import type { App } from 'vue'
 
 // installer and everything in all
-const LxLoading = {
+const LxLoading:any = {
   install(app: App) {
     app.directive('loading', vLoading)
     app.config.globalProperties.$loading = Loading

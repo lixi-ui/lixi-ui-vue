@@ -287,7 +287,7 @@ Affichez une animation en plein écran quand vous charger des données.
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxLoading } from 'element-plus';
+  import { LxLoading } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -329,7 +329,7 @@ Affichez une animation en plein écran quand vous charger des données.
 Vous pouvez invoquer Loading comme un service. Importez le service Loading:
 
 ```javascript
-import { LxLoading } from 'element-plus';
+import { LxLoading } from 'lixi-ui-vue';
 ```
 Et invoquer-le:
 

@@ -112,14 +112,15 @@ export default defineComponent({
 
   emits: ['change', 'select-range', 'set-option'],
 
-  setup(props, ctx) {
+  setup(props: any, ctx) {
     // data
-    let isScrolling = false
+    let isScrolling: any = false
     const debouncedResetScroll = debounce(type => {
       isScrolling = false
       adjustCurrentSpinner(type)
     }, 200)
-    const currentScrollbar = ref(null)
+    const currentScrollbar: any = ref(null)
+    // const listHoursRef: any = ref(null)
     const listHoursRef: Ref<Nullable<HTMLElement>> = ref(null)
     const listMinutesRef: Ref<Nullable<HTMLElement>> = ref(null)
     const listSecondsRef: Ref<Nullable<HTMLElement>> = ref(null)
@@ -128,7 +129,7 @@ export default defineComponent({
     }
 
     // computed
-    const spinnerItems = computed(() => {
+    const spinnerItems: any = computed(() => {
       const arr = ['hours', 'minutes', 'seconds']
       return props.showSeconds ? arr : arr.slice(0, 2)
     })

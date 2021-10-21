@@ -16,7 +16,7 @@ const LISTENER_PREFIX = /^on[A-Z]/
 
 export default (params: Params = {}) => {
   const { excludeListeners = false, excludeKeys = [] } = params
-  const instance = getCurrentInstance()
+  const instance:any = getCurrentInstance()
   const attrs = shallowRef({})
   const allExcludeKeys = excludeKeys.concat(DEFAULT_EXCLUDE_KEYS)
 

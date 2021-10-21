@@ -38,7 +38,7 @@
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -111,7 +111,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -201,7 +201,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -273,7 +273,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -321,7 +321,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -355,7 +355,7 @@
 ### ローカルインポート
 
 ```javascript
-import { LxMessage } from 'element-plus';
+import { LxMessage } from 'lixi-ui-vue';
 ```
 
 この場合は `ElMessage(options)` を呼び出す必要があります。また、`ElMessage.success(options)`のように、異なるタイプのメソッドも登録しています。すべてのインスタンスを手動で閉じるには、`ElMessage.closeAll()`を呼び出すことができます。

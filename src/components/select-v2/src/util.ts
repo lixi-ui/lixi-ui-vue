@@ -2,9 +2,9 @@ import { isArray } from '@vue/shared'
 
 import type { Option, OptionGroup } from './select.types'
 
-export const flattenOptions = (options: Array<Option | OptionGroup>) => {
-  const flattened = []
-  options.map(option => {
+export const flattenOptions = (options: any) => {
+  const flattened:any = []
+  options.map((option:any) => {
     if (isArray(option.options)) {
       flattened.push({
         label: option.label,

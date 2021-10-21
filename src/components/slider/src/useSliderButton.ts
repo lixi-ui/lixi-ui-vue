@@ -50,7 +50,7 @@ export const useSliderButton = (props: ISliderButtonProps, initData: ISliderButt
     emitChange,
     resetSize,
     updateDragging,
-  } = inject<ISliderProvider>('SliderProvider')
+  }:any = inject<ISliderProvider>('SliderProvider')
 
   const {
     tooltip,
@@ -58,7 +58,7 @@ export const useSliderButton = (props: ISliderButtonProps, initData: ISliderButt
     formatValue,
     displayTooltip,
     hideTooltip,
-  } = useTooltip(props, formatTooltip, showTooltip)
+  }:any = useTooltip(props, formatTooltip, showTooltip)
 
   const currentPosition = computed(() => {
     return `${(props.modelValue - min.value) / (max.value - min.value) * 100}%`
@@ -137,7 +137,7 @@ export const useSliderButton = (props: ISliderButtonProps, initData: ISliderButt
     initData.newPosition = initData.startPosition
   }
 
-  const onDragging = (event: MouseEvent | TouchEvent) => {
+  const onDragging = (event: any) => {
     if (initData.dragging) {
       initData.isClick = false
       displayTooltip()

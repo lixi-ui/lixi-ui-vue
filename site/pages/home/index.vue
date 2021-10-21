@@ -90,6 +90,7 @@
 <script>
   import "./index.scss";
   // import Logo from '../../assets/lixi-logo.png';
+  import TypeTest from './type-test'
 
   export default {
     name: 'Home',

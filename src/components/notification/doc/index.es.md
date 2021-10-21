@@ -46,7 +46,7 @@ Muestra un mensaje de notificación global en una esquina de la página.
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -146,7 +146,7 @@ Proporcionamos cuatro tipos: success, warning, info y error.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -264,7 +264,7 @@ La notificación puede surgir de cualquier rincón que uno desee.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -345,7 +345,7 @@ Personalizar el desplazamiento de notificación desde el borde de la pantalla.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -400,7 +400,7 @@ Personalizar el desplazamiento de notificación desde el borde de la pantalla.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -462,7 +462,7 @@ Es posible ocultar el botón de cerrar
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -493,7 +493,7 @@ Lixi ha añadido un método global `$notify` para `app.config.globalProperties`.
 ### Importar localmente
 
 ```javascript
-import { LxNotification } from 'element-plus';
+import { LxNotification } from 'lixi-ui-vue';
 ```
 
 En este caso, debe llamar a `ElNotification(options)`. También se han registrado métodos para diferentes tipos, e.j. `ElNotification.success(options)`. Puede llamar al método `ElNotification.closeAll()` para cerrar manualmente todas las instancias.

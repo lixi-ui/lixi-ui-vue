@@ -64,7 +64,8 @@ export const useCheckboxGroup = () => {
 
 const useModel = (props: IUseCheckboxProps) => {
   const selfModel = ref(false)
-  const { emit } = getCurrentInstance()
+  const vm:any = getCurrentInstance()
+  const emit:any = vm.emit
   const { isGroup, checkboxGroup } = useCheckboxGroup()
   const isLimitExceeded = ref(false)
   const store = computed(() => checkboxGroup ? checkboxGroup.modelValue?.value : props.modelValue)
@@ -100,7 +101,7 @@ const useModel = (props: IUseCheckboxProps) => {
   }
 }
 
-const useCheckboxStatus = (props: IUseCheckboxProps, { model }: PartialReturnType<typeof useModel>) => {
+const useCheckboxStatus = (props: IUseCheckboxProps, { model }: any) => {
   const { isGroup, checkboxGroup, lxFormItemSize, ELEMENT } = useCheckboxGroup()
   const focus = ref(false)
   const size = computed<string | undefined>(() => checkboxGroup?.checkboxGroupSize?.value || lxFormItemSize.value || ELEMENT.size)
@@ -133,12 +134,12 @@ const useCheckboxStatus = (props: IUseCheckboxProps, { model }: PartialReturnTyp
 
 const useDisabled = (
   props: IUseCheckboxProps,
-  { model, isChecked }: PartialReturnType<typeof useModel> & PartialReturnType<typeof useCheckboxStatus>,
+  { model, isChecked }: any & any,
 ) => {
   const { lxForm, isGroup, checkboxGroup } = useCheckboxGroup()
   const isLimitDisabled = computed(() => {
-    const max = checkboxGroup.max?.value
-    const min = checkboxGroup.min?.value
+    const max:any = checkboxGroup.max?.value
+    const min:any = checkboxGroup.min?.value
     return !!(max || min) && (model.value.length >= max && !isChecked.value) ||
       (model.value.length <= min && isChecked.value)
   })
@@ -155,7 +156,7 @@ const useDisabled = (
   }
 }
 
-const setStoreValue = (props: IUseCheckboxProps, { model }: PartialReturnType<typeof useModel>) => {
+const setStoreValue = (props: IUseCheckboxProps, { model }: any) => {
   function addToStore() {
     if (
       Array.isArray(model.value) &&
@@ -169,9 +170,11 @@ const setStoreValue = (props: IUseCheckboxProps, { model }: PartialReturnType<ty
   props.checked && addToStore()
 }
 
-const useEvent = (props: IUseCheckboxProps, { isLimitExceeded }: PartialReturnType<typeof useModel>) => {
+// const useEvent = (props: IUseCheckboxProps, { isLimitExceeded }: PartialReturnType<typeof useModel>) => {
+const useEvent = (props: IUseCheckboxProps, { isLimitExceeded }: any) => {
   const { lxFormItem } = useCheckboxGroup()
-  const { emit } = getCurrentInstance()
+  const vm:any = getCurrentInstance()
+  const emit:any = vm.emit
   function handleChange(e: InputEvent) {
     if (isLimitExceeded.value) return
     const target = e.target as HTMLInputElement

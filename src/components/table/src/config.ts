@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import LxCheckbox from '@lixi/components/checkbox'
+import LxCheckbox from '@lixi/components/checkbox/src'
 import { getPropByPath } from '@lixi/utils/util'
 
 import type { TableColumnCtx } from './table-column/defaults'
@@ -38,7 +38,7 @@ export const cellForced = {
       function isDisabled() {
         return store.states.data.value && store.states.data.value.length === 0
       }
-      return h(ElCheckbox, {
+      return h(LxCheckbox, {
         disabled: isDisabled(),
         indeterminate:
           store.states.selection.value.length > 0 &&
@@ -56,9 +56,9 @@ export const cellForced = {
       row: T
       column: TableColumnCtx<T>
       store: Store<T>
-      $index: string
+      $index: any
     }) {
-      return h(ElCheckbox, {
+      return h(LxCheckbox, {
         disabled: column.selectable
           ? !column.selectable.call(null, row, $index)
           : false,
@@ -154,7 +154,7 @@ export function treeCellPrefix<T>({
   store: Store<T>
 }) {
   if (!treeNode) return null
-  const ele = []
+  const ele:any = []
   const callback = function(e) {
     e.stopPropagation()
     store.loadOrToggle(row)

@@ -56,14 +56,25 @@ function getChildren(node: VNode, depth: number): undefined | VNode {
 export const isValidElementNode = (node: VNodeChild) =>
   !(isFragment(node) || isComment(node))
 
+// export const getFirstValidNode = (
+//   nodes: VNodeChild,
+//   maxDepth = 3,
+// ): ReturnType<typeof getChildren> => {
+//   if (Array.isArray(nodes)) {
+//     return getChildren(nodes[0] as VNode, maxDepth)
+//   } else {
+//     return getChildren(nodes as VNode, maxDepth)
+//   }
+// }
+
 export const getFirstValidNode = (
-  nodes: VNodeChild,
+  nodes: any,
   maxDepth = 3,
-): ReturnType<typeof getChildren> => {
+): any => {
   if (Array.isArray(nodes)) {
-    return getChildren(nodes[0] as VNode, maxDepth)
+    return getChildren(nodes[0] as any, maxDepth)
   } else {
-    return getChildren(nodes as VNode, maxDepth)
+    return getChildren(nodes as any, maxDepth)
   }
 }
 

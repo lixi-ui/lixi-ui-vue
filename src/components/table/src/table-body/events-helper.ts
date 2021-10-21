@@ -7,15 +7,15 @@ import type{ TableColumnCtx } from '../table-column/defaults'
 import type{ Table } from '../table/defaults'
 import type{ TableBodyProps } from './defaults'
 
-function useEvents<T>(props: Partial<TableBodyProps<T>>) {
-  const instance = getCurrentInstance()
+function useEvents<T>(props: any) {
+  const instance:any = getCurrentInstance()
   const parent = instance.parent as Table<T>
   const tooltipContent = ref('')
   const tooltipTrigger = ref(h('div'))
   const handleEvent = (event: Event, row: T, name: string) => {
     const table = parent
     const cell = getCell(event)
-    let column: TableColumnCtx<T>
+    let column: any
     if (cell) {
       column = getColumnByCell(
         {
@@ -50,10 +50,10 @@ function useEvents<T>(props: Partial<TableBodyProps<T>>) {
     row: T & { tooltipEffect: string; },
   ) => {
     const table = parent
-    const cell = getCell(event)
+    const cell:any = getCell(event)
 
     if (cell) {
-      const column = getColumnByCell(
+      const column:any = getColumnByCell(
         {
           columns: props.store.states.columns.value,
         },

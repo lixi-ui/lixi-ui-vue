@@ -79,7 +79,7 @@ export default defineComponent({
 
   emits: ['pick'],
 
-  setup(props, ctx) {
+  setup(props:any, ctx) {
     const { lang } = useLocaleInject()
     const startYear = computed(() => {
       return Math.floor(props.date.year() / 10) * 10

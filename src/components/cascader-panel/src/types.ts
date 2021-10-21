@@ -62,4 +62,5 @@ export interface LxCascaderPanelContext {
   handleCheckChange: (node: CascaderNode, checked: boolean, emitClose?: boolean) => void
 }
 
-export const CASCADER_PANEL_INJECTION_KEY: InjectionKey<ElCascaderPanelContext> = Symbol()
+// export const CASCADER_PANEL_INJECTION_KEY: InjectionKey<LxCascaderPanelContext> = Symbol()
+export const CASCADER_PANEL_INJECTION_KEY: any = Symbol()

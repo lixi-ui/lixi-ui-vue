@@ -22,7 +22,7 @@ import type { FormRulesMap } from './form.type'
 import type { LxFormItemContext as FormItemCtx, ValidateFieldCallback } from '@lixi/tokens'
 
 function useFormLabelWidth() {
-  const potentialLabelWidthArr = ref([])
+  const potentialLabelWidthArr:any = ref([])
   const autoLabelWidth = computed(() => {
     if (!potentialLabelWidthArr.value.length) return '0'
     const max = Math.max(...potentialLabelWidthArr.value)
@@ -99,7 +99,8 @@ export default defineComponent({
   setup(props, { emit }) {
     const formMitt = mitt()
 
-    const fields: FormItemCtx[] = []
+    // const fields: FormItemCtx[] = []
+    const fields: any = []
 
     watch(
       () => props.rules,
@@ -121,7 +122,7 @@ export default defineComponent({
       }
     })
 
-    formMitt.on<FormItemCtx>(lxFormEvents.removeField, field => {
+    formMitt.on<FormItemCtx>(lxFormEvents.removeField, (field:any) => {
       if (field.prop) {
         fields.splice(fields.indexOf(field), 1)
       }
@@ -150,7 +151,7 @@ export default defineComponent({
       })
     }
 
-    const validate = (callback?: Callback) => {
+    const validate = (callback?: any) => {
       if (!props.model) {
         console.warn(
           '[Element Warn][Form]model is required for validate to work!',
@@ -175,9 +176,9 @@ export default defineComponent({
       if (fields.length === 0) {
         callback(true)
       }
-      let valid = true
+      let valid:any = true
       let count = 0
-      let invalidFields = {}
+      let invalidFields:any = {}
       let firstInvalidFields
       for (const field of fields) {
         field.validate('', (message, field) => {
@@ -187,7 +188,7 @@ export default defineComponent({
           }
           invalidFields = { ...invalidFields, ...field }
           if (++count === fields.length) {
-            callback(valid, invalidFields)
+            callback(valid, invalidFields)       
           }
         })
       }
@@ -197,7 +198,7 @@ export default defineComponent({
       return promise
     }
 
-    const validateField = (props: string | string[], cb: ValidateFieldCallback) => {
+    const validateField = (props: any, cb: ValidateFieldCallback) => {
       props = [].concat(props)
       const fds = fields.filter(field => props.indexOf(field.prop) !== -1)
       if (!fields.length) {

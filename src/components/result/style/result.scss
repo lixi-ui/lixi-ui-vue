@@ -1,0 +1,59 @@
+@import '@lixi/style/src/mixins/mixins';
+@import '@lixi/style/src/mixins/var';
+@import '@lixi/style/src/common/var';
+
+$types: success, warning, danger, info, error;
+
+@include b(result) {
+  @include set-component-css-var('result', $--result);
+}
+
+@include b(result) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+  padding: var(--lx-result-padding);
+
+  @include e(icon) {
+    svg {
+      width: var(--lx-result-icon-font-size);
+      height: var(--lx-result-icon-font-size);
+    }
+  }
+
+  @include e(title) {
+    margin-top: var(--lx-result-title-margin-top);
+
+    p {
+      margin: 0;
+      font-size: var(--lx-result-title-font-size);
+      color: var(--lx-text-color-primary);
+      line-height: 1.3;
+    }
+  }
+
+  @include e(subtitle) {
+    margin-top: var(--lx-result-subtitle-margin-top);
+
+    p {
+      margin: 0;
+      font-size: var(--lx-font-size-base);
+      color: var(--lx-text-color-regular);
+      line-height: 1.3;
+    }
+  }
+
+  @include e(extra) {
+    margin-top: var(--lx-result-extra-margin-top);
+  }
+
+  @each $type in $types {
+    .icon-#{$type} {
+      --lx-result-color: var(--lx-color-#{$type});
+      fill: var(--lx-result-color);
+    }
+  }
+}

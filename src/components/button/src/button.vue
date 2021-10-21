@@ -80,7 +80,7 @@ export default defineComponent({
   emits: ['click'],
 
   setup(props, { emit }) {
-    const $ELEMENT = useGlobalConfig()
+    const $ELEMENT: { size?: string } = useGlobalConfig()
 
     const lxForm = inject(lxFormKey, {} as LxFormContext)
     const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)

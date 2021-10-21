@@ -3,7 +3,7 @@ import { computed, getCurrentInstance } from 'vue'
 import type { Table } from '../table/defaults'
 
 function useMapState<T>() {
-  const instance = getCurrentInstance()
+  const instance:any = getCurrentInstance()
   const table = instance.parent as Table<T>
   const store = table.store
   const leftFixedLeafCount = computed(() => {

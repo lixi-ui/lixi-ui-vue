@@ -137,15 +137,15 @@ export default defineComponent({
     predefine: Array,
   },
   emits: ['change', 'active-change', UPDATE_MODEL_EVENT],
-  setup(props, { emit }) {
+  setup(props:any, { emit }) {
     const ELEMENT = useGlobalConfig()
     const { t } = useLocaleInject()
     const lxForm = inject(lxFormKey, {} as LxFormContext)
     const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
-    const hue = ref(null)
-    const svPanel = ref(null)
-    const alpha = ref(null)
+    const hue:any = ref(null)
+    const svPanel:any = ref(null)
+    const alpha:any = ref(null)
     const popper = ref(null)
     // data
     const color = reactive(new Color({

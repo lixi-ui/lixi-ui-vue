@@ -104,8 +104,8 @@ export default defineComponent({
     const index = ref(-1)
     const lineStyle = ref({})
     const internalStatus = ref('')
-    const parent: IStepsInject = inject('LxSteps')
-    const currentInstance = getCurrentInstance()
+    const parent: any = inject('LxSteps')
+    const currentInstance:any = getCurrentInstance()
 
     onMounted(() => {
       watch([() => parent.props.active, () => parent.props.processStatus, () => parent.props.finishStatus], ([active]) => {

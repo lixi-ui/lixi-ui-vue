@@ -1,7 +1,7 @@
 ## Select V2 virtualized selector
 
 :::tip
-This component is still under testing, if you found any bug or issue please report it at [Github](https://github.com/element-plus/element-plus/issues) for us to fix.
+This component is still under testing, if you found any bug or issue please report it at [Github](https://github.com/lixi-ui-vue/lixi-ui-vue/issues) for us to fix.
 :::
 
 ### Background

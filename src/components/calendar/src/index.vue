@@ -104,7 +104,7 @@ export default defineComponent({
   emits: ['input', 'update:modelValue'],
   setup(props, ctx) {
     const { t, lang } = useLocaleInject()
-    const selectedDay = ref(null)
+    const selectedDay:any = ref(null)
     const now = dayjs().locale(lang.value)
 
     const prevMonthDayjs = computed(() => {
@@ -150,7 +150,7 @@ export default defineComponent({
       }
     })
 
-    // https://github.com/element-plus/element-plus/issues/3155
+    // https://github.com/lixi-ui-vue/lixi-ui-vue/issues/3155
     // Calculate the validate date range according to the start and end dates
     const calculateValidatedDateRange = (startDayjs: dayjs.Dayjs,endDayjs: dayjs.Dayjs) => {
       const firstDay = startDayjs.startOf('week')

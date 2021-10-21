@@ -6,13 +6,13 @@ import type { ButtonRefs, ISliderInitData, ISliderProps } from './slider.type'
 import type { LxFormContext, LxFormItemContext } from '@lixi/tokens'
 import type { Nullable } from '@lixi/utils/types'
 
-export const useSlide = (props: ISliderProps, initData: ISliderInitData, emit) => {
+export const useSlide = (props: ISliderProps, initData: any, emit) => {
   const lxForm = inject(lxFormKey, {} as LxFormContext)
   const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
-  const slider = shallowRef<Nullable<HTMLElement>>(null)
+  const slider:any = shallowRef<Nullable<HTMLElement>>(null)
 
-  const firstButton = ref(null)
+  const firstButton:any = ref(null)
 
   const secondButton = ref(null)
 

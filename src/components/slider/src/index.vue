@@ -189,7 +189,7 @@ export default defineComponent({
 
   emits: [UPDATE_MODEL_EVENT, CHANGE_EVENT, INPUT_EVENT],
 
-  setup(props, { emit }) {
+  setup(props:any, { emit }) {
     const initData = reactive({
       firstValue: 0,
       secondValue: 0,
@@ -216,7 +216,7 @@ export default defineComponent({
     const {
       stops,
       getStopStyle,
-    } = useStops(props, initData, minValue, maxValue)
+    }:any = useStops(props, initData, minValue, maxValue)
 
     const markList = useMarks(props)
 
@@ -371,7 +371,7 @@ const useWatch = (props, initData, minValue, maxValue, emit, lxFormItem) => {
 }
 
 const useLifecycle = (props, initData, resetSize) => {
-  const sliderWrapper: Ref<Nullable<HTMLElement>> = ref(null)
+  const sliderWrapper: any = ref(null)
 
   onMounted(async () => {
     let valuetext

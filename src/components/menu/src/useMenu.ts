@@ -7,10 +7,10 @@ export default function useMenu(
   instance: ComponentInternalInstance,
   currentIndex: ComputedRef<string>,
 ) {
-  const rootMenu = inject<RootMenuProvider>('rootMenu')
+  const rootMenu:any = inject<RootMenuProvider>('rootMenu')
 
   const indexPath = computed(() => {
-    let parent = instance.parent
+    let parent:any = instance.parent
     const path = [currentIndex.value]
     while (parent.type.name !== 'LxMenu') {
       if (parent.props.index) {
@@ -22,7 +22,7 @@ export default function useMenu(
   })
 
   const parentMenu = computed(() => {
-    let parent = instance.parent
+    let parent:any = instance.parent
     while (parent && ['LxMenu', 'LxSubMenu'].indexOf(parent.type.name) === -1) {
       parent = parent.parent
     }

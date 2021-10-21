@@ -29,8 +29,9 @@ export default defineComponent({
     icon: String,
   },
   setup(props) {
-    const { elDropdown } = useDropdown()
-    const _instance = getCurrentInstance()
+    const _useDropdown = useDropdown()
+    const lxDropdown:any = _useDropdown.lxDropdown
+    const _instance:any = getCurrentInstance()
 
     function handleClick(e: UIEvent) {
       // if disabled don't collapse the drop-down list
@@ -38,10 +39,10 @@ export default defineComponent({
         e.stopImmediatePropagation()
         return
       }
-      if (elDropdown.hideOnClick.value) {
-        elDropdown.handleClick?.()
+      if (lxDropdown.hideOnClick.value) {
+        lxDropdown.handleClick?.()
       }
-      elDropdown.commandHandler?.(props.command, _instance, e)
+      lxDropdown.commandHandler?.(props.command, _instance, e)
     }
 
     return {

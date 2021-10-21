@@ -21,7 +21,8 @@ export const useTargetEvents = (
   onHide: Handler,
   onToggle: Handler,
 ) => {
-  const { props } = getCurrentInstance()
+  const vm:any = getCurrentInstance()
+  const props:any = vm.props
 
   let triggerFocused = false
 
@@ -67,7 +68,8 @@ export const useTargetEvents = (
     focus: ['onFocus', 'onBlur'],
   }
 
-  const mapEvents = (t: TriggerType) => {
+  // const mapEvents = (t: TriggerType) => {
+  const mapEvents = (t: any) => {
     const events = {} as PopperEvents
     triggerEventsMap[t].forEach(event => {
       events[event] = popperEventsHandler
@@ -78,7 +80,7 @@ export const useTargetEvents = (
 
   return computed(() => {
     if (isArray(props.trigger)) {
-      return Object.values(props.trigger).reduce((pre, t) => {
+      return Object.values(props.trigger).reduce((pre:any, t) => {
         return {
           ...pre,
           ...mapEvents(t),

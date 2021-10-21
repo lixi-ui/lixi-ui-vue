@@ -31,10 +31,10 @@ export default defineComponent({
     vertical: Boolean,
   },
   setup(props) {
-    const instance = getCurrentInstance()
+    const instance:any = getCurrentInstance()
     // ref
-    const thumb = ref<HTMLElement | null>(null)
-    const bar = ref<HTMLElement | null>(null)
+    const thumb:any = ref<HTMLElement | null>(null)
+    const bar:any = ref<HTMLElement | null>(null)
     // data
     const thumbLeft = ref(0)
     const thumbTop = ref(0)

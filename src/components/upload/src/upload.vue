@@ -37,7 +37,7 @@ import type { Indexable, Nullable } from '@lixi/utils/types'
 import type { ListType, UploadFile, LxFile } from './upload.type'
 
 type IFileHanlder = (
-  file: Nullable<ElFile[]>,
+  file: Nullable<LxFile[]>,
   fileList?: UploadFile[],
 ) => unknown
 
@@ -147,10 +147,10 @@ export default defineComponent({
       default: NOOP,
     },
   },
-  setup(props) {
+  setup(props:any) {
     const reqs = ref({} as Indexable<XMLHttpRequest | Promise<any>>)
     const mouseover = ref(false)
-    const inputRef = ref(null as Nullable<HTMLInputElement>)
+    const inputRef:any = ref(null as Nullable<HTMLInputElement>)
 
     function uploadFiles(files: FileList) {
       if (props.limit && props.fileList.length + files.length > props.limit) {

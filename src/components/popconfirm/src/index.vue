@@ -47,7 +47,7 @@ import LxPopper, { Effect } from '@lixi/components/popper/src'
 import { useLocaleInject } from '@lixi/hooks'
 
 import type { PropType } from 'vue'
-import type { ButtonType } from '@lixi/components/button/src/types/src'
+import type { ButtonType } from '@lixi/components/button/src/types'
 
 export default defineComponent({
   name: 'LxPopconfirm',

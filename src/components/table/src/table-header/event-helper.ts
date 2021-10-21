@@ -7,7 +7,7 @@ import type { TableColumnCtx } from '../table-column/defaults'
 import type { Table } from '../table/defaults'
 
 function useEvent<T>(props: TableHeaderProps<T>, emit) {
-  const instance = getCurrentInstance()
+  const instance:any = getCurrentInstance()
   const parent = instance.parent as Table<T>
   const handleFilterClick = (event: Event) => {
     event.stopPropagation()
@@ -26,7 +26,7 @@ function useEvent<T>(props: TableHeaderProps<T>, emit) {
   const handleHeaderContextMenu = (event: Event, column: TableColumnCtx<T>) => {
     parent.emit('header-contextmenu', column, event)
   }
-  const draggingColumn = ref(null)
+  const draggingColumn:any = ref(null)
   const dragging = ref(false)
   const dragState = ref({})
   const handleMouseDown = (event: MouseEvent, column: TableColumnCtx<T>) => {
@@ -38,7 +38,7 @@ function useEvent<T>(props: TableHeaderProps<T>, emit) {
 
       const table = parent
       emit('set-drag-visible', true)
-      const tableEl = table.vnode.el
+      const tableEl:any = table.vnode.el
       const tableLeft = tableEl.getBoundingClientRect().left
       const columnEl = instance.vnode.el.querySelector(`th.${column.id}`)
       const columnRect = columnEl.getBoundingClientRect()
@@ -147,7 +147,7 @@ function useEvent<T>(props: TableHeaderProps<T>, emit) {
   }
   const handleSortClick = (
     event: Event,
-    column: TableColumnCtx<T>,
+    column: any,
     givenOrder: string | boolean,
   ) => {
     event.stopPropagation()
@@ -171,7 +171,7 @@ function useEvent<T>(props: TableHeaderProps<T>, emit) {
     const states = props.store.states
     let sortProp = states.sortProp.value
     let sortOrder
-    const sortingColumn = states.sortingColumn.value
+    const sortingColumn:any = states.sortingColumn.value
 
     if (
       sortingColumn !== column ||

@@ -88,7 +88,7 @@ export default defineComponent({
 
   setup(props) {
     const visible = ref(false)
-    let timer = null
+    let timer:any = null
 
     const typeClass = computed(() => {
       const type = props.type
@@ -129,7 +129,7 @@ export default defineComponent({
       visible.value = false
     }
 
-    function onKeydown({ code }: KeyboardEvent) {
+    function onKeydown({ code }: any) {
       if (code === EVENT_CODE.delete || code === EVENT_CODE.backspace) {
         clearTimer() // press delete/backspace clear timer
       } else if (code === EVENT_CODE.esc) {

@@ -15,7 +15,7 @@ export default defineComponent({
   },
   setup(props) {
     const nodeInstance = inject<ComponentInternalInstance>('NodeInstance')
-    const tree = inject<RootTreeType>('RootTree')
+    const tree:any = inject<RootTreeType>('RootTree')
     return () => {
       const node = props.node
       const { data, store } = node

@@ -29,12 +29,12 @@ export default defineComponent({
   componentName: 'LxSelectDropdown',
 
   setup() {
-    const select = inject(selectKey)
+    const select:any = inject(selectKey)
 
     // computed
     const popperClass = computed(() => select.props.popperClass)
     const isMultiple = computed(() => select.props.multiple)
-    const minWidth = ref('')
+    const minWidth:any = ref('')
 
     function updateMinWidth() {
       minWidth.value = select.selectWrapper?.getBoundingClientRect().width + 'px'

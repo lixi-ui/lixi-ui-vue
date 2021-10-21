@@ -68,16 +68,17 @@ class Node {
 
   childrenData: ChildrenData
   children: Node[]
-  text: string
+  text?: string
   loaded: boolean
   checked = false
   indeterminate = false
   loading = false
 
   constructor (
-    readonly data: Nullable<CascaderOption>,
+    // readonly data: Nullable<CascaderOption>,
+    readonly data: any,
     readonly config: CascaderConfig,
-    readonly parent?: Node,
+    readonly parent?: any,
     readonly root = false,
   ) {
     const { value: valueKey, label: labelKey, children: childrenKey } = config
@@ -96,7 +97,7 @@ class Node {
     this.loaded = !config.lazy || this.isLeaf || !isEmpty(childrenData)
   }
 
-  get isDisabled (): boolean {
+  get isDisabled (): any {
     const { data, parent, config } = this
     const { disabled, checkStrictly } = config
     const isDisabled = isFunction(disabled) ? disabled(data, this) : !!data[disabled]

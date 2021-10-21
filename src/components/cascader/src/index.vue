@@ -179,7 +179,8 @@ const popperOptions: Partial<Options> = {
       enabled: true,
       phase: 'main',
       fn: ({ state }) => {
-        const { modifiersData, placement } = state
+        const { placement } = state
+        const modifiersData:any = state.modifiersData
         if (['right', 'left'].includes(placement)) return
         modifiersData.arrow.x = 35
       },
@@ -217,7 +218,7 @@ export default defineComponent({
     filterable: Boolean,
     filterMethod: {
       type: Function as PropType<(node: CascaderNode, keyword: string) => boolean>,
-      default: (node: CascaderNode, keyword: string) => node.text.includes(keyword),
+      default: (node: any, keyword: string) => node.text.includes(keyword),
     },
     separator: {
       type: String,
@@ -256,7 +257,7 @@ export default defineComponent({
     'remove-tag',
   ],
 
-  setup(props, { emit }) {
+  setup(props:any, { emit }) {
     let inputInitialHeight = 0
     let pressDeleteCount = 0
 
@@ -265,15 +266,15 @@ export default defineComponent({
     const lxForm = inject(lxFormKey, {} as LxFormContext)
     const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
-    const popper = ref(null)
-    const input = ref(null)
+    const popper:any = ref(null)
+    const input:any = ref(null)
     const tagWrapper = ref(null)
-    const panel = ref(null)
-    const suggestionPanel = ref(null)
+    const panel:any = ref(null)
+    const suggestionPanel:any = ref(null)
     const popperVisible = ref(false)
     const inputHover = ref(false)
     const filtering = ref(false)
-    const inputValue = ref('')
+    const inputValue:any = ref('')
     const searchInputValue = ref('')
     const presentTags: Ref<Tag[]> = ref([])
     const suggestions: Ref<CascaderNode[]> = ref([])
@@ -349,7 +350,7 @@ export default defineComponent({
       filtering.value = false
     }
 
-    const genTag = (node: CascaderNode): Tag => {
+    const genTag = (node: any): Tag => {
       const { showAllLevels, separator } = props
       return {
         node,
@@ -360,7 +361,7 @@ export default defineComponent({
       }
     }
 
-    const deleteTag = (tag: Tag) => {
+    const deleteTag = (tag: any) => {
       const { node } = tag
       node.doCheck(false)
       panel.value.calculateCheckedValue()
@@ -416,7 +417,7 @@ export default defineComponent({
     }
 
     const focusFirstNode = () => {
-      let firstNode = null
+      let firstNode:any = null
 
       if (filtering.value && suggestionPanel.value) {
         firstNode = suggestionPanel.value.$el.querySelector('.lx-cascader__suggestion-item')
@@ -467,7 +468,7 @@ export default defineComponent({
         case EVENT_CODE.down:
           togglePopperVisible(true)
           nextTick(focusFirstNode)
-          event.preventDefault()
+          e.preventDefault()
           break
         case EVENT_CODE.esc:
         case EVENT_CODE.tab:

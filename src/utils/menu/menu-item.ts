@@ -3,7 +3,7 @@ import SubMenu from './submenu'
 
 
 class MenuItem {
-  public submenu: SubMenu = null
+  public submenu: any = null
   constructor(public domNode: HTMLElement) {
     this.submenu = null
     this.init()

@@ -9,7 +9,7 @@ Lixi 团队正在将原有组件内的 **Font Icon** 向 **SVG Icon** 迁移，�
 ### SvgIcon 使用方法
 - 如果你想像用例一样**直接使用**，你需要[全局注册组件](https://v3.vuejs.org/guide/component-registration.html#global-registration)，才能够直接在项目里使用。
 
-- 若想查看所有的组件，请访问 [@lixi/icons](https://unpkg.com/browse/@lixi/icons@latest/lib/) 和源代码 [Github/ElementPlus/icons](https://github.com/element-plus/element-plus-icons)，或者 [SVG 图标集合](/#/zh-CN/component/icon#svg-tu-biao-ji-he)
+- 若想查看所有的组件，请访问 [@lixi/icons](https://unpkg.com/browse/@lixi/icons@latest/lib/) 和源代码 [Github/ElementPlus/icons](https://github.com/lixi-ui-vue/lixi-ui-vue-icons)，或者 [SVG 图标集合](/#/zh-CN/component/icon#svg-tu-biao-ji-he)
 
 ### 安装图标
 当前的图标只适用于 [Vue3](https://v3.vuejs.org)。

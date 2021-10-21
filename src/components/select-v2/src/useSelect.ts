@@ -23,7 +23,7 @@ import {
   getValueByPath,
   useGlobalConfig,
 } from '@lixi/utils/util'
-import { Effect } from '@lixi/components/popper/src/index.ts'
+import { Effect } from '@lixi/components/popper/src/index'
 
 import { useAllowCreate } from './useAllowCreate'
 
@@ -43,7 +43,7 @@ const TAG_BASE_WIDTH = {
   mini: 33,
 }
 
-const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
+const useSelect = (props: any, emit) => {
 
   // inject
   const { t } = useLocaleInject()
@@ -51,7 +51,7 @@ const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
   const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
   const $ELEMENT = useGlobalConfig()
 
-  const states = reactive({
+  const states:any = reactive({
     inputValue: DEFAULT_INPUT_PLACEHOLDER,
     displayInputValue: DEFAULT_INPUT_PLACEHOLDER,
     calculatedWidth: 0,
@@ -83,12 +83,12 @@ const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
 
   // DOM & Component refs
   const controlRef = ref(null)
-  const inputRef = ref(null) // lx-input ref
-  const menuRef = ref(null)
-  const popper = ref(null)
-  const selectRef = ref(null)
-  const selectionRef = ref(null) // tags ref
-  const calculatorRef = ref<HTMLElement>(null)
+  const inputRef:any = ref(null) // lx-input ref
+  const menuRef:any = ref(null)
+  const popper:any = ref(null)
+  const selectRef:any = ref(null)
+  const selectionRef:any = ref(null) // tags ref
+  const calculatorRef:any = ref(null)
 
   // the controller of the expanded popup
   const expanded = ref(false)
@@ -288,7 +288,7 @@ const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
     states.previousValue = val.toString()
   }
 
-  const getValueIndex = (arr = [], value: unknown) => {
+  const getValueIndex = (arr:any = [], value: unknown) => {
     if (!isObject(value)) {
       return arr.indexOf(value)
     }
@@ -494,7 +494,7 @@ const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
     states.inputValue = val
   }
 
-  const onKeyboardNavigate = (direction: 'forward' | 'backward', hoveringIndex: number = undefined) => {
+  const onKeyboardNavigate = (direction: 'forward' | 'backward', hoveringIndex: any = undefined) => {
     const options = filteredOptions.value
     if (
       !['forward', 'backward'].includes(direction) ||
@@ -643,7 +643,7 @@ const useSelect = (props: ExtractPropTypes<typeof SelectProps>, emit) => {
     }
   })
 
-  watch(() => props.modelValue, val => {
+  watch(() => props.modelValue, (val:any) => {
     if (!val || val.toString() !== states.previousValue) {
       initStates()
     }

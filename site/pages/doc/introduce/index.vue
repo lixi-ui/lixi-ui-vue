@@ -1,21 +1,16 @@
 <template>
   <div>
-    
     <Md/>
   </div>
 </template>
 
 <script>
   import Md from './index.md'
-  import MdEs from './index-es.md'
-  import MdZh from './index-zh.md'
 
   export default {
-    name : 'ButtonMd',
+    name : 'ButtonMd1',
     components: {
-      Md,
-      MdEs,
-      MdZh
+      Md
     },
     data () {
       return {

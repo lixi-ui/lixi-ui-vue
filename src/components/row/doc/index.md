@@ -320,7 +320,7 @@
 Lixi 额外提供了一系列类名，用于在某些条件下隐藏元素。这些类名可以添加在任何 DOM 元素或自定义组件上。如果需要，请自行引入以下文件：
 
 ```js
-import 'element-plus/lib/theme-chalk/display.css';
+import 'lixi-ui-vue/lib/theme-chalk/display.css';
 ```
 
 包含的类名及其含义为：
@@ -351,9 +351,9 @@ import 'element-plus/lib/theme-chalk/display.css';
 | offset | 栅格左侧的间隔格数 | number | — | 0 |
 | push |  栅格向右移动格数 | number | — | 0 |
 | pull |  栅格向左移动格数 | number | — | 0 |
-| xs | `<768px` 响应式栅格数或者栅格属性对象 | number/object (例如： {span: 4, offset: 4}) | — | — |
-| sm | `≥768px` 响应式栅格数或者栅格属性对象 | number/object (例如： {span: 4, offset: 4}) | — | — |
-| md | `≥992px` 响应式栅格数或者栅格属性对象 | number/object (例如： {span: 4, offset: 4}) | — | — |
-| lg | `≥1200px` 响应式栅格数或者栅格属性对象 | number/object (例如： {span: 4, offset: 4}) | — | — |
-| xl | `≥1920px` 响应式栅格数或者栅格属性对象 | number/object (例如： {span: 4, offset: 4}) | — | — |
+| xs | `768px` 响应式栅格数或者栅格属性对象 | number/object 例如： span: 4, offset: 4 | — | — |
+| sm | `≥768px` 响应式栅格数或者栅格属性对象 | number/object 例如： span: 4, offset: 4 | — | — |
+| md | `≥992px` 响应式栅格数或者栅格属性对象 | number/object 例如： span: 4, offset: 4 | — | — |
+| lg | `≥1200px` 响应式栅格数或者栅格属性对象 | number/object 例如： span: 4, offset: 4 | — | — |
+| xl | `≥1920px` 响应式栅格数或者栅格属性对象 | number/object 例如： span: 4, offset: 4 | — | — |
 | tag | 自定义元素标签 | string | * | div |

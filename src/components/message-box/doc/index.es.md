@@ -37,7 +37,7 @@ Alert interrumpe las operaciones realizadas hasta que el usuario confirme la ale
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -104,8 +104,8 @@ Confirm es utilizado para preguntar al usuario y recibir una confirmación.
 <setup>
 
 import { defineComponent } from 'vue';
-import { LxMessageBox } from 'element-plus';
-import { LxMessage } from 'element-plus';
+import { LxMessageBox } from 'lixi-ui-vue';
+import { LxMessage } from 'lixi-ui-vue';
 
 export default defineComponent({
   setup() {
@@ -180,8 +180,8 @@ Prompt es utilizado cuando se requiere entrada de información del usuario.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -272,7 +272,7 @@ Puede ser personalizado para mostrar diversos contenidos.
 <setup>
 
 import { defineComponent, h } from 'vue';
-import { LxMessage } from 'element-plus';
+import { LxMessage } from 'lixi-ui-vue';
 
 export default defineComponent({
   setup() {
@@ -353,7 +353,7 @@ El contenido de MessageBox puede ser `VNode`, permitiéndonos pasar componentes 
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -422,8 +422,8 @@ En algunos casos, hacer clic en el botón Cancelar y en el botón Cerrar puede t
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -499,8 +499,8 @@ El contenido del componente MessageBox puede ser centrado.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -548,7 +548,7 @@ Si Lxement Plus fue importado completamente, agregara los siguientes métodos gl
 Si prefieres importar `MessageBox` cuando lo necesites (on demand):
 
 ```javascript
-import { LxMessageBox } from 'element-plus';
+import { LxMessageBox } from 'lixi-ui-vue';
 ```
 
 Los métodos correspondientes: `ElMessageBox`, `ElMessageBox.alert`, `ElMessageBox.confirm` y `ElMessageBox.prompt`. Los parámetros son los mismos que los anteriores.

@@ -3,7 +3,7 @@ import { computed, CSSProperties } from 'vue'
 import { ComputedRef } from 'vue'
 import type { ISliderInitData, ISliderProps, Stops } from './slider.type'
 
-export const useStops = (props: ISliderProps, initData: ISliderInitData, minValue: ComputedRef<number>, maxValue: ComputedRef<number>): Stops => {
+export const useStops = (props: ISliderProps, initData: any, minValue: ComputedRef<number>, maxValue: ComputedRef<number>): Stops => {
   const stops = computed(() => {
     if (!props.showStops || props.min > props.max) return []
     if (props.step === 0) {

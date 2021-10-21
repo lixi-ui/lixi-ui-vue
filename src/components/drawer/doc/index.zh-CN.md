@@ -55,7 +55,7 @@
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -244,7 +244,7 @@ export default {
 <setup>
 
   import { defineComponent, reactive, toRefs } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
   export default defineComponent({
     setup() {
       const state = reactive({
@@ -376,7 +376,7 @@ export default {
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
   export default defineComponent({
     setup() {
       const drawer = ref(false);

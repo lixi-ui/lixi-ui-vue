@@ -136,7 +136,7 @@
 </lx-switch>
 <script>
   import { reactive, toRefs } from 'vue'
-  // import { LxMessage } from 'element-plus'
+  // import { LxMessage } from 'lixi-ui-vue'
 
   export default {
     setup() {

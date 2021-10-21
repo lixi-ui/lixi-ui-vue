@@ -1,5 +1,5 @@
 import { defineComponent, h, ref, cloneVNode } from 'vue'
-import { default as LxPopper, popperDefaultProps } from '@lixi/components/popper/src/index.ts'
+import { default as LxPopper, popperDefaultProps } from '@lixi/components/popper/src/index'
 import { UPDATE_MODEL_EVENT } from '@lixi/utils/constants'
 import throwError from '@lixi/utils/error'
 import { getFirstValidNode } from '@lixi/utils/vnode'
@@ -43,13 +43,13 @@ export default defineComponent({
     },
   },
   emits: [UPDATE_MODEL_EVENT],
-  setup(props, ctx) {
+  setup(props:any, ctx) {
     // when manual mode is true, v-model must be passed down
     if (props.manual && typeof props.modelValue === 'undefined') {
       throwError('[ElTooltip]', 'You need to pass a v-model to lx-tooltip when `manual` is true')
     }
 
-    const popper = ref(null)
+    const popper:any = ref(null)
 
     const onUpdateVisible = val => {
       ctx.emit(UPDATE_MODEL_EVENT, val)

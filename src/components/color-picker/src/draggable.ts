@@ -9,7 +9,7 @@ export declare interface IOptions {
   end?: (event: Event) => void
 }
 
-export default function (element: HTMLElement, options: IOptions) {
+export default function (element: any, options: IOptions) {
   if (isServer) return
 
   const moveFn = function (event: Event) {

@@ -17,10 +17,10 @@ function genUid(seed: number) {
   return Date.now() + seed
 }
 
-export default (props: IUseHandlersProps) => {
+export default (props: any) => {
 
   const uploadFiles = ref<UploadFile[]>([])
-  const uploadRef = ref<UploadRef>(null)
+  const uploadRef:any = ref(null)
 
   let tempIndex = 1
 
@@ -33,7 +33,7 @@ export default (props: IUseHandlersProps) => {
   }
 
   function handleError(err: Error, rawFile: LxFile) {
-    const file = getFile(rawFile, uploadFiles.value)
+    const file:any = getFile(rawFile, uploadFiles.value)
     file.status = 'fail'
     uploadFiles.value.splice(uploadFiles.value.indexOf(file), 1)
     props.onError(err, file, uploadFiles.value)
@@ -41,7 +41,7 @@ export default (props: IUseHandlersProps) => {
   }
 
   function handleProgress(ev: LxUploadProgressEvent, rawFile: LxFile) {
-    const file = getFile(rawFile, uploadFiles.value)
+    const file:any = getFile(rawFile, uploadFiles.value)
     props.onProgress(ev, file, uploadFiles.value)
     file.status = 'uploading'
     file.percentage = ev.percent || 0
@@ -80,7 +80,7 @@ export default (props: IUseHandlersProps) => {
     props.onChange(file, uploadFiles.value)
   }
 
-  function handleRemove(file: UploadFile, raw: LxFile) {
+  function handleRemove(file: any, raw: LxFile) {
     if (raw) {
       file = getFile(raw, uploadFiles.value)
     }
@@ -124,7 +124,7 @@ export default (props: IUseHandlersProps) => {
         if (!file.url && file.raw) {
           try {
             file.url = URL.createObjectURL(file.raw)
-          } catch (err) {
+          } catch (err:any) {
             props.onError(err, file, uploadFiles.value)
           }
         }

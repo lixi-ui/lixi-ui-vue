@@ -101,7 +101,7 @@ const es = (
   offset: number,
   type: CacheItemType,
 ) => {
-  const total = type === 'column' ? props.totalColumn : props.totalRow
+  const total:any = type === 'column' ? props.totalColumn : props.totalRow
   let exponent = 1
 
   while (
@@ -148,7 +148,7 @@ const findItem = (
   )
 }
 
-const getEstimatedTotalHeight = ({ totalRow }: Props, {
+const getEstimatedTotalHeight = ({ totalRow }: any, {
   estimatedRowHeight,
   lastVisitedRowIndex,
   row,
@@ -172,7 +172,7 @@ const getEstimatedTotalHeight = ({ totalRow }: Props, {
 const getEstimatedTotalWidth = (
   {
     totalColumn,
-  }: Props,
+  }: any,
   {
     column,
     estimatedColumnWidth,
@@ -294,7 +294,7 @@ const FixedSizeGrid = createGrid({
   ) => findItem(props, cache, scrollLeft, 'column'),
 
   getColumnStopIndexForStartIndex: (
-    props,
+    props:any,
     startIndex,
     scrollLeft,
     cache,
@@ -327,7 +327,7 @@ const FixedSizeGrid = createGrid({
     scrollTop,
     cache,
   ) => {
-    const { totalRow, height } = props
+    const { totalRow, height }:any = props
     const item = getItemFromCache(props, startIndex, cache, 'row')
     const maxOffset = scrollTop + (height as number)
 

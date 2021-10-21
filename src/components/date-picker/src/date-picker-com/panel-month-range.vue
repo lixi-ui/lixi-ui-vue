@@ -110,7 +110,7 @@ export default defineComponent({
 
   emits: ['pick', 'set-picker-option'],
 
-  setup(props, ctx) {
+  setup(props:any, ctx) {
     const { t, lang } = useLocaleInject()
     const leftDate = ref(dayjs().locale(lang.value))
     const rightDate = ref(dayjs().locale(lang.value).add(1, 'year'))
@@ -172,10 +172,10 @@ export default defineComponent({
       return props.unlinkPanels && rightYear.value > leftYear.value + 1
     })
 
-    const minDate = ref(null)
-    const maxDate = ref(null)
+    const minDate:any = ref(null)
+    const maxDate:any = ref(null)
 
-    const rangeState = ref({
+    const rangeState= ref({
       endDate: null,
       selecting: false,
     })

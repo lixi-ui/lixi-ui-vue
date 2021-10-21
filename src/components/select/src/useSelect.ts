@@ -66,12 +66,12 @@ export const useSelect = (props, states: States, ctx) => {
   const { t } = useLocaleInject()
 
   // template refs
-  const reference = ref(null)
-  const input = ref(null)
-  const popper = ref(null)
-  const tags = ref(null)
+  const reference:any = ref(null)
+  const input:any = ref(null)
+  const popper:any = ref(null)
+  const tags:any = ref(null)
   const selectWrapper = ref<HTMLElement | null>(null)
-  const scrollbar = ref(null)
+  const scrollbar:any = ref(null)
   const hoverOption = ref(-1)
 
   // inject
@@ -231,8 +231,9 @@ export const useSelect = (props, states: States, ctx) => {
       if (props.multiple) {
         resetInputHeight()
       }
-      const inputs = selectWrapper.value?.querySelectorAll('input') || []
-      if ([].indexOf.call(inputs, document.activeElement) === -1) {
+      const inputs:any = selectWrapper.value?.querySelectorAll('input') || []
+      var arr:any = []
+      if (arr.indexOf.call(inputs, document.activeElement) === -1) {
         setSelected()
       }
       if (props.defaultFirstOption && (props.filterable || props.remote) && states.filteredOptionsCount) {
@@ -260,7 +261,7 @@ export const useSelect = (props, states: States, ctx) => {
     nextTick(() => {
       if (!reference.value) return
       const inputChildNodes = reference.value.$el.childNodes
-      const input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0]
+      const input:any = [].filter.call(inputChildNodes, (item:any) => item.tagName === 'INPUT')[0]
       const _tags = tags.value
       const sizeInMap = states.initialInputHeight || 40
       input.style.height = states.selected.length === 0
@@ -338,7 +339,7 @@ export const useSelect = (props, states: States, ctx) => {
     states.hoverIndex = getValueIndex(optionsArray.value, userCreatedOption || firstOriginOption)
   }
 
-  const setSelected = () => {
+  const setSelected = ():any => {
     if (!props.multiple) {
       const option = getOption(props.modelValue)
       if (option.props?.created) {
@@ -352,7 +353,7 @@ export const useSelect = (props, states: States, ctx) => {
       if (props.filterable) states.query = states.selectedLabel
       return
     }
-    const result = []
+    const result:any = []
     if (Array.isArray(props.modelValue)) {
       props.modelValue.forEach(value => {
         result.push(getOption(value))
@@ -475,7 +476,7 @@ export const useSelect = (props, states: States, ctx) => {
 
   const deleteSelected = event => {
     event.stopPropagation()
-    const value = props.multiple ? [] : ''
+    const value:any = props.multiple ? [] : ''
     if (typeof value !== 'string') {
       for (const item of states.selected) {
         if (item.isDisabled) value.push(item.value)
@@ -517,7 +518,7 @@ export const useSelect = (props, states: States, ctx) => {
     })
   }
 
-  const getValueIndex = (arr = [], value) => {
+  const getValueIndex = (arr:any = [], value) => {
     if (!isObject(value)) return arr.indexOf(value)
 
     const valueKey = props.valueKey

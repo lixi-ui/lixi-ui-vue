@@ -11,7 +11,7 @@ export default function scrollIntoView(
     return
   }
 
-  const offsetParents = []
+  const offsetParents:any = []
   let pointer = selected.offsetParent
   while (
     pointer !== null &&

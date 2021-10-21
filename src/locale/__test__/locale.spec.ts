@@ -4,22 +4,22 @@ import en from '../lang/en'
 
 describe('Locale', () => {
   test('t', () => {
-    expect(t('el.popconfirm.confirmButtonText')).toBe('Yes')
+    expect(t('lx.popconfirm.confirmButtonText')).toBe('Yes')
   })
 
   test('return key name if not defined', () => {
-    expect(t('el.popconfirm.someThing')).toBeUndefined()
+    expect(t('lx.popconfirm.someThing')).toBeUndefined()
   })
 
   test('use', () => {
     use(zhCn)
-    expect(t('el.popconfirm.confirmButtonText')).toBe('确定')
+    expect(t('lx.popconfirm.confirmButtonText')).toBe('确定')
     use(en)
-    expect(t('el.popconfirm.confirmButtonText')).toBe('Yes')
+    expect(t('lx.popconfirm.confirmButtonText')).toBe('Yes')
   })
 
   test('external i18n function', () => {
-    const emptyKey = 'el.popconfirm.confirmButtonText'
+    const emptyKey = 'lx.popconfirm.confirmButtonText'
     const translator = jest.fn().mockImplementation(k => {
       if (k === emptyKey) return ''
       return k

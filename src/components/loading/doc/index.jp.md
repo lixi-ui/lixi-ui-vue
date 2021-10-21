@@ -293,7 +293,7 @@ export default defineComponent({
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxLoading } from 'element-plus';
+  import { LxLoading } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -333,7 +333,7 @@ export default defineComponent({
 ### サービス
 サービスで Loading を呼び出すこともできます。Loadingサービスをインポートします:
 ```javascript
-import { LxLoading } from 'element-plus';
+import { LxLoading } from 'lixi-ui-vue';
 ```
 呼び出す:
 ```javascript

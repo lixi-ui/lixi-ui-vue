@@ -145,13 +145,13 @@ export default defineComponent({
     beforeChange: Function as PropType<() => (Promise<boolean> | boolean)>,
   },
   emits: ['update:modelValue', 'change', 'input'],
-  setup(props: ISwitchProps, ctx) {
+  setup(props: any, ctx) {
     const lxForm = inject(lxFormKey, {} as LxFormContext)
     const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
     const isModelValue = ref(props.modelValue !== false)
-    const input = ref(null)
-    const core = ref(null)
+    const input:any = ref(null)
+    const core:any = ref(null)
 
     const scope = 'LxSwitch'
 
@@ -189,7 +189,7 @@ export default defineComponent({
       }
     })
 
-    const switchDisabled = computed((): boolean => {
+    const switchDisabled = computed((): any => {
       return props.disabled || props.loading || (lxForm || {}).disabled
     })
 

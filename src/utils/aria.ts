@@ -16,7 +16,7 @@ const FOCUSABLE_ELEMENT_SELECTORS = `a[href],button:not([disabled]),button:not([
 /**
  * Determine if the testing element is visible on screen no matter if its on the viewport or not
  */
-export const isVisible = (element: HTMLElement) => {
+export const isVisible = (element: any):any => {
   if (process.env.NODE_ENV === 'test') return true
   const computed = getComputedStyle(element)
   // element.offsetParent won't work on fix positioned
@@ -24,9 +24,10 @@ export const isVisible = (element: HTMLElement) => {
   return computed.position === 'fixed' ? false : element.offsetParent !== null
 }
 
-export const obtainAllFocusableElements = (element: HTMLElement): HTMLElement[] => {
-  return Array.from(element.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS)).filter(isFocusable)
-    .filter(isVisible) as HTMLElement[]
+// export const obtainAllFocusableElements = (element: HTMLElement): HTMLElement[] => {
+export const obtainAllFocusableElements = (element: HTMLElement): any => {
+  return Array.from(element.querySelectorAll(FOCUSABLE_ELEMENT_SELECTORS)).filter(isFocusable).filter(isVisible)
+    // .filter(isVisible) as HTMLElement[]
 }
 
 /**
@@ -34,7 +35,8 @@ export const obtainAllFocusableElements = (element: HTMLElement): HTMLElement[] 
  * @param element {HTMLElement}
  * @returns {Boolean} true if it is focusable
  */
-export const isFocusable = (element: HTMLElement): boolean => {
+// export const isFocusable = (element: HTMLElement): boolean => {
+export const isFocusable = (element: any): any => {
   if (
     element.tabIndex > 0 ||
     (element.tabIndex === 0 && element.getAttribute('tabIndex') !== null)

@@ -1,7 +1,7 @@
 import isServer from './isServer'
 
-const globalNodes = []
-let target = isServer ? void 0 : document.body
+const globalNodes:any = []
+let target: any = isServer ? void 0 : document.body
 
 export function createGlobalNode(id?: string) {
   const el = document.createElement('div')
@@ -16,16 +16,16 @@ export function createGlobalNode(id?: string) {
   return el
 }
 
-export function removeGlobalNode(el: HTMLElement) {
+export function removeGlobalNode(el: any) {
   globalNodes.splice(globalNodes.indexOf(el), 1)
-  el.remove()
+  el?.remove()
 }
 
-export function changeGlobalNodesTarget(el: HTMLElement) {
+export function changeGlobalNodesTarget(el: any) {
   if (el !== target) {
     target = el
 
-    globalNodes.forEach(el => {
+    globalNodes.forEach((el: any) => {
       if (el.contains(target) === false) {
         target.appendChild(el)
       }

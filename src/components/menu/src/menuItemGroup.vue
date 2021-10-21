@@ -33,16 +33,16 @@ export default defineComponent({
       type: String,
     },
   },
-  setup(props: IMenuGroupProps, { slots }) {
+  setup(props: any, { slots }) {
     // data
     const data = reactive({
       paddingLeft: 20,
     })
-    const instance = getCurrentInstance()
+    const instance:any = getCurrentInstance()
     // computed
     const levelPadding = computed(() => {
       let padding = 20
-      let parent = instance.parent
+      let parent:any = instance.parent
       if (rootProps.collapse) return 20
       while (parent && parent.type.name !== 'LxMenu') {
         if (parent.type.name === 'LxSubMenu') {
@@ -54,8 +54,9 @@ export default defineComponent({
     })
 
     // inject
-    const { props: rootProps } = inject<RootMenuProvider>('rootMenu')
-
+    const _rootMenu:any = inject('rootMenu')
+    const rootProps:any = _rootMenu?.props
+    
     return {
       data,
       levelPadding,

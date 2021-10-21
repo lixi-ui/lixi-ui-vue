@@ -79,7 +79,7 @@ export default defineComponent({
     })
 
     const visible = ref(false)
-    let timer = null
+    let timer:any = null
 
     function startTimer() {
       if (props.duration > 0) {
@@ -100,7 +100,7 @@ export default defineComponent({
       visible.value = false
     }
 
-    function keydown({ code }: KeyboardEvent) {
+    function keydown({ code }: any) {
       if (code === EVENT_CODE.esc) {
         // press esc to close the message
         if (visible.value) {

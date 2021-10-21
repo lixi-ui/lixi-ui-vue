@@ -19,7 +19,7 @@ Configure i18n related properties via Config Provider, to get language switching
 </div>
 
 <script>
-  // import { ConfigProvider } from 'element-plus'
+  // import { ConfigProvider } from 'lixi-ui-vue'
   export default {
     data() {
       return {
@@ -60,5 +60,5 @@ Configure i18n related properties via Config Provider, to get language switching
 
 | Attribute | Description                                                                                                                                                       | Type                                 | Accepted Values                                                                         | Default |
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------- | ------- |
-| locale    | Locale Object                                                                                                                                                     | Object\<Language\>                   | [languages](https://github.com/element-plus/element-plus/tree/dev/packages/locale/lang) | English |
+| locale    | Locale Object                                                                                                                                                     | Object\<Language\>                   | [languages](https://github.com/lixi-ui-vue/lixi-ui-vue/tree/dev/packages/locale/lang) | English |
 | i18n      | External translator, when this attribute is provided, it will be used at first, and it will fallback to default translator when this method returns nullish value | Function\<(...args: []) =\> string\> | -                                                                                       | -       |

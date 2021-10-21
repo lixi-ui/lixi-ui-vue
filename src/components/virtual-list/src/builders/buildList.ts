@@ -50,18 +50,18 @@ const createList = ({
     name: name ?? 'LxVirtualList',
     props: DefaultListProps,
     emits: [ITEM_RENDER_EVT, SCROLL_EVT],
-    setup(props, { emit, expose }) {
+    setup(props:any, { emit, expose }) {
 
       validateProps(props)
-      const instance = getCurrentInstance()
+      const instance:any = getCurrentInstance()
       const dynamicSizeCache = ref(initCache(props, instance))
       // refs
       // here windowRef and innerRef can be type of HTMLElement
       // or user defined component type, depends on the type passed
       // by user
-      const windowRef = ref<HTMLElement>(null)
-      const innerRef = ref<HTMLElement>(null)
-      const scrollbarRef = ref(null)
+      const windowRef:any = ref(null)
+      const innerRef:any = ref(null)
+      const scrollbarRef:any = ref(null)
 
       const states = ref({
         isScrolling: false,
@@ -450,7 +450,7 @@ const createList = ({
       const Container = resolveDynamicComponent(containerElement)
       const Inner = resolveDynamicComponent(innerElement)
 
-      const children = []
+      const children:any = []
 
       if (total > 0) {
         for (let i = start; i <= end; i++) {

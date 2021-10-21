@@ -34,8 +34,10 @@ export default defineComponent({
   },
   setup() {
     const { t } = useLocaleInject()
-    const { pagination, pageCount, disabled, currentPage } = usePagination()
-    const userInput = ref<Nullable<number>>(null)
+    const { pageCount, disabled, currentPage }:any = usePagination()
+    const _usePagination:any = usePagination()
+    const pagination:any = _usePagination.pagination
+    const userInput:any = ref<Nullable<number>>(null)
     const innerValue = computed(() => userInput.value ?? currentPage.value)
 
     function handleInput(val: number | string) {

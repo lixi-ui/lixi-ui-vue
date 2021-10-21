@@ -3,7 +3,7 @@ import { kebabCase } from '@lixi/utils/util'
 
 const useMigrating = function () {
   onMounted(() => {
-    const instance = getCurrentInstance()
+    const instance:any = getCurrentInstance()
     if (process.env.NODE_ENV === 'production') return
     if (!instance.vnode) return
     const { props = {} } = getMigratingConfig()

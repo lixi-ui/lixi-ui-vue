@@ -60,9 +60,9 @@ export default defineComponent({
   emits: [UPDATE_MODEL_EVENT, 'change'],
 
   setup(props, ctx) {
-    const radioGroup = ref(null)
+    const radioGroup:any = ref(null)
 
-    const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
+    const lxFormItem:any = inject(lxFormItemKey, {} as LxFormItemContext)
 
     const radioGroupSize = computed<ComponentSize>(() => {
       return props.size || lxFormItem.size
@@ -94,7 +94,7 @@ export default defineComponent({
       const length = radios.length
       const index = Array.from(radios).indexOf(target)
       const roleRadios = radioGroup.value.querySelectorAll('[role=radio]')
-      let nextIndex = null
+      let nextIndex:any = null
       switch (e.code) {
         case EVENT_CODE.left:
         case EVENT_CODE.up:
@@ -117,9 +117,9 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      const radios = radioGroup.value.querySelectorAll('[type=radio]')
+      const radios:any = radioGroup.value.querySelectorAll('[type=radio]')
       const firstLabel = radios[0]
-      if (!Array.from(radios).some((radio: HTMLInputElement) => radio.checked) && firstLabel) {
+      if (!Array.from(radios).some((radio: any) => radio.checked) && firstLabel) {
         firstLabel.tabIndex = 0
       }
     })

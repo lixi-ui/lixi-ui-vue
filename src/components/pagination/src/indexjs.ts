@@ -120,9 +120,10 @@ export default defineComponent({
     'prev-click',
     'next-click',
   ],
-  setup(props, { emit, slots }) {
+  setup(props:any, { emit, slots }) {
     const { t } = useLocaleInject()
-    const vnodeProps = getCurrentInstance().vnode.props || {}
+    const vm:any = getCurrentInstance()
+    const vnodeProps = vm.vnode.props || {}
     // we can find @xxx="xxx" props on `vnodeProps` to check if user bind corresponding events
     const hasCurrentPageListener = 'onUpdate:currentPage' in vnodeProps || 'onUpdate:current-page' in vnodeProps || 'onCurrentChange' in vnodeProps
     const hasPageSizeListener = 'onUpdate:pageSize' in vnodeProps || 'onUpdate:page-size' in vnodeProps || 'onSizeChange' in vnodeProps
@@ -189,7 +190,7 @@ export default defineComponent({
       return pageCount
     })
 
-    const currentPageBridge = computed<number>({
+    const currentPageBridge:any = computed<number>({
       get() {
         return isAbsent(props.currentPage) ? innerCurrentPage.value : props.currentPage
       },
@@ -254,8 +255,8 @@ export default defineComponent({
       }
       if (!props.layout) return null
       if (props.hideOnSinglePage && pageCountBridge.value <= 1) return null
-      const rootChildren = []
-      const rightWrapperChildren = []
+      const rootChildren:any = []
+      const rightWrapperChildren:any = []
       const rightWrapperRoot = h('div', { class: 'lx-pagination__rightwrapper' }, rightWrapperChildren)
       const TEMPLATE_MAP = {
         prev: h(Prev, {

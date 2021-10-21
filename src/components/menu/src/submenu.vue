@@ -16,8 +16,8 @@ import {
   vShow,
   h,
 } from 'vue'
-import LxCollapseTransition from '@lixi/components/collapse-transition'
-import LxPopper from '@lixi/components/popper'
+import LxCollapseTransition from '@lixi/components/collapse-transition/src'
+import LxPopper from '@lixi/components/popper/src'
 import useMenu from './useMenu'
 
 import type { ISubMenuProps, RootMenuProvider, SubMenuProvider } from './menu.type'
@@ -45,7 +45,7 @@ export default defineComponent({
     },
   },
   setup(props: ISubMenuProps) {
-    const data = reactive({
+    const data:any = reactive({
       popperJS: null,
       timeout: null,
       items: {},
@@ -54,11 +54,11 @@ export default defineComponent({
       mouseInChild: false,
       opened: false,
     })
-    const verticalTitleRef = ref<HTMLElement>(null)
-    const popperVnode = ref(null)
+    const verticalTitleRef:any = ref(null)
+    const popperVnode:any = ref(null)
 
     // instance
-    const instance = getCurrentInstance()
+    const instance:any = getCurrentInstance()
     const { paddingStyle, indexPath, parentMenu } = useMenu(
       instance,
       computed(() => props.index),
@@ -74,13 +74,16 @@ export default defineComponent({
       methods: { closeMenu },
       rootMenuOn,
       rootMenuEmit,
-    } = inject<RootMenuProvider>('rootMenu')
+    } = inject<any>('rootMenu')
 
-    const {
-      addSubMenu: parentAddSubMenu,
-      removeSubMenu: parentRemoveSubMenu,
-      handleMouseleave: parentHandleMouseleave,
-    } = inject<SubMenuProvider>(`subMenu:${parentMenu.value.uid}`)
+    const __SubMenuProvider:any = inject<SubMenuProvider>(`subMenu:${parentMenu.value.uid}`)
+
+// addSubMenu: parentAddSubMenu,
+//       removeSubMenu: parentRemoveSubMenu,
+//       handleMouseleave: parentHandleMouseleave,
+    const parentAddSubMenu:any =  __SubMenuProvider.addSubMenu
+    const parentRemoveSubMenu:any = __SubMenuProvider.removeSubMenu
+    const parentHandleMouseleave:any = __SubMenuProvider.handleMouseleave
 
     // computed
     const submenuTitleIcon = computed(() => {
@@ -353,9 +356,9 @@ export default defineComponent({
 
     const titleTag = [
       this.$slots.title?.(),
-      h('i', {
+      h('i' as any, {
         class: ['lx-sub-menu__icon-arrow', this.submenuTitleIcon],
-      }, null)]
+      }, null as any)]
     const ulStyle = {
       backgroundColor: this.rootProps.backgroundColor || '',
     }
@@ -363,7 +366,7 @@ export default defineComponent({
     // temporaryly mark LxPopper as any due to type inconsistency.
     // TODO: correct popper's type.
     const child = this.isMenuPopup
-      ? h(ElPopper as any, {
+      ? h(LxPopper as any, {
         ref: 'popperVNode',
         manualMode: true,
         visible: this.opened,
@@ -414,7 +417,7 @@ export default defineComponent({
           onMouseenter: this.handleTitleMouseenter,
           onMouseleave: this.handleTitleMouseleave,
         }, titleTag),
-        h(ElCollapseTransition, {}, {
+        h(LxCollapseTransition, {}, {
           default: () => withDirectives(
             h('ul', {
               role: 'menu',

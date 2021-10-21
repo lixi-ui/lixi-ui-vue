@@ -11,9 +11,9 @@ Config Provider 被用来提供全局的配置选项，让你的配置能够在�
 
 <script>
   import { defineComponent } from 'vue'
-  import { LxConfigProvider } from 'element-plus'
+  import { LxConfigProvider } from 'lixi-ui-vue'
 
-  import zhCn from 'element-plus/lib/locale/lang/zh-cn'
+  import zhCn from 'lixi-ui-vue/lib/locale/lang/zh-cn'
 
   export default defineComponent({
     components: {
@@ -48,7 +48,7 @@ Config Provider 被用来提供全局的配置选项，让你的配置能够在�
 </div>
 <script>
   import { ref } from 'vue'
-  // import { ConfigProvider } from 'element-plus'
+  // import { ConfigProvider } from 'lixi-ui-vue'
   export default {
     setup() {
       const locale1 = ref({
@@ -97,4 +97,4 @@ Config Provider 被用来提供全局的配置选项，让你的配置能够在�
 
 | 参数   | 说明                                                                                               | 类型                                 | 可选值                                                                                  | 默认值  |
 | ------ | -------------------------------------------------------------------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------- | ------- |
-| locale | 翻译文本对象                                                                                       | Object\<Language\>                   | [languages](https://github.com/element-plus/element-plus/tree/dev/packages/locale/lang) | English |
+| locale | 翻译文本对象                                                                                       | Object\<Language\>                   | [languages](https://github.com/lixi-ui-vue/lixi-ui-vue/tree/dev/packages/locale/lang) | English |

@@ -292,7 +292,7 @@
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxLoading } from 'element-plus';
+  import { LxLoading } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -332,7 +332,7 @@
 ### 服务
 Loading 还可以以服务的方式调用。引入 Loading 服务：
 ```javascript
-import { LxLoading } from 'element-plus';
+import { LxLoading } from 'lixi-ui-vue';
 ```
 在需要调用时：
 ```javascript

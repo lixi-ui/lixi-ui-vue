@@ -84,7 +84,7 @@ export default defineComponent({
   props: useDialogProps,
   emits: useDialogEmits,
   setup(props, ctx) {
-    const dialogRef = ref<HTMLElement>(null)
+    const dialogRef:any = ref(null)
     return {
       ...useDialog(props, ctx as SetupContext, dialogRef),
       dialogRef,

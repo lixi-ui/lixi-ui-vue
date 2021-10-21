@@ -142,7 +142,7 @@ export default defineComponent({
       default: (percentage: number): string => `${percentage}%`,
     },
   },
-  setup(props: IProgressProps) {
+  setup(props: any) {
     const barStyle = computed(() => {
       return {
         width: `${props.percentage}%`,

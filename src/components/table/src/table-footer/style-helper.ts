@@ -6,7 +6,7 @@ import type { TableColumnCtx } from '../table-column/defaults'
 import type { TableFooter } from '.'
 
 function useStyle<T>(props: TableFooter<T>) {
-  const instance = getCurrentInstance()
+  const instance:any = getCurrentInstance()
   const table = instance.parent as Table<T>
   const store = table.store
 

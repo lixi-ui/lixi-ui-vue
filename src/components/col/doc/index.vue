@@ -9,7 +9,7 @@
   // import Md from './index.md'
 
   export default {
-    name : 'TreeMd',
+    name : 'TreeMd2',
     components: {
       // Md
     },

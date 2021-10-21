@@ -47,7 +47,7 @@ Le Dialog ouvre un modal personnalisable.
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {

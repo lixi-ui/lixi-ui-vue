@@ -4,11 +4,11 @@ import PopupManager from '@lixi/utils/popup-manager'
 import { getValueByPath } from '@lixi/utils/util'
 import { off, on } from '@lixi/utils/dom'
 
-import type { PopperInstance, IPopperOptions } from '@lixi/components/popper'
+import type { PopperInstance, IPopperOptions } from '@lixi/components/popper/src'
 import type { Indexable, Nullable } from '@lixi/utils/types'
 import type { TableColumnCtx } from './table-column/defaults'
 
-export const getCell = function(event: Event): HTMLElement {
+export const getCell = function(event: Event): any {
   let cell = event.target as HTMLElement
 
   while (cell && cell.tagName.toUpperCase() !== 'HTML') {
@@ -103,7 +103,7 @@ export const getColumnById = function<T>(
   },
   columnId: string,
 ): null | TableColumnCtx<T> {
-  let column = null
+  let column:any = null
   table.columns.forEach(function(item) {
     if (item.id === columnId) {
       column = item
@@ -117,8 +117,8 @@ export const getColumnByKey = function<T>(
     columns: TableColumnCtx<T>[]
   },
   columnKey: string,
-): TableColumnCtx<T> {
-  let column = null
+): any {
+  let column:any = null
   for (let i = 0; i < table.columns.length; i++) {
     const item = table.columns[i]
     if (item.columnKey === columnKey) {
@@ -145,7 +145,7 @@ export const getColumnByCell = function<T>(
 export const getRowIdentity = <T>(
   row: T,
   rowKey: string | ((row: T) => any),
-): string => {
+): any => {
   if (!row) throw new Error('row is required when get row identity')
   if (typeof rowKey === 'string') {
     if (rowKey.indexOf('.') < 0) {
@@ -190,7 +190,7 @@ export function mergeOptions<T, K>(defaults: T, config: K): T & K {
   return options
 }
 
-export function parseWidth(width: number | string): number {
+export function parseWidth(width: any): number {
   if (width !== undefined) {
     width = parseInt(width as string, 10)
     if (isNaN(width)) {

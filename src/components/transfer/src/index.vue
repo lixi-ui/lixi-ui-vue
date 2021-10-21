@@ -174,8 +174,8 @@ export default defineComponent({
       addToRight,
     } = useMove(props, checkedState, propsKey, emit)
 
-    const leftPanel = ref(null)
-    const rightPanel = ref(null)
+    const leftPanel:any = ref(null)
+    const rightPanel:any = ref(null)
 
     const clearQuery = (which: 'left' | 'right') => {
       if (which === 'left') {

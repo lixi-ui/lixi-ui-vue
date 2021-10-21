@@ -200,7 +200,7 @@ export default {
 
 <script>
 import { h, resolveComponent } from 'vue'
-import { LxDivider } from 'element-plus'
+import { LxDivider } from 'lixi-ui-vue'
 export default {
   data() {
     return {

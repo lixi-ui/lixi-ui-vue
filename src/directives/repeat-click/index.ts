@@ -4,7 +4,7 @@ import type { ObjectDirective } from 'vue'
 
 export default {
   beforeMount(el, binding) {
-    let interval = null
+    let interval:any = null
     let startTime: number
     const handler = () => binding.value && binding.value()
     const clear = () => {

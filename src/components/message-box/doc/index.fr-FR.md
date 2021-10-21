@@ -38,7 +38,7 @@ Alert interrompt l'action de l'utilisateur jusqu'à ce qu'il confirme.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -104,8 +104,8 @@ Confirm est utilisé pour demander une confirmation à l'utilisateur.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -181,8 +181,8 @@ Prompt est utilisé lorsqu'un utilisateur.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -271,7 +271,7 @@ Il est possible d'afficher du contenu un peu plus varié et personnalisé.
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -349,7 +349,7 @@ Le contenu de MessageBox peut être `VNode`, Vous permettant de passer des compo
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -417,8 +417,8 @@ Dans certains cas, les boutons fermer et annuler peuvent avoir des sens différe
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -495,8 +495,8 @@ le contenu de MessageBox peut être centré.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -544,7 +544,7 @@ Si Lxement Plus est importé entièrement, il ajoutera les méthodes suivantes �
 Si vous préférer importer `MessageBox` à la demande:
 
 ```javascript
-import { LxMessageBox } from 'element-plus';
+import { LxMessageBox } from 'lixi-ui-vue';
 ```
 
 Les méthodes correspondantes sont: `ElMessageBox`, `ElMessageBox.alert`, `ElMessageBox.confirm` et `ElMessageBox.prompt`. Les paramètres sont les mêmes que précédemment.

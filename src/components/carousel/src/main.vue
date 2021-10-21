@@ -140,7 +140,7 @@ export default defineComponent({
     })
 
     // refs
-    const root = ref(null)
+    const root:any = ref(null)
     const items = ref<CarouselItem[]>([])
 
     // computed

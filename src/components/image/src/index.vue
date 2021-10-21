@@ -48,7 +48,7 @@ import { on, off, getScrollContainer, isInContainer } from '@lixi/utils/dom'
 import type { CSSProperties, PropType } from 'vue'
 
 const isSupportObjectFit = () => document.documentElement.style.objectFit !== undefined
-const isHtmlEle = (e: Node) => e && e.nodeType === 1
+const isHtmlEle = (e: any) => e && e.nodeType === 1
 
 const ObjectFit = {
   NONE: 'none',
@@ -110,10 +110,10 @@ export default defineComponent({
     const imgWidth = ref(0)
     const imgHeight = ref(0)
     const showViewer = ref(false)
-    const container = ref<HTMLElement | null>(null)
+    const container:any = ref<HTMLElement | null>(null)
 
-    let _scrollContainer = null
-    let _lazyLoadHandler = null
+    let _scrollContainer:any = null
+    let _lazyLoadHandler:any = null
 
     const imageStyle = computed(() => {
       const { fit } = props
@@ -186,7 +186,7 @@ export default defineComponent({
       hasLoadError.value = false
 
       const img = new Image()
-      img.onload = e => handleLoad(e, img)
+      img.onload = (e:any) => handleLoad(e, img)
       img.onerror = handleError
 
       // bind html attrs
@@ -201,14 +201,14 @@ export default defineComponent({
       img.src = props.src
     }
 
-    function handleLoad(e: Event, img: HTMLImageElement) {
+    function handleLoad(e: any, img: any) {
       imgWidth.value = img.width
       imgHeight.value = img.height
       loading.value = false
       hasLoadError.value = false
     }
 
-    function handleError(e: Event) {
+    function handleError(e: any) {
       loading.value = false
       hasLoadError.value = true
       emit('error', e)

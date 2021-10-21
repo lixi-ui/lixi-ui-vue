@@ -94,7 +94,7 @@ export default defineComponent({
       lxForm,
     } = useRadio()
 
-    const radioRef = ref<HTMLInputElement>()
+    const radioRef:any = ref<HTMLInputElement>()
     const model = computed<string | number | boolean>({
       get() {
         return isGroup.value ? radioGroup.modelValue : props.modelValue

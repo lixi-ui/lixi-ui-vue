@@ -24,10 +24,10 @@ const FixedSizeList = buildList({
 
   getItemSize: ({ itemSize }) => itemSize as number,
 
-  getEstimatedTotalSize: ({ total, itemSize }) => (itemSize as number) * total,
+  getEstimatedTotalSize: ({ total, itemSize }:any) => (itemSize as number) * total,
 
   getOffset: (
-    { height, total, itemSize, layout, width },
+    { height, total, itemSize, layout, width }:any,
     index,
     alignment,
     scrollOffset,
@@ -100,7 +100,7 @@ const FixedSizeList = buildList({
   },
 
   getStartIndexForOffset: (
-    { total, itemSize },
+    { total, itemSize }:any,
     offset,
   ) =>
     Math.max(
@@ -109,7 +109,7 @@ const FixedSizeList = buildList({
     ),
 
   getStopIndexForStartIndex: (
-    { height, total, itemSize, layout, width }: IProps,
+    { height, total, itemSize, layout, width }: any,
     startIndex: number,
     scrollOffset: number,
   ) => {
@@ -129,8 +129,8 @@ const FixedSizeList = buildList({
     )
   },
 
-  initCache() {
-    return void 0
+  initCache():any {
+    return 0
   },
 
   clearCache: true,

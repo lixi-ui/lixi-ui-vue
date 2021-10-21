@@ -46,7 +46,7 @@ Displays a global notification message at a corner of the page.
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -145,7 +145,7 @@ We provide four types: success, warning, info and error.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -262,7 +262,7 @@ Notification can emerge from any corner you like.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -342,7 +342,7 @@ Customize Notification's offset from the edge of the screen.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -396,7 +396,7 @@ Customize Notification's offset from the edge of the screen.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -455,7 +455,7 @@ It is possible to hide the close button
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -486,7 +486,7 @@ Lixi has added a global method `$notify` for `app.config.globalProperties`. So i
 ### Local import
 
 ```javascript
-import { LxNotification } from 'element-plus';
+import { LxNotification } from 'lixi-ui-vue';
 ```
 
 In this case you should call `ElNotification(options)`. We have also registered methods for different types, e.g. `ElNotification.success(options)`. You can call `ElNotification.closeAll()` to manually close all the instances.

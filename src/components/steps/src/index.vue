@@ -46,7 +46,7 @@ export default defineComponent({
   },
   emits: [CHANGE_EVENT],
   setup(props, { emit }) {
-    const steps = ref([])
+    const steps:any = ref([])
 
     watch(steps, () => {
       steps.value.forEach((instance, index) => {

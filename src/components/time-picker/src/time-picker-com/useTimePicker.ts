@@ -3,7 +3,7 @@ import { ref, watch } from 'vue'
 import type { Dayjs } from 'dayjs'
 
 const makeList = (total, method, methodFunc) => {
-  const arr = []
+  const arr: any = []
   const disabledArr = method && methodFunc()
   for (let i = 0; i < total; i++) {
     arr[i] = disabledArr ? disabledArr.includes(i) : false

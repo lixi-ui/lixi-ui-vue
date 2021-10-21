@@ -35,13 +35,13 @@
 <script lang='ts'>
 import { defineComponent, ref, provide, computed, watch, getCurrentInstance } from 'vue'
 import { useLocaleInject } from '@lixi/hooks'
-import TreeStore from './model/tree-store.ts'
-import { getNodeKey as getNodeKeyUtil } from './model/util.ts'
+import TreeStore from './model/tree-store'
+import { getNodeKey as getNodeKeyUtil } from './model/util'
 import LxTreeNode from './tree-node.vue'
-import { useNodeExpandEventBroadcast } from './model/useNodeExpandEventBroadcast.ts'
-import { useDragNodeHandler } from './model/useDragNode.ts'
-import { useKeydown } from './model/useKeydown.ts'
-import Node from './model/node.ts'
+import { useNodeExpandEventBroadcast } from './model/useNodeExpandEventBroadcast'
+import { useDragNodeHandler } from './model/useDragNode'
+import { useKeydown } from './model/useKeydown'
+import Node from './model/node'
 
 import type { ComponentInternalInstance, PropType } from 'vue'
 import type { Nullable } from '@lixi/utils/types'
@@ -134,7 +134,7 @@ export default defineComponent({
     'node-drag-enter',
     'node-drag-over',
   ],
-  setup(props, ctx) {
+  setup(props:any, ctx) {
     const { t } = useLocaleInject()
 
     const store = ref<TreeStore>(new TreeStore({
@@ -156,8 +156,8 @@ export default defineComponent({
     store.value.initialize()
 
     const root = ref<Node>(store.value.root)
-    const currentNode = ref<Node>(null)
-    const lx$ = ref<Nullable<HTMLElement>>(null)
+    const currentNode:any = ref(null)
+    const lx$:any = ref(null)
     const dropIndicator$ = ref<Nullable<HTMLElement>>(null)
 
     const { broadcastExpanded } = useNodeExpandEventBroadcast(props)
@@ -173,16 +173,16 @@ export default defineComponent({
       return !childNodes || childNodes.length === 0 || childNodes.every(({ visible }) => !visible)
     })
 
-    watch(() => props.defaultCheckedKeys, newVal => {
+    watch(() => props.defaultCheckedKeys, (newVal:any) => {
       store.value.setDefaultCheckedKey(newVal)
     })
 
-    watch(() => props.defaultExpandedKeys, newVal => {
+    watch(() => props.defaultExpandedKeys, (newVal:any) => {
       store.value.defaultExpandedKeys = newVal
       store.value.setDefaultExpandedKeys(newVal)
     })
 
-    watch(() => props.data, newVal => {
+    watch(() => props.data, (newVal:any) => {
       store.value.setData(newVal)
     }, { deep: true })
 

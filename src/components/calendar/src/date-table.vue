@@ -78,7 +78,7 @@ export default defineComponent({
     },
   },
   emits: ['pick'],
-  setup(props, ctx) {
+  setup(props:any, ctx) {
     const { lang } = useLocaleInject()
     const WEEK_DAYS = ref(dayjs().locale(lang.value).localeData().weekdaysShort())
 
@@ -140,7 +140,7 @@ export default defineComponent({
     })
 
     const rows = computed(() => {
-      let days = []
+      let days:any = []
       if (isInRange.value) {
         const [start, end] = props.range
         const currentMonthRange = rangeArr(

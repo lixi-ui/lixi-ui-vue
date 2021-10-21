@@ -70,16 +70,20 @@ export default defineComponent({
   },
   emits: ['click'],
   setup(props, { emit, slots }) {
-    const instance = getCurrentInstance()
-    const rootMenu = inject<RootMenuProvider>('rootMenu')
-    const { parentMenu, paddingStyle, indexPath } = useMenu(
+    const instance:any = getCurrentInstance()
+    const rootMenu:any = inject<RootMenuProvider>('rootMenu')
+    const _useMenu:any = useMenu(
       instance,
       computed(() => props.index),
     )
-    const { addSubMenu, removeSubMenu } = inject<SubMenuProvider>(
+    const parentMenu:any = _useMenu.parentMenu
+    const paddingStyle:any = _useMenu.paddingStyle
+    const indexPath:any = _useMenu.indexPath
+    const _SubMenuProvider:any = inject<SubMenuProvider>(
       `subMenu:${parentMenu.value.uid}`,
     )
-
+    const addSubMenu:any = _SubMenuProvider.addSubMenu
+    const removeSubMenu:any = _SubMenuProvider.removeSubMenu
     const active = computed(() => {
       return props.index === rootMenu.activeIndex.value
     })

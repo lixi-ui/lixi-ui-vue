@@ -20,8 +20,8 @@ import type { DefaultRow, Table } from '../table/defaults'
 export default defineComponent({
   name: 'LxTableBody',
   props: defaultProps,
-  setup(props) {
-    const instance = getCurrentInstance()
+  setup(props:any) {
+    const instance:any = getCurrentInstance()
     const parent = instance.parent as Table<DefaultRow>
 
     const { wrappedRowRender, tooltipContent, tooltipTrigger } = useRender(

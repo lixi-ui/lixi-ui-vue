@@ -46,7 +46,7 @@ Affiche une notification globale dans un coin de la page.
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -146,7 +146,7 @@ Nous fournissons quatre types: succès, avertissement, information et erreur.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -263,7 +263,7 @@ La notification peut apparaître dans le coin de votre choix.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -343,7 +343,7 @@ Vous pouvez décaler l'emplacement de la notification par rapport au bord de la 
 <setup>
 
 import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
 export default defineComponent({
   setup() {
@@ -399,7 +399,7 @@ L'attribut `message` supporte le HTML.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -459,7 +459,7 @@ Il est possible de cacher le bouton de fermeture.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -490,7 +490,7 @@ Lixi ajoute la méthode `$notify` à `app.config.globalProperties`. Vous pouvez 
 ### Import à la demande
 
 ```javascript
-import { LxNotification } from 'element-plus';
+import { LxNotification } from 'lixi-ui-vue';
 ```
 
 Dans ce cas vous devrez appeler `ElNotification(options)`. Il existe aussi des méthodes pour chaque type, e.g. `ElNotification.success(options)`. Vous pouvez appeler `ElNotification.closeAll()` pour fermer manuellement toutes les instances.

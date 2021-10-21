@@ -27,7 +27,7 @@ ComponentPublicInstance<{ doClose: () => void; }>, // marking doClose as functio
 >()
 
 
-const initInstance = (props: any, container: HTMLElement) => {
+const initInstance = (props: any, container: any) => {
   const vnode = h(MessageBoxConstructor, props)
   render(vnode, container)
   document.body.appendChild(container.firstElementChild)
@@ -53,7 +53,7 @@ const showMessage = (options: any) => {
 
   options.onAction = (action: Action) => {
 
-    const currentMsg = messageInstance.get(vm)
+    const currentMsg:any = messageInstance.get(vm)
     let resolve: Action | { value: string; action: Action; }
     if (options.showInput) {
       resolve = { value: vm.inputValue, action }
@@ -75,7 +75,7 @@ const showMessage = (options: any) => {
     }
   }
 
-  const instance = initInstance(options, container)
+  const instance:any = initInstance(options, container)
 
   // This is how we use message box programmably.
   // Maybe consider releasing a template version?
@@ -110,7 +110,7 @@ const showMessage = (options: any) => {
 async function MessageBox(options: LxMessageBoxOptions): Promise<MessageBoxData>
 function MessageBox(
   options: LxMessageBoxOptions | string | VNode,
-): Promise<{ value: string; action: Action; } | Action> {
+): any {
   if (isServer) return
   let callback
   if (isString(options) || isVNode(options)) {

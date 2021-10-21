@@ -10,7 +10,7 @@ const mousewheel = function (element, callback) {
   if (element && element.addEventListener) {
     const fn = function (event) {
       const normalized = normalizeWheel(event)
-      callback && callback.apply(this, [event, normalized])
+      callback && callback.apply(this as any, [event, normalized])
     }
     if (isFirefox) {
       element.addEventListener('DOMMouseScroll', fn)

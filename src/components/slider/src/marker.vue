@@ -11,7 +11,7 @@ export default defineComponent({
       default: () => undefined,
     },
   },
-  setup(props) {
+  setup(props:any) {
     const label = computed(() => {
       return typeof props.mark === 'string' ? props.mark : props.mark.label
     })

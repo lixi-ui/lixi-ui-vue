@@ -7,7 +7,7 @@ import type { TableHeaderProps } from '.'
 const getAllColumns = <T>(
   columns: TableColumnCtx<T>[],
 ): TableColumnCtx<T>[] => {
-  const result = []
+  const result:any = []
   columns.forEach(column => {
     if (column.children) {
       result.push(column)
@@ -24,7 +24,7 @@ const convertToRows = <T>(
   originColumns: TableColumnCtx<T>[],
 ): TableColumnCtx<T>[] => {
   let maxLevel = 1
-  const traverse = (column: TableColumnCtx<T>, parent: TableColumnCtx<T>) => {
+  const traverse = (column: TableColumnCtx<T>, parent: any) => {
     if (parent) {
       column.level = parent.level + 1
       if (maxLevel < column.level) {
@@ -48,7 +48,7 @@ const convertToRows = <T>(
     traverse(column, undefined)
   })
 
-  const rows = []
+  const rows:any = []
   for (let i = 0; i < maxLevel; i++) {
     rows.push([])
   }
@@ -68,7 +68,7 @@ const convertToRows = <T>(
 }
 
 function useUtils<T>(props: TableHeaderProps<T>) {
-  const instance = getCurrentInstance()
+  const instance:any = getCurrentInstance()
   const parent = instance.parent as Table<T>
   const columnRows = computed(() => {
     return convertToRows(props.store.states.originColumns.value)

@@ -117,7 +117,7 @@ const es = (
   index: number,
   offset: number,
 ) => {
-  const { total } = props
+  const { total }:any = props
   let exponent = 1
 
   while (
@@ -138,7 +138,7 @@ const es = (
 }
 
 const getEstimatedTotalSize = (
-  { total }: Props,
+  { total }: any,
   { items, estimatedItemSize, lastVisitedIndex }: ListCache,
 ) => {
   let totalSizeOfMeasuredItems = 0
@@ -242,7 +242,7 @@ const DynamicSizeList = createList({
     scrollOffset,
     listCache,
   ) => {
-    const { height, total, layout, width } = props
+    const { height, total, layout, width }:any = props
 
     const size = (isHorizontal(layout) ? width : height) as number
     const item = getItemFromCache(props, startIndex, listCache)
@@ -259,7 +259,7 @@ const DynamicSizeList = createList({
     return stopIndex
   },
 
-  initCache({ estimatedItemSize = DEFAULT_DYNAMIC_LIST_ITEM_SIZE }, instance) {
+  initCache({ estimatedItemSize = DEFAULT_DYNAMIC_LIST_ITEM_SIZE }, instance:any) {
 
     const cache = {
       items: {},

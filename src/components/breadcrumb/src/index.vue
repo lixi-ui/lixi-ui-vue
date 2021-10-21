@@ -26,7 +26,7 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const breadcrumb = ref(null)
+    const breadcrumb:any = ref(null)
 
     provide<IBreadcrumbProps>('breadcrumb', props)
 

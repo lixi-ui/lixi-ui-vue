@@ -119,14 +119,14 @@ export default defineComponent({
   setup(props, { emit }) {
     const { t } = useLocaleInject()
 
-    let _keyDownHandler = null
-    let _mouseWheelHandler = null
-    let _dragHandler = null
+    let _keyDownHandler:any = null
+    let _mouseWheelHandler:any = null
+    let _dragHandler:any = null
 
     const loading = ref(true)
     const index = ref(props.initialIndex)
-    const wrapper = ref(null)
-    const img = ref(null)
+    const wrapper:any = ref(null)
+    const img:any = ref(null)
     const mode = ref(Mode.CONTAIN)
     let transform = ref({
       scale: 1,
@@ -256,7 +256,7 @@ export default defineComponent({
         }
       })
       on(document, 'mousemove', _dragHandler)
-      on(document, 'mouseup', (e: MouseEvent) => {
+      on(document, 'mouseup', (e: any) => {
         const mouseX = e.pageX
         const mouseY = e.pageY
         if (mouseX < divLeft || mouseX > divRight || mouseY < divTop || mouseY > divBottom){

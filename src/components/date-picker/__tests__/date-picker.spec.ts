@@ -889,8 +889,8 @@ describe('MonthRange', () => {
     await nextTick()
 
     expect((
-      (wrapper.findComponent(CommonPicker).vm as any).elPopperOptions),
-    ).toEqual(ElPopperOptions)
+      (wrapper.findComponent(CommonPicker).vm as any).LxPopperOptions),
+    ).toEqual(LxPopperOptions)
   })
 })
 

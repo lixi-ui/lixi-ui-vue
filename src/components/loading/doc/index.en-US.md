@@ -287,7 +287,7 @@ Show a full screen animation while loading data.
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxLoading } from 'element-plus';
+  import { LxLoading } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -327,7 +327,7 @@ Show a full screen animation while loading data.
 ### Service
 You can also invoke Loading with a service. Import Loading service:
 ```javascript
-import { LxLoading } from 'element-plus';
+import { LxLoading } from 'lixi-ui-vue';
 ```
 Invoke it:
 ```javascript

@@ -13,7 +13,7 @@ import {
 
 export function useOption(props, states) {
   // inject
-  const select = inject(selectKey)
+  const select:any = inject(selectKey)
   const selectGroup = inject(selectGroupKey, { disabled: false })
 
   // computed
@@ -54,7 +54,7 @@ export function useOption(props, states) {
 
   const instance = getCurrentInstance()
 
-  const contains = (arr = [], target) => {
+  const contains = (arr:any = [], target) => {
     if (!isObject.value) {
       return arr && arr.indexOf(target) > -1
     } else {

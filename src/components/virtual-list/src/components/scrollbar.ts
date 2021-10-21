@@ -1,6 +1,6 @@
 import { computed, defineComponent, ref, reactive, onMounted, onBeforeUnmount, watch, h, withModifiers } from 'vue'
 import { NOOP } from '@vue/shared'
-import { BAR_MAP } from '@lixi/components/scrollbar/src/index.ts'
+import { BAR_MAP } from '@lixi/components/scrollbar/src/index'
 import { on, off } from '@lixi/utils/dom'
 import { rAF, cAF } from '@lixi/utils/raf'
 import isServer from '@lixi/utils/isServer'
@@ -16,14 +16,14 @@ const ScrollBar = defineComponent({
   name: 'LxVirtualScrollBar',
   props: DefaultScrollBarProps,
   emits: ['scroll', 'start-move', 'stop-move'],
-  setup(props, { emit }) {
+  setup(props:any, { emit }) {
     // DOM refs
-    const trackRef = ref(null)
-    const thumbRef = ref(null)
+    const trackRef:any = ref(null)
+    const thumbRef:any = ref(null)
 
     // local variables
-    let frameHandle: null | number = null
-    let onselectstartStore = null
+    let frameHandle: any = null
+    let onselectstartStore:any = null
 
     // data
     const state = reactive({
@@ -33,7 +33,7 @@ const ScrollBar = defineComponent({
 
     const bar = computed(() => BAR_MAP[props.layout])
 
-    const trackStyle = computed<CSSProperties>(() => ({
+    const trackStyle = computed<any>(() => ({
       display: props.visible ? null : 'none',
       position: 'absolute',
       width: HORIZONTAL === props.layout ? '100%' : '6px',
@@ -112,7 +112,7 @@ const ScrollBar = defineComponent({
       off(thumbEl, 'touchend', onMouseUp)
     }
 
-    const onThumbMouseDown = (e: SyntheticMouseEvent) => {
+    const onThumbMouseDown = (e: any) => {
 
       e.stopImmediatePropagation()
       if (e.ctrlKey || [1, 2].includes((e as MouseEvent).button)) {
@@ -138,7 +138,7 @@ const ScrollBar = defineComponent({
       detachEvents()
     }
 
-    const onMouseMove = (e: SyntheticMouseEvent) => {
+    const onMouseMove = (e: any) => {
       const { isDragging } = state
       if (!isDragging) return
 
@@ -217,12 +217,12 @@ const ScrollBar = defineComponent({
         class: 'lx-virtual-scrollbar',
         style: trackStyle.value,
         onMousedown: withModifiers(NOOP, ['stop', 'prevent']),
-      }, h('div', {
+      }, h('div' as any, {
         ref: thumbRef,
         class: 'lx-scrollbar__thumb',
         style: thumbStyle.value,
         onMousedown: onThumbMouseDown,
-      }, null))
+      }, null as any))
     }
   },
 })

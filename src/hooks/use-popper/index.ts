@@ -136,13 +136,17 @@ export const usePopperProps = {
 
 export const usePopperHook = () => {
 
-  const vm = getCurrentInstance()
-  const props: ExtractPropTypes<typeof usePopperProps> = vm.props as any
-  const { slots } = vm
+  const vm:any = getCurrentInstance()
+  // const props: ExtractPropTypes<typeof usePopperProps> = vm.props as any
+  const props: any = vm.props as any
+  const slots: any = vm.slots
 
-  const arrowRef = ref<RefElement>(null)
-  const triggerRef = ref<ElementType>(null)
-  const popperRef = ref<RefElement>(null)
+  // const arrowRef = ref<RefElement>(null)
+  const arrowRef:any = ref(null)
+  // const triggerRef = ref<ElementType>(null)
+  const triggerRef:any = ref(null)
+  // const popperRef = ref<RefElement>(null)
+  const popperRef:any = ref(null)
 
   const popperStyle = ref<CSSProperties>({ zIndex: PopupManager.nextZIndex() })
   const visible = ref(false)
@@ -294,46 +298,48 @@ export const usePopperHook = () => {
         onBeforeLeave,
       },
       {
-        default: () => () => visible.value ? h('div',
-          {
-            'aria-hidden': false,
-            class: [
-              props.popperClass,
-              'lx-popper',
-              `is-${props.effect}`,
-              props.pure ? 'is-pure' : '',
-            ],
-            style: popperStyle.value,
-            id: popperId,
-            ref: popperRefAttacher,
-            role: 'tooltip',
-            onMouseenter: onPopperMouseEnter,
-            onMouseleave: onPopperMouseLeave,
-            onClick: stop,
-            onMousedown: mouseUpAndDown,
-            onMouseup: mouseUpAndDown,
-          },
-          [
-            renderSlot(slots, 'default', {}, () => [toDisplayString(props.content)]),
-            arrowRenderer(),
-          ],
-        ) : null,
+        default: () => () => null
+        // visible.value ? h('div',
+        //   {
+        //     'aria-hidden': false,
+        //     class: [
+        //       props.popperClass,
+        //       'lx-popper',
+        //       `is-${props.effect}`,
+        //       props.pure ? 'is-pure' : '',
+        //     ],
+        //     style: popperStyle.value,
+        //     id: popperId,
+        //     ref: popperRefAttacher,
+        //     role: 'tooltip',
+        //     onMouseenter: onPopperMouseEnter,
+        //     onMouseleave: onPopperMouseLeave,
+        //     onClick: stop,
+        //     onMousedown: mouseUpAndDown,
+        //     onMouseup: mouseUpAndDown,
+        //   },
+        //   [
+        //     renderSlot(slots, 'default', {}, () => [toDisplayString(props.content)]),
+        //     arrowRenderer(),
+        //   ],
+        // ) : null,
       },
     )
   }
 
   function arrowRenderer() {
-    return props.showArrow
-      ? h(
-        'div',
-        {
-          ref: arrowRefAttacher,
-          class: 'lx-popper__arrow',
-          'data-popper-arrow': '',
-        },
-        null,
-      )
-      : null
+    return null
+    // return props.showArrow
+      // ? h(
+      //   'div',
+      //   {
+      //     ref: arrowRefAttacher,
+      //     class: 'lx-popper__arrow',
+      //     'data-popper-arrow': '',
+      //   },
+      //   null,
+      // )
+      // : null
   }
 
   function triggerRenderer(triggerProps) {
@@ -352,12 +358,16 @@ export const usePopperHook = () => {
       ref: triggerRefAttacher,
       ...events,
     })
-    return h(Fragment, null, [
-      isManual.value
-        ? trigger
-        : withDirectives(trigger, [[ClickOutside, delayHide]]),
-      renderTeleport(),
-    ])
+    // return h(Fragment, null, [
+    //   isManual.value
+    //     ? trigger
+    //     : withDirectives(trigger, [[ClickOutside, delayHide]]),
+    //   renderTeleport(),
+    // ])
+    // return h(Fragment, null, [
+    //   trigger,
+    //   renderTeleport(),
+    // ])
   }
 
   return {

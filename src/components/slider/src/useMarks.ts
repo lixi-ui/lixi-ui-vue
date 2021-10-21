@@ -2,7 +2,7 @@ import { computed } from 'vue'
 import type { ISliderProps, Mark } from './slider.type'
 
 
-export const useMarks = (props: ISliderProps) => {
+export const useMarks = (props: any) => {
   return computed(() => {
     if (!props.marks) {
       return []

@@ -51,7 +51,7 @@ const getScrollOptions = (el: HTMLElement, instance: ComponentPublicInstance): S
   return entries(attributes)
     .reduce((acm, [name, option]) => {
       const { type, default: defaultValue } = option
-      const attrVal = el.getAttribute(`infinite-scroll-${name}`)
+      const attrVal:any = el.getAttribute(`infinite-scroll-${name}`)
       let value = instance[attrVal] ?? attrVal ?? defaultValue
       value = value === 'false' ? false : value
       value = type(value)
@@ -115,7 +115,7 @@ function checkFull(el: InfiniteScrollEl, cb: InfiniteScrollCallback) {
 
 const InfiniteScroll: ObjectDirective<InfiniteScrollEl, InfiniteScrollCallback> = {
   async mounted(el, binding) {
-    const { instance, value: cb } = binding
+    const { instance, value: cb }:any = binding
 
     if (!isFunction(cb)) {
       throwError(SCOPE, '\'v-infinite-scroll\' binding value must be a function')

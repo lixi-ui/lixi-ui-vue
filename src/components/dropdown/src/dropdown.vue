@@ -69,7 +69,7 @@ import { useDropdown } from './useDropdown'
 
 import type { ComponentPublicInstance } from 'vue'
 import type { TriggerType } from '@lixi/hooks/use-popper/use-target-events'
-import type { ButtonType } from '@lixi/components/button/src/types/src'
+import type { ButtonType } from '@lixi/components/button/src/types'
 
 type Nullable<T> = null | T
 const { ButtonGroup: LxButtonGroup } = LxButton
@@ -127,10 +127,10 @@ export default defineComponent({
     const _instance = getCurrentInstance()
     const { ELEMENT } = useDropdown()
 
-    const timeout = ref<Nullable<number>>(null)
+    const timeout:any = ref<Nullable<number>>(null)
 
     const visible = ref(false)
-    const scrollbar = ref(null)
+    const scrollbar:any = ref(null)
     const wrapStyle = computed(() => `max-height: ${addUnit(props.maxHeight)}`)
 
     watch(
@@ -158,7 +158,7 @@ export default defineComponent({
     )
 
     const triggerVnode = ref<Nullable<ComponentPublicInstance>>(null)
-    const triggerElm = computed<Nullable<HTMLButtonElement>>(() => {
+    const triggerElm:any = computed<Nullable<HTMLButtonElement>>(() => {
       const _: any = (triggerVnode.value?.$refs.triggerRef as HTMLElement)?.children[0]
       return !props.splitButton ? _ : _?.children?.[1]
     })
@@ -221,7 +221,7 @@ export default defineComponent({
       emit('command', ...args)
     }
 
-    provide('elDropdown', {
+    provide('lxDropdown', {
       instance: _instance,
       dropdownSize,
       visible,

@@ -32,7 +32,12 @@ export const useModelToggle = ({
   onShow,
   onHide,
 }: ModelToggleParams) => {
-  const { appContext, props, proxy, emit } = getCurrentInstance()
+  const vm:any = getCurrentInstance()
+  const appContext:any = vm.appContext
+  const emit:any = vm.emit
+  const proxy:any = vm.proxy
+  const props:any = vm.props
+  // emit proxy props
 
   const hasUpdateHandler = computed(() => isFunction(props['onUpdate:modelValue']))
   // when it matches the default value we say this is absent

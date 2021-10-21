@@ -26,8 +26,8 @@ export default defineComponent({
   },
   setup(props) {
     const visible = ref(true)
-    const instance = getCurrentInstance()
-    const children = ref([])
+    const instance:any = getCurrentInstance()
+    const children:any = ref([])
 
     provide(
       selectGroupKey,
@@ -36,7 +36,7 @@ export default defineComponent({
       }),
     )
 
-    const select = inject(selectKey)
+    const select:any = inject(selectKey)
 
     onMounted(() => {
       children.value = flattedChildren(instance.subTree)
@@ -44,7 +44,7 @@ export default defineComponent({
 
     // get all instances of options
     const flattedChildren = node => {
-      const children = []
+      const children:any = []
       if (Array.isArray(node.children)) {
         node.children.forEach(child => {
           if (

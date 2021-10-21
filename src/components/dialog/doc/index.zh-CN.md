@@ -46,7 +46,7 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {

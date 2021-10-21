@@ -69,7 +69,7 @@ export default defineComponent({
       return radioGroup.radioGroupSize || lxFormItemSize.value || ELEMENT.size
     })
 
-    const radioRef = ref<HTMLInputElement>()
+    const radioRef:any = ref<HTMLInputElement>()
 
     const value = computed<boolean | string | number>({
       get() {

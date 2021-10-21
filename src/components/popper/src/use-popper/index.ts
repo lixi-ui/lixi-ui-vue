@@ -37,14 +37,20 @@ export default function(
   props: IPopperOptions,
   { emit }: SetupContext<EmitType[]>,
 ) {
-  const arrowRef = ref<RefElement>(null)
-  const triggerRef = ref(null) as Ref<ElementType>
-  const popperRef = ref<RefElement>(null)
+  // const arrowRef:any = ref<RefElement>(null)
+  const arrowRef:any = ref(null)
+  // const triggerRef:any = ref(null) as Ref<ElementType>
+  const triggerRef:any = ref(null)
+  // const popperRef:any = ref<RefElement>(null)
+  const popperRef:any = ref(null)
 
   const popperId = `lx-popper-${generateId()}`
-  let popperInstance: Nullable<PopperInstance> = null
-  let showTimer: Nullable<TimeoutHandle> = null
-  let hideTimer: Nullable<TimeoutHandle> = null
+  // let popperInstance: Nullable<PopperInstance> = null
+  let popperInstance: any = null
+  // let showTimer: Nullable<TimeoutHandle> = null
+  let showTimer: any = null
+  // let hideTimer: Nullable<TimeoutHandle> = null
+  let hideTimer: any = null
   let triggerFocused = false
 
   const isManualMode = () => props.manualMode || props.trigger === 'manual'
@@ -234,7 +240,8 @@ export default function(
       }
     }
 
-    const triggerEventsMap: Partial<Record<TriggerType, (keyof PopperEvents)[]>> = {
+    // const triggerEventsMap: Partial<Record<TriggerType, (keyof PopperEvents)[]>> = {
+    const triggerEventsMap: any = {
       click: ['onClick'],
       hover: ['onMouseenter', 'onMouseleave'],
       focus: ['onFocus', 'onBlur'],

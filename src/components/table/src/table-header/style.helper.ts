@@ -5,7 +5,7 @@ import type { Table } from '../table/defaults'
 import type { TableHeaderProps } from '.'
 
 function useStyle<T>(props: TableHeaderProps<T>) {
-  const instance = getCurrentInstance()
+  const instance:any = getCurrentInstance()
   const parent = instance.parent as Table<T>
   const storeData = parent.store.states
   const isCellHidden = (
@@ -44,7 +44,7 @@ function useStyle<T>(props: TableHeaderProps<T>) {
   }
 
   const getHeaderRowClass = (rowIndex: number): string => {
-    const classes = []
+    const classes:any = []
     const headerRowClassName = parent.props.headerRowClassName
     if (typeof headerRowClassName === 'string') {
       classes.push(headerRowClassName)

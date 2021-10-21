@@ -11,7 +11,7 @@ type ModalInstance = {
 
 const modalStack: ModalInstance[] = []
 
-const closeModal = (e: KeyboardEvent) => {
+const closeModal = (e: any) => {
   if (modalStack.length === 0) return
   if (e.code === EVENT_CODE.esc) {
     e.stopPropagation()

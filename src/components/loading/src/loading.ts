@@ -13,7 +13,7 @@ import type {
   ILoadingOptions,
 } from './loading.type'
 
-const defaults: ILoadingOptions = {
+const defaults: any = {
   parent: null,
   background: '',
   svg: null,
@@ -26,11 +26,11 @@ const defaults: ILoadingOptions = {
   customClass: '',
 }
 
-const globalLoadingOption: ILoadingGlobalConfig = {
+const globalLoadingOption: any = {
   fullscreenLoading: null,
 }
 
-const addStyle = async (options: ILoadingOptions, parent: HTMLElement, instance: ILoadingInstance) => {
+const addStyle = async (options: ILoadingOptions, parent: HTMLElement, instance: any) => {
   const maskStyle: Partial<CSSProperties> = {}
   if (options.fullscreen) {
     instance.originalPosition.value = getStyle(document.body, 'position')
@@ -63,7 +63,7 @@ const addStyle = async (options: ILoadingOptions, parent: HTMLElement, instance:
   })
 }
 
-const addClassList = (options: ILoadingOptions, parent: HTMLElement, instance: ILoadingInstance) => {
+const addClassList = (options: ILoadingOptions, parent: HTMLElement, instance: any) => {
   if (instance.originalPosition.value !== 'absolute' && instance.originalPosition.value !== 'fixed') {
     addClass(parent, 'lx-loading-parent--relative')
   } else {
@@ -76,7 +76,7 @@ const addClassList = (options: ILoadingOptions, parent: HTMLElement, instance: I
   }
 }
 
-const Loading = function (options: ILoadingOptions = {}): ILoadingInstance {
+const Loading = function (options: ILoadingOptions = {}): any {
   if (isServer) return
   options = {
     ...defaults,
@@ -120,7 +120,7 @@ const Loading = function (options: ILoadingOptions = {}): ILoadingInstance {
    * destroySelf function will remove 'lx-loading-parent--relative',
    * and then the position of v-loading.body will be error.
    */
-  let loadingNumber: number | string = parent.getAttribute('loading-number')
+  let loadingNumber: any = parent.getAttribute('loading-number')
   if (!loadingNumber) {
     loadingNumber = 1
   } else {

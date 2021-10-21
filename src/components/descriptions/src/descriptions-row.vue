@@ -30,7 +30,7 @@
 <script lang="ts">
 import { defineComponent, inject } from 'vue'
 import DescriptionsCell from './descriptions-cell'
-import { elDescriptionsKey } from './token'
+import { lxDescriptionsKey } from './token'
 
 import type { IDescriptionsInject } from './descriptions.type'
 
@@ -45,7 +45,7 @@ export default defineComponent({
     },
   },
   setup() {
-    const descriptions = inject(elDescriptionsKey, {} as IDescriptionsInject)
+    const descriptions = inject(lxDescriptionsKey, {} as IDescriptionsInject)
 
     return {
       descriptions,

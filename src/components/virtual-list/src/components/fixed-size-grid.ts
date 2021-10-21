@@ -24,14 +24,14 @@ const FixedSizeGrid = createGrid({
     index * (rowHeight as number),
   ],
 
-  getEstimatedTotalHeight: ({ totalRow, rowHeight }) =>
+  getEstimatedTotalHeight: ({ totalRow, rowHeight }:any) =>
     (rowHeight as number) * totalRow,
 
-  getEstimatedTotalWidth: ({ totalColumn, columnWidth }) =>
+  getEstimatedTotalWidth: ({ totalColumn, columnWidth }:any) =>
     (columnWidth as number) * totalColumn,
 
   getColumnOffset: (
-    { totalColumn, columnWidth, width },
+    { totalColumn, columnWidth, width }:any,
     columnIndex,
     alignment,
     scrollLeft,
@@ -92,7 +92,7 @@ const FixedSizeGrid = createGrid({
   },
 
   getRowOffset: (
-    { rowHeight, height, totalRow },
+    { rowHeight, height, totalRow }:any,
     rowIndex,
     align,
     scrollTop,
@@ -146,7 +146,7 @@ const FixedSizeGrid = createGrid({
     }
   },
 
-  getColumnStartIndexForOffset: ({ columnWidth, totalColumn }, scrollLeft) =>
+  getColumnStartIndexForOffset: ({ columnWidth, totalColumn }:any, scrollLeft) =>
     Math.max(
       0,
       Math.min(
@@ -156,7 +156,7 @@ const FixedSizeGrid = createGrid({
     ),
 
   getColumnStopIndexForStartIndex: (
-    { columnWidth, totalColumn, width },
+    { columnWidth, totalColumn, width }:any,
     startIndex: number,
     scrollLeft: number,
   ): number => {
@@ -174,7 +174,7 @@ const FixedSizeGrid = createGrid({
   },
 
   getRowStartIndexForOffset: (
-    { rowHeight, totalRow },
+    { rowHeight, totalRow }:any,
     scrollTop: number,
   ): number =>
     Math.max(
@@ -183,7 +183,7 @@ const FixedSizeGrid = createGrid({
     ),
 
   getRowStopIndexForStartIndex: (
-    { rowHeight, totalRow, height },
+    { rowHeight, totalRow, height }:any,
     startIndex: number,
     scrollTop: number,
   ): number => {
@@ -200,7 +200,7 @@ const FixedSizeGrid = createGrid({
     )
   },
 
-  initCache: () => void 0,
+  initCache: ():any =>  0,
 
   clearCache: true,
 

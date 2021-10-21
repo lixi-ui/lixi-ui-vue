@@ -103,7 +103,7 @@ export default defineComponent({
   emits: useDialogEmits,
 
   setup(props, ctx) {
-    const drawerRef = ref<HTMLElement>(null)
+    const drawerRef:any = ref(null)
     return {
       ...useDialog(props, ctx as SetupContext, drawerRef),
       drawerRef,

@@ -26,7 +26,7 @@ import { computed, defineComponent, provide } from 'vue'
 import { useGlobalConfig } from '@lixi/utils/util'
 import { isValidComponentSize } from '@lixi/utils/validators'
 import DescriptionsRow from './descriptions-row.vue'
-import { elDescriptionsKey } from './token'
+import { lxDescriptionsKey } from './token'
 
 import type { PropType } from 'vue'
 import type { ComponentSize } from '@lixi/utils/types'
@@ -62,8 +62,8 @@ export default defineComponent({
       default: '',
     },
   },
-  setup(props, { slots }) {
-    provide(elDescriptionsKey, props)
+  setup(props:any, { slots }) {
+    provide(lxDescriptionsKey, props)
 
     const $ELEMENT = useGlobalConfig()
     const descriptionsSize = computed(() => {
@@ -72,7 +72,7 @@ export default defineComponent({
 
     const flattedChildren = children => {
       const temp = Array.isArray(children) ? children : [children]
-      const res = []
+      const res:any = []
       temp.forEach(child => {
         if (Array.isArray(child.children)) {
           res.push(...flattedChildren(child.children))
@@ -98,9 +98,9 @@ export default defineComponent({
     }
 
     const getRows = () => {
-      const children = flattedChildren(slots.default?.()).filter(node => node?.type?.name === 'LxDescriptionsItem')
-      const rows = []
-      let temp = []
+      const children:any = flattedChildren(slots.default?.()).filter((node:any) => node?.type?.name === 'LxDescriptionsItem')
+      const rows:any = []
+      let temp:any = []
       let count = props.column
       let totalSpan = 0 // all spans number of item
 

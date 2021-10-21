@@ -53,7 +53,7 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup(props, ctx) {
     provide('LxPopperOptions', props.popperOptions)
-    const commonPicker = ref(null)
+    const commonPicker:any = ref(null)
     const refProps = {
       ...props,
       focus: () => {

@@ -7,8 +7,8 @@
     >
       <slot></slot>
     </span>
-    <i
-      v-if="separatorClass"
+    <i 
+    v-if="separatorClass"
       class="lx-breadcrumb__separator"
       :class="separatorClass"
     ></i>
@@ -17,7 +17,6 @@
     }}</span>
   </span>
 </template>
-
 <script lang="ts">
 import {
   defineComponent,
@@ -42,11 +41,10 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const link = ref(null)
-    const parent = inject<IBreadcrumbProps>('breadcrumb')
-    const instance = getCurrentInstance()
-    const router = instance.appContext.config.globalProperties.$router
-
+    const link:any = ref(null)
+    const parent:any = inject<IBreadcrumbProps>('breadcrumb')
+    const instance:any = getCurrentInstance()
+    const router = instance?.appContext?.config?.globalProperties?.$router
     onMounted(() => {
       link.value.setAttribute('role', 'link')
       link.value.addEventListener('click', () => {

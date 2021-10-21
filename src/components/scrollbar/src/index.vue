@@ -93,15 +93,15 @@ export default defineComponent({
   },
   emits: ['scroll'],
   setup(props, { emit }) {
-    const sizeWidth = ref('0')
-    const sizeHeight = ref('0')
-    const moveX = ref(0)
-    const moveY = ref(0)
-    const scrollbar = ref(null)
-    const wrap = ref(null)
-    const resize = ref(null)
-    const ratioY = ref(1)
-    const ratioX = ref(1)
+    const sizeWidth:any = ref('0')
+    const sizeHeight:any = ref('0')
+    const moveX:any = ref(0)
+    const moveY:any = ref(0)
+    const scrollbar:any = ref(null)
+    const wrap:any = ref(null)
+    const resize:any = ref(null)
+    const ratioY:any = ref(1)
+    const ratioX:any = ref(1)
 
     const SCOPE = 'LxScrollbar'
     const GAP = 4 // top 2 + bottom 2 of bar instance

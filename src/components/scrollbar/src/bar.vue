@@ -24,6 +24,8 @@ import { BAR_MAP, renderThumbStyle } from './util'
 import type { Ref } from 'vue'
 import type { Nullable } from '@lixi/utils/types'
 
+var window: any
+
 export default defineComponent({
   name: 'Bar',
   props: {
@@ -33,17 +35,17 @@ export default defineComponent({
     ratio: Number,
     always: Boolean,
   },
-  setup(props) {
-    const instance = ref(null)
-    const thumb = ref(null)
-    const scrollbar = inject('scrollbar', {} as Ref<Nullable<HTMLElement>>)
-    const wrap = inject('scrollbar-wrap', {} as Ref<Nullable<HTMLElement>>)
-    const bar = computed(() => BAR_MAP[props.vertical ? 'vertical' : 'horizontal'])
-    const barStore = ref({})
-    const cursorDown = ref(null)
-    const cursorLeave = ref(null)
-    const visible = ref(false)
-    let onselectstartStore = null
+  setup(props:any) {
+    const instance: any = ref(null)
+    const thumb: any  = ref(null)
+    const scrollbar:any = inject('scrollbar', {} as Ref<Nullable<HTMLElement>>)
+    const wrap:any = inject('scrollbar-wrap', {} as Ref<Nullable<HTMLElement>>)
+    const bar:any = computed(() => BAR_MAP[props.vertical ? 'vertical' : 'horizontal'])
+    const barStore:any = ref({})
+    const cursorDown:any = ref(null)
+    const cursorLeave:any = ref(null)
+    const visible:any = ref(false)
+    let onselectstartStore:any = null
 
     const offsetRatio = computed(() => {
       // offsetRatioX = original width of thumb / current width of thumb / ratioX
@@ -52,7 +54,7 @@ export default defineComponent({
       return instance.value[bar.value.offset] ** 2 / wrap.value[bar.value.scrollSize] / props.ratio / thumb.value[bar.value.offset]
     })
 
-    const clickThumbHandler = (e: MouseEvent) => {
+    const clickThumbHandler = (e: any) => {
       // prevent click event of middle and right button
       e.stopPropagation()
       if (e.ctrlKey || [1, 2].includes(e.button)) {
@@ -63,7 +65,7 @@ export default defineComponent({
       barStore.value[bar.value.axis] = (e.currentTarget[bar.value.offset] - (e[bar.value.client] - (e.currentTarget as HTMLElement).getBoundingClientRect()[bar.value.direction]))
     }
 
-    const clickTrackHandler = (e: MouseEvent) => {
+    const clickTrackHandler = (e: any) => {
       const offset = Math.abs((e.target as HTMLElement).getBoundingClientRect()[bar.value.direction] - e[bar.value.client])
       const thumbHalf = (thumb.value[bar.value.offset] / 2)
       const thumbPositionPercentage = ((offset - thumbHalf) * 100 * offsetRatio.value / instance.value[bar.value.offset])
@@ -71,7 +73,7 @@ export default defineComponent({
       wrap.value[bar.value.scroll] = (thumbPositionPercentage * wrap.value[bar.value.scrollSize] / 100)
     }
 
-    const startDrag = (e: MouseEvent) => {
+    const startDrag = (e: any) => {
       e.stopImmediatePropagation()
       cursorDown.value = true
       on(document, 'mousemove', mouseMoveDocumentHandler)
@@ -80,10 +82,9 @@ export default defineComponent({
       document.onselectstart = () => false
     }
 
-    const mouseMoveDocumentHandler = (e: MouseEvent) => {
+    const mouseMoveDocumentHandler = (e: any) => {
       if (cursorDown.value === false) return
       const prevPage = barStore.value[bar.value.axis]
-
       if (!prevPage) return
 
       const offset = ((instance.value.getBoundingClientRect()[bar.value.direction] - e[bar.value.client]) * -1)

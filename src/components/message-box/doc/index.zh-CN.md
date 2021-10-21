@@ -36,8 +36,8 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -103,8 +103,8 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -180,8 +180,8 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -273,7 +273,7 @@
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -353,7 +353,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -421,8 +421,8 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -498,8 +498,8 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessageBox } from 'element-plus';
-  import { LxMessage } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -547,7 +547,7 @@
 如果单独引入 `MessageBox`：
 
 ```javascript
-import { LxMessageBox } from 'element-plus';
+import { LxMessageBox } from 'lixi-ui-vue';
 ```
 
 那么对应于上述四个全局方法的调用方法依次为：ElMessageBox, LxMessageBox.alert, LxMessageBox.confirm 和 LxMessageBox.prompt，调用参数与全局方法相同。

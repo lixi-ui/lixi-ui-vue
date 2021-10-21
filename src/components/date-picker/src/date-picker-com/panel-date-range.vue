@@ -237,12 +237,12 @@ export default defineComponent({
 
   emits: ['pick', 'set-picker-option', 'calendar-change'],
 
-  setup(props, ctx) {
+  setup(props:any, ctx) {
     const { t, lang } = useLocaleInject()
     const leftDate = ref(dayjs().locale(lang.value))
     const rightDate = ref(dayjs().locale(lang.value).add(1, 'month'))
-    const minDate = ref(null)
-    const maxDate = ref(null)
+    const minDate:any = ref(null)
+    const maxDate:any = ref(null)
     const dateUserInput = ref({
       min: null,
       max: null,

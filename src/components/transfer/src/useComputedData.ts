@@ -17,7 +17,7 @@ export const useComputedData = (props: TransferProps) => {
     if (props.targetOrder === 'original') {
       return props.data.filter(item => props.modelValue.includes(item[propsKey.value]))
     } else {
-      return props.modelValue.reduce((arr, cur) => {
+      return props.modelValue.reduce((arr:any, cur) => {
         const val = dataObj.value[cur]
         if (val) {
           arr.push(val)

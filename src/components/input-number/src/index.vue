@@ -128,12 +128,12 @@ export default defineComponent({
     },
   },
   emits: ['update:modelValue', 'change', 'input', 'blur', 'focus'],
-  setup(props, { emit }) {
+  setup(props:any, { emit }) {
     const ELEMENT = useGlobalConfig()
     const lxForm = inject(lxFormKey, {} as LxFormContext)
     const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
-    const input = ref(null)
+    const input:any = ref(null)
     const data = reactive<IData>({
       currentValue: props.modelValue,
       userInput: null,
@@ -244,7 +244,7 @@ export default defineComponent({
       return (data.userInput = value)
     }
     const handleInputChange = value => {
-      const newVal = value === '' ? undefined : Number(value)
+      const newVal:any = value === '' ? undefined : Number(value)
       if (!isNaN(newVal) || value === '') {
         setCurrentValue(newVal)
       }

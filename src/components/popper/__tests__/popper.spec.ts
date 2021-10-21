@@ -23,7 +23,7 @@ const BLUR_EVENT = 'blur'
 const DISPLAY_NONE = 'display: none'
 
 const Wrapped = (props: UnknownProps, { slots }) => {
-  return h('div', h(ElPopper, props, slots))
+  return h('div', h(LxPopper, props, slots))
 }
 
 // eslint-disable-next-line
@@ -85,7 +85,7 @@ describe('Popper.vue', () => {
     expect(wrapper.find(selector).exists()).toBe(false)
 
     /**
-     * Current layout of `ElPopper`
+     * Current layout of `LxPopper`
      *  --> Teleport
      *   --> mask
      *    --> transition
@@ -262,7 +262,7 @@ describe('Popper.vue', () => {
       await nextTick()
 
       const trigger = wrapper.find(`.${TEST_TRIGGER}`)
-      const popper = wrapper.findComponent(ElPopper)
+      const popper = wrapper.findComponent(LxPopper)
 
       expect(popper.vm.visibility).toBe(false)
       // for now triggering event on element via DOMWrapper is not available so we need to apply
@@ -291,7 +291,7 @@ describe('Popper.vue', () => {
       await nextTick()
 
       const trigger = wrapper.find(`.${TEST_TRIGGER}`)
-      const popper = wrapper.findComponent(ElPopper)
+      const popper = wrapper.findComponent(LxPopper)
 
       await trigger.trigger(CLICK_EVENT)
       expect(popper.vm.visibility).toBe(true)
@@ -312,7 +312,7 @@ describe('Popper.vue', () => {
       await nextTick()
 
       const trigger = wrapper.find(`.${TEST_TRIGGER}`)
-      const popper = wrapper.findComponent(ElPopper)
+      const popper = wrapper.findComponent(LxPopper)
       expect(popper.vm.visibility).toBe(false)
       // for now triggering event on element via DOMWrapper is not available so we need to apply
       // old way
@@ -342,7 +342,7 @@ describe('Popper.vue', () => {
       await nextTick()
 
       const trigger = wrapper.find(`.${TEST_TRIGGER}`)
-      const popper = wrapper.findComponent(ElPopper)
+      const popper = wrapper.findComponent(LxPopper)
       expect(popper.vm.visibility).toBe(false)
       // for now triggering event on element via DOMWrapper is not available so we need to apply
       // old way
@@ -381,7 +381,7 @@ describe('Popper.vue', () => {
       await nextTick()
 
       const trigger = wrapper.find(`.${TEST_TRIGGER}`)
-      const popper = wrapper.findComponent(ElPopper)
+      const popper = wrapper.findComponent(LxPopper)
       expect(popper.vm.visibility).toBe(false)
       // for now triggering event on element via DOMWrapper is not available so we need to apply
       // old way

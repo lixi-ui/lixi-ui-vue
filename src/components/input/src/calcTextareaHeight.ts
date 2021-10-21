@@ -1,4 +1,4 @@
-let hiddenTextarea: HTMLTextAreaElement
+let hiddenTextarea: HTMLTextAreaElement | null
 
 const HIDDEN_STYLE = `
   height:0 !important;
@@ -40,7 +40,7 @@ type TextAreaHeight = {
   minHeight?: string
 }
 
-function calculateNodeStyling(targetElement: Lxement): NodeStyle {
+function calculateNodeStyling(targetElement): NodeStyle {
   const style = window.getComputedStyle(targetElement)
 
   const boxSizing = style.getPropertyValue('box-sizing')

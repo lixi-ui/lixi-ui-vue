@@ -1,4 +1,4 @@
-export const rangeArr = n => {
+export const rangeArr = (n:any):any => {
   return Array.from(Array(n).keys())
 }
 

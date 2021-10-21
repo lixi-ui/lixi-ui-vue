@@ -32,7 +32,7 @@ const sortData = (data, states) => {
 }
 
 const doFlattenColumns = columns => {
-  const result = []
+  const result:any = []
   columns.forEach(column => {
     if (column.children) {
       // eslint-disable-next-line prefer-spread
@@ -46,15 +46,15 @@ const doFlattenColumns = columns => {
 
 function useWatcher<T>() {
   const instance = getCurrentInstance() as Table<T>
-  const rowKey: Ref<string> = ref(null)
+  const rowKey: any = ref(null)
   const data: Ref<T[]> = ref([])
   const _data: Ref<T[]> = ref([])
   const isComplex = ref(false)
   const _columns: Ref<TableColumnCtx<T>[]> = ref([])
   const originColumns: Ref<TableColumnCtx<T>[]> = ref([])
   const columns: Ref<TableColumnCtx<T>[]> = ref([])
-  const fixedColumns: Ref<TableColumnCtx<T>[]> = ref([])
-  const rightFixedColumns: Ref<TableColumnCtx<T>[]> = ref([])
+  const fixedColumns: any = ref([])
+  const rightFixedColumns: any = ref([])
   const leafColumns: Ref<TableColumnCtx<T>[]> = ref([])
   const fixedLeafColumns: Ref<TableColumnCtx<T>[]> = ref([])
   const rightFixedLeafColumns: Ref<TableColumnCtx<T>[]> = ref([])
@@ -65,13 +65,13 @@ function useWatcher<T>() {
   const selection: Ref<T[]> = ref([])
   const reserveSelection = ref(false)
   const selectOnIndeterminate = ref(false)
-  const selectable: Ref<(row: T, index: number) => boolean> = ref(null)
+  const selectable: any = ref(null)
   const filters: Ref<StoreFilter> = ref({})
-  const filteredData = ref(null)
-  const sortingColumn = ref(null)
+  const filteredData:any = ref(null)
+  const sortingColumn:any = ref(null)
   const sortProp = ref(null)
   const sortOrder = ref(null)
-  const hoverRow = ref(null)
+  const hoverRow:any = ref(null)
 
   watch(data, () => instance.state && scheduleLayout(false), {
     deep: true,
@@ -100,7 +100,7 @@ function useWatcher<T>() {
       fixedColumns.value.unshift(_columns.value[0])
     }
 
-    const notFixedColumns = _columns.value.filter(column => !column.fixed)
+    const notFixedColumns:any = _columns.value.filter(column => !column.fixed)
     originColumns.value = []
       .concat(fixedColumns.value)
       .concat(notFixedColumns)
@@ -172,7 +172,7 @@ function useWatcher<T>() {
 
   const toggleRowSelection = (
     row: T,
-    selected = undefined,
+    selected:any = undefined,
     emitChange = true,
   ) => {
     const changed = toggleRowStatus(selection.value, row, selected)
@@ -347,7 +347,7 @@ function useWatcher<T>() {
   }
 
   // 根据 filters 与 sort 去过滤 data
-  const execQuery = (ignore = undefined) => {
+  const execQuery = (ignore:any = undefined) => {
     if (!(ignore && ignore.filter)) {
       execFilter()
     }

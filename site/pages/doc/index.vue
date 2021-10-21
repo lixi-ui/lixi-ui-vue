@@ -38,13 +38,13 @@
 </template>
 
 <script>
-import Md from './index.md';
+// import Md from './index.md';
 import "./index.scss";
 import docRouter from './doc-router';
 
 export default {
   components:{
-    Md
+    // Md
   },
   data(){
     return {

@@ -1,6 +1,6 @@
 import { onMounted, onUpdated, onBeforeUnmount, watch, shallowRef } from 'vue'
-import { EVENT_CODE } from '@lixi/utils/aria.ts'
-import { on, off } from '@lixi/utils/dom.ts'
+import { EVENT_CODE } from '@lixi/utils/aria'
+import { on, off } from '@lixi/utils/dom'
 import TreeStore from './tree-store'
 
 import type { Ref } from 'vue'
@@ -10,8 +10,8 @@ interface UseKeydownOption {
    lx$: Ref<HTMLElement>
 }
 export function useKeydown({  lx$ }: UseKeydownOption, store: Ref<TreeStore>) {
-  const treeItems = shallowRef<Nullable<HTMLElement>[]>([])
-  const checkboxItems = shallowRef<Nullable<HTMLElement>[]>([])
+  const treeItems:any = shallowRef<Nullable<HTMLElement>[]>([])
+  const checkboxItems:any = shallowRef<Nullable<HTMLElement>[]>([])
 
   onMounted(() => {
     initTabIndex()
@@ -33,7 +33,7 @@ export function useKeydown({  lx$ }: UseKeydownOption, store: Ref<TreeStore>) {
     })
   })
 
-  const handleKeydown = (ev: KeyboardEvent): void => {
+  const handleKeydown = (ev: any): void => {
     const currentItem = ev.target as HTMLElement
     if (currentItem.className.indexOf('lx-tree-node') === -1) return
     const code = ev.code

@@ -12,14 +12,14 @@ import type { ComputedRef } from 'vue'
 import type { TableColumnCtx, TableColumn } from './defaults'
 
 function useRender<T>(
-  props: TableColumnCtx<T>,
+  props: any,
   slots,
   owner: ComputedRef<any>,
 ) {
   const instance = getCurrentInstance() as TableColumn<T>
   const columnId = ref('')
   const isSubColumn = ref(false)
-  const realAlign = ref<string>()
+  const realAlign:any = ref<string>()
   const realHeaderAlign = ref<string>()
   watchEffect(() => {
     realAlign.value = !!props.align ? 'is-' + props.align : null
@@ -115,7 +115,7 @@ function useRender<T>(
       originRenderCell = originRenderCell || defaultRenderCell
       // 对 renderCell 进行包装
       column.renderCell = data => {
-        let children = null
+        let children:any = null
         if (slots.default) {
           children = slots.default(data)
         } else {
@@ -139,7 +139,7 @@ function useRender<T>(
     }
     return column
   }
-  const getPropsData = (...propsKey: unknown[]) => {
+  const getPropsData = (...propsKey: any) => {
     return propsKey.reduce((prev, cur) => {
       if (Array.isArray(cur)) {
         cur.forEach(key => {
@@ -149,8 +149,9 @@ function useRender<T>(
       return prev
     }, {})
   }
-  const getColumnElIndex = (children, child) => {
-    return [].indexOf.call(children, child)
+  const getColumnElIndex = (children, child:any) => {
+    let arr:any = []
+    return arr.indexOf.call(children, child)
   }
 
   return {

@@ -23,9 +23,11 @@ export const on = function(
 
 /* istanbul ignore next */
 export const off = function(
-  element: HTMLElement | Document | Window,
+  // element: HTMLElement | Document | Window,
+  element: any,
   event: string,
-  handler: EventListenerOrEventListenerObject,
+  // handler: EventListenerOrEventListenerObject,
+  handler: any,
   useCapture = false,
 ): void {
   if (element && event && handler) {
@@ -39,7 +41,7 @@ export const once = function(
   event: string,
   fn: EventListener,
 ): void {
-  const listener = function(...args: unknown[]) {
+  const listener = function(...args: any) {
     if (fn) {
       fn.apply(this, args)
     }
@@ -61,7 +63,7 @@ export function hasClass(el: HTMLElement, cls: string): boolean {
 }
 
 /* istanbul ignore next */
-export function addClass(el: HTMLElement, cls: string): void {
+export function addClass(el: any, cls: string): void {
   if (!el) return
   let curClass = el.className
   const classes = (cls || '').split(' ')
@@ -82,7 +84,7 @@ export function addClass(el: HTMLElement, cls: string): void {
 }
 
 /* istanbul ignore next */
-export function removeClass(el: HTMLElement, cls: string): void {
+export function removeClass(el: any, cls: string): void {
   if (!el || !cls) return
   const classes = cls.split(' ')
   let curClass = ' ' + el.className + ' '
@@ -110,7 +112,7 @@ export function removeClass(el: HTMLElement, cls: string): void {
 export const getStyle = function(
   element: HTMLElement,
   styleName: string,
-): string {
+): any {
   if (isServer) return
   if (!element || !styleName) return null
   styleName = camelize(styleName)
@@ -120,7 +122,7 @@ export const getStyle = function(
   try {
     const style = element.style[styleName]
     if (style) return style
-    const computed = document.defaultView.getComputedStyle(element, '')
+    const computed = (document as any).defaultView.getComputedStyle(element, '')
     return computed ? computed[styleName] : ''
   } catch (e) {
     return element.style[styleName]
@@ -160,7 +162,8 @@ export function removeStyle(element: HTMLElement, style: CSSProperties | string)
 export const isScroll = (
   el: HTMLElement,
   isVertical?: Nullable<boolean>,
-): RegExpMatchArray => {
+// ): RegExpMatchArray => {
+): any => {
   if (isServer) return
   const determinedDirection = isVertical === null || isVertical === undefined
   const overflow = determinedDirection
@@ -175,7 +178,7 @@ export const isScroll = (
 export const getScrollContainer = (
   el: HTMLElement,
   isVertical?: Nullable<boolean>,
-): Window | HTMLElement => {
+): Window | HTMLElement | undefined => {
   if (isServer) return
 
   let parent: HTMLElement = el
@@ -198,8 +201,8 @@ export const isInContainer = (
   if (isServer || !el || !container) return false
 
   const elRect = el.getBoundingClientRect()
-  let containerRect: Partial<DOMRect>
-
+  // let containerRect: Partial<DOMRect>
+  let containerRect: any
   if (
     [window, document, document.documentElement, null, undefined].includes(
       container,

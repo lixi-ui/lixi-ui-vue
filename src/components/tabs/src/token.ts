@@ -13,7 +13,7 @@ export type ITabType = 'card' | 'border-card' | ''
 export type ITabPosition = 'top' | 'right' | 'bottom' | 'left'
 export type UpdatePaneStateCallback = (pane: Pane) => void
 
-export interface IElTabsProps {
+export interface ILxTabsProps {
   type: ITabType
   activeName: string
   closable: boolean
@@ -26,7 +26,7 @@ export interface IElTabsProps {
 }
 
 export interface RootTabs {
-  props: IElTabsProps
+  props: ILxTabsProps
   currentName: Ref<string>
 }
 

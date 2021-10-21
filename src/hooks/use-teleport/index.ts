@@ -1,7 +1,7 @@
 import { h, ref, Teleport, onUnmounted } from 'vue'
 import { NOOP } from '@vue/shared'
 import isServer from '@lixi/utils/isServer'
-import { createGlobalNode, removeGlobalNode } from '@lixi/utils/global-nodes.ts'
+import { createGlobalNode, removeGlobalNode } from '@lixi/utils/global-nodes'
 
 import type { VNode, Ref } from 'vue'
 
@@ -17,7 +17,7 @@ export default (contentRenderer: () => VNode, appendToBody: Ref<boolean>) => {
     }
   }
 
-  let $el: HTMLElement = null
+  let $el: HTMLElement | null = null
 
   const showTeleport = () => {
     isTeleportVisible.value = true

@@ -1,9 +1,9 @@
 import type { InjectionKey } from 'vue'
 
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 
-export interface ElButtonGruopContext {
+export interface LxButtonGruopContext {
   size?: ComponentSize
 }
 
-export const lxButtonGroupKey: InjectionKey<ElButtonGruopContext> = Symbol()
+export const lxButtonGroupKey: InjectionKey<LxButtonGruopContext> = Symbol()

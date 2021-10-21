@@ -63,7 +63,7 @@ export default defineComponent({
     stretch: Boolean,
   },
   setup() {
-    const rootTabs = inject<RootTabs>('rootTabs')
+    const rootTabs:any = inject<RootTabs>('rootTabs')
     if (!rootTabs) {
       throwError('[ElTabNav]', `ElTabNav must be nested inside LxTabs`)
     }
@@ -73,9 +73,9 @@ export default defineComponent({
     const isFocus = ref(false)
     const focusable = ref(true)
 
-    const navScroll$ = ref<RefElement>(null)
-    const nav$ = ref<RefElement>(null)
-    const  lx$ = ref<RefElement>(null)
+    const navScroll$:any = ref<RefElement>(null)
+    const nav$:any = ref<RefElement>(null)
+    const  lx$:any = ref<RefElement>(null)
 
     const sizeName = computed(() => {
       return ['top', 'bottom'].includes(rootTabs.props.tabPosition)

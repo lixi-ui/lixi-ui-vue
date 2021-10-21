@@ -1,7 +1,7 @@
 import { defineComponent, h, inject } from 'vue'
 import { addUnit } from '@lixi/utils/util'
 import { getNormalizedProps } from '@lixi/utils/vnode'
-import { elDescriptionsKey } from './token'
+import { lxDescriptionsKey } from './token'
 
 import type { VNode } from 'vue'
 import type { IDescriptionsInject, IDescriptionsItemInject } from './descriptions.type'
@@ -20,7 +20,7 @@ export default defineComponent({
     },
   },
   setup() {
-    const descriptions = inject(elDescriptionsKey, {} as IDescriptionsInject)
+    const descriptions = inject(lxDescriptionsKey, {} as IDescriptionsInject)
 
     return {
       descriptions,

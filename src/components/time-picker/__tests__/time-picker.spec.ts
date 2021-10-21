@@ -500,8 +500,8 @@ describe('TimePicker(range)', () => {
     await nextTick()
 
     expect((
-      (wrapper.findComponent(Picker).vm as any).elPopperOptions),
-    ).toEqual(ElPopperOptions)
+      (wrapper.findComponent(Picker).vm as any).LxPopperOptions),
+    ).toEqual(LxPopperOptions)
   })
 })
 

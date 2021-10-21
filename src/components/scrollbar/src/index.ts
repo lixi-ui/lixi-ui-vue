@@ -12,4 +12,4 @@ const _Scrollbar = Scrollbar as SFCWithInstall<typeof Scrollbar>
 export default _Scrollbar
 export const LxScrollbar = _Scrollbar
 
-export * from './util.ts'
+export * from './util'

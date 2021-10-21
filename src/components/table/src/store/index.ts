@@ -36,7 +36,7 @@ function sortColumn<T>(array: TableColumnCtx<T>[]) {
 }
 
 function useStore<T>() {
-  const instance = getCurrentInstance() as Table<T>
+  const instance:any = getCurrentInstance() as Table<T>
   const watcher = useWatcher<T>()
   type StoreStates = typeof watcher.states
   const mutations = {
@@ -71,7 +71,7 @@ function useStore<T>() {
       parent: TableColumnCtx<T>,
     ) {
       const array = unref(states._columns)
-      let newColumns = []
+      let newColumns:any = []
       if (!parent) {
         array.push(column)
         newColumns = array
@@ -97,7 +97,7 @@ function useStore<T>() {
     removeColumn(
       states: StoreStates,
       column: TableColumnCtx<T>,
-      parent: TableColumnCtx<T>,
+      parent: any,
     ) {
       const array = unref(states._columns) || []
       if (parent) {
@@ -188,7 +188,7 @@ function useStore<T>() {
     },
   }
   const commit = function(name: keyof typeof mutations, ...args) {
-    const mutations = instance.store.mutations
+    const mutations:any = instance.store.mutations
     if (mutations[name]) {
       mutations[name].apply(instance, [instance.store.states].concat(args))
     } else {

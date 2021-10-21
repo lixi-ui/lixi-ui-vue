@@ -1,13 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
-var WebpackDevServer = require("webpack-dev-server");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
 
-console.log('ĺŻĺ¨')
 
 var config = {
-  mode:"development",
+  mode:"production",
   entry: ['./site/index.js'],
   output: {
     path: path.join(__dirname, "../dist"),
@@ -16,8 +14,8 @@ var config = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
-      // vue: `vue/dist/${vueBundle}`,
-      'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
+      // // vue: `vue/dist/${vueBundle}`,
+      // 'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
       '@lixi': path.join(__dirname , '../src'),
       '@site': path.join(__dirname , '../site')
     },
@@ -122,12 +120,19 @@ var config = {
       filename: './index.html',
       favicon: './public/lixi-logo.png'
     }),
-    new VueLoaderPlugin()
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: JSON.stringify(true),
+      __VUE_PROD_DEVTOOLS__: JSON.stringify(false),
+    }),
+    new VueLoaderPlugin(),
+    // new BundleAnalyzerPlugin()
   ]
 }
 
-var server = new WebpackDevServer(webpack(config),{
-  port: 8099
+webpack(config, function(err) {
+  if(err){
+    console.log(err)
+  } else {
+    console.log('build ok')
+  }
 })
-
-server.start()

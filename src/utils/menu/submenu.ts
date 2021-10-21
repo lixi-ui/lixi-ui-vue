@@ -2,7 +2,7 @@ import { EVENT_CODE, triggerEvent } from '../aria'
 import MenuItem from './menu-item'
 
 class SubMenu {
-  public subMenuItems: NodeList
+  public subMenuItems: any
   public subIndex = 0
   constructor(public parent: MenuItem, public domNode: ParentNode) {
     this.subIndex = 0
@@ -27,7 +27,7 @@ class SubMenu {
   addListeners(): void {
     const parentNode = this.parent.domNode
     Array.prototype.forEach.call(this.subMenuItems, (el: Element) => {
-      el.addEventListener('keydown', (event: KeyboardEvent) => {
+      el.addEventListener('keydown', (event: any) => {
         let prevDef = false
         switch (event.code) {
           case EVENT_CODE.down: {

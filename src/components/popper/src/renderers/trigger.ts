@@ -12,8 +12,8 @@ interface IRenderTriggerProps extends Record<string, unknown> {
   onMouseleave?: EventHandler
   onFocus?: EventHandler
 }
-
-export default function renderTrigger(trigger: VNode[], extraProps: IRenderTriggerProps) {
+// VNode[] | undefined  IRenderTriggerProps
+export default function renderTrigger(trigger: any, extraProps: any):any {
   const firstElement = getFirstValidNode(trigger, 1)
   if (!firstElement) throwError('renderTrigger', 'trigger expects single rooted node')
   return cloneVNode(firstElement, extraProps, true)

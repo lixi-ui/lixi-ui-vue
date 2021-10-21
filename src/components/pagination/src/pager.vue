@@ -71,7 +71,7 @@ export default defineComponent({
     disabled: Boolean,
   },
   emits: ['change'],
-  setup(props, { emit }) {
+  setup(props:any, { emit }) {
     const showPrevMore = ref(false)
     const showNextMore = ref(false)
     const quicknextIconClass = ref('lx-icon-more')
@@ -92,7 +92,7 @@ export default defineComponent({
           showNextMore = true
         }
       }
-      const array = []
+      const array:any = []
       if (showPrevMore && !showNextMore) {
         const startPage = pageCount - (pagerCount - 2)
         for (let i = startPage; i < pageCount; i++) {
@@ -164,8 +164,8 @@ export default defineComponent({
         return
       }
 
-      let newPage = Number(target.textContent)
-      const pageCount = props.pageCount
+      let newPage:any = Number(target.textContent)
+      const pageCount:any = props.pageCount
       const currentPage = props.currentPage
       const pagerCountOffset = props.pagerCount - 2
       if (target.className.includes('more')) {

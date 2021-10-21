@@ -269,7 +269,7 @@ Al hacer clic en cada elemento desplegable se detona un evento cuyo parámetro e
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {

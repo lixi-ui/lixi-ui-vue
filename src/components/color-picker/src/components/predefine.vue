@@ -31,7 +31,8 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const { currentColor } = useOptions()
+    const _useOptions:any = useOptions()
+    const currentColor:any = _useOptions.currentColor
     //data
     const rgbaColors = ref(parseColors(props.colors, props.color))
 

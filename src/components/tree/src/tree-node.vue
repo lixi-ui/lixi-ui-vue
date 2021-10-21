@@ -117,11 +117,11 @@ export default defineComponent({
   emits: ['node-expand'],
   setup(props, ctx) {
     const { broadcastExpanded } = useNodeExpandEventBroadcast(props)
-    const tree = inject<RootTreeType>('RootTree')
+    const tree:any = inject<RootTreeType>('RootTree')
     const expanded = ref(false)
     const childNodeRendered = ref(false)
-    const oldChecked = ref<boolean>(null)
-    const oldIndeterminate = ref<boolean>(null)
+    const oldChecked:any = ref(null)
+    const oldIndeterminate:any = ref(null)
     const node$ = ref<Nullable<HTMLElement>>(null)
     const { emitter } = useDragNodeEmitter()
     const instance = getCurrentInstance()

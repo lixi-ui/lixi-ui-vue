@@ -63,7 +63,7 @@ export default defineComponent({
     tabindex: [String, Number],
   },
   emits,
-  setup(props, ctx) {
+  setup(props:any, ctx) {
     if (process.env.NODE_ENV !== 'production' && props.visible && !ctx.slots.reference) {
       warn(NAME, `
         You cannot init popover without given reference
@@ -124,7 +124,7 @@ export default defineComponent({
 
     // when user uses popover directively, trigger will be null so that we only
     // render a popper window for displaying contents
-    const _trigger = trigger ? renderTrigger(trigger, {
+    const _trigger:any = trigger ? renderTrigger(trigger, {
       ariaDescribedby: popperId,
       ref: 'triggerRef',
       tabindex,

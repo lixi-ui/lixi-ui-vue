@@ -143,11 +143,11 @@ describe('menu', () => {
         },
       },
     )
-    const elSubMenu = wrapper.findComponent({ name: 'LxSubMenu' })
+    const lxSubMenu = wrapper.findComponent({ name: 'LxSubMenu' })
     const button = wrapper.find('button')
     button.trigger('click')
     await nextTick()
-    const instance = elSubMenu.vm as any
+    const instance = lxSubMenu.vm as any
     expect(instance.opened).toBeTruthy()
   })
   test('hover-background-color', async () => {

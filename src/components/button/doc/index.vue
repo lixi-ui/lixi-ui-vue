@@ -1,6 +1,5 @@
 <template>
   <div class="demo-block demo-button">
-    <button @click="message">button</button>
     <Md/>
   </div>
 </template>
@@ -9,7 +8,7 @@
   import Md from './index.zh-CN.md'
 
   export default {
-    name : 'ButtonMd',
+    name : 'ButtonMd2',
     components: {
       Md
     },

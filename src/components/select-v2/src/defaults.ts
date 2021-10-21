@@ -3,7 +3,7 @@ import { isValidComponentSize } from '@lixi/utils/validators'
 import type { PropType } from 'vue'
 import type { ComponentSize } from '@lixi/utils/types'
 import type { OptionType } from './select.types'
-import type { Options } from '@lixi/components/popper'
+import type { Options } from '@lixi/components/popper/src'
 
 export const SelectProps = {
   allowCreate: Boolean,

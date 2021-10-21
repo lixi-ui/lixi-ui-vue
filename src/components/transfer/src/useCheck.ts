@@ -23,11 +23,11 @@ export const useCheckProps = {
 }
 
 export const useCheck = (
-  props: ExtractPropTypes<typeof useCheckProps>,
+  props: any,
   panelState: TransferPanelState,
 ) => {
 
-  const { emit } = getCurrentInstance()
+  const { emit }:any = getCurrentInstance()
 
   const labelProp = computed(() => props.props.label || 'label')
 
@@ -36,7 +36,7 @@ export const useCheck = (
   const disabledProp = computed(() => props.props.disabled || 'disabled')
 
   const filteredData = computed(() => {
-    return props.data.filter(item => {
+    return props.data.filter((item:any) => {
       if (typeof props.filterMethod === 'function') {
         return props.filterMethod(panelState.query, item)
       } else {
@@ -47,13 +47,13 @@ export const useCheck = (
   })
 
   const checkableData = computed(() => {
-    return filteredData.value.filter(item => !item[disabledProp.value])
+    return filteredData.value.filter((item:any) => !item[disabledProp.value])
   })
 
   const checkedSummary = computed(() => {
     const checkedLength = panelState.checked.length
     const dataLength = props.data.length
-    const { noChecked, hasChecked } = props.format
+    const { noChecked, hasChecked }:any = props.format
 
     if (noChecked && hasChecked) {
       return checkedLength > 0
@@ -73,12 +73,12 @@ export const useCheck = (
 
 
   const updateAllChecked = () => {
-    const checkableDataKeys = checkableData.value.map(item => item[keyProp.value])
+    const checkableDataKeys = checkableData.value.map((item:any) => item[keyProp.value])
     panelState.allChecked = checkableDataKeys.length > 0 && checkableDataKeys.every(item => panelState.checked.includes(item))
   }
 
   const handleAllCheckedChange = (value: Key[]) => {
-    panelState.checked = value ? checkableData.value.map(item => item[keyProp.value]) : []
+    panelState.checked = value ? checkableData.value.map((item:any) => item[keyProp.value]) : []
   }
 
   watch(() => panelState.checked, (val, oldVal) => {
@@ -101,8 +101,8 @@ export const useCheck = (
 
 
   watch(() => props.data, () => {
-    const checked = []
-    const filteredDataKeys = filteredData.value.map(item => item[keyProp.value])
+    const checked:any = []
+    const filteredDataKeys = filteredData.value.map((item:any) => item[keyProp.value])
     panelState.checked.forEach(item => {
       if (filteredDataKeys.includes(item)) {
         checked.push(item)
@@ -112,11 +112,11 @@ export const useCheck = (
     panelState.checked = checked
   })
 
-  watch(() => props.defaultChecked, (val, oldVal) => {
+  watch(() => props.defaultChecked, (val:any, oldVal) => {
     if (oldVal && val.length === oldVal.length && val.every(item => oldVal.includes(item))) return
 
-    const checked = []
-    const checkableDataKeys = checkableData.value.map(item => item[keyProp.value])
+    const checked:any = []
+    const checkableDataKeys = checkableData.value.map((item:any) => item[keyProp.value])
 
     val.forEach(item => {
       if (checkableDataKeys.includes(item)) {

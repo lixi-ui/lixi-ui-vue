@@ -59,15 +59,16 @@ export default defineComponent({
       isDisabled,
       select,
       hoverItem,
-    } = useOption(props, states)
+    }:any = useOption(props, states)
 
     const {
       visible,
       hover,
     } = toRefs(states)
 
-    const vm = getCurrentInstance().proxy
-    const key = (vm as unknown as SelectOptionProxy).value
+    const _instance:any = getCurrentInstance()
+    const vm:any = _instance.proxy
+    const key = (vm as any).value
     select.onOptionCreate(vm as unknown as SelectOptionProxy)
 
     onBeforeUnmount(() => {

@@ -6,7 +6,7 @@ export default function(): number {
   if (isServer) return 0
   if (scrollBarWidth !== undefined) return scrollBarWidth
 
-  const outer = document.createElement('div')
+  const outer:any = document.createElement('div')
   outer.className = 'lx-scrollbar__wrap'
   outer.style.visibility = 'hidden'
   outer.style.width = '100px'

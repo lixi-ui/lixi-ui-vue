@@ -6,7 +6,7 @@ import type {
 
 import type { Nullable } from '@lixi/utils/types'
 
-export interface IElDropdownInstance {
+export interface ILxDropdownInstance {
   instance?: ComponentInternalInstance
   dropdownSize?: ComputedRef<string>
   visible?: Ref<boolean>

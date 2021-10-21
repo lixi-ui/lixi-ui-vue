@@ -18,7 +18,7 @@ import OptionItem from './option-item.vue'
 
 import { selectV2InjectionKey } from './token'
 
-import type { ItemProps } from '@lixi/components/virtual-list'
+import type { ItemProps } from '@lixi/components/virtual-list/src'
 import type { OptionItemProps, Option } from './select.types'
 
 export default defineComponent({
@@ -30,10 +30,10 @@ export default defineComponent({
     width: Number,
   },
   setup(props) {
-    const select = inject(selectV2InjectionKey)
+    const select:any = inject(selectV2InjectionKey)
     const cachedHeights = ref<Array<number>>([])
 
-    const listRef = ref(null)
+    const listRef:any = ref(null)
 
     const isSized = computed(() => isUndefined(select.props.estimatedOptionHeight))
     const listProps = computed(() => {
@@ -50,7 +50,7 @@ export default defineComponent({
       }
     })
 
-    const contains = (arr = [], target: any) => {
+    const contains = (arr:any = [], target: any) => {
       const {
         props: {
           valueKey,

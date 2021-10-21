@@ -46,7 +46,7 @@ export default defineComponent({
 
   emits: [UPDATE_MODEL_EVENT, 'change'],
 
-  setup(props, ctx) {
+  setup(props:any, ctx) {
     const { lxFormItem, lxFormItemSize, ELEMENT } = useCheckboxGroup()
     const checkboxGroupSize = computed(() => props.size || lxFormItemSize.value || ELEMENT.size)
 

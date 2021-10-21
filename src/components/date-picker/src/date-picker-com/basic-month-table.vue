@@ -65,10 +65,10 @@ export default defineComponent({
 
   emits: ['changerange', 'pick', 'select'],
 
-  setup(props, ctx) {
+  setup(props:any, ctx) {
     const { t, lang } = useLocaleInject()
     const months = ref(props.date.locale('en').localeData().monthsShort().map(_=>_.toLowerCase()))
-    const tableRows = ref([[], [], []])
+    const tableRows:any = ref([[], [], []])
     const lastRow = ref(null)
     const lastColumn = ref(null)
     const rows = computed(() => {

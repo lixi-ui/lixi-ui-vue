@@ -153,7 +153,7 @@ export default defineComponent({
     return
   },
   render() {
-    let children = []
+    let children:any = []
     try {
       const renderDefault = this.$slots.default?.({
         row: {},

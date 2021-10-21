@@ -52,8 +52,8 @@ const parseTime = (time: string): null | Time => {
   return null
 }
 const compareTime = (time1: string, time2: string): number => {
-  const value1 = parseTime(time1)
-  const value2 = parseTime(time2)
+  const value1:any = parseTime(time1)
+  const value2:any = parseTime(time2)
   const minutes1 = value1.minutes + value1.hours * 60
   const minutes2 = value2.minutes + value2.hours * 60
   if (minutes1 === minutes2) {
@@ -69,8 +69,8 @@ const formatTime = (time: Time): string => {
   )
 }
 const nextTime = (time: string, step: string): string => {
-  const timeValue = parseTime(time)
-  const stepValue = parseTime(step)
+  const timeValue:any = parseTime(time)
+  const stepValue:any = parseTime(step)
   const next = {
     hours: timeValue.hours,
     minutes: timeValue.minutes,
@@ -149,10 +149,10 @@ export default defineComponent({
   emits: ['change', 'blur', 'focus', 'update:modelValue'],
   setup(props) {
     // computed
-    const select = ref(null)
+    const select:any = ref(null)
     const value = computed(() => props.modelValue)
     const items = computed(() => {
-      const result = []
+      const result:any = []
       if (props.start && props.end && props.step) {
         let current = props.start
         while (compareTime(current, props.end) <= 0) {

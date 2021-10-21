@@ -11,7 +11,7 @@ import type { TableHeader } from './table-header'
 import type TableLayout from './table-layout'
 import type { Table } from './table/defaults'
 
-function useLayoutObserver<T>(root: Table<T>) {
+function useLayoutObserver<T>(root: any) {
   const instance = getCurrentInstance() as TableHeader
   onBeforeMount(() => {
     tableLayout.value.addObserver(instance)

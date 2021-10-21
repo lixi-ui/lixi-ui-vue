@@ -1,4 +1,4 @@
-import { getCurrentInstance } from 'vue'
+import { getCurrentInstance, ComponentPublicInstance } from 'vue'
 
 import {
   isObject,
@@ -111,7 +111,7 @@ export const autoprefixer = function(
 export const kebabCase = hyphenate
 
 export const refAttacher =
-  <T extends (HTMLElement | ComponentPublicInstance)>(ref: Ref<T>) => {
+  <T extends (HTMLElement | ComponentPublicInstance)>(ref) => {
     return (val: T) => {
       ref.value = val
     }
@@ -141,7 +141,7 @@ export function rafThrottle(fn){
     if (locked) return
     locked = true
     window.requestAnimationFrame(() => {
-      fn.apply(this, args)
+      // fn.apply(this, args)
       locked = false
     })
   }
@@ -173,7 +173,7 @@ export function isUndefined(val){
 export { isVNode } from 'vue'
 
 export function useGlobalConfig() {
-  const vm = getCurrentInstance()
+  const vm: any = getCurrentInstance()
   if ('$ELEMENT' in vm.proxy) {
     return vm.proxy.$ELEMENT
   }
@@ -229,7 +229,7 @@ export function addUnit(value: string | number) {
     return value + 'px'
   }
   if (process.env.NODE_ENV === 'development') {
-    warn(SCOPE, 'binding value must be a string or number')
+    // warn(SCOPE, 'binding value must be a string or number')
   }
   return ''
 }

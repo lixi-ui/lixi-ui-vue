@@ -31,7 +31,7 @@ export default defineComponent({
     lazy: Boolean,
   },
   setup(props) {
-    const index = ref<string>(null)
+    const index:any = ref(null)
     const loaded = ref(false)
     const rootTabs = inject<RootTabs>('rootTabs')
     const updatePaneState = inject<UpdatePaneStateCallback>('updatePaneState')
@@ -60,7 +60,7 @@ export default defineComponent({
       if (val) loaded.value = true
     })
 
-    const instance = getCurrentInstance()
+    const instance:any = getCurrentInstance()
     updatePaneState({
       uid: instance.uid,
       instance,

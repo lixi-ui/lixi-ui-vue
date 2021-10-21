@@ -38,7 +38,7 @@ S'affiche en haut de la page et disparaît après trois secondes.
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -111,7 +111,7 @@ Utilisé pour montrer un retour d'activités Success, Warning, Message ou Error.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -203,7 +203,7 @@ Un bouton de fermeture peut être ajouté.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -278,7 +278,7 @@ Utilisez l'attribut `center` pour centrer le texte.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -328,7 +328,7 @@ Utilisez l'attribut `center` pour centrer le texte.
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxMessage } from 'element-plus';
+  import { LxMessage } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -362,7 +362,7 @@ Lixi ajoute une méthode `$message` à `app.config.globalProperties`. Vous pouve
 ### Import à la demande
 
 ```javascript
-import { LxMessage } from 'element-plus';
+import { LxMessage } from 'lixi-ui-vue';
 ```
 
 Dans ce cas il faudra appeler `ElMessage(options)`. Les méthodes des différents types sont aussi ajoutées, e.g. `ElMessage.success(options)`. Vous pouvez appeler `ElMessage.closeAll()` pour fermer manuellement toutes les instances.

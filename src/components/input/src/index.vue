@@ -230,20 +230,20 @@ export default defineComponent({
   emits: [UPDATE_MODEL_EVENT, 'input', 'change', 'focus', 'blur', 'clear',
     'mouseleave', 'mouseenter', 'keydown'],
 
-  setup(props, ctx) {
-    const instance = getCurrentInstance()
+  setup(props:any, ctx) {
+    const instance:any = getCurrentInstance()
     const attrs = useAttrs()
     const $ELEMENT = useGlobalConfig()
 
     const lxForm = inject(lxFormKey, {} as LxFormContext)
     const lxFormItem = inject(lxFormItemKey, {} as LxFormItemContext)
 
-    const input = ref(null)
-    const textarea = ref (null)
-    const focused = ref(false)
-    const hovering = ref(false)
-    const isComposing = ref(false)
-    const passwordVisible = ref(false)
+    const input:any = ref(null)
+    const textarea:any = ref (null)
+    const focused:any = ref(false)
+    const hovering:any = ref(false)
+    const isComposing:any = ref(false)
+    const passwordVisible:any = ref(false)
     const _textareaCalcStyle = shallowRef(props.inputStyle)
 
     const inputOrTextarea = computed(() => input.value || textarea.value)

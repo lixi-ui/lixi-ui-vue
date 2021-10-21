@@ -32,8 +32,8 @@ export default defineComponent({
     },
   },
   emits: [UPDATE_MODEL_EVENT, CHANGE_EVENT],
-  setup(props, { emit }) {
-    const activeNames = ref([].concat(props.modelValue))
+  setup(props:any, { emit }) {
+    const activeNames:any = ref([].concat(props.modelValue))
     const collapseMitt: Emitter = mitt()
 
     const setActiveNames = _activeNames => {

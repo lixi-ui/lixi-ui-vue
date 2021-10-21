@@ -46,7 +46,7 @@
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -145,7 +145,7 @@ success, warning, info, errorの4種類を提供しています。
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -262,7 +262,7 @@ success, warning, info, errorの4種類を提供しています。
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -342,7 +342,7 @@ success, warning, info, errorの4種類を提供しています。
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -396,7 +396,7 @@ success, warning, info, errorの4種類を提供しています。
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -455,7 +455,7 @@ success, warning, info, errorの4種類を提供しています。
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -486,7 +486,7 @@ success, warning, info, errorの4種類を提供しています。
 ### ローカルインポート
 
 ```javascript
-import { LxNotification } from 'element-plus';
+import { LxNotification } from 'lixi-ui-vue';
 ```
 
 この場合は `ElNotification(options)` を呼び出す必要があります。また、`ElNotification.success(options)`のように、異なるタイプのメソッドも登録しています。すべてのインスタンスを手動で閉じるには、`ElNotification.closeAll()` を呼び出すことができます。

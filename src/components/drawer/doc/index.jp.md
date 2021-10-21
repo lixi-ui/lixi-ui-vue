@@ -56,7 +56,7 @@ Since v-model is natively supported for all components, `visible.sync` has been 
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -245,7 +245,7 @@ export default {
 <setup>
 
 import {defineComponent, reactive, toRefs } from 'vue';
-import { LxMessageBox } from 'element-plus';
+import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -378,7 +378,7 @@ import { LxMessageBox } from 'element-plus';
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {

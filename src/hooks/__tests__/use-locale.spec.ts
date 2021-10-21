@@ -8,7 +8,7 @@ const TestComp = {
   setup() {
     const { t } = inject(LocaleInjectionKey)
     return () => {
-      return h('div', { class: 'locale-manifest' }, t('el.popconfirm.confirmButtonText'))
+      return h('div', { class: 'locale-manifest' }, t('lx.popconfirm.confirmButtonText'))
     }
   },
 }

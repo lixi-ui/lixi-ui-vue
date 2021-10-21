@@ -17,7 +17,7 @@ export function useDragNodeHandler({ props, ctx,  lx$, dropIndicator$, store }) 
   const emitter = mitt()
   provide('DragNodeEmitter', emitter)
 
-  const dragState = ref({
+  const dragState:any = ref({
     showDropIndicator: false,
     draggingNode: null,
     dropNode: null,
@@ -25,7 +25,7 @@ export function useDragNodeHandler({ props, ctx,  lx$, dropIndicator$, store }) 
     dropType: null,
   })
 
-  emitter.on('tree-node-drag-start', ({ event, treeNode }: DragOptions) => {
+  emitter.on('tree-node-drag-start', ({ event, treeNode }: any) => {
     if (typeof props.allowDrag === 'function' && !props.allowDrag(treeNode.node)) {
       event.preventDefault()
       return false
@@ -42,13 +42,13 @@ export function useDragNodeHandler({ props, ctx,  lx$, dropIndicator$, store }) 
     ctx.emit('node-drag-start', treeNode.node, event)
   })
 
-  emitter.on('tree-node-drag-over', ({ event, treeNode }: DragOptions) => {
-    const dropNode = treeNode
-    const oldDropNode = dragState.value.dropNode
+  emitter.on('tree-node-drag-over', ({ event, treeNode }: any) => {
+    const dropNode:any = treeNode
+    const oldDropNode:any = dragState.value.dropNode
     if (oldDropNode && oldDropNode !== dropNode) {
       removeClass(oldDropNode.$el, 'is-drop-inner')
     }
-    const draggingNode = dragState.value.draggingNode
+    const draggingNode:any = dragState.value.draggingNode
     if (!draggingNode || !dropNode) return
 
     let dropPrev = true
@@ -128,8 +128,8 @@ export function useDragNodeHandler({ props, ctx,  lx$, dropIndicator$, store }) 
     ctx.emit('node-drag-over', draggingNode.node, dropNode.node, event)
   })
 
-  emitter.on('tree-node-drag-end', (event: DragEvent) => {
-    const { draggingNode, dropType, dropNode } = dragState.value
+  emitter.on('tree-node-drag-end', (event: any) => {
+    const { draggingNode, dropType, dropNode }:any = dragState.value
     event.preventDefault()
     event.dataTransfer.dropEffect = 'move'
 
@@ -175,7 +175,7 @@ interface DragNodeEmitter {
   emitter: Emitter
 }
 export function useDragNodeEmitter(): DragNodeEmitter {
-  const emitter = inject<Emitter>('DragNodeEmitter')
+  const emitter:any = inject<Emitter>('DragNodeEmitter')
   return {
     emitter,
   }

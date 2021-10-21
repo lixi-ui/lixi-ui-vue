@@ -56,7 +56,7 @@ Llamada de un drawer temporal, desde varias direcciones
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -245,7 +245,7 @@ export default {
 <setup>
 
 import {defineComponent, reactive, toRefs } from 'vue';
-import { LxMessageBox } from 'element-plus';
+import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -378,7 +378,7 @@ También puede tener varias capas de `Drawer` al igual que con `Dialog`.
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {

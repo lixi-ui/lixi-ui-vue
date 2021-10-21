@@ -10,7 +10,8 @@ export default function(
 
   if (throttle === 0) return loading
   const throttled = ref(false)
-  let timeoutHandle: TimeoutHandle = 0
+  // let timeoutHandle: TimeoutHandle = 0
+  let timeoutHandle: any = 0
 
   const dispatchThrottling = () => {
     if (timeoutHandle) {

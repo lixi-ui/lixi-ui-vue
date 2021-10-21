@@ -2,14 +2,14 @@ import Loading from './index'
 
 import type { DirectiveBinding } from 'vue'
 
-const createInstance = (el: HTMLElement, binding: DirectiveBinding) => {
-  const textExr = el.getAttribute('element-loading-text')
-  const spinnerExr = el.getAttribute('element-loading-spinner')
-  const svgExr = el.getAttribute('element-loading-svg')
-  const svgViewBoxExr = el.getAttribute('element-loading-svg-view-box')
-  const backgroundExr = el.getAttribute('element-loading-background')
-  const customClassExr = el.getAttribute('element-loading-custom-class')
-  const vm = binding.instance
+const createInstance = (el: HTMLElement, binding: any) => {
+  const textExr:any = el.getAttribute('element-loading-text')
+  const spinnerExr:any = el.getAttribute('element-loading-spinner')
+  const svgExr:any = el.getAttribute('element-loading-svg')
+  const svgViewBoxExr:any = el.getAttribute('element-loading-svg-view-box')
+  const backgroundExr:any = el.getAttribute('element-loading-background')
+  const customClassExr:any = el.getAttribute('element-loading-custom-class')
+  const vm:any = binding.instance
   ;(el as any).instance = Loading({
     text: vm && vm[textExr] || textExr,
     svg: vm && vm[svgExr] || svgExr,

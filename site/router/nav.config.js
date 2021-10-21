@@ -1,4 +1,4 @@
-import doc from '../pages/doc/doc-router'
+// import doc from '../pages/doc/doc-router'
 
 var nav = {
   "zh": [

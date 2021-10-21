@@ -52,7 +52,7 @@ export default defineComponent({
     }
   },
   render() {
-    let sums = []
+    let sums:any = []
     if (this.summaryMethod) {
       sums = this.summaryMethod({
         columns: this.columns,
@@ -67,7 +67,7 @@ export default defineComponent({
         const values = this.store.states.data.value.map(item =>
           Number(item[column.property]),
         )
-        const precisions = []
+        const precisions:any = []
         let notNumber = true
         values.forEach(value => {
           if (!isNaN(value)) {

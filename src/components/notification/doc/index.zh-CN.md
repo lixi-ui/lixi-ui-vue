@@ -47,7 +47,7 @@
 <setup>
 
   import { defineComponent, h } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -150,7 +150,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -267,7 +267,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -347,7 +347,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -401,7 +401,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -460,7 +460,7 @@
 <setup>
 
   import { defineComponent } from 'vue';
-  import { LxNotification } from 'element-plus';
+  import { LxNotification } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -491,7 +491,7 @@ Lixi 为 ``app.config.globalProperties`` 添加了全局方法 `$notify`。因�
 ### 单独引用
 
 ```javascript
-import { LxNotification } from 'element-plus';
+import { LxNotification } from 'lixi-ui-vue';
 ```
 
 此时调用方法为 `ElNotification(options)`。我们也为每个 type 定义了各自的方法，如 `ElNotification.success(options)`。并且可以调用 `ElNotification.closeAll()` 手动关闭所有实例。

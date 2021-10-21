@@ -50,9 +50,10 @@ export default defineComponent({
     disabled: Boolean,
   },
   emits: ['page-size-change'],
-  setup(props, { emit }) {
+  setup(props:any, { emit }) {
     const { t } = useLocaleInject()
-    const { pagination } = usePagination()
+    const _usePagination:any = usePagination()
+    const pagination:any = _usePagination.pagination
     const innerPageSize = ref<Nullable<number>>(props.pageSize)
 
     watch(() => props.pageSizes, (newVal, oldVal) => {

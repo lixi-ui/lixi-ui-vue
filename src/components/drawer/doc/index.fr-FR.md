@@ -55,7 +55,7 @@ Callout a temporary drawer, from multiple direction
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -244,7 +244,7 @@ export default {
 <setup>
 
 import {defineComponent, reactive, toRefs } from 'vue';
-import { LxMessageBox } from 'element-plus';
+import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -377,7 +377,7 @@ You can also have multiple layer of `Drawer` just like `Dialog`.
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxMessageBox } from 'element-plus';
+  import { LxMessageBox } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {

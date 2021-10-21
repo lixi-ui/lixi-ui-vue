@@ -69,16 +69,16 @@ export default defineComponent({
     },
   },
 
-  setup (props) {
-    const instance = getCurrentInstance()
+  setup (props:any) {
+    const instance:any = getCurrentInstance()
     const { t } = useLocaleInject()
     const id = generateId()
     let activeNode: Nullable<HTMLElement> = null
-    let hoverTimer: Nullable<TimeoutHandle> = null
+    let hoverTimer: any = null
 
-    const panel = inject(CASCADER_PANEL_INJECTION_KEY)
+    const panel:any = inject(CASCADER_PANEL_INJECTION_KEY)
 
-    const hoverZone = ref(null)
+    const hoverZone:any = ref(null)
 
     const isEmpty = computed(() => !props.nodes.length)
     const menuId = computed(() => `cascader-menu-${id}-${props.index}`)

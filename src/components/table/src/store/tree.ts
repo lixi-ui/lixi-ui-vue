@@ -6,7 +6,7 @@ import type { Table, TableProps } from '../table/defaults'
 
 function useTree<T>(watcherData: WatcherPropsData<T>) {
   const expandRowKeys = ref<string[]>([])
-  const treeData = ref<unknown>({})
+  const treeData:any = ref<unknown>({})
   const indent = ref(16)
   const lazy = ref(false)
   const lazyTreeNodeMap = ref({})
@@ -25,7 +25,7 @@ function useTree<T>(watcherData: WatcherPropsData<T>) {
     if (!keys.length) return res
     keys.forEach(key => {
       if (lazyTreeNodeMap.value[key].length) {
-        const item = { children: [] }
+        const item:any = { children: [] }
         lazyTreeNodeMap.value[key].forEach(row => {
           const currentRowKey = getRowIdentity(row, rowKey)
           item.children.push(currentRowKey)
@@ -74,7 +74,7 @@ function useTree<T>(watcherData: WatcherPropsData<T>) {
     if (keys.length) {
       const oldTreeData = unref(treeData)
       const defaultExpandAll = instance.store?.states.defaultExpandAll.value
-      const rootLazyRowKeys = []
+      const rootLazyRowKeys:any = []
       const getExpanded = (oldValue, key) => {
         const included =
           defaultExpandAll ||

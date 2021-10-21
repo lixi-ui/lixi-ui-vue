@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <Md/>
   </div>
 </template>
@@ -9,7 +8,7 @@
   import Md from './index.md'
 
   export default {
-    name : 'TreeMd',
+    name : 'TreeMd3',
     components: {
       Md
     },

@@ -287,7 +287,7 @@ Muestra una animación de pantalla completa mientras se cargan los datos
 <setup>
 
   import { defineComponent, ref } from 'vue';
-  import { LxLoading } from 'element-plus';
+  import { LxLoading } from 'lixi-ui-vue';
 
   export default defineComponent({
     setup() {
@@ -329,7 +329,7 @@ Muestra una animación de pantalla completa mientras se cargan los datos
 Puede invocar el componente con un servicio. Importe el servicio:
 
 ```javascript
-import { LxLoading } from 'element-plus';
+import { LxLoading } from 'lixi-ui-vue';
 ```
 Invocar:
 ```javascript

@@ -27,7 +27,7 @@ export default defineComponent({
   name: compName,
   props: defaultProps,
   emits: [UPDATE_VISIBLE_EVENT, 'after-enter', 'after-leave', 'before-enter', 'before-leave'],
-  setup(props, ctx) {
+  setup(props:any, ctx:any) {
     if (!ctx.slots.trigger) {
       throwError(compName, 'Trigger must be provided')
     }
@@ -35,7 +35,7 @@ export default defineComponent({
     // to obtain the child instance
 
     // return usePopper(props as IPopperOptions, ctx as SetupContext)
-    const popperStates = usePopper(props, ctx)
+    const popperStates:any = usePopper(props, ctx)
 
     const forceDestroy = () => popperStates.doDestroy(true)
     onMounted(popperStates.initializePopper)
@@ -72,7 +72,7 @@ export default defineComponent({
 
     const isManual = this.isManualMode()
     const arrow = renderArrow(showArrow)
-    const popper = renderPopper(
+    const popper:any = renderPopper(
       {
         effect,
         name: transition,
@@ -106,6 +106,8 @@ export default defineComponent({
       ref: 'triggerRef',
       ...this.events,
     }
+
+
 
     const trigger = isManual
       ? renderTrigger(_t, triggerProps)

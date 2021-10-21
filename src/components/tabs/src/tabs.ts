@@ -17,7 +17,7 @@ import TabNav from './tab-nav.vue'
 import type { Component, ComponentInternalInstance, PropType, VNode } from 'vue'
 import type {
   BeforeLeave,
-  IElTabsProps,
+  ILxTabsProps,
   ITabType,
   ITabPosition,
   Pane,
@@ -62,11 +62,11 @@ export default defineComponent({
     'input',
     'update:modelValue',
   ],
-  setup(props: IElTabsProps, ctx) {
-    const nav$ = ref<typeof TabNav>(null)
+  setup(props: ILxTabsProps, ctx) {
+    const nav$:any = ref(null)
     const currentName = ref(props.modelValue || props.activeName || '0')
-    const panes = ref([])
-    const instance = getCurrentInstance()
+    const panes:any = ref([])
+    const instance:any = getCurrentInstance()
     const paneStatesMap = {}
 
     provide<RootTabs>('rootTabs', {
@@ -122,7 +122,7 @@ export default defineComponent({
         const children = instance.subTree.children
 
         const content = Array.from(children as ArrayLike<VNode>).find(
-          ({ props }) => {
+          ({ props }:any) => {
             return props.class === 'lx-tabs__content'
           },
         )

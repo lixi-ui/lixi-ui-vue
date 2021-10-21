@@ -17,13 +17,14 @@ HTMLElement,
 }[]
 >;
 
-const nodeList: FlushList = new Map()
+// const nodeList: FlushList = new Map()
+const nodeList: any = new Map()
 
 let startClick: MouseEvent
 
 if (!isServer) {
-  on(document, 'mousedown', (e: MouseEvent) => (startClick = e))
-  on(document, 'mouseup', (e: MouseEvent) => {
+  on(document, 'mousedown', (e: any) => (startClick = e))
+  on(document, 'mouseup', (e: any):any => {
     for (const handlers of nodeList.values()) {
       for (const { documentHandler } of handlers) {
         documentHandler(e, startClick)
@@ -98,7 +99,7 @@ const ClickOutside: ObjectDirective = {
       nodeList.set(el, [])
     }
 
-    const handlers = nodeList.get(el)
+    const handlers:any = nodeList.get(el)
     const oldHandlerIndex = handlers.findIndex(item => (item.bindingFn === binding.oldValue))
     const newHandler = {
       documentHandler: createDocumentHandler(el, binding),

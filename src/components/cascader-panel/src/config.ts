@@ -1,6 +1,6 @@
 import { computed } from 'vue'
 import { NOOP } from '@vue/shared'
-import { ExpandTrigger } from './node.ts'
+import { ExpandTrigger } from './node'
 
 import type { PropType } from 'vue'
 import type {

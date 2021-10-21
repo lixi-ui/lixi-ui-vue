@@ -3,7 +3,7 @@ import MenuItem from './menu-item'
 import type { RendererNode } from 'vue'
 
 class Menu {
-  constructor(public domNode: RendererNode) {
+  constructor(public domNode: any) {
     this.init()
   }
   init(): void {

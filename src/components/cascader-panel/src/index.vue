@@ -83,19 +83,19 @@ export default defineComponent({
     'expand-change',
   ],
 
-  setup(props, { emit, slots }) {
+  setup(props:any, { emit, slots }) {
     let initialLoaded = true
     // for interrupt sync check status in lazy mode
     let manualChecked = false
 
-    const config = useCascaderConfig(props)
+    const config:any = useCascaderConfig(props)
 
-    const store: Ref<Store> = ref(null)
-    const menuList = ref([])
-    const checkedValue: Ref<Nullable<CascaderValue>> = ref(null)
+    const store: any = ref(null)
+    const menuList:any = ref([])
+    const checkedValue: any = ref(null)
     const menus: Ref<CascaderNode[][]> = ref([])
     const expandingNode: Ref<Nullable<CascaderNode>> = ref(null)
-    const checkedNodes: Ref<CascaderNode[]> = ref([])
+    const checkedNodes: any = ref([])
 
     const isHoverMenu = computed(() => config.value.expandTrigger === ExpandTrigger.HOVER)
     const renderLabelFn = computed(() => props.renderLabel || slots.default)
@@ -103,7 +103,7 @@ export default defineComponent({
     const initStore = () => {
       const { options } = props
       const cfg = config.value
-
+      
       manualChecked = false
       store.value = new Store(options, cfg)
       menus.value = [store.value.getNodes()]
@@ -117,14 +117,15 @@ export default defineComponent({
       } else {
         syncCheckedValue(false, true)
       }
+
     }
 
-    const lazyLoad: LxCascaderPanelContext['lazyLoad'] = (node, cb) => {
-      const cfg = config.value
+    const lazyLoad = (node:any, cb) => {
+      const cfg:any = config.value
       node = node || new Node({}, cfg, null, true)
       node.loading = true
 
-      const resolve = (dataList: CascaderOption[]) => {
+      const resolve = (dataList: any) => {
         const parent = node.root ? null : node
         dataList && store.value.appendNodes(dataList, parent)
         node.loading = false
@@ -203,7 +204,7 @@ export default defineComponent({
       ) return
 
       if (lazy && !loaded) {
-        const values: CascaderNodeValue[] = deduplicate(arrayFlat(coerceTruthyValueToArray(modelValue)))
+        const values: any = deduplicate(arrayFlat(coerceTruthyValueToArray(modelValue)))
         const nodes = values.map(val => store.value.getNodeByValue(val))
           .filter(node => !!node && !node.loaded && !node.loading)
 
@@ -216,7 +217,7 @@ export default defineComponent({
         }
       } else {
         const values = multiple ? coerceTruthyValueToArray(modelValue) : [modelValue]
-        const nodes = deduplicate(values.map(val => store.value.getNodeByValue(val, leafOnly)))
+        const nodes:any = deduplicate(values.map(val => store.value.getNodeByValue(val, leafOnly)))
         syncMenuState(nodes, false)
         checkedValue.value = modelValue
       }

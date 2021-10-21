@@ -16,9 +16,9 @@ import type { TableColumnCtx } from '../table-column/defaults'
 
 function useStyle<T>(
   props: TableProps<T>,
-  layout: TableLayout<T>,
+  layout: any,
   store: Store<T>,
-  table: Table<T>,
+  table: any,
 ) {
   const $ELEMENT = useGlobalConfig()
   const isHidden = ref(false)
@@ -177,7 +177,7 @@ function useStyle<T>(
   const resizeListener = () => {
     if (!table.$ready) return
     let shouldUpdateLayout = false
-    const el = table.vnode.el
+    const el:any = table.vnode.el
     const { width: oldWidth, height: oldHeight } = resizeState.value
 
     const width = el.offsetWidth

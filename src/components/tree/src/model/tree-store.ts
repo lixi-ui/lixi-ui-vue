@@ -1,6 +1,6 @@
 import { hasOwn } from '@vue/shared'
-import Node from './node.ts'
-import { getNodeKey } from './util.ts'
+import Node from './node'
+import { getNodeKey } from './util'
 
 import type {
   TreeKey,
@@ -15,22 +15,22 @@ import type {
 } from '../tree.type'
 
 export default class TreeStore {
-  currentNode: Node
-  currentNodeKey: TreeKey
+  currentNode: any
+  currentNodeKey: any
   nodesMap: TreeStoreNodesMap
-  root: Node
-  data: TreeData
-  lazy: boolean
-  load: LoadFunction
-  filterNodeMethod: FilterNodeMethodFunction
-  key: TreeKey
-  defaultCheckedKeys: TreeKey[];
-  checkStrictly: boolean;
-  defaultExpandedKeys: TreeKey[];
-  autoExpandParent: boolean;
-  defaultExpandAll: boolean;
-  checkDescendants: boolean;
-  props: TreeOptionProps;
+  root: any
+  data: any
+  lazy: any
+  load: any
+  filterNodeMethod: any
+  key: any
+  defaultCheckedKeys: any;
+  checkStrictly: any;
+  defaultExpandedKeys: any;
+  autoExpandParent: any;
+  defaultExpandAll: any;
+  checkDescendants: any;
+  props: any;
 
   constructor(options: TreeStoreOptions) {
     this.currentNode = null

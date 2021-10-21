@@ -44,9 +44,10 @@ const onModalClick = () => {
 }
 
 let hasModal = false
-let zIndex: number
+let zIndex: number = 1;
 
-const getModal = function(): HTMLElement {
+// const getModal = function(): HTMLElement | undefined {
+const getModal = function(): any {
   if (isServer) return
   let modalDom = PopupManager.modalDom
   if (modalDom) {
@@ -148,7 +149,7 @@ const PopupManager: IPopupManager = {
 
   closeModal: function(id) {
     const modalStack = this.modalStack
-    const modalDom = getModal()
+    const modalDom:any = getModal()
 
     if (modalStack.length > 0) {
       const topItem = modalStack[modalStack.length - 1]
@@ -217,7 +218,7 @@ const getTopPopup = function() {
 
 if (!isServer) {
   // handle `esc` key when the popup is shown
-  on(window, 'keydown', function(event: KeyboardEvent) {
+  on(window, 'keydown', function(event: any) {
     if (event.code === EVENT_CODE.esc) {
       const topPopup = getTopPopup()
 

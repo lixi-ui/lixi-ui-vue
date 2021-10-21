@@ -1,13 +1,11 @@
 <template>
   <div  class="demo-block demo-alert">
-    
     <Md/>
   </div>
 </template>
 
 <script>
   import Md from './index.zh-CN.md'
-
   export default {
     name : 'TreeMd',
     components: {

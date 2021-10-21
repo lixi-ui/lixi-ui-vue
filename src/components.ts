@@ -1,8 +1,8 @@
-import { LxAffix } from '@lixi/components/affix/src'
+// import { LxAffix } from '@lixi/components/affix/src'
 import { LxAlert } from '@lixi/components/alert/src'
-import { LxAutocomplete } from '@lixi/components/autocomplete/src'
+// import { LxAutocomplete } from '@lixi/components/autocomplete/src'
 import { LxAvatar } from '@lixi/components/avatar/src'
-import { LxBacktop } from '@lixi/components/backtop/src'
+// import { LxBacktop } from '@lixi/components/backtop/src'
 import { LxBadge } from '@lixi/components/badge/src'
 import { LxBreadcrumb } from '@lixi/components/breadcrumb/src'
 import { LxButton } from '@lixi/components/button/src'
@@ -17,7 +17,7 @@ import { LxCol } from '@lixi/components/col/src'
 import { LxCollapse } from '@lixi/components/collapse/src'
 import { LxCollapseTransition } from '@lixi/components/collapse-transition/src'
 import { LxColorPicker } from '@lixi/components/color-picker/src'
-import { LxConfigProvider } from '@lixi/components/config-provider/src'
+// import { LxConfigProvider } from '@lixi/components/config-provider/src'
 import { LxContainer } from '@lixi/components/container/src'
 import { LxDatePicker } from '@lixi/components/date-picker/src'
 import { LxDescriptions } from '@lixi/components/descriptions/src'
@@ -54,30 +54,30 @@ import { LxSteps } from '@lixi/components/steps/src'
 import { LxSwitch } from '@lixi/components/switch/src'
 import { LxTable } from '@lixi/components/table/src'
 import { LxTabs } from '@lixi/components/tabs/src'
-import { LxTag } from '@lixi/components/tag/src/index.ts'
+import { LxTag } from '@lixi/components/tag/src/index'
 import { LxTimePicker } from '@lixi/components/time-picker/src'
 import { LxTimeSelect } from '@lixi/components/time-select/src'
-import { LxTimeline } from '@lixi/components/timeline/src/index.ts'
+import { LxTimeline } from '@lixi/components/timeline/src/index'
 import { LxTooltip } from '@lixi/components/tooltip/src'
-import { LxTransfer } from '@lixi/components/transfer/src/index.ts'
+import { LxTransfer } from '@lixi/components/transfer/src/index'
 import { LxTree } from '@lixi/components/tree/src'
-import { LxUpload } from '@lixi/components/upload/src/index.ts'
+import { LxUpload } from '@lixi/components/upload/src/index'
 
-// plugin
-import { LxInfiniteScroll } from '@lixi/components/infinite-scroll/src/index.ts'
-import { LxLoading } from '@lixi/components/loading/src/index.ts'
-import { LxMessage } from '@lixi/components/message/src/index.ts'
-import { LxMessageBox } from '@lixi/components/message-box/src/index.ts'
-import { LxNotification } from '@lixi/components/notification/src/index.ts'
-import { LxPopoverDirective } from '@lixi/components/popover/src/index.ts'
+// // plugin
+import { LxInfiniteScroll } from '@lixi/components/infinite-scroll/src/index'
+import { LxLoading } from '@lixi/components/loading/src/index'
+import { LxMessage } from '@lixi/components/message/src/index'
+import { LxMessageBox } from '@lixi/components/message-box/src/index'
+import { LxNotification } from '@lixi/components/notification/src/index'
+import { LxPopoverDirective } from '@lixi/components/popover/src/index'
 
 
 export default [
-  LxAffix,
+  // LxAffix,
   LxAlert,
-  LxAutocomplete,
+  // LxAutocomplete,
   LxAvatar,
-  LxBacktop,
+  // LxBacktop,
   LxBadge,
   LxBreadcrumb,
   LxButton,
@@ -92,7 +92,7 @@ export default [
   LxCollapse,
   LxCollapseTransition,
   LxColorPicker,
-  LxConfigProvider,
+  // LxConfigProvider,
   LxContainer,
   LxDatePicker,
   LxDescriptions,
@@ -102,7 +102,7 @@ export default [
   LxDropdown,
   LxEmpty,
   LxForm,
-  LxIcon,
+  // LxIcon,
   LxImage,
   LxImageViewer,
   LxInput,
@@ -137,7 +137,7 @@ export default [
   LxTransfer,
   LxTree,
   LxUpload,
-  // plugin
+  // // plugin
   LxInfiniteScroll,
   LxLoading,
   LxMessage,

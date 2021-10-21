@@ -47,9 +47,9 @@ export default defineComponent({
       default: '',
     },
   },
-  setup(props: ICarouselItemProps) {
+  setup(props: any) {
     // instance
-    const instance = getCurrentInstance()
+    const instance:any = getCurrentInstance()
     instance.uid
 
     // data
@@ -64,7 +64,7 @@ export default defineComponent({
     })
 
     // inject
-    const injectCarouselScope: InjectCarouselScope = inject(
+    const injectCarouselScope: any = inject(
       'injectCarouselScope',
     )
 

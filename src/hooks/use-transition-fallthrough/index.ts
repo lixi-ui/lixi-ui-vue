@@ -60,7 +60,8 @@ export const useTransitionFallthroughEmits = [
  */
 
 export const useTransitionFallthrough = () => {
-  const { emit } = getCurrentInstance()
+  const vm:any = getCurrentInstance()
+  const emit:any = vm.emit
 
   return {
     onAfterAppear: () => {

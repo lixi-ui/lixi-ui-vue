@@ -20,24 +20,26 @@ export default defineComponent({
     ClickOutside,
   },
   setup() {
-    const { _elDropdownSize, elDropdown } = useDropdown()
-    const size = _elDropdownSize.value
+    const _useDropdown = useDropdown()
+    const _lxDropdownSize:any = _useDropdown._lxDropdownSize
+    const lxDropdown:any = _useDropdown.lxDropdown
+    const size = _lxDropdownSize.value
 
     function show() {
-      if (['click', 'contextmenu'].includes(elDropdown.trigger.value)) return
-      elDropdown.show?.()
+      if (['click', 'contextmenu'].includes(lxDropdown.trigger.value)) return
+      lxDropdown.show?.()
     }
     function hide() {
-      if (['click', 'contextmenu'].includes(elDropdown.trigger.value)) return
+      if (['click', 'contextmenu'].includes(lxDropdown.trigger.value)) return
       _hide()
     }
     function _hide() {
-      elDropdown.hide?.()
+      lxDropdown.hide?.()
     }
 
     onMounted(() => {
       const dropdownMenu = getCurrentInstance()
-      initDropdownDomEvent(dropdownMenu, elDropdown.triggerElm.value, elDropdown.instance)
+      initDropdownDomEvent(dropdownMenu, lxDropdown.triggerElm.value, lxDropdown.instance)
     })
 
     return {
@@ -45,7 +47,7 @@ export default defineComponent({
       show,
       hide,
       innerHide: _hide,
-      triggerElm: elDropdown.triggerElm,
+      triggerElm: lxDropdown.triggerElm,
     }
   },
 })

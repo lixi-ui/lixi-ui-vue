@@ -81,7 +81,7 @@ export default defineComponent({
   setup(props, ctx) {
     const { t, lang } = useLocaleInject()
     // data
-    const selectionRange = ref([0, 2])
+    const selectionRange: any = ref([0, 2])
     const oldValue = useOldValue(props)
     // computed
     const transitionName = computed(() => {

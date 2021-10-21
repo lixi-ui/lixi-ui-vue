@@ -1,31 +1,25 @@
-// import Button from '../../../src/components/button/doc/index.vue';
-// import Tree from '../../../src/components/tree/doc/index.vue';
-// import Checkbox from '../../../src/components/checkbox/doc/index.vue';
-// import Icon from '../../../src/components/icon/doc/index.vue';
-// import Row from '../../../src/components/row/doc/index.vue';
-// import Container from '../../../src/components/container/doc/index.vue';
-// import Link from '../../../src/components/link/doc/index.vue';
-
-import { defineAsyncComponent } from 'vue'
+// import { defineAsyncComponent } from 'vue'
 
 import components from './components.js'
 
-const LoadingComponent = {
-  template: `<div v-loading="true" style="min-height: 500px; width: 100%;"></div>`,
-}
-const ErrorComponent = {
-  template: `
-    <div style="text-align: center;padding: 100px 0;">Loading error. Please refresh the page and try again</div>`,
-}
-const getAsyncComponent = func => {
-  return defineAsyncComponent({
-    loader: func,
-    delay: 0,
-    timeout: 30000,
-    errorComponent: ErrorComponent,
-    loadingComponent: LoadingComponent,
-  })
-}
+// import Button from `../../../src/components/button/doc/index.vue`
+
+// const LoadingComponent = {
+//   template: `<div v-loading="true" style="min-height: 500px; width: 100%;"></div>`,
+// }
+// const ErrorComponent = {
+//   template: `
+//     <div style="text-align: center;padding: 100px 0;">Loading error. Please refresh the page and try again</div>`,
+// }
+// const getAsyncComponent = func => {
+//   return defineAsyncComponent({
+//     loader: func,
+//     delay: 0,
+//     timeout: 30000,
+//     errorComponent: ErrorComponent,
+//     loadingComponent: LoadingComponent,
+//   })
+// }
 
 import Introduce from './introduce/index.vue';
 

@@ -3,7 +3,7 @@ import type {
   FieldErrorList,
 } from 'async-validator'
 import type { Emitter } from 'mitt'
-import type { ComponentSize } from '@element-plus/utils/types'
+import type { ComponentSize } from '@lixi/utils/types'
 
 export interface LxFormContext {
   registerLabelWidth(width: number, oldWidth: number): void
@@ -44,11 +44,11 @@ export interface LxFormItemContext {
 }
 
 // TODO: change it to symbol
-export const lxFormKey: InjectionKey<LxFormContext> = 'lxForm' as any
+export const lxFormKey: any = 'lxForm' as any
 
-export const lxFormItemKey: InjectionKey<LxFormItemContext> = 'lxFormItem' as any
+export const lxFormItemKey: any = 'lxFormItem' as any
 
 export const lxFormEvents = {
-  addField: 'el.form.addField',
-  removeField: 'el.form.removeField',
+  addField: 'lx.form.addField',
+  removeField: 'lx.form.removeField',
 } as const

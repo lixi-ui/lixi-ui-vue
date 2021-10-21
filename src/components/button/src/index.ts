@@ -1,5 +1,5 @@
 import { App } from 'vue'
-// import type { SFCWithInstall } from '@element-plus/utils/types'
+import type { SFCWithInstall } from '@lixi/utils/types'
 import Button from './button.vue'
 import ButtonGroup from './button-group.vue'
 

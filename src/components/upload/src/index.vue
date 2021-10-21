@@ -186,7 +186,7 @@ export default defineComponent({
     let uploadList
     if (this.showFileList) {
       uploadList = h(
-        UploadList,
+        UploadList as any,
         {
           disabled: this.uploadDisabled,
           listType: this.listType,
@@ -195,12 +195,12 @@ export default defineComponent({
           handlePreview: this.onPreview,
         },
         this.$slots.file ? {
-          default: (props: { file: UploadFile; }) => {
+          default: (props: { file: UploadFile }):any => {
             return this.$slots.file({
               file: props.file,
             })
           },
-        } : null,
+        } as any : null,
       )
     } else {
       uploadList = null

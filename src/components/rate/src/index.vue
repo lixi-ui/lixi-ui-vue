@@ -147,14 +147,14 @@ export default defineComponent({
       return result
     })
 
-    function getValueFromMap(value: unknown, map: Record<string, unknown>) {
+    function getValueFromMap(value: any, map: Record<string, unknown>) {
       const matchedKeys = Object.keys(map)
         .filter(key => {
           const val = map[key]
           const excluded = isObject(val) ? val.excluded : false
           return excluded ? value < key : value <= key
         })
-        .sort((a: never, b: never) => a - b)
+        .sort((a: any, b: any) => a - b)
       const matchedValue = map[matchedKeys[0]]
       return isObject(matchedValue) ? matchedValue.value : (matchedValue || '')
     }
@@ -280,7 +280,7 @@ export default defineComponent({
       }
       /* istanbul ignore if */
       if (props.allowHalf) {
-        let target = event.target as HTMLElement
+        let target:any = event.target as HTMLElement
         if (hasClass(target, 'lx-rate__item')) {
           target = target.querySelector('.lx-rate__icon')
         }

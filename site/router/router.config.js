@@ -1,11 +1,10 @@
 import { defineAsyncComponent } from 'vue';
 import Home from "../pages/home/index.vue";
 import Doc from "../pages/doc/index.vue";
+import docRouter from '../pages/doc/doc-router';
 // import Material from '../pages/material/index.vue';
 // import materialConfig from '../../material/index';
-import Login from "../pages/login/index.vue";
-import docRouter from '../pages/doc/doc-router';
-import nav from './nav.config';
+// import nav from './nav.config';
 
 const getAsyncComponent = func => {
   return defineAsyncComponent({
@@ -100,12 +99,7 @@ var routes = [
   //   name: 'materila',
   //   component: Material,
   //   children: materialConfig
-  // },
-  {
-    path: "/login",
-    name: 'login',
-    component: Login
-  }
+  // }
 ]
 
 export default routes;

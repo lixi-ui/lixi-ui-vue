@@ -29,7 +29,7 @@ export default defineComponent({
     if (!rootTabs) {
       throw new Error(`ElTabBar must use with LxTabs`)
     }
-    const instance = getCurrentInstance()
+    const instance:any = getCurrentInstance()
 
     const getBarStyle = () => {
       let style = {} as CSSProperties
@@ -40,7 +40,7 @@ export default defineComponent({
       const sizeDir = sizeName === 'width' ? 'x' : 'y'
 
       props.tabs.every(tab => {
-        let $el = instance.parent.refs?.[`tab-${tab.paneName}`] as Lxement
+        let $el = instance.parent.refs?.[`tab-${tab.paneName}`]
         if (!$el) {
           return false
         }

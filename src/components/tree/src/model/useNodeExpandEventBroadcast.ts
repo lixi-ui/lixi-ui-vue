@@ -7,7 +7,7 @@ interface NodeMap {
 }
 
 export function useNodeExpandEventBroadcast(props){
-  const parentNodeMap = inject<NodeMap>('TreeNodeMap', null)
+  const parentNodeMap = inject<NodeMap>('TreeNodeMap', null as any)
   const currentNodeMap: NodeMap = {
     treeNodeExpand: node => {
       if (props.node !== node) {

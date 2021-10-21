@@ -63,27 +63,27 @@ export default defineComponent({
     },
   },
   emits: ['close', 'open', 'select'],
-  setup(props: IMenuProps, { emit, slots }) {
+  setup(props: any, { emit, slots }) {
     // data
     const openedMenus = ref(
       props.defaultOpeneds && !props.collapse
         ? props.defaultOpeneds.slice(0)
         : [],
     )
-    const instance = getCurrentInstance()
-    const activeIndex = ref(props.defaultActive)
+    const instance:any = getCurrentInstance()
+    const activeIndex:any = ref(props.defaultActive)
     const items = ref({})
     const submenus = ref({})
     const alteredCollapse = ref(false)
     const rootMenuEmitter = mitt()
     const router = instance.appContext.config.globalProperties.$router
-    const menu = ref(null)
+    const menu:any = ref(null)
     const filteredSlot = ref(slots.default?.())
 
     const hoverBackground = useMenuColor(props)
 
     // computed
-    const isMenuPopup = computed(() => {
+    const isMenuPopup:any = computed(() => {
       return (
         props.mode === 'horizontal' ||
         (props.mode === 'vertical' && props.collapse)
@@ -123,7 +123,7 @@ export default defineComponent({
       delete items.value[item.index]
     }
 
-    const openMenu = (index: string, indexPath?: Ref<string[]> | string[]) => {
+    const openMenu = (index: string, indexPath?: any) => {
       if (openedMenus.value.includes(index)) return
       // 将不在该菜单路径下的其余菜单收起
       // collapse all menu that are not under current menu item
@@ -167,11 +167,7 @@ export default defineComponent({
       }
     }
 
-    const handleItemClick = (item: {
-      index: string
-      indexPath: ComputedRef<string[]>
-      route?: any
-    }) => {
+    const handleItemClick = (item: any) => {
       const { index, indexPath } = item
       const hasIndex = item.index !== null
       const emitParams = [index, indexPath.value, item]
@@ -201,7 +197,7 @@ export default defineComponent({
       }
     }
 
-    const updateActiveIndex = (val: string) => {
+    const updateActiveIndex = (val: any) => {
       const itemsInData = items.value
       const item =
         itemsInData[val] ||
@@ -225,7 +221,7 @@ export default defineComponent({
 
     const flattedChildren = children => {
       const temp = Array.isArray(children) ? children : [children]
-      const res = []
+      const res:any = []
       temp.forEach(child => {
         if (Array.isArray(child.children)) {
           res.push(...flattedChildren(child.children))
@@ -240,7 +236,7 @@ export default defineComponent({
       filteredSlot.value = slots.default?.()
       await nextTick()
       if (props.mode === 'horizontal') {
-        const items = Array.from(menu.value.childNodes).filter((item: HTMLElement) => item.nodeName !== '#text' || item.nodeValue) as [HTMLElement]
+        const items = Array.from(menu.value.childNodes).filter((item: any) => item.nodeName !== '#text' || item.nodeValue) as [HTMLElement]
         const originalSlot = flattedChildren(slots.default?.()) || []
         if (items.length === originalSlot.length) {
           const moreItemWidth = 64
@@ -260,7 +256,7 @@ export default defineComponent({
           if (moreSlot?.length) {
             filteredSlot.value = [
               ...defaultSlot,
-              h(ElSubMenu, {
+              h(LxSubMenu, {
                 index: 'sub-menu-more',
                 class: 'lx-sub-menu__hide-arrow',
               }, {
@@ -284,7 +280,7 @@ export default defineComponent({
 
     watch(
       () => props.defaultActive,
-      currentActive => {
+      (currentActive: any) => {
         if (!items.value[currentActive]) {
           activeIndex.value = ''
         }
@@ -361,7 +357,7 @@ export default defineComponent({
     }
   },
   render() {
-    const directives = this.mode === 'horizontal' ? [[Resize, this.handleResize]] : []
+    const directives:any = this.mode === 'horizontal' ? [[Resize, this.handleResize]] : []
     const menu = withDirectives(h('ul', {
       key: String(this.collapse),
       role: 'menubar',
@@ -375,7 +371,7 @@ export default defineComponent({
     }, [this.filteredSlot]), directives)
 
     if (this.collapseTransition && this.mode === 'vertical') {
-      return h(ElMenuCollapseTransition, () => menu)
+      return h(LxMenuCollapseTransition, () => menu)
     }
     return menu
   },

@@ -1,4 +1,4 @@
-import Row from './row.ts'
+import Row from './row'
 
 Row.install = (app) => {
   app.component(Row.name, Row)

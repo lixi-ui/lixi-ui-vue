@@ -332,7 +332,7 @@ export default defineComponent({
       optionsCount,
       prefixWidth,
       tagInMultiLine,
-    } = toRefs(states)
+    }:any = toRefs(states)
 
     provide(selectKey, reactive({
       props,
@@ -375,7 +375,7 @@ export default defineComponent({
         }
         if (ctx.slots.prefix) {
           const inputChildNodes = reference.value.$el.childNodes
-          const input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0]
+          const input:any = [].filter.call(inputChildNodes, (item:any) => item.tagName === 'INPUT')[0]
           const prefix = reference.value.$el.querySelector('.lx-input__prefix')
           prefixWidth.value = Math.max(prefix.getBoundingClientRect().width + 5, 30)
           if (states.prefixWidth) {

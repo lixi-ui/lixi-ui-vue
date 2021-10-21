@@ -5,7 +5,7 @@ import type { Option } from './select.types'
 export function useAllowCreate(props: ISelectProps, states) {
 
   const createOptionCount = ref(0)
-  const cachedSelectedOption = ref<Option>(null)
+  const cachedSelectedOption:any = ref(null)
 
   const enableAllowCreateMode = computed(() => {
     return props.allowCreate && props.filterable

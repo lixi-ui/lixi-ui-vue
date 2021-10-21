@@ -23,9 +23,9 @@ export default defineComponent({
     updateAll: Boolean,
   },
   setup(props, { slots }) {
-    const el = ref<Nullable<HTMLElement>>(null)
-    const lxForm = inject(lxFormKey)
-    const lxFormItem = inject(lxFormItemKey)
+    const el:any = ref<Nullable<HTMLElement>>(null)
+    const lxForm:any = inject(lxFormKey)
+    const lxFormItem:any = inject(lxFormItemKey)
 
     const computedWidth = ref(0)
     watch(computedWidth, (val, oldVal) => {
