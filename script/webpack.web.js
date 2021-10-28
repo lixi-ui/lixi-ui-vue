@@ -5,9 +5,6 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
 
 const isProd = process.env.NODE_ENV === 'production'
-/*
- * ????????? vue
- */
 const isVueProd = process.env.VUE_BUNDLE === 'production' || isProd
 const vueBundle = isVueProd ? 'vue.esm-browser.prod.js' : 'vue.esm-browser.js'
 
