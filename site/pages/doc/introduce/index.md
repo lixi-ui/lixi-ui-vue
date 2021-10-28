@@ -18,6 +18,11 @@
   <lx-button></li-button>
 ```
 
+### cdn 的使用
+```js
+  <script src="https://unpkg.com/lixi-ui-vue@0.0.6/lib/index.js"></script>
+```
+
 
 ### 项目的设计介绍
 

@@ -22,16 +22,22 @@ var config = {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
       // vue: `vue/dist/${vueBundle}`,
-      'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
+      // 'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
       '@lixi': path.join(__dirname , '../src'),
       '@site': path.join(__dirname , '../site')
     },
+    modules: [path.resolve(__dirname, '../node_modules')],
+  },
+  watchOptions: {
+    ignored: /node_modules/
   },
   module: {
     rules: [
       {
         test: /\.(jsx?)$/,
         loader: 'babel-loader',
+        include: [path.join(__dirname , '../site'), path.join(__dirname , '../src')],
+        exclude: /node_modules/,
         options: {
           plugins: [
             "@vue/babel-plugin-jsx"
@@ -40,6 +46,8 @@ var config = {
       },
       {
         test: /\.(tsx?)$/,
+        include: [path.join(__dirname , '../site'), path.join(__dirname , '../src')],
+        exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',
@@ -53,12 +61,14 @@ var config = {
             loader: 'ts-loader',
             options: {
               appendTsSuffixTo: [/\.vue$/],
+              transpileOnly: true
             }
           }
         ]
       },
       {
-        test: /\.md$|\.d\.md$/,
+        test: /\.md$/,
+        include: [path.join(__dirname , '../site'), path.join(__dirname , '../src')],
         use: [
           path.resolve(__dirname, '../site/md-loader/vueLoader.js'),
           {
@@ -131,8 +141,8 @@ var config = {
   ]
 }
 
-var server = new WebpackDevServer(webpack(config),{
+var server = new WebpackDevServer({
   port: 8017
-})
+}, webpack(config))
 
 server.start()

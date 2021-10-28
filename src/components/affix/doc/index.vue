@@ -5,8 +5,9 @@
   </div>
 </template>
 
-<script>
-  import Md from './index.zh-CN.md'
+<script lang="ts">
+
+  import Md from './index.zh-CN.md';
 
   export default {
     name : 'TreeMd',

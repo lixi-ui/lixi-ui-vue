@@ -1,7 +1,8 @@
 var path = require("path");
 var webpack = require("webpack");
-
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
+
+const Components = require('../components.json');
 
 let externals = [
   {
@@ -15,15 +16,20 @@ let externals = [
 
 var config = {
   mode:"production",
-  entry: path.resolve(process.cwd() , './src/index.lib.js'),
+  entry: Components,
   output: {
-    path: path.resolve(__dirname, '../lib'),
-    publicPath: '/',
-    filename: 'index.js',
-    libraryTarget: 'umd',
-    library: 'LixiUiVue',
-    umdNamedDefine: true,
-    globalObject: 'typeof self !== \'undefined\' ? self : this',
+    path: path.resolve(process.cwd(), './lib/cjs/'),
+    publicPath: '/dist/',
+    filename: '[name].js',
+    chunkFilename: '[id].js',
+    libraryTarget: 'commonjs2'
+  },
+  performance: {
+    hints: false
+  },
+  stats: 'none',
+  optimization: {
+    minimize: false
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
@@ -87,15 +93,7 @@ var config = {
               name: path.posix.join("static", 'img/[name].[ext]'),
               esModule: false
             }
-          },
-          // {
-          //   loader: 'file-loader',
-          //   options: {
-          //     limit: 10,
-          //     name: path.posix.join("static", 'img/[name].[hash:7].[ext]'),
-          //     esModule: false
-          //   }
-          // },
+          }
         ]
       }
     ]

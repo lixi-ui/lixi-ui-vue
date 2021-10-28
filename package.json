@@ -1,6 +1,6 @@
 {
   "name": "lixi-ui-vue",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "lib/index.js",
   "directories": {
@@ -11,6 +11,7 @@
     "build": "node-dev script/webpack.build.js",
     "server": "node-dev server/bin/www",
     "lib": "node-dev script/webpack.lib.js",
+    "lib:cjs": "node-dev script/webpack.lib.cjs.js",
     "build:style": "node-dev src/style/webpack.style.js",
     "jest": "jest"
   },

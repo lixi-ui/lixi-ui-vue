@@ -1,0 +1,266 @@
+{
+  "mode": "development",
+  "resolve": {
+    "extensions": [
+      ".js",
+      ".jsx",
+      ".vue",
+      ".ts",
+      ".tsx",
+      ".css",
+      ".less",
+      ".scss"
+    ],
+    "alias": {
+      "site-mobile-shared": "E:\\myCode\\vant\\node_modules\\@vant\\cli\\dist\\site-mobile-shared.js",
+      "site-desktop-shared": "E:\\myCode\\vant\\node_modules\\@vant\\cli\\dist\\site-desktop-shared.js",
+      "@demo": "E:\\myCode\\vant\\docs\\site"
+    }
+  },
+  "module": {
+    "rules": [
+      {
+        "test": {},
+        "use": [
+          {
+            "loader": "vue-loader",
+            "options": {
+              "compilerOptions": {
+                "preserveWhitespace": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "test": {},
+        "exclude": {},
+        "use": [
+          "babel-loader"
+        ]
+      },
+      {
+        "test": {},
+        "sideEffects": true,
+        "use": [
+          "style-loader",
+          "css-loader",
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "postcssOptions": {
+                "plugins": [
+                  null
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "test": {},
+        "sideEffects": true,
+        "use": [
+          "style-loader",
+          "css-loader",
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "postcssOptions": {
+                "plugins": [
+                  null
+                ]
+              }
+            }
+          },
+          "less-loader"
+        ]
+      },
+      {
+        "test": {},
+        "sideEffects": true,
+        "use": [
+          "style-loader",
+          "css-loader",
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "postcssOptions": {
+                "plugins": [
+                  null
+                ]
+              }
+            }
+          },
+          {
+            "loader": "sass-loader",
+            "options": {
+              "implementation": {
+                "info": "dart-sass\t1.30.0\t(Sass Compiler)\t[Dart]\ndart2js\t2.10.4\t(Dart Compiler)\t[Dart]",
+                "types": {},
+                "NULL": {},
+                "TRUE": {
+                  "value": true
+                },
+                "FALSE": {
+                  "value": false
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "test": {},
+        "use": [
+          "@vant/markdown-loader"
+        ]
+      }
+    ]
+  },
+  "plugins": [
+    {
+      "definitions": {
+        "__VUE_OPTIONS_API__": "true",
+        "__VUE_PROD_DEVTOOLS__": "false"
+      }
+    },
+    {},
+    {
+      "compilationSuccessInfo": {},
+      "shouldClearConsole": false,
+      "logLevel": 1,
+      "formatters": [
+        null,
+        null,
+        null
+      ],
+      "transformers": [
+        null,
+        null,
+        null
+      ],
+      "previousEndTimes": {},
+      "reporter": {
+        "enabled": true
+      }
+    },
+    {
+      "options": {
+        "typescript": {
+          "extensions": {
+            "vue": {
+              "enabled": true,
+              "compiler": "@vue/compiler-sfc"
+            }
+          }
+        },
+        "logger": {
+          "issues": {}
+        }
+      }
+    },
+    {
+      "profile": false,
+      "modulesCount": 5000,
+      "dependenciesCount": 10000,
+      "showEntries": true,
+      "showModules": true,
+      "showDependencies": true,
+      "showActiveModules": true,
+      "options": {
+        "name": "Vant Cli",
+        "color": "#07c160",
+        "reporters": [
+          "fancy"
+        ],
+        "reporter": null
+      },
+      "reporters": [
+        {}
+      ]
+    },
+    {},
+    {
+      "userOptions": {
+        "title": "Vant - Mobile UI Components built on Vue",
+        "logo": "https://img.yzcdn.cn/vant/logo.png",
+        "description": "Mobile UI Components built on Vue",
+        "chunks": [
+          "chunks",
+          "site-desktop"
+        ],
+        "template": "E:\\myCode\\vant\\node_modules\\@vant\\cli\\site\\desktop\\index.html",
+        "filename": "index.html",
+        "baiduAnalytics": {
+          "seed": "ad6b5732c36321f2dafed737ac2da92f"
+        },
+        "meta": {
+          "docsearch:version": "3.x"
+        }
+      },
+      "version": 5
+    },
+    {
+      "userOptions": {
+        "title": "Vant - Mobile UI Components built on Vue",
+        "logo": "https://img.yzcdn.cn/vant/logo.png",
+        "description": "Mobile UI Components built on Vue",
+        "chunks": [
+          "chunks",
+          "site-mobile"
+        ],
+        "template": "E:\\myCode\\vant\\node_modules\\@vant\\cli\\site\\mobile\\index.html",
+        "filename": "mobile.html",
+        "baiduAnalytics": {
+          "seed": "ad6b5732c36321f2dafed737ac2da92f"
+        },
+        "meta": {
+          "docsearch:version": "3.x"
+        }
+      },
+      "version": 5
+    }
+  ],
+  "cache": {
+    "type": "filesystem",
+    "buildDependencies": {
+      "config": [
+        "E:\\myCode\\vant\\node_modules\\@vant\\cli\\lib\\config\\webpack.base.js"
+      ]
+    }
+  },
+  "entry": {
+    "site-desktop": [
+      "E:\\myCode\\vant\\node_modules\\@vant\\cli\\site\\desktop\\main.js"
+    ],
+    "site-mobile": [
+      "E:\\myCode\\vant\\node_modules\\@vant\\cli\\site\\mobile\\main.js",
+      "./docs/site/mobile"
+    ]
+  },
+  "devServer": {
+    "port": 8080,
+    "quiet": true,
+    "host": "0.0.0.0",
+    "stats": "errors-only",
+    "publicPath": "/",
+    "disableHostCheck": true
+  },
+  "output": {
+    "chunkFilename": "[name].js"
+  },
+  "optimization": {
+    "splitChunks": {
+      "cacheGroups": {
+        "chunks": {
+          "chunks": "all",
+          "minChunks": 2,
+          "minSize": 0,
+          "name": "chunks"
+        }
+      }
+    }
+  },
+  "devtool": false
+}
