@@ -3,6 +3,15 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
 
+// let externals = [
+//   {
+//     vue: {
+//       root: 'Vue',
+//       commonjs: 'vue',
+//       commonjs2: 'vue',
+//     },
+//   }
+// ]
 
 var config = {
   mode:"production",
@@ -37,23 +46,25 @@ var config = {
           {
             loader: 'babel-loader',
             options: {
+              presets: [
+                [
+                  "@babel/preset-typescript",
+                  {
+                    allExtensions: true,
+                    isTSX: true
+                  }
+                ]
+              ],
               plugins: [
                 "@vue/babel-plugin-jsx"
               ]
-            }
-          },
-          {
-            loader: 'ts-loader',
-            options: {
-              appendTsSuffixTo: [/\.vue$/],
             }
           }
         ]
       },
       {
-        test: /\.d\.md$/,
+        test: /\.md$/,
         use: [
-          path.resolve(__dirname, '../site/md-loader/vueLoader.js'),
           {
             loader: 'vue-loader',
             options: {
@@ -75,7 +86,6 @@ var config = {
       {
         test: /\.vue$/,
         use: [
-          // path.resolve(__dirname, '../site/md-loader/vueLoader.js'),
           {
             loader: 'vue-loader',
             options: {
@@ -126,13 +136,15 @@ var config = {
     }),
     new VueLoaderPlugin(),
     // new BundleAnalyzerPlugin()
-  ]
+  ],
+  // externals
 }
 
-webpack(config, function(err) {
+webpack(config, function(err, val) {
   if(err){
     console.log(err)
   } else {
     console.log('build ok')
+    // console.log('build val', val)
   }
 })

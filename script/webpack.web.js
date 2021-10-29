@@ -23,10 +23,7 @@ var config = {
       '@lixi': path.join(__dirname , '../src'),
       '@site': path.join(__dirname , '../site')
     },
-    modules: [path.resolve(__dirname, '../node_modules')],
-  },
-  watchOptions: {
-    ignored: /node_modules/
+    // modules: [path.resolve(__dirname, '../node_modules')],
   },
   module: {
     rules: [

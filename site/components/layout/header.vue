@@ -12,12 +12,12 @@
           <li class="lx-menu-li">
             <!-- <router-link to="/material" activeClass='active-menu'>material</router-link> -->
           </li>
-          <li class="lx-menu-li">
+          <!-- <li class="lx-menu-li">
             <select id="item" :value="lang" @change="changeLang">
               <option value="zh">zh</option>
               <option value="es">es</option>
             </select>
-          </li>
+          </li> -->
           <!-- {/* <li class="lx-menu-li">
             <select id="item" onChange={(e)=>sclick(e)}>
               <option value="v4">v4</option>

@@ -43,41 +43,6 @@ var douRouter = [
     component: Introduce
   },
   ...componentsRouters
-  // {
-  //   path: '/doc/layout',
-  //   name: 'layout',
-  //   component: Row
-  // },
-  // {
-  //   path: '/doc/container',
-  //   name: 'container',
-  //   component: Container
-  // },
-  // {
-  //   path: '/doc/icon',
-  //   name: 'icon',
-  //   component: Icon
-  // },
-  // {
-  //   path: '/doc/button',
-  //   name: 'button',
-  //   component: Button
-  // },
-  // {
-  //   path: '/doc/link',
-  //   name: 'link',
-  //   component: Link
-  // },
-  // {
-  //   path: '/doc/checkbox',
-  //   name: 'checkbox',
-  //   component: Checkbox
-  // },
-  // {
-  //   path: '/doc/tree',
-  //   name: 'tree',
-  //   component: Tree
-  // }
 ]
 
 export default douRouter
