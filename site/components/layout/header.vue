@@ -1,6 +1,6 @@
 <template>
   <div class="lx-layout-header">
-      <div class="lx-logo">Lixi</div>
+      <div class="lx-logo">Lixi-Ui</div>
       <div class="lx-layout-menu">
         <ul class="lx-menu-ul">
           <li class="lx-menu-li">

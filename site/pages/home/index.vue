@@ -21,7 +21,7 @@
       <div className="home-gist-title1">项目模块
       </div>
       <div className="home-gist-content">
-        <a className="home-gist-item home-gist-web" href="http://121.5.123.5:8020/#/home" target="_blank">
+        <a className="home-gist-item home-gist-web" href="http://121.5.123.5:8020/#/doc/web">
           <div className="home-gist-wrap">
             <div className="home-gist-img home-gist-img-1"></div>
             <div className="home-gist-title">web</div>
@@ -45,7 +45,7 @@
             查看详情
           </div>
         </a>
-        <a className="home-gist-item home-gist-material" href="http://121.5.123.5:8022/#/home" target="_blank">
+        <a className="home-gist-item home-gist-material" href="http://121.5.123.5:8020/#/doc/material">
           <div className="home-gist-wrap">
             <div className="home-gist-img home-gist-img-3"></div>
             <div className="home-gist-title">material</div>
