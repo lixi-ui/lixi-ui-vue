@@ -12,7 +12,7 @@
           Vue3.0 前端架构
         </div>
         <div className="home-inner-bottom">
-          <a className="home-inner-quick" href="http://121.5.123.5:8018/#/doc/introduce">快速开始</a>
+          <a className="home-inner-quick" href="http://lingyuanping.top/#/doc/introduce">快速开始</a>
           <a className="home-inner-github" href="https://github.com/lixi-ui/lixi-ui-vue" target="_blank">GITHUB</a>
         </div>
       </div>
@@ -33,7 +33,7 @@
             查看详情
           </div>
         </a>
-        <a className="home-gist-item home-gist-ui" href="http://121.5.123.5:8018/#/home">
+        <a className="home-gist-item home-gist-ui" href="http://lingyuanping.top/#/home">
           <div className="home-gist-wrap">
             <div className="home-gist-img home-gist-img-2"></div>
             <div className="home-gist-title">ui</div>
