@@ -110,3 +110,5 @@ lib/
 server/public/*
 
 !.gitkeep
+
+dist.tar

@@ -1,4 +1,4 @@
-import { on } from '@lixi/utils/dom'
+import { on } from '@lixi/utils/dom.ts'
 import isServer from '@lixi/utils/isServer'
 
 import type {
