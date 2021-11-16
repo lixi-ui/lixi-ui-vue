@@ -6,6 +6,8 @@ var install = function (Vue) {
   })
 }
 
+export * from './components.ts'
+
 export default {
   install,
   version: '0.0.4'
