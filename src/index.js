@@ -1,5 +1,6 @@
 import components from './components.ts'
 
+
 import './style/src/index.scss'
 
 var install = function (Vue) {
@@ -7,6 +8,8 @@ var install = function (Vue) {
     Vue.use(components[key])
   })
 }
+
+export * from './components.ts'
 
 export default {
   install,

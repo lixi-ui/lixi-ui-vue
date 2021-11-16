@@ -1,4 +1,5 @@
 @import '@lixi/style/src/mixins/mixins';
+@import './step.scss';
 
 @include b(steps) {
   display: flex;

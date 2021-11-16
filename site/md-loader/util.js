@@ -67,7 +67,7 @@ function genInlineComponentText(template, script) {
     script = script
       .replace(/export\s+default/, 'const democomponentExport =')
       .replace(/import ({.*}) from 'vue'/g, (s, s1) => `const ${s1} = Vue`)
-      .replace(/import ({.*}) from 'lixi-ui-vue'/g, (s, s1) => `const ${s1} = require('lixi-ui-vue')`)
+      .replace(/import ({.*}) from 'lixi-ui-vue'/g, (s, s1) => `const ${s1} = require('@lixi')`)
   } else {
     script = 'const democomponentExport = {}'
   }

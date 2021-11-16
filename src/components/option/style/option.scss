@@ -2,6 +2,7 @@
 
 @import '@lixi/style/src/mixins/mixins';
 @import '@lixi/style/src/common/var';
+@import './option-item.scss';
 
 @include b(select-dropdown) {
   @include e(item) {

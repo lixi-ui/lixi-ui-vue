@@ -1,6 +1,7 @@
 @import '@lixi/style/src/mixins/mixins';
 @import '@lixi/style/src/mixins/var';
 @import '@lixi/style/src/common/var';
+@import './timeline-item.scss';
 
 @include b(timeline) {
   @include set-component-css-var('timeline', $--timeline);
