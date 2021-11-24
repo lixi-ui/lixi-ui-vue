@@ -5,6 +5,7 @@ import router from './router/index.js';
 import icon from './icon.json'
 
 import './style/index.scss'
+import 'highlight.js/styles/color-brewer.css'
 
 import demoBlock from './components/demo-block/index.vue'
 var app = createApp(App);

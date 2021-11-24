@@ -6,8 +6,7 @@ const {
   genInlineComponentText,
 } = require('./util')
 
-var indexq = 1
-module.exports = function(source,aa,bb) {
+module.exports = function(source) {
 
   const content = md.render(source);
 
@@ -30,8 +29,6 @@ module.exports = function(source,aa,bb) {
     const html = stripTemplate(commentContent)
     const script = stripScript(commentContent)
     let demoComponentContent = genInlineComponentText(html, script)
-    var data = new Date().getTime()
-    // console.log(indexq,'new Date().getTime()', data)
     const demoComponentName = `lixi-demo${'_'+id}`
     output.push(`<template #source><${demoComponentName} /></template>`)
     componenetsString += `${JSON.stringify(demoComponentName)}: ${demoComponentContent},`
@@ -45,7 +42,6 @@ module.exports = function(source,aa,bb) {
 
   // 仅允许在 demo 不存在时，才可以在 Markdown 中写 script 标签
   // todo: 优化这段逻辑
-
   let pageScript = ''
   if (componenetsString) {
     pageScript = `<script>
@@ -71,18 +67,6 @@ module.exports = function(source,aa,bb) {
       </section>
     </template>
     ${pageScript}
-    `
-  // if (indexq == 1 || indexq == 2) {
-  //   console.log(indexq, 'result--------->', aa , bb)
-  //   // console.log(source)
-  //   ++indexq
-  // } else {
-  //   // console.log(indexq++ ,'---')
-  //   // return `<template>
-  //   //           <section >
-  //   //           </section>
-  //   //         </template>`
-  // }
-  indexq++
+  `
   return result
 }

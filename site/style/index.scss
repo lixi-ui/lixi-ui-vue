@@ -347,9 +347,11 @@ textarea {
 }
 
 .doc-right pre {
-  background: #fafafa;
+  background: #fff;
   font-family: Menlo, Monaco, Consolas, Courier, monospace;
   padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #eee;
   code{
     padding: 0px;
     border: none

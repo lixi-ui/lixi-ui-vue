@@ -61,6 +61,7 @@
     "@popperjs/core": "^2.10.2",
     "dayjs": "^1.10.7",
     "emit": "0.0.2",
+    "highlight.js": "^11.3.1",
     "lodash": "^4.17.21",
     "mitt": "^2.1.0",
     "node-dev": "^7.0.0",
