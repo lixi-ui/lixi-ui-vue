@@ -3,6 +3,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 // let externals = [
 //   {
 //     vue: {
@@ -99,7 +101,8 @@ var config = {
       {
         test: /\.(scss|css)$/,
         use: [
-          "style-loader",
+          // "style-loader",
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -135,6 +138,10 @@ var config = {
       __VUE_PROD_DEVTOOLS__: JSON.stringify(false),
     }),
     new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     // new BundleAnalyzerPlugin()
   ],
   // externals
